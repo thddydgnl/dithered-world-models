@@ -1,0 +1,108 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792560911.976716     980 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792560914.696929     980 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792560923.520577     980 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792560928.716656    1349 tf_record_dataset_op.cc:396] The default buffer size is 262144, which is overridden by the user specified `buffer_size` of 8388608
+0 166 42 Put the marker in the pot
+1 238 60 Put the candy bar on the left side of the first shelf
+2 142 36 Put one green sachet in the grey bowl.
+3 205 52 Place the pack of doritos inside the sink
+4 213 54 Move the sharpie to the table
+5 87 22 
+6 181 46 Take the pen out of the bowl and place it on the table
+7 596 149 
+8 114 29 
+9 360 90 
+10 357 90 Move the pan to the right.
+11 404 101 Move the glass to the second row in the dishwasher
+12 214 54 Pick up the lid from the table and put it on the pot
+13 196 49 Pick up the black object from the striped towel and place it
+14 355 89 
+15 231 58 
+16 173 44 
+17 264 66 
+18 190 48 
+19 171 43 
+20 189 48 Slide the black lid off
+21 92 23 Put the orange rubber duck into the pot
+22 213 54 Use the duster to wipe the whiteboard
+23 248 62 Turn off the left light switch
+24 1066 267 Put the tissues in the rubbish bin.
+25 558 140 Put the middle fork in the middle section of the white objec
+26 119 30 Put the  cable in the storage box
+27 366 92 Put the bread in the toaster
+28 398 100 Put the white book on top of the tissue box.
+29 227 57 
+30 361 91 
+31 198 50 
+32 207 52 
+33 281 71 
+34 259 65 Move the vaseline closer to the mirror
+35 297 75 Put the towel on the bottle to the right
+36 435 109 
+37 210 53 
+38 225 57 
+39 684 171 Take two folded white cloths out of the white box on the lef
+40 833 209 Put the objects on the table into the cardboard box
+41 89 23 
+42 331 83 
+43 158 40 
+44 390 98 
+45 293 74 
+46 320 80 
+47 129 33 
+48 229 58 
+49 162 41 
+50 1347 337 Put the towel on the table into the box
+51 176 44 
+52 605 152 Turn the tap on and off and put the spoon in the dishes tray
+53 388 97 Pick up the computer mouse and put it in the microwave
+54 126 32 Put the marker inside the cup
+55 205 52 
+56 602 151 Pick up the white towel and put it in the basket , pick up t
+57 304 76 Press a button on the keyboard
+58 213 54 
+59 148 37 
+60 144 36 Put the green block in the bowl
+61 50 13 
+62 826 207 
+63 217 55 
+64 284 71 
+65 200 50 
+66 140 35 Put the orange toy into the wooden box
+67 283 71 
+68 211 53 Take the lid off the smaller pot
+69 401 101 Move the orange objects from the pullout table to the desk
+70 100 25 Move the green plush to the left
+71 440 110 move one white object from the right heap to the left, then 
+72 336 84 
+73 389 98 
+74 167 42 Move the yellow mug forward
+75 226 57 Move the cup to the right
+76 171 43 
+77 100 25 Close the drawer
+78 323 81 
+79 13 4 
+80 1139 285 
+81 304 76 Turn the tap nozzle from the right to the middle then open t
+82 392 98 
+83 91 23 
+84 1627 407 
+85 130 33 
+86 86 22 
+87 573 144 
+88 127 32 
+89 186 47 Pick up one small bottle from the container and put it on th
+90 661 166 
+91 100 25 Put the yellow cube inside the blue cup
+92 125 32 Move the pot to the top left corner of the table
+93 210 53 Move the faucet to the center of the sink
+94 200 50 
+95 157 40 
+96 337 85 Get the marker from the table and place it in the colorless 
+97 577 145 Pick the two bottles on the stove and place them on the coun
+98 1120 280 Take the blocks out of the gift disappointed
+99 511 128 
+CONVERT_DONE 100

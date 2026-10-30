@@ -1,0 +1,86 @@
+33 jobs (0 already done)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+      8s [1/33] mw-push        none     a=0    ep0 ret   1769.3 succ 1 frac None (4s)
+      8s [2/33] mw-push        none     a=0    ep1 ret   1807.8 succ 1 frac None (4s)
+      8s [3/33] mw-push        none     a=0    ep2 ret   1811.4 succ 1 frac None (4s)
+      9s [4/33] mw-push        Qdet2    a=2    ep0 ret     17.9 succ 0 frac 0.0 (5s)
+     10s [5/33] mw-push        Qdet3    a=3    ep0 ret   1703.0 succ 1 frac 0.0 (5s)
+     10s [6/33] mw-push        Qind2    a=2    ep0 ret   1724.2 succ 1 frac 0.0 (6s)
+     11s [7/33] mw-push        Qind3    a=3    ep0 ret   1733.2 succ 1 frac 0.0 (6s)
+     12s [8/33] mw-push        Qdet4    a=4    ep0 ret   1753.8 succ 1 frac 0.0 (5s)
+     13s [9/33] mw-push        Qdet5    a=5    ep0 ret   1760.3 succ 1 frac 0.0 (5s)
+     13s [10/33] mw-push        Qind4    a=4    ep0 ret   1754.1 succ 1 frac 0.0 (5s)
+     15s [11/33] mw-push        Qdet6    a=6    ep0 ret   1757.8 succ 1 frac 0.0 (5s)
+     15s [12/33] mw-push        Qind5    a=5    ep0 ret   1763.7 succ 1 frac 0.0 (5s)
+     16s [13/33] mw-push        Qind6    a=6    ep0 ret   1760.4 succ 1 frac 0.0 (5s)
+     16s [14/33] mw-push        Qdet2    a=2    ep1 ret     13.8 succ 0 frac 0.0 (5s)
+     17s [15/33] mw-push        Qind2    a=2    ep1 ret    106.7 succ 0 frac 0.0 (5s)
+     18s [16/33] mw-push        Qdet3    a=3    ep1 ret   1771.0 succ 0 frac 0.0 (5s)
+     19s [17/33] mw-push        Qind3    a=3    ep1 ret   1530.2 succ 0 frac 0.0 (5s)
+     19s [18/33] mw-push        Qdet4    a=4    ep1 ret   1532.8 succ 1 frac 0.0 (5s)
+     20s [19/33] mw-push        Qind4    a=4    ep1 ret   1758.0 succ 1 frac 0.0 (5s)
+     21s [20/33] mw-push        Qdet5    a=5    ep1 ret   1688.2 succ 1 frac 0.0 (5s)
+     21s [21/33] mw-push        Qind5    a=5    ep1 ret   1805.5 succ 1 frac 0.0 (5s)
+     22s [22/33] mw-push        Qdet6    a=6    ep1 ret   1725.8 succ 1 frac 0.0 (5s)
+     22s [23/33] mw-push        Qind6    a=6    ep1 ret   1808.7 succ 1 frac 0.0 (5s)
+     24s [24/33] mw-push        Qdet2    a=2    ep2 ret     16.3 succ 0 frac 0.0 (5s)
+     24s [25/33] mw-push        Qind2    a=2    ep2 ret   1081.2 succ 0 frac 0.0 (5s)
+     25s [26/33] mw-push        Qdet3    a=3    ep2 ret   1168.4 succ 0 frac 0.0 (5s)
+     26s [27/33] mw-push        Qind3    a=3    ep2 ret     12.6 succ 0 frac 0.0 (5s)
+     27s [28/33] mw-push        Qdet4    a=4    ep2 ret   1796.8 succ 1 frac 0.0 (5s)
+     27s [29/33] mw-push        Qind4    a=4    ep2 ret   1799.5 succ 1 frac 0.0 (5s)
+     27s [30/33] mw-push        Qdet5    a=5    ep2 ret   1807.1 succ 1 frac 0.0 (5s)
+     28s [31/33] mw-push        Qind5    a=5    ep2 ret   1807.0 succ 1 frac 0.0 (4s)
+     28s [32/33] mw-push        Qdet6    a=6    ep2 ret   1809.4 succ 1 frac 0.0 (4s)
+     29s [33/33] mw-push        Qind6    a=6    ep2 ret   1806.0 succ 1 frac 0.0 (4s)
+GRID_DONE
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push: state 0/10 (1s)
+DECISION mw-push: 10 states in 3s
+DECISION_DONE

@@ -1,0 +1,13 @@
+Episode length: 500
+Discount factor: 0.99
+walker-walk k=2: det: e1 1.3098 e3 3.3093 er 4.0821 | ind: e1 2.6505 e3 4.3413 er 13.1498 | sh: e1 2.7858 e3 4.5226 er 13.1583 | sub: e1 3.0386 e3 4.6385 er 19.2718
+walker-walk k=3: det: e1 0.2686 e3 0.7420 er 5.1742 | ind: e1 0.8879 e3 1.9986 er 3.1127 | sh: e1 0.9061 e3 1.9355 er 3.1769 | sub: e1 0.7405 e3 1.6459 er 2.6020
+walker-walk k=4: det: e1 0.0953 e3 0.2843 er 3.7155 | ind: e1 0.2596 e3 0.6243 er 1.5475 | sh: e1 0.2618 e3 0.6245 er 1.7805 | sub: e1 0.1667 e3 0.4026 er 0.9596
+walker-walk k=5: det: e1 0.0279 e3 0.0803 er 0.2758 | ind: e1 0.0633 e3 0.1650 er 0.5764 | sh: e1 0.0633 e3 0.1592 er 0.3662 | sub: e1 0.0396 e3 0.1059 er 0.2904
+walker-walk k=6: det: e1 0.0080 e3 0.0230 er 0.6291 | ind: e1 0.0167 e3 0.0464 er 0.1658 | sh: e1 0.0164 e3 0.0442 er 0.2119 | sub: e1 0.0099 e3 0.0281 er 0.0764
+walker-walk k=7: det: e1 0.0024 e3 0.0068 er 0.0317 | ind: e1 0.0046 e3 0.0131 er 0.0350 | sh: e1 0.0045 e3 0.0127 er 0.0312 | sub: e1 0.0027 e3 0.0077 er 0.0192
+walker-walk k=8: det: e1 0.0009 e3 0.0025 er 0.0103 | ind: e1 0.0014 e3 0.0041 er 0.0095 | sh: e1 0.0014 e3 0.0040 er 0.0088 | sub: e1 0.0009 e3 0.0026 er 0.0048
+walker-walk old conditions alpha 0.1 done (93s)
+walker-walk old conditions alpha 0.2 done (168s)
+walker-walk old conditions alpha 0.3 done (198s)
+PREP walker-walk done in 198s

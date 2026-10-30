@@ -1,0 +1,89 @@
++ UV=/home/yonghwi/.local/bin/uv
++ export UV_PYTHON_INSTALL_DIR=/home/yonghwi/pmx/envs/uv-python
++ UV_PYTHON_INSTALL_DIR=/home/yonghwi/pmx/envs/uv-python
++ V=/home/yonghwi/pmx/envs/a-dinowm-pm
++ MJ=/home/yonghwi/pmx/envs/mujoco210
++ GL=/home/yonghwi/pmx/envs/micromamba/envs/gl24
++ '[' -f /home/yonghwi/pmx/envs/mujoco210/bin/libmujoco210.so ']'
++ '[' -f /home/yonghwi/pmx/envs/micromamba/envs/gl24/lib/libOSMesa.so.8 ']'
++ DL=/home/yonghwi/pmx/data/dinowm/pm_dl
++ '[' '!' -d /home/yonghwi/pmx/data/dinowm/point_maze ']'
++ '[' -f /home/yonghwi/pmx/data/dinowm/pm_dl/point_maze.zip ']'
++ cd /home/yonghwi/pmx/data/dinowm
++ unzip -q /home/yonghwi/pmx/data/dinowm/pm_dl/point_maze.zip 'point_maze/*.pth' -x 'point_maze/obses/*'
++ mkdir -p point_maze/obses
++ ls -la /home/yonghwi/pmx/data/dinowm/point_maze
+total 9412
+drwxrwxr-x 3 yonghwi yonghwi    4096 Oct 21 13:57 .
+drwxrwxr-x 6 yonghwi yonghwi    4096 Oct 21 13:57 ..
+-rw-rw-r-- 1 yonghwi yonghwi 3201180 Jan  8  2025 actions.pth
+drwxrwxr-x 2 yonghwi yonghwi    4096 Oct 21 13:57 obses
+-rw-rw-r-- 1 yonghwi yonghwi   17200 Jan  8  2025 seq_lengths.pth
+-rw-rw-r-- 1 yonghwi yonghwi 6401111 Jan  8  2025 states.pth
++ ln -sfn /home/yonghwi/pmx/data/dinowm/point_maze /home/yonghwi/pmx/A/dinowm_main/ds/point_maze
++ '[' -x /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python ']'
++ /home/yonghwi/.local/bin/uv venv -q --python 3.11 /home/yonghwi/pmx/envs/a-dinowm-pm
++ /home/yonghwi/.local/bin/uv pip install -q --python /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python torch==2.4.1 torchvision==0.19.1 --index-url https://download.pytorch.org/whl/cu124
++ /home/yonghwi/.local/bin/uv pip install -q --python /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python setuptools==65.5.0 wheel==0.38.0 'cython<3' patchelf 'numpy<2' hydra-core==1.3.2 gym==0.23.1 einops pymunk==6.2.1 shapely opencv-python-headless pygame scikit-image matplotlib scipy pandas tqdm accelerate decord h5py termcolor click
++ /home/yonghwi/.local/bin/uv pip install -q --python /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python --no-build-isolation mujoco-py==2.1.2.14
++ /home/yonghwi/.local/bin/uv pip install -q --python /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python --no-deps 'd4rl @ git+https://github.com/Farama-Foundation/D4RL.git'
++ export MUJOCO_PY_MUJOCO_PATH=/home/yonghwi/pmx/envs/mujoco210 CPATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/include LIBRARY_PATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ MUJOCO_PY_MUJOCO_PATH=/home/yonghwi/pmx/envs/mujoco210
++ CPATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/include
++ LIBRARY_PATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ export LD_LIBRARY_PATH=/home/yonghwi/pmx/envs/mujoco210/bin:/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ LD_LIBRARY_PATH=/home/yonghwi/pmx/envs/mujoco210/bin:/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python -c 'import mujoco_py; print('\''mujoco_py ok'\'', mujoco_py.__file__)'
+Compiling /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/cymj.pyx because it depends on /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/pxd/mujoco.pxd.
+[1/1] Cythonizing /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/cymj.pyx
+running build_ext
+building 'mujoco_py.cymj' extension
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-dinowm-pm
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-dinowm-pm/lib
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/gl
+cc -pthread -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py -I/home/yonghwi/pmx/envs/mujoco210/include -I/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/numpy/core/include -I/home/yonghwi/pmx/envs/a-dinowm-pm/include -I/home/yonghwi/pmx/envs/uv-python/cpython-3.11.17-linux-x86_64-gnu/include/python3.11 -c /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/cymj.c -o /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/cymj.o -fopenmp -w
+cc -pthread -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py -I/home/yonghwi/pmx/envs/mujoco210/include -I/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/numpy/core/include -I/home/yonghwi/pmx/envs/a-dinowm-pm/include -I/home/yonghwi/pmx/envs/uv-python/cpython-3.11.17-linux-x86_64-gnu/include/python3.11 -c /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/gl/osmesashim.c -o /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/gl/osmesashim.o -fopenmp -w
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/lib.linux-x86_64-cpython-311
+creating /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/lib.linux-x86_64-cpython-311/mujoco_py
+cc -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/cymj.o /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/gl/osmesashim.o -L/home/yonghwi/pmx/envs/mujoco210/bin -L/home/yonghwi/pmx/envs/uv-python/cpython-3.11.17-linux-x86_64-gnu/lib -Wl,--enable-new-dtags,-R/home/yonghwi/pmx/envs/mujoco210/bin -lmujoco210 -lglewosmesa -lOSMesa -lGL -o /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/lib.linux-x86_64-cpython-311/mujoco_py/cymj.cpython-311-x86_64-linux-gnu.so -fopenmp
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/__init__.py", line 2, in <module>
+    from mujoco_py.builder import cymj, ignore_mujoco_warnings, functions, MujocoException
+  File "/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/builder.py", line 504, in <module>
+    cymj = load_cython_ext(mujoco_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/builder.py", line 110, in load_cython_ext
+    cext_so_path = builder.build()
+                   ^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/builder.py", line 226, in build
+    built_so_file_path = self._build_impl()
+                         ^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/builder.py", line 280, in _build_impl
+    fix_shared_library(so_file_path, 'libmujoco210.so', 'libmujoco210.so')
+  File "/home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/builder.py", line 154, in fix_shared_library
+    subprocess.check_call(['patchelf', '--remove-rpath', so_file])
+  File "/home/yonghwi/pmx/envs/uv-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 408, in check_call
+    retcode = call(*popenargs, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/uv-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 389, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/uv-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/yonghwi/pmx/envs/uv-python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'patchelf'
++ fail mujoco_py_import
++ echo 'PM_ENV_FAILED: mujoco_py_import'
+PM_ENV_FAILED: mujoco_py_import
++ exit 1

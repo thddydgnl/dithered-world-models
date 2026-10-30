@@ -1,0 +1,59 @@
+Using cache found in /root/.cache/torch/hub/facebookresearch_dinov2_main
+num_action_repeat: 1
+num_proprio_repeat: 1
+proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+)
+action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+)
+proprio_dim: 10, after repeat: 10
+action_dim: 10, after repeat: 10
+emb_dim: 404
+Model emb_dim:  404
+Loaded 18685 rollouts
+Loaded 21 rollouts
+09:07:12 replayed 4 files, 6 populations in 4s
+09:08:45 replayed 4 files, 4 populations in 3s
+09:10:19 replayed 4 files, 6 populations in 4s
+09:11:53 replayed 6 files, 6 populations in 4s
+09:13:27 replayed 6 files, 8 populations in 4s
+09:15:00 replayed 6 files, 6 populations in 4s
+09:16:34 replayed 6 files, 8 populations in 4s
+09:18:09 replayed 6 files, 8 populations in 4s
+09:19:43 replayed 6 files, 6 populations in 4s
+09:21:17 replayed 6 files, 8 populations in 4s
+09:22:51 replayed 6 files, 6 populations in 4s
+09:24:26 replayed 6 files, 8 populations in 4s
+09:26:00 replayed 6 files, 8 populations in 4s
+09:27:34 replayed 6 files, 6 populations in 4s
+09:29:08 replayed 6 files, 8 populations in 4s
+09:30:42 replayed 6 files, 6 populations in 4s
+09:32:17 replayed 6 files, 8 populations in 4s
+09:33:51 replayed 6 files, 8 populations in 4s
+09:35:25 replayed 6 files, 6 populations in 4s
+09:36:59 replayed 6 files, 8 populations in 4s
+09:38:33 replayed 4 files, 4 populations in 3s
+09:40:07 replayed 6 files, 8 populations in 4s
+09:41:42 replayed 8 files, 10 populations in 5s
+09:43:15 replayed 4 files, 4 populations in 3s
+09:44:49 replayed 6 files, 8 populations in 4s
+09:46:23 replayed 6 files, 6 populations in 4s
+09:47:57 replayed 6 files, 8 populations in 4s
+09:49:31 replayed 6 files, 6 populations in 4s
+09:51:06 replayed 6 files, 8 populations in 4s
+09:52:40 replayed 6 files, 8 populations in 4s
+09:54:13 replayed 6 files, 6 populations in 4s
+09:55:48 replayed 6 files, 8 populations in 4s
+09:57:22 replayed 6 files, 6 populations in 4s
+09:58:56 replayed 6 files, 8 populations in 4s
+10:00:30 replayed 6 files, 8 populations in 4s
+10:02:04 replayed 6 files, 6 populations in 4s
+10:03:38 replayed 6 files, 8 populations in 4s
+10:05:13 replayed 6 files, 6 populations in 4s
+10:06:47 replayed 6 files, 8 populations in 4s
+10:08:21 replayed 6 files, 8 populations in 4s
+10:09:55 replayed 6 files, 6 populations in 4s
+10:11:30 replayed 6 files, 8 populations in 4s
+10:13:04 replayed 6 files, 6 populations in 4s
+REPLAY13_DONE pusht eval

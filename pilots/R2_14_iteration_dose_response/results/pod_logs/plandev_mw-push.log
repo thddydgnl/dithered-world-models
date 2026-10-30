@@ -1,0 +1,11 @@
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push iters 1 done (7s)
+mw-push iters 3 done (20s)
+mw-push iters 6 done (45s)
+mw-push iters 12 done (90s)
+PLANDEV mw-push done in 90s

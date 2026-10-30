@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite them as below."
+type: software
+title: "Planners Exploit Deterministic Error: Dithered Low-Bit World Models"
+authors:
+  - family-names: Song
+    given-names: YongHwi
+    affiliation: Chungbuk National University
+  - family-names: Lee
+    given-names: Keon Myung
+    affiliation: Chungbuk National University
+license: MIT
+repository-code: "https://github.com/thddydgnl/dithered-world-models"
+keywords:
+  - world models
+  - model-predictive control
+  - quantization
+  - stochastic rounding
+  - robot planning

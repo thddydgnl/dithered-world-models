@@ -1,0 +1,116 @@
+240 jobs in manifest, 0 done, running 240 with 16 workers
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+      68s [1/240] OK  bench_cheetah-run_s1_k4_det_base_c07 (67s) ret    457.2 succ 0/1
+      69s [2/240] OK  bench_cheetah-run_s1_k4_det_base_c04 (68s) ret    441.8 succ 0/1
+      70s [3/240] OK  bench_cheetah-run_s1_k4_shiter_base_c05 (69s) ret    643.5 succ 0/1
+      71s [4/240] OK  bench_cheetah-run_s1_k4_det_base_c00 (70s) ret    517.4 succ 0/1
+      71s [5/240] OK  bench_cheetah-run_s1_k4_shiter_base_c04 (70s) ret    246.3 succ 0/1
+      72s [6/240] OK  bench_cheetah-run_s1_k4_det_base_c05 (71s) ret    359.5 succ 0/1
+      72s [7/240] OK  bench_cheetah-run_s1_k4_det_base_c03 (71s) ret    461.7 succ 0/1
+      73s [8/240] OK  bench_cheetah-run_s1_k4_det_base_c02 (71s) ret    414.9 succ 0/1
+      74s [9/240] OK  bench_cheetah-run_s1_k4_det_base_c01 (72s) ret    476.8 succ 0/1
+      74s [10/240] OK  bench_cheetah-run_s1_k4_shiter_base_c03 (73s) ret    546.1 succ 0/1
+      74s [11/240] OK  bench_cheetah-run_s1_k4_det_base_c06 (72s) ret    523.9 succ 0/1
+      74s [12/240] OK  bench_cheetah-run_s1_k4_shiter_base_c01 (73s) ret    608.7 succ 0/1
+      75s [13/240] OK  bench_cheetah-run_s1_k4_shiter_base_c07 (73s) ret    570.5 succ 0/1
+      77s [14/240] OK  bench_cheetah-run_s1_k4_shiter_base_c02 (76s) ret    450.1 succ 0/1
+      80s [15/240] OK  bench_cheetah-run_s1_k4_shiter_base_c00 (78s) ret    529.2 succ 0/1
+      80s [16/240] OK  bench_cheetah-run_s1_k4_shiter_base_c06 (78s) ret    295.1 succ 0/1
+     137s [17/240] OK  bench_cheetah-run_s1_k4_det_base_c08 (69s) ret    407.7 succ 0/1
+     138s [18/240] OK  bench_cheetah-run_s1_k4_det_base_c09 (68s) ret    395.5 succ 0/1
+     139s [19/240] OK  bench_cheetah-run_s1_k4_det_base_c10 (68s) ret    143.1 succ 0/1
+     140s [20/240] OK  bench_cheetah-run_s1_k4_det_base_c11 (68s) ret    432.5 succ 0/1
+     141s [21/240] OK  bench_cheetah-run_s1_k4_det_base_c12 (67s) ret    211.1 succ 0/1
+     141s [22/240] OK  bench_cheetah-run_s1_k4_det_base_c13 (67s) ret    243.7 succ 0/1
+     142s [23/240] OK  bench_cheetah-run_s1_k4_det_base_c14 (67s) ret    269.7 succ 0/1
+     144s [24/240] OK  bench_cheetah-run_s1_k4_shiter_base_c08 (74s) ret    600.6 succ 0/1
+     145s [25/240] OK  bench_cheetah-run_s1_k4_shiter_base_c09 (74s) ret    605.4 succ 0/1
+     146s [26/240] OK  bench_cheetah-run_s1_k4_shiter_base_c10 (74s) ret    321.0 succ 0/1
+     147s [27/240] OK  bench_cheetah-run_s1_k4_det_base_c15 (67s) ret    299.9 succ 0/1
+     147s [28/240] OK  bench_cheetah-run_s1_k4_shiter_base_c11 (74s) ret    360.6 succ 0/1
+     148s [29/240] OK  bench_cheetah-run_s1_k4_shiter_base_c12 (74s) ret    345.2 succ 0/1
+     148s [30/240] OK  bench_cheetah-run_s1_k4_shiter_base_c13 (74s) ret    550.4 succ 0/1
+     151s [31/240] OK  bench_cheetah-run_s1_k4_shiter_base_c14 (74s) ret    553.6 succ 0/1
+     153s [32/240] OK  bench_cheetah-run_s1_k4_shiter_base_c15 (73s) ret    470.3 succ 0/1
+     206s [33/240] OK  bench_cheetah-run_s1_k4_det_base_c16 (69s) ret    411.1 succ 0/1
+     208s [34/240] OK  bench_cheetah-run_s1_k4_det_base_c17 (68s) ret    398.2 succ 0/1
+     209s [35/240] OK  bench_cheetah-run_s1_k4_det_base_c18 (68s) ret    374.3 succ 0/1
+     210s [36/240] OK  bench_cheetah-run_s1_k4_det_base_c19 (68s) ret    404.0 succ 0/1
+     212s [37/240] OK  bench_cheetah-run_s1_k4_shiter_base_c16 (74s) ret    588.1 succ 0/1
+     213s [38/240] OK  bench_cheetah-run_s1_k4_det_base_c20 (68s) ret    462.4 succ 0/1
+     214s [39/240] OK  bench_cheetah-run_s1_k4_det_base_c21 (68s) ret    509.8 succ 0/1
+     214s [40/240] OK  bench_cheetah-run_s1_k4_shiter_base_c17 (74s) ret    572.9 succ 0/1
+     215s [41/240] OK  bench_cheetah-run_s1_k4_det_base_c22 (67s) ret    473.0 succ 0/1
+     215s [42/240] OK  bench_cheetah-run_s1_k4_shiter_base_c18 (75s) ret    537.2 succ 0/1
+     218s [43/240] OK  bench_cheetah-run_s1_k4_shiter_base_c19 (74s) ret    580.7 succ 0/1
+     218s [44/240] OK  bench_cheetah-run_s1_k4_det_base_c23 (68s) ret    446.2 succ 0/1
+     220s [45/240] OK  bench_cheetah-run_s1_k4_shiter_base_c20 (74s) ret    631.8 succ 0/1
+     221s [46/240] OK  bench_cheetah-run_s1_k4_shiter_base_c21 (74s) ret    345.2 succ 0/1
+     221s [47/240] OK  bench_cheetah-run_s1_k4_shiter_base_c22 (73s) ret    484.7 succ 0/1
+     226s [48/240] OK  bench_cheetah-run_s1_k4_shiter_base_c23 (73s) ret    560.1 succ 0/1
+     274s [49/240] OK  bench_cheetah-run_s1_k4_det_base_c24 (69s) ret    314.9 succ 0/1
+     277s [50/240] OK  bench_cheetah-run_s1_k4_det_base_c25 (68s) ret    477.3 succ 0/1
+     280s [51/240] OK  bench_cheetah-run_s1_k4_det_base_c26 (68s) ret    421.6 succ 0/1
+     282s [52/240] OK  bench_cheetah-run_s1_k4_shiter_base_c24 (74s) ret    347.0 succ 0/1
+     282s [53/240] OK  bench_cheetah-run_s1_k4_det_base_c27 (68s) ret    426.0 succ 0/1
+     283s [54/240] OK  bench_cheetah-run_s1_k4_det_base_c28 (68s) ret    329.6 succ 0/1
+     284s [55/240] OK  bench_cheetah-run_s1_k4_shiter_base_c25 (74s) ret    573.8 succ 0/1
+     285s [56/240] OK  bench_cheetah-run_s1_k4_det_base_c29 (68s) ret    401.8 succ 0/1
+     287s [57/240] OK  bench_cheetah-run_s1_k4_shiter_base_c26 (74s) ret    376.0 succ 0/1
+     288s [58/240] OK  bench_cheetah-run_s1_k4_det_base_c30 (68s) ret    390.0 succ 0/1
+     288s [59/240] OK  bench_cheetah-run_s1_k4_shiter_base_c27 (74s) ret    172.7 succ 0/1
+     289s [60/240] OK  bench_cheetah-run_s1_k4_det_base_c31 (67s) ret    472.8 succ 0/1
+     289s [61/240] OK  bench_cheetah-run_s1_k4_shiter_base_c28 (74s) ret    468.1 succ 0/1
+     292s [62/240] OK  bench_cheetah-run_s1_k4_shiter_base_c29 (74s) ret    513.5 succ 0/1
+     294s [63/240] OK  bench_cheetah-run_s1_k4_shiter_base_c30 (73s) ret    222.2 succ 0/1
+     299s [64/240] OK  bench_cheetah-run_s1_k4_shiter_base_c31 (73s) ret    572.5 succ 0/1
+     343s [65/240] OK  bench_cheetah-run_s1_k4_det_base_c32 (69s) ret    453.0 succ 0/1
+     349s [66/240] OK  bench_cheetah-run_s1_k4_det_base_c33 (69s) ret    444.9 succ 0/1
+     350s [67/240] OK  bench_cheetah-run_s1_k4_det_base_c34 (68s) ret    503.3 succ 0/1
+     351s [68/240] OK  bench_cheetah-run_s1_k4_shiter_base_c32 (74s) ret    533.2 succ 0/1
+     352s [69/240] OK  bench_cheetah-run_s1_k4_det_base_c35 (68s) ret    488.7 succ 0/1
+     355s [70/240] OK  bench_cheetah-run_s1_k4_det_base_c36 (68s) ret    491.7 succ 0/1
+     356s [71/240] OK  bench_cheetah-run_s1_k4_shiter_base_c33 (74s) ret    614.7 succ 0/1
+     356s [72/240] OK  bench_cheetah-run_s1_k4_det_base_c37 (68s) ret    366.6 succ 0/1
+     357s [73/240] OK  bench_cheetah-run_s1_k4_shiter_base_c34 (74s) ret    597.5 succ 0/1
+     357s [74/240] OK  bench_cheetah-run_s1_k4_det_base_c38 (68s) ret    384.4 succ 0/1
+     359s [75/240] OK  bench_cheetah-run_s1_k4_shiter_base_c35 (74s) ret    569.2 succ 0/1
+     361s [76/240] OK  bench_cheetah-run_s1_k4_shiter_base_c36 (74s) ret    591.7 succ 0/1
+     362s [77/240] OK  bench_cheetah-run_s1_k4_shiter_base_c37 (74s) ret    610.5 succ 0/1
+     363s [78/240] OK  bench_cheetah-run_s1_k4_det_base_c39 (68s) ret    461.9 succ 0/1
+     366s [79/240] OK  bench_cheetah-run_s1_k4_shiter_base_c38 (74s) ret    589.0 succ 0/1
+     373s [80/240] OK  bench_cheetah-run_s1_k4_shiter_base_c39 (73s) ret    149.2 succ 0/1
+     412s [81/240] OK  bench_cheetah-run_s1_k4_det_base_c40 (69s) ret    432.8 succ 0/1
+     419s [82/240] OK  bench_cheetah-run_s1_k4_det_base_c41 (68s) ret    270.8 succ 0/1
+RUNNER_STOPPED ok 82 failed 0 in 421s

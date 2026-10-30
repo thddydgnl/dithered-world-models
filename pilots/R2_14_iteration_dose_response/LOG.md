@@ -1,0 +1,23 @@
+# R2-14 작업 로그 (UTC, 2026-10-21)
+
+- 08:45Z 조정자 지시 수신(R2-14, tag r2n14, 상한 $1.2). IDEAS_ROUND2.md R2-14 절과 NOVELTY_R2.md 1.6절 확인
+- 08:46Z R2-8b 코드(nt_lib, calib, prep, prep_r28b, grid, setup)를 `code/`에 복사했다. R2-8 범위 파일은 `inputs/r28/`에 복사했다
+- 08:46:43Z `pod_up.sh r2n14` → **RTX A5000($0.27/h)**, id `duxs8ymw2ktpst`
+  - cgroup CPU 할당 10.2코어(nproc 128), 메모리 251GB
+- 08:46~08:50Z 코드 작성
+  - grid: 반복 수 축을 더했다(`agent.cfg.iterations`). episode마다 `agent.act` 안의 시간을 기록한다
+  - 새 스크립트: plandev_r214(반복 수별 한 step 계획 재실행 편차), timing_r214(단일 프로세스 제어 step 시간), analyze_r214
+- 08:47~08:50Z setup_pod·setup_mw 완료. 비양자화 mw-push seed 1000의 return은 1770.1이다(R2-8b의 3090은 1769.3). GPU가 다르면 수치가 다르다
+- 08:50Z PLAN.md 작성(판정 기준 원문과 세부 규칙)
+- 08:51~08:52Z calibration 20 episode(워커 10개, 50초), prep 2과제(각 5초)
+- 08:52Z 스모크(mw-push, n ∈ {1, 12}, seed 9100). 호출 패턴(512행 3n회), `cfg.iterations`, 표 갱신 횟수를 확인했다(PLAN §8)
+- 08:54:07Z **본 실행 시작**(grid 480 episode, 워커 10개, MPS → plandev → timing → analyze)
+- 09:11:05Z grid 완료(480 episode, 17분)
+  - 모든 episode의 `cfg_iterations`가 설정 n과 같았다
+  - sh-step의 표 갱신 횟수는 MW 101, cheetah 501이었다
+- 09:11~09:13Z plandev 2과제 병렬(각 90초). 09:13Z timing(단일 프로세스, 약 2.5분). 09:13:54Z analyze 완료
+  - 판정: S1 0/2, S2 0/2, S3 0/2 → **없음**
+  - 반대 방향의 용량-반응: sh-fwd의 하락이 n과 함께 급감했다. cheetah에서 sh-step − sh-fwd가 n=1의 −0.8에서 n=12의 48.4로 커졌다
+- 09:14~09:16Z 결과 회수(1.7MB). episodes와 summary의 md5가 pod와 같았다
+- 09:16:15Z `pod_down.sh r2n14`로 pod 삭제. `budget.py status`에서 `gone`과 **$0.14**를 확인했다
+- 09:17~09:25Z REPORT.md 작성(Write 도구가 막혀 규칙대로 Bash heredoc으로 저장)

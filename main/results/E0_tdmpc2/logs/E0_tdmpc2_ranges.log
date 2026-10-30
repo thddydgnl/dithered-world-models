@@ -1,0 +1,142 @@
+36 jobs in manifest, 0 done, running 36 with 8 workers
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+       4s [1/36] OK  ranges_mw-push_s1 (3s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+       5s [2/36] OK  ranges_mw-push_s2 (3s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+       5s [3/36] OK  ranges_mw-door-open_s3 (1s) 
+Episode length: 100
+Discount factor: 0.95
+       5s [4/36] OK  ranges_mw-push_s3 (4s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+       5s [5/36] OK  ranges_mw-pick-place_s3 (4s) 
+       5s [6/36] OK  ranges_mw-door-open_s1 (4s) 
+       5s [7/36] OK  ranges_mw-drawer-open_s2 (0s) 
+       5s [8/36] OK  ranges_mw-door-open_s2 (4s) 
+       5s [9/36] OK  ranges_mw-drawer-open_s1 (1s) 
+       5s [10/36] OK  ranges_mw-drawer-open_s3 (0s) 
+       5s [11/36] OK  ranges_mw-pick-place_s1 (4s) 
+       5s [12/36] OK  ranges_mw-pick-place_s2 (4s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+       6s [13/36] OK  ranges_mw-button-press-topdown_s1 (1s) 
+Episode length: 100
+Discount factor: 0.95
+       6s [14/36] OK  ranges_mw-button-press-topdown_s3 (1s) 
+       6s [15/36] OK  ranges_mw-button-press-topdown_s2 (1s) 
+Episode length: 100
+Discount factor: 0.95
+       6s [16/36] OK  ranges_mw-window-open_s1 (1s) 
+       6s [17/36] OK  ranges_mw-window-open_s2 (1s) 
+Episode length: 100
+Discount factor: 0.95
+       6s [18/36] OK  ranges_mw-peg-insert-side_s3 (1s) 
+       6s [19/36] OK  ranges_mw-peg-insert-side_s1 (1s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+       6s [20/36] OK  ranges_mw-peg-insert-side_s2 (1s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+       6s [21/36] OK  ranges_mw-window-open_s3 (0s) 
+Episode length: 500
+Discount factor: 0.99
+       6s [22/36] OK  ranges_mw-sweep-into_s1 (0s) 
+       6s [23/36] OK  ranges_mw-sweep-into_s2 (0s) 
+       6s [24/36] OK  ranges_mw-sweep-into_s3 (0s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+       6s [25/36] OK  ranges_cheetah-run_s2 (0s) 
+Episode length: 500
+Discount factor: 0.99
+       6s [26/36] OK  ranges_cheetah-run_s1 (1s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+       7s [27/36] OK  ranges_cheetah-run_s3 (1s) 
+       7s [28/36] OK  ranges_walker-walk_s1 (1s) 
+       7s [29/36] OK  ranges_walker-walk_s2 (0s) 
+       7s [30/36] OK  ranges_walker-walk_s3 (1s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+       7s [31/36] OK  ranges_quadruped-walk_s3 (1s) 
+       7s [32/36] OK  ranges_quadruped-walk_s1 (1s) 
+       7s [33/36] OK  ranges_quadruped-walk_s2 (1s) 
+       7s [34/36] OK  ranges_finger-turn-hard_s1 (1s) 
+       7s [35/36] OK  ranges_finger-turn-hard_s2 (1s) 
+       7s [36/36] OK  ranges_finger-turn-hard_s3 (0s) 
+RUNNER_DONE ok 36 failed 0 in 8s

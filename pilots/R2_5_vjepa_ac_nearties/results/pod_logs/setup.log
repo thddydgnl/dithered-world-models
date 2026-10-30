@@ -1,0 +1,108 @@
++ export DEBIAN_FRONTEND=noninteractive
++ DEBIAN_FRONTEND=noninteractive
++ W=/workspace
++ mkdir -p /workspace/r25/code /workspace/r25/data /workspace/r25/results /workspace/r25/logs /workspace/cache/torch/hub/checkpoints /workspace/droid_100/1.0.0
++ apt-get update -qq
++ apt-get install -y -qq rsync git aria2 jq
+debconf: delaying package configuration, since apt-utils is not installed
++ tail -2
++ pip install -q timm einops scipy matplotlib pandas 'opencv-python-headless<4.11'
+[notice] A new release of pip is available: 24.2 -> 26.2.2
+[notice] To update, run: python -m pip install --upgrade pip
++ cd /workspace
++ '[' -d vjepa2 ']'
++ git clone --depth 1 https://github.com/facebookresearch/vjepa2.git
+Cloning into 'vjepa2'...
++ sed -i 's|^VJEPA_BASE_URL = "http://localhost:8300"|VJEPA_BASE_URL = "https://dl.fbaipublicfiles.com/vjepa2"|' /workspace/vjepa2/src/hub/backbones.py
++ grep -n '^VJEPA_BASE_URL' /workspace/vjepa2/src/hub/backbones.py
+11:VJEPA_BASE_URL = "https://dl.fbaipublicfiles.com/vjepa2"
++ cd /workspace/vjepa2
++ git log -1 '--format=%H %cd'
++ cd /workspace/droid_100/1.0.0
++ for f in dataset_info.json features.json
++ curl -sf -O https://storage.googleapis.com/gresearch/robotics/droid_100/1.0.0/dataset_info.json
++ for f in dataset_info.json features.json
++ curl -sf -O https://storage.googleapis.com/gresearch/robotics/droid_100/1.0.0/features.json
++ xargs -P 8 '-I{}' curl -sf --retry 5 -O 'https://storage.googleapis.com/gresearch/robotics/droid_100/1.0.0/{}'
+++ seq -f %05g 0 30
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00000-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00001-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00002-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00003-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00004-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00005-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00006-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00007-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00008-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00009-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00010-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00011-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00012-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00013-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00014-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00015-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00016-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00017-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00018-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00019-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00020-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00021-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00022-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00023-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00024-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00025-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00026-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00027-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00028-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00029-of-00031
++ for i in $(seq -f "%05g" 0 30)
++ echo r2d2_faceblur-train.tfrecord-00030-of-00031
++ ls
++ wc -l
+33
++ du -sh .
+2.1G	.
++ wait
++ ls -la /workspace/cache/torch/hub/checkpoints/
+total 11485101
+drwxr-xr-x 2 root root        4096 Oct 21 05:30 .
+drwxr-xr-x 2 root root        4096 Oct 21 05:24 ..
+-rw-r--r-- 1 root root 11760743310 Oct 21 05:30 vjepa2-ac-vitg.pt
++ cat /workspace/r25/logs/ckpt.log
++ tail -5
++ cd /workspace/cache/torch/hub/checkpoints
++ aria2c -q -x 16 -s 16 -k 64M --file-allocation=none -o vjepa2-ac-vitg.pt https://dl.fbaipublicfiles.com/vjepa2/vjepa2-ac-vitg.pt
++ echo CKPT_OK
++ '[' -f /workspace/r25/CKPT_OK ']'
++ '[' -f /workspace/r25/TF_OK ']'
++ echo SETUP_DONE

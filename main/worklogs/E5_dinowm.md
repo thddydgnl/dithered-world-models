@@ -1,0 +1,29 @@
+# E5 DINO-WM 작업 로그 (분석 작업자, UTC)
+
+- 2026-10-24T12:15Z쯤 조정자 지시 수신(사용자 승인): DINO-WM E5 분석. 실행은 모두 끝났다(held 42/42, e5_select 01:31:50Z, eval 60/60, w 60/60, QAT 학습과 qat 30/30, 11:51Z). 두 GPU는 지금 E2_dinowm_EO를 돌고, 사후 queue `A-posthoc-g0`이 GPU 0 사슬이 끝나기를 기다린다. 사슬·queue·claims·계획 파일·결과 폴더는 읽기만 한다. 서버 python은 모두 `CUDA_VISIBLE_DEVICES=""`, `nice -n 10`, 스레드 4, PYTHONDONTWRITEBYTECODE=1로 한 번에 하나씩 돌린다
+  - 기준: DESIGN_main v5 §7.3(DINO-WM 부분, H3b, TD-MPC2 QAT 규칙), 설계 §6.5·§6.8, v4 §6.1, **v5.3 §10.1**(10-24T02:38Z 고정, 이번에 처음 읽음). 참고로 reports/E5_tdmpc2.md 전체를 읽었다(형식과 TD-MPC2 결과)
+- 12:19Z 서버 상태: 부하 평균 18, GPU 0·1 모두 E2_dinowm_EO, 디스크 여유 264 GB. tmux: A-v5-dinowm-g0(10-24 02:17Z 시작), A-v5-dinowm-g1, A-posthoc-g0
+  - 실행 순서(사슬 로그): GPU 1 held pusht_k3(22:22~23:42Z) → pusht_k4(~01:02Z) → pointmaze_k3(~01:31:50Z) → e5_select(01:31:50Z) → eval pusht_k3_B(~03:30Z) → pointmaze_k3_B(~04:17Z) → w4awq·w4sr2·w8rtn(~07:01Z) → QAT 학습(07:01~09:01Z) → qat(~11:51Z). GPU 0: eval pusht_k4_B(02:17~04:16Z) → w4rtn·w4sr1·w4sr4(~06:58Z)
+- 12:22Z **자료 점검**(`code/dinowm/check_e5.py`, 새로 씀, 서버 CPU 0.8초) → **불일치 0**
+  - manifest 4개와 결과가 1:1이다: held 42(3칸 × 기준선 7 × 10 ep 묶음 2), eval 60(3칸 × det·sh-iter × 10), w 60(6변형 × 10), qat 30(none·det·sh-iter × 10). job = manifest job, manifest 밖 파일 없음
+  - held: split held(pair seed 3, salt held), ep 0~19, planner seed 1000 + ep. eval·w·qat: PushT eval6(4000 + ep)·PointMaze eval(3000 + ep), ep 0~99. meta의 ranges·qopts·ckpt가 job과 같고 planner 기본값, opt_steps 30/10, bf16·TF32·SDPA, PCI_BUS_ID
+  - 칸마다 GPU 하나: held 3칸 GPU 1, eval pusht_k4_B GPU 0·pusht_k3_B GPU 1·pointmaze_k3_B GPU 1, w는 w4rtn·w4sr1·w4sr4가 GPU 0이고 w4awq·w4sr2·w8rtn이 GPU 1, qat GPU 1. hook 호출 수 일정(가중치 변형은 활성 hook 0)
+  - **선택 재계산**: held det 성공 수를 기준선별로 다시 세고 규칙(가장 높음, 같으면 make_manifest.E5B 목록의 앞쪽)을 적용했다. 세 칸 모두 selection.json과 같다
+    - PushT k=3: p999 17/20(단독 최고) → p999
+    - PushT k=4: pc·p999·mse가 17/20으로 같음 → 목록 앞쪽 pc
+    - PointMaze k=3: last8 18/20(단독 최고) → last8
+    - eval job의 baseline·ranges·qopts가 고른 B와 같다(pc → ranges pc, p999 → p999, last8 → main + last_bits 8)
+  - **B = main인 칸은 없다.** 그래서 E1 det·sh-iter 칸 재사용 경로는 쓰이지 않는다. D의 기준인 E1 none(PushT eval6, PointMaze eval) 연결: 모든 eval·w·qat episode에서 planner seed와 E가 같다. 첫 반복 비양자화 비용 배열이 eval·w에서는 E1 none과 비트 단위로 같고, qat는 다르다(최대 0.995; QAT 예측기가 비양자화 기준 자체라 예상대로)
+  - **QAT 학습 로그**(`qat/pusht_qat_k4/log.json`): final = True, step 10,083, 120.04분(예산 120분), lr 5e-5, batch 32, 범위 main, k 4, GPU 1. 손실 기록 201개 모두 유한, step 50의 0.0625 → step 10,050의 0.0560
+- 12:22~12:25Z **스크립트 대조와 수정**(analyze_e5.py, E5 수치를 계산하기 전)
+  - 규칙 대조: H3b 칸 = selection.json의 세 칸(E1 자격 3~4-bit 확증 칸, Wall k=3 탐색 칸 없음), D = E1 none 대비 성공률 하락(같은 쌍·seed), 차 = S(B+sh-iter) − S(B+det), 통과 = 짝 CI 하한 > 0, 성립 = 통과 칸이 절반 초과(3칸이면 2칸). QAT: D(QAT+det)의 CI 상한 < 0.05. **규칙과 다르게 계산하는 곳은 없었다.** e5_select.py의 선택 규칙도 문구(held 20 ep det 성공률 최고, 같으면 목록 앞쪽)와 같다
+  - 고친 것(판정 계산은 그대로): (1) 문턱 비교에 1e-9 허용 오차(엄격 부등호: 문턱에서 1e-9 안의 값은 문턱과 같다고 보고 떨어뜨림; 일반 비교 결과도 함께 저장) (2) split 거르기와 칸 완전성 (3) H3b 칸: McNemar(보조), red와 CI, held 행과 최고점 동률 (4) QAT: 규칙 표시 + 짝 대비(QAT+det − B+det: v5.3 §10.1 양상 점검, QAT+det − E1 det, QAT+det − QAT+sh-iter, QAT+none 대 E1 none, QAT 자신의 none 대비 손상), 학습 로그 요약 (5) 가중치: TD-MPC2와 같은 짝 대비 다섯 + SR 단계 대비 둘 (6) `--family`
+  - 가짜 자료(B = main 칸 포함)로 시험했다(2.4초). 가짜 자료는 지웠다. 맥북·서버 analyze_e5.py md5 같음(85b9cb02…)
+- 12:24:12Z **analyze_e5.py 본 실행, 한 번**(서버 CPU 3초; `--qatlog` QAT 로그). 출력 `~/pmx/A/dinowm_main/analysis/E5_dinowm/`
+  - **H3b DINO-WM 몫 불성립(1/3)**: PushT k=3(B = p999) 차 −2 [−6, 2], PushT k=4(B = pc) +2 [−4, 8], PointMaze k=3(B = last8) +12 [4, 20] 통과. 허용 오차 비교와 일반 비교의 결과가 같다
+  - **QAT**: D(QAT+none) +27 [19, 36], D(QAT+det) +6 [−1, 13], D(QAT+sh-iter) +22 [14, 30]. 규칙(CI 상한 < 5%p): 상한 13%p라 조건이 걸리지 않음. v5.3 §10.1 양상: D(QAT+det) − D(B+det) = +2 [−5, +10](점추정만 나쁨) → 조정자 판단 항목으로 보고
+  - 가중치: w8rtn +3, w4rtn +55, w4awq +71, w4sr1 +76, w4sr2 +68, w4sr4 +71%p. SR은 RTN보다 모두 나쁘고 K에 따라 단조로 줄지 않는다
+- 12:25Z **e5_posthoc_dinowm.py**(사후, 표를 본 뒤 고름, 1.9초): 같은 쌍의 E1 칸 대비 D(B+det) − D(E1 det): PushT k=3 −33 [−44, −22], k=4 −20 [−30, −10], PointMaze 0 [−8, 8](불일치 9 대 9). QAT+det − QAT+none −21 [−30, −12]
+- 12:25Z 결과 JSON 4개, E5 job JSON 192개와 selection.json, QAT 로그 사본을 맥북 `results/E5_dinowm/`로 옮겼다(표 .md, 출력 .txt는 서버에만)
+- 12:26~12:28Z 보고서 `reports/E5_dinowm.md`
+- 12:28Z 마무리 점검: analyze.py, analyze_e5.py, e5_select.py(그대로), check_e5.py, e5_posthoc_dinowm.py, make_manifest.py의 md5가 맥북과 서버에서 같다. 서버에 내 프로세스는 없다(보이는 run_posthoc_g0.sh는 조정자의 사후 queue). 가짜 시험 자료는 지웠다

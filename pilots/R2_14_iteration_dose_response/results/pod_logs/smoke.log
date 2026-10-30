@@ -1,0 +1,100 @@
+8 jobs (0 already done)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+      6s [1/8] mw-push        it1   none       ep0   seed 9100 ret   1806.7 succ 1 refresh 0 plan 10.0ms/step (1s)
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+      7s [2/8] mw-push        it1   Qshfwd3    ep0   seed 9100 ret    838.7 succ 0 refresh 0 plan 13.4ms/step (2s)
+      7s [3/8] mw-push        it1   Qdet3      ep0   seed 9100 ret   1238.5 succ 0 refresh 0 plan 13.2ms/step (2s)
+      8s [4/8] mw-push        it1   Qshstep3   ep0   seed 9100 ret     51.7 succ 0 refresh 101 plan 14.4ms/step (2s)
+     11s [5/8] mw-push        it12  none       ep0   seed 9100 ret   1820.1 succ 1 refresh 0 plan 56.7ms/step (6s)
+     13s [6/8] mw-push        it12  Qshfwd3    ep0   seed 9100 ret   1756.6 succ 1 refresh 0 plan 75.1ms/step (8s)
+     13s [7/8] mw-push        it12  Qdet3      ep0   seed 9100 ret   1748.2 succ 1 refresh 0 plan 70.0ms/step (7s)
+     13s [8/8] mw-push        it12  Qshstep3   ep0   seed 9100 ret    175.0 succ 0 refresh 101 plan 71.8ms/step (7s)
+GRID_DONE
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push iters 1 done (1s)
+mw-push iters 12 done (2s)
+PLANDEV mw-push done in 2s
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+{"task": "mw-push", "cond": "none", "iters": 1, "ms_mean": 6.994890802889131, "ms_median": 6.941397004993632, "ms_p90": 7.126855599926785, "n": 5}
+{"task": "mw-push", "cond": "Qdet3", "iters": 1, "ms_mean": 7.665645400993526, "ms_median": 7.604519007145427, "ms_p90": 7.867154601262882, "n": 5}
+{"task": "mw-push", "cond": "Qshstep3", "iters": 1, "ms_mean": 8.008092598174699, "ms_median": 8.028750991798006, "ms_p90": 8.148843594244681, "n": 5}
+{"task": "mw-push", "cond": "Qshfwd3", "iters": 1, "ms_mean": 8.385017601540312, "ms_median": 8.402912004385144, "ms_p90": 8.412774006137624, "n": 5}
+{"task": "mw-push", "cond": "none", "iters": 12, "ms_mean": 46.01609520323109, "ms_median": 45.7331940124277, "ms_p90": 47.4242163967574, "n": 5}
+{"task": "mw-push", "cond": "Qdet3", "iters": 12, "ms_mean": 56.505283204023726, "ms_median": 56.37166500673629, "ms_p90": 56.87611460452899, "n": 5}
+{"task": "mw-push", "cond": "Qshstep3", "iters": 12, "ms_mean": 68.34292419953272, "ms_median": 68.26924000051804, "ms_p90": 69.40596819622442, "n": 5}
+{"task": "mw-push", "cond": "Qshfwd3", "iters": 12, "ms_mean": 68.74854380148463, "ms_median": 68.80475200887304, "ms_p90": 68.94130459986627, "n": 5}
+TIMING_DONE
+{
+ "S1": false,
+ "S1_tasks": 0,
+ "S1_literal_tasks": 0,
+ "S2": false,
+ "S2_tasks": 0,
+ "S3": false,
+ "S3_tasks": 0,
+ "verdict": "없음"
+}
+mw-push: n=1 baseline it1 1.000, it12 1.000
+   det      it1 100.0 [100.0,100.0]  it12 0.0 [0.0,0.0] | inc -100.0 [-100.0,-100.0]
+   sh-step  it1 100.0 [100.0,100.0]  it12 100.0 [100.0,100.0] | inc 0.0 [0.0,0.0]
+   sh-fwd   it1 100.0 [100.0,100.0]  it12 0.0 [0.0,0.0] | inc -100.0 [-100.0,-100.0]
+   sh-step - sh-fwd: it1 0.0 [0.0,0.0]  it12 100.0 [100.0,100.0]
+   {"det_drops": {"1": 1.0, "12": 0.0}, "monotone": false, "twice": false, "det_drop_hi_real": false, "S1_task_literal": false, "S1_task": false, "inc_det": -1.0, "inc_det_ci": [-1.0, -1.0], "inc_shfwd": -1.0, "inc_shfwd_ci": [-1.0, -1.0], "S2_ratio": 1.0, "S2_task": false, "inc_shstep": 0.0, "inc_shstep_ci": [0.0, 0.0], "S3_task": false}
+   plandev/seed: it1 5.83/2.20/3.04  it12 4.25/2.68/2.05
+ANALYZE_DONE

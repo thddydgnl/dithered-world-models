@@ -1,0 +1,63 @@
+# E0 DINO-WM 작업 로그 (작업자, UTC, 2026-10-21)
+
+- 13:08Z 지시 수신. MAIN_RULES.md, EXPERIMENT_DESIGN.md(§4.2·4.3·6.0~6.3·6.9·6.10), R2-13(REPORT·PLAN·LOG·code 전부), R2-7(REPORT·LOG·r27lib·setup7), R2-14(plandev), R2-8b PLAN §3.3·§4, R2-1 LOG(설치 이력), archive의 r21lib.py(R2-13 복사본과 diff 없음)를 읽음
+- 13:10Z 서버 점검(`kiis-mvf-gpu`): RTX A5000 × 2, 드라이버 560.35.05, 둘 다 비어 있음. 여유 디스크 317GB. 64스레드, load 18(다른 사용자)
+  - 공유 데이터: 체크포인트 `~/pmx/data/dinowm/outputs/{pusht,wall_single,point_maze}`, Wall 메타 `~/pmx/data/dinowm/wall/wall_single/*.pth`(`DOWNLOAD_DONE` 확인), PushT `~/pmx/data/pusht_noise/{train,val}`(train 18685, val 21 궤적. dino_wm `PushTDataset`이 기대하는 `states.pth`, `rel_actions.pth`, `velocities.pth`, `seq_lengths.pkl`, `obses/` 구조와 같음)
+- 13:13Z `code/dinowm/setup_server.sh`(setup13.sh를 uv 사용자 공간판으로 고침). 약 2분(uv 캐시 hardlink)
+  - dino_wm clone HEAD = 파일럿 commit `0a9492fa`(2025-03-24)와 같음. 그 commit에 고정
+  - CPython 3.11.17(`~/pmx/envs/uv-python`), venv `~/pmx/envs/a-dinowm`: torch 2.4.1+cu124(파일럿 R2-1 pod와 같은 판), numpy 1.26.4, gym 0.23.1, pymunk 6.2.1, hydra-core 1.3.2, opencv 4.11.0, pygame 2.6.1, shapely 2.2.0, decord. DINOv2 ViT-S/14는 torch hub(`TORCH_HOME=~/pmx/torch`)
+  - uv가 `~/.local/bin/python3.11`(uv가 관리하지 않는 기존 링크)을 덮어쓰지 않았다는 경고만 나옴. 건드리지 않음
+- 13:20Z 코드 작성: `wmlib.py`(r21lib의 경로만 서버용으로 바꾼 사본), `qlib.py`(qlib13 확장: 변형 7종 + 진단), `runner.py`, `calib.py`, `make_manifest.py`, `analyze.py`, `run.sh`(GPU 0 고정)
+- 13:24Z 범위 보정(train 창 64개, 창 seed 11): **PushT 층별 [lo, hi]가 파일럿과 완전히 같다.** Wall은 6층 중 2층의 hi가 bf16 한 칸 차이(3.703 → 3.688, 4.188 → 4.156). 보정 창의 (궤적, offset) 목록이 파일럿과 같다 → 서버 데이터셋이 파일럿 데이터와 같음
+- 13:28Z 스모크(smoke 분할 = pair seed 7, 7변형 + nonealt) 1차: det 작업에서 `torch.compile` 실패("Cannot find a working triton"). 원인은 uv venv에 setuptools가 없어 triton 3.0이 import되지 않은 것. `setuptools<71`(70.3.0) 설치 후 재개(setup_server.sh에 반영)
+  - 스모크에서 진단 점검: hook 호출 수 det 930 = 30 iteration × 5 step × 6층 + 최종 계획 평가 30, 무작위 변형 990(오차용 추가 draw 2회). iteration-0 모집단이 모든 변형에서 같음(assert). det의 비용 오차 무작위 후보 +0.49/+0.74, 고른 후보 −0.42/−0.01(파일럿과 같은 방향)
+- 13:31Z 이후 TD-MPC2 작업자가 GPU 0에 MPS 서버(+ 클라이언트 16~24개)와 별도 프로세스 2개를 올림(GPU 0 사용 메모리 약 14.7GB, 사용률 100%). 그 뒤 내 PushT 속도가 34s/ep(det, E=2)에서 108~124s/ep(E=1)로 느려짐
+- 13:39Z **det+shift 정의 수정.** 처음에는 층마다 스칼라 offset 하나(후보·token·unit 공유)로 구현했으나, TD-MPC2 작업자 구현(`code/tdmpc2/qlib.py`)은 unit마다 offset(= 그쪽 sh-iter u와 같은 세분도)이었다. 두 모델 계열의 정의를 맞추려고 DINO-WM도 sh-iter의 u와 같은 표 모양·일정(token × unit, 후보 공유, 매 forward 새로)으로 바꿨다. 반올림은 `clamp(round(y − o), 0, 2^k−1) + o`(TD-MPC2 판과 같은 식). 스칼라판은 Wall k=3에서 한 draw의 5-step 오차가 예측 분산의 43배로 튀었다(전 층이 같은 방향으로 밀림)
+  - `test_quant.py`로 커널 성질 확인(compile판 = eager판): det MSE 1/12·지속 편향, ind·sh-iter MSE 1/6·새로움, sh-step·sh-ep·sh-fixed 계획 내 고정, det+shift MSE 1/12·무편향·매 forward 새로·같은 입력 같은 출력
+- 13:52Z GPU 0 메모리 부족(OOM)으로 E=2 PushT 스모크 작업이 죽음(다른 작업자 14.7GB + 내 8GB). 배치 크기 E를 줄여 메모리 점검(`E0_memtest`)
+  - **E=1과 E=2(Wall은 E=2와 E=4)의 결과가 비트 단위로 같다**(mu_final, iteration별 최저 비용, 계획 시점 오차, OEI 입력). 이 GPU에서 E는 수치에 영향이 없다(예외: ind는 커널 내부 난수열이 텐서 모양에 따라 달라짐). 그래서 E를 메모리에 맞춰 PushT 1, Wall 2, PointMaze 1로 정함. 최대 메모리 PushT 5.1GB, Wall 6.3GB
+- 13:55Z PointMaze: TD-MPC2 작업자 로그에서 mujoco-py 빌드 성공(13:33Z) 확인 → 시도
+  - OSF DINO-WM 데이터의 `point_maze.zip`(vr5gy, 718MB)을 `~/pmx/data/dinowm/pm_dl/`에 받음. 압축 해제 시 30GB(obs 2001개)라 `states.pth`, `actions.pth`, `seq_lengths.pth`만 풀어 `~/pmx/data/dinowm/point_maze/`에 둠(프레임은 env가 렌더링, Wall과 같은 방식)
+  - 별도 venv `~/pmx/envs/a-dinowm-pm`(a-dinowm과 같은 torch + mujoco-py 2.1.2.14 + d4rl --no-deps + cython<3, setuptools 65.5.0). MuJoCo 2.1 바이너리와 OSMesa(micromamba `gl24`)는 TD-MPC2 작업자가 만든 것을 읽기 전용으로 씀(`setup_pointmaze.sh`)
+  - 오류: mujoco-py 빌드 마지막 단계에서 `patchelf`를 못 찾음(venv bin이 PATH에 없음) → PATH에 venv bin 추가 후 성공
+  - CPU 점검(`test_pointmaze.py`): OSMesa 렌더링 동작, 데이터셋 2000 궤적(train 1800/valid 200), 쌍 표집 동작. 빠른 재생이 env.rollout과 9e-8 차이(env 상태가 float32) → float32 상태를 쓰게 고쳐 비트 단위로 같아짐
+- 14:07Z E0 GPU 대기열 시작(tmux `A-E0-dinowm`, 로그 `~/pmx/A/logs/E0_dinowm_queue.log`): k 선택(PushT·Wall) → PointMaze 범위·스모크·k 선택 → R2-13 재현 → 비트 수·변형별 예측 오차. GPU 0을 나눠 쓰므로 한 번에 한 프로세스만 돈다
+- 14:10Z 분할 기록(`pairs_info.py`, `results/E0_dinowm/splits_<task>.json`). PushT 쌍은 val 궤적 21개의 26프레임 구간이라 분할 간 구간 겹침이 생긴다: held–eval 겹침 42쌍(eval 31개), 파일럿 eval(repro)–E1 eval 145쌍(eval 70개, 시작 프레임 동일 2쌍)
+- 14:50Z 조정자 알림: B 작업자의 작은 작업이 tmux 환경 오류로 GPU 0에 13:48~14:17Z, 14:40~14:42Z 동안 올라가 있었다(지금은 GPU 1로 제한됨). 수치에는 영향이 없지만 이 구간의 속도는 느리게 잰 값일 수 있다
+  - 해당 구간의 내 실행: E0_memtest(13:52~14:07Z, PushT 108~124s/ep), E0_ksel Wall 앞부분(14:07~14:17Z). 처리량 추정에서 이 구간은 빼고 다시 잰다(13:28~13:33Z의 거의 단독 구간과 14:17Z 이후 TD-MPC2 공유 구간을 따로 보고)
+  - 내 GPU 프로세스는 모두 `run.sh`/`run_pm.sh`가 `CUDA_VISIBLE_DEVICES=0`을 export한다. 실행 중인 runner의 /proc environ과 모든 job JSON의 meta(`cuda_visible`=0, RTX A5000)로 확인. 대기열 스크립트(E0_queue.sh, run_queue.sh, E1_queue.sh) 첫머리에도 명시적으로 넣었다(실행 중인 대기열은 다음 단계부터 새 파일을 읽지 않으므로 run.sh의 고정으로 충분)
+- 15:08Z 조정자 점검: PushT held 74.8s/ep(약 48 ep/h)는 파일럿(4090) 대비 약 4배 느리다. 속도 설정 확인, GPU 0 단독·공유 처리량, 두 조건의 E1 추정을 요청받음
+  - 속도 설정은 R2-13과 같다: 예측기 forward 한 번에 E × 300 후보 전부를 bf16 autocast로 배치 처리(r27lib.rollout_batched와 같은 계산), TF32 matmul, SDPA attention(정확한 계산), 양자화 kernel은 torch.compile(Triton), 후보 표집은 episode별 CPU generator, 표본별 Python 반복 없음(episode별 비용·정렬만, 파일럿과 같음), episode 묶음 단위 변형 교대, 참 비용 재생은 CPU pool(8 worker)에서 GPU와 겹쳐 돈다
+  - 파일럿에 없던 부담은 진단 forward뿐이다: 무작위 변형은 iteration-0 기준 rollout 1회 + 오차용 추가 draw 2회 + 마지막 모집단 비양자화 비용 1회(PushT 30 iteration 대비 +13%, Wall·PointMaze 10 iteration 대비 +40%), det는 +2회, none은 0회
+  - GPU 0 사용 현황을 20초마다 기록하는 `gpu0_occupancy.sh`를 띄웠고(15:11Z), runner 기록에 묶음별 시작·끝 시각(`t_block_start/end`)을 넣었다(다음 runner부터 적용)
+  - GPU 0이 비는 순간에 내 대기열을 잠시 멈추고(SIGSTOP) 짧은 단독 벤치를 돌리는 `bench_when_free.sh`를 걸어 두었으나, 아래 재배정으로 GPU 1에서 재기로 하고 15:53Z에 내렸다(한 번도 발동하지 않음)
+- 15:52Z 조정자 GPU 재배정: B의 서버 E0가 끝나 GPU 1이 비었다. DINO-WM E0를 GPU 1로 옮겨도 된다. `CUDA_VISIBLE_DEVICES=1`, `CUDA_DEVICE_ORDER=PCI_BUS_ID`를 모든 실행 스크립트에 명시, (task, k) 칸은 한 GPU 안에서, 결과마다 GPU를 기록
+  - 조치: PushT held k 선택은 이미 모든 k의 앞 10 episode와 none·k6의 뒤 10 episode를 GPU 0에서 돌렸으므로 **GPU 0에서 마저 끝낸다**(칸을 GPU 사이에 나누지 않으려고). Wall k 선택도 전부 GPU 0
+  - 나머지 E0(PointMaze 범위·스모크·k 선택, 재현, 예측 오차)와 단독 처리량 벤치는 **GPU 1**의 새 대기열(tmux `A-E0-dinowm-g1`, `E0_queue_gpu1.sh`, 로그 `~/pmx/A/logs/E0_dinowm_queue_gpu1.log`)로 옮김. 15:53Z 시작
+  - `run.sh`, `run_pm.sh`, `run_queue.sh`는 이제 `DINOWM_GPU`가 명시되지 않으면 실행을 거부하고 `CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=$DINOWM_GPU`를 export한다. 그래서 GPU 0의 옛 대기열(`A-E0-dinowm`)은 PushT k 선택이 끝나면 다음 단계를 시작하지 못하고 끝난다(GPU 0에 새 작업이 생기지 않음)
+  - job meta에 `cuda_visible`, `cuda_device_order`, `gpu_uuid`를 기록한다(이전 GPU 0 결과는 `cuda_visible`=0, 기본 순서지만 GPU가 같은 모델 2장이라 PCI 순서와 같고, 점유 기록에서 메모리가 nvidia-smi GPU 0에 잡힘을 확인)
+  - 두 GPU 사용 현황 기록은 `gpu_occupancy.sh`(로그 `~/pmx/A/logs/E0_gpu_occupancy.log`)로 바꿈
+  - PointMaze 범위 보정(GPU 1, train 창 64개, OSMesa 렌더링 10초): hi 2.609 / 2.859 / 2.625 / 1.805 / 1.508 / 1.188, lo −0.170
+- 15:53~16:05Z **단독 처리량 벤치(GPU 1, 다른 프로세스 없음, `E0_bench_g1`, smoke 분할, 진단 포함)**: s/episode는 PushT none 30.2 · det 34.2 · sh-iter 37.8, Wall 3.6 · 4.6 · 5.4, PointMaze 10.1 · 13.3 · 16.1. E=1과 E=2(Wall은 2와 4)의 속도가 같다. 최대 메모리: PushT·PointMaze E=1 5.1GB, E=2 10.1GB, Wall E=2 6.3GB, E=4 12.4GB
+  - **GPU 0과 GPU 1의 결과가 비트 단위로 같다**(PushT·Wall 스모크 episode의 mu_final, iteration별 최저 비용, OEI 입력. E=1/E=2 교차 비교 포함). 계획 시점 오차의 정규화 분산만 텐서 모양에 따른 float32 합산 순서로 1e-7 상대 수준 차이
+  - TD-MPC2 MPS와 GPU 0을 공유할 때(B 부하 구간 밖, 14:42Z 이후) PushT E=1: none 64~67, det 74~79 s/ep → 단독 대비 2.1~2.3배 느림. 4090 파일럿 대비 A5000 단독은 같은 일에 약 2.0배(none 30.2 대 14.4)
+- 16:07~16:28Z PointMaze 스모크(GPU 1, 7변형 + nonealt, 1 episode씩): 전부 정상. hook 호출 det 330 = 10 iteration × 5 step × 6층 + 30, 무작위 변형 390
+- 16:28Z **k 선택 완료**(held 20 episode, 규칙 = det 하락 ≥ 20%p인 k ∈ {3,4,5,6} 중 가장 큰 k). PushT·Wall은 GPU 0, PointMaze는 GPU 1
+  - PushT: none 17/20. det k3 7/20(−50%p), k4 9/20(−40%p), k5 18/20(+5%p), k6 17/20(0) → **k=4, 칸 {3,4,5}**(파일럿과 같음. 파일럿 held: none 17/20, det4 8/20)
+  - Wall: none 11/20. det k3 0/20(−55%p, p=0.001), k4 14/20(+15%p), k5 7/20(−20%p, McNemar 5/1, p=0.22), k6 10/20(−5%p) → 규칙 문자 그대로 **k=5, 칸 {4,5,6}**. 경계값(정확히 20%p)이고 k에 대해 단조가 아니다. 파일럿은 k ≥ 5를 오차 기준으로 미리 빼고 k=3을 골랐다(파일럿 held: none 11/20, det3 3/20, det4 15/20)
+  - PointMaze: none 17/20. det k3 14/20(−15%p), k4 16/20(−5%p), k5 16/20(−5%p), k6 18/20(+5%p) → **20%p에 이르는 k가 없다.** 설계 §6.0에는 대체 규칙이 없다. R2-13 PLAN §6의 대체 규칙(15%p 이상인 가장 큰 k, 없으면 시험한 가장 작은 k)을 쓰면 k=3, 칸 {2,3,4}
+  - 결정은 조정자 몫으로 보고한다. 참고용(규칙 밖, held만 사용)으로 PointMaze det k=2 held 20 episode를 GPU 1에서 따로 돌림(tmux `A-E0-dinowm-pmk2`)
+- 16:35Z E1 manifest 초안 `code/dinowm/manifests/E1_dinowm.json`(500 job, 6000 episode-run): PushT k {3,4,5}, Wall k {4,5,6}(규칙 그대로), PointMaze k {2,3,4}(R2-13 대체 규칙, 결정 대기). E는 PushT 1, Wall 2, PointMaze 1. none과 nonealt(계획 편차의 seed 바닥)는 과제당 한 번
+- 16:28~16:55Z Wall 재현(GPU 1) 완료. PushT 재현 16:55Z 시작(GPU 1, 약 2.4시간)
+- 16:34~16:44Z 참고 실행: PointMaze det k=2 held(GPU 1, Wall 재현과 겹쳐 돌았으므로 이 구간의 Wall 재현 속도는 처리량 근거로 쓰지 않음): 12/20(−25%p, p=0.125), 1-step 상대 오차 2.4
+- 17:20Z runner를 E2에서도 쓰도록 job별 planner 덮어쓰기(`planner`: num_samples, topk, opt_steps; `make_manifest.py custom --planner ... --ptag ...`)를 추가. 기본값은 그대로라 E1 manifest는 바뀌지 않는다(cmp 확인). iteration-0 모집단 캐시는 N이 다르면 따로 둔다. smoke 1 episode(N=64, top-8, 3 iteration)로 GPU 1에서 확인 후 결과 삭제
+  - 함께 고침: custom manifest에서 none에 k가 붙던 문제(none은 항상 k=0)
+- 18:09Z 조정자: GPU 0이 비었으니 두 GPU를 써도 된다 → 곧이어 정정(이 지시가 우선): TD-MPC2 E1이 GPU 0을 독점(MPS, 약 12시간)하므로 GPU 0에서는 새 DINO-WM 작업을 시작하지 말고, 남은 E0는 GPU 1에서, 처리량은 GPU 1 단독 측정값으로 보고할 것
+  - 확인: 내 GPU 프로세스는 GPU 1의 재현 runner 하나뿐이다(`CUDA_VISIBLE_DEVICES=1`, `DINOWM_GPU=1`). GPU 0 대기열은 16:28Z에 끝났고 GPU 0에 내 작업은 없다. 남은 E0(PushT 재현 뒤 예측 오차 계산)도 GPU 1 대기열 안에 있다
+- 19:20Z PushT 재현 완료(GPU 1, 250 run, 2.45시간, 102 ep/h). none 37/50, det 28/50(+18%p [4, 32], McNemar 12/3 p=0.035), ind 37/50, sh-iter 37/50(감소율 1.00), sh-fixed 42/50. 파일럿과 episode 일치율 90~96%. 사후 진단(ΔJ 0단계 +0.299 / 고른 후보 −0.103, sd 비 0.259 → 0.839, ρ(J_det, J_none) 0.982)이 파일럿과 같다
+- 19:20~19:56Z k = 2~7 × 6변형 예측 오차(`calib.py`, GPU 1): PushT 896초, Wall 326초, PointMaze 898초. PushT k=4 데이터셋 1-step 상대 오차 det 0.0056, 확률적 0.0065~0.0069(파일럿 0.0056 대 0.0066~0.0070), 계획 시점 det 0.065 / 5-step 0.320(파일럿 0.0652 / 0.320)
+- 19:30Z runner에 `--ks`(양자화 칸의 k 거르기) 추가, `E1_queue.sh`에 `TASKS`·`KS` 옵션 설명. 두 GPU로 E1을 나눌 때 쓴다(none/nonealt는 job lock으로 한 번만)
+- 19:56Z GPU 1 대기열 끝(`G1Q ALL_DONE`). 내 GPU 프로세스·tmux 세션 없음, stale lock 없음
+  - 운영 실수: 사용 기록 스크립트를 끄려고 `pkill -f "[g]pu_occupancy.sh"`를 썼는데, 같은 ssh 명령줄의 pgrep 패턴에 그 문자열이 들어 있어 내 ssh 셸도 같이 끝났다(exit 255). 다른 작업(TD-MPC2 E1 tmux)은 영향 없음을 확인. 기록 스크립트는 의도대로 멈췄다
+- 19:58Z 결과·로그를 맥북 `results/E0_dinowm/`로 회수(4.6MB). 맥북 code/와 서버 code/가 checksum으로 같음을 확인. 서버에 남긴 것: `~/pmx/A/dinowm_main`(111MB: 모집단 배열 `pops/`, 쌍 캐시, 결과), PointMaze zip `~/pmx/data/dinowm/pm_dl/point_maze.zip`(0.7GB, 지워도 됨), 여유 디스크 293GB
+- 코드 변경 이력(결과에 영향 없음): runner의 `t_block_*` 시각·`cuda_device_order` 기록(15:11Z, 15:53Z 이후 job부터), planner 덮어쓰기(17:20Z), `--ks`(19:30Z). 앞선 결과 파일을 만든 코드와 계산 경로는 같다(E1 manifest와 기본 planner 값 불변, GPU·E 교차 비트 일치로 확인)

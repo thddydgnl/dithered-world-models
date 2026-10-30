@@ -1,0 +1,48 @@
+{
+ "name": "E0_ksel_pm",
+ "config": {
+  "split": "held",
+  "ep0": 0,
+  "ep1": 20,
+  "ranges": "main",
+  "diag": true,
+  "tasks": {
+   "pointmaze": {
+    "E": 1,
+    "ks": [
+     2
+    ],
+    "vars": [
+     "det"
+    ],
+    "chunk": 10
+   }
+  }
+ },
+ "jobs": [
+  {
+   "id": "held_det_k2_e000-010",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "det",
+   "k": 2,
+   "ep0": 0,
+   "ep1": 10,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "held_det_k2_e010-020",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "det",
+   "k": 2,
+   "ep0": 10,
+   "ep1": 20,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  }
+ ]
+}

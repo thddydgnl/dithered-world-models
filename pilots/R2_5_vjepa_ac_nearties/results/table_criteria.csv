@@ -1,0 +1,27 @@
+comparison,criterion,alpha,value,ok
+-,S1 A,0.05,removed 0.576 delta 0.1378,False
+-,S1 B,0.05,removed 0.579 delta 0.1009,False
+-,S1 A,0.1,removed 0.706 delta 0.2955,False
+-,S1 B,0.1,removed 0.722 delta 0.1921,False
+-,S1 A,0.2,removed 0.853 delta 0.4124,False
+-,S1 B,0.2,removed 0.860 delta 0.2799,False
+primary_Dfix,S2 rd ratio B/ctrl,0.05,"0.853 CI90 [0.797, 0.909]",False
+primary_Dfix,S2 flip ratio B/ctrl,0.05,"0.846 CI90 [0.73, 0.967]",False
+primary_Dfix,S2 rd ratio B/ctrl,0.1,"1.060 CI90 [0.985, 1.139]",False
+primary_Dfix,S2 flip ratio B/ctrl,0.1,"0.935 CI90 [0.858, 1.023]",False
+primary_Dfix,S2 rd ratio B/ctrl,0.2,"1.045 CI90 [0.994, 1.101]",False
+primary_Dfix,S2 flip ratio B/ctrl,0.2,"0.952 CI90 [0.902, 1.0]",False
+primary_Dfix,S3 Q1/Q4 B vs ctrl,0.05,7.308 vs 5.271,True
+primary_Dfix,S3 Q1/Q4 B vs ctrl,0.1,2.633 vs 2.385,True
+primary_Dfix,S3 Q1/Q4 B vs ctrl,0.2,1.667 vs 1.424,False
+primary_Dfix,verdict,-,없음,-
+secondary_Dindep,S2 rd ratio B/ctrl,0.05,"0.383 CI90 [0.353, 0.417]",False
+secondary_Dindep,S2 flip ratio B/ctrl,0.05,"0.483 CI90 [0.418, 0.548]",False
+secondary_Dindep,S2 rd ratio B/ctrl,0.1,"0.587 CI90 [0.546, 0.63]",False
+secondary_Dindep,S2 flip ratio B/ctrl,0.1,"0.669 CI90 [0.611, 0.732]",False
+secondary_Dindep,S2 rd ratio B/ctrl,0.2,"0.687 CI90 [0.652, 0.724]",False
+secondary_Dindep,S2 flip ratio B/ctrl,0.2,"0.824 CI90 [0.777, 0.874]",False
+secondary_Dindep,S3 Q1/Q4 B vs ctrl,0.05,7.308 vs 2.647,True
+secondary_Dindep,S3 Q1/Q4 B vs ctrl,0.1,2.633 vs 1.324,True
+secondary_Dindep,S3 Q1/Q4 B vs ctrl,0.2,1.667 vs 1.115,False
+secondary_Dindep,verdict,-,없음,-

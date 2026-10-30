@@ -1,0 +1,6 @@
+Episode length: 500
+Discount factor: 0.99
+cheetah-run k=3: det: e1 0.3048 e3 0.9919 er 0.2164 | ind: e1 0.7745 e3 1.7163 er 0.5942 | shfwd: e1 0.7929 e3 1.8511 er 0.6721 | shstep: e1 0.7808 e3 1.9482 er 0.8066 | shep: e1 0.7808 e3 1.9482 er 0.8066
+cheetah-run k=4: det: e1 0.1201 e3 0.5395 er 0.2273 | ind: e1 0.2334 e3 0.6186 er 0.3975 | shfwd: e1 0.2380 e3 0.5988 er 0.4144 | shstep: e1 0.2415 e3 0.7170 er 0.5888 | shep: e1 0.2415 e3 0.7170 er 0.5888
+cheetah-run ranges R2-8 vs this pod: dyn0 hi 9.427/9.427, dyn1 hi 8.408/8.408, rew0 hi 7.554/7.554, rew1 hi 9.347/9.347
+PREP cheetah-run done in 13s

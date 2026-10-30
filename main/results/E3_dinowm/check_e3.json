@@ -1,0 +1,393 @@
+{
+ "cells": {
+  "pointmaze_k3": {
+   "task": "pointmaze",
+   "k": 3,
+   "role": "primary",
+   "vars": [
+    "indplan",
+    "shunit",
+    "shgroup",
+    "shlayer"
+   ],
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T18:12:11Z",
+   "t_end": "2026-10-23T19:57:05Z",
+   "gpu_h": 1.745361870262358,
+   "n_indplan": 100,
+   "hook_calls_indplan": [
+    390
+   ],
+   "s_per_ep_indplan": 17.023065354824066,
+   "n_shunit": 100,
+   "hook_calls_shunit": [
+    390
+   ],
+   "s_per_ep_shunit": 15.289115455150604,
+   "n_shgroup": 100,
+   "hook_calls_shgroup": [
+    390
+   ],
+   "s_per_ep_shgroup": 15.269225125312806,
+   "n_shlayer": 100,
+   "hook_calls_shlayer": [
+    390
+   ],
+   "s_per_ep_shlayer": 15.251621394157409
+  },
+  "pusht_k4": {
+   "task": "pusht",
+   "k": 4,
+   "role": "primary",
+   "vars": [
+    "indplan",
+    "shunit",
+    "shgroup",
+    "shlayer"
+   ],
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T13:55:32Z",
+   "t_end": "2026-10-23T18:12:03Z",
+   "gpu_h": 4.271628982093599,
+   "n_indplan": 100,
+   "hook_calls_indplan": [
+    990
+   ],
+   "s_per_ep_indplan": 41.92342539310455,
+   "n_shunit": 100,
+   "hook_calls_shunit": [
+    990
+   ],
+   "s_per_ep_shunit": 37.33345739841461,
+   "n_shgroup": 100,
+   "hook_calls_shgroup": [
+    990
+   ],
+   "s_per_ep_shgroup": 37.2807407951355,
+   "n_shlayer": 100,
+   "hook_calls_shlayer": [
+    990
+   ],
+   "s_per_ep_shlayer": 37.24101976871491
+  },
+  "pusht_k3": {
+   "task": "pusht",
+   "k": 3,
+   "role": "extra",
+   "vars": [
+    "indplan"
+   ],
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T19:57:14Z",
+   "t_end": "2026-10-23T21:07:11Z",
+   "gpu_h": 1.1647318131393856,
+   "n_indplan": 100,
+   "hook_calls_indplan": [
+    990
+   ],
+   "s_per_ep_indplan": 41.930345273017885
+  },
+  "wall_k5": {
+   "task": "wall",
+   "k": 5,
+   "role": "primary",
+   "vars": [
+    "indplan",
+    "shunit",
+    "shgroup",
+    "shlayer"
+   ],
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T21:07:19Z",
+   "t_end": "2026-10-23T21:45:03Z",
+   "gpu_h": 0.6250273903210958,
+   "n_indplan": 100,
+   "hook_calls_indplan": [
+    390
+   ],
+   "s_per_ep_indplan": 6.261925671100617,
+   "n_shunit": 100,
+   "hook_calls_shunit": [
+    390
+   ],
+   "s_per_ep_shunit": 5.417521903514862,
+   "n_shgroup": 100,
+   "hook_calls_shgroup": [
+    390
+   ],
+   "s_per_ep_shgroup": 5.414682350158691,
+   "n_shlayer": 100,
+   "hook_calls_shlayer": [
+    390
+   ],
+   "s_per_ep_shlayer": 5.406856126785279
+  },
+  "wall_k3": {
+   "task": "wall",
+   "k": 3,
+   "role": "exploratory",
+   "vars": [
+    "indplan",
+    "shunit",
+    "shgroup",
+    "shlayer"
+   ],
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T21:45:10Z",
+   "t_end": "2026-10-23T22:22:50Z",
+   "gpu_h": 0.6241931433147855,
+   "n_indplan": 100,
+   "hook_calls_indplan": [
+    390
+   ],
+   "s_per_ep_indplan": 6.254397661685943,
+   "n_shunit": 100,
+   "hook_calls_shunit": [
+    390
+   ],
+   "s_per_ep_shunit": 5.411002206802368,
+   "n_shgroup": 100,
+   "hook_calls_shgroup": [
+    390
+   ],
+   "s_per_ep_shgroup": 5.406841340065003,
+   "n_shlayer": 100,
+   "hook_calls_shlayer": [
+    390
+   ],
+   "s_per_ep_shlayer": 5.398711950778961
+  }
+ },
+ "e1_links": {
+  "pointmaze_k3": {
+   "n_none": 100,
+   "gpu_none": [
+    "1"
+   ],
+   "n_det": 100,
+   "gpu_det": [
+    "1"
+   ],
+   "n_ind": 100,
+   "gpu_ind": [
+    "1"
+   ],
+   "n_shiter": 100,
+   "gpu_shiter": [
+    "1"
+   ],
+   "n_shstep": 100,
+   "gpu_shstep": [
+    "1"
+   ],
+   "n_e3_episodes": 400,
+   "same_plan_seed_and_E": 400,
+   "it0_rand_J_none_compared": 400,
+   "same_it0_rand_J_none": 400,
+   "it0_arrays_compared": 400,
+   "it0_J_none_max_abs_diff": 0.0
+  },
+  "pusht_k4": {
+   "n_none": 100,
+   "gpu_none": [
+    "0"
+   ],
+   "n_det": 100,
+   "gpu_det": [
+    "0"
+   ],
+   "n_ind": 100,
+   "gpu_ind": [
+    "0"
+   ],
+   "n_shiter": 100,
+   "gpu_shiter": [
+    "0"
+   ],
+   "n_shstep": 100,
+   "gpu_shstep": [
+    "0"
+   ],
+   "n_e3_episodes": 400,
+   "same_plan_seed_and_E": 400,
+   "it0_rand_J_none_compared": 400,
+   "same_it0_rand_J_none": 400,
+   "it0_arrays_compared": 400,
+   "it0_J_none_max_abs_diff": 0.0
+  },
+  "pusht_k3": {
+   "n_none": 100,
+   "gpu_none": [
+    "0"
+   ],
+   "n_det": 100,
+   "gpu_det": [
+    "0"
+   ],
+   "n_ind": 100,
+   "gpu_ind": [
+    "0"
+   ],
+   "n_shiter": 100,
+   "gpu_shiter": [
+    "0"
+   ],
+   "n_shstep": 100,
+   "gpu_shstep": [
+    "0"
+   ],
+   "n_e3_episodes": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_rand_J_none_compared": 100,
+   "same_it0_rand_J_none": 100,
+   "it0_arrays_compared": 100,
+   "it0_J_none_max_abs_diff": 0.0
+  },
+  "wall_k5": {
+   "n_none": 100,
+   "gpu_none": [
+    "1"
+   ],
+   "n_det": 100,
+   "gpu_det": [
+    "1"
+   ],
+   "n_ind": 100,
+   "gpu_ind": [
+    "1"
+   ],
+   "n_shiter": 100,
+   "gpu_shiter": [
+    "1"
+   ],
+   "n_shstep": 100,
+   "gpu_shstep": [
+    "1"
+   ],
+   "n_e3_episodes": 400,
+   "same_plan_seed_and_E": 400,
+   "it0_rand_J_none_compared": 400,
+   "same_it0_rand_J_none": 400,
+   "it0_arrays_compared": 400,
+   "it0_J_none_max_abs_diff": 0.0
+  },
+  "wall_k3": {
+   "n_none": 100,
+   "gpu_none": [
+    "1"
+   ],
+   "n_det": 100,
+   "gpu_det": [
+    "1"
+   ],
+   "n_ind": 100,
+   "gpu_ind": [
+    "1"
+   ],
+   "n_shiter": 100,
+   "gpu_shiter": [
+    "1"
+   ],
+   "n_shstep": 100,
+   "gpu_shstep": [
+    "1"
+   ],
+   "n_e3_episodes": 400,
+   "same_plan_seed_and_E": 400,
+   "it0_rand_J_none_compared": 400,
+   "same_it0_rand_J_none": 400,
+   "it0_arrays_compared": 400,
+   "it0_J_none_max_abs_diff": 0.0
+  }
+ },
+ "manifest": {
+  "name": "E3_dinowm",
+  "n_jobs": 130,
+  "cells": [
+   {
+    "task": "pusht",
+    "k": 4,
+    "vars": [
+     "indplan",
+     "shunit",
+     "shgroup",
+     "shlayer"
+    ],
+    "role": "primary"
+   },
+   {
+    "task": "pointmaze",
+    "k": 3,
+    "vars": [
+     "indplan",
+     "shunit",
+     "shgroup",
+     "shlayer"
+    ],
+    "role": "primary"
+   },
+   {
+    "task": "pusht",
+    "k": 3,
+    "vars": [
+     "indplan"
+    ],
+    "role": "extra"
+   },
+   {
+    "task": "wall",
+    "k": 5,
+    "vars": [
+     "indplan",
+     "shunit",
+     "shgroup",
+     "shlayer"
+    ],
+    "role": "primary"
+   },
+   {
+    "task": "wall",
+    "k": 3,
+    "vars": [
+     "indplan",
+     "shunit",
+     "shgroup",
+     "shlayer"
+    ],
+    "role": "exploratory"
+   }
+  ]
+ },
+ "problems": [],
+ "n_problems": 0
+}

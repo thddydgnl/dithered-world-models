@@ -1,0 +1,524 @@
++ UV=/home/yonghwi/.local/bin/uv
++ export UV_PYTHON_INSTALL_DIR=/home/yonghwi/pmx/envs/python UV_PYTHON_PREFERENCE=only-managed
++ UV_PYTHON_INSTALL_DIR=/home/yonghwi/pmx/envs/python
++ UV_PYTHON_PREFERENCE=only-managed
++ W=/home/yonghwi/pmx/A/tdmpc2_main
++ V=/home/yonghwi/pmx/envs/a-tdmpc2
++ TDMPC2_COMMIT=332f19e4aba4bffe2dc736f45ea7f7bdc585903a
++ mkdir -p /home/yonghwi/pmx/A/tdmpc2_main/ckpt /home/yonghwi/pmx/A/tdmpc2_main/out /home/yonghwi/pmx/A/logs
++ rm -f /home/yonghwi/pmx/A/tdmpc2_main/SETUP_DONE /home/yonghwi/pmx/A/tdmpc2_main/SETUP_FAILED
++ /home/yonghwi/.local/bin/uv python install 3.11
+Downloading cpython-3.11.17-linux-x86_64-gnu (download) (29.4MiB)
+ Downloaded cpython-3.11.17-linux-x86_64-gnu (download)
+Installed Python 3.11.17 in 3.59s
+ + cpython-3.11.17-linux-x86_64-gnu
+warning: `/home/yonghwi/.local/bin` is not on your PATH. To use installed Python executables, run `export PATH="/home/yonghwi/.local/bin:$PATH"` or `uv python update-shell`.
+warning: Failed to install executable for cpython-3.11.17-linux-x86_64-gnu
+  cause: Executable already exists at `/home/yonghwi/.local/bin/python3.11` but
+         is not managed by uv; use `--force` to replace it
++ '[' -x /home/yonghwi/pmx/envs/a-tdmpc2/bin/python ']'
++ /home/yonghwi/.local/bin/uv venv --python 3.11 /home/yonghwi/pmx/envs/a-tdmpc2
+Using CPython 3.11.17
+Creating virtual environment at: pmx/envs/a-tdmpc2
+Activate with: source pmx/envs/a-tdmpc2/bin/activate
++ /home/yonghwi/.local/bin/uv pip install --python /home/yonghwi/pmx/envs/a-tdmpc2/bin/python torch==2.7.1 tensordict==0.8.3 dm-control==1.0.16 mujoco==3.1.2 numpy==1.24.4 gymnasium==0.29.1 hydra-core==1.3.2 omegaconf==2.3.0 termcolor tqdm pandas==2.3.3 scipy==1.15.3 matplotlib==3.10.9
+Using Python 3.11.17 environment at: pmx/envs/a-tdmpc2
+Resolved 71 packages in 1.36s
+   Building antlr4-python3-runtime==4.9.3
+Downloading kiwisolver (1.4MiB)
+Downloading fonttools (5.2MiB)
+Downloading networkx (2.0MiB)
+Downloading numpy (16.5MiB)
+Downloading triton (148.5MiB)
+Downloading mujoco (5.1MiB)
+Downloading dm-control (52.9MiB)
+Downloading lxml (5.0MiB)
+Downloading pandas (12.2MiB)
+Downloading scipy (35.9MiB)
+Downloading torch (783.1MiB)
+Downloading pillow (6.8MiB)
+Downloading matplotlib (8.4MiB)
+Downloading labmaze (4.7MiB)
+Downloading pyopengl (3.0MiB)
+      Built antlr4-python3-runtime==4.9.3
+ Downloaded kiwisolver
+ Downloaded networkx
+ Downloaded pyopengl
+ Downloaded labmaze
+ Downloaded lxml
+ Downloaded fonttools
+ Downloaded mujoco
+ Downloaded pillow
+ Downloaded matplotlib
+ Downloaded pandas
+ Downloaded numpy
+ Downloaded scipy
+ Downloaded dm-control
+ Downloaded triton
+ Downloaded torch
+Prepared 38 packages in 14.03s
+Installed 71 packages in 303ms
+ + absl-py==2.5.1
+ + antlr4-python3-runtime==4.9.3
+ + attrs==26.1.0
+ + certifi==2026.10.19
+ + charset-normalizer==3.5.2
+ + cloudpickle==3.1.2
+ + contourpy==1.3.2
+ + cycler==0.12.1
+ + dm-control==1.0.16
+ + dm-env==1.6
+ + dm-tree==0.1.10
+ + etils==1.14.0
+ + farama-notifications==0.0.6
+ + filelock==4.2.4
+ + fonttools==4.67.0
+ + fsspec==2026.9.0
+ + glfw==2.11.0
+ + gymnasium==0.29.1
+ + hydra-core==1.3.2
+ + idna==3.20
+ + importlib-metadata==9.0.1
+ + jinja2==3.1.6
+ + kiwisolver==1.5.1
+ + labmaze==1.0.6
+ + lxml==6.1.3
+ + markupsafe==3.0.4
+ + matplotlib==3.10.9
+ + mpmath==1.3.0
+ + mujoco==3.1.2
+ + networkx==3.6.1
+ + numpy==1.24.4
+ + nvidia-cublas-cu12==12.6.4.1
+ + nvidia-cuda-cupti-cu12==12.6.80
+ + nvidia-cuda-nvrtc-cu12==12.6.77
+ + nvidia-cuda-runtime-cu12==12.6.77
+ + nvidia-cudnn-cu12==9.5.1.17
+ + nvidia-cufft-cu12==11.3.0.4
+ + nvidia-cufile-cu12==1.11.1.6
+ + nvidia-curand-cu12==10.3.7.77
+ + nvidia-cusolver-cu12==11.7.1.2
+ + nvidia-cusparse-cu12==12.5.4.2
+ + nvidia-cusparselt-cu12==0.6.3
+ + nvidia-nccl-cu12==2.26.2
+ + nvidia-nvjitlink-cu12==12.6.85
+ + nvidia-nvtx-cu12==12.6.77
+ + omegaconf==2.3.0
+ + orjson==3.13.0
+ + packaging==26.3
+ + pandas==2.3.3
+ + pillow==13.0.0
+ + protobuf==7.36.2
+ + pyopengl==3.1.10
+ + pyparsing==3.3.3
+ + python-dateutil==2.9.0.post0
+ + pytz==2026.5
+ + pyyaml==6.0.3
+ + requests==2.34.2
+ + scipy==1.15.3
+ + setuptools==84.2.1
+ + six==1.17.0
+ + sympy==1.14.0
+ + tensordict==0.8.3
+ + termcolor==3.3.0
+ + torch==2.7.1
+ + tqdm==4.70.1
+ + triton==3.3.1
+ + typing-extensions==4.16.0
+ + tzdata==2026.5
+ + urllib3==2.8.0
+ + wrapt==2.5.1
+ + zipp==4.1.1
++ MUJOCO_GL=disable
++ /home/yonghwi/pmx/envs/a-tdmpc2/bin/python -c 'import torch, tensordict, dm_control, mujoco, numpy; print('\''torch'\'', torch.__version__, torch.cuda.is_available(), '\''td'\'', tensordict.__version__, '\''mujoco'\'', mujoco.__version__, '\''numpy'\'', numpy.__version__)'
+torch 2.7.1+cu126 True td 0.8.3 mujoco 3.1.2 numpy 1.24.4
++ /home/yonghwi/.local/bin/uv pip freeze --python /home/yonghwi/pmx/envs/a-tdmpc2/bin/python
+Using Python 3.11.17 environment at: pmx/envs/a-tdmpc2
++ cd /home/yonghwi/pmx/A/tdmpc2_main
++ '[' -d tdmpc2 ']'
++ git clone https://github.com/nicklashansen/tdmpc2.git
+Cloning into 'tdmpc2'...
++ git -C tdmpc2 checkout -q 332f19e4aba4bffe2dc736f45ea7f7bdc585903a
++ git -C tdmpc2 log -1 '--format=tdmpc2 %H %cd'
+tdmpc2 332f19e4aba4bffe2dc736f45ea7f7bdc585903a Tue Oct 20 16:32:30 2026 -0700
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename metaworld/mw-push
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-push-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-1.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-push
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-push-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-2.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-push
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-push-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-push-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename metaworld/mw-pick-place
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-pick-place-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-1.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-pick-place
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-pick-place-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-2.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-pick-place
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-pick-place-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-pick-place-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename metaworld/mw-door-open
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-door-open-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-1.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-door-open
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-door-open-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-2.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-door-open
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-door-open-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-door-open-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename metaworld/mw-drawer-open
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-drawer-open-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-1.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-drawer-open
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-drawer-open-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-2.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-drawer-open
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-drawer-open-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-drawer-open-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename metaworld/mw-button-press-topdown
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-button-press-topdown-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-1.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-button-press-topdown
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-button-press-topdown-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-2.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-button-press-topdown
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-button-press-topdown-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-button-press-topdown-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename metaworld/mw-peg-insert-side
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-peg-insert-side-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-1.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-peg-insert-side
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-peg-insert-side-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-2.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-peg-insert-side
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-peg-insert-side-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-peg-insert-side-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename metaworld/mw-window-open
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-window-open-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-1.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-window-open
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-window-open-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-2.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-window-open
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-window-open-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-window-open-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename metaworld/mw-sweep-into
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-sweep-into-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-1.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-sweep-into
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-sweep-into-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-2.pt ']'
++ for S in 1 2 3
+++ basename metaworld/mw-sweep-into
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/metaworld/mw-sweep-into-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/mw-sweep-into-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename dmcontrol/cheetah-run
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/cheetah-run-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-1.pt ']'
++ for S in 1 2 3
+++ basename dmcontrol/cheetah-run
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/cheetah-run-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-2.pt ']'
++ for S in 1 2 3
+++ basename dmcontrol/cheetah-run
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/cheetah-run-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/cheetah-run-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename dmcontrol/walker-walk
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/walker-walk-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-1.pt ']'
++ for S in 1 2 3
+++ basename dmcontrol/walker-walk
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/walker-walk-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-2.pt ']'
++ for S in 1 2 3
+++ basename dmcontrol/walker-walk
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/walker-walk-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/walker-walk-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename dmcontrol/quadruped-walk
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/quadruped-walk-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-1.pt ']'
++ for S in 1 2 3
+++ basename dmcontrol/quadruped-walk
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/quadruped-walk-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-2.pt ']'
++ for S in 1 2 3
+++ basename dmcontrol/quadruped-walk
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/quadruped-walk-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/quadruped-walk-3.pt ']'
++ for T in metaworld/mw-push metaworld/mw-pick-place metaworld/mw-door-open metaworld/mw-drawer-open metaworld/mw-button-press-topdown metaworld/mw-peg-insert-side metaworld/mw-window-open metaworld/mw-sweep-into dmcontrol/cheetah-run dmcontrol/walker-walk dmcontrol/quadruped-walk dmcontrol/finger-turn-hard
++ for S in 1 2 3
+++ basename dmcontrol/finger-turn-hard
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-1.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-1.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-1.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/finger-turn-hard-1.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-1.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-1.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-1.pt ']'
++ for S in 1 2 3
+++ basename dmcontrol/finger-turn-hard
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-2.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-2.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-2.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/finger-turn-hard-2.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-2.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-2.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-2.pt ']'
++ for S in 1 2 3
+++ basename dmcontrol/finger-turn-hard
++ F=/home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-3.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-3.pt ']'
++ curl -fsSL --retry 3 -o /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-3.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/dmcontrol/finger-turn-hard-3.pt
++ mv /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-3.pt.part /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-3.pt
++ break
++ '[' -s /home/yonghwi/pmx/A/tdmpc2_main/ckpt/finger-turn-hard-3.pt ']'
++ ls -la /home/yonghwi/pmx/A/tdmpc2_main/ckpt
+total 1107032
+drwxrwxr-x 2 yonghwi yonghwi     4096 Oct 21 13:17 .
+drwxrwxr-x 6 yonghwi yonghwi     4096 Oct 21 13:15 ..
+-rw-rw-r-- 1 yonghwi yonghwi 31499938 Oct 21 13:16 cheetah-run-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31499938 Oct 21 13:16 cheetah-run-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31499938 Oct 21 13:16 cheetah-run-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31380450 Oct 21 13:16 finger-turn-hard-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31380450 Oct 21 13:17 finger-turn-hard-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31380450 Oct 21 13:17 finger-turn-hard-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31466018 Oct 21 13:15 mw-button-press-topdown-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31466018 Oct 21 13:15 mw-button-press-topdown-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465954 Oct 21 13:15 mw-button-press-topdown-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465250 Oct 21 13:15 mw-door-open-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465250 Oct 21 13:15 mw-door-open-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465186 Oct 21 13:15 mw-door-open-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465378 Oct 21 13:15 mw-drawer-open-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465378 Oct 21 13:15 mw-drawer-open-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465314 Oct 21 13:15 mw-drawer-open-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465634 Oct 21 13:15 mw-peg-insert-side-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465634 Oct 21 13:16 mw-peg-insert-side-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465570 Oct 21 13:16 mw-peg-insert-side-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465314 Oct 21 13:15 mw-pick-place-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465314 Oct 21 13:15 mw-pick-place-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465250 Oct 21 13:15 mw-pick-place-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31464930 Oct 21 13:15 mw-push-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31464930 Oct 21 13:15 mw-push-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31464866 Oct 21 13:15 mw-push-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465314 Oct 21 13:16 mw-sweep-into-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465314 Oct 21 13:16 mw-sweep-into-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465250 Oct 21 13:16 mw-sweep-into-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465378 Oct 21 13:16 mw-window-open-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465378 Oct 21 13:16 mw-window-open-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31465314 Oct 21 13:16 mw-window-open-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31734690 Oct 21 13:16 quadruped-walk-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31734690 Oct 21 13:16 quadruped-walk-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31734690 Oct 21 13:16 quadruped-walk-3.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31507106 Oct 21 13:16 walker-walk-1.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31507106 Oct 21 13:16 walker-walk-2.pt
+-rw-rw-r-- 1 yonghwi yonghwi 31507170 Oct 21 13:16 walker-walk-3.pt
++ cd /home/yonghwi/pmx/A/tdmpc2_main/ckpt
++ sha256sum cheetah-run-1.pt cheetah-run-2.pt cheetah-run-3.pt finger-turn-hard-1.pt finger-turn-hard-2.pt finger-turn-hard-3.pt mw-button-press-topdown-1.pt mw-button-press-topdown-2.pt mw-button-press-topdown-3.pt mw-door-open-1.pt mw-door-open-2.pt mw-door-open-3.pt mw-drawer-open-1.pt mw-drawer-open-2.pt mw-drawer-open-3.pt mw-peg-insert-side-1.pt mw-peg-insert-side-2.pt mw-peg-insert-side-3.pt mw-pick-place-1.pt mw-pick-place-2.pt mw-pick-place-3.pt mw-push-1.pt mw-push-2.pt mw-push-3.pt mw-sweep-into-1.pt mw-sweep-into-2.pt mw-sweep-into-3.pt mw-window-open-1.pt mw-window-open-2.pt mw-window-open-3.pt quadruped-walk-1.pt quadruped-walk-2.pt quadruped-walk-3.pt walker-walk-1.pt walker-walk-2.pt walker-walk-3.pt
++ touch /home/yonghwi/pmx/A/tdmpc2_main/SETUP_DONE
++ echo SETUP_ALL_DONE
+SETUP_ALL_DONE

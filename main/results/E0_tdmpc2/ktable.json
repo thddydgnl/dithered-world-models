@@ -1,0 +1,110 @@
+{
+ "mw-button-press-topdown": {
+  "primary": 3,
+  "cells": [
+   2,
+   3,
+   4
+  ],
+  "rule": "drop>=20"
+ },
+ "mw-door-open": {
+  "primary": 4,
+  "cells": [
+   3,
+   4,
+   5
+  ],
+  "rule": "drop>=20"
+ },
+ "mw-drawer-open": {
+  "primary": 3,
+  "cells": [
+   2,
+   3,
+   4
+  ],
+  "rule": "fallback_smallest"
+ },
+ "mw-peg-insert-side": {
+  "primary": 4,
+  "cells": [
+   3,
+   4,
+   5
+  ],
+  "rule": "drop>=20"
+ },
+ "mw-pick-place": {
+  "primary": 3,
+  "cells": [
+   2,
+   3,
+   4
+  ],
+  "rule": "drop>=20"
+ },
+ "mw-push": {
+  "primary": 3,
+  "cells": [
+   2,
+   3,
+   4
+  ],
+  "rule": "drop>=20"
+ },
+ "mw-sweep-into": {
+  "primary": 3,
+  "cells": [
+   2,
+   3,
+   4
+  ],
+  "rule": "drop>=20"
+ },
+ "mw-window-open": {
+  "primary": 4,
+  "cells": [
+   3,
+   4,
+   5
+  ],
+  "rule": "drop>=20"
+ },
+ "cheetah-run": {
+  "primary": 5,
+  "cells": [
+   4,
+   5,
+   6
+  ],
+  "rule": "drop>=20"
+ },
+ "finger-turn-hard": {
+  "primary": 4,
+  "cells": [
+   3,
+   4,
+   5
+  ],
+  "rule": "drop>=20"
+ },
+ "quadruped-walk": {
+  "primary": 3,
+  "cells": [
+   2,
+   3,
+   4
+  ],
+  "rule": "drop>=20"
+ },
+ "walker-walk": {
+  "primary": 3,
+  "cells": [
+   2,
+   3,
+   4
+  ],
+  "rule": "drop>=20"
+ }
+}

@@ -1,0 +1,41 @@
+Using cache found in /root/.cache/torch/hub/facebookresearch_dinov2_main
+num_action_repeat: 1
+num_proprio_repeat: 1
+proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(2, 10, kernel_size=(1,), stride=(1,))
+)
+action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+)
+proprio_dim: 10, after repeat: 10
+action_dim: 10, after repeat: 10
+emb_dim: 404
+Model emb_dim:  404
+Loading wall dataset...
+Loaded 1920 rollouts
+wall held none:0 ep 0 success True margin 0.417 (1.9s/ep, total 10s)
+wall held none:0 ep 1 success False margin 1.224 (1.9s/ep, total 10s)
+wall held none:0 ep 2 success True margin 0.394 (1.9s/ep, total 10s)
+wall held none:0 ep 3 success False margin 1.009 (1.9s/ep, total 10s)
+wall held none:0 ep 4 success False margin 1.489 (1.9s/ep, total 10s)
+wall held det:4 ep 0 success True margin 0.084 (2.5s/ep, total 23s)
+wall held det:4 ep 1 success False margin 1.168 (2.5s/ep, total 23s)
+wall held det:4 ep 2 success True margin 0.695 (2.5s/ep, total 23s)
+wall held det:4 ep 3 success True margin 0.823 (2.5s/ep, total 23s)
+wall held det:4 ep 4 success True margin 0.948 (2.5s/ep, total 23s)
+wall held ind:4 ep 0 success True margin 0.460 (2.4s/ep, total 35s)
+wall held ind:4 ep 1 success False margin 1.340 (2.4s/ep, total 35s)
+wall held ind:4 ep 2 success False margin 1.145 (2.4s/ep, total 35s)
+wall held ind:4 ep 3 success False margin 1.282 (2.4s/ep, total 35s)
+wall held ind:4 ep 4 success True margin 0.947 (2.4s/ep, total 35s)
+wall held shiter:4 ep 0 success True margin 0.608 (2.4s/ep, total 48s)
+wall held shiter:4 ep 1 success False margin 1.281 (2.4s/ep, total 48s)
+wall held shiter:4 ep 2 success True margin 0.713 (2.4s/ep, total 48s)
+wall held shiter:4 ep 3 success False margin 1.227 (2.4s/ep, total 48s)
+wall held shiter:4 ep 4 success False margin 1.186 (2.4s/ep, total 48s)
+wall held shfixed:4 ep 0 success True margin 0.620 (2.2s/ep, total 59s)
+wall held shfixed:4 ep 1 success False margin 1.218 (2.2s/ep, total 59s)
+wall held shfixed:4 ep 2 success True margin 0.479 (2.2s/ep, total 59s)
+wall held shfixed:4 ep 3 success False margin 1.344 (2.2s/ep, total 59s)
+wall held shfixed:4 ep 4 success True margin 0.942 (2.2s/ep, total 59s)
+CEM13_DONE wall held none:0,det:4,ind:4,shiter:4,shfixed:4 0-5 in 59s

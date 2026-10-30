@@ -1,0 +1,101 @@
+{
+ "name": "v5_smoke3",
+ "config": {
+  "note": "smoke split: E5 activation baselines on PointMaze k=3"
+ },
+ "jobs": [
+  {
+   "id": "smoke_det_k3_e000-001_pc",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "det",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "pc",
+   "diag": true,
+   "cell": "pointmaze_smoke",
+   "role": "smoke E5 PointMaze",
+   "baseline": "pc"
+  },
+  {
+   "id": "smoke_det_k3_e000-001_smooth",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "det",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "smooth",
+   "diag": true,
+   "cell": "pointmaze_smoke",
+   "role": "smoke E5 PointMaze",
+   "baseline": "smooth"
+  },
+  {
+   "id": "smoke_det_k3_e000-001_mse",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "det",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "mse_k3",
+   "diag": true,
+   "cell": "pointmaze_smoke",
+   "role": "smoke E5 PointMaze",
+   "baseline": "mse"
+  },
+  {
+   "id": "smoke_det_k3_e000-001_last8",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "det",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true,
+   "cell": "pointmaze_smoke",
+   "role": "smoke E5 PointMaze",
+   "baseline": "last8",
+   "qopts": {
+    "last_bits": 8
+   }
+  },
+  {
+   "id": "smoke_shiter_k3_e000-001_p999",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "p999",
+   "diag": true,
+   "cell": "pointmaze_smoke",
+   "role": "smoke E5 PointMaze",
+   "baseline": "p999"
+  },
+  {
+   "id": "smoke_shiter_k3_e000-001_smooth",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "smooth",
+   "diag": true,
+   "cell": "pointmaze_smoke",
+   "role": "smoke E5 PointMaze",
+   "baseline": "smooth"
+  }
+ ]
+}

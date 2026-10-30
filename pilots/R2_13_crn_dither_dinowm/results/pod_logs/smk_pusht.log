@@ -1,0 +1,26 @@
+Using cache found in /root/.cache/torch/hub/facebookresearch_dinov2_main
+num_action_repeat: 1
+num_proprio_repeat: 1
+proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+)
+action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+)
+proprio_dim: 10, after repeat: 10
+action_dim: 10, after repeat: 10
+emb_dim: 404
+Model emb_dim:  404
+Loaded 18685 rollouts
+Loaded 21 rollouts
+pusht held none:0 ep 0 success True margin 0.397 (14.4s/ep, total 29s)
+pusht held none:0 ep 1 success True margin 0.677 (14.4s/ep, total 29s)
+pusht held det:4 ep 0 success False margin 1.264 (16.7s/ep, total 63s)
+pusht held det:4 ep 1 success False margin 1.662 (16.7s/ep, total 63s)
+pusht held ind:4 ep 0 success True margin 0.383 (30.6s/ep, total 124s)
+pusht held ind:4 ep 1 success True margin 0.468 (30.6s/ep, total 124s)
+pusht held shiter:4 ep 0 success True margin 0.465 (35.4s/ep, total 195s)
+pusht held shiter:4 ep 1 success True margin 0.542 (35.4s/ep, total 195s)
+pusht held shfixed:4 ep 0 success True margin 0.359 (34.2s/ep, total 263s)
+pusht held shfixed:4 ep 1 success True margin 0.592 (34.2s/ep, total 263s)
+CEM13_DONE pusht held none:0,det:4,ind:4,shiter:4,shfixed:4 0-2 in 263s

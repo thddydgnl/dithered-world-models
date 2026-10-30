@@ -1,0 +1,17 @@
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-pick-place k=2: det: e1 3.1435 e3 4.7920 er 6.1820 | ind: e1 1.6450 e3 3.3159 er 1.8847 | sh: e1 1.6149 e3 2.6730 er 1.4112 | sub: e1 1.2572 e3 2.7363 er 2.2220
+mw-pick-place k=3: det: e1 0.2694 e3 1.3630 er 5.3839 | ind: e1 0.4699 e3 1.0789 er 0.3012 | sh: e1 0.4584 e3 0.9877 er 0.1339 | sub: e1 0.2448 e3 0.5880 er 0.1425
+mw-pick-place k=4: det: e1 0.0531 e3 0.1724 er 0.0465 | ind: e1 0.1036 e3 0.2539 er 0.0324 | sh: e1 0.1057 e3 0.2385 er 0.0288 | sub: e1 0.0545 e3 0.1348 er 0.0139
+mw-pick-place k=5: det: e1 0.0139 e3 0.0437 er 0.0063 | ind: e1 0.0253 e3 0.0635 er 0.0048 | sh: e1 0.0253 e3 0.0594 er 0.0045 | sub: e1 0.0130 e3 0.0327 er 0.0030
+mw-pick-place k=6: det: e1 0.0039 e3 0.0104 er 0.0010 | ind: e1 0.0065 e3 0.0166 er 0.0013 | sh: e1 0.0062 e3 0.0174 er 0.0013 | sub: e1 0.0033 e3 0.0087 er 0.0007
+mw-pick-place k=7: det: e1 0.0010 e3 0.0031 er 0.0002 | ind: e1 0.0017 e3 0.0047 er 0.0004 | sh: e1 0.0018 e3 0.0047 er 0.0003 | sub: e1 0.0010 e3 0.0029 er 0.0002
+mw-pick-place k=8: det: e1 0.0005 e3 0.0015 er 0.0001 | ind: e1 0.0006 e3 0.0019 er 0.0001 | sh: e1 0.0006 e3 0.0020 er 0.0001 | sub: e1 0.0004 e3 0.0014 er 0.0001
+mw-pick-place old conditions alpha 0.1 done (91s)
+mw-pick-place old conditions alpha 0.2 done (165s)
+mw-pick-place old conditions alpha 0.3 done (195s)
+PREP mw-pick-place done in 195s

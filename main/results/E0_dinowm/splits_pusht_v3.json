@@ -1,0 +1,8724 @@
+{
+ "task": "pusht",
+ "split": "eval6",
+ "design": "DESIGN_main v3 (2026-10-21T22:54Z)",
+ "pair_seed": 6,
+ "n": 100,
+ "episode_index": [
+  0,
+  99
+ ],
+ "env_seed": [
+  6001,
+  6100
+ ],
+ "planner_seed": [
+  4000,
+  4099
+ ],
+ "planner_seed_nonealt": [
+  4500,
+  4599
+ ],
+ "dither_salt": "eval6",
+ "segment_frames": 26,
+ "n_val_trajectories": 21,
+ "rule": "DINO-WM prepare_targets draws (uniform validation trajectory, uniform offset; rng = random.Random(6)); reject any segment sharing a frame with the held pairs (seed 3, 0-19) or the E0 smoke pairs (seed 7, 0-3); reject exact duplicates; keep drawing until a segment shares no frame with the pilot eval pairs (seed 4, 0-49), else keep the one with the fewest shared frames after 5000 draws",
+ "totals": {
+  "held": {
+   "role": "hard",
+   "pair_seed": 3,
+   "n_ref_pairs": 20,
+   "new_pairs_with_overlap": 0,
+   "total_shared_frames": 0,
+   "max_shared_frames_one_pair": 0,
+   "identical_segments": 0
+  },
+  "smoke": {
+   "role": "hard",
+   "pair_seed": 7,
+   "n_ref_pairs": 4,
+   "new_pairs_with_overlap": 0,
+   "total_shared_frames": 0,
+   "max_shared_frames_one_pair": 0,
+   "identical_segments": 0
+  },
+  "pilot_eval_R2-7_R2-13": {
+   "role": "soft",
+   "pair_seed": 4,
+   "n_ref_pairs": 50,
+   "new_pairs_with_overlap": 0,
+   "total_shared_frames": 0,
+   "max_shared_frames_one_pair": 0,
+   "identical_segments": 0
+  },
+  "R2-1_cem_eval": {
+   "role": "info",
+   "pair_seed": 2,
+   "n_ref_pairs": 50,
+   "new_pairs_with_overlap": 53,
+   "total_shared_frames": 958,
+   "max_shared_frames_one_pair": 46,
+   "identical_segments": 1
+  },
+  "R2-1_sel": {
+   "role": "info",
+   "pair_seed": 1,
+   "n_ref_pairs": 100,
+   "new_pairs_with_overlap": 81,
+   "total_shared_frames": 1877,
+   "max_shared_frames_one_pair": 51,
+   "identical_segments": 5
+  },
+  "E1_eval_v2_unused": {
+   "role": "info",
+   "pair_seed": 5,
+   "n_ref_pairs": 100,
+   "new_pairs_with_overlap": 89,
+   "total_shared_frames": 3104,
+   "max_shared_frames_one_pair": 94,
+   "identical_segments": 4
+  },
+  "within_eval6": {
+   "new_pairs_overlapping_another": 97,
+   "distinct_trajectories": 14,
+   "pairs_per_trajectory": {
+    "0": 1,
+    "2": 8,
+    "3": 9,
+    "4": 19,
+    "5": 1,
+    "8": 6,
+    "10": 4,
+    "12": 2,
+    "13": 3,
+    "14": 12,
+    "15": 1,
+    "18": 18,
+    "19": 5,
+    "20": 11
+   }
+  }
+ },
+ "pairs": [
+  {
+   "pair": 0,
+   "traj": 18,
+   "offset": 105,
+   "frames": [
+    105,
+    130
+   ],
+   "env_seed": 6001,
+   "planner_seed": 4000,
+   "planner_seed_nonealt": 4500,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     8
+    ],
+    "total_shared": 8
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     16
+    ],
+    "total_shared": 16
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     6,
+     15,
+     31,
+     33,
+     66,
+     67,
+     68,
+     70,
+     85,
+     86,
+     96
+    ],
+    "total_shared": 150
+   }
+  },
+  {
+   "pair": 1,
+   "traj": 2,
+   "offset": 124,
+   "frames": [
+    124,
+    149
+   ],
+   "env_seed": 6002,
+   "planner_seed": 4001,
+   "planner_seed_nonealt": 4501,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     65,
+     91
+    ],
+    "shared_frames": [
+     5,
+     25
+    ],
+    "total_shared": 30
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     54,
+     73,
+     76,
+     84
+    ],
+    "total_shared": 50
+   }
+  },
+  {
+   "pair": 2,
+   "traj": 18,
+   "offset": 70,
+   "frames": [
+    70,
+    95
+   ],
+   "env_seed": 6003,
+   "planner_seed": 4002,
+   "planner_seed_nonealt": 4502,
+   "sampler": {
+    "draws": 11,
+    "hard_rejections": 5,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     9
+    ],
+    "total_shared": 9
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     30,
+     45,
+     60
+    ],
+    "shared_frames": [
+     19,
+     6,
+     26
+    ],
+    "total_shared": 51
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     1
+    ],
+    "total_shared": 1
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     6,
+     31,
+     33,
+     36,
+     39,
+     46,
+     68,
+     70,
+     77,
+     89,
+     96
+    ],
+    "total_shared": 158
+   }
+  },
+  {
+   "pair": 3,
+   "traj": 2,
+   "offset": 92,
+   "frames": [
+    92,
+    117
+   ],
+   "env_seed": 6004,
+   "planner_seed": 4003,
+   "planner_seed_nonealt": 4503,
+   "sampler": {
+    "draws": 3,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     1
+    ],
+    "shared_frames": [
+     26
+    ],
+    "total_shared": 26
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     29,
+     65
+    ],
+    "shared_frames": [
+     18,
+     15
+    ],
+    "total_shared": 33
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     52,
+     54,
+     61,
+     73,
+     76
+    ],
+    "total_shared": 54
+   }
+  },
+  {
+   "pair": 4,
+   "traj": 3,
+   "offset": 5,
+   "frames": [
+    5,
+    30
+   ],
+   "env_seed": 6005,
+   "planner_seed": 4004,
+   "planner_seed_nonealt": 4504,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     49
+    ],
+    "shared_frames": [
+     24
+    ],
+    "total_shared": 24
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     39,
+     86
+    ],
+    "shared_frames": [
+     11,
+     24
+    ],
+    "total_shared": 35
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     76
+    ],
+    "shared_frames": [
+     10
+    ],
+    "total_shared": 10
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     7,
+     34,
+     59
+    ],
+    "total_shared": 61
+   }
+  },
+  {
+   "pair": 5,
+   "traj": 15,
+   "offset": 106,
+   "frames": [
+    106,
+    131
+   ],
+   "env_seed": 6006,
+   "planner_seed": 4005,
+   "planner_seed_nonealt": 4505,
+   "sampler": {
+    "draws": 3,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     63
+    ],
+    "shared_frames": [
+     24
+    ],
+    "total_shared": 24
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     83
+    ],
+    "shared_frames": [
+     8
+    ],
+    "total_shared": 8
+   },
+   "overlap_within_eval6": {
+    "pairs": [],
+    "total_shared": 0
+   }
+  },
+  {
+   "pair": 6,
+   "traj": 18,
+   "offset": 82,
+   "frames": [
+    82,
+    107
+   ],
+   "env_seed": 6007,
+   "planner_seed": 4006,
+   "planner_seed_nonealt": 4506,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     21
+    ],
+    "total_shared": 21
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     30,
+     60
+    ],
+    "shared_frames": [
+     7,
+     14
+    ],
+    "total_shared": 21
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     13
+    ],
+    "total_shared": 13
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     2,
+     15,
+     31,
+     33,
+     36,
+     39,
+     46,
+     66,
+     67,
+     68,
+     70,
+     77,
+     85,
+     86,
+     89,
+     96
+    ],
+    "total_shared": 249
+   }
+  },
+  {
+   "pair": 7,
+   "traj": 3,
+   "offset": 11,
+   "frames": [
+    11,
+    36
+   ],
+   "env_seed": 6008,
+   "planner_seed": 4007,
+   "planner_seed_nonealt": 4507,
+   "sampler": {
+    "draws": 6,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     49
+    ],
+    "shared_frames": [
+     22
+    ],
+    "total_shared": 22
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     39,
+     86,
+     90
+    ],
+    "shared_frames": [
+     17,
+     18,
+     5
+    ],
+    "total_shared": 40
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     46,
+     76
+    ],
+    "shared_frames": [
+     6,
+     16
+    ],
+    "total_shared": 22
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     4,
+     34,
+     59
+    ],
+    "total_shared": 61
+   }
+  },
+  {
+   "pair": 8,
+   "traj": 19,
+   "offset": 84,
+   "frames": [
+    84,
+    109
+   ],
+   "env_seed": 6009,
+   "planner_seed": 4008,
+   "planner_seed_nonealt": 4508,
+   "sampler": {
+    "draws": 3,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     44,
+     67
+    ],
+    "shared_frames": [
+     17,
+     20
+    ],
+    "total_shared": 37
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     32
+    ],
+    "shared_frames": [
+     24
+    ],
+    "total_shared": 24
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     10,
+     12,
+     78,
+     93
+    ],
+    "total_shared": 80
+   }
+  },
+  {
+   "pair": 9,
+   "traj": 4,
+   "offset": 76,
+   "frames": [
+    76,
+    101
+   ],
+   "env_seed": 6010,
+   "planner_seed": 4009,
+   "planner_seed_nonealt": 4509,
+   "sampler": {
+    "draws": 4,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     19
+    ],
+    "shared_frames": [
+     15
+    ],
+    "total_shared": 15
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     0,
+     56
+    ],
+    "shared_frames": [
+     22,
+     16
+    ],
+    "total_shared": 38
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     14,
+     80
+    ],
+    "shared_frames": [
+     23,
+     8
+    ],
+    "total_shared": 31
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     30,
+     32,
+     42,
+     45,
+     58,
+     80
+    ],
+    "total_shared": 104
+   }
+  },
+  {
+   "pair": 10,
+   "traj": 19,
+   "offset": 79,
+   "frames": [
+    79,
+    104
+   ],
+   "env_seed": 6011,
+   "planner_seed": 4010,
+   "planner_seed_nonealt": 4510,
+   "sampler": {
+    "draws": 7,
+    "hard_rejections": 4,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     44,
+     67,
+     92
+    ],
+    "shared_frames": [
+     22,
+     25,
+     2
+    ],
+    "total_shared": 49
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     15,
+     32
+    ],
+    "shared_frames": [
+     3,
+     19
+    ],
+    "total_shared": 22
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     8,
+     12,
+     78,
+     93
+    ],
+    "total_shared": 75
+   }
+  },
+  {
+   "pair": 11,
+   "traj": 12,
+   "offset": 74,
+   "frames": [
+    74,
+    99
+   ],
+   "env_seed": 6012,
+   "planner_seed": 4011,
+   "planner_seed_nonealt": 4511,
+   "sampler": {
+    "draws": 3,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     25
+    ],
+    "shared_frames": [
+     24
+    ],
+    "total_shared": 24
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     60
+    ],
+    "total_shared": 17
+   }
+  },
+  {
+   "pair": 12,
+   "traj": 19,
+   "offset": 85,
+   "frames": [
+    85,
+    110
+   ],
+   "env_seed": 6013,
+   "planner_seed": 4012,
+   "planner_seed_nonealt": 4512,
+   "sampler": {
+    "draws": 7,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     44,
+     67
+    ],
+    "shared_frames": [
+     16,
+     19
+    ],
+    "total_shared": 35
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     32
+    ],
+    "shared_frames": [
+     25
+    ],
+    "total_shared": 25
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     8,
+     10,
+     78,
+     93
+    ],
+    "total_shared": 79
+   }
+  },
+  {
+   "pair": 13,
+   "traj": 14,
+   "offset": 114,
+   "frames": [
+    114,
+    139
+   ],
+   "env_seed": 6014,
+   "planner_seed": 4013,
+   "planner_seed_nonealt": 4513,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     32,
+     35
+    ],
+    "shared_frames": [
+     22,
+     16
+    ],
+    "total_shared": 38
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     3,
+     38
+    ],
+    "shared_frames": [
+     20,
+     10
+    ],
+    "total_shared": 30
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     25,
+     26,
+     27,
+     87,
+     94,
+     98
+    ],
+    "total_shared": 63
+   }
+  },
+  {
+   "pair": 14,
+   "traj": 8,
+   "offset": 57,
+   "frames": [
+    57,
+    82
+   ],
+   "env_seed": 6015,
+   "planner_seed": 4014,
+   "planner_seed_nonealt": 4514,
+   "sampler": {
+    "draws": 6,
+    "hard_rejections": 4,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     83
+    ],
+    "shared_frames": [
+     6
+    ],
+    "total_shared": 6
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     68,
+     85,
+     92,
+     98,
+     99
+    ],
+    "shared_frames": [
+     25,
+     6,
+     18,
+     21,
+     6
+    ],
+    "total_shared": 76
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     16,
+     18,
+     35,
+     83,
+     88
+    ],
+    "total_shared": 108
+   }
+  },
+  {
+   "pair": 15,
+   "traj": 18,
+   "offset": 102,
+   "frames": [
+    102,
+    127
+   ],
+   "env_seed": 6016,
+   "planner_seed": 4015,
+   "planner_seed_nonealt": 4515,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     11
+    ],
+    "total_shared": 11
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     19
+    ],
+    "total_shared": 19
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     6,
+     31,
+     33,
+     39,
+     46,
+     66,
+     67,
+     68,
+     70,
+     85,
+     86,
+     96
+    ],
+    "total_shared": 177
+   }
+  },
+  {
+   "pair": 16,
+   "traj": 8,
+   "offset": 64,
+   "frames": [
+    64,
+    89
+   ],
+   "env_seed": 6017,
+   "planner_seed": 4016,
+   "planner_seed_nonealt": 4516,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     68,
+     92,
+     98
+    ],
+    "shared_frames": [
+     20,
+     25,
+     24
+    ],
+    "total_shared": 69
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     14,
+     18,
+     35,
+     83,
+     88
+    ],
+    "total_shared": 104
+   }
+  },
+  {
+   "pair": 17,
+   "traj": 14,
+   "offset": 84,
+   "frames": [
+    84,
+    109
+   ],
+   "env_seed": 6018,
+   "planner_seed": 4017,
+   "planner_seed_nonealt": 4517,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     9,
+     84
+    ],
+    "shared_frames": [
+     10,
+     24
+    ],
+    "total_shared": 34
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     3,
+     47
+    ],
+    "shared_frames": [
+     5,
+     22
+    ],
+    "total_shared": 27
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     19,
+     26,
+     72,
+     87,
+     94,
+     98
+    ],
+    "total_shared": 106
+   }
+  },
+  {
+   "pair": 18,
+   "traj": 8,
+   "offset": 60,
+   "frames": [
+    60,
+    85
+   ],
+   "env_seed": 6019,
+   "planner_seed": 4018,
+   "planner_seed_nonealt": 4518,
+   "sampler": {
+    "draws": 4,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     83
+    ],
+    "shared_frames": [
+     3
+    ],
+    "total_shared": 3
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     68,
+     85,
+     92,
+     98,
+     99
+    ],
+    "shared_frames": [
+     24,
+     3,
+     21,
+     24,
+     3
+    ],
+    "total_shared": 75
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     14,
+     16,
+     35,
+     83,
+     88
+    ],
+    "total_shared": 112
+   }
+  },
+  {
+   "pair": 19,
+   "traj": 14,
+   "offset": 82,
+   "frames": [
+    82,
+    107
+   ],
+   "env_seed": 6020,
+   "planner_seed": 4019,
+   "planner_seed_nonealt": 4519,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 3,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     9,
+     84
+    ],
+    "shared_frames": [
+     12,
+     26
+    ],
+    "total_shared": 38
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     3,
+     47
+    ],
+    "shared_frames": [
+     7,
+     20
+    ],
+    "total_shared": 27
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     17,
+     26,
+     72,
+     87,
+     94,
+     98
+    ],
+    "total_shared": 98
+   }
+  },
+  {
+   "pair": 20,
+   "traj": 10,
+   "offset": 41,
+   "frames": [
+    41,
+    66
+   ],
+   "env_seed": 6021,
+   "planner_seed": 4020,
+   "planner_seed_nonealt": 4520,
+   "sampler": {
+    "draws": 4,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     13,
+     47
+    ],
+    "shared_frames": [
+     9,
+     21
+    ],
+    "total_shared": 30
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     68,
+     88
+    ],
+    "shared_frames": [
+     14,
+     11
+    ],
+    "total_shared": 25
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     55,
+     60,
+     84
+    ],
+    "shared_frames": [
+     17,
+     4,
+     15
+    ],
+    "total_shared": 36
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     49,
+     92,
+     97
+    ],
+    "total_shared": 65
+   }
+  },
+  {
+   "pair": 21,
+   "traj": 0,
+   "offset": 78,
+   "frames": [
+    78,
+    103
+   ],
+   "env_seed": 6022,
+   "planner_seed": 4021,
+   "planner_seed_nonealt": 4521,
+   "sampler": {
+    "draws": 6,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     13,
+     16,
+     42
+    ],
+    "shared_frames": [
+     17,
+     15,
+     8
+    ],
+    "total_shared": 40
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     41
+    ],
+    "shared_frames": [
+     18
+    ],
+    "total_shared": 18
+   },
+   "overlap_within_eval6": {
+    "pairs": [],
+    "total_shared": 0
+   }
+  },
+  {
+   "pair": 22,
+   "traj": 4,
+   "offset": 4,
+   "frames": [
+    4,
+    29
+   ],
+   "env_seed": 6023,
+   "planner_seed": 4022,
+   "planner_seed_nonealt": 4522,
+   "sampler": {
+    "draws": 14,
+    "hard_rejections": 5,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     95
+    ],
+    "shared_frames": [
+     26
+    ],
+    "total_shared": 26
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     16,
+     70,
+     78,
+     87
+    ],
+    "shared_frames": [
+     14,
+     23,
+     23,
+     16
+    ],
+    "total_shared": 76
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     29,
+     38,
+     40,
+     51,
+     56,
+     62,
+     82
+    ],
+    "total_shared": 119
+   }
+  },
+  {
+   "pair": 23,
+   "traj": 20,
+   "offset": 24,
+   "frames": [
+    24,
+    49
+   ],
+   "env_seed": 6024,
+   "planner_seed": 4023,
+   "planner_seed_nonealt": 4523,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24,
+     46
+    ],
+    "shared_frames": [
+     25,
+     7
+    ],
+    "total_shared": 32
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     62,
+     71
+    ],
+    "shared_frames": [
+     15,
+     12,
+     10
+    ],
+    "total_shared": 37
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     24,
+     28,
+     37,
+     44,
+     55,
+     57,
+     74,
+     75,
+     81,
+     99
+    ],
+    "total_shared": 117
+   }
+  },
+  {
+   "pair": 24,
+   "traj": 20,
+   "offset": 7,
+   "frames": [
+    7,
+    32
+   ],
+   "env_seed": 6025,
+   "planner_seed": 4024,
+   "planner_seed_nonealt": 4524,
+   "sampler": {
+    "draws": 4,
+    "hard_rejections": 0,
+    "duplicate_rejections": 1,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24
+    ],
+    "shared_frames": [
+     8
+    ],
+    "total_shared": 8
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     71
+    ],
+    "shared_frames": [
+     20,
+     25
+    ],
+    "total_shared": 45
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     23,
+     28,
+     37,
+     44,
+     55,
+     57,
+     74,
+     75,
+     81,
+     99
+    ],
+    "total_shared": 184
+   }
+  },
+  {
+   "pair": 25,
+   "traj": 14,
+   "offset": 122,
+   "frames": [
+    122,
+    147
+   ],
+   "env_seed": 6026,
+   "planner_seed": 4025,
+   "planner_seed_nonealt": 4525,
+   "sampler": {
+    "draws": 8,
+    "hard_rejections": 5,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     32,
+     35
+    ],
+    "shared_frames": [
+     22,
+     24
+    ],
+    "total_shared": 46
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     3,
+     38
+    ],
+    "shared_frames": [
+     24,
+     18
+    ],
+    "total_shared": 42
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     13,
+     27,
+     87
+    ],
+    "total_shared": 47
+   }
+  },
+  {
+   "pair": 26,
+   "traj": 14,
+   "offset": 95,
+   "frames": [
+    95,
+    120
+   ],
+   "env_seed": 6027,
+   "planner_seed": 4026,
+   "planner_seed_nonealt": 4526,
+   "sampler": {
+    "draws": 11,
+    "hard_rejections": 5,
+    "duplicate_rejections": 1,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     32
+    ],
+    "shared_frames": [
+     3
+    ],
+    "total_shared": 3
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     3,
+     84
+    ],
+    "shared_frames": [
+     1,
+     13
+    ],
+    "total_shared": 14
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     47
+    ],
+    "shared_frames": [
+     19
+    ],
+    "total_shared": 19
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     13,
+     17,
+     19,
+     72,
+     87,
+     94,
+     98
+    ],
+    "total_shared": 112
+   }
+  },
+  {
+   "pair": 27,
+   "traj": 14,
+   "offset": 126,
+   "frames": [
+    126,
+    151
+   ],
+   "env_seed": 6028,
+   "planner_seed": 4027,
+   "planner_seed_nonealt": 4527,
+   "sampler": {
+    "draws": 13,
+    "hard_rejections": 6,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     32,
+     35
+    ],
+    "shared_frames": [
+     18,
+     24
+    ],
+    "total_shared": 42
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     3,
+     38
+    ],
+    "shared_frames": [
+     20,
+     22
+    ],
+    "total_shared": 42
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     13,
+     25,
+     87
+    ],
+    "total_shared": 39
+   }
+  },
+  {
+   "pair": 28,
+   "traj": 20,
+   "offset": 19,
+   "frames": [
+    19,
+    44
+   ],
+   "env_seed": 6029,
+   "planner_seed": 4028,
+   "planner_seed_nonealt": 4528,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24,
+     46
+    ],
+    "shared_frames": [
+     20,
+     2
+    ],
+    "total_shared": 22
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     62,
+     71
+    ],
+    "shared_frames": [
+     20,
+     7,
+     15
+    ],
+    "total_shared": 42
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     23,
+     24,
+     37,
+     44,
+     55,
+     57,
+     74,
+     75,
+     81,
+     99
+    ],
+    "total_shared": 156
+   }
+  },
+  {
+   "pair": 29,
+   "traj": 4,
+   "offset": 9,
+   "frames": [
+    9,
+    34
+   ],
+   "env_seed": 6030,
+   "planner_seed": 4029,
+   "planner_seed_nonealt": 4529,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     95
+    ],
+    "shared_frames": [
+     21
+    ],
+    "total_shared": 21
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     16,
+     28,
+     70,
+     78,
+     87
+    ],
+    "shared_frames": [
+     19,
+     2,
+     24,
+     24,
+     21
+    ],
+    "total_shared": 90
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     22,
+     38,
+     40,
+     51,
+     56,
+     62,
+     82
+    ],
+    "total_shared": 137
+   }
+  },
+  {
+   "pair": 30,
+   "traj": 4,
+   "offset": 64,
+   "frames": [
+    64,
+    89
+   ],
+   "env_seed": 6031,
+   "planner_seed": 4030,
+   "planner_seed_nonealt": 4530,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     19
+    ],
+    "shared_frames": [
+     25
+    ],
+    "total_shared": 25
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     0,
+     56
+    ],
+    "shared_frames": [
+     18,
+     24
+    ],
+    "total_shared": 42
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     14,
+     57,
+     80
+    ],
+    "shared_frames": [
+     11,
+     5,
+     20
+    ],
+    "total_shared": 36
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     9,
+     32,
+     42,
+     45,
+     50,
+     58,
+     65,
+     80
+    ],
+    "total_shared": 121
+   }
+  },
+  {
+   "pair": 31,
+   "traj": 18,
+   "offset": 91,
+   "frames": [
+    91,
+    116
+   ],
+   "env_seed": 6032,
+   "planner_seed": 4031,
+   "planner_seed_nonealt": 4531,
+   "sampler": {
+    "draws": 3,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     22
+    ],
+    "total_shared": 22
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     60
+    ],
+    "shared_frames": [
+     5
+    ],
+    "total_shared": 5
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     22
+    ],
+    "total_shared": 22
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     2,
+     6,
+     15,
+     33,
+     36,
+     39,
+     46,
+     66,
+     67,
+     68,
+     70,
+     77,
+     85,
+     86,
+     89,
+     96
+    ],
+    "total_shared": 249
+   }
+  },
+  {
+   "pair": 32,
+   "traj": 4,
+   "offset": 53,
+   "frames": [
+    53,
+    78
+   ],
+   "env_seed": 6033,
+   "planner_seed": 4032,
+   "planner_seed_nonealt": 4532,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     19
+    ],
+    "shared_frames": [
+     14
+    ],
+    "total_shared": 14
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     0,
+     56
+    ],
+    "shared_frames": [
+     7,
+     13
+    ],
+    "total_shared": 20
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     28,
+     57,
+     80
+    ],
+    "shared_frames": [
+     6,
+     16,
+     21
+    ],
+    "total_shared": 43
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     9,
+     30,
+     41,
+     42,
+     43,
+     45,
+     50,
+     56,
+     58,
+     65,
+     80
+    ],
+    "total_shared": 109
+   }
+  },
+  {
+   "pair": 33,
+   "traj": 18,
+   "offset": 88,
+   "frames": [
+    88,
+    113
+   ],
+   "env_seed": 6034,
+   "planner_seed": 4033,
+   "planner_seed_nonealt": 4533,
+   "sampler": {
+    "draws": 25,
+    "hard_rejections": 15,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     25
+    ],
+    "total_shared": 25
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     30,
+     60
+    ],
+    "shared_frames": [
+     1,
+     8
+    ],
+    "total_shared": 9
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     19
+    ],
+    "total_shared": 19
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     2,
+     6,
+     15,
+     31,
+     36,
+     39,
+     46,
+     66,
+     67,
+     68,
+     70,
+     77,
+     85,
+     86,
+     89,
+     96
+    ],
+    "total_shared": 255
+   }
+  },
+  {
+   "pair": 34,
+   "traj": 3,
+   "offset": 14,
+   "frames": [
+    14,
+    39
+   ],
+   "env_seed": 6035,
+   "planner_seed": 4034,
+   "planner_seed_nonealt": 4534,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     49
+    ],
+    "shared_frames": [
+     19
+    ],
+    "total_shared": 19
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     39,
+     86,
+     90
+    ],
+    "shared_frames": [
+     20,
+     15,
+     8
+    ],
+    "total_shared": 43
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     46,
+     76
+    ],
+    "shared_frames": [
+     9,
+     19
+    ],
+    "total_shared": 28
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     4,
+     7,
+     59
+    ],
+    "total_shared": 55
+   }
+  },
+  {
+   "pair": 35,
+   "traj": 8,
+   "offset": 56,
+   "frames": [
+    56,
+    81
+   ],
+   "env_seed": 6036,
+   "planner_seed": 4035,
+   "planner_seed_nonealt": 4535,
+   "sampler": {
+    "draws": 4,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     76,
+     83
+    ],
+    "shared_frames": [
+     1,
+     7
+    ],
+    "total_shared": 8
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     68,
+     85,
+     92,
+     98,
+     99
+    ],
+    "shared_frames": [
+     24,
+     7,
+     17,
+     20,
+     7
+    ],
+    "total_shared": 75
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     14,
+     16,
+     18,
+     83,
+     88
+    ],
+    "total_shared": 104
+   }
+  },
+  {
+   "pair": 36,
+   "traj": 18,
+   "offset": 76,
+   "frames": [
+    76,
+    101
+   ],
+   "env_seed": 6037,
+   "planner_seed": 4036,
+   "planner_seed_nonealt": 4536,
+   "sampler": {
+    "draws": 6,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     15
+    ],
+    "total_shared": 15
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     30,
+     60
+    ],
+    "shared_frames": [
+     13,
+     20
+    ],
+    "total_shared": 33
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     7
+    ],
+    "total_shared": 7
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     2,
+     6,
+     31,
+     33,
+     39,
+     46,
+     66,
+     68,
+     70,
+     77,
+     85,
+     86,
+     89,
+     96
+    ],
+    "total_shared": 219
+   }
+  },
+  {
+   "pair": 37,
+   "traj": 20,
+   "offset": 8,
+   "frames": [
+    8,
+    33
+   ],
+   "env_seed": 6038,
+   "planner_seed": 4037,
+   "planner_seed_nonealt": 4537,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24
+    ],
+    "shared_frames": [
+     9
+    ],
+    "total_shared": 9
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     71
+    ],
+    "shared_frames": [
+     21,
+     26
+    ],
+    "total_shared": 47
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     23,
+     24,
+     28,
+     44,
+     55,
+     57,
+     74,
+     75,
+     81,
+     99
+    ],
+    "total_shared": 185
+   }
+  },
+  {
+   "pair": 38,
+   "traj": 4,
+   "offset": 3,
+   "frames": [
+    3,
+    28
+   ],
+   "env_seed": 6039,
+   "planner_seed": 4038,
+   "planner_seed_nonealt": 4538,
+   "sampler": {
+    "draws": 6,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     95
+    ],
+    "shared_frames": [
+     25
+    ],
+    "total_shared": 25
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     16,
+     70,
+     78,
+     87
+    ],
+    "shared_frames": [
+     13,
+     22,
+     22,
+     15
+    ],
+    "total_shared": 72
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     22,
+     29,
+     40,
+     51,
+     56,
+     62,
+     82
+    ],
+    "total_shared": 113
+   }
+  },
+  {
+   "pair": 39,
+   "traj": 18,
+   "offset": 78,
+   "frames": [
+    78,
+    103
+   ],
+   "env_seed": 6040,
+   "planner_seed": 4039,
+   "planner_seed_nonealt": 4539,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 2,
+    "duplicate_rejections": 1,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     17
+    ],
+    "total_shared": 17
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     30,
+     60
+    ],
+    "shared_frames": [
+     11,
+     18
+    ],
+    "total_shared": 29
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     9
+    ],
+    "total_shared": 9
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     2,
+     6,
+     15,
+     31,
+     33,
+     36,
+     46,
+     66,
+     68,
+     70,
+     77,
+     85,
+     86,
+     89,
+     96
+    ],
+    "total_shared": 233
+   }
+  },
+  {
+   "pair": 40,
+   "traj": 4,
+   "offset": 16,
+   "frames": [
+    16,
+    41
+   ],
+   "env_seed": 6041,
+   "planner_seed": 4040,
+   "planner_seed_nonealt": 4540,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     95
+    ],
+    "shared_frames": [
+     14
+    ],
+    "total_shared": 14
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     16,
+     28,
+     70,
+     78,
+     87
+    ],
+    "shared_frames": [
+     26,
+     9,
+     17,
+     17,
+     24
+    ],
+    "total_shared": 93
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     22,
+     29,
+     38,
+     41,
+     43,
+     51,
+     56,
+     62,
+     82
+    ],
+    "total_shared": 133
+   }
+  },
+  {
+   "pair": 41,
+   "traj": 4,
+   "offset": 38,
+   "frames": [
+    38,
+    63
+   ],
+   "env_seed": 6042,
+   "planner_seed": 4041,
+   "planner_seed_nonealt": 4541,
+   "sampler": {
+    "draws": 7,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     16,
+     28,
+     57,
+     80,
+     87
+    ],
+    "shared_frames": [
+     4,
+     21,
+     21,
+     6,
+     2
+    ],
+    "total_shared": 54
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     32,
+     40,
+     43,
+     50,
+     51,
+     56,
+     65
+    ],
+    "total_shared": 87
+   }
+  },
+  {
+   "pair": 42,
+   "traj": 4,
+   "offset": 75,
+   "frames": [
+    75,
+    100
+   ],
+   "env_seed": 6043,
+   "planner_seed": 4042,
+   "planner_seed_nonealt": 4542,
+   "sampler": {
+    "draws": 6,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     19
+    ],
+    "shared_frames": [
+     16
+    ],
+    "total_shared": 16
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     0,
+     56
+    ],
+    "shared_frames": [
+     23,
+     17
+    ],
+    "total_shared": 40
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     14,
+     80
+    ],
+    "shared_frames": [
+     22,
+     9
+    ],
+    "total_shared": 31
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     9,
+     30,
+     32,
+     45,
+     58,
+     65,
+     80
+    ],
+    "total_shared": 108
+   }
+  },
+  {
+   "pair": 43,
+   "traj": 4,
+   "offset": 36,
+   "frames": [
+    36,
+    61
+   ],
+   "env_seed": 6044,
+   "planner_seed": 4043,
+   "planner_seed_nonealt": 4543,
+   "sampler": {
+    "draws": 10,
+    "hard_rejections": 5,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     16,
+     28,
+     57,
+     80,
+     87
+    ],
+    "shared_frames": [
+     6,
+     23,
+     19,
+     4,
+     4
+    ],
+    "total_shared": 56
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     32,
+     40,
+     41,
+     50,
+     51,
+     56,
+     62,
+     65
+    ],
+    "total_shared": 89
+   }
+  },
+  {
+   "pair": 44,
+   "traj": 20,
+   "offset": 22,
+   "frames": [
+    22,
+    47
+   ],
+   "env_seed": 6045,
+   "planner_seed": 4044,
+   "planner_seed_nonealt": 4544,
+   "sampler": {
+    "draws": 7,
+    "hard_rejections": 3,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24,
+     46
+    ],
+    "shared_frames": [
+     23,
+     5
+    ],
+    "total_shared": 28
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     62,
+     71
+    ],
+    "shared_frames": [
+     17,
+     10,
+     12
+    ],
+    "total_shared": 39
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     23,
+     24,
+     28,
+     37,
+     55,
+     57,
+     74,
+     75,
+     81,
+     99
+    ],
+    "total_shared": 135
+   }
+  },
+  {
+   "pair": 45,
+   "traj": 4,
+   "offset": 66,
+   "frames": [
+    66,
+    91
+   ],
+   "env_seed": 6046,
+   "planner_seed": 4045,
+   "planner_seed_nonealt": 4545,
+   "sampler": {
+    "draws": 3,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     19
+    ],
+    "shared_frames": [
+     25
+    ],
+    "total_shared": 25
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     0,
+     56
+    ],
+    "shared_frames": [
+     20,
+     26
+    ],
+    "total_shared": 46
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     14,
+     57,
+     80
+    ],
+    "shared_frames": [
+     13,
+     3,
+     18
+    ],
+    "total_shared": 34
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     9,
+     30,
+     32,
+     42,
+     50,
+     58,
+     65,
+     80
+    ],
+    "total_shared": 123
+   }
+  },
+  {
+   "pair": 46,
+   "traj": 18,
+   "offset": 77,
+   "frames": [
+    77,
+    102
+   ],
+   "env_seed": 6047,
+   "planner_seed": 4046,
+   "planner_seed_nonealt": 4546,
+   "sampler": {
+    "draws": 8,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     16
+    ],
+    "total_shared": 16
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     30,
+     60
+    ],
+    "shared_frames": [
+     12,
+     19
+    ],
+    "total_shared": 31
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     8
+    ],
+    "total_shared": 8
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     2,
+     6,
+     15,
+     31,
+     33,
+     36,
+     39,
+     66,
+     68,
+     70,
+     77,
+     85,
+     86,
+     89,
+     96
+    ],
+    "total_shared": 227
+   }
+  },
+  {
+   "pair": 47,
+   "traj": 3,
+   "offset": 88,
+   "frames": [
+    88,
+    113
+   ],
+   "env_seed": 6048,
+   "planner_seed": 4047,
+   "planner_seed_nonealt": 4547,
+   "sampler": {
+    "draws": 3,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     2
+    ],
+    "shared_frames": [
+     1
+    ],
+    "total_shared": 1
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     53,
+     69,
+     91,
+     95
+    ],
+    "total_shared": 75
+   }
+  },
+  {
+   "pair": 48,
+   "traj": 14,
+   "offset": 50,
+   "frames": [
+    50,
+    75
+   ],
+   "env_seed": 6049,
+   "planner_seed": 4048,
+   "planner_seed_nonealt": 4548,
+   "sampler": {
+    "draws": 11,
+    "hard_rejections": 6,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     26
+    ],
+    "shared_frames": [
+     17
+    ],
+    "total_shared": 17
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     9
+    ],
+    "shared_frames": [
+     8
+    ],
+    "total_shared": 8
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     3,
+     50
+    ],
+    "shared_frames": [
+     13,
+     3
+    ],
+    "total_shared": 16
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     79
+    ],
+    "total_shared": 21
+   }
+  },
+  {
+   "pair": 49,
+   "traj": 10,
+   "offset": 40,
+   "frames": [
+    40,
+    65
+   ],
+   "env_seed": 6050,
+   "planner_seed": 4049,
+   "planner_seed_nonealt": 4549,
+   "sampler": {
+    "draws": 3,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     13,
+     47
+    ],
+    "shared_frames": [
+     10,
+     20
+    ],
+    "total_shared": 30
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     68,
+     88
+    ],
+    "shared_frames": [
+     15,
+     12
+    ],
+    "total_shared": 27
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     55,
+     60,
+     84
+    ],
+    "shared_frames": [
+     18,
+     5,
+     16
+    ],
+    "total_shared": 39
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     20,
+     92,
+     97
+    ],
+    "total_shared": 65
+   }
+  },
+  {
+   "pair": 50,
+   "traj": 4,
+   "offset": 47,
+   "frames": [
+    47,
+    72
+   ],
+   "env_seed": 6051,
+   "planner_seed": 4050,
+   "planner_seed_nonealt": 4550,
+   "sampler": {
+    "draws": 12,
+    "hard_rejections": 3,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     19
+    ],
+    "shared_frames": [
+     8
+    ],
+    "total_shared": 8
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     0,
+     56
+    ],
+    "shared_frames": [
+     1,
+     7
+    ],
+    "total_shared": 8
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     28,
+     57,
+     80
+    ],
+    "shared_frames": [
+     12,
+     22,
+     15
+    ],
+    "total_shared": 49
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     30,
+     32,
+     41,
+     43,
+     45,
+     56,
+     58,
+     65
+    ],
+    "total_shared": 100
+   }
+  },
+  {
+   "pair": 51,
+   "traj": 4,
+   "offset": 13,
+   "frames": [
+    13,
+    38
+   ],
+   "env_seed": 6052,
+   "planner_seed": 4051,
+   "planner_seed_nonealt": 4551,
+   "sampler": {
+    "draws": 4,
+    "hard_rejections": 3,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     95
+    ],
+    "shared_frames": [
+     17
+    ],
+    "total_shared": 17
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     16,
+     28,
+     70,
+     78,
+     87
+    ],
+    "shared_frames": [
+     23,
+     6,
+     20,
+     20,
+     25
+    ],
+    "total_shared": 94
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     22,
+     29,
+     38,
+     40,
+     41,
+     43,
+     56,
+     62,
+     82
+    ],
+    "total_shared": 139
+   }
+  },
+  {
+   "pair": 52,
+   "traj": 2,
+   "offset": 91,
+   "frames": [
+    91,
+    116
+   ],
+   "env_seed": 6053,
+   "planner_seed": 4052,
+   "planner_seed_nonealt": 4552,
+   "sampler": {
+    "draws": 27,
+    "hard_rejections": 12,
+    "duplicate_rejections": 3,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     1
+    ],
+    "shared_frames": [
+     25
+    ],
+    "total_shared": 25
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     29,
+     65
+    ],
+    "shared_frames": [
+     19,
+     14
+    ],
+    "total_shared": 33
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     3,
+     54,
+     61,
+     73,
+     76
+    ],
+    "total_shared": 52
+   }
+  },
+  {
+   "pair": 53,
+   "traj": 3,
+   "offset": 83,
+   "frames": [
+    83,
+    108
+   ],
+   "env_seed": 6054,
+   "planner_seed": 4053,
+   "planner_seed_nonealt": 4553,
+   "sampler": {
+    "draws": 7,
+    "hard_rejections": 3,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     2
+    ],
+    "shared_frames": [
+     6
+    ],
+    "total_shared": 6
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     47,
+     69,
+     91,
+     95
+    ],
+    "total_shared": 90
+   }
+  },
+  {
+   "pair": 54,
+   "traj": 2,
+   "offset": 110,
+   "frames": [
+    110,
+    135
+   ],
+   "env_seed": 6055,
+   "planner_seed": 4054,
+   "planner_seed_nonealt": 4554,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     1
+    ],
+    "shared_frames": [
+     8
+    ],
+    "total_shared": 8
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     65,
+     91
+    ],
+    "shared_frames": [
+     19,
+     11
+    ],
+    "total_shared": 30
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     1,
+     3,
+     52,
+     73,
+     76,
+     84
+    ],
+    "total_shared": 67
+   }
+  },
+  {
+   "pair": 55,
+   "traj": 20,
+   "offset": 14,
+   "frames": [
+    14,
+    39
+   ],
+   "env_seed": 6056,
+   "planner_seed": 4055,
+   "planner_seed_nonealt": 4555,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24
+    ],
+    "shared_frames": [
+     15
+    ],
+    "total_shared": 15
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     62,
+     71
+    ],
+    "shared_frames": [
+     25,
+     2,
+     20
+    ],
+    "total_shared": 47
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     23,
+     24,
+     28,
+     37,
+     44,
+     57,
+     74,
+     75,
+     81,
+     99
+    ],
+    "total_shared": 179
+   }
+  },
+  {
+   "pair": 56,
+   "traj": 4,
+   "offset": 28,
+   "frames": [
+    28,
+    53
+   ],
+   "env_seed": 6057,
+   "planner_seed": 4056,
+   "planner_seed_nonealt": 4556,
+   "sampler": {
+    "draws": 29,
+    "hard_rejections": 12,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     95
+    ],
+    "shared_frames": [
+     2
+    ],
+    "total_shared": 2
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     16,
+     28,
+     57,
+     70,
+     78,
+     87
+    ],
+    "shared_frames": [
+     14,
+     21,
+     11,
+     5,
+     5,
+     12
+    ],
+    "total_shared": 68
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     22,
+     29,
+     32,
+     38,
+     40,
+     41,
+     43,
+     50,
+     51,
+     62,
+     65,
+     82
+    ],
+    "total_shared": 97
+   }
+  },
+  {
+   "pair": 57,
+   "traj": 20,
+   "offset": 3,
+   "frames": [
+    3,
+    28
+   ],
+   "env_seed": 6058,
+   "planner_seed": 4057,
+   "planner_seed_nonealt": 4557,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24
+    ],
+    "shared_frames": [
+     4
+    ],
+    "total_shared": 4
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     71
+    ],
+    "shared_frames": [
+     16,
+     21
+    ],
+    "total_shared": 37
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     23,
+     24,
+     28,
+     37,
+     44,
+     55,
+     74,
+     75,
+     81,
+     99
+    ],
+    "total_shared": 166
+   }
+  },
+  {
+   "pair": 58,
+   "traj": 4,
+   "offset": 71,
+   "frames": [
+    71,
+    96
+   ],
+   "env_seed": 6059,
+   "planner_seed": 4058,
+   "planner_seed_nonealt": 4558,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     19
+    ],
+    "shared_frames": [
+     20
+    ],
+    "total_shared": 20
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     0,
+     56
+    ],
+    "shared_frames": [
+     25,
+     21
+    ],
+    "total_shared": 46
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     14,
+     80
+    ],
+    "shared_frames": [
+     18,
+     13
+    ],
+    "total_shared": 31
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     9,
+     30,
+     32,
+     42,
+     45,
+     50,
+     65,
+     80
+    ],
+    "total_shared": 118
+   }
+  },
+  {
+   "pair": 59,
+   "traj": 3,
+   "offset": 3,
+   "frames": [
+    3,
+    28
+   ],
+   "env_seed": 6060,
+   "planner_seed": 4059,
+   "planner_seed_nonealt": 4559,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     49
+    ],
+    "shared_frames": [
+     22
+    ],
+    "total_shared": 22
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     39,
+     86
+    ],
+    "shared_frames": [
+     9,
+     26
+    ],
+    "total_shared": 35
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     76
+    ],
+    "shared_frames": [
+     8
+    ],
+    "total_shared": 8
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     4,
+     7,
+     34
+    ],
+    "total_shared": 57
+   }
+  },
+  {
+   "pair": 60,
+   "traj": 12,
+   "offset": 65,
+   "frames": [
+    65,
+    90
+   ],
+   "env_seed": 6061,
+   "planner_seed": 4060,
+   "planner_seed_nonealt": 4560,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     25
+    ],
+    "shared_frames": [
+     15
+    ],
+    "total_shared": 15
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     11
+    ],
+    "total_shared": 17
+   }
+  },
+  {
+   "pair": 61,
+   "traj": 2,
+   "offset": 70,
+   "frames": [
+    70,
+    95
+   ],
+   "env_seed": 6062,
+   "planner_seed": 4061,
+   "planner_seed_nonealt": 4561,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     1
+    ],
+    "shared_frames": [
+     4
+    ],
+    "total_shared": 4
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     1,
+     72
+    ],
+    "shared_frames": [
+     21,
+     21
+    ],
+    "total_shared": 42
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     29,
+     54
+    ],
+    "shared_frames": [
+     12,
+     9
+    ],
+    "total_shared": 21
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     3,
+     52
+    ],
+    "total_shared": 9
+   }
+  },
+  {
+   "pair": 62,
+   "traj": 4,
+   "offset": 12,
+   "frames": [
+    12,
+    37
+   ],
+   "env_seed": 6063,
+   "planner_seed": 4062,
+   "planner_seed_nonealt": 4562,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     95
+    ],
+    "shared_frames": [
+     18
+    ],
+    "total_shared": 18
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     16,
+     28,
+     70,
+     78,
+     87
+    ],
+    "shared_frames": [
+     22,
+     5,
+     21,
+     21,
+     24
+    ],
+    "total_shared": 93
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     22,
+     29,
+     38,
+     40,
+     43,
+     51,
+     56,
+     82
+    ],
+    "total_shared": 139
+   }
+  },
+  {
+   "pair": 63,
+   "traj": 13,
+   "offset": 88,
+   "frames": [
+    88,
+    113
+   ],
+   "env_seed": 6064,
+   "planner_seed": 4063,
+   "planner_seed_nonealt": 4563,
+   "sampler": {
+    "draws": 3,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     14,
+     23
+    ],
+    "shared_frames": [
+     5,
+     5
+    ],
+    "total_shared": 10
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     23
+    ],
+    "shared_frames": [
+     9
+    ],
+    "total_shared": 9
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     71,
+     90
+    ],
+    "total_shared": 46
+   }
+  },
+  {
+   "pair": 64,
+   "traj": 5,
+   "offset": 68,
+   "frames": [
+    68,
+    93
+   ],
+   "env_seed": 6065,
+   "planner_seed": 4064,
+   "planner_seed_nonealt": 4564,
+   "sampler": {
+    "draws": 6,
+    "hard_rejections": 2,
+    "duplicate_rejections": 1,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     6,
+     22
+    ],
+    "shared_frames": [
+     13,
+     15
+    ],
+    "total_shared": 28
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     35,
+     47,
+     96
+    ],
+    "shared_frames": [
+     4,
+     22,
+     15
+    ],
+    "total_shared": 41
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     12,
+     89
+    ],
+    "shared_frames": [
+     7,
+     21
+    ],
+    "total_shared": 28
+   },
+   "overlap_within_eval6": {
+    "pairs": [],
+    "total_shared": 0
+   }
+  },
+  {
+   "pair": 65,
+   "traj": 4,
+   "offset": 50,
+   "frames": [
+    50,
+    75
+   ],
+   "env_seed": 6066,
+   "planner_seed": 4065,
+   "planner_seed_nonealt": 4565,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     19
+    ],
+    "shared_frames": [
+     11
+    ],
+    "total_shared": 11
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     0,
+     56
+    ],
+    "shared_frames": [
+     4,
+     10
+    ],
+    "total_shared": 14
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     28,
+     57,
+     80
+    ],
+    "shared_frames": [
+     9,
+     19,
+     18
+    ],
+    "total_shared": 46
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     30,
+     32,
+     41,
+     42,
+     43,
+     45,
+     50,
+     56,
+     58
+    ],
+    "total_shared": 104
+   }
+  },
+  {
+   "pair": 66,
+   "traj": 18,
+   "offset": 98,
+   "frames": [
+    98,
+    123
+   ],
+   "env_seed": 6067,
+   "planner_seed": 4066,
+   "planner_seed_nonealt": 4566,
+   "sampler": {
+    "draws": 3,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     15
+    ],
+    "total_shared": 15
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     23
+    ],
+    "total_shared": 23
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     6,
+     15,
+     31,
+     33,
+     36,
+     39,
+     46,
+     67,
+     68,
+     70,
+     85,
+     86,
+     89,
+     96
+    ],
+    "total_shared": 213
+   }
+  },
+  {
+   "pair": 67,
+   "traj": 18,
+   "offset": 107,
+   "frames": [
+    107,
+    132
+   ],
+   "env_seed": 6068,
+   "planner_seed": 4067,
+   "planner_seed_nonealt": 4567,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     6
+    ],
+    "total_shared": 6
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     14
+    ],
+    "total_shared": 14
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     6,
+     15,
+     31,
+     33,
+     66,
+     68,
+     70,
+     85,
+     86
+    ],
+    "total_shared": 131
+   }
+  },
+  {
+   "pair": 68,
+   "traj": 18,
+   "offset": 95,
+   "frames": [
+    95,
+    120
+   ],
+   "env_seed": 6069,
+   "planner_seed": 4068,
+   "planner_seed_nonealt": 4568,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 4,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     18
+    ],
+    "total_shared": 18
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     60
+    ],
+    "shared_frames": [
+     1
+    ],
+    "total_shared": 1
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     26
+    ],
+    "total_shared": 26
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     2,
+     6,
+     15,
+     31,
+     33,
+     36,
+     39,
+     46,
+     66,
+     67,
+     70,
+     77,
+     85,
+     86,
+     89,
+     96
+    ],
+    "total_shared": 233
+   }
+  },
+  {
+   "pair": 69,
+   "traj": 3,
+   "offset": 82,
+   "frames": [
+    82,
+    107
+   ],
+   "env_seed": 6070,
+   "planner_seed": 4069,
+   "planner_seed_nonealt": 4569,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     2
+    ],
+    "shared_frames": [
+     7
+    ],
+    "total_shared": 7
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     47,
+     53,
+     91,
+     95
+    ],
+    "total_shared": 91
+   }
+  },
+  {
+   "pair": 70,
+   "traj": 18,
+   "offset": 85,
+   "frames": [
+    85,
+    110
+   ],
+   "env_seed": 6071,
+   "planner_seed": 4070,
+   "planner_seed_nonealt": 4570,
+   "sampler": {
+    "draws": 11,
+    "hard_rejections": 4,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     24
+    ],
+    "total_shared": 24
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     30,
+     60
+    ],
+    "shared_frames": [
+     4,
+     11
+    ],
+    "total_shared": 15
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     16
+    ],
+    "total_shared": 16
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     2,
+     6,
+     15,
+     31,
+     33,
+     36,
+     39,
+     46,
+     66,
+     67,
+     68,
+     77,
+     85,
+     86,
+     89,
+     96
+    ],
+    "total_shared": 255
+   }
+  },
+  {
+   "pair": 71,
+   "traj": 13,
+   "offset": 86,
+   "frames": [
+    86,
+    111
+   ],
+   "env_seed": 6072,
+   "planner_seed": 4071,
+   "planner_seed_nonealt": 4571,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 3,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     14,
+     23
+    ],
+    "shared_frames": [
+     7,
+     7
+    ],
+    "total_shared": 14
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     23
+    ],
+    "shared_frames": [
+     11
+    ],
+    "total_shared": 11
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     63,
+     90
+    ],
+    "total_shared": 48
+   }
+  },
+  {
+   "pair": 72,
+   "traj": 14,
+   "offset": 83,
+   "frames": [
+    83,
+    108
+   ],
+   "env_seed": 6073,
+   "planner_seed": 4072,
+   "planner_seed_nonealt": 4572,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     9,
+     84
+    ],
+    "shared_frames": [
+     11,
+     25
+    ],
+    "total_shared": 36
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     3,
+     47
+    ],
+    "shared_frames": [
+     6,
+     21
+    ],
+    "total_shared": 27
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     17,
+     19,
+     26,
+     87,
+     94,
+     98
+    ],
+    "total_shared": 103
+   }
+  },
+  {
+   "pair": 73,
+   "traj": 2,
+   "offset": 116,
+   "frames": [
+    116,
+    141
+   ],
+   "env_seed": 6074,
+   "planner_seed": 4073,
+   "planner_seed_nonealt": 4573,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     1
+    ],
+    "shared_frames": [
+     2
+    ],
+    "total_shared": 2
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     65,
+     91
+    ],
+    "shared_frames": [
+     13,
+     17
+    ],
+    "total_shared": 30
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     1,
+     3,
+     52,
+     54,
+     76,
+     84
+    ],
+    "total_shared": 61
+   }
+  },
+  {
+   "pair": 74,
+   "traj": 20,
+   "offset": 15,
+   "frames": [
+    15,
+    40
+   ],
+   "env_seed": 6075,
+   "planner_seed": 4074,
+   "planner_seed_nonealt": 4574,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 3,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24
+    ],
+    "shared_frames": [
+     16
+    ],
+    "total_shared": 16
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     62,
+     71
+    ],
+    "shared_frames": [
+     24,
+     3,
+     19
+    ],
+    "total_shared": 46
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     23,
+     24,
+     28,
+     37,
+     44,
+     55,
+     57,
+     75,
+     81,
+     99
+    ],
+    "total_shared": 176
+   }
+  },
+  {
+   "pair": 75,
+   "traj": 20,
+   "offset": 6,
+   "frames": [
+    6,
+    31
+   ],
+   "env_seed": 6076,
+   "planner_seed": 4075,
+   "planner_seed_nonealt": 4575,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24
+    ],
+    "shared_frames": [
+     7
+    ],
+    "total_shared": 7
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     71
+    ],
+    "shared_frames": [
+     19,
+     24
+    ],
+    "total_shared": 43
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     23,
+     24,
+     28,
+     37,
+     44,
+     55,
+     57,
+     74,
+     81,
+     99
+    ],
+    "total_shared": 181
+   }
+  },
+  {
+   "pair": 76,
+   "traj": 2,
+   "offset": 103,
+   "frames": [
+    103,
+    128
+   ],
+   "env_seed": 6077,
+   "planner_seed": 4076,
+   "planner_seed_nonealt": 4576,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 3,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     1
+    ],
+    "shared_frames": [
+     15
+    ],
+    "total_shared": 15
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     29,
+     65,
+     91
+    ],
+    "shared_frames": [
+     7,
+     26,
+     4
+    ],
+    "total_shared": 37
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     1,
+     3,
+     52,
+     54,
+     73
+    ],
+    "total_shared": 66
+   }
+  },
+  {
+   "pair": 77,
+   "traj": 18,
+   "offset": 72,
+   "frames": [
+    72,
+    97
+   ],
+   "env_seed": 6078,
+   "planner_seed": 4077,
+   "planner_seed_nonealt": 4577,
+   "sampler": {
+    "draws": 40,
+    "hard_rejections": 13,
+    "duplicate_rejections": 4,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     11
+    ],
+    "total_shared": 11
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     30,
+     45,
+     60
+    ],
+    "shared_frames": [
+     17,
+     4,
+     24
+    ],
+    "total_shared": 45
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     3
+    ],
+    "total_shared": 3
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     2,
+     6,
+     31,
+     33,
+     36,
+     39,
+     46,
+     68,
+     70,
+     85,
+     89,
+     96
+    ],
+    "total_shared": 180
+   }
+  },
+  {
+   "pair": 78,
+   "traj": 19,
+   "offset": 69,
+   "frames": [
+    69,
+    94
+   ],
+   "env_seed": 6079,
+   "planner_seed": 4078,
+   "planner_seed_nonealt": 4578,
+   "sampler": {
+    "draws": 14,
+    "hard_rejections": 9,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     44,
+     67,
+     92
+    ],
+    "shared_frames": [
+     20,
+     17,
+     12
+    ],
+    "total_shared": 49
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     15,
+     32,
+     56,
+     67
+    ],
+    "shared_frames": [
+     13,
+     9,
+     3,
+     1
+    ],
+    "total_shared": 26
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     8,
+     10,
+     12,
+     93
+    ],
+    "total_shared": 45
+   }
+  },
+  {
+   "pair": 79,
+   "traj": 14,
+   "offset": 55,
+   "frames": [
+    55,
+    80
+   ],
+   "env_seed": 6080,
+   "planner_seed": 4079,
+   "planner_seed_nonealt": 4579,
+   "sampler": {
+    "draws": 9,
+    "hard_rejections": 3,
+    "duplicate_rejections": 2,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     26
+    ],
+    "shared_frames": [
+     12
+    ],
+    "total_shared": 12
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     9
+    ],
+    "shared_frames": [
+     13
+    ],
+    "total_shared": 13
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     3
+    ],
+    "shared_frames": [
+     18
+    ],
+    "total_shared": 18
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     48
+    ],
+    "total_shared": 21
+   }
+  },
+  {
+   "pair": 80,
+   "traj": 4,
+   "offset": 77,
+   "frames": [
+    77,
+    102
+   ],
+   "env_seed": 6081,
+   "planner_seed": 4080,
+   "planner_seed_nonealt": 4580,
+   "sampler": {
+    "draws": 10,
+    "hard_rejections": 5,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     19
+    ],
+    "shared_frames": [
+     14
+    ],
+    "total_shared": 14
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     0,
+     56
+    ],
+    "shared_frames": [
+     21,
+     15
+    ],
+    "total_shared": 36
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     14,
+     80
+    ],
+    "shared_frames": [
+     24,
+     7
+    ],
+    "total_shared": 31
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     9,
+     30,
+     32,
+     42,
+     45,
+     58
+    ],
+    "total_shared": 99
+   }
+  },
+  {
+   "pair": 81,
+   "traj": 20,
+   "offset": 1,
+   "frames": [
+    1,
+    26
+   ],
+   "env_seed": 6082,
+   "planner_seed": 4081,
+   "planner_seed_nonealt": 4581,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24
+    ],
+    "shared_frames": [
+     2
+    ],
+    "total_shared": 2
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     71
+    ],
+    "shared_frames": [
+     14,
+     19
+    ],
+    "total_shared": 33
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     23,
+     24,
+     28,
+     37,
+     44,
+     55,
+     57,
+     74,
+     75,
+     99
+    ],
+    "total_shared": 150
+   }
+  },
+  {
+   "pair": 82,
+   "traj": 4,
+   "offset": 8,
+   "frames": [
+    8,
+    33
+   ],
+   "env_seed": 6083,
+   "planner_seed": 4082,
+   "planner_seed_nonealt": 4582,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     95
+    ],
+    "shared_frames": [
+     22
+    ],
+    "total_shared": 22
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     16,
+     28,
+     70,
+     78,
+     87
+    ],
+    "shared_frames": [
+     18,
+     1,
+     25,
+     25,
+     20
+    ],
+    "total_shared": 89
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     22,
+     29,
+     38,
+     40,
+     51,
+     56,
+     62
+    ],
+    "total_shared": 135
+   }
+  },
+  {
+   "pair": 83,
+   "traj": 8,
+   "offset": 59,
+   "frames": [
+    59,
+    84
+   ],
+   "env_seed": 6084,
+   "planner_seed": 4083,
+   "planner_seed_nonealt": 4583,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     83
+    ],
+    "shared_frames": [
+     4
+    ],
+    "total_shared": 4
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     68,
+     85,
+     92,
+     98,
+     99
+    ],
+    "shared_frames": [
+     25,
+     4,
+     20,
+     23,
+     4
+    ],
+    "total_shared": 76
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     14,
+     16,
+     18,
+     35,
+     88
+    ],
+    "total_shared": 112
+   }
+  },
+  {
+   "pair": 84,
+   "traj": 2,
+   "offset": 135,
+   "frames": [
+    135,
+    160
+   ],
+   "env_seed": 6085,
+   "planner_seed": 4084,
+   "planner_seed_nonealt": 4584,
+   "sampler": {
+    "draws": 12,
+    "hard_rejections": 5,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     91
+    ],
+    "shared_frames": [
+     16
+    ],
+    "total_shared": 16
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     1,
+     54,
+     73
+    ],
+    "total_shared": 23
+   }
+  },
+  {
+   "pair": 85,
+   "traj": 18,
+   "offset": 96,
+   "frames": [
+    96,
+    121
+   ],
+   "env_seed": 6086,
+   "planner_seed": 4085,
+   "planner_seed_nonealt": 4585,
+   "sampler": {
+    "draws": 10,
+    "hard_rejections": 3,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     17
+    ],
+    "total_shared": 17
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     25
+    ],
+    "total_shared": 25
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     6,
+     15,
+     31,
+     33,
+     36,
+     39,
+     46,
+     66,
+     67,
+     68,
+     70,
+     77,
+     86,
+     89,
+     96
+    ],
+    "total_shared": 227
+   }
+  },
+  {
+   "pair": 86,
+   "traj": 18,
+   "offset": 99,
+   "frames": [
+    99,
+    124
+   ],
+   "env_seed": 6087,
+   "planner_seed": 4086,
+   "planner_seed_nonealt": 4586,
+   "sampler": {
+    "draws": 10,
+    "hard_rejections": 2,
+    "duplicate_rejections": 1,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     14
+    ],
+    "total_shared": 14
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     22
+    ],
+    "total_shared": 22
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     6,
+     15,
+     31,
+     33,
+     36,
+     39,
+     46,
+     66,
+     67,
+     68,
+     70,
+     85,
+     89,
+     96
+    ],
+    "total_shared": 205
+   }
+  },
+  {
+   "pair": 87,
+   "traj": 14,
+   "offset": 103,
+   "frames": [
+    103,
+    128
+   ],
+   "env_seed": 6088,
+   "planner_seed": 4087,
+   "planner_seed_nonealt": 4587,
+   "sampler": {
+    "draws": 8,
+    "hard_rejections": 3,
+    "duplicate_rejections": 1,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     32,
+     35
+    ],
+    "shared_frames": [
+     11,
+     5
+    ],
+    "total_shared": 16
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     3,
+     84
+    ],
+    "shared_frames": [
+     9,
+     5
+    ],
+    "total_shared": 14
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     47
+    ],
+    "shared_frames": [
+     11
+    ],
+    "total_shared": 11
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     13,
+     17,
+     19,
+     25,
+     26,
+     27,
+     72,
+     94,
+     98
+    ],
+    "total_shared": 92
+   }
+  },
+  {
+   "pair": 88,
+   "traj": 8,
+   "offset": 66,
+   "frames": [
+    66,
+    91
+   ],
+   "env_seed": 6089,
+   "planner_seed": 4088,
+   "planner_seed_nonealt": 4588,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     68,
+     92,
+     98
+    ],
+    "shared_frames": [
+     18,
+     25,
+     22
+    ],
+    "total_shared": 65
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     14,
+     16,
+     18,
+     35,
+     83
+    ],
+    "total_shared": 96
+   }
+  },
+  {
+   "pair": 89,
+   "traj": 18,
+   "offset": 74,
+   "frames": [
+    74,
+    99
+   ],
+   "env_seed": 6090,
+   "planner_seed": 4089,
+   "planner_seed_nonealt": 4589,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     13
+    ],
+    "total_shared": 13
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     30,
+     45,
+     60
+    ],
+    "shared_frames": [
+     15,
+     2,
+     22
+    ],
+    "total_shared": 39
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     5
+    ],
+    "total_shared": 5
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     2,
+     6,
+     31,
+     33,
+     36,
+     39,
+     46,
+     66,
+     68,
+     70,
+     77,
+     85,
+     86,
+     96
+    ],
+    "total_shared": 201
+   }
+  },
+  {
+   "pair": 90,
+   "traj": 13,
+   "offset": 84,
+   "frames": [
+    84,
+    109
+   ],
+   "env_seed": 6091,
+   "planner_seed": 4090,
+   "planner_seed_nonealt": 4590,
+   "sampler": {
+    "draws": 6,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     14,
+     23
+    ],
+    "shared_frames": [
+     9,
+     9
+    ],
+    "total_shared": 18
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     23
+    ],
+    "shared_frames": [
+     13
+    ],
+    "total_shared": 13
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     63,
+     71
+    ],
+    "total_shared": 46
+   }
+  },
+  {
+   "pair": 91,
+   "traj": 3,
+   "offset": 78,
+   "frames": [
+    78,
+    103
+   ],
+   "env_seed": 6092,
+   "planner_seed": 4091,
+   "planner_seed_nonealt": 4591,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     2
+    ],
+    "shared_frames": [
+     11
+    ],
+    "total_shared": 11
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     47,
+     53,
+     69,
+     95
+    ],
+    "total_shared": 83
+   }
+  },
+  {
+   "pair": 92,
+   "traj": 10,
+   "offset": 37,
+   "frames": [
+    37,
+    62
+   ],
+   "env_seed": 6093,
+   "planner_seed": 4092,
+   "planner_seed_nonealt": 4592,
+   "sampler": {
+    "draws": 2,
+    "hard_rejections": 1,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     13,
+     47
+    ],
+    "shared_frames": [
+     13,
+     17
+    ],
+    "total_shared": 30
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     68,
+     88
+    ],
+    "shared_frames": [
+     18,
+     15
+    ],
+    "total_shared": 33
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     21,
+     55,
+     60,
+     84
+    ],
+    "shared_frames": [
+     1,
+     21,
+     8,
+     19
+    ],
+    "total_shared": 49
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     20,
+     49,
+     97
+    ],
+    "total_shared": 59
+   }
+  },
+  {
+   "pair": 93,
+   "traj": 19,
+   "offset": 87,
+   "frames": [
+    87,
+    112
+   ],
+   "env_seed": 6094,
+   "planner_seed": 4093,
+   "planner_seed_nonealt": 4593,
+   "sampler": {
+    "draws": 1,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     44,
+     67
+    ],
+    "shared_frames": [
+     14,
+     17
+    ],
+    "total_shared": 31
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     32
+    ],
+    "shared_frames": [
+     25
+    ],
+    "total_shared": 25
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     8,
+     10,
+     12,
+     78
+    ],
+    "total_shared": 73
+   }
+  },
+  {
+   "pair": 94,
+   "traj": 14,
+   "offset": 96,
+   "frames": [
+    96,
+    121
+   ],
+   "env_seed": 6095,
+   "planner_seed": 4094,
+   "planner_seed_nonealt": 4594,
+   "sampler": {
+    "draws": 17,
+    "hard_rejections": 9,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     32
+    ],
+    "shared_frames": [
+     4
+    ],
+    "total_shared": 4
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     3,
+     84
+    ],
+    "shared_frames": [
+     2,
+     12
+    ],
+    "total_shared": 14
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     47
+    ],
+    "shared_frames": [
+     18
+    ],
+    "total_shared": 18
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     13,
+     17,
+     19,
+     26,
+     72,
+     87,
+     98
+    ],
+    "total_shared": 110
+   }
+  },
+  {
+   "pair": 95,
+   "traj": 3,
+   "offset": 80,
+   "frames": [
+    80,
+    105
+   ],
+   "env_seed": 6096,
+   "planner_seed": 4095,
+   "planner_seed_nonealt": 4595,
+   "sampler": {
+    "draws": 4,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     2
+    ],
+    "shared_frames": [
+     9
+    ],
+    "total_shared": 9
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     47,
+     53,
+     69,
+     91
+    ],
+    "total_shared": 89
+   }
+  },
+  {
+   "pair": 96,
+   "traj": 18,
+   "offset": 80,
+   "frames": [
+    80,
+    105
+   ],
+   "env_seed": 6097,
+   "planner_seed": 4096,
+   "planner_seed_nonealt": 4596,
+   "sampler": {
+    "draws": 4,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     5
+    ],
+    "shared_frames": [
+     19
+    ],
+    "total_shared": 19
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     30,
+     60
+    ],
+    "shared_frames": [
+     9,
+     16
+    ],
+    "total_shared": 25
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     51
+    ],
+    "shared_frames": [
+     11
+    ],
+    "total_shared": 11
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     0,
+     2,
+     6,
+     15,
+     31,
+     33,
+     36,
+     39,
+     46,
+     66,
+     68,
+     70,
+     77,
+     85,
+     86,
+     89
+    ],
+    "total_shared": 242
+   }
+  },
+  {
+   "pair": 97,
+   "traj": 10,
+   "offset": 49,
+   "frames": [
+    49,
+    74
+   ],
+   "env_seed": 6098,
+   "planner_seed": 4097,
+   "planner_seed_nonealt": 4597,
+   "sampler": {
+    "draws": 4,
+    "hard_rejections": 2,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [
+     13,
+     47
+    ],
+    "shared_frames": [
+     1,
+     23
+    ],
+    "total_shared": 24
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     68,
+     88
+    ],
+    "shared_frames": [
+     6,
+     3
+    ],
+    "total_shared": 9
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     55,
+     84
+    ],
+    "shared_frames": [
+     9,
+     7
+    ],
+    "total_shared": 16
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     20,
+     49,
+     92
+    ],
+    "total_shared": 49
+   }
+  },
+  {
+   "pair": 98,
+   "traj": 14,
+   "offset": 89,
+   "frames": [
+    89,
+    114
+   ],
+   "env_seed": 6099,
+   "planner_seed": 4098,
+   "planner_seed_nonealt": 4598,
+   "sampler": {
+    "draws": 5,
+    "hard_rejections": 0,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     9,
+     84
+    ],
+    "shared_frames": [
+     5,
+     19
+    ],
+    "total_shared": 24
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     47
+    ],
+    "shared_frames": [
+     25
+    ],
+    "total_shared": 25
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     13,
+     17,
+     19,
+     26,
+     72,
+     87,
+     94
+    ],
+    "total_shared": 112
+   }
+  },
+  {
+   "pair": 99,
+   "traj": 20,
+   "offset": 2,
+   "frames": [
+    2,
+    27
+   ],
+   "env_seed": 6100,
+   "planner_seed": 4099,
+   "planner_seed_nonealt": 4599,
+   "sampler": {
+    "draws": 16,
+    "hard_rejections": 6,
+    "duplicate_rejections": 0,
+    "soft_shared_frames": 0
+   },
+   "overlap_held": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_smoke": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_pilot_eval_R2-7_R2-13": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_cem_eval": {
+    "pairs": [],
+    "shared_frames": [],
+    "total_shared": 0
+   },
+   "overlap_R2-1_sel": {
+    "pairs": [
+     24
+    ],
+    "shared_frames": [
+     3
+    ],
+    "total_shared": 3
+   },
+   "overlap_E1_eval_v2_unused": {
+    "pairs": [
+     4,
+     71
+    ],
+    "shared_frames": [
+     15,
+     20
+    ],
+    "total_shared": 35
+   },
+   "overlap_within_eval6": {
+    "pairs": [
+     23,
+     24,
+     28,
+     37,
+     44,
+     55,
+     57,
+     74,
+     75,
+     81
+    ],
+    "total_shared": 159
+   }
+  }
+ ],
+ "reference_segments": {
+  "held": {
+   "pair_seed": 3,
+   "role": "hard",
+   "segs": [
+    [
+     7,
+     75
+    ],
+    [
+     17,
+     8
+    ],
+    [
+     11,
+     77
+    ],
+    [
+     15,
+     80
+    ],
+    [
+     18,
+     8
+    ],
+    [
+     19,
+     1
+    ],
+    [
+     15,
+     33
+    ],
+    [
+     17,
+     14
+    ],
+    [
+     6,
+     45
+    ],
+    [
+     15,
+     69
+    ],
+    [
+     17,
+     30
+    ],
+    [
+     12,
+     38
+    ],
+    [
+     7,
+     81
+    ],
+    [
+     4,
+     111
+    ],
+    [
+     16,
+     49
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     9,
+     99
+    ],
+    [
+     0,
+     34
+    ],
+    [
+     15,
+     76
+    ]
+   ]
+  },
+  "smoke": {
+   "pair_seed": 7,
+   "role": "hard",
+   "segs": [
+    [
+     10,
+     9
+    ],
+    [
+     12,
+     12
+    ],
+    [
+     2,
+     24
+    ],
+    [
+     11,
+     74
+    ]
+   ]
+  },
+  "pilot_eval_R2-7_R2-13": {
+   "pair_seed": 4,
+   "role": "soft",
+   "segs": [
+    [
+     7,
+     38
+    ],
+    [
+     3,
+     50
+    ],
+    [
+     15,
+     19
+    ],
+    [
+     2,
+     17
+    ],
+    [
+     0,
+     51
+    ],
+    [
+     17,
+     18
+    ],
+    [
+     1,
+     28
+    ],
+    [
+     16,
+     68
+    ],
+    [
+     11,
+     35
+    ],
+    [
+     5,
+     13
+    ],
+    [
+     8,
+     27
+    ],
+    [
+     0,
+     33
+    ],
+    [
+     8,
+     24
+    ],
+    [
+     5,
+     39
+    ],
+    [
+     9,
+     80
+    ],
+    [
+     11,
+     11
+    ],
+    [
+     19,
+     43
+    ],
+    [
+     12,
+     129
+    ],
+    [
+     7,
+     22
+    ],
+    [
+     7,
+     60
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     17,
+     53
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     73
+    ],
+    [
+     9,
+     97
+    ],
+    [
+     16,
+     24
+    ],
+    [
+     13,
+     54
+    ],
+    [
+     19,
+     36
+    ],
+    [
+     13,
+     57
+    ],
+    [
+     5,
+     29
+    ],
+    [
+     9,
+     33
+    ],
+    [
+     1,
+     10
+    ],
+    [
+     1,
+     59
+    ],
+    [
+     20,
+     71
+    ],
+    [
+     16,
+     68
+    ],
+    [
+     20,
+     120
+    ],
+    [
+     10,
+     9
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     13,
+     25
+    ],
+    [
+     20,
+     112
+    ],
+    [
+     8,
+     23
+    ],
+    [
+     11,
+     55
+    ],
+    [
+     18,
+     41
+    ],
+    [
+     20,
+     50
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     1,
+     29
+    ],
+    [
+     8,
+     30
+    ],
+    [
+     3,
+     42
+    ],
+    [
+     5,
+     37
+    ],
+    [
+     14,
+     6
+    ]
+   ]
+  },
+  "R2-1_cem_eval": {
+   "pair_seed": 2,
+   "role": "info",
+   "segs": [
+    [
+     1,
+     11
+    ],
+    [
+     2,
+     92
+    ],
+    [
+     5,
+     39
+    ],
+    [
+     8,
+     27
+    ],
+    [
+     19,
+     4
+    ],
+    [
+     18,
+     87
+    ],
+    [
+     5,
+     55
+    ],
+    [
+     20,
+     100
+    ],
+    [
+     16,
+     47
+    ],
+    [
+     17,
+     28
+    ],
+    [
+     16,
+     34
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     11,
+     59
+    ],
+    [
+     10,
+     24
+    ],
+    [
+     13,
+     67
+    ],
+    [
+     5,
+     22
+    ],
+    [
+     7,
+     29
+    ],
+    [
+     0,
+     22
+    ],
+    [
+     10,
+     11
+    ],
+    [
+     4,
+     65
+    ],
+    [
+     16,
+     46
+    ],
+    [
+     16,
+     71
+    ],
+    [
+     5,
+     57
+    ],
+    [
+     13,
+     67
+    ],
+    [
+     11,
+     75
+    ],
+    [
+     11,
+     46
+    ],
+    [
+     14,
+     41
+    ],
+    [
+     12,
+     118
+    ],
+    [
+     20,
+     63
+    ],
+    [
+     15,
+     35
+    ],
+    [
+     15,
+     64
+    ],
+    [
+     16,
+     45
+    ],
+    [
+     14,
+     118
+    ],
+    [
+     11,
+     72
+    ],
+    [
+     17,
+     46
+    ],
+    [
+     14,
+     124
+    ],
+    [
+     7,
+     41
+    ],
+    [
+     5,
+     34
+    ],
+    [
+     15,
+     39
+    ],
+    [
+     9,
+     90
+    ],
+    [
+     16,
+     71
+    ],
+    [
+     16,
+     64
+    ],
+    [
+     20,
+     104
+    ],
+    [
+     9,
+     93
+    ],
+    [
+     6,
+     31
+    ],
+    [
+     16,
+     46
+    ],
+    [
+     19,
+     9
+    ],
+    [
+     10,
+     46
+    ],
+    [
+     0,
+     24
+    ],
+    [
+     3,
+     7
+    ]
+   ]
+  },
+  "R2-1_sel": {
+   "pair_seed": 1,
+   "role": "info",
+   "segs": [
+    [
+     4,
+     72
+    ],
+    [
+     2,
+     65
+    ],
+    [
+     3,
+     63
+    ],
+    [
+     14,
+     120
+    ],
+    [
+     20,
+     97
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     15,
+     3
+    ],
+    [
+     12,
+     110
+    ],
+    [
+     19,
+     0
+    ],
+    [
+     14,
+     68
+    ],
+    [
+     7,
+     75
+    ],
+    [
+     3,
+     40
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     69
+    ],
+    [
+     0,
+     48
+    ],
+    [
+     6,
+     27
+    ],
+    [
+     0,
+     67
+    ],
+    [
+     7,
+     56
+    ],
+    [
+     15,
+     70
+    ],
+    [
+     7,
+     44
+    ],
+    [
+     7,
+     86
+    ],
+    [
+     7,
+     58
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     13,
+     71
+    ],
+    [
+     20,
+     25
+    ],
+    [
+     5,
+     37
+    ],
+    [
+     3,
+     42
+    ],
+    [
+     16,
+     54
+    ],
+    [
+     16,
+     24
+    ],
+    [
+     9,
+     36
+    ],
+    [
+     18,
+     63
+    ],
+    [
+     16,
+     50
+    ],
+    [
+     18,
+     4
+    ],
+    [
+     15,
+     31
+    ],
+    [
+     12,
+     106
+    ],
+    [
+     5,
+     46
+    ],
+    [
+     17,
+     44
+    ],
+    [
+     11,
+     11
+    ],
+    [
+     14,
+     130
+    ],
+    [
+     3,
+     20
+    ],
+    [
+     16,
+     50
+    ],
+    [
+     11,
+     62
+    ],
+    [
+     0,
+     60
+    ],
+    [
+     1,
+     39
+    ],
+    [
+     19,
+     75
+    ],
+    [
+     18,
+     50
+    ],
+    [
+     20,
+     43
+    ],
+    [
+     5,
+     64
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     6,
+     34
+    ],
+    [
+     17,
+     14
+    ],
+    [
+     12,
+     131
+    ],
+    [
+     11,
+     73
+    ],
+    [
+     11,
+     58
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     12,
+     131
+    ],
+    [
+     4,
+     66
+    ],
+    [
+     17,
+     13
+    ],
+    [
+     13,
+     7
+    ],
+    [
+     15,
+     46
+    ],
+    [
+     18,
+     70
+    ],
+    [
+     6,
+     60
+    ],
+    [
+     16,
+     52
+    ],
+    [
+     15,
+     104
+    ],
+    [
+     11,
+     53
+    ],
+    [
+     11,
+     0
+    ],
+    [
+     17,
+     34
+    ],
+    [
+     19,
+     78
+    ],
+    [
+     10,
+     29
+    ],
+    [
+     19,
+     3
+    ],
+    [
+     7,
+     81
+    ],
+    [
+     5,
+     23
+    ],
+    [
+     2,
+     65
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     14,
+     3
+    ],
+    [
+     8,
+     31
+    ],
+    [
+     8,
+     14
+    ],
+    [
+     19,
+     23
+    ],
+    [
+     11,
+     37
+    ],
+    [
+     2,
+     42
+    ],
+    [
+     5,
+     32
+    ],
+    [
+     16,
+     21
+    ],
+    [
+     8,
+     37
+    ],
+    [
+     14,
+     82
+    ],
+    [
+     15,
+     60
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     9,
+     49
+    ],
+    [
+     10,
+     26
+    ],
+    [
+     6,
+     16
+    ],
+    [
+     3,
+     32
+    ],
+    [
+     16,
+     26
+    ],
+    [
+     19,
+     55
+    ],
+    [
+     0,
+     28
+    ],
+    [
+     0,
+     50
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     57
+    ],
+    [
+     16,
+     54
+    ],
+    [
+     17,
+     53
+    ],
+    [
+     7,
+     80
+    ]
+   ]
+  },
+  "E1_eval_v2_unused": {
+   "pair_seed": 5,
+   "role": "info",
+   "segs": [
+    [
+     19,
+     32
+    ],
+    [
+     11,
+     83
+    ],
+    [
+     16,
+     3
+    ],
+    [
+     14,
+     63
+    ],
+    [
+     20,
+     13
+    ],
+    [
+     5,
+     14
+    ],
+    [
+     11,
+     60
+    ],
+    [
+     7,
+     48
+    ],
+    [
+     17,
+     6
+    ],
+    [
+     18,
+     31
+    ],
+    [
+     0,
+     27
+    ],
+    [
+     13,
+     35
+    ],
+    [
+     5,
+     49
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     4,
+     79
+    ],
+    [
+     19,
+     56
+    ],
+    [
+     4,
+     16
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     6,
+     49
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     5,
+     37
+    ],
+    [
+     10,
+     12
+    ],
+    [
+     17,
+     43
+    ],
+    [
+     20,
+     52
+    ],
+    [
+     5,
+     25
+    ],
+    [
+     12,
+     76
+    ],
+    [
+     0,
+     46
+    ],
+    [
+     13,
+     21
+    ],
+    [
+     4,
+     33
+    ],
+    [
+     2,
+     84
+    ],
+    [
+     9,
+     77
+    ],
+    [
+     18,
+     0
+    ],
+    [
+     19,
+     86
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     9,
+     45
+    ],
+    [
+     9,
+     61
+    ],
+    [
+     10,
+     11
+    ],
+    [
+     15,
+     60
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     11,
+     51
+    ],
+    [
+     0,
+     70
+    ],
+    [
+     13,
+     46
+    ],
+    [
+     12,
+     2
+    ],
+    [
+     14,
+     11
+    ],
+    [
+     5,
+     25
+    ],
+    [
+     3,
+     31
+    ],
+    [
+     14,
+     88
+    ],
+    [
+     16,
+     45
+    ],
+    [
+     16,
+     32
+    ],
+    [
+     14,
+     27
+    ],
+    [
+     18,
+     95
+    ],
+    [
+     11,
+     37
+    ],
+    [
+     1,
+     55
+    ],
+    [
+     2,
+     53
+    ],
+    [
+     10,
+     32
+    ],
+    [
+     19,
+     46
+    ],
+    [
+     4,
+     43
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     9,
+     87
+    ],
+    [
+     10,
+     19
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     20,
+     38
+    ],
+    [
+     9,
+     61
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     2,
+     103
+    ],
+    [
+     1,
+     30
+    ],
+    [
+     19,
+     44
+    ],
+    [
+     8,
+     58
+    ],
+    [
+     20,
+     107
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     20,
+     8
+    ],
+    [
+     15,
+     42
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     18,
+     16
+    ],
+    [
+     20,
+     105
+    ],
+    [
+     3,
+     21
+    ],
+    [
+     13,
+     47
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     13,
+     37
+    ],
+    [
+     4,
+     58
+    ],
+    [
+     19,
+     21
+    ],
+    [
+     16,
+     58
+    ],
+    [
+     15,
+     88
+    ],
+    [
+     10,
+     30
+    ],
+    [
+     8,
+     37
+    ],
+    [
+     15,
+     51
+    ],
+    [
+     4,
+     14
+    ],
+    [
+     12,
+     136
+    ],
+    [
+     5,
+     63
+    ],
+    [
+     10,
+     11
+    ],
+    [
+     2,
+     125
+    ],
+    [
+     8,
+     65
+    ],
+    [
+     17,
+     32
+    ],
+    [
+     11,
+     8
+    ],
+    [
+     11,
+     75
+    ],
+    [
+     1,
+     39
+    ],
+    [
+     11,
+     71
+    ],
+    [
+     8,
+     62
+    ],
+    [
+     8,
+     37
+    ]
+   ]
+  }
+ }
+}

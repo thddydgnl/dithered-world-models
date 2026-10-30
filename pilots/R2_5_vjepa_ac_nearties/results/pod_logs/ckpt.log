@@ -1,0 +1,3 @@
++ cd /workspace/cache/torch/hub/checkpoints
++ aria2c -q -x 16 -s 16 -k 64M --file-allocation=none -o vjepa2-ac-vitg.pt https://dl.fbaipublicfiles.com/vjepa2/vjepa2-ac-vitg.pt
++ echo CKPT_OK

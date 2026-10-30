@@ -1,0 +1,59 @@
+== pusht: none 83/100 (83%); nonealt 79%, seed floor 0.904
+  [conf] k=3 det       47/100 D +36pp [27,45] McN p=2.91e-11 p_boot 0.0001 real(Holm) True | err1 0.2817 err5 0.6862 | OEI_ref(mf) +0.217 (argmin +0.202) | plandev 0.71
+  [conf] k=3 ind       82/100 D +1pp [-4,6] McN p=1 red 0.97 D_v-D_det -35 [-45,-25] | err1 0.3150 err5 0.2047 | OEI_ref(mf) +0.021 (argmin -0.028) | plandev 0.63
+  [conf] k=3 shiter    80/100 D +3pp [-3,9] McN p=0.508 red 0.92 D_v-D_det -33 [-42,-24] | err1 0.3156 err5 0.2054 | OEI_ref(mf) +0.016 (argmin -0.018) | plandev 0.62
+  [conf] k=3 shstep    79/100 D +4pp [-2,10] McN p=0.344 red 0.89 D_v-D_det -32 [-42,-22] | err1 0.3183 err5 0.2045 | OEI_ref(mf) -0.013 (argmin -0.025) | plandev 0.61
+  [conf] k=3 detshift  80/100 D +3pp [-3,9] McN p=0.508 red 0.92 D_v-D_det -33 [-44,-23] | err1 0.1425 err5 0.0919 | OEI_ref(mf) +0.006 (argmin -0.009) | plandev 0.58
+  [conf] k=4 det       59/100 D +24pp [14,34] McN p=1.93e-05 p_boot 0.0001 real(Holm) True | err1 0.0555 err5 0.2504 | OEI_ref(mf) -0.297 (argmin -0.305) | plandev 0.65
+  [conf] k=4 ind       82/100 D +1pp [-2,5] McN p=1 red 0.96 D_v-D_det -23 [-33,-13] | err1 0.0628 err5 0.0420 | OEI_ref(mf) +0.005 (argmin -0.008) | plandev 0.56
+  [conf] k=4 shiter    83/100 D +0pp [-4,4] McN p=1 red 1.0 D_v-D_det -24 [-33,-15] | err1 0.0626 err5 0.0422 | OEI_ref(mf) +0.005 (argmin -0.003) | plandev 0.55
+  [conf] k=4 shstep    84/100 D -1pp [-4,2] McN p=1 red 1.04 D_v-D_det -25 [-35,-15] | err1 0.0631 err5 0.0418 | OEI_ref(mf) -0.003 (argmin -0.007) | plandev 0.58
+  [conf] k=4 detshift  82/100 D +1pp [-4,6] McN p=1 red 0.96 D_v-D_det -23 [-32,-14] | err1 0.0312 err5 0.0225 | OEI_ref(mf) +0.000 (argmin -0.004) | plandev 0.57
+  [conf] k=5 det       78/100 D +5pp [1,10] McN p=0.0625 p_boot 0.0076 real(Holm) True | err1 0.0086 err5 0.0171 | OEI_ref(mf) +0.030 (argmin +0.029) | plandev 0.54
+  [conf] k=5 ind       81/100 D +2pp [-2,6] McN p=0.625 red 0.6 D_v-D_det -3 [-8,1] | err1 0.0147 err5 0.0119 | OEI_ref(mf) -0.001 (argmin -0.003) | plandev 0.56
+  [conf] k=5 shiter    79/100 D +4pp [1,8] McN p=0.125 red 0.2 D_v-D_det -1 [-6,4] | err1 0.0146 err5 0.0120 | OEI_ref(mf) +0.001 (argmin -0.003) | plandev 0.55
+  [conf] k=5 shstep    82/100 D +1pp [-2,4] McN p=1 red 0.8 D_v-D_det -4 [-10,1] | err1 0.0148 err5 0.0119 | OEI_ref(mf) -0.002 (argmin -0.003) | plandev 0.52
+  [conf] k=5 detshift  83/100 D +0pp [-4,4] McN p=1 red 1.0 D_v-D_det -5 [-10,0] | err1 0.0082 err5 0.0079 | OEI_ref(mf) -0.001 (argmin -0.002) | plandev 0.53
+== wall: none 61/100 (61%); nonealt 58%, seed floor 0.930
+  [conf] k=4 det       75/100 D -14pp [-24,-4] McN p=0.0125 p_boot 0.9979 real(Holm) False | err1 0.0433 err5 0.1562 | OEI_ref(mf) +0.171 (argmin +0.134) | plandev 0.64
+  [conf] k=4 ind       67/100 D -6pp [-14,2] McN p=0.238 red None D_v-D_det +8 [-1,17] | err1 0.0396 err5 0.0298 | OEI_ref(mf) -0.022 (argmin -0.048) | plandev 0.52
+  [conf] k=4 shiter    60/100 D +1pp [-6,9] McN p=1 red None D_v-D_det +15 [4,26] | err1 0.0396 err5 0.0294 | OEI_ref(mf) -0.017 (argmin -0.033) | plandev 0.50
+  [conf] k=4 shstep    58/100 D +3pp [-7,14] McN p=0.711 red None D_v-D_det +17 [7,28] | err1 0.0398 err5 0.0297 | OEI_ref(mf) -0.024 (argmin -0.052) | plandev 0.48
+  [conf] k=4 detshift  63/100 D -2pp [-11,7] McN p=0.824 red None D_v-D_det +12 [1,22] | err1 0.0201 err5 0.0145 | OEI_ref(mf) -0.013 (argmin -0.027) | plandev 0.50
+  [conf] k=5 det       58/100 D +3pp [-5,12] McN p=0.648 p_boot 0.2778 real(Holm) False | err1 0.0114 err5 0.0508 | OEI_ref(mf) -0.151 (argmin -0.159) | plandev 0.55
+  [conf] k=5 ind       62/100 D -1pp [-9,7] McN p=1 red 1.33 D_v-D_det -4 [-13,5] | err1 0.0096 err5 0.0072 | OEI_ref(mf) -0.010 (argmin -0.018) | plandev 0.46
+  [conf] k=5 shiter    67/100 D -6pp [-15,3] McN p=0.286 red 3.0 D_v-D_det -9 [-19,0] | err1 0.0096 err5 0.0072 | OEI_ref(mf) -0.010 (argmin -0.022) | plandev 0.47
+  [conf] k=5 shstep    60/100 D +1pp [-7,9] McN p=1 red 0.67 D_v-D_det -2 [-11,7] | err1 0.0096 err5 0.0073 | OEI_ref(mf) -0.007 (argmin -0.032) | plandev 0.43
+  [conf] k=5 detshift  64/100 D -3pp [-12,6] McN p=0.678 red 2.0 D_v-D_det -6 [-15,3] | err1 0.0051 err5 0.0040 | OEI_ref(mf) -0.004 (argmin -0.015) | plandev 0.46
+  [conf] k=6 det       64/100 D -3pp [-11,5] McN p=0.629 p_boot 0.8047 real(Holm) False | err1 0.0020 err5 0.0039 | OEI_ref(mf) -0.024 (argmin -0.037) | plandev 0.47
+  [conf] k=6 ind       64/100 D -3pp [-11,5] McN p=0.629 red None D_v-D_det +0 [-8,8] | err1 0.0027 err5 0.0023 | OEI_ref(mf) -0.007 (argmin -0.018) | plandev 0.46
+  [conf] k=6 shiter    64/100 D -3pp [-11,5] McN p=0.629 red None D_v-D_det +0 [-8,8] | err1 0.0027 err5 0.0023 | OEI_ref(mf) -0.006 (argmin -0.018) | plandev 0.41
+  [conf] k=6 shstep    60/100 D +1pp [-8,9] McN p=1 red None D_v-D_det +4 [-5,13] | err1 0.0027 err5 0.0023 | OEI_ref(mf) -0.007 (argmin -0.018) | plandev 0.43
+  [conf] k=6 detshift  62/100 D -1pp [-9,7] McN p=1 red None D_v-D_det +2 [-5,9] | err1 0.0016 err5 0.0015 | OEI_ref(mf) -0.006 (argmin -0.033) | plandev 0.42
+  [expl] k=3 det       11/100 D +50pp [39,61] McN p=3.17e-12 p_boot 0.0001 real(Holm) None | err1 0.3512 err5 3.4515 | OEI_ref(mf) -2.108 (argmin -2.169) | plandev 1.08
+  [expl] k=3 ind       62/100 D -1pp [-10,8] McN p=1 red 1.02 D_v-D_det -51 [-62,-40] | err1 0.2064 err5 0.1484 | OEI_ref(mf) -0.069 (argmin -0.141) | plandev 0.60
+  [expl] k=3 shiter    57/100 D +4pp [-5,14] McN p=0.541 red 0.92 D_v-D_det -46 [-57,-35] | err1 0.2057 err5 0.1489 | OEI_ref(mf) -0.063 (argmin -0.137) | plandev 0.57
+  [expl] k=3 shstep    65/100 D -4pp [-13,5] McN p=0.523 red 1.08 D_v-D_det -54 [-64,-43] | err1 0.2068 err5 0.1498 | OEI_ref(mf) -0.080 (argmin -0.140) | plandev 0.59
+  [expl] k=3 detshift  62/100 D -1pp [-10,8] McN p=1 red 1.02 D_v-D_det -51 [-62,-39] | err1 0.0928 err5 0.0668 | OEI_ref(mf) -0.027 (argmin -0.070) | plandev 0.52
+== pointmaze: none 85/100 (85%); nonealt 85%, seed floor 0.823
+  [conf] k=2 det       69/100 D +16pp [7,25] McN p=0.00154 p_boot 0.0006 real(Holm) True | err1 2.4899 err5 1.9512 | OEI_ref(mf) -0.038 (argmin -0.058) | plandev 0.90
+  [conf] k=2 ind       84/100 D +1pp [-6,8] McN p=1 red 0.94 D_v-D_det -15 [-24,-6] | err1 2.5203 err5 1.4014 | OEI_ref(mf) +0.011 (argmin -0.013) | plandev 0.83
+  [conf] k=2 shiter    80/100 D +5pp [-3,13] McN p=0.332 red 0.69 D_v-D_det -11 [-20,-2] | err1 2.5220 err5 1.4070 | OEI_ref(mf) +0.004 (argmin -0.019) | plandev 0.85
+  [conf] k=2 shstep    85/100 D +0pp [-8,8] McN p=1 red 1.0 D_v-D_det -16 [-25,-7] | err1 2.5205 err5 1.4100 | OEI_ref(mf) +0.001 (argmin -0.020) | plandev 0.83
+  [conf] k=2 detshift  84/100 D +1pp [-6,8] McN p=1 red 0.94 D_v-D_det -15 [-24,-6] | err1 1.1781 err5 0.9137 | OEI_ref(mf) +0.002 (argmin -0.016) | plandev 0.82
+  [conf] k=3 det       74/100 D +11pp [2,20] McN p=0.0266 p_boot 0.0088 real(Holm) True | err1 0.3625 err5 1.0831 | OEI_ref(mf) -0.029 (argmin -0.049) | plandev 0.86
+  [conf] k=3 ind       86/100 D -1pp [-7,6] McN p=1 red 1.09 D_v-D_det -12 [-20,-4] | err1 0.3944 err5 0.4851 | OEI_ref(mf) +0.001 (argmin -0.013) | plandev 0.82
+  [conf] k=3 shiter    86/100 D -1pp [-8,5] McN p=1 red 1.09 D_v-D_det -12 [-20,-4] | err1 0.3942 err5 0.4828 | OEI_ref(mf) +0.004 (argmin -0.015) | plandev 0.79
+  [conf] k=3 shstep    83/100 D +2pp [-4,8] McN p=0.754 red 0.82 D_v-D_det -9 [-17,-1] | err1 0.3954 err5 0.4922 | OEI_ref(mf) -0.000 (argmin -0.012) | plandev 0.80
+  [conf] k=3 detshift  88/100 D -3pp [-9,3] McN p=0.549 red 1.27 D_v-D_det -14 [-22,-6] | err1 0.1963 err5 0.3094 | OEI_ref(mf) +0.002 (argmin -0.009) | plandev 0.76
+  [conf] k=4 det       85/100 D +0pp [-6,6] McN p=1 p_boot 0.5672 real(Holm) False | err1 0.0465 err5 0.3197 | OEI_ref(mf) +0.002 (argmin -0.013) | plandev 0.78
+  [conf] k=4 ind       87/100 D -2pp [-8,4] McN p=0.754 red None D_v-D_det -2 [-8,3] | err1 0.0847 err5 0.1801 | OEI_ref(mf) +0.002 (argmin -0.005) | plandev 0.76
+  [conf] k=4 shiter    89/100 D -4pp [-10,2] McN p=0.344 red None D_v-D_det -4 [-10,2] | err1 0.0846 err5 0.1781 | OEI_ref(mf) +0.000 (argmin -0.004) | plandev 0.76
+  [conf] k=4 shstep    85/100 D +0pp [-6,6] McN p=1 red None D_v-D_det +0 [-7,7] | err1 0.0847 err5 0.1802 | OEI_ref(mf) +0.000 (argmin -0.006) | plandev 0.74
+  [conf] k=4 detshift  80/100 D +5pp [-2,13] McN p=0.302 red None D_v-D_det +5 [-3,13] | err1 0.0450 err5 0.1337 | OEI_ref(mf) +0.000 (argmin -0.003) | plandev 0.72
+DINO-WM H1: {'holds': True, 'cells_meeting': [('pusht', 3), ('pusht', 4), ('pusht', 5), ('pointmaze', 2), ('pointmaze', 3)], 'qualifying_any': True}
+DINO-WM H3a: {'holds': True, 'share_red_ge_half': 0.8, 'n_qualifying': 5, 'cells_red_ge_half': [('pusht', 3), ('pusht', 4), ('pointmaze', 2), ('pointmaze', 3)], 'harm_cells': []}
+DINO-WM H2a: {'cell': 'pusht k=4', 'det_oei': -0.2972374537959695, 'det_oei_ci': [-0.3503554584090598, -0.247708567410009], 'shiter_oei': 0.00483362261831644, 'shiter_oei_ci': [-7.944563458295146e-06, 0.00987066462493385], 'det_upper_lt0': True, 'shiter_ci_contains0': True, 'holds': True}
+DINO-WM H2b primary (task average): -0.144 holds False {'pointmaze': -0.189, 'pusht': -0.556, 'wall': 0.312}
+wrote /Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world_models/main/results/E1/e1_dinowm_summary.json
+wrote /Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world_models/main/results/E1/e1_dinowm_cells.csv

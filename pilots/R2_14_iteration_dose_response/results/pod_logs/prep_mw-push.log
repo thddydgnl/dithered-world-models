@@ -1,0 +1,9 @@
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push k=3: det: e1 0.8504 e3 2.1166 er 0.0772 | ind: e1 0.5753 e3 1.2654 er 0.3065 | shfwd: e1 0.5798 e3 1.2507 er 0.3409 | shstep: e1 0.5642 e3 1.2749 er 0.2658 | shep: e1 0.5642 e3 1.2749 er 0.2658
+mw-push ranges R2-8 vs this pod: dyn0 hi 8.492/8.439, dyn1 hi 7.193/7.188, rew0 hi 7.441/7.462, rew1 hi 8.085/8.106
+PREP mw-push done in 4s

@@ -1,0 +1,312 @@
+{
+ "source": "analyze_e3.py --final (TD-MPC2; density from the E1 decision jobs, 450 fixed states = 3 checkpoints x 150; CRN gain = D_ind - D_sh-iter on the E3 seeds 50000-50029, 90 pairs)",
+ "rule": "v5 7.2 H4b: density = -(median of the unquantized top1-top2 gap / candidate std); confirmatory TD-MPC2 12 tasks Spearman(density_last, crn_gain) >= 0.5; auxiliary: the first-iteration set and the 15-task pool with DINO-WM (coordinator)",
+ "units": "crn_gain: Meta-World success-rate difference (fraction), DMC relative return drop (fraction)",
+ "tasks": {
+  "mw-button-press-topdown": {
+   "k": 3,
+   "density_last": -0.060507000000000005,
+   "density_first": -0.00661215,
+   "gap_median_last": 0.060507000000000005,
+   "gap_q25_last": 0.02538275,
+   "gap_q75_last": 0.1141925,
+   "gap_median_first": 0.00661215,
+   "n_states": 450,
+   "crn_gain": 0.5555555555555556,
+   "crn_gain_ci": [
+    0.4555555555555556,
+    0.6555555555555556
+   ],
+   "D_ind": 0.5555555555555556,
+   "D_ind_ci": [
+    0.4555555555555556,
+    0.6555555555555556
+   ],
+   "D_shiter": 0.0,
+   "D_shiter_ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "mw-door-open": {
+   "k": 4,
+   "density_last": -0.0933975,
+   "density_first": -0.0188365,
+   "gap_median_last": 0.0933975,
+   "gap_q25_last": 0.035800750000000006,
+   "gap_q75_last": 0.17035,
+   "gap_median_first": 0.0188365,
+   "n_states": 450,
+   "crn_gain": -0.011111111111111183,
+   "crn_gain_ci": [
+    -0.06666666666666665,
+    0.04444444444444451
+   ],
+   "D_ind": -0.022222222222222254,
+   "D_ind_ci": [
+    -0.0888888888888889,
+    0.0444444444444444
+   ],
+   "D_shiter": -0.011111111111111072,
+   "D_shiter_ci": [
+    -0.07777777777777783,
+    0.05555555555555558
+   ]
+  },
+  "mw-drawer-open": {
+   "k": 3,
+   "density_last": -0.0474605,
+   "density_first": -0.0053888,
+   "gap_median_last": 0.0474605,
+   "gap_q25_last": 0.019389999999999998,
+   "gap_q75_last": 0.10042999999999999,
+   "gap_median_first": 0.0053888,
+   "n_states": 450,
+   "crn_gain": 0.011111111111111072,
+   "crn_gain_ci": [
+    0.0,
+    0.033333333333333326
+   ],
+   "D_ind": 0.011111111111111072,
+   "D_ind_ci": [
+    0.0,
+    0.033333333333333326
+   ],
+   "D_shiter": 0.0,
+   "D_shiter_ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "mw-peg-insert-side": {
+   "k": 4,
+   "density_last": -0.087117,
+   "density_first": -0.044441999999999995,
+   "gap_median_last": 0.087117,
+   "gap_q25_last": 0.0407035,
+   "gap_q75_last": 0.17659249999999999,
+   "gap_median_first": 0.044441999999999995,
+   "n_states": 450,
+   "crn_gain": 0.21111111111111114,
+   "crn_gain_ci": [
+    0.1333333333333333,
+    0.30000000000000004
+   ],
+   "D_ind": 0.20000000000000007,
+   "D_ind_ci": [
+    0.11111111111111116,
+    0.28888888888888886
+   ],
+   "D_shiter": -0.011111111111111072,
+   "D_shiter_ci": [
+    -0.033333333333333326,
+    0.0
+   ]
+  },
+  "mw-pick-place": {
+   "k": 3,
+   "density_last": -0.060334,
+   "density_first": -0.00042368,
+   "gap_median_last": 0.060334,
+   "gap_q25_last": 0.02634175,
+   "gap_q75_last": 0.1275325,
+   "gap_median_first": 0.00042368,
+   "n_states": 450,
+   "crn_gain": 0.05555555555555558,
+   "crn_gain_ci": [
+    -0.033333333333333326,
+    0.1444444444444445
+   ],
+   "D_ind": 0.1777777777777778,
+   "D_ind_ci": [
+    0.0888888888888889,
+    0.2666666666666666
+   ],
+   "D_shiter": 0.12222222222222223,
+   "D_shiter_ci": [
+    0.05555555555555547,
+    0.19999999999999996
+   ]
+  },
+  "mw-push": {
+   "k": 3,
+   "density_last": -0.086724,
+   "density_first": -0.00371195,
+   "gap_median_last": 0.086724,
+   "gap_q25_last": 0.03655,
+   "gap_q75_last": 0.15397249999999998,
+   "gap_median_first": 0.00371195,
+   "n_states": 450,
+   "crn_gain": 0.15555555555555556,
+   "crn_gain_ci": [
+    0.07777777777777772,
+    0.24444444444444446
+   ],
+   "D_ind": 0.1777777777777778,
+   "D_ind_ci": [
+    0.09999999999999998,
+    0.2666666666666667
+   ],
+   "D_shiter": 0.022222222222222254,
+   "D_shiter_ci": [
+    -0.022222222222222254,
+    0.06666666666666665
+   ]
+  },
+  "mw-sweep-into": {
+   "k": 3,
+   "density_last": -0.09676,
+   "density_first": -0.031221,
+   "gap_median_last": 0.09676,
+   "gap_q25_last": 0.029234,
+   "gap_q75_last": 0.172155,
+   "gap_median_first": 0.031221,
+   "n_states": 450,
+   "crn_gain": 0.06666666666666665,
+   "crn_gain_ci": [
+    0.011111111111111072,
+    0.1333333333333333
+   ],
+   "D_ind": 0.04444444444444451,
+   "D_ind_ci": [
+    -0.033333333333333326,
+    0.12222222222222223
+   ],
+   "D_shiter": -0.022222222222222143,
+   "D_shiter_ci": [
+    -0.07777777777777772,
+    0.033333333333333326
+   ]
+  },
+  "mw-window-open": {
+   "k": 4,
+   "density_last": -0.11122,
+   "density_first": -0.0561125,
+   "gap_median_last": 0.11122,
+   "gap_q25_last": 0.05189825,
+   "gap_q75_last": 0.22599999999999998,
+   "gap_median_first": 0.0561125,
+   "n_states": 450,
+   "crn_gain": 0.21111111111111114,
+   "crn_gain_ci": [
+    0.12222222222222223,
+    0.30000000000000004
+   ],
+   "D_ind": 0.19999999999999996,
+   "D_ind_ci": [
+    0.11111111111111105,
+    0.29999999999999993
+   ],
+   "D_shiter": -0.011111111111111183,
+   "D_shiter_ci": [
+    -0.05555555555555558,
+    0.022222222222222254
+   ]
+  },
+  "cheetah-run": {
+   "k": 5,
+   "density_last": -0.063039,
+   "density_first": -0.005904599999999999,
+   "gap_median_last": 0.063039,
+   "gap_q25_last": 0.02582,
+   "gap_q75_last": 0.12746,
+   "gap_median_first": 0.005904599999999999,
+   "n_states": 450,
+   "crn_gain": 0.08673570683046067,
+   "crn_gain_ci": [
+    0.06653213826729847,
+    0.10664800287900042
+   ],
+   "D_ind": 0.1962534810699372,
+   "D_ind_ci": [
+    0.17891030331724445,
+    0.21426330673865676
+   ],
+   "D_shiter": 0.10951777423947653,
+   "D_shiter_ci": [
+    0.09454443586550522,
+    0.12535581485286618
+   ]
+  },
+  "finger-turn-hard": {
+   "k": 4,
+   "density_last": -0.0396625,
+   "density_first": -0.0121285,
+   "gap_median_last": 0.0396625,
+   "gap_q25_last": 0.00835565,
+   "gap_q75_last": 0.111465,
+   "gap_median_first": 0.0121285,
+   "n_states": 450,
+   "crn_gain": 0.7284794851166531,
+   "crn_gain_ci": [
+    0.6385620364228184,
+    0.8155091973765018
+   ],
+   "D_ind": 0.7495805079875876,
+   "D_ind_ci": [
+    0.6622555888831649,
+    0.8334353736859309
+   ],
+   "D_shiter": 0.021101022870934467,
+   "D_shiter_ci": [
+    -0.013929343490725757,
+    0.060388385082249835
+   ]
+  },
+  "quadruped-walk": {
+   "k": 3,
+   "density_last": -0.12362999999999999,
+   "density_first": -0.012272,
+   "gap_median_last": 0.12362999999999999,
+   "gap_q25_last": 0.05795025,
+   "gap_q75_last": 0.2462025,
+   "gap_median_first": 0.012272,
+   "n_states": 450,
+   "crn_gain": 0.12997587367486874,
+   "crn_gain_ci": [
+    0.0785613645613338,
+    0.1843555392753422
+   ],
+   "D_ind": 0.6535918434365878,
+   "D_ind_ci": [
+    0.5939986747077233,
+    0.713400100027117
+   ],
+   "D_shiter": 0.5236159697617191,
+   "D_shiter_ci": [
+    0.4703512871493144,
+    0.5791182537100712
+   ]
+  },
+  "walker-walk": {
+   "k": 3,
+   "density_last": -0.068681,
+   "density_first": -0.00164605,
+   "gap_median_last": 0.068681,
+   "gap_q25_last": 0.024760749999999998,
+   "gap_q75_last": 0.17642000000000002,
+   "gap_median_first": 0.00164605,
+   "n_states": 450,
+   "crn_gain": 0.06458937012143229,
+   "crn_gain_ci": [
+    0.04199496173401102,
+    0.0873060312099472
+   ],
+   "D_ind": 0.8443047275265793,
+   "D_ind_ci": [
+    0.8303428000680343,
+    0.8581779480304231
+   ],
+   "D_shiter": 0.779715357405147,
+   "D_shiter_ci": [
+    0.7607065581903631,
+    0.7984009790013291
+   ]
+  }
+ },
+ "tdmpc2_12task": {
+  "spearman_last": 0.03152369107522558,
+  "holds": false,
+  "aux_spearman_first": -0.34676060182748136
+ }
+}

@@ -1,0 +1,122 @@
+=== calib 06:29:48
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+      9s calib mw-push            ep1 ret   1807.8 succ 1 steps 100 (4s)
+      9s calib mw-pick-place      ep0 ret   1647.7 succ 1 steps 100 (4s)
+      9s calib mw-push            ep0 ret   1769.3 succ 1 steps 100 (5s)
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     10s calib mw-pick-place      ep1 ret   1719.9 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     14s calib mw-push            ep2 ret   1811.4 succ 1 steps 100 (4s)
+     14s calib mw-pick-place      ep2 ret   1726.1 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     19s calib mw-push            ep3 ret   1779.7 succ 1 steps 100 (4s)
+     23s calib mw-pick-place      ep3 ret   1666.0 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     24s calib walker-walk        ep0 ret    994.0 succ 0 steps 500 (19s)
+     24s calib cheetah-run        ep0 ret    868.5 succ 0 steps 500 (19s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     25s calib cheetah-run        ep1 ret    834.7 succ 0 steps 500 (20s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     28s calib mw-push            ep4 ret   1795.9 succ 1 steps 100 (4s)
+     29s calib walker-walk        ep1 ret    993.6 succ 0 steps 500 (19s)
+     30s calib mw-pick-place      ep4 ret   1707.4 succ 1 steps 100 (4s)
+Episode length: 100
+Discount factor: 0.95
+     30s calib cheetah-run        ep2 ret    845.4 succ 0 steps 500 (20s)
+     35s calib mw-push            ep5 ret   1793.4 succ 1 steps 100 (4s)
+     35s calib walker-walk        ep2 ret    976.8 succ 0 steps 500 (20s)
+     35s calib mw-pick-place      ep5 ret   1689.2 succ 1 steps 100 (4s)
+Episode length: 100
+Discount factor: 0.95
+     40s calib mw-push            ep6 ret   1778.4 succ 1 steps 100 (4s)
+     43s calib walker-walk        ep3 ret    994.9 succ 0 steps 500 (19s)
+Episode length: 500
+Discount factor: 0.99
+     43s calib cheetah-run        ep3 ret    788.4 succ 0 steps 500 (20s)
+Episode length: 500
+Discount factor: 0.99
+     44s calib mw-pick-place      ep6 ret   1658.0 succ 1 steps 100 (4s)
+     47s calib cheetah-run        ep4 ret    857.6 succ 0 steps 500 (18s)
+     48s calib walker-walk        ep4 ret    974.6 succ 0 steps 500 (19s)
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+     48s calib mw-push            ep7 ret   1805.7 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     52s calib mw-pick-place      ep7 ret   1728.4 succ 1 steps 100 (4s)
+     55s calib cheetah-run        ep5 ret    868.8 succ 0 steps 500 (20s)
+     55s calib walker-walk        ep5 ret    991.5 succ 0 steps 500 (20s)
+Episode length: 500
+Discount factor: 0.99
+     56s calib mw-push            ep8 ret   1791.5 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     59s calib mw-pick-place      ep8 ret   1693.2 succ 1 steps 100 (4s)
+     62s calib cheetah-run        ep6 ret    872.3 succ 0 steps 500 (18s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     64s calib mw-push            ep9 ret   1773.5 succ 1 steps 100 (4s)
+     64s calib walker-walk        ep6 ret    991.5 succ 0 steps 500 (20s)
+     67s calib mw-pick-place      ep9 ret   1660.7 succ 1 steps 100 (4s)
+     67s calib cheetah-run        ep7 ret    870.5 succ 0 steps 500 (18s)
+     69s calib walker-walk        ep7 ret    994.6 succ 0 steps 500 (20s)
+     72s calib walker-walk        ep8 ret    993.5 succ 0 steps 500 (16s)
+     73s calib cheetah-run        ep8 ret    853.4 succ 0 steps 500 (17s)
+     78s calib cheetah-run        ep9 ret    861.0 succ 0 steps 500 (14s)
+     78s calib walker-walk        ep9 ret    995.0 succ 0 steps 500 (14s)
+CALIB_DONE
+=== prep 06:31:07
+=== prep end 06:34:29

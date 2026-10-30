@@ -1,0 +1,240 @@
+{
+ "cross_gpu_check": [
+  {
+   "task": "mw-push",
+   "cond": "none",
+   "alpha": 0.0,
+   "ep": 0,
+   "ret_3b": 1769.287715293467,
+   "ret_r23": 1770.1320390477777,
+   "identical": false,
+   "absdiff": 0.8443237543106079
+  },
+  {
+   "task": "mw-push",
+   "cond": "B",
+   "alpha": 0.2,
+   "ep": 0,
+   "ret_3b": 3.19922988768667,
+   "ret_r23": 1393.0457405149937,
+   "identical": false,
+   "absdiff": 1389.846510627307
+  },
+  {
+   "task": "mw-push",
+   "cond": "D1z",
+   "alpha": 0.2,
+   "ep": 0,
+   "ret_3b": 1757.1865984648466,
+   "ret_r23": 1747.1619089022279,
+   "identical": false,
+   "absdiff": 10.024689562618732
+  },
+  {
+   "task": "mw-push",
+   "cond": "A",
+   "alpha": 0.2,
+   "ep": 0,
+   "ret_3b": 84.15691448436701,
+   "ret_r23": 97.1938926136063,
+   "identical": false,
+   "absdiff": 13.036978129239287
+  },
+  {
+   "task": "mw-push",
+   "cond": "D3z",
+   "alpha": 0.2,
+   "ep": 0,
+   "ret_3b": 1749.7101800143719,
+   "ret_r23": 1735.7211283668876,
+   "identical": false,
+   "absdiff": 13.989051647484303
+  }
+ ],
+ "cross_gpu_identical_fraction": 0.0,
+ "determinism_all_identical": false,
+ "primary": {
+  "family": "Dfix1",
+  "random": "D1z",
+  "n_cells": 1,
+  "consistency_i_not_smaller_than_A": [],
+  "consistency_ii_larger_than_random": [],
+  "consistency": false,
+  "weak_specific_cells": [],
+  "weak_specific": false,
+  "verdict": "mixed",
+  "eligible": [],
+  "share_of_A_per_cell": {},
+  "share_of_A_pooled": NaN
+ },
+ "secondary_Dfix3": {
+  "family": "Dfix3",
+  "random": "D3z",
+  "n_cells": 1,
+  "consistency_i_not_smaller_than_A": [],
+  "consistency_ii_larger_than_random": [],
+  "consistency": false,
+  "weak_specific_cells": [],
+  "weak_specific": false,
+  "verdict": "mixed",
+  "eligible": [],
+  "share_of_A_per_cell": {},
+  "share_of_A_pooled": NaN
+ },
+ "secondary_return_metric": {
+  "family": "Dfix1",
+  "random": "D1z",
+  "n_cells": 1,
+  "consistency_i_not_smaller_than_A": [],
+  "consistency_ii_larger_than_random": [],
+  "consistency": false,
+  "weak_specific_cells": [],
+  "weak_specific": false,
+  "verdict": "mixed",
+  "eligible": [],
+  "share_of_A_per_cell": {},
+  "share_of_A_pooled": NaN
+ },
+ "secondary_return_Dfix3": {
+  "family": "Dfix3",
+  "random": "D3z",
+  "n_cells": 1,
+  "consistency_i_not_smaller_than_A": [],
+  "consistency_ii_larger_than_random": [],
+  "consistency": false,
+  "weak_specific_cells": [],
+  "weak_specific": false,
+  "verdict": "mixed",
+  "eligible": [],
+  "share_of_A_per_cell": {},
+  "share_of_A_pooled": NaN
+ },
+ "secondary_eligible_Dfix1": {
+  "family": "Dfix1",
+  "eligible": [],
+  "threshold": 0,
+  "not_smaller_than_A": [],
+  "larger_than_random": [],
+  "weak_specific_cells": [],
+  "consistency": false,
+  "weak_specific": false,
+  "verdict": "mixed"
+ },
+ "secondary_eligible_Dfix3": {
+  "family": "Dfix3",
+  "eligible": [],
+  "threshold": 0,
+  "not_smaller_than_A": [],
+  "larger_than_random": [],
+  "weak_specific_cells": [],
+  "consistency": false,
+  "weak_specific": false,
+  "verdict": "mixed"
+ },
+ "secondary_eligible_return_Dfix1": {
+  "family": "Dfix1",
+  "eligible": [],
+  "threshold": 0,
+  "not_smaller_than_A": [],
+  "larger_than_random": [],
+  "weak_specific_cells": [],
+  "consistency": false,
+  "weak_specific": false,
+  "verdict": "mixed"
+ },
+ "dir_vs_random": {
+  "Ddir1>D1z": [],
+  "A>Ddir1": []
+ },
+ "cells": [
+  {
+   "task": "mw-push",
+   "alpha": 0.2,
+   "metric": "success",
+   "R0": 1.0,
+   "drop_A": 1.0,
+   "n_A": 1,
+   "drop_B": 1.0,
+   "n_B": 1,
+   "drop_D1z": 0.0,
+   "n_D1z": 1,
+   "drop_D3z": 0.0,
+   "n_D3z": 1,
+   "drop_Dfix1": 0.33333333333333337,
+   "n_Dfix1": 1,
+   "drop_Dfix3": 0.33333333333333337,
+   "n_Dfix3": 1,
+   "drop_Ddir1": 0.6666666666666667,
+   "n_Ddir1": 1,
+   "drop_Dfix1_per_seed": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "drop_Dfix3_per_seed": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "drop_Ddir1_per_seed": [
+    0.0,
+    1.0,
+    1.0
+   ],
+   "dropA_ci": [
+    NaN,
+    NaN
+   ],
+   "A-Dfix1": 0.6666666666666666,
+   "A-Dfix1_ci": [
+    NaN,
+    NaN
+   ],
+   "A-Dfix3": 0.6666666666666666,
+   "A-Dfix3_ci": [
+    NaN,
+    NaN
+   ],
+   "B-Dfix1": 0.6666666666666666,
+   "B-Dfix1_ci": [
+    NaN,
+    NaN
+   ],
+   "B-Dfix3": 0.6666666666666666,
+   "B-Dfix3_ci": [
+    NaN,
+    NaN
+   ],
+   "Dfix1-D1z": 0.33333333333333337,
+   "Dfix1-D1z_ci": [
+    NaN,
+    NaN
+   ],
+   "Dfix3-D3z": 0.33333333333333337,
+   "Dfix3-D3z_ci": [
+    NaN,
+    NaN
+   ],
+   "Dfix3-D1z": 0.33333333333333337,
+   "Dfix3-D1z_ci": [
+    NaN,
+    NaN
+   ],
+   "Ddir1-D1z": 0.6666666666666667,
+   "Ddir1-D1z_ci": [
+    NaN,
+    NaN
+   ],
+   "A-Ddir1": 0.3333333333333333,
+   "A-Ddir1_ci": [
+    NaN,
+    NaN
+   ],
+   "A-D1z": 1.0,
+   "A-D1z_ci": [
+    NaN,
+    NaN
+   ]
+  }
+ ]
+}

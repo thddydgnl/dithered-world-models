@@ -1,0 +1,40 @@
+{
+ "gpu": "NVIDIA RTX A5000",
+ "torch": "2.7.1+cu126",
+ "triton": "3.3.1",
+ "shapes": {
+  "512x520x512": {
+   "int_mm_exact": true,
+   "us_int8": 52.46975898742676,
+   "us_fp32": 52.792320251464844,
+   "us_bf16": 22.814719676971436,
+   "us_dither_quant_eager": 28.421120643615723,
+   "us_det_quant_eager": 9.27232027053833
+  },
+  "512x512x512": {
+   "int_mm_exact": true,
+   "us_int8": 49.27487850189209,
+   "us_fp32": 49.08031940460205,
+   "us_bf16": 9.953280091285706,
+   "us_dither_quant_eager": 27.71456003189087,
+   "us_det_quant_eager": 9.041919708251953
+  },
+  "24x512x512": {
+   "int_mm_exact": true,
+   "us_int8": 47.93856143951416,
+   "us_fp32": 9.103360176086426,
+   "us_bf16": 6.666240096092224,
+   "us_dither_quant_eager": 23.57248067855835,
+   "us_det_quant_eager": 6.876159906387329
+  },
+  "1024x520x512": {
+   "int_mm_exact": true,
+   "us_int8": 50.580477714538574,
+   "us_fp32": 94.26431655883789,
+   "us_bf16": 24.197120666503906,
+   "us_dither_quant_eager": 46.31552219390869,
+   "us_det_quant_eager": 23.7772798538208
+  }
+ }
+}
+E7_PROBE_DONE 0.0s

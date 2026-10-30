@@ -1,0 +1,8 @@
+{
+ "pusht": 0.46202622577548025,
+ "pusht_n_episodes": 100,
+ "wall": 0.23831451915204524,
+ "wall_n_episodes": 100,
+ "pointmaze": 0.045057980436831714,
+ "pointmaze_n_episodes": 100
+}

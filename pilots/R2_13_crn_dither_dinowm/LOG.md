@@ -1,0 +1,34 @@
+# R2-13 작업 로그 (UTC, 2026-10-21)
+
+- 08:18Z 지시 수신. PILOT_RULES.md, IDEAS_ROUND2.md R2-13 절, R2-7(code·LOG·REPORT), R2-1(LOG: OSF 링크, 최소 설치, bf16 검증, open-loop, Wall 디스크 주의), R2-8b·R2-8 보고서와 양자화 코드(nt_lib.py, prep_r28b.py)를 읽음
+- 08:27Z 폴더 생성, R2-7의 `r21lib.py`를 그대로 복사. 새 코드: `qlib13.py`(양자화 hook·CEM·데이터셋 창), `cem13.py`, `calib13.py`, `replay13.py`, `setup13.sh`(setup7.sh 복사)
+- 08:31Z `pod_up.sh r2n13`(4090 → A40 → A6000 → 3090 → A5000 순) → **RTX 4090 24GB, $0.89/h**(tg9xha4apskjec) 첫 시도에 생성. CPU cgroup 13.6코어, RAM 251GB
+  - setup 시작용 ssh가 백그라운드 프로세스 때문에 120초 동안 닫히지 않았다(설치 자체는 정상 진행)
+- 08:35Z setup 완료(약 4분). 체크포인트 pusht·wall_single, PushT obs 제외, Wall 메타 .pth만
+- 08:35Z PLAN.md 초안(사전등록) 작성
+- 08:37Z 범위 보정과 det 오차 곡선(k = 2~8) 완료(PushT 41초, Wall 27초). torch.compile 양자화 kernel 정상 동작
+  - GELU 범위: lo = −0.170(GELU 최솟값), hi(99.99%)는 PushT 1.50~2.06, Wall 1.81~4.19
+- 08:39Z 기능 스모크(held, k=4, 5변형): Wall 5 episode 59초(E=5, 약 2.3s/ep), hook 호출 수 300 = 10 iteration × 5 step × 6층 확인
+  - PushT를 Wall과 동시에 띄웠다가 GPU 메모리 부족(OOM, Wall 18GB 점유). `expandable_segments`로 PushT만 다시 돌림: none 14.4s/ep(E=2, 단독)
+- 08:43Z 스모크 모집단 재생 확인(Wall 30 모집단 17초, 6 worker)
+- 08:41~08:44Z Wall k 스모크(held 20, none·det3·det4) → **Wall k=3**(none 55%, det3 15%, det4 75%). PLAN §6에 기록
+- 08:44Z PushT k 스모크 시작(held 20, none·det4, E=2). 스모크와 같은 episode 0~1의 결과가 소수점까지 같다(재현성 확인)
+- 08:45Z **Wall 본 실행 시작**(eval 50, k=3, 5변형, E=4)과 재생 루프(6 worker)
+- 08:47Z Wall 예측 오차(k=3, 4변형, seed 3개) 계산 시작
+  - 같은 GPU에서 PushT k 스모크와 Wall 본 실행이 동시에 돌아 둘 다 느려졌다(PushT 33s/ep, Wall 4.0s/ep). 메모리는 최대 22.7/24GB
+- 08:48Z Wall 예측 오차 계산이 GPU 메모리 부족(OOM)으로 죽음(CEM 두 프로세스가 20GB 점유). CEM 실행에는 영향 없음. CEM이 끝난 뒤 다시 돌림
+- 09:04Z **Wall 본 실행 완료**(250 run): none 24/50, det 4/50, ind 26/50, sh-iter 29/50, sh-fixed 28/50
+- 09:05:10Z PushT k 스모크 완료(1231초): none 17/20, det k=4 8/20(−45%p) → 규칙에 따라 **PushT k=4**
+- 09:05:29Z **PushT 본 실행 시작**(eval 50, k=4, 5변형, E=2)과 PushT 재생 루프(4 worker). 09:06Z PLAN §6에 k 기록(본 실행 결과가 나오기 전)
+- 09:07Z Wall 예측 오차(k=3) 완료(53초). 09:09Z PushT 예측 오차(k=4) 완료
+  - 이때 ssh 연결이 한 번 끊겼다(exit 255). 오차 계산은 끝까지 돌았고 CEM 프로세스도 살아 있었다
+- 09:13Z 부분 데이터로 analyze13.py 점검(PushT 4 episode). 그림 2의 겹치는 라벨을 과제별 패널 + 범례로 고침. 분석 정의는 바꾸지 않음
+  - PushT 단독 속도: none 14.4s/ep, 양자화 변형 16.0s/ep(E=2). 블록당 약 157초 → 25블록 약 65분
+- 09:15Z 사후 진단 추가(판정 정의는 그대로): 비용 오차 J_변형 − J_none의 0단계·마지막 모집단·선택 후보 평균, 후보별 비용 오차 sd ÷ 비용 sd, ρ(J_변형, J_none). 그림 1의 Wilson 오차 막대 음수 반올림 오류를 고침
+- 09:17Z 마무리 스크립트(finish13.sh) 실행: PushT 본 실행 종료 대기 → 재생 루프 마감 → analyze13.py
+  - 이 ssh 명령도 백그라운드 프로세스 때문에 120초 동안 닫히지 않았다(원격 실행은 정상)
+- 10:12:44Z **PushT 본 실행 완료**(250 run, 67분): none 39/50, det 26/50, ind 41/50, sh-iter 40/50, sh-fixed 41/50
+- 10:13:15Z 재생 마감(모집단 600개)과 최종 분석 완료. 판정: S1 성립, S2 실패, S3 형식상 성립, S4 1차 실패(2차 성립) → **조건부 있음**
+- 10:13Z results·로그 회수(1.3MB, 모집단 npz는 중간 데이터라 pod에 두고 회수하지 않음). pod 코드와 로컬 code/가 cmp로 같음을 확인
+- 10:13:47Z `pod_down.sh r2n13` → budget.py에서 r2n13 **gone**, 장부 비용 **$1.57**(가동 1시간 42분)
+- 10:16Z REPORT.md 작성. 하위 에이전트의 Write 도구가 보고서 파일을 막아 PILOT_RULES 6절대로 Bash heredoc으로 작성함

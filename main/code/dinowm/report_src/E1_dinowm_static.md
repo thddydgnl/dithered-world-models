@@ -1,0 +1,82 @@
+## 1. 무엇을 돌렸나
+- **칸**(DESIGN_main v2 §4.1)
+  - 확증 칸: PushT k ∈ {3, 4, 5}, Wall k ∈ {4, 5, 6}, PointMaze k ∈ {2, 3, 4}
+  - 탐색 칸: Wall k = 3. 파일럿의 k다. H1·H3a에는 넣지 않고 따로 보고한다
+- **변형**
+  - none: 과제마다 한 번 돈다(k와 무관)
+  - nonealt: planner seed + 500으로 돌린 none이다. 계획 편차의 seed 바닥으로 쓴다
+  - det, ind, sh-iter, sh-plan(코드 `shstep`, sh-step과 sh-ep 자리를 함께 맡는다), det+shift
+- **쌍과 seed**
+  - Wall·PointMaze: eval 쌍(pair seed 5, 0~99). env seed 5001~5100, planner seed 3000~3099, nonealt 3500~3599, dither salt `eval5`
+  - PushT: eval6 쌍(pair seed 6, 0~99, v3)
+    - held 쌍·smoke 쌍·파일럿 eval 쌍과 겹치는 프레임이 0이다(`results/E0_dinowm/splits_pusht_v3.json`)
+    - env seed 6001~6100, planner seed 4000~4099, nonealt 4500~4599, salt `eval6`
+    - E1 전에는 이 쌍으로 계획을 한 번도 돌리지 않았다
+  - 배치 E: PushT 1, Wall 2, PointMaze 1
+- **계획기와 수치**(R2-13 파일럿과 같다)
+  - open-loop CEM이다. 후보 300개, top-30, horizon 5
+  - opt_steps: PushT 30, Wall 10, PointMaze 10
+  - bf16 autocast, TF32, SDPA
+- **양자화 위치**
+  - 예측기 MLP의 GELU 출력 6층이다
+  - 층마다 균일 격자 [lo, hi]를 쓴다. lo는 최솟값, hi는 train 창 64개의 99.99% 분위다(범위 `main`)
+- **진단**(모든 episode)
+  - 계획 시점 1·3·5-step 상대 오차: 첫 반복 후보에서 잰다. 확률적 변형은 dither draw 3개의 평균이다
+  - OEI 입력: 비양자화 모델 비용 기준 `oei_ref_*`과 시뮬레이터 참 비용 기준 `oei_true_*`
+  - 계획 편차: 최종 계획 평균의 첫 행동 RMS를 nonealt seed 바닥으로 나눈다
+- **실행**: 표 0
+  - Wall·PointMaze: manifest `E1_dinowm_wp`. 조정자가 2026-10-21T20:01Z에 GPU 1에서 시작했다
+  - PushT: manifest `E1_dinowm_pusht`. driver 두 개가 (과제, k) 칸을 mkdir claim으로 나눠 맡았다
+    - GPU 0: k=4와 none·nonealt, 이어서 k=3
+    - GPU 1: PointMaze가 끝난 뒤 k=5
+  - 두 GPU의 계획은 비트 단위로 같다(E0 §2). 칸 하나는 한 GPU에서만 돌았고, 모든 job JSON에 GPU가 적혀 있다
+- **분석**: Mac에서 돌렸다
+  - `code/dinowm/analyze_e1.py`: 2026-10-21T23:10Z에 PushT 결과를 보기 전에 썼다. v4 §6이 두 계열 공통 규칙으로 채택했다
+  - 표: `code/dinowm/e1_tables.py`
+  - H2b 보조 정규화값: `code/dinowm/it0_cost_std.py`(서버)
+
+## 2. 판정 계산 (DESIGN_main v4 §6 → `analyze_e1.py`)
+- **D_v**: none 대비 성공률 하락(%p). 짝은 eval 쌍 100개다
+  - CI: 짝 bootstrap 10,000회(RandomState(0)), 백분위 95%
+- **det 하락 실재**
+  - 한쪽 bootstrap p(D_det ≤ 0) = (#{D* ≤ 0} + 1) / (B + 1)
+  - 과제마다 확증 k 3칸에 Holm(α = 0.025, 한쪽)을 건다
+  - 보조로 보정 없는 CI 하한 > 0과 McNemar 정확 p를 함께 적는다
+- **red_v** = (D_det − D_v) / D_det
+  - 자격 칸에서만 쓴다. CI는 같은 bootstrap 표본에서 비율로 구한다
+- **H1**: 자격 칸 가운데 det의 계획 시점 1-step 오차가 sh-iter의 것보다 크지 않은 칸이 하나 이상 있다
+- **H3a**: 두 조건을 모두 만족해야 한다
+  - 자격 칸 가운데 red_sh-iter ≥ 0.5인 비율이 75% 이상이다
+  - 어느 확증 칸에서도 D_sh-iter − D_det의 95% CI 하한이 +5%p를 넘지 않는다
+  - 자격 칸이 없으면 불성립이다
+- **H2a**(PushT 1차 k = 4): det `oei_ref_mf`의 CI 상한이 0보다 작고, sh-iter의 CI가 0을 포함하면 성립이다
+- **H2b**
+  - 점: (과제, k, 변형) 45개(과제마다 15개)
+  - 주 계산: 과제마다 ρ(−OEI, D) − max(ρ(1-step, D), ρ(3-step, D))를 구하고, 그 과제 평균이 0.15 이상이면 성립이다
+  - 보조
+    - 과제를 섞은 원값
+    - OEI를 과제의 none 첫 반복 후보 비용 std로 나눈 값으로 섞은 것
+    - 데이터셋형 오차로 바꾼 것
+- **계산하지 않은 것**(v5 §7.0 보류): DINO-WM E1 OEI 분해(sel_last, drift), H4b(near-tie 밀도 × CRN 이득)
+
+## (v5.2) E1 뒤에 더한 사전등록: (b1)·(b2)·(b3) 계산 정의 (`analyze_e1_v52.py`, `drift_ref.py`)
+- 이 절의 검정은 E1 결과 뒤에 DESIGN_main v5.2(§9, 09:40Z)로 더한 사전등록이다
+  - 가설은 TD-MPC2 자료만 보고 세웠다
+  - DINO-WM 분해는 v5.2 고정 전까지 계산하지 않았다. 그래서 PushT는 표본 밖 검정이다
+  - v4 판정(H1·H3a·H2a·H2b)을 대신하지 않는다
+- episode마다 쓰는 양(e = J_v − J_none, 비양자화 모델 비용 기준)
+  - drift = last_pop_dJ − it0_rand_dJ
+  - sel_indep = mf_dJ − last_pop_dJ: 독립 draw판이다. 새로 뽑는 변형(ind, sh-iter, det+shift)은 실행 계획의 e를 새 draw(it = opt_steps)로 잰다. det와 sh-plan은 같은 오차장이다
+  - sel_same(elite) = last_elite_dJ − last_pop_dJ: top-30을 고른 그 draw 아래의 오차다
+  - sel_same(mf): sh-iter·det+shift의 실행 계획을 마지막 반복의 draw로 다시 잰 값이다(`drift_ref.py --mode mf_same`). det·sh-plan은 sel_indep와 같고, ind는 정의되지 않는다
+  - 항등식: oei_ref_mf = sel_indep + drift
+- r_v = mean(drift_v) / mean(drift_det)
+  - 재표본마다 다시 계산하고, drift_det* ≥ 0인 재표본은 버린다
+  - 짝 bootstrap 10,000회, RandomState(0)
+- **(b1) H2a_indep**: PushT는 동결 정의 oei_ref_mf가 곧 독립 draw판이다. 그래서 v4 H2a와 같다
+- **(b2) H2a′**(PushT k=4): drift_det의 CI 상한이 0보다 작고, r_sh-iter의 CI 상한이 0.5보다 작으면 성립이다
+  - 양성 대조(판정 밖): r_sh-plan의 CI 하한 > 0.5
+  - 기술 보고: r_ind, r_det+shift, sel_last 두 판
+- **(b3) drift_ref**(기술 보고)
+  - none 변형의 첫 반복 모집단과 마지막 모집단을 det 모델로 평가한다
+  - drift_ref = l_ref − f_ref이고, drift_det − drift_ref도 함께 적는다

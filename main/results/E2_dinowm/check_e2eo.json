@@ -1,0 +1,240 @@
+{
+ "cells": {
+  "pusht_k4_it10": {
+   "N": 300,
+   "planner": {
+    "opt_steps": 10
+   },
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T12:36:06Z",
+   "t_end": "2026-10-24T13:39:22Z",
+   "gpu_h": 1.052054454088211,
+   "peak_mem_gb": 5.112977504730225,
+   "n_none": 100,
+   "hook_calls_none": [
+    0
+   ],
+   "s_per_ep_none": 10.084280908107758,
+   "n_det": 100,
+   "hook_calls_det": [
+    330
+   ],
+   "s_per_ep_det": 12.597783603668212,
+   "n_shiter": 100,
+   "hook_calls_shiter": [
+    390
+   ],
+   "s_per_ep_shiter": 15.191895835399627,
+   "pop_files": 300,
+   "it0_J_none_identical_episodes": 100
+  },
+  "pusht_k4_it5": {
+   "N": 300,
+   "planner": {
+    "opt_steps": 5
+   },
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T13:39:30Z",
+   "t_end": "2026-10-24T14:16:25Z",
+   "gpu_h": 0.6134290137555864,
+   "peak_mem_gb": 5.112977504730225,
+   "n_none": 100,
+   "hook_calls_none": [
+    0
+   ],
+   "s_per_ep_none": 5.045858640670776,
+   "n_det": 100,
+   "hook_calls_det": [
+    180
+   ],
+   "s_per_ep_det": 7.324847865104675,
+   "n_shiter": 100,
+   "hook_calls_shiter": [
+    240
+   ],
+   "s_per_ep_shiter": 9.712737989425658,
+   "pop_files": 300,
+   "it0_J_none_identical_episodes": 100
+  },
+  "pusht_k4_top38": {
+   "N": 300,
+   "planner": {
+    "topk": 38
+   },
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T09:47:29Z",
+   "t_end": "2026-10-24T12:35:58Z",
+   "gpu_h": 2.80576475057337,
+   "peak_mem_gb": 5.112978935241699,
+   "n_none": 100,
+   "hook_calls_none": [
+    0
+   ],
+   "s_per_ep_none": 30.23499226808548,
+   "n_det": 100,
+   "hook_calls_det": [
+    930
+   ],
+   "s_per_ep_det": 33.68679166078567,
+   "n_shiter": 100,
+   "hook_calls_shiter": [
+    990
+   ],
+   "s_per_ep_shiter": 37.08574709177017,
+   "pop_files": 300,
+   "it0_J_none_identical_episodes": 100
+  },
+  "pusht_k4_top6": {
+   "N": 300,
+   "planner": {
+    "topk": 6
+   },
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T06:58:47Z",
+   "t_end": "2026-10-24T09:47:22Z",
+   "gpu_h": 2.8071031404866114,
+   "peak_mem_gb": 5.112973213195801,
+   "n_none": 100,
+   "hook_calls_none": [
+    0
+   ],
+   "s_per_ep_none": 30.251029121875764,
+   "n_det": 100,
+   "hook_calls_det": [
+    930
+   ],
+   "s_per_ep_det": 33.70177918434143,
+   "n_shiter": 100,
+   "hook_calls_shiter": [
+    990
+   ],
+   "s_per_ep_shiter": 37.10290475130081,
+   "pop_files": 300,
+   "it0_J_none_identical_episodes": 100
+  },
+  "pusht_k4_top75": {
+   "N": 300,
+   "planner": {
+    "topk": 75
+   },
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T11:51:19Z",
+   "t_end": "2026-10-24T14:40:54Z",
+   "gpu_h": 2.824008039832115,
+   "peak_mem_gb": 5.112986087799072,
+   "n_none": 100,
+   "hook_calls_none": [
+    0
+   ],
+   "s_per_ep_none": 30.439743871688844,
+   "n_det": 100,
+   "hook_calls_det": [
+    930
+   ],
+   "s_per_ep_det": 33.89888675689697,
+   "n_shiter": 100,
+   "hook_calls_shiter": [
+    990
+   ],
+   "s_per_ep_shiter": 37.32565880537033,
+   "pop_files": 300,
+   "it0_J_none_identical_episodes": 100
+  }
+ },
+ "e1_point": {
+  "none": {
+   "n": 100,
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "gpu_h": 0.9515385113822089,
+   "t_start": "2026-10-22T06:16:22Z",
+   "t_end": "2026-10-22T13:22:16Z"
+  },
+  "det": {
+   "n": 100,
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "gpu_h": 1.0508558130926555,
+   "t_start": "2026-10-22T06:32:08Z",
+   "t_end": "2026-10-22T13:34:04Z"
+  },
+  "shiter": {
+   "n": 100,
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "gpu_h": 1.1424236245287789,
+   "t_start": "2026-10-22T06:50:14Z",
+   "t_end": "2026-10-22T13:46:27Z"
+  }
+ },
+ "manifest": {
+  "name": "E2_dinowm_EO",
+  "n_jobs": 150,
+  "settings": {
+   "top6": {
+    "topk": 6
+   },
+   "top38": {
+    "topk": 38
+   },
+   "top75": {
+    "topk": 75
+   },
+   "it10": {
+    "opt_steps": 10
+   },
+   "it5": {
+    "opt_steps": 5
+   }
+  },
+  "config_k": 4,
+  "config_split": "eval6"
+ },
+ "problems": [],
+ "n_problems": 0
+}

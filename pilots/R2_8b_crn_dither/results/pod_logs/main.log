@@ -1,0 +1,755 @@
+=== grid 07:38:41
+480 jobs (0 already done)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     12s [1/480] mw-pick-place  none       ep0   seed 2000 ret   1712.2 succ 1 refresh 0 (7s)
+Episode length: 100
+Discount factor: 0.95
+     13s [2/480] mw-push        none       ep0   seed 2000 ret   1805.2 succ 1 refresh 0 (7s)
+Episode length: 100
+Discount factor: 0.95
+     14s [3/480] mw-pick-place  none       ep1   seed 2001 ret   1669.0 succ 1 refresh 0 (8s)
+Episode length: 500
+Discount factor: 0.99
+     16s [4/480] mw-pick-place  none       ep4   seed 2004 ret   1673.6 succ 1 refresh 0 (9s)
+Episode length: 500
+Discount factor: 0.99
+     17s [5/480] mw-pick-place  none       ep2   seed 2002 ret   1675.7 succ 1 refresh 0 (9s)
+Episode length: 100
+Discount factor: 0.95
+     17s [6/480] mw-pick-place  none       ep3   seed 2003 ret   1672.8 succ 1 refresh 0 (10s)
+     19s [7/480] mw-push        none       ep4   seed 2004 ret   1794.7 succ 1 refresh 0 (10s)
+Episode length: 500
+Discount factor: 0.99
+     19s [8/480] mw-push        none       ep3   seed 2003 ret   1782.3 succ 1 refresh 0 (10s)
+Episode length: 500
+Discount factor: 0.99
+     20s [9/480] mw-push        none       ep2   seed 2002 ret   1786.2 succ 1 refresh 0 (10s)
+     20s [10/480] mw-push        none       ep1   seed 2001 ret   1727.4 succ 1 refresh 0 (10s)
+Episode length: 100
+Discount factor: 0.95
+     23s [11/480] mw-push        none       ep5   seed 2005 ret   1795.6 succ 1 refresh 0 (10s)
+Episode length: 500
+Discount factor: 0.99
+     23s [12/480] mw-pick-place  none       ep5   seed 2005 ret   1706.2 succ 1 refresh 0 (10s)
+Episode length: 500
+Discount factor: 0.99
+     27s [13/480] mw-push        none       ep6   seed 2006 ret   1799.1 succ 1 refresh 0 (10s)
+     28s [14/480] mw-pick-place  none       ep6   seed 2006 ret   1678.7 succ 1 refresh 0 (10s)
+     30s [15/480] mw-push        none       ep7   seed 2007 ret   1773.7 succ 1 refresh 0 (10s)
+Episode length: 500
+Discount factor: 0.99
+     30s [16/480] mw-pick-place  none       ep7   seed 2007 ret   1655.2 succ 1 refresh 0 (10s)
+Episode length: 500
+Discount factor: 0.99
+     55s [17/480] mw-push        none       ep8   seed 2008 ret   1776.4 succ 1 refresh 0 (28s)
+     58s [18/480] mw-pick-place  none       ep8   seed 2008 ret   1663.8 succ 1 refresh 0 (31s)
+    123s [19/480] mw-push        none       ep9   seed 2009 ret   1815.2 succ 1 refresh 0 (68s)
+Episode length: 500
+Discount factor: 0.99
+    125s [20/480] mw-pick-place  none       ep9   seed 2009 ret   1744.5 succ 1 refresh 0 (67s)
+Episode length: 500
+Discount factor: 0.99
+    132s [21/480] walker-walk    none       ep0   seed 2000 ret    996.1 succ 0 refresh 0 (125s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    132s [22/480] cheetah-run    none       ep2   seed 2002 ret    867.8 succ 0 refresh 0 (126s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    133s [23/480] cheetah-run    none       ep3   seed 2003 ret    866.0 succ 0 refresh 0 (127s)
+    134s [24/480] walker-walk    none       ep2   seed 2002 ret    993.0 succ 0 refresh 0 (127s)
+    135s [25/480] cheetah-run    none       ep4   seed 2004 ret    868.7 succ 0 refresh 0 (127s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    135s [26/480] cheetah-run    none       ep1   seed 2001 ret    874.2 succ 0 refresh 0 (127s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+    135s [27/480] walker-walk    none       ep3   seed 2003 ret    995.8 succ 0 refresh 0 (127s)
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+    137s [28/480] walker-walk    none       ep1   seed 2001 ret    977.6 succ 0 refresh 0 (128s)
+    137s [29/480] walker-walk    none       ep4   seed 2004 ret    995.8 succ 0 refresh 0 (128s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+    137s [30/480] cheetah-run    none       ep0   seed 2000 ret    872.5 succ 0 refresh 0 (128s)
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    142s [31/480] cheetah-run    none       ep5   seed 2005 ret    866.1 succ 0 refresh 0 (128s)
+    142s [32/480] mw-push        none       ep10  seed 2010 ret   1788.9 succ 1 refresh 0 (10s)
+    143s [33/480] mw-pick-place  none       ep10  seed 2010 ret   1674.9 succ 1 refresh 0 (10s)
+Episode length: 100
+Discount factor: 0.95
+    144s [34/480] walker-walk    none       ep5   seed 2005 ret    977.0 succ 0 refresh 0 (128s)
+    145s [35/480] mw-push        none       ep11  seed 2011 ret   1795.8 succ 1 refresh 0 (10s)
+    146s [36/480] mw-pick-place  none       ep11  seed 2011 ret   1678.1 succ 1 refresh 0 (10s)
+Episode length: 500
+Discount factor: 0.99
+    147s [37/480] cheetah-run    none       ep6   seed 2006 ret    837.9 succ 0 refresh 0 (128s)
+    147s [38/480] mw-push        none       ep12  seed 2012 ret   1743.2 succ 1 refresh 0 (10s)
+    147s [39/480] walker-walk    none       ep6   seed 2006 ret    977.5 succ 0 refresh 0 (128s)
+    147s [40/480] mw-pick-place  none       ep12  seed 2012 ret   1652.4 succ 1 refresh 0 (10s)
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    151s [41/480] cheetah-run    none       ep7   seed 2007 ret    850.3 succ 0 refresh 0 (128s)
+    152s [42/480] walker-walk    none       ep7   seed 2007 ret    994.8 succ 0 refresh 0 (128s)
+    153s [43/480] mw-push        none       ep13  seed 2013 ret   1804.1 succ 1 refresh 0 (10s)
+    154s [44/480] mw-pick-place  none       ep13  seed 2013 ret   1722.4 succ 1 refresh 0 (10s)
+    157s [45/480] mw-push        none       ep14  seed 2014 ret   1789.4 succ 1 refresh 0 (10s)
+    158s [46/480] mw-pick-place  none       ep14  seed 2014 ret   1685.6 succ 1 refresh 0 (10s)
+    158s [47/480] cheetah-run    none       ep8   seed 2008 ret    873.7 succ 0 refresh 0 (128s)
+    158s [48/480] walker-walk    none       ep8   seed 2008 ret    989.8 succ 0 refresh 0 (128s)
+    161s [49/480] mw-push        none       ep15  seed 2015 ret   1776.7 succ 1 refresh 0 (10s)
+    162s [50/480] mw-pick-place  none       ep15  seed 2015 ret   1656.5 succ 1 refresh 0 (10s)
+    167s [51/480] mw-push        none       ep16  seed 2016 ret   1806.7 succ 1 refresh 0 (10s)
+    168s [52/480] mw-pick-place  none       ep16  seed 2016 ret   1695.9 succ 1 refresh 0 (10s)
+    171s [53/480] mw-push        none       ep17  seed 2017 ret   1787.4 succ 1 refresh 0 (10s)
+    172s [54/480] mw-pick-place  none       ep17  seed 2017 ret   1676.3 succ 1 refresh 0 (10s)
+    175s [55/480] cheetah-run    none       ep9   seed 2009 ret    877.7 succ 0 refresh 0 (51s)
+    176s [56/480] walker-walk    none       ep9   seed 2009 ret    975.6 succ 0 refresh 0 (50s)
+    182s [57/480] mw-push        none       ep18  seed 2018 ret   1787.9 succ 1 refresh 0 (10s)
+    182s [58/480] mw-pick-place  none       ep18  seed 2018 ret   1682.7 succ 1 refresh 0 (10s)
+    183s [59/480] cheetah-run    none       ep10  seed 2010 ret    870.7 succ 0 refresh 0 (50s)
+    184s [60/480] walker-walk    none       ep10  seed 2010 ret    972.0 succ 0 refresh 0 (50s)
+    185s [61/480] cheetah-run    none       ep11  seed 2011 ret    875.7 succ 0 refresh 0 (50s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    186s [62/480] walker-walk    none       ep11  seed 2011 ret    978.8 succ 0 refresh 0 (50s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    192s [63/480] mw-push        none       ep19  seed 2019 ret   1779.2 succ 1 refresh 0 (10s)
+    192s [64/480] cheetah-run    none       ep12  seed 2012 ret    878.2 succ 0 refresh 0 (50s)
+Episode length: 100
+Discount factor: 0.95
+    192s [65/480] walker-walk    none       ep12  seed 2012 ret    977.1 succ 0 refresh 0 (50s)
+    192s [66/480] mw-pick-place  none       ep19  seed 2019 ret   1660.7 succ 1 refresh 0 (10s)
+    195s [67/480] cheetah-run    none       ep13  seed 2013 ret    824.5 succ 0 refresh 0 (50s)
+Episode length: 100
+Discount factor: 0.95
+    196s [68/480] walker-walk    none       ep13  seed 2013 ret    993.6 succ 0 refresh 0 (50s)
+    197s [69/480] cheetah-run    none       ep14  seed 2014 ret    872.8 succ 0 refresh 0 (49s)
+Episode length: 100
+Discount factor: 0.95
+    197s [70/480] walker-walk    none       ep14  seed 2014 ret    979.1 succ 0 refresh 0 (50s)
+    199s [71/480] mw-push        Qdet3      ep0   seed 2000 ret   1731.4 succ 0 refresh 0 (13s)
+    201s [72/480] mw-push        Qind3      ep0   seed 2000 ret   1787.8 succ 1 refresh 0 (14s)
+Episode length: 500
+Discount factor: 0.99
+    202s [73/480] cheetah-run    none       ep15  seed 2015 ret    872.7 succ 0 refresh 0 (49s)
+    203s [74/480] walker-walk    none       ep15  seed 2015 ret    994.2 succ 0 refresh 0 (49s)
+Episode length: 500
+Discount factor: 0.99
+    205s [75/480] mw-pick-place  Qdet3      ep0   seed 2000 ret    585.6 succ 0 refresh 0 (13s)
+    205s [76/480] mw-push        Qshfwd3    ep0   seed 2000 ret   1791.0 succ 1 refresh 0 (13s)
+    205s [77/480] mw-push        Qshstep3   ep0   seed 2000 ret    189.1 succ 0 refresh 101 (13s)
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    205s [78/480] mw-push        Qshep3     ep0   seed 2000 ret    277.7 succ 0 refresh 1 (13s)
+    206s [79/480] cheetah-run    none       ep16  seed 2016 ret    872.9 succ 0 refresh 0 (48s)
+Episode length: 500
+Discount factor: 0.99
+    207s [80/480] walker-walk    none       ep16  seed 2016 ret    986.6 succ 0 refresh 0 (49s)
+    208s [81/480] mw-pick-place  Qind3      ep0   seed 2000 ret   1683.4 succ 1 refresh 0 (13s)
+    209s [82/480] mw-pick-place  Qshfwd3    ep0   seed 2000 ret   1694.8 succ 1 refresh 0 (13s)
+Episode length: 100
+Discount factor: 0.95
+    210s [83/480] mw-pick-place  Qshstep3   ep0   seed 2000 ret   1570.8 succ 1 refresh 101 (13s)
+    210s [84/480] mw-pick-place  Qshep3     ep0   seed 2000 ret     44.0 succ 0 refresh 1 (13s)
+Episode length: 100
+Discount factor: 0.95
+    215s [85/480] cheetah-run    none       ep17  seed 2017 ret    864.9 succ 0 refresh 0 (48s)
+    216s [86/480] walker-walk    none       ep17  seed 2017 ret    977.1 succ 0 refresh 0 (48s)
+    221s [87/480] mw-push        Qdet3      ep1   seed 2001 ret   1762.5 succ 1 refresh 0 (12s)
+    222s [88/480] cheetah-run    none       ep18  seed 2018 ret    865.8 succ 0 refresh 0 (47s)
+    222s [89/480] mw-push        Qind3      ep1   seed 2001 ret   1757.9 succ 1 refresh 0 (13s)
+    222s [90/480] walker-walk    none       ep18  seed 2018 ret    977.2 succ 0 refresh 0 (47s)
+    223s [91/480] mw-push        Qshfwd3    ep1   seed 2001 ret   1749.9 succ 1 refresh 0 (13s)
+    223s [92/480] mw-push        Qshstep3   ep1   seed 2001 ret   1691.5 succ 1 refresh 101 (13s)
+    227s [93/480] mw-push        Qshep3     ep1   seed 2001 ret    179.4 succ 0 refresh 1 (12s)
+    228s [94/480] mw-pick-place  Qdet3      ep1   seed 2001 ret   1146.4 succ 0 refresh 0 (12s)
+Episode length: 500
+Discount factor: 0.99
+    229s [95/480] cheetah-run    none       ep19  seed 2019 ret    839.0 succ 0 refresh 0 (46s)
+    230s [96/480] walker-walk    none       ep19  seed 2019 ret    979.8 succ 0 refresh 0 (46s)
+    233s [97/480] mw-pick-place  Qind3      ep1   seed 2001 ret    778.0 succ 0 refresh 0 (13s)
+Episode length: 500
+Discount factor: 0.99
+    234s [98/480] mw-pick-place  Qshstep3   ep1   seed 2001 ret   1450.2 succ 1 refresh 101 (12s)
+    235s [99/480] mw-pick-place  Qshfwd3    ep1   seed 2001 ret   1635.3 succ 1 refresh 0 (13s)
+    235s [100/480] mw-pick-place  Qshep3     ep1   seed 2001 ret    120.9 succ 0 refresh 1 (12s)
+Episode length: 500
+Discount factor: 0.99
+    257s [101/480] cheetah-run    Qdet4      ep0   seed 2000 ret    417.8 succ 0 refresh 0 (58s)
+    263s [102/480] cheetah-run    Qind4      ep0   seed 2000 ret    308.4 succ 0 refresh 0 (63s)
+    264s [103/480] walker-walk    Qdet4      ep0   seed 2000 ret    980.4 succ 0 refresh 0 (58s)
+    264s [104/480] cheetah-run    Qshstep4   ep0   seed 2000 ret    180.9 succ 0 refresh 501 (61s)
+Episode length: 100
+Discount factor: 0.95
+    265s [105/480] cheetah-run    Qshfwd4    ep0   seed 2000 ret    542.9 succ 0 refresh 0 (63s)
+    266s [106/480] cheetah-run    Qshep4     ep0   seed 2000 ret    268.0 succ 0 refresh 1 (60s)
+    267s [107/480] walker-walk    Qshstep4   ep0   seed 2000 ret    824.4 succ 0 refresh 501 (61s)
+Episode length: 100
+Discount factor: 0.95
+    268s [108/480] walker-walk    Qind4      ep0   seed 2000 ret    860.6 succ 0 refresh 0 (63s)
+    268s [109/480] walker-walk    Qshep4     ep0   seed 2000 ret    577.6 succ 0 refresh 1 (61s)
+    268s [110/480] walker-walk    Qshfwd4    ep0   seed 2000 ret    788.8 succ 0 refresh 0 (63s)
+Episode length: 100
+Discount factor: 0.95
+    269s [111/480] mw-push        Qdet3      ep2   seed 2002 ret   1694.1 succ 1 refresh 0 (12s)
+    276s [112/480] mw-push        Qind3      ep2   seed 2002 ret     61.3 succ 0 refresh 0 (12s)
+    276s [113/480] mw-push        Qshfwd3    ep2   seed 2002 ret   1769.6 succ 1 refresh 0 (12s)
+    276s [114/480] mw-push        Qshstep3   ep2   seed 2002 ret   1727.2 succ 1 refresh 101 (12s)
+    277s [115/480] mw-push        Qshep3     ep2   seed 2002 ret    914.2 succ 0 refresh 1 (12s)
+    277s [116/480] mw-pick-place  Qdet3      ep2   seed 2002 ret   1115.9 succ 0 refresh 0 (12s)
+    280s [117/480] mw-pick-place  Qshstep3   ep2   seed 2002 ret   1591.3 succ 1 refresh 101 (12s)
+    280s [118/480] cheetah-run    Qdet4      ep1   seed 2001 ret    460.1 succ 0 refresh 0 (57s)
+    280s [119/480] mw-pick-place  Qshfwd3    ep2   seed 2002 ret    420.2 succ 1 refresh 0 (13s)
+    281s [120/480] mw-pick-place  Qind3      ep2   seed 2002 ret   1601.4 succ 1 refresh 0 (13s)
+    281s [121/480] mw-pick-place  Qshep3     ep2   seed 2002 ret   1167.1 succ 0 refresh 1 (12s)
+    285s [122/480] cheetah-run    Qind4      ep1   seed 2001 ret    493.0 succ 0 refresh 0 (62s)
+    287s [123/480] walker-walk    Qdet4      ep1   seed 2001 ret    809.0 succ 0 refresh 0 (58s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    288s [124/480] cheetah-run    Qshstep4   ep1   seed 2001 ret    118.6 succ 0 refresh 501 (60s)
+    289s [125/480] cheetah-run    Qshep4     ep1   seed 2001 ret    182.3 succ 0 refresh 1 (60s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    289s [126/480] cheetah-run    Qshfwd4    ep1   seed 2001 ret     61.9 succ 0 refresh 0 (62s)
+Episode length: 100
+Discount factor: 0.95
+    292s [127/480] mw-push        Qdet3      ep3   seed 2003 ret    166.8 succ 0 refresh 0 (12s)
+    294s [128/480] walker-walk    Qshep4     ep1   seed 2001 ret    429.0 succ 0 refresh 1 (60s)
+    295s [129/480] walker-walk    Qshstep4   ep1   seed 2001 ret    787.9 succ 0 refresh 501 (60s)
+    295s [130/480] walker-walk    Qind4      ep1   seed 2001 ret    686.1 succ 0 refresh 0 (62s)
+    297s [131/480] walker-walk    Qshfwd4    ep1   seed 2001 ret    960.8 succ 0 refresh 0 (62s)
+    297s [132/480] mw-push        Qind3      ep3   seed 2003 ret   1720.3 succ 1 refresh 0 (12s)
+    300s [133/480] mw-push        Qshfwd3    ep3   seed 2003 ret   1762.4 succ 1 refresh 0 (13s)
+    300s [134/480] mw-push        Qshstep3   ep3   seed 2003 ret   1671.3 succ 1 refresh 101 (12s)
+Episode length: 500
+Discount factor: 0.99
+    301s [135/480] mw-push        Qshep3     ep3   seed 2003 ret    155.0 succ 0 refresh 1 (12s)
+    301s [136/480] mw-pick-place  Qdet3      ep3   seed 2003 ret    661.4 succ 0 refresh 0 (12s)
+Episode length: 500
+Discount factor: 0.99
+    305s [137/480] mw-pick-place  Qind3      ep3   seed 2003 ret   1079.3 succ 0 refresh 0 (13s)
+    307s [138/480] mw-pick-place  Qshfwd3    ep3   seed 2003 ret   1649.5 succ 1 refresh 0 (12s)
+    307s [139/480] mw-pick-place  Qshstep3   ep3   seed 2003 ret     94.3 succ 0 refresh 101 (12s)
+    307s [140/480] mw-pick-place  Qshep3     ep3   seed 2003 ret   1402.0 succ 1 refresh 1 (12s)
+    326s [141/480] cheetah-run    Qdet4      ep2   seed 2002 ret    453.0 succ 0 refresh 0 (57s)
+    335s [142/480] walker-walk    Qdet4      ep2   seed 2002 ret    905.7 succ 0 refresh 0 (58s)
+    336s [143/480] cheetah-run    Qshstep4   ep2   seed 2002 ret    123.0 succ 0 refresh 501 (60s)
+    337s [144/480] cheetah-run    Qshep4     ep2   seed 2002 ret     48.4 succ 0 refresh 1 (60s)
+    337s [145/480] cheetah-run    Qind4      ep2   seed 2002 ret    551.3 succ 0 refresh 0 (62s)
+    338s [146/480] mw-push        Qdet3      ep4   seed 2004 ret   1562.1 succ 0 refresh 0 (12s)
+Episode length: 100
+Discount factor: 0.95
+    338s [147/480] cheetah-run    Qshfwd4    ep2   seed 2002 ret    605.6 succ 0 refresh 0 (62s)
+    340s [148/480] walker-walk    Qshep4     ep2   seed 2002 ret    437.7 succ 0 refresh 1 (60s)
+    340s [149/480] walker-walk    Qshstep4   ep2   seed 2002 ret    519.3 succ 0 refresh 501 (60s)
+    342s [150/480] walker-walk    Qshfwd4    ep2   seed 2002 ret    914.4 succ 0 refresh 0 (62s)
+    342s [151/480] walker-walk    Qind4      ep2   seed 2002 ret    543.1 succ 0 refresh 0 (62s)
+Episode length: 500
+Discount factor: 0.99
+    347s [152/480] mw-push        Qind3      ep4   seed 2004 ret   1569.5 succ 1 refresh 0 (12s)
+    349s [153/480] mw-push        Qshfwd3    ep4   seed 2004 ret   1779.6 succ 1 refresh 0 (12s)
+    349s [154/480] mw-push        Qshstep3   ep4   seed 2004 ret   1741.4 succ 1 refresh 101 (12s)
+    349s [155/480] mw-push        Qshep3     ep4   seed 2004 ret    699.8 succ 0 refresh 1 (12s)
+    350s [156/480] mw-pick-place  Qdet3      ep4   seed 2004 ret    389.2 succ 0 refresh 0 (12s)
+    351s [157/480] mw-pick-place  Qind3      ep4   seed 2004 ret   1649.3 succ 1 refresh 0 (13s)
+    353s [158/480] mw-pick-place  Qshstep3   ep4   seed 2004 ret    120.3 succ 0 refresh 101 (12s)
+    353s [159/480] mw-pick-place  Qshfwd3    ep4   seed 2004 ret   1648.7 succ 1 refresh 0 (13s)
+    354s [160/480] mw-pick-place  Qshep3     ep4   seed 2004 ret     24.9 succ 0 refresh 1 (12s)
+    354s [161/480] cheetah-run    Qdet4      ep3   seed 2003 ret    425.3 succ 0 refresh 0 (58s)
+    359s [162/480] cheetah-run    Qind4      ep3   seed 2003 ret    524.7 succ 0 refresh 0 (62s)
+    360s [163/480] walker-walk    Qdet4      ep3   seed 2003 ret    990.0 succ 0 refresh 0 (58s)
+    360s [164/480] cheetah-run    Qshstep4   ep3   seed 2003 ret    289.2 succ 0 refresh 501 (60s)
+    361s [165/480] cheetah-run    Qshep4     ep3   seed 2003 ret    268.0 succ 0 refresh 1 (60s)
+    363s [166/480] cheetah-run    Qshfwd4    ep3   seed 2003 ret    572.1 succ 0 refresh 0 (62s)
+Episode length: 100
+Discount factor: 0.95
+    366s [167/480] mw-push        Qdet3      ep5   seed 2005 ret    892.5 succ 0 refresh 0 (12s)
+    367s [168/480] walker-walk    Qind4      ep3   seed 2003 ret    567.2 succ 0 refresh 0 (62s)
+    368s [169/480] walker-walk    Qshep4     ep3   seed 2003 ret    338.0 succ 0 refresh 1 (60s)
+    368s [170/480] walker-walk    Qshstep4   ep3   seed 2003 ret    551.7 succ 0 refresh 501 (60s)
+    369s [171/480] walker-walk    Qshfwd4    ep3   seed 2003 ret    976.1 succ 0 refresh 0 (62s)
+Episode length: 500
+Discount factor: 0.99
+    372s [172/480] mw-push        Qind3      ep5   seed 2005 ret   1725.4 succ 1 refresh 0 (13s)
+    372s [173/480] mw-push        Qshfwd3    ep5   seed 2005 ret   1776.2 succ 1 refresh 0 (13s)
+    372s [174/480] mw-push        Qshstep3   ep5   seed 2005 ret     88.7 succ 0 refresh 101 (12s)
+    373s [175/480] mw-push        Qshep3     ep5   seed 2005 ret    137.3 succ 0 refresh 1 (12s)
+    375s [176/480] mw-pick-place  Qdet3      ep5   seed 2005 ret    456.1 succ 0 refresh 0 (12s)
+    379s [177/480] mw-pick-place  Qind3      ep5   seed 2005 ret    701.1 succ 0 refresh 0 (13s)
+    380s [178/480] mw-pick-place  Qshfwd3    ep5   seed 2005 ret   1397.4 succ 0 refresh 0 (13s)
+    380s [179/480] mw-pick-place  Qshstep3   ep5   seed 2005 ret     13.4 succ 0 refresh 101 (12s)
+    380s [180/480] mw-pick-place  Qshep3     ep5   seed 2005 ret    739.0 succ 0 refresh 1 (12s)
+    400s [181/480] cheetah-run    Qdet4      ep4   seed 2004 ret    409.5 succ 0 refresh 0 (58s)
+    407s [182/480] walker-walk    Qdet4      ep4   seed 2004 ret    925.9 succ 0 refresh 0 (58s)
+    409s [183/480] cheetah-run    Qshstep4   ep4   seed 2004 ret    273.5 succ 0 refresh 501 (60s)
+    409s [184/480] cheetah-run    Qshep4     ep4   seed 2004 ret     32.0 succ 0 refresh 1 (60s)
+    409s [185/480] cheetah-run    Qind4      ep4   seed 2004 ret    260.0 succ 0 refresh 0 (62s)
+    410s [186/480] cheetah-run    Qshfwd4    ep4   seed 2004 ret    295.1 succ 0 refresh 0 (62s)
+    412s [187/480] mw-push        Qdet3      ep6   seed 2006 ret    323.3 succ 0 refresh 0 (12s)
+    413s [188/480] walker-walk    Qind4      ep4   seed 2004 ret    669.8 succ 0 refresh 0 (62s)
+    413s [189/480] walker-walk    Qshstep4   ep4   seed 2004 ret    852.2 succ 0 refresh 501 (60s)
+    414s [190/480] walker-walk    Qshep4     ep4   seed 2004 ret    591.4 succ 0 refresh 1 (60s)
+    415s [191/480] walker-walk    Qshfwd4    ep4   seed 2004 ret    901.1 succ 0 refresh 0 (62s)
+    420s [192/480] mw-push        Qind3      ep6   seed 2006 ret   1757.8 succ 1 refresh 0 (13s)
+    421s [193/480] mw-push        Qshstep3   ep6   seed 2006 ret    121.4 succ 0 refresh 101 (12s)
+    422s [194/480] mw-push        Qshep3     ep6   seed 2006 ret   1631.6 succ 1 refresh 1 (12s)
+    422s [195/480] mw-push        Qshfwd3    ep6   seed 2006 ret   1784.7 succ 1 refresh 0 (13s)
+    422s [196/480] mw-pick-place  Qdet3      ep6   seed 2006 ret   1356.4 succ 1 refresh 0 (12s)
+    425s [197/480] mw-pick-place  Qind3      ep6   seed 2006 ret    304.6 succ 0 refresh 0 (13s)
+    425s [198/480] mw-pick-place  Qshstep3   ep6   seed 2006 ret   1658.0 succ 1 refresh 101 (12s)
+    425s [199/480] mw-pick-place  Qshfwd3    ep6   seed 2006 ret   1661.0 succ 1 refresh 0 (13s)
+    426s [200/480] mw-pick-place  Qshep3     ep6   seed 2006 ret      4.4 succ 0 refresh 1 (12s)
+    427s [201/480] cheetah-run    Qdet4      ep5   seed 2005 ret    486.4 succ 0 refresh 0 (58s)
+Episode length: 100
+Discount factor: 0.95
+    433s [202/480] cheetah-run    Qshstep4   ep5   seed 2005 ret    325.3 succ 0 refresh 501 (60s)
+    433s [203/480] walker-walk    Qdet4      ep5   seed 2005 ret    887.1 succ 0 refresh 0 (58s)
+    433s [204/480] cheetah-run    Qshep4     ep5   seed 2005 ret    200.9 succ 0 refresh 1 (60s)
+    434s [205/480] cheetah-run    Qind4      ep5   seed 2005 ret    514.9 succ 0 refresh 0 (62s)
+    434s [206/480] cheetah-run    Qshfwd4    ep5   seed 2005 ret    107.0 succ 0 refresh 0 (62s)
+    439s [207/480] mw-push        Qdet3      ep7   seed 2007 ret     26.3 succ 0 refresh 0 (12s)
+    440s [208/480] walker-walk    Qshstep4   ep5   seed 2005 ret    534.2 succ 0 refresh 501 (60s)
+    440s [209/480] walker-walk    Qshep4     ep5   seed 2005 ret    476.7 succ 0 refresh 1 (60s)
+    441s [210/480] walker-walk    Qind4      ep5   seed 2005 ret    387.8 succ 0 refresh 0 (62s)
+    442s [211/480] walker-walk    Qshfwd4    ep5   seed 2005 ret    924.0 succ 0 refresh 0 (62s)
+Episode length: 500
+Discount factor: 0.99
+    445s [212/480] mw-push        Qind3      ep7   seed 2007 ret   1648.2 succ 1 refresh 0 (13s)
+    445s [213/480] mw-push        Qshfwd3    ep7   seed 2007 ret   1755.0 succ 1 refresh 0 (13s)
+    446s [214/480] mw-push        Qshstep3   ep7   seed 2007 ret     18.9 succ 0 refresh 101 (12s)
+    446s [215/480] mw-pick-place  Qdet3      ep7   seed 2007 ret   1305.6 succ 1 refresh 0 (12s)
+    446s [216/480] mw-push        Qshep3     ep7   seed 2007 ret   1679.6 succ 1 refresh 1 (12s)
+    451s [217/480] mw-pick-place  Qind3      ep7   seed 2007 ret   1625.1 succ 1 refresh 0 (13s)
+    452s [218/480] mw-pick-place  Qshstep3   ep7   seed 2007 ret   1004.7 succ 0 refresh 101 (12s)
+    453s [219/480] mw-pick-place  Qshfwd3    ep7   seed 2007 ret   1639.3 succ 1 refresh 0 (13s)
+    453s [220/480] mw-pick-place  Qshep3     ep7   seed 2007 ret     78.0 succ 0 refresh 1 (12s)
+    472s [221/480] cheetah-run    Qdet4      ep6   seed 2006 ret    112.4 succ 0 refresh 0 (58s)
+    480s [222/480] walker-walk    Qdet4      ep6   seed 2006 ret    709.7 succ 0 refresh 0 (58s)
+    482s [223/480] cheetah-run    Qind4      ep6   seed 2006 ret    293.5 succ 0 refresh 0 (62s)
+    482s [224/480] cheetah-run    Qshstep4   ep6   seed 2006 ret    266.9 succ 0 refresh 501 (60s)
+    482s [225/480] cheetah-run    Qshep4     ep6   seed 2006 ret    104.3 succ 0 refresh 1 (60s)
+    483s [226/480] cheetah-run    Qshfwd4    ep6   seed 2006 ret    424.5 succ 0 refresh 0 (62s)
+Episode length: 100
+Discount factor: 0.95
+    484s [227/480] mw-push        Qdet3      ep8   seed 2008 ret   1666.9 succ 1 refresh 0 (12s)
+    485s [228/480] walker-walk    Qshstep4   ep6   seed 2006 ret    885.3 succ 0 refresh 501 (60s)
+    486s [229/480] walker-walk    Qshep4     ep6   seed 2006 ret    297.9 succ 0 refresh 1 (60s)
+    487s [230/480] walker-walk    Qshfwd4    ep6   seed 2006 ret    960.5 succ 0 refresh 0 (62s)
+    487s [231/480] walker-walk    Qind4      ep6   seed 2006 ret    738.8 succ 0 refresh 0 (62s)
+    492s [232/480] mw-push        Qind3      ep8   seed 2008 ret   1599.6 succ 1 refresh 0 (12s)
+    494s [233/480] mw-push        Qshstep3   ep8   seed 2008 ret    452.7 succ 0 refresh 101 (12s)
+    494s [234/480] mw-push        Qshep3     ep8   seed 2008 ret     13.0 succ 0 refresh 1 (12s)
+    494s [235/480] mw-push        Qshfwd3    ep8   seed 2008 ret   1740.8 succ 1 refresh 0 (12s)
+    496s [236/480] mw-pick-place  Qdet3      ep8   seed 2008 ret   1394.5 succ 1 refresh 0 (12s)
+    497s [237/480] mw-pick-place  Qind3      ep8   seed 2008 ret   1613.5 succ 1 refresh 0 (13s)
+    498s [238/480] mw-pick-place  Qshfwd3    ep8   seed 2008 ret   1635.2 succ 1 refresh 0 (13s)
+    498s [239/480] mw-pick-place  Qshstep3   ep8   seed 2008 ret   1415.9 succ 1 refresh 101 (12s)
+    499s [240/480] mw-pick-place  Qshep3     ep8   seed 2008 ret     30.2 succ 0 refresh 1 (12s)
+    500s [241/480] cheetah-run    Qdet4      ep7   seed 2007 ret    469.8 succ 0 refresh 0 (58s)
+    504s [242/480] walker-walk    Qdet4      ep7   seed 2007 ret    785.5 succ 0 refresh 0 (58s)
+    506s [243/480] cheetah-run    Qshstep4   ep7   seed 2007 ret    220.6 succ 0 refresh 501 (60s)
+    506s [244/480] cheetah-run    Qshep4     ep7   seed 2007 ret     59.8 succ 0 refresh 1 (60s)
+    507s [245/480] cheetah-run    Qshfwd4    ep7   seed 2007 ret    266.7 succ 0 refresh 0 (62s)
+    507s [246/480] cheetah-run    Qind4      ep7   seed 2007 ret    558.2 succ 0 refresh 0 (62s)
+    512s [247/480] mw-push        Qdet3      ep9   seed 2009 ret   1687.9 succ 0 refresh 0 (12s)
+    513s [248/480] walker-walk    Qshstep4   ep7   seed 2007 ret    802.6 succ 0 refresh 501 (60s)
+    513s [249/480] walker-walk    Qind4      ep7   seed 2007 ret    791.7 succ 0 refresh 0 (62s)
+    513s [250/480] walker-walk    Qshep4     ep7   seed 2007 ret    964.4 succ 0 refresh 1 (60s)
+    515s [251/480] walker-walk    Qshfwd4    ep7   seed 2007 ret    966.8 succ 0 refresh 0 (62s)
+    517s [252/480] mw-push        Qind3      ep9   seed 2009 ret    112.0 succ 0 refresh 0 (13s)
+    518s [253/480] mw-push        Qshstep3   ep9   seed 2009 ret     91.4 succ 0 refresh 101 (12s)
+    518s [254/480] mw-push        Qshfwd3    ep9   seed 2009 ret   1802.3 succ 1 refresh 0 (13s)
+    519s [255/480] mw-pick-place  Qdet3      ep9   seed 2009 ret    742.0 succ 0 refresh 0 (12s)
+    519s [256/480] mw-push        Qshep3     ep9   seed 2009 ret     53.0 succ 0 refresh 1 (12s)
+    524s [257/480] mw-pick-place  Qind3      ep9   seed 2009 ret     21.9 succ 0 refresh 0 (13s)
+    525s [258/480] mw-pick-place  Qshfwd3    ep9   seed 2009 ret   1727.4 succ 1 refresh 0 (13s)
+    525s [259/480] mw-pick-place  Qshstep3   ep9   seed 2009 ret    647.5 succ 0 refresh 101 (12s)
+    526s [260/480] mw-pick-place  Qshep3     ep9   seed 2009 ret   1540.3 succ 1 refresh 1 (12s)
+    545s [261/480] cheetah-run    Qdet4      ep8   seed 2008 ret    426.0 succ 0 refresh 0 (58s)
+    554s [262/480] walker-walk    Qdet4      ep8   seed 2008 ret    819.0 succ 0 refresh 0 (58s)
+    554s [263/480] cheetah-run    Qshep4     ep8   seed 2008 ret    124.7 succ 0 refresh 1 (60s)
+    554s [264/480] cheetah-run    Qshstep4   ep8   seed 2008 ret    156.7 succ 0 refresh 501 (60s)
+    554s [265/480] cheetah-run    Qind4      ep8   seed 2008 ret    419.6 succ 0 refresh 0 (62s)
+    556s [266/480] cheetah-run    Qshfwd4    ep8   seed 2008 ret    489.6 succ 0 refresh 0 (62s)
+    557s [267/480] mw-push        Qdet3      ep10  seed 2010 ret   1455.8 succ 1 refresh 0 (12s)
+    558s [268/480] walker-walk    Qshstep4   ep8   seed 2008 ret    795.9 succ 0 refresh 501 (60s)
+    559s [269/480] walker-walk    Qind4      ep8   seed 2008 ret    810.2 succ 0 refresh 0 (62s)
+    559s [270/480] walker-walk    Qshep4     ep8   seed 2008 ret    449.6 succ 0 refresh 1 (60s)
+    560s [271/480] walker-walk    Qshfwd4    ep8   seed 2008 ret    825.5 succ 0 refresh 0 (62s)
+    566s [272/480] mw-push        Qind3      ep10  seed 2010 ret   1757.0 succ 1 refresh 0 (12s)
+    566s [273/480] mw-push        Qshstep3   ep10  seed 2010 ret   1016.0 succ 0 refresh 101 (12s)
+    566s [274/480] mw-push        Qshep3     ep10  seed 2010 ret     54.5 succ 0 refresh 1 (12s)
+    567s [275/480] mw-push        Qshfwd3    ep10  seed 2010 ret   1775.3 succ 1 refresh 0 (13s)
+    567s [276/480] mw-pick-place  Qdet3      ep10  seed 2010 ret   1316.1 succ 1 refresh 0 (12s)
+    569s [277/480] mw-pick-place  Qind3      ep10  seed 2010 ret   1635.1 succ 1 refresh 0 (13s)
+    571s [278/480] mw-pick-place  Qshstep3   ep10  seed 2010 ret   1618.5 succ 1 refresh 101 (12s)
+    571s [279/480] mw-pick-place  Qshfwd3    ep10  seed 2010 ret    989.9 succ 1 refresh 0 (13s)
+    571s [280/480] mw-pick-place  Qshep3     ep10  seed 2010 ret   1638.2 succ 1 refresh 1 (12s)
+    572s [281/480] cheetah-run    Qdet4      ep9   seed 2009 ret    412.6 succ 0 refresh 0 (58s)
+    577s [282/480] walker-walk    Qdet4      ep9   seed 2009 ret    847.6 succ 0 refresh 0 (58s)
+    578s [283/480] cheetah-run    Qshstep4   ep9   seed 2009 ret     72.8 succ 0 refresh 501 (60s)
+    579s [284/480] cheetah-run    Qind4      ep9   seed 2009 ret    518.2 succ 0 refresh 0 (62s)
+    579s [285/480] cheetah-run    Qshep4     ep9   seed 2009 ret    283.3 succ 0 refresh 1 (60s)
+    580s [286/480] cheetah-run    Qshfwd4    ep9   seed 2009 ret    452.3 succ 0 refresh 0 (62s)
+    584s [287/480] mw-push        Qdet3      ep11  seed 2011 ret    250.0 succ 0 refresh 0 (12s)
+    585s [288/480] walker-walk    Qshstep4   ep9   seed 2009 ret    697.3 succ 0 refresh 501 (60s)
+    586s [289/480] walker-walk    Qshep4     ep9   seed 2009 ret     61.7 succ 0 refresh 1 (60s)
+    587s [290/480] walker-walk    Qind4      ep9   seed 2009 ret     76.3 succ 0 refresh 0 (62s)
+    587s [291/480] walker-walk    Qshfwd4    ep9   seed 2009 ret    844.7 succ 0 refresh 0 (62s)
+    590s [292/480] mw-push        Qind3      ep11  seed 2011 ret   1759.8 succ 1 refresh 0 (13s)
+    591s [293/480] mw-push        Qshstep3   ep11  seed 2011 ret    198.2 succ 0 refresh 101 (12s)
+    591s [294/480] mw-push        Qshfwd3    ep11  seed 2011 ret   1772.7 succ 1 refresh 0 (13s)
+    591s [295/480] mw-push        Qshep3     ep11  seed 2011 ret    605.1 succ 0 refresh 1 (12s)
+    592s [296/480] mw-pick-place  Qdet3      ep11  seed 2011 ret   1087.6 succ 0 refresh 0 (12s)
+    597s [297/480] mw-pick-place  Qind3      ep11  seed 2011 ret   1646.0 succ 1 refresh 0 (13s)
+    598s [298/480] mw-pick-place  Qshfwd3    ep11  seed 2011 ret   1655.1 succ 1 refresh 0 (13s)
+    598s [299/480] mw-pick-place  Qshstep3   ep11  seed 2011 ret   1589.7 succ 1 refresh 101 (12s)
+    599s [300/480] mw-pick-place  Qshep3     ep11  seed 2011 ret   1230.8 succ 1 refresh 1 (12s)
+    618s [301/480] cheetah-run    Qdet4      ep10  seed 2010 ret    468.3 succ 0 refresh 0 (58s)
+    625s [302/480] walker-walk    Qdet4      ep10  seed 2010 ret    922.1 succ 0 refresh 0 (58s)
+    626s [303/480] cheetah-run    Qshstep4   ep10  seed 2010 ret    144.8 succ 0 refresh 501 (60s)
+    626s [304/480] cheetah-run    Qshep4     ep10  seed 2010 ret    132.4 succ 0 refresh 1 (60s)
+    628s [305/480] cheetah-run    Qind4      ep10  seed 2010 ret    447.9 succ 0 refresh 0 (62s)
+    628s [306/480] cheetah-run    Qshfwd4    ep10  seed 2010 ret    542.2 succ 0 refresh 0 (62s)
+    629s [307/480] mw-push        Qdet3      ep12  seed 2012 ret    188.7 succ 0 refresh 0 (12s)
+    631s [308/480] walker-walk    Qshstep4   ep10  seed 2010 ret    838.5 succ 0 refresh 501 (60s)
+    632s [309/480] walker-walk    Qshep4     ep10  seed 2010 ret    501.7 succ 0 refresh 1 (60s)
+    632s [310/480] walker-walk    Qind4      ep10  seed 2010 ret    594.3 succ 0 refresh 0 (62s)
+    633s [311/480] walker-walk    Qshfwd4    ep10  seed 2010 ret    888.8 succ 0 refresh 0 (62s)
+    638s [312/480] mw-push        Qind3      ep12  seed 2012 ret   1741.4 succ 1 refresh 0 (13s)
+    639s [313/480] mw-push        Qshstep3   ep12  seed 2012 ret   1565.9 succ 1 refresh 101 (12s)
+    639s [314/480] mw-push        Qshfwd3    ep12  seed 2012 ret   1767.3 succ 1 refresh 0 (13s)
+    640s [315/480] mw-pick-place  Qdet3      ep12  seed 2012 ret   1349.0 succ 1 refresh 0 (12s)
+    640s [316/480] mw-push        Qshep3     ep12  seed 2012 ret     76.3 succ 0 refresh 1 (12s)
+    642s [317/480] mw-pick-place  Qind3      ep12  seed 2012 ret   1595.5 succ 1 refresh 0 (13s)
+    643s [318/480] mw-pick-place  Qshfwd3    ep12  seed 2012 ret   1626.0 succ 1 refresh 0 (13s)
+    644s [319/480] mw-pick-place  Qshstep3   ep12  seed 2012 ret     50.8 succ 0 refresh 101 (12s)
+    644s [320/480] mw-pick-place  Qshep3     ep12  seed 2012 ret     37.3 succ 0 refresh 1 (12s)
+    645s [321/480] cheetah-run    Qdet4      ep11  seed 2011 ret    483.7 succ 0 refresh 0 (58s)
+    650s [322/480] walker-walk    Qdet4      ep11  seed 2011 ret    808.0 succ 0 refresh 0 (58s)
+    651s [323/480] cheetah-run    Qshstep4   ep11  seed 2011 ret    229.9 succ 0 refresh 501 (60s)
+    651s [324/480] cheetah-run    Qshep4     ep11  seed 2011 ret    173.1 succ 0 refresh 1 (60s)
+    651s [325/480] cheetah-run    Qind4      ep11  seed 2011 ret    541.4 succ 0 refresh 0 (62s)
+    653s [326/480] cheetah-run    Qshfwd4    ep11  seed 2011 ret    466.1 succ 0 refresh 0 (62s)
+    657s [327/480] mw-push        Qdet3      ep13  seed 2013 ret   1629.3 succ 1 refresh 0 (12s)
+    658s [328/480] walker-walk    Qshstep4   ep11  seed 2011 ret    756.8 succ 0 refresh 501 (60s)
+    659s [329/480] walker-walk    Qind4      ep11  seed 2011 ret    470.3 succ 0 refresh 0 (62s)
+    659s [330/480] walker-walk    Qshep4     ep11  seed 2011 ret    356.6 succ 0 refresh 1 (60s)
+    660s [331/480] walker-walk    Qshfwd4    ep11  seed 2011 ret    928.8 succ 0 refresh 0 (62s)
+    663s [332/480] mw-push        Qind3      ep13  seed 2013 ret   1787.9 succ 1 refresh 0 (13s)
+    664s [333/480] mw-push        Qshstep3   ep13  seed 2013 ret    286.8 succ 0 refresh 101 (12s)
+    664s [334/480] mw-push        Qshep3     ep13  seed 2013 ret     16.0 succ 0 refresh 1 (12s)
+    664s [335/480] mw-push        Qshfwd3    ep13  seed 2013 ret    579.1 succ 0 refresh 0 (13s)
+    665s [336/480] mw-pick-place  Qdet3      ep13  seed 2013 ret   1603.9 succ 1 refresh 0 (12s)
+    669s [337/480] mw-pick-place  Qind3      ep13  seed 2013 ret   1330.2 succ 1 refresh 0 (13s)
+    671s [338/480] mw-pick-place  Qshfwd3    ep13  seed 2013 ret   1701.4 succ 1 refresh 0 (13s)
+    671s [339/480] mw-pick-place  Qshstep3   ep13  seed 2013 ret   1304.3 succ 0 refresh 101 (12s)
+    671s [340/480] mw-pick-place  Qshep3     ep13  seed 2013 ret   1576.6 succ 1 refresh 1 (12s)
+    690s [341/480] cheetah-run    Qdet4      ep12  seed 2012 ret    239.0 succ 0 refresh 0 (58s)
+    698s [342/480] walker-walk    Qdet4      ep12  seed 2012 ret    869.0 succ 0 refresh 0 (58s)
+    699s [343/480] cheetah-run    Qshstep4   ep12  seed 2012 ret    244.1 succ 0 refresh 501 (60s)
+    700s [344/480] cheetah-run    Qind4      ep12  seed 2012 ret    344.9 succ 0 refresh 0 (62s)
+    700s [345/480] cheetah-run    Qshep4     ep12  seed 2012 ret    413.7 succ 0 refresh 1 (60s)
+    700s [346/480] cheetah-run    Qshfwd4    ep12  seed 2012 ret    420.2 succ 0 refresh 0 (62s)
+    702s [347/480] mw-push        Qdet3      ep14  seed 2014 ret   1607.1 succ 1 refresh 0 (12s)
+    704s [348/480] walker-walk    Qshstep4   ep12  seed 2012 ret    691.4 succ 0 refresh 501 (60s)
+    704s [349/480] walker-walk    Qshep4     ep12  seed 2012 ret    537.0 succ 0 refresh 1 (60s)
+    704s [350/480] walker-walk    Qind4      ep12  seed 2012 ret    370.8 succ 0 refresh 0 (62s)
+    705s [351/480] walker-walk    Qshfwd4    ep12  seed 2012 ret    933.7 succ 0 refresh 0 (62s)
+    710s [352/480] mw-push        Qind3      ep14  seed 2014 ret   1769.2 succ 1 refresh 0 (12s)
+    712s [353/480] mw-push        Qshfwd3    ep14  seed 2014 ret   1787.0 succ 1 refresh 0 (13s)
+    712s [354/480] mw-push        Qshstep3   ep14  seed 2014 ret     74.1 succ 0 refresh 101 (12s)
+    712s [355/480] mw-pick-place  Qdet3      ep14  seed 2014 ret    893.0 succ 0 refresh 0 (12s)
+    712s [356/480] mw-push        Qshep3     ep14  seed 2014 ret    125.4 succ 0 refresh 1 (12s)
+Episode length: 500
+Discount factor: 0.99
+    715s [357/480] mw-pick-place  Qind3      ep14  seed 2014 ret   1637.6 succ 1 refresh 0 (13s)
+    716s [358/480] mw-pick-place  Qshstep3   ep14  seed 2014 ret   1558.3 succ 1 refresh 101 (12s)
+    716s [359/480] mw-pick-place  Qshep3     ep14  seed 2014 ret   1007.9 succ 0 refresh 1 (12s)
+    716s [360/480] mw-pick-place  Qshfwd3    ep14  seed 2014 ret   1668.2 succ 1 refresh 0 (13s)
+    718s [361/480] cheetah-run    Qdet4      ep13  seed 2013 ret    482.3 succ 0 refresh 0 (58s)
+    722s [362/480] walker-walk    Qdet4      ep13  seed 2013 ret    947.6 succ 0 refresh 0 (58s)
+    723s [363/480] cheetah-run    Qshstep4   ep13  seed 2013 ret    218.0 succ 0 refresh 501 (60s)
+    724s [364/480] cheetah-run    Qshep4     ep13  seed 2013 ret    100.8 succ 0 refresh 1 (60s)
+    725s [365/480] cheetah-run    Qind4      ep13  seed 2013 ret    216.3 succ 0 refresh 0 (62s)
+    726s [366/480] cheetah-run    Qshfwd4    ep13  seed 2013 ret    587.5 succ 0 refresh 0 (62s)
+    729s [367/480] mw-push        Qdet3      ep15  seed 2015 ret    223.3 succ 0 refresh 0 (12s)
+    732s [368/480] walker-walk    Qind4      ep13  seed 2013 ret    756.3 succ 0 refresh 0 (62s)
+    732s [369/480] walker-walk    Qshep4     ep13  seed 2013 ret    362.5 succ 0 refresh 1 (60s)
+    732s [370/480] walker-walk    Qshstep4   ep13  seed 2013 ret    798.7 succ 0 refresh 501 (60s)
+    733s [371/480] walker-walk    Qshfwd4    ep13  seed 2013 ret    804.9 succ 0 refresh 0 (62s)
+    735s [372/480] mw-push        Qind3      ep15  seed 2015 ret   1758.9 succ 1 refresh 0 (13s)
+    736s [373/480] mw-push        Qshstep3   ep15  seed 2015 ret   1709.0 succ 1 refresh 101 (12s)
+    736s [374/480] mw-push        Qshfwd3    ep15  seed 2015 ret   1754.6 succ 1 refresh 0 (13s)
+    737s [375/480] mw-push        Qshep3     ep15  seed 2015 ret     49.5 succ 0 refresh 1 (12s)
+    737s [376/480] mw-pick-place  Qdet3      ep15  seed 2015 ret   1305.1 succ 1 refresh 0 (12s)
+    742s [377/480] mw-pick-place  Qind3      ep15  seed 2015 ret   1607.3 succ 1 refresh 0 (12s)
+    744s [378/480] mw-pick-place  Qshstep3   ep15  seed 2015 ret   1508.4 succ 1 refresh 101 (12s)
+    744s [379/480] mw-pick-place  Qshep3     ep15  seed 2015 ret   1390.5 succ 0 refresh 1 (12s)
+    744s [380/480] mw-pick-place  Qshfwd3    ep15  seed 2015 ret   1629.1 succ 1 refresh 0 (13s)
+    763s [381/480] cheetah-run    Qdet4      ep14  seed 2014 ret    440.9 succ 0 refresh 0 (57s)
+    771s [382/480] walker-walk    Qdet4      ep14  seed 2014 ret    739.0 succ 0 refresh 0 (58s)
+    772s [383/480] cheetah-run    Qshstep4   ep14  seed 2014 ret     99.3 succ 0 refresh 501 (60s)
+    772s [384/480] cheetah-run    Qshep4     ep14  seed 2014 ret     24.6 succ 0 refresh 1 (60s)
+    772s [385/480] cheetah-run    Qind4      ep14  seed 2014 ret    567.4 succ 0 refresh 0 (62s)
+    774s [386/480] cheetah-run    Qshfwd4    ep14  seed 2014 ret    500.5 succ 0 refresh 0 (62s)
+    775s [387/480] mw-push        Qdet3      ep16  seed 2016 ret   1457.6 succ 1 refresh 0 (12s)
+    776s [388/480] walker-walk    Qshstep4   ep14  seed 2014 ret    731.6 succ 0 refresh 501 (60s)
+    776s [389/480] walker-walk    Qshep4     ep14  seed 2014 ret    373.6 succ 0 refresh 1 (60s)
+    777s [390/480] walker-walk    Qind4      ep14  seed 2014 ret    150.9 succ 0 refresh 0 (62s)
+    779s [391/480] walker-walk    Qshfwd4    ep14  seed 2014 ret    780.9 succ 0 refresh 0 (62s)
+    783s [392/480] mw-push        Qind3      ep16  seed 2016 ret   1774.6 succ 1 refresh 0 (13s)
+    784s [393/480] mw-push        Qshstep3   ep16  seed 2016 ret    135.2 succ 0 refresh 101 (12s)
+    784s [394/480] mw-push        Qshfwd3    ep16  seed 2016 ret   1538.7 succ 1 refresh 0 (12s)
+    784s [395/480] mw-push        Qshep3     ep16  seed 2016 ret     31.7 succ 0 refresh 1 (12s)
+    785s [396/480] mw-pick-place  Qdet3      ep16  seed 2016 ret   1097.8 succ 0 refresh 0 (12s)
+    787s [397/480] mw-pick-place  Qind3      ep16  seed 2016 ret   1648.8 succ 1 refresh 0 (13s)
+    789s [398/480] mw-pick-place  Qshstep3   ep16  seed 2016 ret   1670.3 succ 1 refresh 101 (12s)
+    789s [399/480] mw-pick-place  Qshep3     ep16  seed 2016 ret    566.3 succ 0 refresh 1 (12s)
+    789s [400/480] mw-pick-place  Qshfwd3    ep16  seed 2016 ret   1668.6 succ 1 refresh 0 (13s)
+    791s [401/480] cheetah-run    Qdet4      ep15  seed 2015 ret    493.1 succ 0 refresh 0 (58s)
+    795s [402/480] walker-walk    Qdet4      ep15  seed 2015 ret    799.0 succ 0 refresh 0 (58s)
+    796s [403/480] cheetah-run    Qshstep4   ep15  seed 2015 ret    258.7 succ 0 refresh 501 (60s)
+    797s [404/480] cheetah-run    Qshep4     ep15  seed 2015 ret    241.4 succ 0 refresh 1 (60s)
+    797s [405/480] cheetah-run    Qind4      ep15  seed 2015 ret    495.7 succ 0 refresh 0 (62s)
+    798s [406/480] cheetah-run    Qshfwd4    ep15  seed 2015 ret    632.0 succ 0 refresh 0 (62s)
+Episode length: 100
+Discount factor: 0.95
+    803s [407/480] mw-push        Qdet3      ep17  seed 2017 ret     58.2 succ 0 refresh 0 (12s)
+    804s [408/480] walker-walk    Qind4      ep15  seed 2015 ret    759.3 succ 0 refresh 0 (62s)
+    804s [409/480] walker-walk    Qshstep4   ep15  seed 2015 ret    951.2 succ 0 refresh 501 (60s)
+    804s [410/480] walker-walk    Qshep4     ep15  seed 2015 ret    414.0 succ 0 refresh 1 (60s)
+    806s [411/480] walker-walk    Qshfwd4    ep15  seed 2015 ret    944.6 succ 0 refresh 0 (62s)
+    808s [412/480] mw-push        Qind3      ep17  seed 2017 ret     16.8 succ 0 refresh 0 (12s)
+    808s [413/480] mw-push        Qshfwd3    ep17  seed 2017 ret   1753.9 succ 1 refresh 0 (13s)
+    809s [414/480] mw-push        Qshstep3   ep17  seed 2017 ret     99.9 succ 0 refresh 101 (12s)
+    809s [415/480] mw-push        Qshep3     ep17  seed 2017 ret   1581.9 succ 1 refresh 1 (12s)
+    810s [416/480] mw-pick-place  Qdet3      ep17  seed 2017 ret    911.9 succ 0 refresh 0 (12s)
+Episode length: 500
+Discount factor: 0.99
+    815s [417/480] mw-pick-place  Qind3      ep17  seed 2017 ret    410.3 succ 0 refresh 0 (12s)
+    816s [418/480] mw-pick-place  Qshfwd3    ep17  seed 2017 ret   1644.9 succ 1 refresh 0 (13s)
+    816s [419/480] mw-pick-place  Qshstep3   ep17  seed 2017 ret   1512.3 succ 1 refresh 101 (12s)
+    816s [420/480] mw-pick-place  Qshep3     ep17  seed 2017 ret      7.6 succ 0 refresh 1 (12s)
+    836s [421/480] cheetah-run    Qdet4      ep16  seed 2016 ret    519.0 succ 0 refresh 0 (58s)
+    843s [422/480] walker-walk    Qdet4      ep16  seed 2016 ret    675.4 succ 0 refresh 0 (58s)
+    844s [423/480] cheetah-run    Qshep4     ep16  seed 2016 ret    266.6 succ 0 refresh 1 (60s)
+    844s [424/480] cheetah-run    Qshstep4   ep16  seed 2016 ret    206.0 succ 0 refresh 501 (60s)
+    845s [425/480] cheetah-run    Qind4      ep16  seed 2016 ret    441.5 succ 0 refresh 0 (62s)
+    846s [426/480] cheetah-run    Qshfwd4    ep16  seed 2016 ret    541.5 succ 0 refresh 0 (62s)
+    848s [427/480] mw-push        Qdet3      ep18  seed 2018 ret     53.7 succ 0 refresh 0 (12s)
+    849s [428/480] walker-walk    Qshstep4   ep16  seed 2016 ret    742.8 succ 0 refresh 501 (60s)
+    849s [429/480] walker-walk    Qshep4     ep16  seed 2016 ret    427.6 succ 0 refresh 1 (60s)
+    849s [430/480] walker-walk    Qind4      ep16  seed 2016 ret    543.7 succ 0 refresh 0 (62s)
+    850s [431/480] walker-walk    Qshfwd4    ep16  seed 2016 ret    764.9 succ 0 refresh 0 (62s)
+    856s [432/480] mw-push        Qind3      ep18  seed 2018 ret   1772.7 succ 1 refresh 0 (13s)
+    856s [433/480] mw-push        Qshstep3   ep18  seed 2018 ret   1696.2 succ 1 refresh 101 (12s)
+    856s [434/480] mw-push        Qshfwd3    ep18  seed 2018 ret   1774.9 succ 1 refresh 0 (12s)
+    857s [435/480] mw-push        Qshep3     ep18  seed 2018 ret     93.5 succ 0 refresh 1 (12s)
+    857s [436/480] mw-pick-place  Qdet3      ep18  seed 2018 ret   1194.7 succ 1 refresh 0 (12s)
+    861s [437/480] mw-pick-place  Qind3      ep18  seed 2018 ret   1622.1 succ 1 refresh 0 (13s)
+    861s [438/480] mw-pick-place  Qshstep3   ep18  seed 2018 ret   1287.5 succ 1 refresh 101 (12s)
+    861s [439/480] mw-pick-place  Qshep3     ep18  seed 2018 ret    674.4 succ 0 refresh 1 (12s)
+    861s [440/480] mw-pick-place  Qshfwd3    ep18  seed 2018 ret   1636.7 succ 1 refresh 0 (13s)
+    864s [441/480] cheetah-run    Qdet4      ep17  seed 2017 ret    280.8 succ 0 refresh 0 (58s)
+    869s [442/480] cheetah-run    Qshstep4   ep17  seed 2017 ret    195.5 succ 0 refresh 501 (60s)
+    869s [443/480] walker-walk    Qdet4      ep17  seed 2017 ret    838.1 succ 0 refresh 0 (58s)
+    869s [444/480] cheetah-run    Qshep4     ep17  seed 2017 ret     91.4 succ 0 refresh 1 (60s)
+    870s [445/480] cheetah-run    Qind4      ep17  seed 2017 ret    532.0 succ 0 refresh 0 (62s)
+    870s [446/480] cheetah-run    Qshfwd4    ep17  seed 2017 ret    471.2 succ 0 refresh 0 (62s)
+    875s [447/480] mw-push        Qdet3      ep19  seed 2019 ret     35.6 succ 0 refresh 0 (12s)
+    876s [448/480] walker-walk    Qshep4     ep17  seed 2017 ret    264.2 succ 0 refresh 1 (60s)
+    876s [449/480] walker-walk    Qshstep4   ep17  seed 2017 ret    717.9 succ 0 refresh 501 (60s)
+    877s [450/480] walker-walk    Qind4      ep17  seed 2017 ret    285.5 succ 0 refresh 0 (62s)
+    878s [451/480] walker-walk    Qshfwd4    ep17  seed 2017 ret    923.2 succ 0 refresh 0 (62s)
+    881s [452/480] mw-push        Qshstep3   ep19  seed 2019 ret    903.4 succ 0 refresh 101 (12s)
+    881s [453/480] mw-push        Qind3      ep19  seed 2019 ret   1689.1 succ 1 refresh 0 (13s)
+    881s [454/480] mw-push        Qshfwd3    ep19  seed 2019 ret   1758.4 succ 1 refresh 0 (13s)
+    882s [455/480] mw-pick-place  Qdet3      ep19  seed 2019 ret   1559.1 succ 1 refresh 0 (12s)
+    882s [456/480] mw-push        Qshep3     ep19  seed 2019 ret    297.1 succ 0 refresh 1 (12s)
+    888s [457/480] mw-pick-place  Qind3      ep19  seed 2019 ret    444.3 succ 0 refresh 0 (13s)
+    889s [458/480] mw-pick-place  Qshstep3   ep19  seed 2019 ret     18.5 succ 0 refresh 101 (12s)
+    889s [459/480] mw-pick-place  Qshfwd3    ep19  seed 2019 ret     27.1 succ 0 refresh 0 (13s)
+    890s [460/480] mw-pick-place  Qshep3     ep19  seed 2019 ret    199.2 succ 0 refresh 1 (12s)
+    908s [461/480] cheetah-run    Qdet4      ep18  seed 2018 ret    363.1 succ 0 refresh 0 (58s)
+    915s [462/480] walker-walk    Qdet4      ep18  seed 2018 ret    894.7 succ 0 refresh 0 (57s)
+    916s [463/480] cheetah-run    Qshstep4   ep18  seed 2018 ret    168.2 succ 0 refresh 501 (59s)
+    917s [464/480] cheetah-run    Qind4      ep18  seed 2018 ret    184.2 succ 0 refresh 0 (61s)
+    917s [465/480] cheetah-run    Qshep4     ep18  seed 2018 ret    144.7 succ 0 refresh 1 (60s)
+    917s [466/480] cheetah-run    Qshfwd4    ep18  seed 2018 ret    609.5 succ 0 refresh 0 (61s)
+    919s [467/480] walker-walk    Qshstep4   ep18  seed 2018 ret    639.6 succ 0 refresh 501 (58s)
+    919s [468/480] walker-walk    Qshep4     ep18  seed 2018 ret    523.0 succ 0 refresh 1 (58s)
+    920s [469/480] walker-walk    Qshfwd4    ep18  seed 2018 ret    887.7 succ 0 refresh 0 (59s)
+    921s [470/480] walker-walk    Qind4      ep18  seed 2018 ret    600.3 succ 0 refresh 0 (60s)
+    924s [471/480] cheetah-run    Qdet4      ep19  seed 2019 ret    386.9 succ 0 refresh 0 (47s)
+    926s [472/480] cheetah-run    Qshep4     ep19  seed 2019 ret    177.3 succ 0 refresh 1 (45s)
+    929s [473/480] walker-walk    Qdet4      ep19  seed 2019 ret    865.8 succ 0 refresh 0 (48s)
+    930s [474/480] cheetah-run    Qshstep4   ep19  seed 2019 ret    148.7 succ 0 refresh 501 (49s)
+    931s [475/480] cheetah-run    Qind4      ep19  seed 2019 ret    426.7 succ 0 refresh 0 (49s)
+    931s [476/480] cheetah-run    Qshfwd4    ep19  seed 2019 ret    561.3 succ 0 refresh 0 (49s)
+    933s [477/480] walker-walk    Qshstep4   ep19  seed 2019 ret    794.2 succ 0 refresh 501 (44s)
+    933s [478/480] walker-walk    Qind4      ep19  seed 2019 ret    762.6 succ 0 refresh 0 (45s)
+    933s [479/480] walker-walk    Qshep4     ep19  seed 2019 ret    743.4 succ 0 refresh 1 (43s)
+    933s [480/480] walker-walk    Qshfwd4    ep19  seed 2019 ret    863.5 succ 0 refresh 0 (45s)
+GRID_DONE
+=== decision 07:54:16
+=== analyze 07:55:16
+{
+ "S1": true,
+ "S1_tasks": 2,
+ "S1_strict_tasks": 2,
+ "S2": false,
+ "S2_tasks": 2,
+ "S3": true,
+ "S3_tasks": 4,
+ "S3_literal_tasks": 4,
+ "aux_counts": {
+  "shep>shfwd": 4,
+  "shstep>shfwd": 4,
+  "shep>shstep": 2
+ },
+ "verdict": "조건부 있음"
+}
+mw-push k=3 n=20 R0=1.000: det 65.0 [45.0,80.0]  ind 15.0 [5.0,30.0]  sh-fwd 5.0 [0.0,15.0]  sh-step 65.0 [45.0,80.0]  sh-ep 85.0 [70.0,95.0]
+   pairs: shfwd-ind -10.0 [-25.0,5.0]  shep-det 20.0 [-5.0,45.0]  shfwd-det -60.0 [-80.0,-40.0]  shstep-det 0.0 [-25.0,25.0]  ind-det -50.0 [-70.0,-25.0]  shstep-shfwd 60.0 [40.0,80.0]  shep-shfwd 80.0 [65.0,95.0]  shep-shstep 20.0 [-5.0,45.0]
+   {"k": 3, "det_drop_real": true, "det_drop": 0.65, "det_drop_ci": [0.45, 0.8], "red_shfwd": 0.923076923076923, "red_shfwd_ci": [0.75, 1.0], "red_shstep": 0.0, "red_shstep_ci": [-0.5454545454545453, 0.33333333333333337], "S1_best_variant": "shfwd", "S1_task": true, "S1_task_strict": true, "shfwd_minus_ind": -0.1, "shfwd_minus_ind_ci": [-0.25, 0.05], "S2_task": false, "shep_minus_det": 0.2, "shep_minus_det_ci": [-0.05, 0.45], "S3_task": true, "S3_task_literal": true, "aux": {"shep>shfwd": true, "shstep>shfwd": true, "shep>shstep": false}}
+mw-pick-place k=3 n=20 R0=1.000: det 55.0 [35.0,75.0]  ind 35.0 [20.0,50.0]  sh-fwd 10.0 [0.0,20.0]  sh-step 40.0 [20.0,60.0]  sh-ep 75.0 [60.0,90.0]
+   pairs: shfwd-ind -25.0 [-40.0,-10.0]  shep-det 20.0 [-5.0,45.0]  shfwd-det -45.0 [-65.0,-25.0]  shstep-det -15.0 [-40.0,10.0]  ind-det -20.0 [-40.0,0.0]  shstep-shfwd 30.0 [15.0,50.0]  shep-shfwd 65.0 [45.0,80.0]  shep-shstep 35.0 [10.0,60.0]
+   {"k": 3, "det_drop_real": true, "det_drop": 0.55, "det_drop_ci": [0.35, 0.75], "red_shfwd": 0.8181818181818182, "red_shfwd_ci": [0.5555555555555556, 1.0], "red_shstep": 0.27272727272727276, "red_shstep_ci": [-0.2857142857142858, 0.625], "S1_best_variant": "shfwd", "S1_task": true, "S1_task_strict": true, "shfwd_minus_ind": -0.25, "shfwd_minus_ind_ci": [-0.4, -0.1], "S2_task": true, "shep_minus_det": 0.2, "shep_minus_det_ci": [-0.05, 0.45], "S3_task": true, "S3_task_literal": true, "aux": {"shep>shfwd": true, "shstep>shfwd": true, "shep>shstep": true}}
+cheetah-run k=4 n=20 R0=864.610: det 52.4 [48.6,56.5]  ind 50.0 [45.4,55.1]  sh-fwd 47.1 [40.7,54.0]  sh-step 77.2 [74.2,80.2]  sh-ep 80.7 [76.7,84.5]
+   pairs: shfwd-ind -2.9 [-12.3,6.1]  shep-det 28.3 [22.2,34.0]  shfwd-det -5.3 [-12.9,3.0]  shstep-det 24.8 [19.4,29.8]  ind-det -2.4 [-7.2,3.1]  shstep-shfwd 30.1 [22.2,37.5]  shep-shfwd 33.6 [25.8,40.9]  shep-shstep 3.5 [-1.1,8.1]
+   {"k": 4, "det_drop_real": true, "det_drop": 0.5240490250784527, "det_drop_ci": [0.4861164598261392, 0.5653124173222092], "red_shfwd": 0.10150619029005932, "red_shfwd_ci": [-0.05886282982996027, 0.23511671263236622], "red_shstep": -0.4733423719936701, "red_shstep_ci": [-0.6063407320540762, -0.3466265484137576], "S1_best_variant": "shfwd", "S1_task": false, "S1_task_strict": false, "shfwd_minus_ind": -0.02949969584409522, "shfwd_minus_ind_ci": [-0.12285339776476421, 0.06136166215070488], "S2_task": false, "shep_minus_det": 0.28294289095148717, "shep_minus_det_ci": [0.2216450639492359, 0.33979038292329283], "S3_task": true, "S3_task_literal": true, "aux": {"shep>shfwd": true, "shstep>shfwd": true, "shep>shstep": false}}
+walker-walk k=4 n=20 R0=984.410: det 13.6 [10.7,16.6]  ind 42.0 [34.3,50.2]  sh-fwd 9.7 [7.3,12.2]  sh-step 24.3 [20.2,28.5]  sh-ep 53.6 [46.8,60.3]
+   pairs: shfwd-ind -32.3 [-40.6,-24.1]  shep-det 40.1 [32.8,47.0]  shfwd-det -3.9 [-7.6,-0.0]  shstep-det 10.7 [4.9,16.6]  ind-det 28.4 [20.2,36.8]  shstep-shfwd 14.6 [9.7,19.7]  shep-shfwd 44.0 [36.9,50.7]  shep-shstep 29.4 [21.9,36.6]
+   {"k": 4, "det_drop_real": true, "det_drop": 0.1356027297694314, "det_drop_ci": [0.10678341942737919, 0.16626480290507076], "red_shfwd": 0.28662704037076, "red_shfwd_ci": [0.0017654802719326093, 0.489615408209755], "red_shstep": -0.7883557286045649, "red_shstep_ci": [-1.481860884964077, -0.312622330298917], "S1_best_variant": "shfwd", "S1_task": false, "S1_task_strict": false, "shfwd_minus_ind": -0.3229564380811482, "shfwd_minus_ind_ci": [-0.40599071718084306, -0.24120152635796405], "S2_task": true, "shep_minus_det": 0.4007897610623659, "shep_minus_det_ci": [0.3276810071072829, 0.4703489768015987], "S3_task": true, "S3_task_literal": true, "aux": {"shep>shfwd": true, "shstep>shfwd": true, "shep>shstep": true}}
+ANALYZE_DONE
+=== done 07:55:17

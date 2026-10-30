@@ -1,0 +1,91 @@
+# E1 TD-MPC2 분석·E2/E3/E5/E7 운영안 작업 로그 (작업자, UTC, 2026-10-22)
+
+- 06:32Z 조정자 지시 수신(E1 TD-MPC2 분석·보고, E2·E3·E5·E7의 TD-MPC2 운영 세부 초안). MAIN_RULES.md, DESIGN_main.md(v4 §6까지), main/LOG.md, `code/dinowm/analyze_e1.py`·`analyze.py`(DINO-WM 쪽 판정 계산 규칙과 helper) 확인
+- 06:33Z 서버 상태(결과 수치는 보지 않음): episode job 4,104개 완료. 칸별 job은 MPS 없이 워커 2개로 재실행 중(tmux `A-E1-tdmpc2-cells`, 41/95, 실패 0). 남은 것: MW prederr 48개, MW decision 6개. GPU 0은 PushT E1(비 MPS)이 함께 쓰는 중
+- 06:35~06:42Z `code/tdmpc2/analyze_e1.py` 작성(E1 결과를 보기 전). DESIGN_main v4 §6과 DINO-WM `analyze_e1.py`·`analyze.py`의 helper(McNemar 정확 검정, Holm, RandomState(0) 짝 bootstrap 10,000회, 한쪽 p = (#{D* ≤ 0} + 1)/(B + 1))를 그대로 옮겼다. DMC는 상대 return 하락을 resample마다 비율로 다시 계산한다
+  - 점검 1: smoke 분할(`--split smoke`, 12 episode, 1칸)로 코드 경로 확인. 수치는 해석하지 않음
+  - 점검 2: 가짜 자료(`test_analyze_e1.py`, E1과 같은 배치 4,104 job·20,520 episode, 무작위 값)로 전체 경로 확인: 36칸, Holm, H1·H3a 단위 3개, H2a, H2b(주 계산 + 보조 4개), near-tie, CSV·MD 표가 나온다. 4초
+- 06:45Z 칸별 job 완료(`E1_CELLS_DONE`, 95/95 OK). status.py: episode 4,104/4,104, prederr 108/108, decision 108/108, 실패 0
+- 06:46Z 자료 점검(`integrity_e1.py`, 수치 결과는 보지 않음): episode 기록 20,520개 = 684조건 × 30, 모두 GPU 0(A5000, CVD 0)·같은 host·MPS, seed 불일치 0, OEI·예측 오차·계획 편차 누락 0. prederr 108개 중 83개, decision 108개 중 12개는 06:20Z 이후 MPS 없이 돌았다(MPS는 수치를 바꾸지 않음, E0 점검)
+- 06:46Z 본 분석 실행(서버 CPU, OMP/MKL/OPENBLAS 4스레드, nice 10, 7초). 결과 `~/pmx/A/tdmpc2_main/analysis_e1/` → 맥북 `results/E1_tdmpc2/`
+  - H3a: MW **성립**(자격 19/24칸, red_sh-iter ≥ 0.5가 19/19, 해로운 칸 없음). DMC **불성립**(자격 12/12, 5/12, walker k=3에서 sh-iter가 det보다 +22.1% [18.0, 26.3] 나쁨). TD-MPC2 전체 불성립(24/31 = 0.77이지만 해로운 칸 있음)
+  - H1: MW·DMC 모두 성립(det의 계획 시점 1-step 오차 ≤ sh-iter인 자격 칸 MW 14, DMC 10)
+  - H2a: TD-MPC2 3과제 모두 **불성립**. det OEI CI 상한 < 0은 셋 다 맞지만, sh-iter OEI도 유의하게 음수다(mw-push −20.0 [−23.0, −17.5], pick-place −39.0 [−42.3, −35.8], cheetah −2.48 [−2.67, −2.29])
+  - H2b: 주 계산(과제 안 Spearman 차의 평균) 0.079 < 0.15 → **불성립**. 보조: 섞은 원값 −0.21, OEI 정규화 −0.07
+  - → 주장 수준의 결과(H2a·H2b 실패, DMC H3a 실패)라 지시대로 보고하고 멈춘다. 과제 2는 시작하지 않는다
+- 06:48~06:50Z 사후 분석(표시함, 판정에 쓰지 않음): OEI = sel_last(마지막 평가 안 선택) + drift(반복에 걸친 모집단 이동)로 나눴다(`analyze_e1_posthoc.py`). drift는 det·sh-step·sh-ep에서만 크고(push k=3: −49.8, −38.2, −47.9), ind·sh-iter·det+shift에서는 작거나 0이다(−4.3, −4.2, −3.2; cheetah k=5에서는 CI가 0 포함). sh-iter의 음수 OEI는 주로 sel_last다. −drift를 H2b 예측 변수로 바꿔도 과제 안 평균 차는 −0.265(`analyze_e1_posthoc_h2b.py`)
+- 06:50~06:54Z 보고서 `reports/E1_tdmpc2.md` 작성. 숫자는 summary JSON에서 다시 확인해 옮겼다(처음 쓴 §9 요약의 계획 편차 수치가 틀려 고쳤다)
+- 06:54Z 주장 수준의 결과(H2a·H2b 실패, DMC H3a 실패·해로운 칸)로 지시대로 멈추고 조정자에게 보고. 과제 2는 시작하지 않았다. 돌고 있는 내 작업 없음, MPS 켜지 않음
+
+## 과제 2: E2·E3·E5·E7 TD-MPC2 운영안 (v5 초안)
+- 조정자 지시 수신(과제 2 시작). 사용자 결정(H2a·H2b 처리, DMC 대응)이 어느 쪽이든 맞도록 E2는 (a) 사전등록 그대로 + (b) 덧붙임(drift 기반 H2a′·H2c′, 새 seed, 독립 dither 재평가 지표) 두 층으로 쓴다. H4b와 near-tie × 이득 상관은 v5 전에는 계산하지 않는다
+- 06:58Z 사후 점검(조정자의 비선형 전파 가설용, 새 GPU job 없음): 새로 뽑는 변형의 rho_iter(같은 고정 후보를 독립 draw 두 번으로 평가한 오차의 상관)가 0이 아니다. sh-iter 중앙값 0.06, 최대 0.51(pick-place k=2), pick-place k=3은 0.30 → dither가 무편향이어도 후보에 따라 다른 평균 오차 E_u[e(a)]가 남는다. 다만 36칸에서 rho_iter와 −drift의 Spearman은 0.21로 약하고, pick-place k=2의 sh-iter drift는 +30.6(양수: 모델이 비관적인 쪽으로 이동)이라 drift에는 "모집단이 참 가치가 높은 영역으로 가는 효과"도 섞여 있다
+- 07:00~07:06Z 코드 추가(qlib·runner·make_manifest): E2 지표(sel_last, drift를 계획마다 명시 기록; `independent_reeval`로 실행 elite를 독립 dither draw로 재평가한 e_indep·oei_indep·sel_indep), E3 변형(indstep, indep: 후보 slot별 표; shstep_u·shstep_g32·shstep_l·shep_*: 줄인 공유 표), manifest `e2`·`e3`·`smoke2`(seed 40000·50000부터)
+- 07:08~07:12Z `test_v5_paths.py`(smoke seed, MPS 없이 1 프로세스): 10변형 모두 계측 끔·OEI·OEI+독립 재평가에서 closed loop가 비트 단위로 같다. det와 표 변형은 e_indep = e_chosen(indep_same 1.0), 새로 뽑는 변형은 다르다. sel_last + drift = oei(오차 0.0). E1 변형은 E0 smoke와 같은 return(det seed 19000 = 116.36395911313593)
+- 07:13~07:16Z `timing_v5.py`(단일 프로세스, PushT 옆): 설정별 step 시간 배수(기본 MW 28.1, DMC 29.2 ms). N64 0.64, N128 0.67, N256 0.71~0.79, N1024 1.39~1.45, it1 0.23~0.25, it3 0.54, it12 1.90~1.93, elite·temperature 1.00. smoke2(E2·E3 코드 경로, shiter_l·shiter_g32 포함) OK
+- 07:21~07:31Z 짧은 처리량 측정(tmux `A-v5-tput`, MPS 없이 2 worker, PushT와 GPU 0 공유; bench seed, DMC 360초, MW 240초). DMC 267, MW 960 ep/h(바쁜 시간). MPS 데몬 없음을 먼저 확인
+- 07:32Z 조정자 메시지 수신: DINO-WM의 oei_ref_mf(계획 뒤 forward 1회; 영속 변형은 같은 오차장, fresh 변형은 새 draw)와 TD-MPC2 동결 OEI(같은 draw)의 차이. 요청: 독립 draw 측정 구현·검증, H2a 세 칸 재실행 GPU 시간, E2에 두 판 나란히 기록, indplan 추론
+- 07:40~07:47Z 코드
+  - qlib: `independent_reeval`이 양자화기 표·호출 카운터도 되돌림. 표 변형용 `fresh_tables`(e_fresh) 추가. 정책 slot 비중(chosen_pi, elite_pi, elite_pi_w) 추가
+  - make_manifest: `identity`(E0 smoke job을 저장된 spec 그대로, 재평가 켬, perr_plan_states = 0으로 E0 시대 예측 오차 재현)와 `h2a_indep`(E1 결과의 spec 그대로, 예측 오차 끔, 재평가 켬). E3 episode에 재평가 켬
+  - 새 파일: `compare_runs.py`, `analyze_h2a_indep.py`, `pi_share.py`
+- 07:48~07:58Z 점검(tmux `A-v5-checks`, MPS 없이 2 프로세스 이하)
+  - E0 smoke 13 job(14 ep)을 다시 돌려 저장된 E0 결과(E1 시대 코드, MPS)와 모든 필드가 비트 단위로 같았다(13/13)
+  - `test_v5_paths.py` 12변형 ALL_OK: 기존 필드 차이 0, indep_same은 det·표 변형 1·fresh 0, fresh_same은 표 변형 0, 분해 오차 0
+  - `pi_share.py`(비양자화, smoke seed 19005): 정책 slot은 마지막 반복 elite의 0~2.4%, 실행 elite가 정책 slot인 step 0~4%(평균 약 1%)
+- 07:59~08:01Z calib_lib: slot 표 변형(indstep, indep)의 decision job에 `rho_iter_perm` 추가(두 번째 평가에서 표본 후보 slot을 섞음). 고정 후보의 rho_iter는 slot 표에서 구성상 1이기 때문. runner `columnar`·`means`가 행 키의 합집합을 쓰도록 바꿈
+- 08:01~08:04Z 다시 점검(tmux `A-v5-checks2`): 동일성 13/13. decision job E0 smoke 275개, smoke2 316개 필드 동일, 새 필드는 rho_iter_perm 하나
+- 08:05Z `e7_feasibility.py`(수초): `torch._int_mm`가 A5000에서 정확하다. 512행에서 fp32와 같은 시간(약 50 µs, 고정 비용), bf16은 10~23 µs. Triton 3.3.1 사용 가능
+- 08:05~08:10Z env.sh·mps.sh가 선택적 `A_GPU`를 받도록 바꿈(기본값 GPU 0, 기존 pipe 그대로). 준비용 `run_v5.sh`(GPU에 non-MPS 프로세스가 있으면 MPS 시작을 거부). e2·e3·h2a_indep manifest 생성: e2 2,826 job·14,130 ep, e3 2,124 job·10,440 ep, h2a_indep min 162 job·810 ep, all 378 job·1,890 ep
+- 08:10Z 조정자에게 중간 보고(독립 draw 구현·검증, 재실행 준비, GPU 시간, 대응표, indplan 예상)
+- 08:16~08:18Z `run_v5.sh` 끝까지 시험(tmux `A-v5-runtest`, 동일성 manifest, MPS 없이 2 worker): 13/13 비트 동일. 상대 경로는 code 폴더 기준, 자기 MPS 데몬이 떠 있으면 다시 쓰고 아니면 GPU가 비어 있어야 MPS를 시작
+- 08:10~08:20Z v5 초안 `reports/v5_draft_tdmpc2.md` 작성. 점검 출력은 `results/v5_tdmpc2/`로 옮김. 돌고 있는 내 작업 없음, MPS 켜지 않음
+
+## v5 고정 뒤: manifest, E5 코드, GPU 0 queue
+- 08:2xZ(서버 시계; v5 문서의 고정 시각 표기는 09:00Z) 조정자 메시지: DESIGN_main v5 고정(7절, sha256 a7895d73…, 로컬 파일과 일치 확인). 바뀐 점: 모든 설정 90짝, H2c (i) 확증, H4a는 E1 1차 k에서 det 하락이 실재한 sweep 과제만, H4b 확증은 TD-MPC2 12과제, DMC 설명 규칙 고정, torchao는 별도 venv `a-e7`만, 층 (b)와 H2a 재측정은 v5.1. 지시: v5 manifest, GPU 0 queue(PushT g0가 끝나면 MPS로 [H2a] → E2 → E3 → E5 → E7 성공률), 그 전에는 E7 kernel 개발·정확성 시험(단일 프로세스, 간헐)과 몇 분짜리 E5 통계만
+- 08:30~08:36Z make_manifest: E2 모든 설정 30 ep/체크포인트, E5(stats, held, eval, w, qatdata, qattrain, qateval), E7 성공률 manifest. 새 코드 `e5lib.py`(PTQ 4종 = per-channel / MSE clip / SmoothQuant의 동치 per-channel 격자 / 혼합 정밀도, WeightQuant(RTN, AWQ α 0.5, SR K 사본을 반복 번호 mod K로), QAT(STE, dyn·rew만, consistency + reward, 끝나면 원래 가중치 복원)), `e5_select.py`(held에서 D_det(B) 최소, 동률은 앞쪽). qlib: 층별 비트 수(layer_k), STE 모드, WeightQuant hook. runner: job type e5stats, qat_train, episode job의 ptq / wq / qat / save_traj / e7(작업 끝에 항상 복원)
+- 08:36Z manifest 생성과 점검(`check_v5_manifests.py`, 오류 0): E2 3,618 job·18,090 ep, E3 2,124 job(episode 2,088 + decision 36)·10,440 ep, E5 stats 36 / held 1,056 job·5,280 ep / eval 900·4,500 / 가중치 432·2,160 / QAT 자료 132·660 / QAT 학습 33 / QAT 평가 396·1,980, E7 1,296 job·6,480 ep, H2a fresh 3개 162·810. E5 칸 19개 = E1 요약의 Holm 자격 3~4-bit 칸. GPU 시간(MPS, 바쁜 시간): H2a 0.46, E2 8.4~9.6, E3 5.5~6.2, E5 episode 7.7 + QAT 학습 약 1.7, E7 성공률 4.8, 합계 약 30 h
+- 08:37~08:40Z 동일성 점검(1 worker): E5 변경 뒤에도 E0 smoke 13/13 비트 동일
+- 08:40~08:42Z E5 스모크(smoke 분할, 1 worker, `v5/e5smoke`): 통계, PTQ 4종, 선택(selection.json), best 해석, 가중치 6종(DMC w4sr2 포함), QAT 자료 저장·학습 100 step(loss 0.20 → 0.063)·평가 모두 OK. 가중치·QAT job 뒤 같은 worker의 none·det episode가 앞의 것과 return이 비트 단위로 같음(복원 확인). 통계의 per-tensor 범위가 E0 범위와 정확히 같음
+- 08:43Z queue 무장: tmux `A-v5-queue-g0`, `code/run_queue_g0.sh`, 로그 `~/pmx/A/logs/v5_queue_g0.log`. GPU 0에 compute process가 없는 poll이 5분 간격으로 두 번 이어지면 MPS를 띄우고 시작. E5는 `v5/E5_READY`, E7은 `v5/E7_READY`를 기다림. H2a는 `v5/FLAG_h2a_indep_fresh3`가 있으면 단계 경계마다 한 번
+- 08:43Z E5 통계 본 실행(1 worker, 33초): 36/36, 범위가 E0와 정확히 같음. k=3의 MSE clip α는 144 경우 중 102에서 격자 아래 끝 0.5(격자는 v5 고정값 그대로). `v5/E5_READY` 생성
+- 08:45Z 조정자: MSE clip 격자가 k=3에서 좁다 → 격자를 {0.10, 0.15, …, 0.45} ∪ {0.5, …, 1.1}로 넓힘(조정자 수정, v5.1에 기록). GPU 0 MPS 규칙: queue가 MPS를 띄운 뒤 멈출 때까지 GPU 0에 non-MPS 프로세스 금지(E7 시험은 MPS client로만), 단계마다 worker를 띄우기 전 외부 non-MPS 프로세스 확인
+- 08:45~08:47Z `E5_READY` 지움. 통계 다시 실행(1 worker, 43초, 이전 통계는 out_e5/old_stats_grid05/로): 새 아래 끝 0.10에 걸린 경우 0/288(k=3 최소 0.25, k=4 최소 0.4, 최대 0.9) → 격자 그대로 확정. manifest는 기준선 이름만 담아 다시 만들 것 없음. check_v5_manifests.py CHECK_OK. `E5_READY` 다시 만듦
+- 08:48Z queue에 worker 띄우기 전 확인 추가(nvidia-smi XML의 GPU 0 type-C 프로세스 ≤ 1 = 우리 MPS server, 그리고 시험 MPS client가 뜸; 아니면 5분마다 기다리며 1시간마다 기록). 다시 무장
+- 08:51Z 조정자: 시작 조건에 PushT g0 driver의 "PDRV … gpu0 DONE" 줄 추가 요청 → 로그의 마지막 PDRV 줄이 DONE이고 GPU 0 프로세스 0개가 5분 poll 두 번 연속일 때 시작. 가짜 로그로 시험(DONE 감지, 뒤에 start 줄이 붙으면 다시 기다림). 08:52:04Z 다시 무장, 매시간 줄에 조건과 현재 상태 기록
+- 08:52~08:56Z E7 kernel(`e7lib.py`, Triton 3.3.1): 층 0 = fp32 cuBLAS GEMM + 융합 LN·Mish·양자화 kernel, 층 1 = 융합 int8 dot(int32 누적)·역양자화(zero-point 보정을 열 상수로)·bias·LN·Mish·재양자화 kernel, 층 2 = int8 dot + 역양자화(동역학 head는 이어서 LN·SimNorm). 가중치는 W8 출력 채널별 RTN. dither = Philox(tl.rand), 층·forward마다 열마다 u 하나(행 공유)
+  - 시험(`e7_test.py`, 1 프로세스): kernel이 PyTorch 기준과 같다(det 부호 불일치 0; dither는 한 호출 안 행 공유, 호출마다 다름, 무편향 |평균 − x| 0.016 < SE 0.025). 정수 MLP는 같은 W8 가중치의 E1 fake-quant와 상대 차 8e-5(k=8), 5e-7(k=4). fake-quant 대 fp32는 k=8 1.1%/2.5%, k=4 15%/43%(동역학/보상). bf16 대 fp32 0.7%/0.5%. closed loop 6정밀도 smoke OK, 패치 뒤 복원 OK(fp32 return 비트 동일)
+  - runner 경로 smoke 9/9 OK. `E7_READY` 만듦. 지연 스크립트 `e7_latency.py`(배타 GPU 확인, warmup 50 + 200 step 블록, 섞은 순서 5회전, CUDA event, 중앙값·IQR, 부하·clock 기록) 코드 경로 OK. 공유 GPU라 수치는 의미 없음
+- 08:57~09:01Z packed int4(`int4p`, 1바이트에 2개, 소비 kernel에서 풀어 int8 dot) 추가. 지연 측정에만 쓴다. det는 container판과 출력이 비트 단위로 같다. dither는 컴파일이 달라 부동소수점 순서 차이로 층 0 부호 262,144개 중 1개가 한 단계 달랐다(같은 입력·seed에서 kernel 단위로는 모두 같음). 성공률 경로(container) 재확인: smoke return 9/9 이전과 같음
+- torchao는 설치하지 않음(PyPI 내려받기라 사용자 승인 필요; v5에서 선택 기준선). CUDA graph(보조)는 구현하지 않음: dither seed가 forward마다 host 값이라 graph 안에 굳어 버린다
+- 09:03Z 조정자 결정(편차로 기록): (1) 선택 기준선 torchao는 돌리지 않음, (2) CUDA graph(보조)는 구현하지 않음, (3) int4 성공률은 int8 그릇판, packed int4는 지연 측정에만 씀(v5 허용). E7 지연은 queue 마지막 단계로 넣으라는 지시
+- 09:04Z queue 끝에 E7 지연 단계 추가: MPS를 멈춘 뒤 `e7_latency.py --gpu_check --wait_exclusive 7200`(MPS pipe가 설정돼 있으면 거부, GPU 0에 다른 compute process가 있으면 5분마다 보며 2시간까지 기다리고 넘으면 exit 2로 포기). 블록마다 외부 프로세스 수를 기록한다. 시험: GPU 0이 차 있을 때 즉시 GAVE_UP(rc 2), MPS pipe가 있으면 REFUSED(rc 1). queue 09:04:07Z 다시 무장. 시간마다 보는 상태 스크립트 `v5/v5_status.sh`
+- 09:3xZ(조정자 표기; 서버 시계 09:10Z) DESIGN_main v5.1 고정(8절, sha256 0cd7633c…, 로컬 파일과 일치). 8.2: H2c 확증 sweep은 elite 64·정책 prior 24 고정, N만 바꿈(N64k / N128k / N256k / N1024k, base = 512), 비율 고정 sweep은 보조. 8.3: E3 표 sweep에 var_cand. 사용자 결정 항목은 v5.2로 이름을 바꿈(flag 파일 이름은 그대로)
+- 09:10~09:15Z make_manifest e2에 고정 수 sweep 4설정 추가 → E2 4,482 job·22,410 ep(MW 14,940, DMC 7,470). check_v5_manifests.py CHECK_OK. GPU 시간 E2 10.3~11.7 h(+2.1 h, 고정 수 설정은 같은 N의 비율 고정 step 배수 사용), 합계 약 32 h. qlib.set_metrics에 var_cand(표본 후보 비용 오차의 후보 간 분산 = e_rand_sd²) 추가 → episode의 f_var_cand / l_var_cand, decision 행의 var_cand. E3 manifest는 그대로(코드가 기록). 비트 동일성 확인(1 worker): E0 smoke 13/13 같음, decision job 275/316 필드 같음, 새 키만 늘어남. analyze_e2.py(H2c는 고정 수 sweep, 비율 sweep은 보조, N에 걸친 OEI 분해)와 analyze_e3.py(var_cand 보조 예측 변수) 갱신, 가짜 자료로 점검. queue 09:15:13Z 다시 무장
+- 09:5xZ 조정자: DESIGN_main v5.2 고정(9절, sha256 41e1f39d…, 로컬과 일치). 사용자가 추천안 1·2를 승인했다. `v5/FLAG_h2a_indep_fresh3` 생성(09:52Z)
+- 09:55~10:02Z (b3) 영역 효과 대조 구현(qlib): `region_reference` = 실제 step과 같은 관측·이전 평균·RNG에서 비양자화 계획기를 다시 돌리고, 그 첫·마지막 후보 집합을 기록한 RNG 상태와 독립 dither generator(영속 표·det 오차장은 유지)로 양자화 평가 → drift_ref = 마지막 − 첫 표본 후보 평균 오차. 필드는 ref_f_e_rand, ref_l_e_rand, drift_ref, drift_minus_ref. RNG·이전 평균·양자화기 generator/표/카운터를 모두 복원한다. PlanProbe에 기준 계획 기록 모드(rec_ref)를 두었다. `run_episode(region_ref=...)`, runner는 instr.region_ref, E2 base job에만 켬
+  - 시험(1 프로세스, smoke seed, `test_b3_paths.py`): mw-push 7변형 + cheetah det·sh-iter에서 켬/끔의 closed loop(return, 행동 hash, 표 갱신 수, 호출 기록), 기존 단계별 필드(차이 0), 계획 재실행 기록이 비트 단위로 같다. 새 키는 정확히 4개, none의 drift_ref = 0 → ALL_OK. runner 수준: E0 smoke 13 job을 region_ref를 켜고 다시 돌려 저장 필드 전부 13/13 같음
+- 10:05Z E2 manifest 다시 생성(base 378 job에 region_ref). check_v5_manifests.py CHECK_OK(base만 region_ref 허용). E2 GPU 시간 10.4~11.9 h(+0.2 h), 합계 약 32.6 h
+- 10:05~10:10Z analyze_e2.py에 층 (b) 추가: (b1) H2a_indep, (b2) H2a′(비를 재표본마다 다시 계산, drift_det* ≥ 0 재표본 버림) + 양성 대조(sh-step·sh-ep r CI 하한 > 0.5, 판정 밖) + ind·det+shift r 기술 + 같은/독립 draw sel_last, (b3) drift_ref·drift − drift_ref 기술. 고정 수 sweep에서 det·sh-iter·sh-step의 N에 따른 sel_last·drift 기술. H2c′ 없음. analyze_h2a_indep.py: E1과 비트 동일하지 않은(또는 빠진) episode가 있는 칸은 판정하지 않고 보고만. 가짜 자료로 점검
+- 10:03Z 시간마다 점검: queue 대기 중(PushT k=4 진행, DONE 줄 없음), flag 3개(E5_READY, E7_READY, FLAG_h2a_indep_fresh3), GPU 0은 PushT 1개, 디스크 여유 227G(공유 디스크, 1시간에 29G 줄어 지켜봄)
+- 10:10Z 돌고 있는 queue(09:15:13Z 무장, 스크립트 09:04 이후 그대로)는 MPS를 띄운 직후 E2보다 먼저 h2a_if_flag를 부른다(136행) → H2a 재측정(162 job, 810 ep, out_h2a_indep)이 맨 처음 돈다. E2 manifest는 단계가 시작될 때 읽으므로 다시 무장하지 않았다
+- 11:00Z 시간마다 점검: queue 대기(10:10Z 시간 줄 남김: DONE 줄 없음, GPU 0 프로세스 1), PushT k=4 진행, flag 3개, 디스크 여유 245G
+- 11:58Z 시간마다 점검: queue 대기(11:10Z 시간 줄), PushT k=4 진행, GPU 0 프로세스 1, GPU 1은 1개로 줄었다, 디스크 여유 268G
+- 12:57Z 시간마다 점검: queue 대기(12:10Z 시간 줄), PushT k=4 진행, GPU 0 프로세스 1, 디스크 여유 268G
+- 13:57Z 시간마다 점검: PushT g0 driver가 k=3으로 넘어감(PDRV 13:52:41Z "gpu0 resuming own pusht k=3"), queue 대기(13:10Z 시간 줄), 디스크 여유 268G
+- 14:56Z 시간마다 점검: PushT k=3 진행, queue 대기(14:10Z 시간 줄), 디스크 여유 268G
+- 15:55Z 시간마다 점검: PushT k=3 진행, queue 대기(15:10Z 시간 줄), 디스크 여유 268G
+- 16:54Z 시간마다 점검: PushT k=3 진행, queue 대기(16:10Z 시간 줄), 디스크 여유 268G
+- 17:53Z 시간마다 점검: PushT k=3 진행, queue 대기(17:10Z 시간 줄), 디스크 여유 268G
+- 18:51Z 시간마다 점검: PushT k=3 진행(DONE 줄 없음), queue 대기(18:10Z 시간 줄), 디스크 여유 267G
+- 19:05Z queue 시작: PushT g0 "PDRV 18:56:48Z gpu0 DONE" → 5분 poll 두 번 연속 GPU 0 빔 → 19:05:18Z 시작 조건 충족, MPS 시작, 19:05:20Z H2a 단계(162 job, 16 worker) 시작. GPU 0 프로세스 type은 C 1개(MPS server) + M+C 16개(worker)로, queue의 외부 프로세스 판단 가정이 맞음
+- 19:10Z H2a 재실행 중간 대조: 끝난 18 job(90 ep)이 E1과 기존 필드 전부 비트 단위로 같음(예측 오차 필드는 재실행에서 꺼서 제외). 조정자에게 알림
+- 19:33Z H2a 단계 끝(162/162 OK, 1,664초), 19:33:06Z E2 시작(4,482 job). analyze_h2a_indep.py: 810 ep 모두 E1과 비트 동일 → 세 칸 판정. H2a_indep 성립은 cheetah-run뿐(1/3). mw-push·mw-pick-place는 sh-iter oei_indep의 CI가 0을 넘지 않는다(−4.56, −13.66). sh-iter sel_indep는 0 근처, 남은 몫은 drift. 보고서 §15 추가, 결과를 results/v5_tdmpc2/h2a_indep/로 복사
+- 19:46Z E2 점검: 48/4,482 job(763초), 오류 0, MPS client, 필드 확인(oei, oei_indep, sel_last, drift, f_var_cand, chosen_pi; base는 drift_ref도)
+- 20:41Z 시간마다 점검: E2 235/4,482 job(68분, 첫 묶음의 DMC job들), 오류 0, GPU 0 = MPS server + client 16, 디스크 여유 267G
+- 21:40Z 시간마다 점검: E2 809/4,482 job(2.1시간, 첫 묶음 747 job 끝), 오류 0. 묶음당 약 2시간 → E2 끝 약 07:30Z 예상, 디스크 여유 267G
+- 22:41Z 시간마다 점검: E2 1,109/4,482 job(3.1시간), 오류 0, 디스크 여유 267G
+- 23:40Z 시간마다 점검: E2 1,605/4,482 job(4.1시간, 둘째 묶음 끝 무렵), 오류 0, 디스크 여유 266G
+- 00:40Z 시간마다 점검: E2 2,004/4,482 job(5.1시간), 오류 0, 디스크 여유 266G
+- 01:39Z 시간마다 점검: E2 2,382/4,482 job(6.1시간), 오류 0, 디스크 여유 266G
+- 02:0xZ 조정자 지시로 정기 점검을 멈춤(사용자 요청). 예약해 둔 점검 작업을 멈추고 서버의 점검용 sleep을 정리. queue(A-v5-queue-g0)는 그대로 돈다

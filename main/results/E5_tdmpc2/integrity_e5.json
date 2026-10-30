@@ -1,0 +1,139 @@
+{
+ "manifest_jobs": {
+  "e5_stats": 36,
+  "e5_held": 1056,
+  "e5_qatdata": 132,
+  "e5_qattrain": 33,
+  "e5_eval": 900,
+  "e5_w": 432,
+  "e5_qateval": 396
+ },
+ "e5_held_qatdata_equals_concatenation": true,
+ "e5_eval_all_equals_concatenation": true,
+ "mse_alpha_range": {
+  "3": [
+   0.25,
+   0.9
+  ],
+  "4": [
+   0.4,
+   0.9
+  ]
+ },
+ "cells_match_design": {
+  "eval_19": true,
+  "held_19": true,
+  "qat_11": true,
+  "weights_4": true,
+  "n_mw_dmc": [
+   12,
+   7
+  ]
+ },
+ "selection_recomputed_equals_file": true,
+ "selection_mismatches": [],
+ "selection_ties_at_min": {},
+ "selection_best": {
+  "cheetah-run|4": "perchan",
+  "finger-turn-hard|3": "mseclip",
+  "finger-turn-hard|4": "perchan",
+  "mw-button-press-topdown|3": "perchan",
+  "mw-door-open|3": "perchan",
+  "mw-door-open|4": "perchan",
+  "mw-drawer-open|3": "perchan",
+  "mw-peg-insert-side|3": "perchan",
+  "mw-peg-insert-side|4": "perchan",
+  "mw-pick-place|3": "perchan",
+  "mw-push|3": "perchan",
+  "mw-push|4": "mixed",
+  "mw-sweep-into|3": "perchan",
+  "mw-window-open|3": "perchan",
+  "mw-window-open|4": "perchan",
+  "quadruped-walk|3": "perchan",
+  "quadruped-walk|4": "perchan",
+  "walker-walk|3": "perchan",
+  "walker-walk|4": "perchan"
+ },
+ "selection_written_utc": "2026-10-23T17:51:56Z",
+ "first_eval_job_start_utc": "2026-10-23T17:51:59Z",
+ "eval_started_after_selection": true,
+ "result_files_extra": [],
+ "conditions": 585,
+ "conditions_incomplete": [],
+ "env_by_manifest": {
+  "e5_stats": [
+   [
+    "yonghwi-racedreamer",
+    "NVIDIA RTX A5000",
+    "0",
+    null,
+    "2.7.1+cu126",
+    36
+   ]
+  ],
+  "e5_held": [
+   [
+    "yonghwi-racedreamer",
+    "NVIDIA RTX A5000",
+    "0",
+    "/home/yonghwi/pmx/A/mps/pipe",
+    "2.7.1+cu126",
+    1056
+   ]
+  ],
+  "e5_qatdata": [
+   [
+    "yonghwi-racedreamer",
+    "NVIDIA RTX A5000",
+    "0",
+    "/home/yonghwi/pmx/A/mps/pipe",
+    "2.7.1+cu126",
+    132
+   ]
+  ],
+  "e5_qattrain": [
+   [
+    "yonghwi-racedreamer",
+    "NVIDIA RTX A5000",
+    "0",
+    "/home/yonghwi/pmx/A/mps/pipe",
+    "2.7.1+cu126",
+    33
+   ]
+  ],
+  "e5_eval": [
+   [
+    "yonghwi-racedreamer",
+    "NVIDIA RTX A5000",
+    "0",
+    "/home/yonghwi/pmx/A/mps/pipe",
+    "2.7.1+cu126",
+    900
+   ]
+  ],
+  "e5_w": [
+   [
+    "yonghwi-racedreamer",
+    "NVIDIA RTX A5000",
+    "0",
+    "/home/yonghwi/pmx/A/mps/pipe",
+    "2.7.1+cu126",
+    432
+   ]
+  ],
+  "e5_qateval": [
+   [
+    "yonghwi-racedreamer",
+    "NVIDIA RTX A5000",
+    "0",
+    "/home/yonghwi/pmx/A/mps/pipe",
+    "2.7.1+cu126",
+    396
+   ]
+  ]
+ },
+ "errors_dir_files": 0,
+ "lock_files": 0,
+ "problems": {},
+ "ALL_OK": true
+}

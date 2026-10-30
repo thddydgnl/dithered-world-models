@@ -1,0 +1,92 @@
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     10s calib mw-push            ep0 ret   1769.3 succ 1 steps 100 (3s)
+     11s calib mw-push            ep1 ret   1807.8 succ 1 steps 100 (4s)
+CALIB_DONE
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push alpha 0.2: A: e1 0.1030 e3 0.4131 er 0.0119 | B: e1 0.1801 e3 0.7052 er 0.0100 | D1z: e1 0.1030 e3 0.3414 er 0.0106 | D3z: e1 0.1238 e3 0.4063 er 0.0106 | Dfix1_s0: e1 0.1030 e3 0.3746 er 0.0119 | Dfix3_s0: e1 0.1112 e3 0.4131 er 0.0119 | Ddir1_s0: e1 0.1030 e3 0.5987 er 0.0119 | Dfix1_s1: e1 0.1030 e3 0.3887 er 0.0119 | Dfix3_s1: e1 0.1108 e3 0.4131 er 0.0119 | Ddir1_s1: e1 0.1030 e3 0.5134 er 0.0119 | Dfix1_s2: e1 0.1030 e3 0.5460 er 0.0119 | Dfix3_s2: e1 0.0767 e3 0.4131 er 0.0119 | Ddir1_s2: e1 0.1030 e3 0.4569 er 0.0119
+   params: D1z (0.1935, 0.0536), D3z (0.2277, 0.0536), Dfix1_s0 (0.148, 0.1339), Dfix3_s0 (0.168, 0.1339), Ddir1_s0 (3.45, 3.414), Dfix1_s1 (0.1069, 0.2289), Dfix3_s1 (0.1105, 0.2289), Ddir1_s1 (4.287, 4.365), Dfix1_s2 (0.1249, 0.03163), Dfix3_s2 (0.06112, 0.03163), Ddir1_s2 (4.176, 2.587)
+PREP mw-push done in 4s
+PREP_DONE
+14 jobs (0 already done)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     10s [1/14] mw-push        none     a=0    ep0 ret   1769.3 succ 1 frac None (3s)
+     11s [2/14] mw-push        B        a=0.2  ep0 ret      3.2 succ 0 frac 0.588 (5s)
+     11s [3/14] mw-push        Dfix1_s1 a=0.2  ep0 ret   1746.5 succ 1 frac 0.167 (4s)
+     12s [4/14] mw-push        Dfix1_s0 a=0.2  ep0 ret    987.9 succ 0 frac 0.14 (4s)
+     13s [5/14] mw-push        D1z      a=0.2  ep0 ret   1757.2 succ 1 frac 0.072 (6s)
+     13s [6/14] mw-push        A        a=0.2  ep0 ret     84.2 succ 0 frac 0.594 (6s)
+     13s [7/14] mw-push        Dfix1_s2 a=0.2  ep0 ret   1595.8 succ 1 frac 0.077 (4s)
+     15s [8/14] mw-push        Dfix3_s0 a=0.2  ep0 ret   1764.2 succ 1 frac 0.15 (4s)
+     15s [9/14] mw-push        D3z      a=0.2  ep0 ret   1749.7 succ 1 frac 0.079 (7s)
+     15s [10/14] mw-push        Dfix3_s1 a=0.2  ep0 ret   1113.4 succ 0 frac 0.169 (4s)
+     16s [11/14] mw-push        Dfix3_s2 a=0.2  ep0 ret   1752.9 succ 1 frac 0.046 (4s)
+     17s [12/14] mw-push        Ddir1_s0 a=0.2  ep0 ret   1770.2 succ 1 frac 0.0 (3s)
+     17s [13/14] mw-push        Ddir1_s2 a=0.2  ep0 ret     83.1 succ 0 frac 0.0 (3s)
+     17s [14/14] mw-push        Ddir1_s1 a=0.2  ep0 ret     52.6 succ 0 frac 0.0 (3s)
+GRID_DONE
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push: state 0/10 (1s)
+DECISION mw-push: 10 states in 3s
+DECISION_DONE

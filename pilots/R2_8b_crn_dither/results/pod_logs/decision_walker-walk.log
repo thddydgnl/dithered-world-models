@@ -1,0 +1,7 @@
+Episode length: 500
+Discount factor: 0.99
+walker-walk: state 0/150 (3s)
+walker-walk: state 50/150 (20s)
+walker-walk: state 100/150 (37s)
+DECISION walker-walk: 150 states in 54s
+DECISION_DONE

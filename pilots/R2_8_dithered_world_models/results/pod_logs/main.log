@@ -1,0 +1,754 @@
+=== grid 06:36:29
+520 jobs (0 already done)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+      8s [1/520] mw-push        none     a=0    ep0 ret   1769.3 succ 1 frac None (4s)
+      9s [2/520] mw-pick-place  none     a=0    ep0 ret   1647.7 succ 1 frac None (4s)
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+      9s [3/520] mw-push        none     a=0    ep1 ret   1807.8 succ 1 frac None (4s)
+      9s [4/520] mw-pick-place  none     a=0    ep1 ret   1719.9 succ 1 frac None (4s)
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+     13s [5/520] mw-push        none     a=0    ep2 ret   1811.4 succ 1 frac None (4s)
+Episode length: 500
+Discount factor: 0.99
+     13s [6/520] mw-pick-place  none     a=0    ep2 ret   1726.1 succ 1 frac None (4s)
+     17s [7/520] mw-push        none     a=0    ep3 ret   1779.7 succ 1 frac None (4s)
+     22s [8/520] mw-pick-place  none     a=0    ep3 ret   1666.0 succ 1 frac None (4s)
+Episode length: 500
+Discount factor: 0.99
+     23s [9/520] walker-walk    none     a=0    ep0 ret    994.0 succ 0 frac None (19s)
+     24s [10/520] cheetah-run    none     a=0    ep0 ret    868.5 succ 0 frac None (20s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     26s [11/520] cheetah-run    none     a=0    ep1 ret    834.7 succ 0 frac None (21s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     29s [12/520] mw-push        none     a=0    ep4 ret   1795.9 succ 1 frac None (4s)
+     29s [13/520] walker-walk    none     a=0    ep1 ret    993.6 succ 0 frac None (21s)
+     30s [14/520] cheetah-run    none     a=0    ep2 ret    845.4 succ 0 frac None (21s)
+Episode length: 100
+Discount factor: 0.95
+     30s [15/520] mw-pick-place  none     a=0    ep4 ret   1707.4 succ 1 frac None (4s)
+     32s [16/520] walker-walk    none     a=0    ep2 ret    976.8 succ 0 frac None (19s)
+Episode length: 500
+Discount factor: 0.99
+     35s [17/520] mw-push        none     a=0    ep5 ret   1793.4 succ 1 frac None (4s)
+     35s [18/520] mw-pick-place  none     a=0    ep5 ret   1689.2 succ 1 frac None (4s)
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+     39s [19/520] mw-push        none     a=0    ep6 ret   1778.4 succ 1 frac None (4s)
+     41s [20/520] cheetah-run    none     a=0    ep3 ret    788.4 succ 0 frac None (19s)
+     42s [21/520] walker-walk    none     a=0    ep3 ret    994.9 succ 0 frac None (19s)
+     44s [22/520] mw-pick-place  none     a=0    ep6 ret   1658.0 succ 1 frac None (4s)
+     48s [23/520] mw-push        none     a=0    ep7 ret   1805.7 succ 1 frac None (4s)
+     49s [24/520] cheetah-run    none     a=0    ep4 ret    857.6 succ 0 frac None (20s)
+     50s [25/520] walker-walk    none     a=0    ep4 ret    974.6 succ 0 frac None (20s)
+     52s [26/520] cheetah-run    none     a=0    ep5 ret    868.8 succ 0 frac None (19s)
+     52s [27/520] mw-pick-place  none     a=0    ep7 ret   1728.4 succ 1 frac None (4s)
+     55s [28/520] walker-walk    none     a=0    ep5 ret    991.5 succ 0 frac None (21s)
+     56s [29/520] mw-push        none     a=0    ep8 ret   1791.5 succ 1 frac None (4s)
+     57s [30/520] mw-pick-place  none     a=0    ep8 ret   1693.2 succ 1 frac None (4s)
+     60s [31/520] cheetah-run    none     a=0    ep6 ret    872.3 succ 0 frac None (19s)
+     61s [32/520] mw-push        none     a=0    ep9 ret   1773.5 succ 1 frac None (4s)
+     61s [33/520] walker-walk    none     a=0    ep6 ret    991.5 succ 0 frac None (19s)
+     64s [34/520] mw-pick-place  none     a=0    ep9 ret   1660.7 succ 1 frac None (4s)
+     69s [35/520] mw-push        Qdet3    a=3    ep0 ret   1703.0 succ 1 frac 0.0 (5s)
+     70s [36/520] cheetah-run    none     a=0    ep7 ret    870.5 succ 0 frac None (21s)
+     70s [37/520] walker-walk    none     a=0    ep7 ret    994.6 succ 0 frac None (21s)
+     74s [38/520] mw-push        Qind3    a=3    ep0 ret   1733.2 succ 1 frac 0.0 (5s)
+     75s [39/520] walker-walk    none     a=0    ep8 ret    993.5 succ 0 frac None (19s)
+     75s [40/520] mw-push        Qsh3     a=3    ep0 ret   1753.1 succ 1 frac 0.0 (6s)
+     76s [41/520] cheetah-run    none     a=0    ep8 ret    853.4 succ 0 frac None (20s)
+     76s [42/520] mw-push        Qsub3    a=3    ep0 ret   1738.6 succ 1 frac 0.0 (6s)
+     79s [43/520] mw-push        Qdet4    a=4    ep0 ret   1753.8 succ 1 frac 0.0 (5s)
+     80s [44/520] mw-push        Qind4    a=4    ep0 ret   1754.1 succ 1 frac 0.0 (5s)
+     80s [45/520] walker-walk    none     a=0    ep9 ret    995.0 succ 0 frac None (19s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     81s [46/520] mw-push        Qsh4     a=4    ep0 ret   1757.8 succ 1 frac 0.0 (5s)
+     81s [47/520] cheetah-run    none     a=0    ep9 ret    861.0 succ 0 frac None (20s)
+Episode length: 100
+Discount factor: 0.95
+     81s [48/520] mw-push        Qdet5    a=5    ep0 ret   1760.3 succ 1 frac 0.0 (5s)
+     82s [49/520] mw-push        Qsub4    a=4    ep0 ret   1748.5 succ 1 frac 0.0 (6s)
+Episode length: 100
+Discount factor: 0.95
+     83s [50/520] mw-push        Qind5    a=5    ep0 ret   1763.7 succ 1 frac 0.0 (5s)
+     85s [51/520] mw-push        Qsh5     a=5    ep0 ret   1761.2 succ 1 frac 0.0 (5s)
+     85s [52/520] mw-push        Qsub5    a=5    ep0 ret   1758.2 succ 1 frac 0.0 (5s)
+Episode length: 100
+Discount factor: 0.95
+     86s [53/520] mw-pick-place  Qdet3    a=3    ep0 ret   1400.5 succ 1 frac 0.0 (5s)
+     86s [54/520] mw-pick-place  Qind3    a=3    ep0 ret    614.6 succ 0 frac 0.0 (5s)
+     87s [55/520] mw-pick-place  Qsh3     a=3    ep0 ret   1617.2 succ 1 frac 0.0 (5s)
+     87s [56/520] mw-pick-place  Qsub3    a=3    ep0 ret   1433.9 succ 1 frac 0.0 (6s)
+     88s [57/520] mw-pick-place  Qdet4    a=4    ep0 ret   1621.0 succ 1 frac 0.0 (5s)
+     89s [58/520] mw-pick-place  Qind4    a=4    ep0 ret   1633.4 succ 1 frac 0.0 (5s)
+     91s [59/520] mw-pick-place  Qsh4     a=4    ep0 ret   1618.4 succ 1 frac 0.0 (5s)
+Episode length: 500
+Discount factor: 0.99
+     92s [60/520] mw-pick-place  Qdet5    a=5    ep0 ret   1527.9 succ 1 frac 0.0 (5s)
+     92s [61/520] mw-pick-place  Qsub4    a=4    ep0 ret   1625.1 succ 1 frac 0.0 (6s)
+     93s [62/520] mw-pick-place  Qind5    a=5    ep0 ret   1632.5 succ 1 frac 0.0 (5s)
+     93s [63/520] mw-pick-place  Qsh5     a=5    ep0 ret   1640.9 succ 1 frac 0.0 (5s)
+Episode length: 500
+Discount factor: 0.99
+     93s [64/520] mw-pick-place  Qsub5    a=5    ep0 ret   1633.3 succ 1 frac 0.0 (5s)
+    113s [65/520] cheetah-run    Qdet3    a=3    ep0 ret    273.5 succ 0 frac 0.0 (23s)
+    116s [66/520] cheetah-run    Qind3    a=3    ep0 ret    104.3 succ 0 frac 0.0 (25s)
+    118s [67/520] cheetah-run    Qsh4     a=4    ep0 ret    593.7 succ 0 frac 0.0 (25s)
+    118s [68/520] cheetah-run    Qdet4    a=4    ep0 ret    370.7 succ 0 frac 0.0 (26s)
+    119s [69/520] cheetah-run    Qsh3     a=3    ep0 ret    150.5 succ 0 frac 0.0 (27s)
+    120s [70/520] cheetah-run    Qind4    a=4    ep0 ret    408.3 succ 0 frac 0.0 (27s)
+    120s [71/520] cheetah-run    Qsub3    a=3    ep0 ret     75.5 succ 0 frac 0.0 (29s)
+Episode length: 500
+Discount factor: 0.99
+    139s [72/520] cheetah-run    Qsub4    a=4    ep0 ret    561.0 succ 0 frac 0.0 (26s)
+    139s [73/520] cheetah-run    Qdet5    a=5    ep0 ret    468.2 succ 0 frac 0.0 (23s)
+    143s [74/520] cheetah-run    Qind5    a=5    ep0 ret    720.7 succ 0 frac 0.0 (25s)
+Episode length: 500
+Discount factor: 0.99
+    146s [75/520] cheetah-run    Qsh5     a=5    ep0 ret    727.7 succ 0 frac 0.0 (27s)
+    146s [76/520] walker-walk    Qdet3    a=3    ep0 ret    324.0 succ 0 frac 0.0 (26s)
+    147s [77/520] cheetah-run    Qsub5    a=5    ep0 ret    797.1 succ 0 frac 0.0 (29s)
+Episode length: 500
+Discount factor: 0.99
+    148s [78/520] walker-walk    Qind3    a=3    ep0 ret    241.2 succ 0 frac 0.0 (27s)
+    164s [79/520] walker-walk    Qsh3     a=3    ep0 ret    248.8 succ 0 frac 0.0 (25s)
+    165s [80/520] walker-walk    Qsub3    a=3    ep0 ret    207.0 succ 0 frac 0.0 (26s)
+    166s [81/520] walker-walk    Qdet4    a=4    ep0 ret    791.3 succ 0 frac 0.0 (23s)
+    173s [82/520] walker-walk    Qind4    a=4    ep0 ret    876.3 succ 0 frac 0.0 (27s)
+    173s [83/520] walker-walk    Qsh4     a=4    ep0 ret    949.5 succ 0 frac 0.0 (27s)
+    174s [84/520] walker-walk    Qdet5    a=5    ep0 ret    990.0 succ 0 frac 0.0 (26s)
+    176s [85/520] walker-walk    Qsub4    a=4    ep0 ret    854.7 succ 0 frac 0.0 (29s)
+    178s [86/520] mw-push        Qdet3    a=3    ep1 ret   1771.0 succ 0 frac 0.0 (5s)
+    179s [87/520] mw-push        Qind3    a=3    ep1 ret   1530.2 succ 0 frac 0.0 (6s)
+    179s [88/520] mw-push        Qsh3     a=3    ep1 ret   1783.1 succ 0 frac 0.0 (6s)
+    182s [89/520] mw-push        Qsub3    a=3    ep1 ret    456.2 succ 0 frac 0.0 (6s)
+    184s [90/520] mw-push        Qdet4    a=4    ep1 ret   1532.8 succ 1 frac 0.0 (5s)
+    184s [91/520] mw-push        Qind4    a=4    ep1 ret   1758.0 succ 1 frac 0.0 (6s)
+    185s [92/520] mw-push        Qsh4     a=4    ep1 ret   1795.4 succ 1 frac 0.0 (6s)
+    188s [93/520] mw-push        Qsub4    a=4    ep1 ret   1800.7 succ 1 frac 0.0 (6s)
+    188s [94/520] walker-walk    Qind5    a=5    ep0 ret    978.8 succ 0 frac 0.0 (25s)
+    189s [95/520] mw-push        Qdet5    a=5    ep1 ret   1688.2 succ 1 frac 0.0 (5s)
+    190s [96/520] mw-push        Qind5    a=5    ep1 ret   1805.5 succ 1 frac 0.0 (6s)
+    190s [97/520] walker-walk    Qsh5     a=5    ep0 ret    989.9 succ 0 frac 0.0 (25s)
+    190s [98/520] mw-push        Qsh5     a=5    ep1 ret   1805.5 succ 1 frac 0.0 (5s)
+    192s [99/520] walker-walk    Qsub5    a=5    ep0 ret    987.0 succ 0 frac 0.0 (26s)
+    193s [100/520] mw-pick-place  Qdet3    a=3    ep1 ret    678.6 succ 0 frac 0.0 (5s)
+    194s [101/520] mw-push        Qsub5    a=5    ep1 ret   1804.5 succ 1 frac 0.0 (6s)
+    194s [102/520] mw-pick-place  Qind3    a=3    ep1 ret   1696.7 succ 1 frac 0.0 (5s)
+    195s [103/520] mw-pick-place  Qsh3     a=3    ep1 ret    380.4 succ 0 frac 0.0 (5s)
+    195s [104/520] mw-pick-place  Qsub3    a=3    ep1 ret   1719.1 succ 1 frac 0.0 (5s)
+    195s [105/520] mw-pick-place  Qdet4    a=4    ep1 ret   1643.3 succ 1 frac 0.0 (5s)
+    197s [106/520] mw-pick-place  Qind4    a=4    ep1 ret   1707.5 succ 1 frac 0.0 (5s)
+    198s [107/520] mw-pick-place  Qsh4     a=4    ep1 ret   1716.7 succ 1 frac 0.0 (5s)
+    199s [108/520] mw-pick-place  Qdet5    a=5    ep1 ret   1716.6 succ 1 frac 0.0 (5s)
+    200s [109/520] mw-pick-place  Qsub4    a=4    ep1 ret   1719.5 succ 1 frac 0.0 (6s)
+    200s [110/520] mw-pick-place  Qsh5     a=5    ep1 ret   1723.8 succ 1 frac 0.0 (5s)
+    201s [111/520] mw-pick-place  Qind5    a=5    ep1 ret   1714.2 succ 1 frac 0.0 (5s)
+    201s [112/520] mw-pick-place  Qsub5    a=5    ep1 ret   1717.3 succ 1 frac 0.0 (6s)
+    220s [113/520] cheetah-run    Qdet3    a=3    ep1 ret    221.3 succ 0 frac 0.0 (23s)
+    223s [114/520] cheetah-run    Qind3    a=3    ep1 ret     64.4 succ 0 frac 0.0 (25s)
+    224s [115/520] cheetah-run    Qdet4    a=4    ep1 ret    191.6 succ 0 frac 0.0 (23s)
+    227s [116/520] cheetah-run    Qsh3     a=3    ep1 ret     68.2 succ 0 frac 0.0 (27s)
+    228s [117/520] cheetah-run    Qind4    a=4    ep1 ret    585.8 succ 0 frac 0.0 (27s)
+    228s [118/520] cheetah-run    Qsh4     a=4    ep1 ret    604.7 succ 0 frac 0.0 (27s)
+    229s [119/520] cheetah-run    Qsub3    a=3    ep1 ret    148.0 succ 0 frac 0.0 (29s)
+    246s [120/520] cheetah-run    Qsub4    a=4    ep1 ret    589.8 succ 0 frac 0.0 (26s)
+    246s [121/520] cheetah-run    Qdet5    a=5    ep1 ret    764.5 succ 0 frac 0.0 (23s)
+    249s [122/520] cheetah-run    Qind5    a=5    ep1 ret    756.2 succ 0 frac 0.0 (25s)
+    254s [123/520] cheetah-run    Qsh5     a=5    ep1 ret    750.8 succ 0 frac 0.0 (27s)
+    254s [124/520] walker-walk    Qdet3    a=3    ep1 ret    538.5 succ 0 frac 0.0 (26s)
+    256s [125/520] walker-walk    Qind3    a=3    ep1 ret    133.0 succ 0 frac 0.0 (28s)
+    257s [126/520] cheetah-run    Qsub5    a=5    ep1 ret    714.2 succ 0 frac 0.0 (29s)
+    271s [127/520] walker-walk    Qsh3     a=3    ep1 ret    138.0 succ 0 frac 0.0 (25s)
+    272s [128/520] walker-walk    Qdet4    a=4    ep1 ret    771.4 succ 0 frac 0.0 (23s)
+    273s [129/520] walker-walk    Qsub3    a=3    ep1 ret    115.2 succ 0 frac 0.0 (26s)
+    282s [130/520] walker-walk    Qind4    a=4    ep1 ret    690.7 succ 0 frac 0.0 (28s)
+    282s [131/520] walker-walk    Qsh4     a=4    ep1 ret    807.1 succ 0 frac 0.0 (27s)
+    283s [132/520] walker-walk    Qdet5    a=5    ep1 ret    986.5 succ 0 frac 0.0 (26s)
+    285s [133/520] walker-walk    Qsub4    a=4    ep1 ret    925.4 succ 0 frac 0.0 (29s)
+    287s [134/520] mw-push        Qdet3    a=3    ep2 ret   1168.4 succ 0 frac 0.0 (5s)
+    287s [135/520] mw-push        Qind3    a=3    ep2 ret     12.6 succ 0 frac 0.0 (6s)
+    288s [136/520] mw-push        Qsh3     a=3    ep2 ret   1782.5 succ 1 frac 0.0 (6s)
+    291s [137/520] mw-push        Qsub3    a=3    ep2 ret   1794.2 succ 1 frac 0.0 (6s)
+    292s [138/520] mw-push        Qdet4    a=4    ep2 ret   1796.8 succ 1 frac 0.0 (5s)
+    293s [139/520] mw-push        Qind4    a=4    ep2 ret   1799.5 succ 1 frac 0.0 (6s)
+    294s [140/520] mw-push        Qsh4     a=4    ep2 ret   1804.2 succ 1 frac 0.0 (6s)
+    296s [141/520] walker-walk    Qind5    a=5    ep1 ret    920.1 succ 0 frac 0.0 (25s)
+    296s [142/520] mw-push        Qsub4    a=4    ep2 ret   1797.6 succ 1 frac 0.0 (6s)
+    297s [143/520] walker-walk    Qsh5     a=5    ep1 ret    985.5 succ 0 frac 0.0 (25s)
+    297s [144/520] mw-push        Qdet5    a=5    ep2 ret   1807.1 succ 1 frac 0.0 (5s)
+    298s [145/520] mw-push        Qind5    a=5    ep2 ret   1807.0 succ 1 frac 0.0 (5s)
+    299s [146/520] walker-walk    Qsub5    a=5    ep1 ret    981.8 succ 0 frac 0.0 (26s)
+    299s [147/520] mw-push        Qsh5     a=5    ep2 ret   1804.2 succ 1 frac 0.0 (5s)
+    301s [148/520] mw-push        Qsub5    a=5    ep2 ret   1809.1 succ 1 frac 0.0 (5s)
+    302s [149/520] mw-pick-place  Qdet3    a=3    ep2 ret    821.9 succ 0 frac 0.0 (5s)
+    302s [150/520] mw-pick-place  Qind3    a=3    ep2 ret   1630.2 succ 1 frac 0.0 (5s)
+    303s [151/520] mw-pick-place  Qsh3     a=3    ep2 ret   1707.6 succ 1 frac 0.0 (5s)
+    303s [152/520] mw-pick-place  Qdet4    a=4    ep2 ret   1703.2 succ 1 frac 0.0 (5s)
+    304s [153/520] mw-pick-place  Qsub3    a=3    ep2 ret   1707.6 succ 1 frac 0.0 (6s)
+    305s [154/520] mw-pick-place  Qind4    a=4    ep2 ret   1718.1 succ 1 frac 0.0 (5s)
+    306s [155/520] mw-pick-place  Qsh4     a=4    ep2 ret   1723.9 succ 1 frac 0.0 (5s)
+    307s [156/520] mw-pick-place  Qdet5    a=5    ep2 ret   1714.6 succ 1 frac 0.0 (5s)
+    307s [157/520] mw-pick-place  Qsub4    a=4    ep2 ret   1708.0 succ 1 frac 0.0 (6s)
+    308s [158/520] mw-pick-place  Qind5    a=5    ep2 ret   1722.5 succ 1 frac 0.0 (5s)
+    308s [159/520] mw-pick-place  Qsh5     a=5    ep2 ret   1719.1 succ 1 frac 0.0 (5s)
+    310s [160/520] mw-pick-place  Qsub5    a=5    ep2 ret   1719.1 succ 1 frac 0.0 (6s)
+    330s [161/520] cheetah-run    Qdet3    a=3    ep2 ret    150.8 succ 0 frac 0.0 (26s)
+    330s [162/520] cheetah-run    Qind3    a=3    ep2 ret    127.8 succ 0 frac 0.0 (25s)
+    332s [163/520] cheetah-run    Qsh3     a=3    ep2 ret    135.7 succ 0 frac 0.0 (25s)
+    333s [164/520] cheetah-run    Qind4    a=4    ep2 ret    542.9 succ 0 frac 0.0 (25s)
+    334s [165/520] cheetah-run    Qdet4    a=4    ep2 ret    304.0 succ 0 frac 0.0 (26s)
+    336s [166/520] cheetah-run    Qsub3    a=3    ep2 ret    228.0 succ 0 frac 0.0 (29s)
+    337s [167/520] cheetah-run    Qsh4     a=4    ep2 ret    538.1 succ 0 frac 0.0 (27s)
+    354s [168/520] cheetah-run    Qdet5    a=5    ep2 ret    721.0 succ 0 frac 0.0 (23s)
+    357s [169/520] cheetah-run    Qind5    a=5    ep2 ret    766.1 succ 0 frac 0.0 (25s)
+    358s [170/520] cheetah-run    Qsh5     a=5    ep2 ret    763.4 succ 0 frac 0.0 (25s)
+    359s [171/520] cheetah-run    Qsub4    a=4    ep2 ret    415.4 succ 0 frac 0.0 (29s)
+    362s [172/520] walker-walk    Qdet3    a=3    ep2 ret    843.0 succ 0 frac 0.0 (26s)
+    363s [173/520] cheetah-run    Qsub5    a=5    ep2 ret    781.2 succ 0 frac 0.0 (29s)
+    365s [174/520] walker-walk    Qind3    a=3    ep2 ret     60.3 succ 0 frac 0.0 (28s)
+    379s [175/520] walker-walk    Qsh3     a=3    ep2 ret     50.0 succ 0 frac 0.0 (25s)
+    382s [176/520] walker-walk    Qdet4    a=4    ep2 ret    842.9 succ 0 frac 0.0 (24s)
+    383s [177/520] walker-walk    Qsub3    a=3    ep2 ret     62.5 succ 0 frac 0.0 (26s)
+    386s [178/520] walker-walk    Qind4    a=4    ep2 ret    754.2 succ 0 frac 0.0 (27s)
+    389s [179/520] walker-walk    Qsh4     a=4    ep2 ret    923.6 succ 0 frac 0.0 (27s)
+    390s [180/520] walker-walk    Qdet5    a=5    ep2 ret    969.4 succ 0 frac 0.0 (26s)
+    391s [181/520] walker-walk    Qsub4    a=4    ep2 ret    878.5 succ 0 frac 0.0 (29s)
+    392s [182/520] mw-push        Qdet3    a=3    ep3 ret    285.5 succ 0 frac 0.0 (5s)
+    395s [183/520] mw-push        Qind3    a=3    ep3 ret    888.6 succ 0 frac 0.0 (6s)
+    396s [184/520] mw-push        Qsh3     a=3    ep3 ret   1752.4 succ 1 frac 0.0 (6s)
+    397s [185/520] mw-push        Qdet4    a=4    ep3 ret   1027.6 succ 1 frac 0.0 (5s)
+    397s [186/520] mw-push        Qsub3    a=3    ep3 ret    186.7 succ 0 frac 0.0 (6s)
+    401s [187/520] mw-push        Qind4    a=4    ep3 ret   1754.6 succ 1 frac 0.0 (6s)
+    401s [188/520] mw-push        Qsh4     a=4    ep3 ret   1762.5 succ 1 frac 0.0 (6s)
+    402s [189/520] mw-push        Qdet5    a=5    ep3 ret   1773.0 succ 1 frac 0.0 (5s)
+    403s [190/520] mw-push        Qsub4    a=4    ep3 ret   1770.6 succ 1 frac 0.0 (6s)
+    403s [191/520] walker-walk    Qind5    a=5    ep2 ret    910.9 succ 0 frac 0.0 (25s)
+    406s [192/520] mw-push        Qind5    a=5    ep3 ret   1772.6 succ 1 frac 0.0 (6s)
+    406s [193/520] walker-walk    Qsh5     a=5    ep2 ret    973.0 succ 0 frac 0.0 (25s)
+    407s [194/520] mw-push        Qsh5     a=5    ep3 ret   1775.6 succ 1 frac 0.0 (5s)
+    408s [195/520] mw-pick-place  Qdet3    a=3    ep3 ret   1334.1 succ 0 frac 0.0 (5s)
+    408s [196/520] mw-push        Qsub5    a=5    ep3 ret   1771.8 succ 1 frac 0.0 (6s)
+    408s [197/520] mw-pick-place  Qind3    a=3    ep3 ret   1626.0 succ 1 frac 0.0 (5s)
+    409s [198/520] walker-walk    Qsub5    a=5    ep2 ret    969.4 succ 0 frac 0.0 (26s)
+    411s [199/520] mw-pick-place  Qsh3     a=3    ep3 ret   1630.5 succ 1 frac 0.0 (5s)
+    412s [200/520] mw-pick-place  Qsub3    a=3    ep3 ret   1624.4 succ 1 frac 0.0 (5s)
+    412s [201/520] mw-pick-place  Qdet4    a=4    ep3 ret   1623.3 succ 1 frac 0.0 (5s)
+    413s [202/520] mw-pick-place  Qind4    a=4    ep3 ret   1651.7 succ 1 frac 0.0 (5s)
+    413s [203/520] mw-pick-place  Qsub4    a=4    ep3 ret   1649.6 succ 1 frac 0.0 (5s)
+    414s [204/520] mw-pick-place  Qsh4     a=4    ep3 ret   1641.1 succ 1 frac 0.0 (5s)
+    414s [205/520] mw-pick-place  Qdet5    a=5    ep3 ret   1646.8 succ 1 frac 0.0 (5s)
+    417s [206/520] mw-pick-place  Qsh5     a=5    ep3 ret   1653.6 succ 1 frac 0.0 (5s)
+    417s [207/520] mw-pick-place  Qind5    a=5    ep3 ret   1654.0 succ 1 frac 0.0 (5s)
+    418s [208/520] mw-pick-place  Qsub5    a=5    ep3 ret   1653.2 succ 1 frac 0.0 (6s)
+    438s [209/520] cheetah-run    Qind3    a=3    ep3 ret    138.0 succ 0 frac 0.0 (25s)
+    439s [210/520] cheetah-run    Qdet3    a=3    ep3 ret    187.2 succ 0 frac 0.0 (26s)
+    440s [211/520] cheetah-run    Qsub3    a=3    ep3 ret    151.0 succ 0 frac 0.0 (26s)
+    440s [212/520] cheetah-run    Qdet4    a=4    ep3 ret    455.5 succ 0 frac 0.0 (23s)
+    441s [213/520] cheetah-run    Qsh3     a=3    ep3 ret    170.3 succ 0 frac 0.0 (27s)
+    444s [214/520] cheetah-run    Qind4    a=4    ep3 ret    272.8 succ 0 frac 0.0 (27s)
+    445s [215/520] cheetah-run    Qsh4     a=4    ep3 ret    601.4 succ 0 frac 0.0 (27s)
+    464s [216/520] cheetah-run    Qsub4    a=4    ep3 ret    584.2 succ 0 frac 0.0 (26s)
+    465s [217/520] cheetah-run    Qdet5    a=5    ep3 ret    706.1 succ 0 frac 0.0 (26s)
+    465s [218/520] cheetah-run    Qind5    a=5    ep3 ret    774.8 succ 0 frac 0.0 (25s)
+    465s [219/520] cheetah-run    Qsh5     a=5    ep3 ret    780.5 succ 0 frac 0.0 (25s)
+    470s [220/520] cheetah-run    Qsub5    a=5    ep3 ret    708.7 succ 0 frac 0.0 (29s)
+    470s [221/520] walker-walk    Qdet3    a=3    ep3 ret     76.7 succ 0 frac 0.0 (26s)
+    473s [222/520] walker-walk    Qind3    a=3    ep3 ret     63.8 succ 0 frac 0.0 (28s)
+    488s [223/520] walker-walk    Qdet4    a=4    ep3 ret    963.9 succ 0 frac 0.0 (24s)
+    489s [224/520] walker-walk    Qsh3     a=3    ep3 ret    130.1 succ 0 frac 0.0 (25s)
+    490s [225/520] walker-walk    Qind4    a=4    ep3 ret    575.5 succ 0 frac 0.0 (25s)
+    494s [226/520] walker-walk    Qsub3    a=3    ep3 ret    242.1 succ 0 frac 0.0 (29s)
+    497s [227/520] walker-walk    Qsh4     a=4    ep3 ret    961.4 succ 0 frac 0.0 (27s)
+    498s [228/520] walker-walk    Qdet5    a=5    ep3 ret    981.2 succ 0 frac 0.0 (26s)
+    499s [229/520] mw-push        Qdet3    a=3    ep4 ret    122.3 succ 0 frac 0.0 (5s)
+    499s [230/520] walker-walk    Qsub4    a=4    ep3 ret    824.2 succ 0 frac 0.0 (29s)
+    503s [231/520] mw-push        Qind3    a=3    ep4 ret   1742.0 succ 1 frac 0.0 (6s)
+    504s [232/520] mw-push        Qsh3     a=3    ep4 ret   1773.9 succ 1 frac 0.0 (6s)
+    504s [233/520] mw-push        Qdet4    a=4    ep4 ret   1783.0 succ 1 frac 0.0 (5s)
+    505s [234/520] mw-push        Qsub3    a=3    ep4 ret   1631.4 succ 1 frac 0.0 (6s)
+    508s [235/520] mw-push        Qind4    a=4    ep4 ret   1786.6 succ 1 frac 0.0 (6s)
+    509s [236/520] mw-push        Qsh4     a=4    ep4 ret   1781.4 succ 1 frac 0.0 (6s)
+    510s [237/520] mw-push        Qdet5    a=5    ep4 ret   1786.8 succ 1 frac 0.0 (5s)
+    510s [238/520] mw-push        Qsub4    a=4    ep4 ret   1788.6 succ 1 frac 0.0 (6s)
+    513s [239/520] walker-walk    Qind5    a=5    ep3 ret    941.5 succ 0 frac 0.0 (25s)
+    514s [240/520] walker-walk    Qsh5     a=5    ep3 ret    984.0 succ 0 frac 0.0 (25s)
+    514s [241/520] mw-push        Qind5    a=5    ep4 ret   1791.2 succ 1 frac 0.0 (6s)
+    515s [242/520] mw-push        Qsh5     a=5    ep4 ret   1790.1 succ 1 frac 0.0 (5s)
+    515s [243/520] mw-pick-place  Qdet3    a=3    ep4 ret   1325.5 succ 1 frac 0.0 (5s)
+    516s [244/520] mw-push        Qsub5    a=5    ep4 ret   1785.6 succ 1 frac 0.0 (6s)
+    516s [245/520] walker-walk    Qsub5    a=5    ep3 ret    988.0 succ 0 frac 0.0 (26s)
+    518s [246/520] mw-pick-place  Qind3    a=3    ep4 ret    352.5 succ 0 frac 0.0 (5s)
+    519s [247/520] mw-pick-place  Qsh3     a=3    ep4 ret   1686.8 succ 1 frac 0.0 (5s)
+    519s [248/520] mw-pick-place  Qsub3    a=3    ep4 ret   1691.9 succ 1 frac 0.0 (6s)
+    520s [249/520] mw-pick-place  Qdet4    a=4    ep4 ret    878.0 succ 0 frac 0.0 (5s)
+    521s [250/520] mw-pick-place  Qind4    a=4    ep4 ret   1685.0 succ 1 frac 0.0 (6s)
+    521s [251/520] mw-pick-place  Qsh4     a=4    ep4 ret   1697.0 succ 1 frac 0.0 (5s)
+    521s [252/520] mw-pick-place  Qsub4    a=4    ep4 ret   1692.5 succ 1 frac 0.0 (5s)
+    523s [253/520] mw-pick-place  Qdet5    a=5    ep4 ret   1693.7 succ 1 frac 0.0 (5s)
+    524s [254/520] mw-pick-place  Qind5    a=5    ep4 ret   1690.5 succ 1 frac 0.0 (5s)
+    525s [255/520] mw-pick-place  Qsh5     a=5    ep4 ret   1697.1 succ 1 frac 0.0 (5s)
+    526s [256/520] mw-pick-place  Qsub5    a=5    ep4 ret   1701.5 succ 1 frac 0.0 (6s)
+    546s [257/520] cheetah-run    Qsh3     a=3    ep4 ret    123.1 succ 0 frac 0.0 (25s)
+    546s [258/520] cheetah-run    Qdet3    a=3    ep4 ret    125.9 succ 0 frac 0.0 (26s)
+    547s [259/520] cheetah-run    Qdet4    a=4    ep4 ret    498.4 succ 0 frac 0.0 (23s)
+    548s [260/520] cheetah-run    Qind3    a=3    ep4 ret    163.9 succ 0 frac 0.0 (27s)
+    549s [261/520] cheetah-run    Qsub3    a=3    ep4 ret    115.2 succ 0 frac 0.0 (26s)
+    552s [262/520] cheetah-run    Qind4    a=4    ep4 ret    295.8 succ 0 frac 0.0 (27s)
+    553s [263/520] cheetah-run    Qsh4     a=4    ep4 ret    503.6 succ 0 frac 0.0 (27s)
+    572s [264/520] cheetah-run    Qind5    a=5    ep4 ret    721.4 succ 0 frac 0.0 (25s)
+    572s [265/520] cheetah-run    Qdet5    a=5    ep4 ret    668.4 succ 0 frac 0.0 (26s)
+    572s [266/520] cheetah-run    Qsub4    a=4    ep4 ret    612.2 succ 0 frac 0.0 (26s)
+    575s [267/520] cheetah-run    Qsub5    a=5    ep4 ret    739.3 succ 0 frac 0.0 (26s)
+    576s [268/520] cheetah-run    Qsh5     a=5    ep4 ret    766.2 succ 0 frac 0.0 (28s)
+    578s [269/520] walker-walk    Qdet3    a=3    ep4 ret    396.1 succ 0 frac 0.0 (26s)
+    580s [270/520] walker-walk    Qind3    a=3    ep4 ret    189.4 succ 0 frac 0.0 (27s)
+    596s [271/520] walker-walk    Qdet4    a=4    ep4 ret    808.0 succ 0 frac 0.0 (23s)
+    596s [272/520] walker-walk    Qsh3     a=3    ep4 ret    257.4 succ 0 frac 0.0 (25s)
+    600s [273/520] walker-walk    Qind4    a=4    ep4 ret    517.4 succ 0 frac 0.0 (25s)
+    601s [274/520] walker-walk    Qsub3    a=3    ep4 ret    281.9 succ 0 frac 0.0 (29s)
+    603s [275/520] walker-walk    Qsh4     a=4    ep4 ret    891.9 succ 0 frac 0.0 (27s)
+    606s [276/520] walker-walk    Qdet5    a=5    ep4 ret    972.9 succ 0 frac 0.0 (26s)
+    606s [277/520] mw-push        Qdet3    a=3    ep5 ret    150.1 succ 0 frac 0.0 (5s)
+    607s [278/520] walker-walk    Qsub4    a=4    ep4 ret    633.4 succ 0 frac 0.0 (29s)
+    609s [279/520] mw-push        Qind3    a=3    ep5 ret   1746.3 succ 1 frac 0.0 (6s)
+    612s [280/520] mw-push        Qsh3     a=3    ep5 ret   1392.7 succ 1 frac 0.0 (6s)
+    612s [281/520] mw-push        Qsub3    a=3    ep5 ret    560.2 succ 0 frac 0.0 (6s)
+    612s [282/520] mw-push        Qdet4    a=4    ep5 ret   1788.4 succ 1 frac 0.0 (5s)
+    614s [283/520] mw-push        Qind4    a=4    ep5 ret   1780.7 succ 1 frac 0.0 (6s)
+    617s [284/520] mw-push        Qsh4     a=4    ep5 ret   1775.6 succ 1 frac 0.0 (5s)
+    617s [285/520] mw-push        Qdet5    a=5    ep5 ret   1788.5 succ 1 frac 0.0 (5s)
+    618s [286/520] mw-push        Qsub4    a=4    ep5 ret   1760.0 succ 1 frac 0.0 (6s)
+    620s [287/520] mw-push        Qind5    a=5    ep5 ret   1786.4 succ 1 frac 0.0 (6s)
+    621s [288/520] walker-walk    Qind5    a=5    ep4 ret    961.0 succ 0 frac 0.0 (25s)
+    621s [289/520] walker-walk    Qsh5     a=5    ep4 ret    969.0 succ 0 frac 0.0 (25s)
+    623s [290/520] mw-push        Qsh5     a=5    ep5 ret   1771.3 succ 1 frac 0.0 (5s)
+    623s [291/520] mw-pick-place  Qdet3    a=3    ep5 ret    276.2 succ 0 frac 0.0 (5s)
+    623s [292/520] mw-push        Qsub5    a=5    ep5 ret   1793.5 succ 1 frac 0.0 (6s)
+    625s [293/520] mw-pick-place  Qind3    a=3    ep5 ret   1586.4 succ 1 frac 0.0 (5s)
+    626s [294/520] mw-pick-place  Qsh3     a=3    ep5 ret     27.8 succ 0 frac 0.0 (5s)
+    626s [295/520] walker-walk    Qsub5    a=5    ep4 ret    965.3 succ 0 frac 0.0 (26s)
+    626s [296/520] mw-pick-place  Qsub3    a=3    ep5 ret     16.5 succ 0 frac 0.0 (5s)
+    628s [297/520] mw-pick-place  Qdet4    a=4    ep5 ret   1601.4 succ 1 frac 0.0 (5s)
+    629s [298/520] mw-pick-place  Qind4    a=4    ep5 ret   1688.2 succ 1 frac 0.0 (5s)
+    629s [299/520] mw-pick-place  Qsh4     a=4    ep5 ret   1681.0 succ 1 frac 0.0 (5s)
+    630s [300/520] mw-pick-place  Qdet5    a=5    ep5 ret   1689.9 succ 1 frac 0.0 (5s)
+    631s [301/520] mw-pick-place  Qsub4    a=4    ep5 ret   1683.8 succ 1 frac 0.0 (6s)
+    631s [302/520] mw-pick-place  Qind5    a=5    ep5 ret   1694.0 succ 1 frac 0.0 (5s)
+    631s [303/520] mw-pick-place  Qsh5     a=5    ep5 ret   1693.8 succ 1 frac 0.0 (5s)
+    634s [304/520] mw-pick-place  Qsub5    a=5    ep5 ret   1692.6 succ 1 frac 0.0 (6s)
+    654s [305/520] cheetah-run    Qdet3    a=3    ep5 ret    303.1 succ 0 frac 0.0 (26s)
+    655s [306/520] cheetah-run    Qdet4    a=4    ep5 ret    531.1 succ 0 frac 0.0 (23s)
+    655s [307/520] cheetah-run    Qsh3     a=3    ep5 ret    121.0 succ 0 frac 0.0 (25s)
+    656s [308/520] cheetah-run    Qind3    a=3    ep5 ret    130.2 succ 0 frac 0.0 (27s)
+    656s [309/520] cheetah-run    Qind4    a=4    ep5 ret    165.8 succ 0 frac 0.0 (25s)
+    660s [310/520] cheetah-run    Qsub3    a=3    ep5 ret     64.4 succ 0 frac 0.0 (29s)
+    661s [311/520] cheetah-run    Qsh4     a=4    ep5 ret    566.7 succ 0 frac 0.0 (27s)
+    678s [312/520] cheetah-run    Qdet5    a=5    ep5 ret    701.8 succ 0 frac 0.0 (24s)
+    680s [313/520] cheetah-run    Qind5    a=5    ep5 ret    680.0 succ 0 frac 0.0 (25s)
+    682s [314/520] cheetah-run    Qsub5    a=5    ep5 ret    271.0 succ 0 frac 0.0 (26s)
+    683s [315/520] cheetah-run    Qsub4    a=4    ep5 ret    553.0 succ 0 frac 0.0 (29s)
+    683s [316/520] cheetah-run    Qsh5     a=5    ep5 ret    715.1 succ 0 frac 0.0 (27s)
+    686s [317/520] walker-walk    Qdet3    a=3    ep5 ret    170.9 succ 0 frac 0.0 (26s)
+    688s [318/520] walker-walk    Qind3    a=3    ep5 ret    281.7 succ 0 frac 0.0 (27s)
+    703s [319/520] walker-walk    Qsh3     a=3    ep5 ret    190.1 succ 0 frac 0.0 (25s)
+    706s [320/520] walker-walk    Qdet4    a=4    ep5 ret    750.8 succ 0 frac 0.0 (23s)
+    707s [321/520] walker-walk    Qsub3    a=3    ep5 ret    166.8 succ 0 frac 0.0 (26s)
+    710s [322/520] walker-walk    Qind4    a=4    ep5 ret    790.0 succ 0 frac 0.0 (27s)
+    711s [323/520] walker-walk    Qsh4     a=4    ep5 ret    948.2 succ 0 frac 0.0 (27s)
+    714s [324/520] walker-walk    Qdet5    a=5    ep5 ret    988.2 succ 0 frac 0.0 (26s)
+    715s [325/520] walker-walk    Qsub4    a=4    ep5 ret    920.1 succ 0 frac 0.0 (29s)
+    716s [326/520] mw-push        Qdet3    a=3    ep6 ret     83.7 succ 0 frac 0.0 (5s)
+    716s [327/520] mw-push        Qind3    a=3    ep6 ret   1733.8 succ 1 frac 0.0 (6s)
+    720s [328/520] mw-push        Qsh3     a=3    ep6 ret   1769.9 succ 1 frac 0.0 (6s)
+    720s [329/520] mw-push        Qsub3    a=3    ep6 ret   1758.3 succ 1 frac 0.0 (6s)
+    721s [330/520] mw-push        Qdet4    a=4    ep6 ret   1761.4 succ 1 frac 0.0 (5s)
+    722s [331/520] mw-push        Qind4    a=4    ep6 ret   1764.5 succ 1 frac 0.0 (6s)
+    725s [332/520] mw-push        Qsh4     a=4    ep6 ret   1757.6 succ 1 frac 0.0 (6s)
+    726s [333/520] mw-push        Qdet5    a=5    ep6 ret   1774.4 succ 1 frac 0.0 (5s)
+    726s [334/520] mw-push        Qsub4    a=4    ep6 ret   1761.5 succ 1 frac 0.0 (6s)
+    727s [335/520] mw-push        Qind5    a=5    ep6 ret   1768.5 succ 1 frac 0.0 (6s)
+    728s [336/520] walker-walk    Qind5    a=5    ep5 ret    975.0 succ 0 frac 0.0 (25s)
+    730s [337/520] walker-walk    Qsh5     a=5    ep5 ret    988.6 succ 0 frac 0.0 (25s)
+    731s [338/520] mw-push        Qsh5     a=5    ep6 ret   1773.8 succ 1 frac 0.0 (5s)
+    731s [339/520] mw-pick-place  Qdet3    a=3    ep6 ret     53.8 succ 0 frac 0.0 (5s)
+    732s [340/520] mw-push        Qsub5    a=5    ep6 ret   1771.7 succ 1 frac 0.0 (6s)
+    732s [341/520] walker-walk    Qsub5    a=5    ep5 ret    986.4 succ 0 frac 0.0 (26s)
+    733s [342/520] mw-pick-place  Qind3    a=3    ep6 ret   1621.6 succ 1 frac 0.0 (5s)
+    733s [343/520] mw-pick-place  Qsh3     a=3    ep6 ret    938.9 succ 1 frac 0.0 (5s)
+    735s [344/520] mw-pick-place  Qsub3    a=3    ep6 ret   1638.9 succ 1 frac 0.0 (5s)
+    736s [345/520] mw-pick-place  Qdet4    a=4    ep6 ret   1633.6 succ 1 frac 0.0 (5s)
+    737s [346/520] mw-pick-place  Qind4    a=4    ep6 ret   1629.8 succ 1 frac 0.0 (5s)
+    737s [347/520] mw-pick-place  Qsh4     a=4    ep6 ret   1649.9 succ 1 frac 0.0 (5s)
+    738s [348/520] mw-pick-place  Qsub4    a=4    ep6 ret   1626.7 succ 1 frac 0.0 (5s)
+    738s [349/520] mw-pick-place  Qdet5    a=5    ep6 ret   1646.4 succ 1 frac 0.0 (5s)
+    738s [350/520] mw-pick-place  Qind5    a=5    ep6 ret   1644.2 succ 1 frac 0.0 (5s)
+    740s [351/520] mw-pick-place  Qsh5     a=5    ep6 ret   1645.1 succ 1 frac 0.0 (5s)
+    742s [352/520] mw-pick-place  Qsub5    a=5    ep6 ret   1647.8 succ 1 frac 0.0 (6s)
+    762s [353/520] cheetah-run    Qdet4    a=4    ep6 ret    364.8 succ 0 frac 0.0 (24s)
+    762s [354/520] cheetah-run    Qsh3     a=3    ep6 ret    121.9 succ 0 frac 0.0 (25s)
+    762s [355/520] cheetah-run    Qdet3    a=3    ep6 ret    272.1 succ 0 frac 0.0 (26s)
+    765s [356/520] cheetah-run    Qind3    a=3    ep6 ret    155.3 succ 0 frac 0.0 (27s)
+    765s [357/520] cheetah-run    Qind4    a=4    ep6 ret    593.0 succ 0 frac 0.0 (25s)
+    767s [358/520] cheetah-run    Qsub3    a=3    ep6 ret    307.8 succ 0 frac 0.0 (29s)
+    769s [359/520] cheetah-run    Qsh4     a=4    ep6 ret    495.7 succ 0 frac 0.0 (27s)
+    786s [360/520] cheetah-run    Qdet5    a=5    ep6 ret    746.6 succ 0 frac 0.0 (23s)
+    788s [361/520] cheetah-run    Qsub4    a=4    ep6 ret    572.1 succ 0 frac 0.0 (26s)
+    790s [362/520] cheetah-run    Qind5    a=5    ep6 ret    691.1 succ 0 frac 0.0 (28s)
+    791s [363/520] cheetah-run    Qsub5    a=5    ep6 ret    737.4 succ 0 frac 0.0 (26s)
+    792s [364/520] cheetah-run    Qsh5     a=5    ep6 ret    753.8 succ 0 frac 0.0 (27s)
+    793s [365/520] walker-walk    Qdet3    a=3    ep6 ret    680.2 succ 0 frac 0.0 (26s)
+    796s [366/520] walker-walk    Qind3    a=3    ep6 ret    132.0 succ 0 frac 0.0 (27s)
+    811s [367/520] walker-walk    Qsh3     a=3    ep6 ret    313.6 succ 0 frac 0.0 (25s)
+    814s [368/520] walker-walk    Qsub3    a=3    ep6 ret     90.6 succ 0 frac 0.0 (26s)
+    816s [369/520] walker-walk    Qdet4    a=4    ep6 ret    797.1 succ 0 frac 0.0 (26s)
+    816s [370/520] walker-walk    Qind4    a=4    ep6 ret    520.1 succ 0 frac 0.0 (25s)
+    819s [371/520] walker-walk    Qsh4     a=4    ep6 ret    965.9 succ 0 frac 0.0 (27s)
+    821s [372/520] mw-push        Qdet3    a=3    ep7 ret   1736.1 succ 1 frac 0.0 (5s)
+    821s [373/520] walker-walk    Qsub4    a=4    ep6 ret    955.3 succ 0 frac 0.0 (29s)
+    822s [374/520] walker-walk    Qdet5    a=5    ep6 ret    980.3 succ 0 frac 0.0 (26s)
+    825s [375/520] mw-push        Qind3    a=3    ep7 ret    398.9 succ 0 frac 0.0 (6s)
+    826s [376/520] mw-push        Qsh3     a=3    ep7 ret   1795.6 succ 1 frac 0.0 (5s)
+    827s [377/520] mw-push        Qdet4    a=4    ep7 ret   1787.8 succ 1 frac 0.0 (5s)
+    827s [378/520] mw-push        Qsub3    a=3    ep7 ret   1797.0 succ 1 frac 0.0 (6s)
+    831s [379/520] mw-push        Qind4    a=4    ep7 ret   1796.5 succ 1 frac 0.0 (6s)
+    831s [380/520] mw-push        Qsh4     a=4    ep7 ret   1799.2 succ 1 frac 0.0 (5s)
+    833s [381/520] mw-push        Qdet5    a=5    ep7 ret   1801.5 succ 1 frac 0.0 (5s)
+    833s [382/520] mw-push        Qsub4    a=4    ep7 ret   1799.1 succ 1 frac 0.0 (6s)
+    835s [383/520] walker-walk    Qind5    a=5    ep6 ret    962.9 succ 0 frac 0.0 (25s)
+    836s [384/520] mw-push        Qsh5     a=5    ep7 ret   1800.7 succ 1 frac 0.0 (5s)
+    836s [385/520] mw-push        Qind5    a=5    ep7 ret   1800.6 succ 1 frac 0.0 (6s)
+    838s [386/520] mw-pick-place  Qdet3    a=3    ep7 ret   1463.9 succ 0 frac 0.0 (5s)
+    838s [387/520] mw-push        Qsub5    a=5    ep7 ret   1800.8 succ 1 frac 0.0 (6s)
+    839s [388/520] walker-walk    Qsh5     a=5    ep6 ret    985.4 succ 0 frac 0.0 (24s)
+    840s [389/520] mw-pick-place  Qind3    a=3    ep7 ret   1635.4 succ 1 frac 0.0 (5s)
+    841s [390/520] mw-pick-place  Qsh3     a=3    ep7 ret    832.6 succ 0 frac 0.0 (5s)
+    842s [391/520] mw-pick-place  Qsub3    a=3    ep7 ret    997.2 succ 0 frac 0.0 (6s)
+    844s [392/520] mw-pick-place  Qdet4    a=4    ep7 ret   1703.3 succ 1 frac 0.0 (5s)
+    844s [393/520] mw-pick-place  Qsh4     a=4    ep7 ret   1710.8 succ 1 frac 0.0 (5s)
+    844s [394/520] walker-walk    Qsub5    a=5    ep6 ret    981.6 succ 0 frac 0.0 (28s)
+    844s [395/520] mw-pick-place  Qind4    a=4    ep7 ret    980.8 succ 0 frac 0.0 (6s)
+    846s [396/520] mw-pick-place  Qsub4    a=4    ep7 ret   1703.2 succ 1 frac 0.0 (5s)
+    846s [397/520] mw-pick-place  Qdet5    a=5    ep7 ret   1712.4 succ 1 frac 0.0 (5s)
+    848s [398/520] mw-pick-place  Qind5    a=5    ep7 ret   1711.1 succ 1 frac 0.0 (6s)
+    849s [399/520] mw-pick-place  Qsub5    a=5    ep7 ret   1719.8 succ 1 frac 0.0 (5s)
+    849s [400/520] mw-pick-place  Qsh5     a=5    ep7 ret   1717.7 succ 1 frac 0.0 (6s)
+    869s [401/520] cheetah-run    Qdet3    a=3    ep7 ret    169.2 succ 0 frac 0.0 (26s)
+    871s [402/520] cheetah-run    Qsh3     a=3    ep7 ret    260.6 succ 0 frac 0.0 (25s)
+    871s [403/520] cheetah-run    Qind3    a=3    ep7 ret     55.1 succ 0 frac 0.0 (27s)
+    872s [404/520] cheetah-run    Qsub3    a=3    ep7 ret    145.5 succ 0 frac 0.0 (26s)
+    873s [405/520] cheetah-run    Qdet4    a=4    ep7 ret    435.1 succ 0 frac 0.0 (26s)
+    874s [406/520] cheetah-run    Qind4    a=4    ep7 ret    510.4 succ 0 frac 0.0 (25s)
+    876s [407/520] cheetah-run    Qsh4     a=4    ep7 ret    511.0 succ 0 frac 0.0 (27s)
+    894s [408/520] cheetah-run    Qdet5    a=5    ep7 ret    742.9 succ 0 frac 0.0 (24s)
+    897s [409/520] cheetah-run    Qsh5     a=5    ep7 ret    760.2 succ 0 frac 0.0 (25s)
+    898s [410/520] walker-walk    Qdet3    a=3    ep7 ret    493.2 succ 0 frac 0.0 (24s)
+    899s [411/520] cheetah-run    Qsub4    a=4    ep7 ret    631.7 succ 0 frac 0.0 (29s)
+    899s [412/520] cheetah-run    Qind5    a=5    ep7 ret    763.0 succ 0 frac 0.0 (28s)
+    902s [413/520] cheetah-run    Qsub5    a=5    ep7 ret    745.9 succ 0 frac 0.0 (29s)
+    904s [414/520] walker-walk    Qind3    a=3    ep7 ret    191.9 succ 0 frac 0.0 (28s)
+    919s [415/520] walker-walk    Qsh3     a=3    ep7 ret     94.0 succ 0 frac 0.0 (25s)
+    921s [416/520] walker-walk    Qdet4    a=4    ep7 ret    830.5 succ 0 frac 0.0 (24s)
+    923s [417/520] walker-walk    Qsub3    a=3    ep7 ret    236.4 succ 0 frac 0.0 (26s)
+    926s [418/520] walker-walk    Qind4    a=4    ep7 ret    888.7 succ 0 frac 0.0 (27s)
+    926s [419/520] walker-walk    Qsh4     a=4    ep7 ret    974.4 succ 0 frac 0.0 (27s)
+    930s [420/520] walker-walk    Qdet5    a=5    ep7 ret    987.0 succ 0 frac 0.0 (26s)
+    931s [421/520] mw-push        Qdet3    a=3    ep8 ret   1499.0 succ 0 frac 0.0 (5s)
+    931s [422/520] walker-walk    Qsub4    a=4    ep7 ret    777.2 succ 0 frac 0.0 (29s)
+    932s [423/520] mw-push        Qind3    a=3    ep8 ret   1679.3 succ 1 frac 0.0 (6s)
+    935s [424/520] mw-push        Qsh3     a=3    ep8 ret   1774.4 succ 1 frac 0.0 (6s)
+    937s [425/520] mw-push        Qdet4    a=4    ep8 ret   1755.5 succ 1 frac 0.0 (5s)
+    937s [426/520] mw-push        Qsub3    a=3    ep8 ret    276.5 succ 0 frac 0.0 (6s)
+    938s [427/520] mw-push        Qind4    a=4    ep8 ret   1773.1 succ 1 frac 0.0 (6s)
+    941s [428/520] mw-push        Qsh4     a=4    ep8 ret   1782.3 succ 1 frac 0.0 (6s)
+    942s [429/520] mw-push        Qsub4    a=4    ep8 ret   1778.5 succ 1 frac 0.0 (6s)
+    943s [430/520] mw-push        Qdet5    a=5    ep8 ret   1788.2 succ 1 frac 0.0 (5s)
+    943s [431/520] mw-push        Qind5    a=5    ep8 ret   1784.9 succ 1 frac 0.0 (6s)
+    944s [432/520] walker-walk    Qind5    a=5    ep7 ret    979.2 succ 0 frac 0.0 (25s)
+    946s [433/520] walker-walk    Qsh5     a=5    ep7 ret    989.8 succ 0 frac 0.0 (25s)
+    946s [434/520] mw-push        Qsh5     a=5    ep8 ret   1785.7 succ 1 frac 0.0 (5s)
+    948s [435/520] mw-pick-place  Qdet3    a=3    ep8 ret   1457.3 succ 1 frac 0.0 (5s)
+    948s [436/520] mw-push        Qsub5    a=5    ep8 ret   1785.1 succ 1 frac 0.0 (6s)
+    949s [437/520] mw-pick-place  Qind3    a=3    ep8 ret   1284.5 succ 0 frac 0.0 (5s)
+    949s [438/520] walker-walk    Qsub5    a=5    ep7 ret    986.7 succ 0 frac 0.0 (26s)
+    949s [439/520] mw-pick-place  Qsh3     a=3    ep8 ret   1684.9 succ 1 frac 0.0 (5s)
+    952s [440/520] mw-pick-place  Qsub3    a=3    ep8 ret   1658.9 succ 1 frac 0.0 (5s)
+    952s [441/520] mw-pick-place  Qdet4    a=4    ep8 ret   1670.7 succ 1 frac 0.0 (5s)
+    953s [442/520] mw-pick-place  Qind4    a=4    ep8 ret   1674.6 succ 1 frac 0.0 (5s)
+    954s [443/520] mw-pick-place  Qdet5    a=5    ep8 ret   1678.9 succ 1 frac 0.0 (5s)
+    954s [444/520] mw-pick-place  Qsh4     a=4    ep8 ret   1669.5 succ 1 frac 0.0 (5s)
+    954s [445/520] mw-pick-place  Qind5    a=5    ep8 ret   1682.0 succ 1 frac 0.0 (5s)
+    954s [446/520] mw-pick-place  Qsub4    a=4    ep8 ret   1672.8 succ 1 frac 0.0 (6s)
+    957s [447/520] mw-pick-place  Qsh5     a=5    ep8 ret   1682.9 succ 1 frac 0.0 (5s)
+    957s [448/520] mw-pick-place  Qsub5    a=5    ep8 ret   1675.4 succ 1 frac 0.0 (6s)
+    978s [449/520] cheetah-run    Qind3    a=3    ep8 ret    101.3 succ 0 frac 0.0 (25s)
+    979s [450/520] cheetah-run    Qdet3    a=3    ep8 ret    180.4 succ 0 frac 0.0 (26s)
+    980s [451/520] cheetah-run    Qdet4    a=4    ep8 ret    436.6 succ 0 frac 0.0 (26s)
+    980s [452/520] cheetah-run    Qsub3    a=3    ep8 ret     57.3 succ 0 frac 0.0 (26s)
+    981s [453/520] cheetah-run    Qsh3     a=3    ep8 ret    132.0 succ 0 frac 0.0 (27s)
+    982s [454/520] cheetah-run    Qind4    a=4    ep8 ret    562.6 succ 0 frac 0.0 (25s)
+    985s [455/520] cheetah-run    Qsh4     a=4    ep8 ret    589.4 succ 0 frac 0.0 (27s)
+   1005s [456/520] cheetah-run    Qsub4    a=4    ep8 ret    590.9 succ 0 frac 0.0 (26s)
+   1005s [457/520] cheetah-run    Qdet5    a=5    ep8 ret    213.6 succ 0 frac 0.0 (26s)
+   1005s [458/520] walker-walk    Qdet3    a=3    ep8 ret    632.0 succ 0 frac 0.0 (24s)
+   1005s [459/520] cheetah-run    Qsh5     a=5    ep8 ret    727.8 succ 0 frac 0.0 (25s)
+   1008s [460/520] cheetah-run    Qind5    a=5    ep8 ret    697.7 succ 0 frac 0.0 (27s)
+   1010s [461/520] cheetah-run    Qsub5    a=5    ep8 ret    750.4 succ 0 frac 0.0 (29s)
+   1012s [462/520] walker-walk    Qind3    a=3    ep8 ret     70.8 succ 0 frac 0.0 (28s)
+   1029s [463/520] walker-walk    Qdet4    a=4    ep8 ret    882.5 succ 0 frac 0.0 (24s)
+   1030s [464/520] walker-walk    Qsh3     a=3    ep8 ret     80.5 succ 0 frac 0.0 (25s)
+   1030s [465/520] walker-walk    Qind4    a=4    ep8 ret    843.8 succ 0 frac 0.0 (25s)
+   1034s [466/520] walker-walk    Qsub3    a=3    ep8 ret    415.2 succ 0 frac 0.0 (29s)
+   1035s [467/520] walker-walk    Qsh4     a=4    ep8 ret    795.6 succ 0 frac 0.0 (27s)
+   1038s [468/520] walker-walk    Qdet5    a=5    ep8 ret    987.0 succ 0 frac 0.0 (26s)
+   1039s [469/520] walker-walk    Qsub4    a=4    ep8 ret    814.9 succ 0 frac 0.0 (29s)
+   1039s [470/520] mw-push        Qdet3    a=3    ep9 ret   1664.4 succ 1 frac 0.0 (5s)
+   1041s [471/520] mw-push        Qind3    a=3    ep9 ret    115.9 succ 0 frac 0.0 (6s)
+   1044s [472/520] mw-push        Qsh3     a=3    ep9 ret   1752.8 succ 1 frac 0.0 (6s)
+   1044s [473/520] mw-push        Qdet4    a=4    ep9 ret   1738.1 succ 1 frac 0.0 (5s)
+   1045s [474/520] mw-push        Qsub3    a=3    ep9 ret   1748.7 succ 1 frac 0.0 (6s)
+   1046s [475/520] mw-push        Qind4    a=4    ep9 ret   1764.6 succ 1 frac 0.0 (6s)
+   1049s [476/520] mw-push        Qsh4     a=4    ep9 ret   1750.4 succ 1 frac 0.0 (6s)
+   1050s [477/520] mw-push        Qdet5    a=5    ep9 ret   1763.8 succ 1 frac 0.0 (5s)
+   1050s [478/520] mw-push        Qsub4    a=4    ep9 ret   1756.9 succ 1 frac 0.0 (6s)
+   1052s [479/520] mw-push        Qind5    a=5    ep9 ret   1764.1 succ 1 frac 0.0 (6s)
+   1054s [480/520] walker-walk    Qind5    a=5    ep8 ret    973.4 succ 0 frac 0.0 (25s)
+   1054s [481/520] walker-walk    Qsh5     a=5    ep8 ret    989.5 succ 0 frac 0.0 (25s)
+   1055s [482/520] mw-push        Qsh5     a=5    ep9 ret   1768.6 succ 1 frac 0.0 (6s)
+   1055s [483/520] mw-pick-place  Qdet3    a=3    ep9 ret   1422.6 succ 1 frac 0.0 (5s)
+   1056s [484/520] mw-push        Qsub5    a=5    ep9 ret   1766.1 succ 1 frac 0.0 (6s)
+   1056s [485/520] walker-walk    Qsub5    a=5    ep8 ret    963.2 succ 0 frac 0.0 (26s)
+   1057s [486/520] mw-pick-place  Qind3    a=3    ep9 ret   1319.0 succ 0 frac 0.0 (5s)
+   1059s [487/520] mw-pick-place  Qsh3     a=3    ep9 ret   1625.6 succ 1 frac 0.0 (5s)
+   1059s [488/520] mw-pick-place  Qsub3    a=3    ep9 ret   1593.6 succ 1 frac 0.0 (5s)
+   1060s [489/520] mw-pick-place  Qdet4    a=4    ep9 ret   1622.7 succ 1 frac 0.0 (5s)
+   1061s [490/520] mw-pick-place  Qind4    a=4    ep9 ret   1629.3 succ 1 frac 0.0 (5s)
+   1061s [491/520] mw-pick-place  Qsh4     a=4    ep9 ret   1626.8 succ 1 frac 0.0 (5s)
+   1062s [492/520] mw-pick-place  Qsub4    a=4    ep9 ret   1632.5 succ 1 frac 0.0 (5s)
+   1062s [493/520] mw-pick-place  Qdet5    a=5    ep9 ret   1640.7 succ 1 frac 0.0 (5s)
+   1064s [494/520] mw-pick-place  Qind5    a=5    ep9 ret   1642.7 succ 1 frac 0.0 (5s)
+   1064s [495/520] mw-pick-place  Qsh5     a=5    ep9 ret   1640.0 succ 1 frac 0.0 (5s)
+   1066s [496/520] mw-pick-place  Qsub5    a=5    ep9 ret   1609.7 succ 1 frac 0.0 (6s)
+   1086s [497/520] cheetah-run    Qsh3     a=3    ep9 ret     72.7 succ 0 frac 0.0 (25s)
+   1087s [498/520] cheetah-run    Qdet3    a=3    ep9 ret    196.2 succ 0 frac 0.0 (26s)
+   1087s [499/520] cheetah-run    Qdet4    a=4    ep9 ret    426.1 succ 0 frac 0.0 (23s)
+   1089s [500/520] cheetah-run    Qind3    a=3    ep9 ret    153.9 succ 0 frac 0.0 (27s)
+   1089s [501/520] cheetah-run    Qind4    a=4    ep9 ret    482.5 succ 0 frac 0.0 (25s)
+   1091s [502/520] cheetah-run    Qsub3    a=3    ep9 ret     87.0 succ 0 frac 0.0 (29s)
+   1093s [503/520] cheetah-run    Qsh4     a=4    ep9 ret    535.3 succ 0 frac 0.0 (27s)
+   1112s [504/520] cheetah-run    Qind5    a=5    ep9 ret    722.9 succ 0 frac 0.0 (25s)
+   1112s [505/520] cheetah-run    Qdet5    a=5    ep9 ret    710.9 succ 0 frac 0.0 (26s)
+   1113s [506/520] cheetah-run    Qsub4    a=4    ep9 ret    595.2 succ 0 frac 0.0 (26s)
+   1115s [507/520] cheetah-run    Qsub5    a=5    ep9 ret    734.7 succ 0 frac 0.0 (26s)
+   1116s [508/520] cheetah-run    Qsh5     a=5    ep9 ret    778.0 succ 0 frac 0.0 (27s)
+   1117s [509/520] walker-walk    Qdet3    a=3    ep9 ret    474.9 succ 0 frac 0.0 (26s)
+   1121s [510/520] walker-walk    Qind3    a=3    ep9 ret    237.9 succ 0 frac 0.0 (28s)
+   1136s [511/520] walker-walk    Qdet4    a=4    ep9 ret    925.5 succ 0 frac 0.0 (24s)
+   1137s [512/520] walker-walk    Qsh3     a=3    ep9 ret    313.7 succ 0 frac 0.0 (25s)
+   1140s [513/520] walker-walk    Qind4    a=4    ep9 ret    541.3 succ 0 frac 0.0 (25s)
+   1141s [514/520] walker-walk    Qsub3    a=3    ep9 ret    330.1 succ 0 frac 0.0 (29s)
+   1143s [515/520] walker-walk    Qsh4     a=4    ep9 ret    939.9 succ 0 frac 0.0 (27s)
+   1145s [516/520] walker-walk    Qsub4    a=4    ep9 ret    893.8 succ 0 frac 0.0 (28s)
+   1145s [517/520] walker-walk    Qdet5    a=5    ep9 ret    988.9 succ 0 frac 0.0 (24s)
+   1155s [518/520] walker-walk    Qind5    a=5    ep9 ret    983.8 succ 0 frac 0.0 (18s)
+   1155s [519/520] walker-walk    Qsh5     a=5    ep9 ret    990.8 succ 0 frac 0.0 (18s)
+   1157s [520/520] walker-walk    Qsub5    a=5    ep9 ret    965.9 succ 0 frac 0.0 (17s)
+GRID_DONE
+=== decision 06:55:47
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+mw-push: state 0/150 (2s)
+mw-pick-place: state 0/150 (2s)
+cheetah-run: state 0/150 (2s)
+walker-walk: state 0/150 (3s)
+mw-pick-place: state 50/150 (53s)
+mw-push: state 50/150 (54s)
+cheetah-run: state 50/150 (54s)
+walker-walk: state 50/150 (56s)
+mw-pick-place: state 100/150 (104s)
+mw-push: state 100/150 (105s)
+cheetah-run: state 100/150 (108s)
+walker-walk: state 100/150 (109s)
+DECISION mw-pick-place: 150 states in 154s
+DECISION mw-push: 150 states in 156s
+DECISION walker-walk: 150 states in 161s
+DECISION cheetah-run: 150 states in 161s
+DECISION_DONE
+=== analyze 06:58:32
+{
+ "verdict": "\uc5c6\uc74c",
+ "S1": {
+  "S1": false,
+  "S1_dev_secondary": false,
+  "pooled": {
+   "cvb_norm": 0.7409461407273221,
+   "cvb": 0.7028626141410489,
+   "err1": 0.6951567818897496,
+   "err3": 0.736453318589448,
+   "dev_norm": 0.6048182290264003,
+   "dev": 0.5498529192923431
+  },
+  "n_cells": 156
+ },
+ "S2_S3": {
+  "per_task": {
+   "mw-push": {
+    "qualifying_k": [
+     3
+    ],
+    "k_star": 3,
+    "drop_det": 0.7,
+    "drop_dither": 0.5,
+    "reduction": 0.28571428571428564,
+    "err1_det": 0.8241198004822333,
+    "err1_dither": 0.5618573403681654,
+    "err1_not_smaller": false,
+    "S2_task": false,
+    "S3_k": 3,
+    "sh_minus_ind": -0.4,
+    "sh_minus_ind_ci": [
+     -0.7,
+     -0.1
+    ],
+    "S3_task": false
+   },
+   "mw-pick-place": {
+    "qualifying_k": [
+     3
+    ],
+    "k_star": 3,
+    "drop_det": 0.6,
+    "drop_dither": 0.4,
+    "reduction": 0.33333333333333326,
+    "err1_det": 0.2694298127108657,
+    "err1_dither": 0.4698924477260156,
+    "err1_not_smaller": true,
+    "S2_task": false,
+    "S3_k": 3,
+    "sh_minus_ind": -0.1,
+    "sh_minus_ind_ci": [
+     -0.5,
+     0.3
+    ],
+    "S3_task": false
+   },
+   "cheetah-run": {
+    "qualifying_k": [
+     3,
+     4,
+     5
+    ],
+    "k_star": 5,
+    "drop_det": 0.24371514204140535,
+    "drop_dither": 0.14397929576103885,
+    "reduction": 0.4092312256225021,
+    "err1_det": 0.021386154456797132,
+    "err1_dither": 0.049006034970456566,
+    "err1_not_smaller": true,
+    "S2_task": false,
+    "S3_k": 5,
+    "sh_minus_ind": -0.02696670244313252,
+    "sh_minus_ind_ci": [
+     -0.04250254386968648,
+     -0.012837080268296747
+    ],
+    "S3_task": false
+   },
+   "walker-walk": {
+    "qualifying_k": [
+     3
+    ],
+    "k_star": 3,
+    "drop_det": 0.532393165251365,
+    "drop_dither": 0.8381774993541269,
+    "reduction": -0.5743581136290288,
+    "err1_det": 0.2685576677988937,
+    "err1_dither": 0.8878854491896977,
+    "err1_not_smaller": true,
+    "S2_task": false,
+    "S3_k": 3,
+    "sh_minus_ind": -0.02162955110023091,
+    "sh_minus_ind_ci": [
+     -0.0644274709479293,
+     0.018036815701749587
+    ],
+    "S3_task": false
+   }
+  },
+  "S2": false,
+  "S3": false,
+  "S2_tasks": 0,
+  "S3_tasks": 0
+ },
+ "S2_S3_sub": {
+  "S2": false,
+  "S3": false,
+  "S2_tasks": 0
+ }
+}
+=== done 06:58:35

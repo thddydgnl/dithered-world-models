@@ -1,0 +1,22 @@
+4 jobs in manifest, 0 done, running 4 with 4 workers
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+      11s [1/4] OK  prederr_mw-push_s1_k3 (10s) 
+      12s [2/4] OK  prederr_cheetah-run_s1_k5 (11s) 
+      48s [3/4] OK  decision_cheetah-run_s1_k5 (47s) 
+      50s [4/4] OK  decision_mw-push_s1_k3 (49s) 
+RUNNER_DONE ok 4 failed 0 in 50s

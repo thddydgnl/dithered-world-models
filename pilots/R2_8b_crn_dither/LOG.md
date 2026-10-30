@@ -1,0 +1,32 @@
+# R2-8b 작업 로그 (UTC, 2026-10-21)
+
+- 07:12Z 조정자 지시 수신(R2-8b, tag r2n8b, 상한 $1.5). PILOT_RULES, IDEAS_ROUND2.md R2-8b 절, R2-8 REPORT·PLAN·LOG·code·summary, R2-3b REPORT_3b 확인
+- 07:16Z R2-8 코드를 `code/`에 복사했다(nt_lib, calib, prep, decision, setup). R2-8 prep JSON(양자화 범위)과 summary는 `inputs/r28/`에 복사했다
+- 07:17Z `pod_up.sh r2n8b` 시작. RTX A5000은 "no longer any instances available"로 실패했다
+- 07:18:33Z pod 생성: **RTX 3090($0.50/h)**, id `4v97c6d7vijrmz`
+  - cgroup CPU 할당 31코어(nproc 256), 메모리 1TB
+  - /workspace는 네트워크 FS(MooseFS)
+- 07:17~07:29Z 코드 작성
+  - nt_lib에 sh-step·sh-ep를 추가했다. 층마다 (horizon 위치 × unit) dither 표를 두고, `begin_step()`이 제어 step마다 표를 갱신한다(sh-step만). 행 수별 호출 횟수 mod 3으로 horizon 위치를 정한다
+  - R2-8 `sh`는 `shfwd`로 이름만 바꿨다(같은 코드)
+  - 새로 쓴 것: grid(칸별 k, seed0 인자, 표 갱신 횟수 기록), prep_r28b(R2-8 범위 고정, horizon 위치 명시, dither seed 평균), analyze_r28b
+- 07:20~07:26:41Z setup_pod(07:24Z 완료)·setup_mw 완료. 비양자화 mw-push seed 1000의 return이 1769.3으로 R2-8(A40)과 같았다
+  - 처음 띄운 rsh 명령이 원격 백그라운드 작업 때문에 끝나지 않아, 로컬 ssh 클라이언트만 종료했다. 원격 작업은 setsid로 떠 있어 영향이 없었다
+  - 이후에는 원격 실행에 `< /dev/null`을 붙였다
+- 07:29:48~07:31:14Z calibration 40 episode(워커 16개, 70초)와 prep 4과제 병렬(각 12초)
+  - 이 pod에서 다시 잰 범위와 det 오차가 R2-8과 같았다. 3090이 A40과 같은 수치를 내는 것으로 보인다
+- 07:33Z PLAN.md 작성(판정 기준 원문과 세부 규칙)
+- 07:35Z 스모크(mw-push k=3, seed 9000~9001, 12 episode, decision 10 상태). 호출 패턴, 표 갱신 횟수, 표 서명 모두 기대와 같았다(PLAN §8)
+- 07:38Z PLAN §8(스모크) 기록
+- 07:38:42Z **본 실행 시작**(grid 480 episode, 워커 20개, MPS → decision → analyze)
+- 07:39~07:41Z 보고용 예측 오차를 dither seed 20개로 다시 쟀다(`run_prep_err.sh`, 4과제 병렬, 각 93초, grid와 동시)
+  - 이 동안 grid의 DMC episode가 127초로 느려졌다. 끝난 뒤에는 60초였다(MW는 10~12초)
+- 07:54:16Z grid 완료(480 episode, 15.6분). 모든 sh-step episode의 표 갱신 횟수가 step 수 + 1(MW 101, DMC 501), sh-ep은 1이었다
+- 07:54~07:55Z decision 4과제 병렬(150 상태, 각 55초), analyze_r28b 완료
+  - 판정: S1 2/4 성립, S2 2/4 불성립, S3 4/4 성립 → **조건부 있음**
+- 07:56~08:00Z 결과 회수(4.8MB). episodes·summary·decision의 md5가 pod와 같았다
+  - 핵심 CI를 순수 Python bootstrap(다른 난수열)으로 다시 계산해 부호가 모두 같음을 확인했다
+- 08:03:49Z `pod_down.sh r2n8b`로 pod 삭제. `budget.py status`에서 `gone`과 **$0.39**를 확인했다
+- 08:05Z decision CSV를 gzip으로 압축했다(`decision_<task>.csv.gz`). analyze_r28b를 다시 돌리려면 먼저 풀어야 한다
+  - 스모크 결과는 `results/smoke/`에 두었다
+- 08:05~08:12Z REPORT.md 작성(Write 도구가 막혀 규칙대로 Bash heredoc으로 저장)

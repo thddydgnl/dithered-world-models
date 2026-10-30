@@ -1,0 +1,6 @@
++ python3 -m venv /workspace/tfenv
++ /workspace/tfenv/bin/pip install -q tensorflow-cpu tensorflow-datasets
+
+[notice] A new release of pip is available: 24.0 -> 26.2.2
+[notice] To update, run: python3 -m pip install --upgrade pip
++ echo TF_OK

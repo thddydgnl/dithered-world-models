@@ -1,0 +1,180 @@
+{
+ "note": "post-hoc description (after the E5 tables were seen); no verdict",
+ "cells": {
+  "pusht_k3": {
+   "B": "p999",
+   "E1_det": {
+    "n": 100,
+    "success": 0.47,
+    "D": 0.36,
+    "D_ci": [
+     0.27,
+     0.45
+    ],
+    "complete": true
+   },
+   "D_Bdet_minus_D_E1det": {
+    "n": 100,
+    "diff": -0.33,
+    "ci": [
+     -0.44,
+     -0.22
+    ],
+    "mcnemar": {
+     "b_only": 4,
+     "a_only": 37,
+     "p": 1.0258372640237212e-07
+    }
+   },
+   "E1_shiter": {
+    "n": 100,
+    "success": 0.8,
+    "D": 0.03,
+    "D_ci": [
+     -0.03,
+     0.09
+    ],
+    "complete": true
+   },
+   "D_Bshiter_minus_D_E1shiter": {
+    "n": 100,
+    "diff": 0.02,
+    "ci": [
+     -0.04,
+     0.08
+    ],
+    "mcnemar": {
+     "b_only": 6,
+     "a_only": 4,
+     "p": 0.75390625
+    }
+   }
+  },
+  "pusht_k4": {
+   "B": "pc",
+   "E1_det": {
+    "n": 100,
+    "success": 0.59,
+    "D": 0.24,
+    "D_ci": [
+     0.14,
+     0.34
+    ],
+    "complete": true
+   },
+   "D_Bdet_minus_D_E1det": {
+    "n": 100,
+    "diff": -0.2,
+    "ci": [
+     -0.3,
+     -0.1
+    ],
+    "mcnemar": {
+     "b_only": 4,
+     "a_only": 24,
+     "p": 0.00017999112606048584
+    }
+   },
+   "E1_shiter": {
+    "n": 100,
+    "success": 0.83,
+    "D": 0.0,
+    "D_ci": [
+     -0.04,
+     0.04
+    ],
+    "complete": true
+   },
+   "D_Bshiter_minus_D_E1shiter": {
+    "n": 100,
+    "diff": 0.02,
+    "ci": [
+     -0.02,
+     0.06
+    ],
+    "mcnemar": {
+     "b_only": 3,
+     "a_only": 1,
+     "p": 0.625
+    }
+   }
+  },
+  "pointmaze_k3": {
+   "B": "last8",
+   "E1_det": {
+    "n": 100,
+    "success": 0.74,
+    "D": 0.11,
+    "D_ci": [
+     0.02,
+     0.2
+    ],
+    "complete": true
+   },
+   "D_Bdet_minus_D_E1det": {
+    "n": 100,
+    "diff": 0.0,
+    "ci": [
+     -0.08,
+     0.08
+    ],
+    "mcnemar": {
+     "b_only": 9,
+     "a_only": 9,
+     "p": 1.0
+    }
+   },
+   "E1_shiter": {
+    "n": 100,
+    "success": 0.86,
+    "D": -0.01,
+    "D_ci": [
+     -0.08,
+     0.05
+    ],
+    "complete": true
+   },
+   "D_Bshiter_minus_D_E1shiter": {
+    "n": 100,
+    "diff": 0.0,
+    "ci": [
+     -0.06,
+     0.06
+    ],
+    "mcnemar": {
+     "b_only": 5,
+     "a_only": 5,
+     "p": 1.0
+    }
+   }
+  }
+ },
+ "qat": {
+  "D_qatdet_minus_D_qatnone": {
+   "n": 100,
+   "diff": -0.21,
+   "ci": [
+    -0.3,
+    -0.12
+   ],
+   "mcnemar": {
+    "b_only": 3,
+    "a_only": 24,
+    "p": 4.9233436584472656e-05
+   }
+  },
+  "D_qatshiter_minus_D_qatnone": {
+   "n": 100,
+   "diff": -0.05,
+   "ci": [
+    -0.1,
+    0.0
+   ],
+   "mcnemar": {
+    "b_only": 1,
+    "a_only": 6,
+    "p": 0.125
+   }
+  }
+ }
+}

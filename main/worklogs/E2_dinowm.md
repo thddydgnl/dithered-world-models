@@ -1,0 +1,46 @@
+# E2 DINO-WM 작업 로그 (분석 작업자, UTC)
+
+- 2026-10-23T15:30Z쯤 조정자 지시 수신: E2_dinowm_N(후보 수 sweep) 분석과 보고서 N sweep 절, H4b 보조 판정용 DINO-WM 값(세 과제의 E1 값). 사용자가 끝난 단계의 분석을 지금 시작하라고 승인했다. GPU 1 사슬(`A-v5-dinowm-g1`)은 E3를, GPU 0 queue(`A-v5-queue-g0`, MPS)는 E5를 돌고 있다. 둘 다 읽기만 하고, 서버 python은 모두 `CUDA_VISIBLE_DEVICES=""`, `nice -n 10`, 스레드 4로 돌린다
+- 15:30~15:37Z 읽음: MAIN_RULES 전부, DESIGN_main §6.8·v4 §6.1·§6.2·v5 §7.0·§7.1·§7.2(H4b)·v5.1 §8.2·v5.2 §9.1, worklogs/E1_dinowm.md, reports/E1_dinowm.md, reports/E2E3E5_dinowm_proposal.md, LOG.md 10-22 이후
+- 15:37Z 서버 상태: 부하 평균 37(64스레드), GPU 0·1 모두 100%(E5·E3), 디스크 여유 266 GB. 분석 스크립트(analyze.py, analyze_e2.py, analyze_e3.py 등 11개) md5가 맥북과 서버에서 같다
+- 15:40Z **자료 점검**(`code/dinowm/check_e2n.py`, 새로 씀, 서버 CPU 1.6초) → 불일치 0
+  - manifest `E2_dinowm_N`: 150 job = 칸 5개(N1024t30·N512t30·N256t30·N128t30·N64t30) × 변형 3(none k=0, det k=4, sh-iter k=4) × 10 episode 묶음. JSON 150개가 모두 있고, manifest 밖 JSON이나 lock 파일은 없다
+  - job JSON의 job = manifest job. meta: planner = job planner(num_samples N, topk 30, N1024만 max_rows 300), opt_steps 30, salt eval6, pair seed 6, 범위 main, qopts·ckpt 없음, bf16·TF32·SDPA, CUDA_DEVICE_ORDER PCI_BUS_ID
+  - record: 칸·변형마다 episode 0~99가 한 번씩, planner seed 4000 + ep, E = 1, 반복별 best 30개, OEI 입력 전부 유한, 양자화 변형은 계획 시점 오차 있음. hook 호출 수가 (칸, 변형)마다 일정하다(none 0, det 930, sh-iter 990; N1024는 3630·3870 = 후보 4묶음)
+  - GPU: 5칸 모두 GPU 1(`cuda_visible` 1) 한 장. 여섯 번째 점(E1 PushT k=4 칸, N = 300)은 none·det·sh-iter 모두 GPU 0 한 장이다(v5 §7.0: 두 GPU 결과가 비트 단위로 같아 칸을 GPU 사이에 나눠도 됨)
+  - 모집단 배열 1,500개: 행 수 = N. 칸·episode마다 none·det·sh-iter의 첫 반복 비양자화 비용(it0_J_none)이 100/100 episode에서 비트 단위로 같다(같은 난수열)
+  - E1 점: E1_dinowm_pusht의 none·det_k4·shiter_k4가 각 100 episode, eval6, planner 기본값(300/30), manifest job과 같음
+  - 사슬 로그의 E2 구간(10-22 19:04Z ~ 10-23 13:55Z)에 Traceback 6건이 있는데 모두 N1024 runner 종료 때의 multiprocessing "Exception ignored" 메시지다(E1 때와 같음, 무해). 칸마다 try 1로 끝났다
+- 15:40~15:46Z **분석 코드 대조**(analyze_e2.py, analyze.py)
+  - H2c 계산은 v5 §7.1·v5.1 §8.2 규칙 그대로다: 6수준(64, 128, 256, 300 = E1, 512, 1024), D_det(N) = 같은 N의 none 대비 성공률 하락, |OEI_det| = 칸 평균 oei_ref_mf의 절댓값, ρ_s 둘 다 ≥ 0.8. 보조 ρ 셋, 수준 사이 짝을 함께 다시 뽑는 bootstrap(10,000, RandomState(0)), 분해(drift, sel_indep, sel_same(elite))도 규칙대로다. **규칙과 다르게 계산하는 곳은 없었다**
+  - 고친 것(판정 계산은 그대로, E2 수치를 계산하기 전): (1) 점마다 변형별 n과 `complete`(100짝), H2c 블록에 `complete` (2) 자료가 없는 절(E2_dinowm_EO)은 JSON·표에 "실행 대기" (3) 결합 bootstrap에 sh-iter 평탄성 ρ 둘을 더하고 정의 안 되는 재표본 수를 셈 (4) 기술용 열: sh-iter sel_same(elite), 보조 OEI(oei_ref_argmin, 참 비용 기준 oei_true_mf) (5) `--csv`, `--family` 출력 (6) split이 eval6가 아니면 멈춤. 가짜 자료(서버 `analysis/E2_dinowm/fake_res`, EO 일부만)로 complete / partial / 실행 대기 세 경로를 시험했다(23초)
+  - 계산하지 않는 것: sh-iter의 같은 draw sel_last(mf판)는 실행 계획을 마지막 반복 draw로 다시 평가해야 해서 GPU가 필요하다(drift_ref.py --mode mf_same). E2에서는 elite판만 싣는다. det는 정의상 sel_indep와 같다
+  - H4b: `analyze_e3.near_tie`에 첫 반복 집합(it0_J_none, v5 §7.2 보조), 밀도의 bootstrap CI(episode 단위, −median), 사분위, 사후 민감도 옵션(std를 행 1..로만 = TD-MPC2 관례)을 더했다. 기본값 계산(마지막 반복, 300행 전부, np.std)은 그대로다. CRN 이득은 `analyze_e3.paired_diff(ind, shiter)` = D_ind − D_sh-iter 그대로 쓴다. 세 과제 값만 내는 `h4b_dinowm.py`를 새로 썼다
+- 15:46:45Z **analyze_e2.py 본 실행**(서버 CPU 25초, 출력 `~/pmx/A/dinowm_main/analysis/E2_dinowm/`). 상태: N sweep complete(6점 모두 100짝), elite·opt_steps 실행 대기
+  - **H2c PushT 불성립(경계)**: ρ_s(N, |OEI_det|) = +0.943(≥ 0.8), ρ_s(N, D_det) = +0.771(< 0.8). D_det %p = +7, +15, +17, +24, +23, +22(N = 64, 128, 256, 300, 512, 1024). 위 세 점의 순서가 거꾸로라 Σd² = 8
+  - 보조: ρ_s(D_det, |OEI_det|) +0.829, sh-iter ρ_s(N, |OEI|) +0.600, ρ_s(N, D) +0.406. 결합 bootstrap: ρ_s(N, D_det) [+0.32, +1.00], P(≥ 0.8) 0.55; ρ_s(N, |OEI_det|) [+0.77, +1.00], P 0.95
+  - N = 300 점이 E1 보고 값과 같다(D_det +24 [14, 34], det OEI −0.297 [−0.350, −0.248], sh-iter OEI +0.0048, drift −0.269, sel_indep −0.028). JSON에서 직접 다시 계산한 성공률·OEI 평균·ρ도 같다
+- 15:47:45Z **h4b_dinowm.py**(서버 CPU 6초): near-tie 밀도(마지막 반복) PushT −0.0118 [−0.0160, −0.0096], Wall −0.0575 [−0.0748, −0.0452], PointMaze −0.0140 [−0.0170, −0.0106]; 첫 반복 −0.0874, −0.1588, −0.0848; CRN 이득 +1 [−4, 6], +5 [−3, 13], 0 [−6, 6]%p. D_ind·D_sh-iter가 E1 보고와 같다. 사후 민감도(std를 행 1..로만): 차이 ≤ 0.0003
+- 15:48Z **e2_posthoc_dinowm.py**(사후, 표를 본 뒤 고름, 6초): 같은 쌍의 N 대비. det D(1024 − 64) +15 [+5, +25], D(1024 − 300) −2 [−11, +7]; det drift(1024 − 64) −0.025 [−0.035, −0.016], sel_indep −0.015 [−0.028, −0.004]
+- 15:49Z 가짜 시험 자료(`analysis/E2_dinowm/fake_*`, 내가 만든 것)를 지웠다. JSON·CSV와 E2 job JSON 150개를 맥북 `results/E2_dinowm/`로 옮겼다(표 .md와 출력 .txt는 서버에만)
+- 15:50~15:54Z 보고서 `reports/E2_dinowm.md`(N sweep 절, H4b 입력 절; elite·opt_steps 절은 실행 대기)
+- 15:55Z 마무리 점검: 분석 스크립트 6개(그대로 둔 analyze.py, 고친 analyze_e2.py·analyze_e3.py, 새로 쓴 h4b_dinowm.py·check_e2n.py·e2_posthoc_dinowm.py)의 md5가 맥북과 서버에서 같다. 서버에 내 프로세스는 없다. `results/E2_dinowm_EO`는 아직 없다
+  - 메모: 맥북 문법 검사(py_compile)가 `code/dinowm/__pycache__`를 만들어 바로 지웠다. 그 뒤로는 바이트코드를 쓰지 않는 compile 점검만 했다. 서버 python은 모두 PYTHONDONTWRITEBYTECODE=1로 돌렸다
+
+## E2 elite·opt_steps(E2_dinowm_EO) 분석 (10-24, 조정자 지시·사용자 승인)
+- 16:30Z 지시 수신: E2_dinowm_EO 150/150 job(top6·top38·it10·it5는 GPU 0, top75는 GPU 1, 사슬 ALL_DONE 14:16Z·14:41Z), 사후 queue도 16:26Z에 끝나 서버에 도는 작업이 없다. 분석은 CPU로만 한다. 기준: v5 §7.1 DINO-WM(elite 비율 2·12.5·25%에 E1 10%, opt_steps 5·10에 E1 30; 문턱 없는 기술 보고, 설정별 D·OEI 두 판·성분과 CI). 참고로 reports/E2_tdmpc2.md §5(반복 수 곡선)와 E7_tdmpc2.md §5(반복 3의 dither)를 읽었다
+- 16:31Z **자료 점검**(`check_e2n.py`에 `--man`을 더해 EO manifest에도 쓰게 함: 칸마다 N과 opt_steps를 planner 설정에서 읽어 meta opt_steps와 반복별 best 수를 그 값으로 점검) → **불일치 0**
+  - 150 job = 칸 5개(top6, top38, top75, it10, it5) × none·det·sh-iter × 10묶음, 각 100 ep. eval6 쌍, planner seed 4000 + ep, meta planner = job planner(topk 6/38/75, opt_steps 10/5), opt_steps 30/30/30/10/5, 반복별 best 수 = opt_steps
+  - GPU: top6·top38·it10·it5는 GPU 0, top75는 GPU 1. 칸마다 한 장
+  - 칸·episode마다 첫 반복 비양자화 비용이 세 변형에서 100/100 같다. hook 호출 수 일정(it10 det 330, it5 det 180)
+  - 고친 check_e2n.py로 N sweep을 다시 점검해도 불일치 0(이전과 같음)
+  - 기준점 E1 PushT k=4 칸(top-30, opt_steps 30)은 N sweep 점검에서 이미 확인했다
+- 16:32Z **EO 코드 경로 대조**(analyze_e2.py, EO 수치를 계산하기 전): EPTS·OPTS의 tag(top6·top38·top75, it5·it10)가 job id 끝과 맞고, 각 점의 none이 그 점의 D 기준이며, sel_same(elite)은 그 점의 top-k로 잰다(runner.summarize가 job planner의 topk를 씀). **설계와 다르게 계산하는 곳은 없었다**
+  - 고친 것(판정·N sweep 수치는 그대로): (1) "OEI 두 판"의 두 번째 판으로 oei_ref_elite(= sel_same(elite) + drift, 같은 draw판)를 기술 열로 더함. oei_ref_mf는 동결 = 독립 draw판 그대로 (2) 점마다 sh-iter 이득 D_det − D_sh-iter와 짝 CI (3) `--family`에 elite·opt_steps 점. 모든 EO 점이 든 가짜 자료로 시험했고 지웠다. 맥북·서버 md5 같음(2cf52289…)
+- 16:33:03Z **analyze_e2.py 다시 실행**(같은 명령, 서버 CPU 21초). 상태: N sweep·elite·opt_steps 모두 complete. 이전 맥북 JSON과 비교해 N sweep의 기존 필드·H2c 블록·family 점이 모두 같다(차이 0). 새 필드는 oei_elite·gain_shiter뿐이다
+  - elite(top-6 / 30 / 38 / 75): D_det +19 / +24 / +20 / +17, D_sh-iter 0 / 0 / −1 / +4, 이득 +19 / +24 / +21 / +13%p(모두 CI 하한 > 0). top-6은 det OEI −0.310 중 drift −0.309, 선택 성분 ≈ 0
+  - opt_steps(5 / 10 / 30): D_det +7 / +17 / +24, D_sh-iter −2 / +3 / 0, 이득 +9 / +14 / +24%p. det drift −0.212 / −0.229 / −0.269. none 성공 48 / 75 / 83%
+- 16:34Z **e2_posthoc_dinowm.py에 EO 짝 대비를 더해 다시 실행**(사후, EO 표를 본 뒤 고름, 9초; N sweep 부분 출력은 같음): opt_steps 5 − 30에서 D_det −17 [−28, −6], 이득 −15 [−25, −5], det drift +0.057 [+0.048, +0.066]. top-75 − top-30 이득 −11 [−20, −2]
+- 16:34Z 결과 JSON·CSV(요약, CSV, family, 사후, check_e2eo)와 EO job JSON 150개를 맥북 `results/E2_dinowm/`로 옮겼다. 사슬 로그의 EO 구간 Traceback 0건 확인
+- 16:35~16:37Z 보고서 갱신: 머리말(덧붙임 날짜), §0 요약표(elite·opt_steps 두 줄), §7(무엇을 돌렸나, 표 7·8, 사후 짝 대비, TD-MPC2 E2 반복 곡선·E7과의 비교, N sweep과 잇기), §9 코드, §10 비용(EO 10.1 GPU-h), §11 파일, 부록 A2
+- 16:37Z 마무리 점검: analyze.py, analyze_e2.py, check_e2n.py, e2_posthoc_dinowm.py의 md5가 맥북과 서버에서 같다. 서버에 내 프로세스는 없고, 가짜 시험 자료는 지웠다

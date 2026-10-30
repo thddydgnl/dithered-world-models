@@ -1,0 +1,3 @@
+task,k,iters,R0,R0_lo,R0_hi,drop_det,drop_det_lo,drop_det_hi,devnorm_det,drop_shstep,drop_shstep_lo,drop_shstep_hi,devnorm_shstep,drop_shfwd,drop_shfwd_lo,drop_shfwd_hi,devnorm_shfwd,step_minus_fwd,step_minus_fwd_lo,step_minus_fwd_hi
+mw-push,3,1,1.0,1.0,1.0,1.0,1.0,1.0,5.8315299802195435,1.0,1.0,1.0,2.197152638705515,1.0,1.0,1.0,3.043398658855449,0.0,0.0,0.0
+mw-push,3,12,1.0,1.0,1.0,0.0,0.0,0.0,4.251902185486998,1.0,1.0,1.0,2.681881297732515,0.0,0.0,0.0,2.0453349013458877,1.0,1.0,1.0

@@ -1,0 +1,74 @@
+=== calib 08:50:58
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+     11s calib mw-push            ep2 ret   1811.4 succ 1 steps 100 (6s)
+     12s calib mw-push            ep3 ret   1779.7 succ 1 steps 100 (7s)
+     12s calib mw-push            ep4 ret   1795.8 succ 1 steps 100 (7s)
+Episode length: 500
+Discount factor: 0.99
+     13s calib mw-push            ep1 ret   1808.4 succ 1 steps 100 (7s)
+Episode length: 500
+Discount factor: 0.99
+     14s calib mw-push            ep0 ret   1770.1 succ 1 steps 100 (7s)
+     18s calib mw-push            ep5 ret   1793.7 succ 1 steps 100 (6s)
+Episode length: 500
+Discount factor: 0.99
+     19s calib mw-push            ep6 ret   1777.7 succ 1 steps 100 (7s)
+     20s calib mw-push            ep7 ret   1805.7 succ 1 steps 100 (7s)
+Episode length: 500
+Discount factor: 0.99
+     26s calib mw-push            ep8 ret   1791.0 succ 1 steps 100 (7s)
+     33s calib mw-push            ep9 ret   1772.5 succ 1 steps 100 (7s)
+Episode length: 500
+Discount factor: 0.99
+     37s calib cheetah-run        ep3 ret    863.1 succ 0 steps 500 (32s)
+     37s calib cheetah-run        ep1 ret    863.3 succ 0 steps 500 (32s)
+     38s calib cheetah-run        ep4 ret    872.1 succ 0 steps 500 (32s)
+     39s calib cheetah-run        ep2 ret    871.3 succ 0 steps 500 (32s)
+     39s calib cheetah-run        ep0 ret    872.5 succ 0 steps 500 (32s)
+     42s calib cheetah-run        ep5 ret    866.7 succ 0 steps 500 (29s)
+     42s calib cheetah-run        ep6 ret    873.1 succ 0 steps 500 (29s)
+     44s calib cheetah-run        ep7 ret    872.6 succ 0 steps 500 (26s)
+     45s calib cheetah-run        ep8 ret    841.5 succ 0 steps 500 (24s)
+     50s calib cheetah-run        ep9 ret    873.6 succ 0 steps 500 (17s)
+CALIB_DONE
+=== prep 08:51:49
+=== prep end 08:51:58

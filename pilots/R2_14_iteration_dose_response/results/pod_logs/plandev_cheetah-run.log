@@ -1,0 +1,7 @@
+Episode length: 500
+Discount factor: 0.99
+cheetah-run iters 1 done (7s)
+cheetah-run iters 3 done (20s)
+cheetah-run iters 6 done (43s)
+cheetah-run iters 12 done (87s)
+PLANDEV cheetah-run done in 87s

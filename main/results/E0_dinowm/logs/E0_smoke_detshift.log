@@ -1,0 +1,117 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+RUNNER E0_smoke: 16 jobs (task filter None), pid 30469
+Using cache found in /home/yonghwi/pmx/torch/hub/facebookresearch_dinov2_main
+num_action_repeat: 1
+num_proprio_repeat: 1
+proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+)
+action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+)
+proprio_dim: 10, after repeat: 10
+action_dim: 10, after repeat: 10
+emb_dim: 404
+Model emb_dim:  404
+Loaded 18685 rollouts
+Loaded 21 rollouts
+/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/pygame/pkgdata.py:25: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import resource_stream, resource_exists
+Traceback (most recent call last):
+  File "/home/yonghwi/pmx/A/dinowm_main/code/runner.py", line 318, in <module>
+    main()
+  File "/home/yonghwi/pmx/A/dinowm_main/code/runner.py", line 302, in main
+    p = run_job(ctx, job, name, pool, res_dir)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/A/dinowm_main/code/runner.py", line 223, in run_job
+    outs = QL.run_cem(m, Q, inputs, gens, ctx.alpha, ctx.opt_steps, ee, var, k, sp['salt'], diag=job['diag'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/A/dinowm_main/code/qlib.py", line 359, in run_cem
+    _, _, qva, qpa = rollout_q(m, Q, z0v, z0p, a0, all_frames=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/A/dinowm_main/code/qlib.py", line 263, in rollout_q
+    z_pred = m.predict(z[:, -m.num_hist:])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/A/dinowm_main/dino_wm/models/visual_world_model.py", line 145, in predict
+    z = self.predictor(z)
+        ^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/A/dinowm_main/dino_wm/models/vit.py", line 119, in forward
+    x = self.transformer(x) 
+        ^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/A/dinowm_main/dino_wm/models/vit.py", line 96, in forward
+    x = ff(x) + x
+        ^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/A/dinowm_main/dino_wm/models/vit.py", line 36, in forward
+    return self.net(x)
+           ^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/container.py", line 219, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1616, in _call_impl
+    hook_result = hook(self, args, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/A/dinowm_main/code/qlib.py", line 230, in hook
+    return self.kshift(x4, self._shift(li, Lt, C), lo, d, nl).reshape(B, Lt, C)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 433, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/A/dinowm_main/code/qlib.py", line 84, in _qshift
+    def _qshift(x4, o4, lo, d, nl):
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 600, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/_functorch/aot_autograd.py", line 987, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 217, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/utils.py", line 120, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 451, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/_inductor/codecache.py", line 1131, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/torch/_inductor/compile_fx.py", line 944, in run
+    return model(new_inputs)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/yonghwi/pmx/A/dinowm_main/inductor_cache/tz/ctzrdcs3gcxhvzc4sespjeiw6s36zncb53lhmj47lztutfzy5z3x.py", line 119, in call
+    buf0 = empty_strided_cuda((s3, s4, s1, s2), (s1*s2*s4, s1*s2, s2, 1), torch.bfloat16)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.35 GiB. GPU 0 has a total capacity of 23.58 GiB of which 1.32 GiB is free. Process 2583717 has 28.06 MiB memory in use. Process 2582010 has 372.00 MiB memory in use. Process 2582005 has 344.00 MiB memory in use. Process 2582004 has 344.00 MiB memory in use. Process 2582011 has 344.00 MiB memory in use. Process 2582007 has 372.00 MiB memory in use. Process 2582009 has 342.00 MiB memory in use. Process 2582006 has 372.00 MiB memory in use. Process 2582017 has 342.00 MiB memory in use. Process 2582003 has 372.00 MiB memory in use. Process 2582008 has 372.00 MiB memory in use. Process 2582012 has 344.00 MiB memory in use. Process 2582016 has 420.00 MiB memory in use. Process 2582018 has 372.00 MiB memory in use. Process 2582013 has 372.00 MiB memory in use. Process 2582014 has 418.00 MiB memory in use. Process 2582015 has 344.00 MiB memory in use. Process 2588858 has 426.00 MiB memory in use. Process 2588862 has 426.00 MiB memory in use. Process 2588857 has 426.00 MiB memory in use. Process 2588859 has 426.00 MiB memory in use. Process 2588861 has 426.00 MiB memory in use. Process 2588863 has 426.00 MiB memory in use. Process 2588860 has 452.00 MiB memory in use. Process 2588864 has 452.00 MiB memory in use. Process 2592671 has 2.56 GiB memory in use. Process 2593843 has 2.56 GiB memory in use. Process 2594623 has 7.98 GiB memory in use. Of the allocated memory 7.65 GiB is allocated by PyTorch, and 85.29 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

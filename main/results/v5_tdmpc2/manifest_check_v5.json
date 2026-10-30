@@ -1,0 +1,101 @@
+{
+ "e2": {
+  "jobs": 3618,
+  "episodes": {
+   "dmc": 6030,
+   "mw": 12060
+  },
+  "cells_x_variants_x_ckpt": 603
+ },
+ "e3": {
+  "jobs": 2124,
+  "types": {
+   "episodes": 2088,
+   "decision": 36
+  },
+  "episodes": {
+   "dmc": 3780,
+   "mw": 6660
+  }
+ },
+ "e5": {
+  "cells": 19,
+  "held": {
+   "dmc": 1920,
+   "mw": 3360
+  },
+  "eval": {
+   "dmc": 1620,
+   "mw": 2880
+  },
+  "weights": {
+   "dmc": 1080,
+   "mw": 1080
+  },
+  "qat_data": {
+   "dmc": 180,
+   "mw": 480
+  },
+  "qat_train_jobs": 33,
+  "qat_eval": {
+   "dmc": 540,
+   "mw": 1440
+  },
+  "jobs": {
+   "stats": 36,
+   "held": 1056,
+   "eval": 900,
+   "w": 432,
+   "qatdata": 132,
+   "qattrain": 33,
+   "qateval": 396
+  }
+ },
+ "e7": {
+  "jobs": 1296,
+  "episodes": {
+   "dmc": 3240,
+   "mw": 3240
+  }
+ },
+ "h2a_fresh3": {
+  "jobs": 162,
+  "episodes": {
+   "dmc": 270,
+   "mw": 540
+  },
+  "variants": [
+   "detshift",
+   "ind",
+   "shiter"
+  ]
+ },
+ "gpu_hours": {
+  "h2a_fresh3": {
+   "mps16": 0.46,
+   "nomps16": 0.81
+  },
+  "e2": {
+   "mps16": 9.55,
+   "mps16_noinstr": 8.38,
+   "nomps16": 16.87
+  },
+  "e3": {
+   "mps16": 6.19,
+   "mps16_noinstr": 5.46,
+   "nomps16": 10.92
+  },
+  "e5_episodes": {
+   "mps16_noinstr": 7.67,
+   "nomps16": 15.35
+  },
+  "e5_qat_train_single_process": 1.65,
+  "e7_success": {
+   "mps16_noinstr": 4.79,
+   "nomps16": 9.42
+  },
+  "basis": "busy-time rates (eps/h) MPS16 E1-instr MW 3716 / DMC 860, uninstrumented 4800 / 929, no MPS 16 workers (E1-instr) 2095 / 488; per-setting cost factors from timing_v5 (single process); E5 / E7 jobs are uninstrumented; QAT training about 3 min per run",
+  "total_mps": 30.3
+ },
+ "errors": []
+}

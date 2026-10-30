@@ -1,0 +1,36 @@
+{
+ "name": "E1_pusht_smoke",
+ "config": {
+  "split": "smoke",
+  "ep0": 0,
+  "ep1": 1,
+  "ranges": "main",
+  "diag": true,
+  "tasks": {
+   "pusht": {
+    "E": 1,
+    "ks": [
+     4
+    ],
+    "vars": [
+     "shstep"
+    ],
+    "chunk": 1
+   }
+  }
+ },
+ "jobs": [
+  {
+   "id": "smoke_shstep_k4_e000-001",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shstep",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  }
+ ]
+}

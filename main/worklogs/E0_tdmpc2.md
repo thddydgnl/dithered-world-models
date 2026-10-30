@@ -1,0 +1,69 @@
+# E0 TD-MPC2 작업 로그 (작업자, UTC, 2026-10-21)
+
+- 13:08Z 지시 수신. MAIN_RULES.md, EXPERIMENT_DESIGN.md(§4.2·4.3·6.0~6.3·6.9·6.10), R2-8b REPORT·PLAN·LOG·code, R2-14 REPORT·code, R2-3b decision.py, R2-13 REPORT(OEI 정의) 확인
+- 13:11Z 서버 점검: RTX A5000 × 2(드라이버 560.35.05, CUDA 12.6), 64스레드, RAM 503GiB, 여유 디스크 317GB. GPU 둘 다 비어 있음. `/usr/lib/nvidia` 없음(→ mujoco-py는 CPU/OSMesa 빌더를 고른다). gcc 11.4, git, curl, tmux, bzip2, `nvidia-cuda-mps-control` 있음. HF·GitHub·PyPI·conda-forge 접속됨
+  - `~/.local/bin/python3.11`은 DriveWAM 폴더를 가리키는 링크라 쓰지 않는다. uv 관리 Python을 `~/pmx/envs/python`에 따로 설치한다(`UV_PYTHON_PREFERENCE=only-managed`)
+- 13:14~13:17Z `setup_server.sh`(tmux `A-E0-setup`, 로그 `~/pmx/A/logs/E0_tdmpc2_setup.log`)
+  - CPython 3.11.17, venv `~/pmx/envs/a-tdmpc2`: 71개 패키지가 파일럿 R2-8b setup.log와 버전까지 같다(torch 2.7.1+cu126, tensordict 0.8.3, dm-control 1.0.16, mujoco 3.1.2, numpy 1.24.4 등). `freeze_a-tdmpc2.txt`
+  - tdmpc2를 파일럿 commit `332f19e4aba4bffe2dc736f45ea7f7bdc585903a`로 고정
+  - 체크포인트 36개(12과제 × seed 1~3, 각 31MB, 합계 1.1GB)를 `~/pmx/A/tdmpc2_main/ckpt/`에 받았다. `SHA256SUMS` 기록
+- 13:19Z DMC 동작 확인(파일럿 nt_lib, `MUJOCO_GL=disable`): cheetah-run seed 2000 none return 877.24(파일럿 3090은 872.5, GPU가 달라 비트 단위로 다름), 단일 프로세스 8.5초/episode
+- 13:20Z `setup_mw_server.sh` 시작(tmux `A-E0-mwsetup`, 로그 `~/pmx/A/logs/E0_tdmpc2_mwsetup.log`)
+  - MuJoCo 2.1.0 tarball을 받는 curl이 github → google-deepmind → release-assets 리다이렉트에서 멈췄다. 새 주소로 직접 받아(약 100KB/s, 4.4MB, sha256 a436ca2f…d012) `~/pmx/envs/mujoco210`에 풀고 스크립트를 다시 시작했다(13:25Z)
+  - 이때 `pkill -f`의 패턴이 내 ssh 셸 명령줄과도 맞아 그 셸이 같이 종료됐다(exit 255). 다른 작업자의 tmux(`B-E0-m1repro`)는 영향 없음을 확인했다. 이후 pkill -f는 쓰지 않는다
+- 13:28Z mujoco-py 1차 시도 실패: conda-forge 최신 `mesalib` 26.2.5에는 OSMesa가 없다(Mesa 25.1부터 제거). `osmesashim.c`가 `GL/osmesa.h`를 못 찾음(`~/pmx/A/logs/E0_tdmpc2_mwsetup_try1.log`)
+  - micromamba 바이너리는 GitHub release에서 받았다(18MB). GitHub release-assets 다운로드는 가끔 수 분씩 멈춘다. conda-forge(anaconda.org)는 33MB/s로 빠르다
+- 13:30Z 2차 시도: micromamba env `gl24` = conda-forge `mesalib=24.3.4`(OSMesa 포함) + `glew` + `libgl-devel`(GL/gl.h, osmesa.h, libOSMesa.so.8, libGL.so). 빌드 환경 `CPATH`/`LIBRARY_PATH`를 gl24로, 실행 시 `LD_LIBRARY_PATH=mujoco210/bin:gl24/lib`
+- 13:33Z **mujoco-py 성공**: `import mujoco_py`(2.1.2.14, CPU/OSMesa 빌더) → cymj 확장 빌드. venv `~/pmx/envs/a-mw`(파일럿 핀 + cython 0.29.37, setuptools 65.5.0, wheel 0.38.0, pip 23.3.1, gym 0.21.0, Metaworld@04be337, patchelf 0.19.1.0). `freeze_a-mw.txt`
+  - TD-MPC2 체크포인트로 Meta-World episode 확인: mw-push seed 1000 none return **1770.13**(R2-14 RunPod A5000의 1770.1과 같다. 3090은 1769.3), mw-pick-place seed 2000 1712.35, 둘 다 성공
+  - 같은 venv에서 DMC cheetah seed 2000 none return 877.2399995140731로 a-tdmpc2와 비트 단위로 같다 → 이후 모든 과제를 `a-mw` 하나로 돌린다(`env.sh`)
+- 13:34Z MPS 데몬 시작(`mps.sh start`, pipe/log `~/pmx/A/mps/`, GPU 0만). 이때 GPU 0은 DINO-WM 작업자가 11.9GB, 사용률 100%로 쓰고 있었다(GPU 1은 B 작업자)
+- 13:35Z 구현 점검(`test_equiv.py`, smoke seed 19000~19001, mw-push k=3, R2-8 범위, MPS 없이)
+  - 새 라이브러리 `qlib.py`가 파일럿 `nt_lib.py`와 비트 단위로 같은 episode를 낸다(return과 행동열 해시 일치)
+  - 계측(OEI·결정 지표 4 step마다, 계획 재실행 10 step마다, episode 끝 예측 오차)을 켜도 episode가 비트 단위로 같다
+  - none: OEI 0, 계획 편차 0, Spearman 1(정의상 기대값)
+  - 7변형 전부(none, det, ind, sh-iter, sh-step, sh-ep, det+shift) 같은 점검 통과. 결과 `~/pmx/A/tdmpc2_main/out_test_{pilot,qlib}.jsonl`
+- 13:38Z 재현 실행 시작(tmux `A-E0-repro`, MPS, 워커 16, `out/manifests/repro.jsonl` 60 job: mw-push·pick-place k=3 × none+5변형 × 40 ep, cheetah k=4 × none·det·sh-iter × 40 ep, seed 2000~2039, R2-8 범위, 체크포인트 seed 1, 계측 없음)
+  - MPS 클라이언트 연결 확인(server.log "client ... ACTIVE"). 워커당 GPU 메모리 약 344MB
+  - GPU 0을 DINO-WM 작업자와 시분할하므로 느리다. MW episode가 워커당 26~52초, DMC 130~250초(단일 프로세스·비경합이면 각 2.6초, 8.5초)
+- 13:43Z 보정 rollout 시작(tmux `A-E0-calib`, 워커 8, 12과제 × 체크포인트 3 × 10 ep, seed 11000~11009, 비양자화). 끝나면 같은 세션에서 ranges(36 job)
+- 14:08Z runner 스모크(tmux `A-E0-smoke`, `out/manifests/smoke.jsonl`의 episode job 10개, seed 19000~19001, R2-8 범위): 10/10 OK
+  - 반환값이 MPS 없이 돈 test_equiv와 비트 단위로 같다 → MPS가 수치를 바꾸지 않는다
+  - 제어 step당 forward 호출: 512행 층마다 18회, 24행(policy prior) dyn 층마다 2회(파일럿 PLAN §8과 같음). 표 갱신: sh-step 101회, sh-ep 1회. 표 서명: sh-step은 step마다 다르고 sh-ep은 같음
+  - planner override(N=128, 반복 3), warm start 끔(E2 경로)도 동작
+  - 계측 episode는 경합 상태에서 MW 76~86초(계측 없는 재현 episode보다 김; 정확한 부담은 bench에서 잰다)
+- 14:29Z 보정 360 episode + ranges 36 job 완료(오류 0, 2776초). 보정 seed의 비양자화 성공률은 MW 8과제 × 체크포인트 3 모두 9/10 이상. 체크포인트 1의 범위는 R2-8과 비슷하다(예: mw-push hi 8.54/7.05/6.78/8.25 대 R2-8 8.49/7.19/7.44/8.09). peg-insert-side s1(dyn0 hi 35.7)처럼 꼬리가 긴 칸도 있다(층별 per-tensor min/99.99% 규칙 그대로)
+- 14:29Z held 실행 시작(tmux `A-E0-held`, MPS, 워커 16, `run_held.sh`, 600 job = MW 2400 ep + DMC 600 ep, 로그 `~/pmx/A/logs/E0_tdmpc2_held.log`)
+  - held 크기: MW는 체크포인트 seed마다 20 ep(과제당 60), DMC는 체크포인트 seed마다 10 ep(과제당 30). DMC return 하락은 분산이 작고 GPU 0이 공유라 시간이 오래 걸려서다. 설계 문구("held 20 episode")의 문자 그대로 읽기(체크포인트 1·2·3에서 7·7·6 ep)와 체크포인트 1만 쓴 결과도 함께 계산한다(`analyze_e0.py held`)
+- 14:30Z 재현 완료(60/60, 3052초). 결과는 보고서 §4
+- 14:30Z runner 스모크 2(tmux `A-E0-smoke2`): prederr(17초)·decision(10 상태, 41초) job OK
+  - mw-push s1 k=3 held 보정 집합(48,000 계획 시점 시퀀스, 480 궤적 창): 계획 시점 err1h det 1.01, 확률적 4변형 0.57(R2-8b의 0.82 대 0.56과 같은 모양), det+shift 0.36. sh-step과 sh-ep는 표 한 번 평가에서 같은 값(파일럿 PLAN §4에 적힌 한계)
+  - 고정 상태 계획 편차(seed 바닥 대비): det 7.3, sh-step = sh-ep 6.8, ind 3.4, sh-iter 3.6, det+shift 2.7(R2-8b의 순서와 같음)
+- 14:31Z 분석 수정: MW 하락을 R0로 나누지 않고 성공률 차(%p)로 계산하도록 바꿨다(설계 §4.3, 규칙 "20%p"). DMC는 return 상대 하락 그대로. 재현의 MW 기준선은 100%라 수치는 같다
+- 14:50Z 조정자 알림: GPU 0에 B의 작은 job이 13:48~14:17Z, 14:40~14:42Z에 잘못 올라가 있었다(B 쪽 tmux 환경 버그, 지금은 GPU 1로 제한됨). 수치 결과에는 영향이 없다
+  - 따라서 재현(13:38~14:29)·보정(13:43~14:29)·held 초반(14:29~14:42)의 episode 소요 시간은 처리량 근거로 쓰지 않는다
+  - E1 GPU 시간 추정은 그 창 밖에서 따로 잰 `run_bench.sh` 결과만 쓴다(held가 끝난 뒤 실행)
+- 15:00Z 코드 검토 중 버그 수정(qlib.PlanProbe): 계획기의 마지막 elite 추첨(`gumbel_softmax_sample`)을 probe마다 감싸고 있어서, 워커 캐시(agent 2개)에서 먼저 만든 agent를 내보낼 때 나중 probe의 감싸기까지 풀리는 순서 문제가 있었다(→ 이후 그 워커의 `e_chosen`이 NaN이 될 수 있음). 프로세스 전체에 한 번만 설치하는 통과형 hook과 "지금 계획 중인 probe" 등록 방식으로 바꿨다
+  - 영향 범위: 지금까지의 결과에는 없음. 재현·held는 계측을 끈 실행이고(hook은 통과형이라 수치 불변), 스모크는 워커당 agent가 2개 이하라 내보내기가 없었다
+  - 점검: `test_cache.py`(한 프로세스에서 (과제, 체크포인트) 4번 전환, e_chosen NaN 0개 확인), `test_equiv.py qlib` 재실행(비트 일치 재확인)
+- 15:00Z 처리량 측정 방식 변경: 고정 길이 실행(`runner.py --max_seconds`, DMC 480초·MW 360초)으로 워커 수별 정상 상태 속도를 잰다(`run_bench.sh`, held 뒤에 실행)
+- 15:15Z held 중간 점검: DMC 60/120 job(첫 5 ep 묶음 완료), MW 45/480. 워커당 DMC 127초/ep, MW 24초/ep. 부분 결과(과제당 15 ep) 미리 보기에서 1차 k가 3인 과제가 많다(push, pick-place, quadruped, walker; cheetah 5, finger 4, door-open 4) → k−1 = 2 칸 문제가 생긴다. 판단 자료로 held 끝난 뒤 k=2의 det·sh-iter를 보조로 잴 계획(`make_manifest.py heldx`, 정보용)
+- 15:17Z E1 모양 스모크 3개(tmux `A-E0-smoke3`, E0 보정 범위 사용, 체크포인트 2·3, smoke seed): cheetah s2 k5 sh-iter, door-open s3 k4 det+shift(2 ep), walker s1 k2 det 모두 OK. 수정한 PlanProbe로 e_chosen NaN 0개. walker k=2 det는 return 34.9(기준 약 988)로 완전 붕괴
+- 15:21Z decision job에 오차 구조 기술자 2개 추가(설계 §4.3, E3가 E1 자료를 다시 쓰도록): `rho_iter`(같은 후보를 연속 두 반복으로 평가했을 때 비용 오차의 후보 간 상관)와 `common_frac`(모든 후보에 공통인 오차 비중). 스모크 재실행: rho_iter det 1.0, sh-step·sh-ep 1.0, ind 0.09, sh-iter 0.05, det+shift 0.12(정의대로). 기존 지표는 비트 단위로 같음
+- 15:22Z tmux `A-E0-post`(`run_post_held.sh`) 대기 시작: held가 끝나면 (1) 1차 k가 3인 과제에 k=2 det·sh-iter 보조 held 칸(정보용), (2) held 분석 다시, (3) 처리량 측정(`run_bench.sh`, DMC 420초·MW 300초 × 5설정). 로그 `~/pmx/A/logs/E0_tdmpc2_post.log`
+- 15:28Z held 첫 묶음(과제당 15 ep) 미리 보기: drawer-open(k=3 det 하락 7%p)과 sweep-into(모든 k에서 약 0)는 k ∈ {3..6} 어디에서도 det가 20%p를 떨어뜨리지 않는다. 최종(60 ep)에서도 그러면 R2-13 대체 규칙(15%p 이상인 가장 큰 k, 없으면 시험한 가장 작은 k = 3)이 적용되고, 그 칸들은 "det 하락이 실재하는 칸"이 아니게 된다 → 조정자 결정 사항으로 보고. k=2 보조 칸에 두 과제도 들어간다
+- 16:38Z **held 완료**(600/600 OK, 실패 0, 7711초). `out/ktable.json`, `held_selection.json`, `held_table.md`
+  - MW 기준 성공률: 8과제 모두 98% 이상(7과제 100%, sweep-into 98%) → 8과제 모두 자격
+  - 1차 k: button-press 3, door-open 4, drawer-open 3(대체 규칙: 어떤 k도 20%p 미만, 최대 k=3 11.7%p), peg-insert 4, pick-place 3, push 3, sweep-into 3(k=3 하락이 정확히 20.0%p로 문턱 위), window-open 4, cheetah 5, finger 4, quadruped 3, walker 3(k=4 17.8% [15.0, 20.9]로 문턱 근처)
+  - 읽기 차이: "20 ep 문자 그대로"(7/7/6)에서는 drawer-open·sweep-into에 자격 k 없음, "체크포인트 1만"에서는 push 4, cheetah 6. 체크포인트 간 차이가 크다(예: button-press k=3: 90/10/15%p, peg-insert k=3: 100/30/30%p)
+- 16:38Z `A-E0-post` 시작: 1차 k = 3인 7과제(button-press, drawer-open, pick-place, push, sweep-into, quadruped, walker)에 k=2 det·sh-iter 보조 held(144 job: MW 600 ep, DMC 120 ep)
+- 16:53Z k=2 보조 held 완료(144/144 OK, 901초). MW: det 하락 72~98%p, sh-iter 0~23%p(button-press 98 대 0, drawer-open 72 대 2, sweep-into 73 대 5, push 95 대 20, pick-place 93 대 23). DMC: det와 sh-iter 모두 붕괴(quadruped 79 대 76%, walker 93 대 91%) → MW의 k=2 칸은 정보가 많고 DMC의 k=2 칸은 두 변형 모두 붕괴
+- 16:53Z 처리량 측정 시작(`run_bench.sh`, 설정 mps16 → mps8 → mps24 → mps16n → nomps16, 각 DMC 420초 + MW 300초). B의 GPU 0 오염 창 이후다
+- 17:15Z 처리량 중간 결과(계측 켬, MPS): DMC W=8 37초/ep/워커(778 ep/h), W=16 71초(811 ep/h); MW W=8 9초(3,200 ep/h), W=16 18초(3,200 ep/h) → 내 MPS 몫의 GPU가 이미 포화(워커를 늘려도 처리량 그대로). 이 시간대 DINO-WM 작업자는 주로 CPU 단계(GPU 0에 큰 할당 없음)여서 held 때(경합, DMC 127초/ep/워커 @16, 계측 없음)보다 약 2배 빠르다
+  - analyze_e0.py bench의 로그 정규식 버그(공백 2칸) 수정
+- 17:55Z 처리량 측정 완료(5설정). MPS 16: DMC 811, MW 3,200 ep/h(계측 처음 밀도). MPS 8·24도 같은 값(포화). 계측 끔: 929, 4,800. MPS 없이 16: 488, 2,095(MPS가 1.6~1.8배 빠름). 이 시간대 DINO-WM은 GPU 0을 거의 쓰지 않았다(GPU 0 메모리 평균 5.7GB, 대부분 내 워커)
+- 17:56Z 계측 부담(MW +50%, DMC +15%)을 줄였다: 계획 재실행 MW 10→20, DMC 25→50 step마다, episode별 계획 시점 예측 오차는 OEI 상태 중 8개만(`perr_plan_states`). episode 결과에는 영향 없음(계측은 closed loop를 바꾸지 않음)
+- 17:56~18:08Z 줄인 밀도로 다시 측정(`mps16b`, tmux `A-E0-bench2`): DMC 860, MW 3,716 ep/h → 부담 MW +29%, DMC +8%
+  - E1 추정(`out/e1_estimate.json`): MW 13,680/3,716 = 3.7시간 + DMC 6,840/860 = 8.0시간 + 칸별 job 약 0.3시간 ≈ 12시간(DINO-WM이 GPU 0을 무겁게 쓰면 약 2배)
+- 18:08Z 칸별 job 시간 측정(별도 폴더 `out_e1timing`, 끝난 뒤 지움): prederr 10~11초, decision 47~49초. mw-push s1 k=3 고정 상태 계획 편차 det 3.19 / sh-step 3.20 / ind 2.34 / sh-iter 2.36 / det+shift 2.04(R2-8b 3.31 / 3.29 / 2.28 / 2.41과 거의 같음)
+- 18:09Z 정리: 처리량 측정 job 결과(13MB)와 시간 측정 폴더 삭제(로그는 남김), MPS 데몬 중지, 돌고 있는 내 작업 없음. E1 manifest 초안 `out/manifests/e1_draft.jsonl`(4,320 job)만 만들고 실행하지 않았다. 결과를 맥북 `results/E0_tdmpc2/`로 옮겼다(7MB)

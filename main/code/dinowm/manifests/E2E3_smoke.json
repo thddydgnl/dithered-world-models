@@ -1,0 +1,174 @@
+{
+ "name": "E2E3_smoke",
+ "config": {
+  "purpose": "E2/E3 calibration and identity smokes (smoke split only)"
+ },
+ "jobs": [
+  {
+   "id": "smoke_shstep_k4_e000-001_identity",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shstep",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-001_ref300",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-001_chunk150",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true,
+   "planner": {
+    "max_rows": 150
+   }
+  },
+  {
+   "id": "smoke_shiter_k4_e000-001_chunk150",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true,
+   "planner": {
+    "max_rows": 150
+   }
+  },
+  {
+   "id": "smoke_indplan_k4_e000-001",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "indplan",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shunit_k4_e000-001",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shunit",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shgroup_k4_e000-001",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shgroup",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shlayer_k4_e000-001",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shlayer",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-001_N64",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true,
+   "planner": {
+    "num_samples": 64,
+    "topk": 6
+   }
+  },
+  {
+   "id": "smoke_det_k4_e000-001_N1024",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true,
+   "planner": {
+    "num_samples": 1024,
+    "topk": 102,
+    "max_rows": 300
+   }
+  },
+  {
+   "id": "smoke_det_k4_e000-001_top6",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true,
+   "planner": {
+    "num_samples": 300,
+    "topk": 6
+   }
+  },
+  {
+   "id": "smoke_det_k4_e000-001_it10",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true,
+   "planner": {
+    "opt_steps": 10
+   }
+  }
+ ]
+}

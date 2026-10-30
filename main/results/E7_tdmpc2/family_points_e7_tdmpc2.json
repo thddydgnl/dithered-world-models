@@ -1,0 +1,272 @@
+{
+ "source": "analyze_e7.py (TD-MPC2; success: E7 seeds 70000-70029, 90 pairs; latency: e7_latency.json, checkpoint 1, exclusive GPU 0, eager, 5 rounds x 200 steps)",
+ "rule": "v5 7.4: (int8 dither - int8 det) / int8 det of the median latency <= 10% (int4 likewise) and >= 1 Pareto dominance case of dither + fewer bits over det + more bits",
+ "H5": {
+  "readings": {
+   "int4|every_condition": {
+    "overhead_int8": true,
+    "overhead_int4": true,
+    "pareto_cases": 4,
+    "holds": true
+   },
+   "int4|median_of_conditions": {
+    "overhead_int8": true,
+    "overhead_int4": true,
+    "pareto_cases": 4,
+    "holds": true
+   },
+   "int4p|every_condition": {
+    "overhead_int8": true,
+    "overhead_int4p": true,
+    "pareto_cases": 4,
+    "holds": true
+   },
+   "int4p|median_of_conditions": {
+    "overhead_int8": true,
+    "overhead_int4p": true,
+    "pareto_cases": 4,
+    "holds": true
+   }
+  },
+  "holds_all_readings": true,
+  "holds_any_reading": true,
+  "pareto_cases": 8,
+  "pareto_cases_by_kernel": {
+   "int4": 4,
+   "int4p": 4
+  }
+ },
+ "overhead": {
+  "int8": {
+   "per_condition": {
+    "mw-push|int8|it3": -0.05330017493634801,
+    "mw-push|int8|it6": 0.037551529443776786,
+    "mw-push|int8|it12": 0.008827503934007169,
+    "mw-pick-place|int8|it3": -0.03247393712458851,
+    "mw-pick-place|int8|it6": 0.0019346727468859668,
+    "mw-pick-place|int8|it12": -0.01336508427881195,
+    "cheetah-run|int8|it3": -0.007712221140264407,
+    "cheetah-run|int8|it6": 0.0314662318550602,
+    "cheetah-run|int8|it12": 0.00420665335141632,
+    "walker-walk|int8|it3": -0.017875560594651712,
+    "walker-walk|int8|it6": -0.010095536858642003,
+    "walker-walk|int8|it12": 0.007535580002071876
+   },
+   "max": 0.037551529443776786,
+   "min": -0.05330017493634801,
+   "all_le_10pct": true,
+   "median": -0.00288877419668922,
+   "median_le_10pct": true
+  },
+  "int4": {
+   "per_condition": {
+    "mw-push|int4|it3": -0.027012878573552727,
+    "mw-push|int4|it6": -0.017057869895268356,
+    "mw-push|int4|it12": -0.0031036820769127166,
+    "mw-pick-place|int4|it3": 0.012835775074191591,
+    "mw-pick-place|int4|it6": 0.003958862634056979,
+    "mw-pick-place|int4|it12": -0.009140176951351504,
+    "cheetah-run|int4|it3": 0.021709791866328872,
+    "cheetah-run|int4|it6": 0.05789688184584501,
+    "cheetah-run|int4|it12": 0.0018248295506996003,
+    "walker-walk|int4|it3": 0.005772215659778292,
+    "walker-walk|int4|it6": 0.011772572531778963,
+    "walker-walk|int4|it12": 0.008924756289863505
+   },
+   "max": 0.05789688184584501,
+   "min": -0.027012878573552727,
+   "all_le_10pct": true,
+   "median": 0.0048655391469176355,
+   "median_le_10pct": true
+  },
+  "int4p": {
+   "per_condition": {
+    "mw-push|int4p|it3": 0.01637119754865907,
+    "mw-push|int4p|it6": 0.0037423492263251945,
+    "mw-push|int4p|it12": 0.022771887562813377,
+    "mw-pick-place|int4p|it3": -0.058167028425902226,
+    "mw-pick-place|int4p|it6": 0.023611751088225,
+    "mw-pick-place|int4p|it12": 0.00503540989269831,
+    "cheetah-run|int4p|it3": 0.037367249667029596,
+    "cheetah-run|int4p|it6": -0.015537719521297975,
+    "cheetah-run|int4p|it12": -0.022768541306991026,
+    "walker-walk|int4p|it3": 0.06904492810925268,
+    "walker-walk|int4p|it6": 0.003267538981519214,
+    "walker-walk|int4p|it12": -0.02604763961743542
+   },
+   "max": 0.06904492810925268,
+   "min": -0.058167028425902226,
+   "all_le_10pct": true,
+   "median": 0.004388879559511752,
+   "median_le_10pct": true
+  }
+ },
+ "pareto_cases": {
+  "cheetah-run": [],
+  "mw-pick-place": [],
+  "mw-push": [
+   {
+    "int4_kernel": "int4",
+    "int4_dither_iters": 3,
+    "int8_det_iters": 3,
+    "latency_ms": [
+     10.259471893310547,
+     10.761087894439697
+    ],
+    "success": [
+     0.9888888888888889,
+     0.9888888888888889
+    ],
+    "success_diff": 0.0,
+    "success_diff_ci": [
+     -0.03333333333333333,
+     0.03333333333333333
+    ],
+    "latency_lower_in_all_rounds": false,
+    "same_iterations": true
+   },
+   {
+    "int4_kernel": "int4",
+    "int4_dither_iters": 3,
+    "int8_det_iters": 12,
+    "latency_ms": [
+     10.259471893310547,
+     34.39427185058594
+    ],
+    "success": [
+     0.9888888888888889,
+     0.9777777777777777
+    ],
+    "success_diff": 0.011111111111111112,
+    "success_diff_ci": [
+     -0.022222222222222223,
+     0.05555555555555555
+    ],
+    "latency_lower_in_all_rounds": true,
+    "same_iterations": false
+   },
+   {
+    "int4_kernel": "int4",
+    "int4_dither_iters": 6,
+    "int8_det_iters": 6,
+    "latency_ms": [
+     18.365023612976074,
+     18.926095962524414
+    ],
+    "success": [
+     1.0,
+     1.0
+    ],
+    "success_diff": 0.0,
+    "success_diff_ci": [
+     0.0,
+     0.0
+    ],
+    "latency_lower_in_all_rounds": false,
+    "same_iterations": true
+   },
+   {
+    "int4_kernel": "int4",
+    "int4_dither_iters": 6,
+    "int8_det_iters": 12,
+    "latency_ms": [
+     18.365023612976074,
+     34.39427185058594
+    ],
+    "success": [
+     1.0,
+     0.9777777777777777
+    ],
+    "success_diff": 0.022222222222222223,
+    "success_diff_ci": [
+     0.0,
+     0.05555555555555555
+    ],
+    "latency_lower_in_all_rounds": true,
+    "same_iterations": false
+   },
+   {
+    "int4_kernel": "int4p",
+    "int4_dither_iters": 3,
+    "int8_det_iters": 3,
+    "latency_ms": [
+     10.360400199890137,
+     10.761087894439697
+    ],
+    "success": [
+     0.9888888888888889,
+     0.9888888888888889
+    ],
+    "success_diff": 0.0,
+    "success_diff_ci": [
+     -0.03333333333333333,
+     0.03333333333333333
+    ],
+    "latency_lower_in_all_rounds": false,
+    "same_iterations": true
+   },
+   {
+    "int4_kernel": "int4p",
+    "int4_dither_iters": 3,
+    "int8_det_iters": 12,
+    "latency_ms": [
+     10.360400199890137,
+     34.39427185058594
+    ],
+    "success": [
+     0.9888888888888889,
+     0.9777777777777777
+    ],
+    "success_diff": 0.011111111111111112,
+    "success_diff_ci": [
+     -0.022222222222222223,
+     0.05555555555555555
+    ],
+    "latency_lower_in_all_rounds": true,
+    "same_iterations": false
+   },
+   {
+    "int4_kernel": "int4p",
+    "int4_dither_iters": 6,
+    "int8_det_iters": 6,
+    "latency_ms": [
+     18.21252727508545,
+     18.926095962524414
+    ],
+    "success": [
+     1.0,
+     1.0
+    ],
+    "success_diff": 0.0,
+    "success_diff_ci": [
+     0.0,
+     0.0
+    ],
+    "latency_lower_in_all_rounds": false,
+    "same_iterations": true
+   },
+   {
+    "int4_kernel": "int4p",
+    "int4_dither_iters": 6,
+    "int8_det_iters": 12,
+    "latency_ms": [
+     18.21252727508545,
+     34.39427185058594
+    ],
+    "success": [
+     1.0,
+     0.9777777777777777
+    ],
+    "success_diff": 0.022222222222222223,
+    "success_diff_ci": [
+     0.0,
+     0.05555555555555555
+    ],
+    "latency_lower_in_all_rounds": true,
+    "same_iterations": false
+   }
+  ],
+  "walker-walk": []
+ },
+ "units": "overhead: fraction of the det median latency; success: Meta-World success rate, DMC return; latency: ms per control step"
+}

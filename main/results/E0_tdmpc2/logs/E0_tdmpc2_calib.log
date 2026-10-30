@@ -1,0 +1,968 @@
+360 jobs in manifest, 0 done, running 360 with 8 workers
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length:Episode length:  500500
+
+Discount factor:Discount factor:  0.990.99
+
+     155s [1/360] OK  calib_cheetah-run_s1_ep6 (154s) 
+     155s [2/360] OK  calib_cheetah-run_s1_ep5 (154s) 
+     156s [3/360] OK  calib_cheetah-run_s1_ep1 (154s) 
+     156s [4/360] OK  calib_cheetah-run_s1_ep2 (154s) 
+Episode length: 500
+Discount factor: 0.99
+     156s [5/360] OK  calib_cheetah-run_s1_ep3 (154s) 
+Episode length: 500
+Discount factor: 0.99
+     156s [6/360] OK  calib_cheetah-run_s1_ep4 (155s) 
+Episode length: 500
+Discount factor: 0.99
+     156s [7/360] OK  calib_cheetah-run_s1_ep7 (155s) 
+     156s [8/360] OK  calib_cheetah-run_s1_ep0 (155s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     293s [9/360] OK  calib_cheetah-run_s1_ep8 (138s) 
+     293s [10/360] OK  calib_cheetah-run_s1_ep9 (138s) 
+     293s [11/360] OK  calib_cheetah-run_s2_ep0 (137s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     293s [12/360] OK  calib_cheetah-run_s2_ep1 (137s) 
+     293s [13/360] OK  calib_cheetah-run_s2_ep2 (137s) 
+     293s [14/360] OK  calib_cheetah-run_s2_ep3 (137s) 
+     293s [15/360] OK  calib_cheetah-run_s2_ep4 (137s) 
+     293s [16/360] OK  calib_cheetah-run_s2_ep5 (137s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     375s [17/360] OK  calib_cheetah-run_s2_ep8 (82s) 
+     375s [18/360] OK  calib_cheetah-run_s2_ep6 (82s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     375s [19/360] OK  calib_cheetah-run_s2_ep7 (82s) 
+     376s [20/360] OK  calib_cheetah-run_s2_ep9 (82s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     376s [21/360] OK  calib_cheetah-run_s3_ep0 (83s) 
+     376s [22/360] OK  calib_cheetah-run_s3_ep1 (83s) 
+     376s [23/360] OK  calib_cheetah-run_s3_ep3 (83s) 
+     376s [24/360] OK  calib_cheetah-run_s3_ep2 (83s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     517s [25/360] OK  calib_cheetah-run_s3_ep4 (142s) 
+Episode length: 500
+Discount factor: 0.99
+     517s [26/360] OK  calib_cheetah-run_s3_ep5 (142s) 
+Episode length: 500
+Discount factor: 0.99
+     518s [27/360] OK  calib_cheetah-run_s3_ep6 (143s) 
+Episode length: 500
+Discount factor: 0.99
+     518s [28/360] OK  calib_cheetah-run_s3_ep7 (143s) 
+     519s [29/360] OK  calib_cheetah-run_s3_ep8 (143s) 
+     519s [30/360] OK  calib_cheetah-run_s3_ep9 (143s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     519s [31/360] OK  calib_walker-walk_s1_ep0 (143s) 
+     520s [32/360] OK  calib_walker-walk_s1_ep1 (143s) 
+     735s [33/360] OK  calib_walker-walk_s1_ep2 (219s) 
+Episode length: 500
+Discount factor: 0.99
+     736s [34/360] OK  calib_walker-walk_s1_ep3 (219s) 
+Episode length: 500
+Discount factor: 0.99
+     738s [35/360] OK  calib_walker-walk_s1_ep4 (220s) 
+Episode length: 500
+Discount factor: 0.99
+     739s [36/360] OK  calib_walker-walk_s1_ep6 (220s) 
+     739s [37/360] OK  calib_walker-walk_s1_ep5 (221s) 
+     739s [38/360] OK  calib_walker-walk_s1_ep7 (220s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     740s [39/360] OK  calib_walker-walk_s1_ep8 (220s) 
+     740s [40/360] OK  calib_walker-walk_s1_ep9 (220s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     942s [41/360] OK  calib_walker-walk_s2_ep0 (207s) 
+     944s [42/360] OK  calib_walker-walk_s2_ep1 (207s) 
+     945s [43/360] OK  calib_walker-walk_s2_ep2 (207s) 
+Episode length: 500
+Discount factor: 0.99
+     946s [44/360] OK  calib_walker-walk_s2_ep5 (206s) 
+     946s [45/360] OK  calib_walker-walk_s2_ep3 (207s) 
+     946s [46/360] OK  calib_walker-walk_s2_ep4 (207s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     946s [47/360] OK  calib_walker-walk_s2_ep6 (207s) 
+     946s [48/360] OK  calib_walker-walk_s2_ep7 (206s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1134s [49/360] OK  calib_walker-walk_s2_ep8 (192s) 
+Episode length: 500
+Discount factor: 0.99
+    1136s [50/360] OK  calib_walker-walk_s2_ep9 (192s) 
+Episode length: 500
+Discount factor: 0.99
+    1138s [51/360] OK  calib_walker-walk_s3_ep1 (193s) 
+    1138s [52/360] OK  calib_walker-walk_s3_ep0 (193s) 
+    1138s [53/360] OK  calib_walker-walk_s3_ep2 (193s) 
+Episode length: 500
+Discount factor: 0.99
+    1139s [54/360] OK  calib_walker-walk_s3_ep3 (193s) 
+Episode length: 500
+Discount factor: 0.99
+    1139s [55/360] OK  calib_walker-walk_s3_ep5 (192s) 
+    1139s [56/360] OK  calib_walker-walk_s3_ep4 (193s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1313s [57/360] OK  calib_walker-walk_s3_ep6 (179s) 
+Episode length: 500
+Discount factor: 0.99
+    1314s [58/360] OK  calib_walker-walk_s3_ep7 (179s) 
+Episode length: 500
+Discount factor: 0.99
+    1316s [59/360] OK  calib_walker-walk_s3_ep8 (178s) 
+    1316s [60/360] OK  calib_walker-walk_s3_ep9 (178s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1317s [61/360] OK  calib_quadruped-walk_s1_ep0 (179s) 
+    1318s [62/360] OK  calib_quadruped-walk_s1_ep1 (179s) 
+    1318s [63/360] OK  calib_quadruped-walk_s1_ep2 (179s) 
+Episode length: 500
+Discount factor: 0.99
+    1318s [64/360] OK  calib_quadruped-walk_s1_ep3 (179s) 
+Episode length: 500
+Discount factor: 0.99
+    1478s [65/360] OK  calib_quadruped-walk_s1_ep4 (165s) 
+Episode length: 500
+Discount factor: 0.99
+    1480s [66/360] OK  calib_quadruped-walk_s1_ep5 (165s) 
+Episode length: 500
+Discount factor: 0.99
+    1481s [67/360] OK  calib_quadruped-walk_s1_ep6 (165s) 
+Episode length: 500
+Discount factor: 0.99
+    1482s [68/360] OK  calib_quadruped-walk_s1_ep7 (165s) 
+Episode length: 500
+Discount factor: 0.99
+    1482s [69/360] OK  calib_quadruped-walk_s1_ep8 (165s) 
+Episode length: 500
+Discount factor: 0.99
+    1483s [70/360] OK  calib_quadruped-walk_s1_ep9 (165s) 
+    1483s [71/360] OK  calib_quadruped-walk_s2_ep0 (165s) 
+Episode length: 500
+Discount factor: 0.99
+    1484s [72/360] OK  calib_quadruped-walk_s2_ep1 (165s) 
+    1694s [73/360] OK  calib_quadruped-walk_s2_ep4 (212s) 
+Episode length: 500
+Discount factor: 0.99
+    1694s [74/360] OK  calib_quadruped-walk_s2_ep2 (216s) 
+Episode length: 500
+Discount factor: 0.99
+    1695s [75/360] OK  calib_quadruped-walk_s2_ep5 (213s) 
+Episode length: 500
+Discount factor: 0.99
+    1695s [76/360] OK  calib_quadruped-walk_s2_ep3 (216s) 
+Episode length: 500
+Discount factor: 0.99
+    1696s [77/360] OK  calib_quadruped-walk_s2_ep8 (213s) 
+    1696s [78/360] OK  calib_quadruped-walk_s2_ep7 (213s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1698s [79/360] OK  calib_quadruped-walk_s2_ep6 (216s) 
+Episode length: 500
+Discount factor: 0.99
+    1700s [80/360] OK  calib_quadruped-walk_s2_ep9 (216s) 
+Episode length: 500
+Discount factor: 0.99
+    1893s [81/360] OK  calib_quadruped-walk_s3_ep1 (199s) 
+    1895s [82/360] OK  calib_quadruped-walk_s3_ep3 (200s) 
+    1897s [83/360] OK  calib_quadruped-walk_s3_ep0 (203s) 
+Episode length: 500
+Discount factor: 0.99
+    1898s [84/360] OK  calib_quadruped-walk_s3_ep6 (200s) 
+Episode length: 500
+Discount factor: 0.99
+    1898s [85/360] OK  calib_quadruped-walk_s3_ep2 (204s) 
+Episode length: 500
+Discount factor: 0.99
+    1899s [86/360] OK  calib_quadruped-walk_s3_ep7 (199s) 
+    1899s [87/360] OK  calib_quadruped-walk_s3_ep4 (204s) 
+Episode length: 500
+Discount factor: 0.99
+    1900s [88/360] OK  calib_quadruped-walk_s3_ep5 (204s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2065s [89/360] OK  calib_finger-turn-hard_s1_ep0 (168s) 
+    2067s [90/360] OK  calib_finger-turn-hard_s1_ep2 (168s) 
+    2067s [91/360] OK  calib_quadruped-walk_s3_ep8 (174s) 
+Episode length: 500
+Discount factor: 0.99
+    2067s [92/360] OK  calib_finger-turn-hard_s1_ep4 (168s) 
+    2068s [93/360] OK  calib_finger-turn-hard_s1_ep5 (168s) 
+Episode length: 500
+Discount factor: 0.99
+    2069s [94/360] OK  calib_quadruped-walk_s3_ep9 (174s) 
+Episode length: 500
+Discount factor: 0.99
+    2070s [95/360] OK  calib_finger-turn-hard_s1_ep1 (172s) 
+Episode length: 500
+Discount factor: 0.99
+    2071s [96/360] OK  calib_finger-turn-hard_s1_ep3 (172s) 
+Episode length: 500
+Discount factor: 0.99
+    2182s [97/360] OK  calib_finger-turn-hard_s1_ep6 (117s) 
+Episode length: 500
+Discount factor: 0.99
+    2184s [98/360] OK  calib_finger-turn-hard_s1_ep7 (117s) 
+    2184s [99/360] OK  calib_finger-turn-hard_s1_ep8 (117s) 
+Episode length: 500
+Discount factor: 0.99
+    2184s [100/360] OK  calib_finger-turn-hard_s1_ep9 (116s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2184s [101/360] OK  calib_finger-turn-hard_s2_ep0 (117s) 
+    2185s [102/360] OK  calib_finger-turn-hard_s2_ep1 (116s) 
+    2186s [103/360] OK  calib_finger-turn-hard_s2_ep2 (115s) 
+Episode length: 500
+Discount factor: 0.99
+    2186s [104/360] OK  calib_finger-turn-hard_s2_ep3 (115s) 
+Episode length: 500
+Discount factor: 0.99
+    2281s [105/360] OK  calib_finger-turn-hard_s2_ep4 (99s) 
+Episode length: 500
+Discount factor: 0.99
+    2282s [106/360] OK  calib_finger-turn-hard_s2_ep5 (99s) 
+    2282s [107/360] OK  calib_finger-turn-hard_s2_ep7 (98s) 
+    2282s [108/360] OK  calib_finger-turn-hard_s2_ep8 (98s) 
+    2282s [109/360] OK  calib_finger-turn-hard_s2_ep6 (99s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2283s [110/360] OK  calib_finger-turn-hard_s2_ep9 (98s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2283s [111/360] OK  calib_finger-turn-hard_s3_ep0 (98s) 
+    2284s [112/360] OK  calib_finger-turn-hard_s3_ep1 (98s) 
+    2364s [113/360] OK  calib_finger-turn-hard_s3_ep6 (82s) 
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2365s [114/360] OK  calib_finger-turn-hard_s3_ep7 (82s) 
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2365s [115/360] OK  calib_finger-turn-hard_s3_ep8 (82s) 
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+    2365s [116/360] OK  calib_finger-turn-hard_s3_ep9 (81s) 
+Episode length: 100
+Discount factor: 0.95
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2367s [117/360] OK  calib_finger-turn-hard_s3_ep2 (86s) 
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2368s [118/360] OK  calib_finger-turn-hard_s3_ep4 (86s) 
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+    2368s [119/360] OK  calib_finger-turn-hard_s3_ep3 (86s) 
+    2368s [120/360] OK  calib_finger-turn-hard_s3_ep5 (86s) 
+Episode length: 100
+Discount factor: 0.95
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2381s [121/360] OK  calib_mw-push_s1_ep0 (17s) 
+    2381s [122/360] OK  calib_mw-push_s1_ep1 (17s) 
+    2382s [123/360] OK  calib_mw-push_s1_ep2 (17s) 
+    2382s [124/360] OK  calib_mw-push_s1_ep3 (17s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2384s [125/360] OK  calib_mw-push_s1_ep4 (17s) 
+Episode length: 100
+Discount factor: 0.95
+    2386s [126/360] OK  calib_mw-push_s1_ep5 (17s) 
+    2386s [127/360] OK  calib_mw-push_s1_ep6 (17s) 
+    2386s [128/360] OK  calib_mw-push_s1_ep7 (17s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2397s [129/360] OK  calib_mw-push_s1_ep8 (16s) 
+Episode length: 100
+Discount factor: 0.95
+    2398s [130/360] OK  calib_mw-push_s1_ep9 (16s) 
+Episode length: 100
+Discount factor: 0.95
+    2398s [131/360] OK  calib_mw-push_s2_ep0 (17s) 
+    2399s [132/360] OK  calib_mw-push_s2_ep1 (17s) 
+    2402s [133/360] OK  calib_mw-push_s2_ep2 (18s) 
+Episode length: 100
+Discount factor: 0.95
+    2403s [134/360] OK  calib_mw-push_s2_ep3 (17s) 
+    2403s [135/360] OK  calib_mw-push_s2_ep4 (17s) 
+    2403s [136/360] OK  calib_mw-push_s2_ep5 (17s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2414s [137/360] OK  calib_mw-push_s2_ep6 (16s) 
+    2414s [138/360] OK  calib_mw-push_s2_ep7 (16s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2415s [139/360] OK  calib_mw-push_s2_ep8 (16s) 
+    2415s [140/360] OK  calib_mw-push_s2_ep9 (16s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2419s [141/360] OK  calib_mw-push_s3_ep0 (17s) 
+    2420s [142/360] OK  calib_mw-push_s3_ep1 (17s) 
+    2421s [143/360] OK  calib_mw-push_s3_ep2 (17s) 
+    2421s [144/360] OK  calib_mw-push_s3_ep3 (17s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2429s [145/360] OK  calib_mw-push_s3_ep4 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2429s [146/360] OK  calib_mw-push_s3_ep5 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2430s [147/360] OK  calib_mw-push_s3_ep6 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2430s [148/360] OK  calib_mw-push_s3_ep7 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2436s [149/360] OK  calib_mw-push_s3_ep8 (16s) 
+Episode length: 100
+Discount factor: 0.95
+    2437s [150/360] OK  calib_mw-push_s3_ep9 (16s) 
+Episode length: 100
+Discount factor: 0.95
+    2437s [151/360] OK  calib_mw-pick-place_s1_ep0 (17s) 
+    2437s [152/360] OK  calib_mw-pick-place_s1_ep1 (17s) 
+    2444s [153/360] OK  calib_mw-pick-place_s1_ep2 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2444s [154/360] OK  calib_mw-pick-place_s1_ep3 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2445s [155/360] OK  calib_mw-pick-place_s1_ep4 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2445s [156/360] OK  calib_mw-pick-place_s1_ep5 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2452s [157/360] OK  calib_mw-pick-place_s1_ep6 (17s) 
+Episode length: 100
+Discount factor: 0.95
+    2454s [158/360] OK  calib_mw-pick-place_s1_ep7 (17s) 
+    2454s [159/360] OK  calib_mw-pick-place_s1_ep8 (16s) 
+Episode length: 100
+Discount factor: 0.95
+    2454s [160/360] OK  calib_mw-pick-place_s1_ep9 (17s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2458s [161/360] OK  calib_mw-pick-place_s2_ep0 (15s) 
+    2459s [162/360] OK  calib_mw-pick-place_s2_ep1 (15s) 
+    2459s [163/360] OK  calib_mw-pick-place_s2_ep2 (15s) 
+    2460s [164/360] OK  calib_mw-pick-place_s2_ep3 (15s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2468s [165/360] OK  calib_mw-pick-place_s2_ep4 (16s) 
+Episode length: 100
+Discount factor: 0.95
+    2469s [166/360] OK  calib_mw-pick-place_s2_ep5 (16s) 
+Episode length: 100
+Discount factor: 0.95
+    2470s [167/360] OK  calib_mw-pick-place_s2_ep6 (16s) 
+    2470s [168/360] OK  calib_mw-pick-place_s2_ep7 (16s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2471s [169/360] OK  calib_mw-pick-place_s2_ep8 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2471s [170/360] OK  calib_mw-pick-place_s2_ep9 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2473s [171/360] OK  calib_mw-pick-place_s3_ep1 (13s) 
+    2473s [172/360] OK  calib_mw-pick-place_s3_ep0 (13s) 
+    2484s [173/360] OK  calib_mw-pick-place_s3_ep6 (13s) 
+    2484s [174/360] OK  calib_mw-pick-place_s3_ep2 (16s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2485s [175/360] OK  calib_mw-pick-place_s3_ep7 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2485s [176/360] OK  calib_mw-pick-place_s3_ep3 (16s) 
+    2485s [177/360] OK  calib_mw-pick-place_s3_ep4 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2485s [178/360] OK  calib_mw-pick-place_s3_ep8 (13s) 
+    2485s [179/360] OK  calib_mw-pick-place_s3_ep5 (16s) 
+Episode length: 100
+Discount factor: 0.95
+    2485s [180/360] OK  calib_mw-pick-place_s3_ep9 (13s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2497s [181/360] OK  calib_mw-door-open_s1_ep0 (13s) 
+    2497s [182/360] OK  calib_mw-door-open_s1_ep2 (13s) 
+    2498s [183/360] OK  calib_mw-door-open_s1_ep5 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2499s [184/360] OK  calib_mw-door-open_s1_ep7 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2499s [185/360] OK  calib_mw-door-open_s1_ep1 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2500s [186/360] OK  calib_mw-door-open_s1_ep3 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2500s [187/360] OK  calib_mw-door-open_s1_ep4 (15s) 
+    2501s [188/360] OK  calib_mw-door-open_s1_ep6 (15s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2509s [189/360] OK  calib_mw-door-open_s1_ep8 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2509s [190/360] OK  calib_mw-door-open_s1_ep9 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2511s [191/360] OK  calib_mw-door-open_s2_ep0 (12s) 
+    2511s [192/360] OK  calib_mw-door-open_s2_ep1 (12s) 
+    2513s [193/360] OK  calib_mw-door-open_s2_ep2 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2514s [194/360] OK  calib_mw-door-open_s2_ep3 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2515s [195/360] OK  calib_mw-door-open_s2_ep4 (14s) 
+    2515s [196/360] OK  calib_mw-door-open_s2_ep5 (14s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2522s [197/360] OK  calib_mw-door-open_s2_ep6 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2522s [198/360] OK  calib_mw-door-open_s2_ep7 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2523s [199/360] OK  calib_mw-door-open_s2_ep8 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2524s [200/360] OK  calib_mw-door-open_s2_ep9 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2527s [201/360] OK  calib_mw-door-open_s3_ep0 (14s) 
+    2528s [202/360] OK  calib_mw-door-open_s3_ep1 (14s) 
+    2529s [203/360] OK  calib_mw-door-open_s3_ep2 (14s) 
+    2529s [204/360] OK  calib_mw-door-open_s3_ep3 (14s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2534s [205/360] OK  calib_mw-door-open_s3_ep4 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2534s [206/360] OK  calib_mw-door-open_s3_ep5 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2535s [207/360] OK  calib_mw-door-open_s3_ep6 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2536s [208/360] OK  calib_mw-door-open_s3_ep7 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2541s [209/360] OK  calib_mw-door-open_s3_ep8 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2542s [210/360] OK  calib_mw-door-open_s3_ep9 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2543s [211/360] OK  calib_mw-drawer-open_s1_ep0 (14s) 
+    2543s [212/360] OK  calib_mw-drawer-open_s1_ep1 (14s) 
+    2547s [213/360] OK  calib_mw-drawer-open_s1_ep2 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2547s [214/360] OK  calib_mw-drawer-open_s1_ep3 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2547s [215/360] OK  calib_mw-drawer-open_s1_ep4 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2548s [216/360] OK  calib_mw-drawer-open_s1_ep5 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2555s [217/360] OK  calib_mw-drawer-open_s1_ep6 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2556s [218/360] OK  calib_mw-drawer-open_s1_ep7 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2557s [219/360] OK  calib_mw-drawer-open_s1_ep8 (14s) 
+    2557s [220/360] OK  calib_mw-drawer-open_s1_ep9 (14s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2559s [221/360] OK  calib_mw-drawer-open_s2_ep0 (12s) 
+    2559s [222/360] OK  calib_mw-drawer-open_s2_ep1 (12s) 
+    2560s [223/360] OK  calib_mw-drawer-open_s2_ep2 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2561s [224/360] OK  calib_mw-drawer-open_s2_ep3 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2569s [225/360] OK  calib_mw-drawer-open_s2_ep4 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2570s [226/360] OK  calib_mw-drawer-open_s2_ep5 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2571s [227/360] OK  calib_mw-drawer-open_s2_ep6 (14s) 
+    2571s [228/360] OK  calib_mw-drawer-open_s2_ep8 (12s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2571s [229/360] OK  calib_mw-drawer-open_s2_ep7 (14s) 
+    2571s [230/360] OK  calib_mw-drawer-open_s2_ep9 (12s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2572s [231/360] OK  calib_mw-drawer-open_s3_ep0 (12s) 
+    2573s [232/360] OK  calib_mw-drawer-open_s3_ep1 (12s) 
+    2583s [233/360] OK  calib_mw-drawer-open_s3_ep2 (13s) 
+    2583s [234/360] OK  calib_mw-drawer-open_s3_ep5 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2583s [235/360] OK  calib_mw-drawer-open_s3_ep7 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2583s [236/360] OK  calib_mw-drawer-open_s3_ep3 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2583s [237/360] OK  calib_mw-drawer-open_s3_ep8 (11s) 
+Episode length: 100
+Discount factor: 0.95
+    2584s [238/360] OK  calib_mw-drawer-open_s3_ep4 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2584s [239/360] OK  calib_mw-drawer-open_s3_ep6 (12s) 
+    2584s [240/360] OK  calib_mw-drawer-open_s3_ep9 (10s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2594s [241/360] OK  calib_mw-button-press-topdown_s1_ep1 (11s) 
+    2594s [242/360] OK  calib_mw-button-press-topdown_s1_ep2 (11s) 
+    2594s [243/360] OK  calib_mw-button-press-topdown_s1_ep0 (12s) 
+    2595s [244/360] OK  calib_mw-button-press-topdown_s1_ep4 (11s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2595s [245/360] OK  calib_mw-button-press-topdown_s1_ep7 (12s) 
+    2595s [246/360] OK  calib_mw-button-press-topdown_s1_ep3 (12s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2596s [247/360] OK  calib_mw-button-press-topdown_s1_ep5 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2597s [248/360] OK  calib_mw-button-press-topdown_s1_ep6 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2606s [249/360] OK  calib_mw-button-press-topdown_s1_ep8 (12s) 
+    2606s [250/360] OK  calib_mw-button-press-topdown_s1_ep9 (12s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2607s [251/360] OK  calib_mw-button-press-topdown_s2_ep1 (13s) 
+    2608s [252/360] OK  calib_mw-button-press-topdown_s2_ep2 (12s) 
+    2609s [253/360] OK  calib_mw-button-press-topdown_s2_ep0 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2610s [254/360] OK  calib_mw-button-press-topdown_s2_ep3 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2611s [255/360] OK  calib_mw-button-press-topdown_s2_ep4 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2611s [256/360] OK  calib_mw-button-press-topdown_s2_ep5 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2618s [257/360] OK  calib_mw-button-press-topdown_s2_ep6 (13s) 
+    2618s [258/360] OK  calib_mw-button-press-topdown_s2_ep7 (13s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2619s [259/360] OK  calib_mw-button-press-topdown_s2_ep8 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2620s [260/360] OK  calib_mw-button-press-topdown_s2_ep9 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2623s [261/360] OK  calib_mw-button-press-topdown_s3_ep0 (14s) 
+    2624s [262/360] OK  calib_mw-button-press-topdown_s3_ep1 (14s) 
+    2625s [263/360] OK  calib_mw-button-press-topdown_s3_ep2 (14s) 
+    2625s [264/360] OK  calib_mw-button-press-topdown_s3_ep3 (14s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2631s [265/360] OK  calib_mw-button-press-topdown_s3_ep5 (12s) 
+    2631s [266/360] OK  calib_mw-button-press-topdown_s3_ep4 (13s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2631s [267/360] OK  calib_mw-button-press-topdown_s3_ep6 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2632s [268/360] OK  calib_mw-button-press-topdown_s3_ep7 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2637s [269/360] OK  calib_mw-button-press-topdown_s3_ep8 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2638s [270/360] OK  calib_mw-button-press-topdown_s3_ep9 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2639s [271/360] OK  calib_mw-peg-insert-side_s1_ep0 (14s) 
+    2640s [272/360] OK  calib_mw-peg-insert-side_s1_ep1 (15s) 
+    2643s [273/360] OK  calib_mw-peg-insert-side_s1_ep2 (13s) 
+    2644s [274/360] OK  calib_mw-peg-insert-side_s1_ep3 (13s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2644s [275/360] OK  calib_mw-peg-insert-side_s1_ep4 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2645s [276/360] OK  calib_mw-peg-insert-side_s1_ep5 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2651s [277/360] OK  calib_mw-peg-insert-side_s1_ep6 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2652s [278/360] OK  calib_mw-peg-insert-side_s1_ep7 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2653s [279/360] OK  calib_mw-peg-insert-side_s1_ep8 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2654s [280/360] OK  calib_mw-peg-insert-side_s1_ep9 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2656s [281/360] OK  calib_mw-peg-insert-side_s2_ep0 (13s) 
+    2656s [282/360] OK  calib_mw-peg-insert-side_s2_ep1 (13s) 
+    2657s [283/360] OK  calib_mw-peg-insert-side_s2_ep2 (13s) 
+    2657s [284/360] OK  calib_mw-peg-insert-side_s2_ep3 (13s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2665s [285/360] OK  calib_mw-peg-insert-side_s2_ep4 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2667s [286/360] OK  calib_mw-peg-insert-side_s2_ep5 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2668s [287/360] OK  calib_mw-peg-insert-side_s2_ep6 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2668s [288/360] OK  calib_mw-peg-insert-side_s2_ep7 (14s) 
+    2668s [289/360] OK  calib_mw-peg-insert-side_s2_ep8 (12s) 
+    2668s [290/360] OK  calib_mw-peg-insert-side_s2_ep9 (12s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2670s [291/360] OK  calib_mw-peg-insert-side_s3_ep0 (13s) 
+    2670s [292/360] OK  calib_mw-peg-insert-side_s3_ep1 (12s) 
+    2680s [293/360] OK  calib_mw-peg-insert-side_s3_ep2 (15s) 
+Episode length: 100
+Discount factor: 0.95
+    2681s [294/360] OK  calib_mw-peg-insert-side_s3_ep3 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2681s [295/360] OK  calib_mw-peg-insert-side_s3_ep6 (13s) 
+    2681s [296/360] OK  calib_mw-peg-insert-side_s3_ep7 (13s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2682s [297/360] OK  calib_mw-peg-insert-side_s3_ep4 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2682s [298/360] OK  calib_mw-peg-insert-side_s3_ep9 (12s) 
+    2682s [299/360] OK  calib_mw-peg-insert-side_s3_ep8 (13s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2683s [300/360] OK  calib_mw-peg-insert-side_s3_ep5 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2694s [301/360] OK  calib_mw-window-open_s1_ep3 (13s) 
+    2694s [302/360] OK  calib_mw-window-open_s1_ep2 (13s) 
+    2694s [303/360] OK  calib_mw-window-open_s1_ep0 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2695s [304/360] OK  calib_mw-window-open_s1_ep5 (13s) 
+    2695s [305/360] OK  calib_mw-window-open_s1_ep6 (13s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2695s [306/360] OK  calib_mw-window-open_s1_ep1 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2696s [307/360] OK  calib_mw-window-open_s1_ep4 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2697s [308/360] OK  calib_mw-window-open_s1_ep7 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2706s [309/360] OK  calib_mw-window-open_s1_ep9 (12s) 
+    2706s [310/360] OK  calib_mw-window-open_s1_ep8 (12s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2707s [311/360] OK  calib_mw-window-open_s2_ep2 (12s) 
+    2708s [312/360] OK  calib_mw-window-open_s2_ep1 (13s) 
+    2708s [313/360] OK  calib_mw-window-open_s2_ep0 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2709s [314/360] OK  calib_mw-window-open_s2_ep3 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2710s [315/360] OK  calib_mw-window-open_s2_ep4 (14s) 
+Episode length: 100
+Discount factor: 0.95
+    2710s [316/360] OK  calib_mw-window-open_s2_ep5 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2718s [317/360] OK  calib_mw-window-open_s2_ep6 (12s) 
+    2718s [318/360] OK  calib_mw-window-open_s2_ep7 (12s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2719s [319/360] OK  calib_mw-window-open_s2_ep8 (12s) 
+    2719s [320/360] OK  calib_mw-window-open_s2_ep9 (12s) 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2721s [321/360] OK  calib_mw-window-open_s3_ep0 (13s) 
+    2722s [322/360] OK  calib_mw-window-open_s3_ep1 (13s) 
+    2722s [323/360] OK  calib_mw-window-open_s3_ep2 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2723s [324/360] OK  calib_mw-window-open_s3_ep3 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2730s [325/360] OK  calib_mw-window-open_s3_ep4 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2730s [326/360] OK  calib_mw-window-open_s3_ep5 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2731s [327/360] OK  calib_mw-window-open_s3_ep6 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2731s [328/360] OK  calib_mw-window-open_s3_ep7 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2733s [329/360] OK  calib_mw-window-open_s3_ep8 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2734s [330/360] OK  calib_mw-window-open_s3_ep9 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2735s [331/360] OK  calib_mw-sweep-into_s1_ep0 (13s) 
+    2736s [332/360] OK  calib_mw-sweep-into_s1_ep1 (13s) 
+    2741s [333/360] OK  calib_mw-sweep-into_s1_ep2 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2742s [334/360] OK  calib_mw-sweep-into_s1_ep3 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2743s [335/360] OK  calib_mw-sweep-into_s1_ep4 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2743s [336/360] OK  calib_mw-sweep-into_s1_ep5 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2746s [337/360] OK  calib_mw-sweep-into_s1_ep6 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2747s [338/360] OK  calib_mw-sweep-into_s1_ep7 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2747s [339/360] OK  calib_mw-sweep-into_s1_ep8 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2748s [340/360] OK  calib_mw-sweep-into_s1_ep9 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2753s [341/360] OK  calib_mw-sweep-into_s2_ep0 (12s) 
+    2754s [342/360] OK  calib_mw-sweep-into_s2_ep1 (12s) 
+    2755s [343/360] OK  calib_mw-sweep-into_s2_ep2 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2755s [344/360] OK  calib_mw-sweep-into_s2_ep3 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2758s [345/360] OK  calib_mw-sweep-into_s2_ep4 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2759s [346/360] OK  calib_mw-sweep-into_s2_ep5 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2760s [347/360] OK  calib_mw-sweep-into_s2_ep6 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2761s [348/360] OK  calib_mw-sweep-into_s2_ep7 (13s) 
+Episode length: 100
+Discount factor: 0.95
+    2765s [349/360] OK  calib_mw-sweep-into_s2_ep8 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2765s [350/360] OK  calib_mw-sweep-into_s2_ep9 (12s) 
+Episode length: 100
+Discount factor: 0.95
+    2766s [351/360] OK  calib_mw-sweep-into_s3_ep0 (12s) 
+    2767s [352/360] OK  calib_mw-sweep-into_s3_ep1 (12s) 
+    2770s [353/360] OK  calib_mw-sweep-into_s3_ep2 (12s) 
+    2771s [354/360] OK  calib_mw-sweep-into_s3_ep3 (12s) 
+    2771s [355/360] OK  calib_mw-sweep-into_s3_ep4 (11s) 
+    2772s [356/360] OK  calib_mw-sweep-into_s3_ep5 (11s) 
+    2774s [357/360] OK  calib_mw-sweep-into_s3_ep6 (9s) 
+    2775s [358/360] OK  calib_mw-sweep-into_s3_ep7 (9s) 
+    2775s [359/360] OK  calib_mw-sweep-into_s3_ep8 (9s) 
+    2775s [360/360] OK  calib_mw-sweep-into_s3_ep9 (8s) 
+RUNNER_DONE ok 360 failed 0 in 2776s

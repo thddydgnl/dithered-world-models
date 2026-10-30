@@ -1,0 +1,240 @@
+{
+ "name": "E0_smoke",
+ "config": {
+  "split": "smoke",
+  "ep0": 0,
+  "ep1": 4,
+  "ranges": "main",
+  "diag": true,
+  "tasks": {
+   "pusht": {
+    "E": 2,
+    "ks": [
+     4
+    ],
+    "vars": [
+     "det",
+     "ind",
+     "shiter",
+     "shstep",
+     "shep",
+     "detshift"
+    ],
+    "chunk": 2,
+    "ep0": 0,
+    "ep1": 2
+   },
+   "wall": {
+    "E": 4,
+    "ks": [
+     3
+    ],
+    "vars": [
+     "det",
+     "ind",
+     "shiter",
+     "shstep",
+     "shep",
+     "detshift"
+    ],
+    "chunk": 4,
+    "ep0": 0,
+    "ep1": 4
+   }
+  }
+ },
+ "jobs": [
+  {
+   "id": "smoke_none_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "none",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_nonealt_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "nonealt",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_ind_k4_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "ind",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shiter_k4_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shstep_k4_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shstep",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shep_k4_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shep",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_detshift_k4_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "detshift",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_none_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "none",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_nonealt_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "nonealt",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k3_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "det",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_ind_k3_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "ind",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shiter_k3_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shstep_k3_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "shstep",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shep_k3_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "shep",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_detshift_k3_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "detshift",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  }
+ ]
+}

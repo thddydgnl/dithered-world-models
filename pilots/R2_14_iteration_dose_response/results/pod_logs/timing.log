@@ -1,0 +1,41 @@
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+{"task": "mw-push", "cond": "none", "iters": 1, "ms_mean": 6.231870451301802, "ms_median": 6.149074484710582, "ms_p90": 6.5942719840677455, "n": 60}
+{"task": "mw-push", "cond": "Qdet3", "iters": 1, "ms_mean": 7.58281460099776, "ms_median": 7.50707951374352, "ms_p90": 7.700759201543406, "n": 60}
+{"task": "mw-push", "cond": "Qshstep3", "iters": 1, "ms_mean": 7.754584733629599, "ms_median": 7.742310001049191, "ms_p90": 7.791841123253107, "n": 60}
+{"task": "mw-push", "cond": "Qshfwd3", "iters": 1, "ms_mean": 7.925726134756891, "ms_median": 7.8826505050528795, "ms_p90": 8.023873998899944, "n": 60}
+{"task": "mw-push", "cond": "none", "iters": 3, "ms_mean": 13.363727632289132, "ms_median": 13.311142000020482, "ms_p90": 13.515384105267003, "n": 60}
+{"task": "mw-push", "cond": "Qdet3", "iters": 3, "ms_mean": 16.55755591442964, "ms_median": 16.497564502060413, "ms_p90": 16.74383897916414, "n": 60}
+{"task": "mw-push", "cond": "Qshstep3", "iters": 3, "ms_mean": 17.439556331858817, "ms_median": 17.298137507168576, "ms_p90": 17.652382096275687, "n": 60}
+{"task": "mw-push", "cond": "Qshfwd3", "iters": 3, "ms_mean": 17.668108867655974, "ms_median": 17.64126900525298, "ms_p90": 17.83713499607984, "n": 60}
+{"task": "mw-push", "cond": "none", "iters": 6, "ms_mean": 24.090289465675596, "ms_median": 24.0613990026759, "ms_p90": 24.389631097437814, "n": 60}
+{"task": "mw-push", "cond": "Qdet3", "iters": 6, "ms_mean": 30.230352766617823, "ms_median": 30.08019800472539, "ms_p90": 30.738608009414747, "n": 60}
+{"task": "mw-push", "cond": "Qshstep3", "iters": 6, "ms_mean": 31.689154081686862, "ms_median": 31.66299899748992, "ms_p90": 32.07786809653044, "n": 60}
+{"task": "mw-push", "cond": "Qshfwd3", "iters": 6, "ms_mean": 32.25368563192509, "ms_median": 32.21909100830089, "ms_p90": 32.46794900333043, "n": 60}
+{"task": "mw-push", "cond": "none", "iters": 12, "ms_mean": 45.66685353493085, "ms_median": 45.58006349543575, "ms_p90": 46.202070111758076, "n": 60}
+{"task": "mw-push", "cond": "Qdet3", "iters": 12, "ms_mean": 57.08464281633496, "ms_median": 56.99198300135322, "ms_p90": 57.844806101638824, "n": 60}
+{"task": "mw-push", "cond": "Qshstep3", "iters": 12, "ms_mean": 60.23038500231147, "ms_median": 60.1215305068763, "ms_p90": 60.994123996351846, "n": 60}
+{"task": "mw-push", "cond": "Qshfwd3", "iters": 12, "ms_mean": 61.83533129903177, "ms_median": 61.281144502572715, "ms_p90": 62.546035414561636, "n": 60}
+Episode length: 500
+Discount factor: 0.99
+{"task": "cheetah-run", "cond": "none", "iters": 1, "ms_mean": 6.89932494860841, "ms_median": 6.912276992807165, "ms_p90": 6.973691898747347, "n": 60}
+{"task": "cheetah-run", "cond": "Qdet4", "iters": 1, "ms_mean": 8.34768564964179, "ms_median": 8.325257513206452, "ms_p90": 8.408825806691311, "n": 60}
+{"task": "cheetah-run", "cond": "Qshstep4", "iters": 1, "ms_mean": 8.496711364811443, "ms_median": 8.689775000675581, "ms_p90": 8.748400083277375, "n": 60}
+{"task": "cheetah-run", "cond": "Qshfwd4", "iters": 1, "ms_mean": 7.830582550862648, "ms_median": 7.835225987946615, "ms_p90": 7.921012977021746, "n": 60}
+{"task": "cheetah-run", "cond": "none", "iters": 3, "ms_mean": 13.399690702014293, "ms_median": 13.312461989698932, "ms_p90": 13.809124002000317, "n": 60}
+{"task": "cheetah-run", "cond": "Qdet4", "iters": 3, "ms_mean": 18.497119315240223, "ms_median": 18.61400749476161, "ms_p90": 18.757800001185387, "n": 60}
+{"task": "cheetah-run", "cond": "Qshstep4", "iters": 3, "ms_mean": 18.52831153325193, "ms_median": 18.227706998004578, "ms_p90": 19.5517540036235, "n": 60}
+{"task": "cheetah-run", "cond": "Qshfwd4", "iters": 3, "ms_mean": 18.85094811586896, "ms_median": 19.75698249589186, "ms_p90": 20.065084018278867, "n": 60}
+{"task": "cheetah-run", "cond": "none", "iters": 6, "ms_mean": 25.42143964965362, "ms_median": 24.696360997040756, "ms_p90": 27.28491089947056, "n": 60}
+{"task": "cheetah-run", "cond": "Qdet4", "iters": 6, "ms_mean": 32.69683599937707, "ms_median": 33.71357198921032, "ms_p90": 34.01708208839409, "n": 60}
+{"task": "cheetah-run", "cond": "Qshstep4", "iters": 6, "ms_mean": 32.812673615020074, "ms_median": 32.575146993622184, "ms_p90": 35.31390402058605, "n": 60}
+{"task": "cheetah-run", "cond": "Qshfwd4", "iters": 6, "ms_mean": 35.46221189947876, "ms_median": 36.27964199404232, "ms_p90": 36.81714020494837, "n": 60}
+{"task": "cheetah-run", "cond": "none", "iters": 12, "ms_mean": 48.62224228660731, "ms_median": 48.01191299338825, "ms_p90": 51.70034800830763, "n": 60}
+{"task": "cheetah-run", "cond": "Qdet4", "iters": 12, "ms_mean": 61.39137331629172, "ms_median": 61.207714505144395, "ms_p90": 65.1944119046675, "n": 60}
+{"task": "cheetah-run", "cond": "Qshstep4", "iters": 12, "ms_mean": 65.54201199954453, "ms_median": 66.96938650566153, "ms_p90": 68.8175151066389, "n": 60}
+{"task": "cheetah-run", "cond": "Qshfwd4", "iters": 12, "ms_mean": 64.67354206785483, "ms_median": 64.5278969896026, "ms_p90": 68.22588011273183, "n": 60}
+TIMING_DONE

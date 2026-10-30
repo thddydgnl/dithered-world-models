@@ -1,0 +1,946 @@
+=== calib 03:16:10
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     11s calib mw-pick-place      ep0 ret   1650.4 succ 1 steps 100 (4s)
+     12s calib mw-push            ep0 ret   1770.1 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     14s calib mw-push            ep1 ret   1808.4 succ 1 steps 100 (5s)
+Episode length: 500
+Discount factor: 0.99
+     16s calib mw-pick-place      ep1 ret   1726.1 succ 1 steps 100 (5s)
+Episode length: 100
+Discount factor: 0.95
+     22s calib mw-push            ep2 ret   1811.4 succ 1 steps 100 (5s)
+     27s calib mw-pick-place      ep2 ret   1726.1 succ 1 steps 100 (5s)
+Episode length: 500
+Discount factor: 0.99
+     31s calib walker-walk        ep1 ret    993.6 succ 0 steps 500 (23s)
+Episode length: 500
+Discount factor: 0.99
+     32s calib walker-walk        ep0 ret    993.9 succ 0 steps 500 (24s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     32s calib cheetah-run        ep1 ret    863.3 succ 0 steps 500 (23s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     34s calib cheetah-run        ep0 ret    872.5 succ 0 steps 500 (24s)
+Episode length: 500
+Discount factor: 0.99
+     35s calib walker-walk        ep2 ret    976.0 succ 0 steps 500 (22s)
+Episode length: 500
+Discount factor: 0.99
+     37s calib mw-push            ep3 ret   1779.7 succ 1 steps 100 (5s)
+     37s calib mw-pick-place      ep3 ret   1666.0 succ 1 steps 100 (5s)
+     39s calib cheetah-run        ep2 ret    871.3 succ 0 steps 500 (24s)
+Episode length: 500
+Discount factor: 0.99
+     42s calib mw-pick-place      ep4 ret   1704.1 succ 1 steps 100 (5s)
+     42s calib mw-push            ep4 ret   1795.8 succ 1 steps 100 (5s)
+     48s calib mw-push            ep5 ret   1793.7 succ 1 steps 100 (5s)
+Episode length: 100
+Discount factor: 0.95
+     52s calib walker-walk        ep3 ret    994.9 succ 0 steps 500 (24s)
+     53s calib mw-pick-place      ep5 ret   1697.5 succ 1 steps 100 (5s)
+Episode length: 500
+Discount factor: 0.99
+     54s calib cheetah-run        ep3 ret    863.1 succ 0 steps 500 (22s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     58s calib cheetah-run        ep4 ret    872.1 succ 0 steps 500 (22s)
+Episode length: 100
+Discount factor: 0.95
+     59s calib walker-walk        ep4 ret    974.7 succ 0 steps 500 (24s)
+     59s calib mw-push            ep6 ret   1777.7 succ 1 steps 100 (5s)
+     63s calib walker-walk        ep5 ret    990.9 succ 0 steps 500 (24s)
+     63s calib mw-pick-place      ep6 ret   1658.2 succ 1 steps 100 (5s)
+     65s calib cheetah-run        ep5 ret    866.7 succ 0 steps 500 (22s)
+Episode length: 500
+Discount factor: 0.99
+     68s calib mw-pick-place      ep7 ret   1728.3 succ 1 steps 100 (5s)
+     69s calib mw-push            ep7 ret   1805.7 succ 1 steps 100 (5s)
+     74s calib mw-push            ep8 ret   1791.0 succ 1 steps 100 (5s)
+Episode length: 100
+Discount factor: 0.95
+     76s calib walker-walk        ep6 ret    991.5 succ 0 steps 500 (24s)
+     78s calib cheetah-run        ep6 ret    873.1 succ 0 steps 500 (24s)
+     80s calib mw-pick-place      ep8 ret   1687.3 succ 1 steps 100 (5s)
+     82s calib cheetah-run        ep7 ret    872.6 succ 0 steps 500 (23s)
+Episode length: 100
+Discount factor: 0.95
+     84s calib walker-walk        ep7 ret    994.6 succ 0 steps 500 (24s)
+     85s calib mw-push            ep9 ret   1772.5 succ 1 steps 100 (5s)
+     87s calib mw-pick-place      ep9 ret   1661.1 succ 1 steps 100 (4s)
+     88s calib walker-walk        ep8 ret    993.4 succ 0 steps 500 (22s)
+     89s calib cheetah-run        ep8 ret    841.5 succ 0 steps 500 (20s)
+     94s calib walker-walk        ep9 ret    995.2 succ 0 steps 500 (17s)
+     94s calib cheetah-run        ep9 ret    873.6 succ 0 steps 500 (16s)
+CALIB_DONE
+=== prep 03:17:45
+Episode length: 500
+Discount factor: 0.99
+walker-walk alpha 0.05: frac weak 0.203 (dyn 0.239) err1 weak 0.0109 rand_count 0.5490 strong 2.0560 | pred-matched r_dyn 0.0286 -> err1 0.0108, r_rew 0.0919 -> errr 0.0305 (weak errr 0.0298)
+walker-walk alpha 0.1: frac weak 0.370 (dyn 0.439) err1 weak 0.0669 rand_count 1.3619 strong 4.9054 | pred-matched r_dyn 0.0925 -> err1 0.0675, r_rew 0.4247 -> errr 0.2371 (weak errr 0.2262)
+walker-walk alpha 0.2: frac weak 0.626 (dyn 0.756) err1 weak 0.2362 rand_count 3.2862 strong 5.5423 | pred-matched r_dyn 0.1664 -> err1 0.2363, r_rew 0.7082 -> errr 1.3777 (weak errr 1.3604)
+walker-walk alpha 0.3: frac weak 0.745 (dyn 0.874) err1 weak 0.4225 rand_count 3.9789 strong 3.9635 | pred-matched r_dyn 0.2306 -> err1 0.4227, r_rew 0.6592 -> errr 2.1182 (weak errr 2.0895)
+walker-walk alpha 0.5: frac weak 0.863 (dyn 0.949) err1 weak 1.9076 rand_count 4.2004 strong 3.7332 | pred-matched r_dyn 0.5850 -> err1 1.9055, r_rew 0.6307 -> errr 3.8088 (weak errr 3.7408)
+PREP walker-walk done in 16s
+Episode length: 500
+Discount factor: 0.99
+cheetah-run alpha 0.05: frac weak 0.210 (dyn 0.213) err1 weak 0.0042 rand_count 0.2284 strong 1.2833 | pred-matched r_dyn 0.0230 -> err1 0.0041, r_rew 0.0289 -> errr 0.0122 (weak errr 0.0127)
+cheetah-run alpha 0.1: frac weak 0.363 (dyn 0.362) err1 weak 0.0274 rand_count 0.4631 strong 1.8096 | pred-matched r_dyn 0.0864 -> err1 0.0273, r_rew 0.0323 -> errr 0.0248 (weak errr 0.0261)
+cheetah-run alpha 0.2: frac weak 0.626 (dyn 0.650) err1 weak 0.1805 rand_count 1.2287 strong 2.9376 | pred-matched r_dyn 0.2709 -> err1 0.1813, r_rew 0.0739 -> errr 0.1034 (weak errr 0.1036)
+cheetah-run alpha 0.3: frac weak 0.780 (dyn 0.806) err1 weak 0.3616 rand_count 1.9065 strong 2.6575 | pred-matched r_dyn 0.3776 -> err1 0.3621, r_rew 0.0801 -> errr 0.1479 (weak errr 0.1502)
+cheetah-run alpha 0.5: frac weak 0.907 (dyn 0.921) err1 weak 1.0497 rand_count 2.4562 strong 2.5588 | pred-matched r_dyn 0.6555 -> err1 1.0484, r_rew 0.2572 -> errr 0.6158 (weak errr 0.6235)
+PREP cheetah-run done in 16s
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push alpha 0.05: frac weak 0.297 (dyn 0.244) err1 weak 0.0036 rand_count 0.2120 strong 2.1588 | pred-matched r_dyn 0.0218 -> err1 0.0035, r_rew 0.0472 -> errr 0.0023 (weak errr 0.0018)
+mw-push alpha 0.1: frac weak 0.508 (dyn 0.397) err1 weak 0.0241 rand_count 0.4339 strong 4.6404 | pred-matched r_dyn 0.0870 -> err1 0.0242, r_rew 0.0515 -> errr 0.0053 (weak errr 0.0047)
+mw-push alpha 0.2: frac weak 0.718 (dyn 0.626) err1 weak 0.1160 rand_count 1.0811 strong 6.0018 | pred-matched r_dyn 0.2319 -> err1 0.1162, r_rew 0.0586 -> errr 0.0099 (weak errr 0.0096)
+mw-push alpha 0.3: frac weak 0.812 (dyn 0.751) err1 weak 0.2759 rand_count 1.8270 strong 5.1031 | pred-matched r_dyn 0.3807 -> err1 0.2760, r_rew 0.1009 -> errr 0.0300 (weak errr 0.0308)
+mw-push alpha 0.5: frac weak 0.901 (dyn 0.865) err1 weak 0.9816 rand_count 3.2396 strong 2.2522 | pred-matched r_dyn 0.6749 -> err1 0.9781, r_rew 0.3003 -> errr 0.5024 (weak errr 0.5117)
+PREP mw-push done in 12s
+Episode length: 100
+Discount factor: 0.95
+mw-pick-place alpha 0.05: frac weak 0.322 (dyn 0.276) err1 weak 0.0038 rand_count 0.1809 strong 1.3892 | pred-matched r_dyn 0.0268 -> err1 0.0037, r_rew 0.0037 -> errr 0.0062 (weak errr 0.0066)
+mw-pick-place alpha 0.1: frac weak 0.536 (dyn 0.431) err1 weak 0.0292 rand_count 0.3533 strong 3.3498 | pred-matched r_dyn 0.1262 -> err1 0.0293, r_rew 0.0137 -> errr 0.0379 (weak errr 0.0385)
+mw-pick-place alpha 0.2: frac weak 0.737 (dyn 0.643) err1 weak 0.1234 rand_count 0.8053 strong 4.1060 | pred-matched r_dyn 0.2981 -> err1 0.1235, r_rew 0.0454 -> errr 0.1777 (weak errr 0.1756)
+mw-pick-place alpha 0.3: frac weak 0.833 (dyn 0.768) err1 weak 0.2986 rand_count 1.3475 strong 2.4583 | pred-matched r_dyn 0.4746 -> err1 0.2982, r_rew 0.0540 -> errr 0.2386 (weak errr 0.2360)
+mw-pick-place alpha 0.5: frac weak 0.917 (dyn 0.878) err1 weak 0.8240 rand_count 2.4336 strong 1.8260 | pred-matched r_dyn 0.7086 -> err1 0.8223, r_rew 0.1563 -> errr 0.7363 (weak errr 0.7335)
+PREP mw-pick-place done in 12s
+PREP_DONE
+=== grid 03:18:46
+640 jobs (0 already done)
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     28s [1/640] walker-walk      none       a=0     ep0 ret    993.9 succ 0 frac None (20s)
+     34s [2/640] walker-walk      weak       a=0.1   ep0 ret    991.0 succ 0 frac 0.375 (27s)
+     35s [3/640] walker-walk      weak       a=0.05  ep0 ret    993.7 succ 0 frac 0.202 (29s)
+     37s [4/640] walker-walk      weak       a=0.2   ep0 ret    366.1 succ 0 frac 0.629 (28s)
+     37s [5/640] walker-walk      weak       a=0.3   ep0 ret    209.9 succ 0 frac 0.743 (29s)
+     40s [6/640] walker-walk      weak       a=0.5   ep0 ret    103.2 succ 0 frac 0.831 (30s)
+     44s [7/640] walker-walk      rand_count a=0.05  ep0 ret    283.2 succ 0 frac 0.206 (35s)
+     59s [8/640] walker-walk      rand_count a=0.1   ep0 ret    136.8 succ 0 frac 0.375 (31s)
+     64s [9/640] walker-walk      rand_count a=0.2   ep0 ret     77.7 succ 0 frac 0.632 (30s)
+     67s [10/640] walker-walk      rand_count a=0.5   ep0 ret     99.4 succ 0 frac 0.848 (30s)
+     69s [11/640] walker-walk      rand_count a=0.3   ep0 ret     69.5 succ 0 frac 0.751 (33s)
+     70s [12/640] walker-walk      rand_pred  a=0.05  ep0 ret    993.1 succ 0 frac 0.011 (33s)
+     73s [13/640] walker-walk      rand_pred  a=0.1   ep0 ret    969.9 succ 0 frac 0.086 (33s)
+     77s [14/640] walker-walk      rand_pred  a=0.2   ep0 ret    574.4 succ 0 frac 0.244 (34s)
+     90s [15/640] walker-walk      rand_pred  a=0.3   ep0 ret    359.5 succ 0 frac 0.308 (31s)
+Episode length: 500
+Discount factor: 0.99
+     96s [16/640] walker-walk      rand_pred  a=0.5   ep0 ret    150.5 succ 0 frac 0.512 (32s)
+Episode length: 500
+Discount factor: 0.99
+    106s [17/640] walker-walk      strong     a=0.05  ep0 ret     74.1 succ 0 frac 0.205 (40s)
+Episode length: 500
+Discount factor: 0.99
+    110s [18/640] cheetah-run      none       a=0     ep0 ret    872.5 succ 0 frac None (20s)
+    113s [19/640] walker-walk      strong     a=0.1   ep0 ret     95.5 succ 0 frac 0.362 (44s)
+Episode length: 500
+Discount factor: 0.99
+    114s [20/640] walker-walk      strong     a=0.2   ep0 ret    112.8 succ 0 frac 0.629 (44s)
+Episode length: 500
+Discount factor: 0.99
+    117s [21/640] walker-walk      strong     a=0.3   ep0 ret     68.9 succ 0 frac 0.746 (44s)
+Episode length: 500
+Discount factor: 0.99
+    121s [22/640] walker-walk      strong     a=0.5   ep0 ret     20.7 succ 0 frac 0.85 (44s)
+Episode length: 500
+Discount factor: 0.99
+    123s [23/640] cheetah-run      weak       a=0.05  ep0 ret    841.4 succ 0 frac 0.215 (27s)
+    134s [24/640] cheetah-run      weak       a=0.1   ep0 ret    609.1 succ 0 frac 0.358 (27s)
+    137s [25/640] cheetah-run      weak       a=0.2   ep0 ret     71.5 succ 0 frac 0.569 (27s)
+    142s [26/640] cheetah-run      weak       a=0.3   ep0 ret     24.5 succ 0 frac 0.735 (29s)
+    144s [27/640] cheetah-run      weak       a=0.5   ep0 ret      5.9 succ 0 frac 0.845 (29s)
+    152s [28/640] cheetah-run      rand_count a=0.05  ep0 ret    421.4 succ 0 frac 0.201 (34s)
+    154s [29/640] cheetah-run      rand_count a=0.2   ep0 ret     61.3 succ 0 frac 0.559 (31s)
+    156s [30/640] cheetah-run      rand_count a=0.1   ep0 ret    197.4 succ 0 frac 0.323 (34s)
+    164s [31/640] cheetah-run      rand_count a=0.3   ep0 ret     34.5 succ 0 frac 0.712 (31s)
+    168s [32/640] cheetah-run      rand_count a=0.5   ep0 ret     30.0 succ 0 frac 0.84 (31s)
+    176s [33/640] cheetah-run      rand_pred  a=0.05  ep0 ret    850.3 succ 0 frac 0.006 (34s)
+    177s [34/640] cheetah-run      rand_pred  a=0.1   ep0 ret    797.5 succ 0 frac 0.022 (34s)
+    185s [35/640] cheetah-run      rand_pred  a=0.3   ep0 ret    220.0 succ 0 frac 0.174 (31s)
+    186s [36/640] cheetah-run      rand_pred  a=0.2   ep0 ret    395.7 succ 0 frac 0.105 (34s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    190s [37/640] cheetah-run      rand_pred  a=0.5   ep0 ret     54.3 succ 0 frac 0.396 (34s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    191s [38/640] mw-push          none       a=0     ep0 ret   1770.1 succ 1 frac None (5s)
+    197s [39/640] mw-push          weak       a=0.05  ep0 ret   1765.2 succ 1 frac 0.301 (6s)
+    197s [40/640] mw-push          weak       a=0.1   ep0 ret   1730.6 succ 1 frac 0.509 (6s)
+    203s [41/640] mw-push          weak       a=0.2   ep0 ret     97.2 succ 0 frac 0.678 (6s)
+    203s [42/640] mw-push          weak       a=0.3   ep0 ret      4.9 succ 0 frac 0.776 (6s)
+    203s [43/640] cheetah-run      strong     a=0.05  ep0 ret     16.3 succ 0 frac 0.172 (39s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    207s [44/640] cheetah-run      strong     a=0.1   ep0 ret     18.8 succ 0 frac 0.298 (39s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    209s [45/640] mw-push          weak       a=0.5   ep0 ret      2.6 succ 0 frac 0.868 (6s)
+    210s [46/640] mw-push          rand_count a=0.1   ep0 ret     85.0 succ 0 frac 0.452 (6s)
+    210s [47/640] mw-push          rand_count a=0.05  ep0 ret   1756.6 succ 1 frac 0.297 (7s)
+    214s [48/640] mw-push          rand_count a=0.2   ep0 ret     53.0 succ 0 frac 0.663 (6s)
+    216s [49/640] mw-push          rand_count a=0.3   ep0 ret    243.2 succ 0 frac 0.765 (7s)
+    217s [50/640] mw-push          rand_count a=0.5   ep0 ret    100.6 succ 0 frac 0.861 (6s)
+    217s [51/640] mw-push          rand_pred  a=0.05  ep0 ret   1755.3 succ 1 frac 0.011 (7s)
+    219s [52/640] cheetah-run      strong     a=0.2   ep0 ret     43.9 succ 0 frac 0.544 (43s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    220s [53/640] mw-push          rand_pred  a=0.1   ep0 ret   1756.7 succ 1 frac 0.033 (6s)
+    220s [54/640] cheetah-run      strong     a=0.3   ep0 ret     40.6 succ 0 frac 0.721 (43s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    223s [55/640] mw-push          rand_pred  a=0.2   ep0 ret   1745.8 succ 1 frac 0.096 (7s)
+    223s [56/640] mw-push          rand_pred  a=0.3   ep0 ret   1714.5 succ 1 frac 0.185 (6s)
+    224s [57/640] cheetah-run      strong     a=0.5   ep0 ret      9.7 succ 0 frac 0.856 (39s)
+    224s [58/640] mw-push          rand_pred  a=0.5   ep0 ret    494.7 succ 0 frac 0.408 (7s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    228s [59/640] mw-push          strong     a=0.05  ep0 ret     48.5 succ 0 frac 0.254 (9s)
+    228s [60/640] mw-push          strong     a=0.1   ep0 ret     42.9 succ 0 frac 0.429 (8s)
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    229s [61/640] mw-pick-place    none       a=0     ep0 ret   1650.4 succ 1 frac None (4s)
+    229s [62/640] mw-push          strong     a=0.2   ep0 ret      8.3 succ 0 frac 0.637 (9s)
+Episode length: 100
+Discount factor: 0.95
+    230s [63/640] mw-pick-place    weak       a=0.05  ep0 ret   1642.0 succ 1 frac 0.308 (6s)
+    231s [64/640] mw-push          strong     a=0.5   ep0 ret     89.8 succ 0 frac 0.874 (8s)
+Episode length: 100
+Discount factor: 0.95
+    231s [65/640] mw-push          strong     a=0.3   ep0 ret   1015.7 succ 1 frac 0.763 (8s)
+Episode length: 100
+Discount factor: 0.95
+    233s [66/640] mw-pick-place    weak       a=0.2   ep0 ret     22.0 succ 0 frac 0.642 (5s)
+    233s [67/640] mw-pick-place    weak       a=0.1   ep0 ret   1625.2 succ 1 frac 0.513 (6s)
+    234s [68/640] mw-pick-place    weak       a=0.3   ep0 ret      6.0 succ 0 frac 0.763 (5s)
+    235s [69/640] mw-pick-place    weak       a=0.5   ep0 ret      6.0 succ 0 frac 0.869 (6s)
+    237s [70/640] mw-pick-place    rand_count a=0.1   ep0 ret    972.0 succ 0 frac 0.477 (6s)
+    237s [71/640] mw-pick-place    rand_count a=0.05  ep0 ret   1590.0 succ 1 frac 0.309 (7s)
+    238s [72/640] mw-pick-place    rand_count a=0.2   ep0 ret    587.9 succ 0 frac 0.658 (7s)
+    239s [73/640] mw-pick-place    rand_count a=0.3   ep0 ret    662.0 succ 0 frac 0.775 (6s)
+    240s [74/640] mw-pick-place    rand_pred  a=0.05  ep0 ret   1624.2 succ 1 frac 0.004 (6s)
+    240s [75/640] mw-pick-place    rand_count a=0.5   ep0 ret     11.6 succ 0 frac 0.862 (7s)
+    242s [76/640] mw-pick-place    rand_pred  a=0.1   ep0 ret   1629.0 succ 1 frac 0.03 (7s)
+    243s [77/640] mw-pick-place    rand_pred  a=0.2   ep0 ret   1601.0 succ 1 frac 0.11 (6s)
+    244s [78/640] mw-pick-place    rand_pred  a=0.3   ep0 ret     40.1 succ 0 frac 0.174 (7s)
+    245s [79/640] mw-pick-place    rand_pred  a=0.5   ep0 ret    150.8 succ 0 frac 0.355 (7s)
+    247s [80/640] mw-pick-place    strong     a=0.05  ep0 ret      2.5 succ 0 frac 0.241 (8s)
+    248s [81/640] mw-pick-place    strong     a=0.1   ep0 ret      2.6 succ 0 frac 0.42 (8s)
+    249s [82/640] mw-pick-place    strong     a=0.2   ep0 ret      6.9 succ 0 frac 0.62 (9s)
+    251s [83/640] mw-pick-place    strong     a=0.3   ep0 ret      3.8 succ 0 frac 0.769 (9s)
+    251s [84/640] mw-pick-place    strong     a=0.5   ep0 ret      9.1 succ 0 frac 0.908 (8s)
+    269s [85/640] walker-walk      none       a=0     ep1 ret    993.6 succ 0 frac None (25s)
+    278s [86/640] walker-walk      weak       a=0.05  ep1 ret    993.1 succ 0 frac 0.202 (33s)
+    278s [87/640] walker-walk      weak       a=0.1   ep1 ret    977.4 succ 0 frac 0.374 (31s)
+    279s [88/640] walker-walk      weak       a=0.2   ep1 ret    425.9 succ 0 frac 0.629 (31s)
+    282s [89/640] walker-walk      weak       a=0.3   ep1 ret    185.8 succ 0 frac 0.741 (33s)
+    284s [90/640] walker-walk      weak       a=0.5   ep1 ret    114.4 succ 0 frac 0.831 (33s)
+    287s [91/640] walker-walk      rand_count a=0.05  ep1 ret     69.7 succ 0 frac 0.205 (36s)
+    338s [92/640] walker-walk      rand_count a=0.1   ep1 ret    181.0 succ 0 frac 0.375 (68s)
+    344s [93/640] walker-walk      rand_count a=0.3   ep1 ret     41.3 succ 0 frac 0.752 (66s)
+    345s [94/640] walker-walk      rand_count a=0.5   ep1 ret     46.9 succ 0 frac 0.849 (66s)
+    346s [95/640] walker-walk      rand_count a=0.2   ep1 ret     48.6 succ 0 frac 0.631 (68s)
+    350s [96/640] walker-walk      rand_pred  a=0.05  ep1 ret    992.8 succ 0 frac 0.011 (68s)
+    351s [97/640] walker-walk      rand_pred  a=0.1   ep1 ret    967.1 succ 0 frac 0.087 (68s)
+    352s [98/640] walker-walk      rand_pred  a=0.2   ep1 ret    625.5 succ 0 frac 0.244 (66s)
+    372s [99/640] walker-walk      rand_pred  a=0.3   ep1 ret    306.0 succ 0 frac 0.309 (34s)
+    376s [100/640] walker-walk      rand_pred  a=0.5   ep1 ret    150.3 succ 0 frac 0.512 (32s)
+    385s [101/640] walker-walk      strong     a=0.05  ep1 ret     34.4 succ 0 frac 0.205 (40s)
+    390s [102/640] walker-walk      strong     a=0.1   ep1 ret     44.1 succ 0 frac 0.362 (44s)
+    393s [103/640] walker-walk      strong     a=0.5   ep1 ret     28.2 succ 0 frac 0.85 (40s)
+    394s [104/640] walker-walk      strong     a=0.2   ep1 ret     37.1 succ 0 frac 0.626 (44s)
+    394s [105/640] cheetah-run      none       a=0     ep1 ret    863.3 succ 0 frac None (22s)
+    396s [106/640] walker-walk      strong     a=0.3   ep1 ret     37.8 succ 0 frac 0.746 (44s)
+    403s [107/640] cheetah-run      weak       a=0.05  ep1 ret    775.3 succ 0 frac 0.219 (27s)
+    412s [108/640] cheetah-run      weak       a=0.1   ep1 ret    642.4 succ 0 frac 0.363 (27s)
+    419s [109/640] cheetah-run      weak       a=0.3   ep1 ret     12.0 succ 0 frac 0.733 (27s)
+    420s [110/640] cheetah-run      weak       a=0.2   ep1 ret     75.8 succ 0 frac 0.571 (29s)
+    423s [111/640] cheetah-run      weak       a=0.5   ep1 ret     13.1 succ 0 frac 0.846 (29s)
+    429s [112/640] cheetah-run      rand_count a=0.05  ep1 ret    509.4 succ 0 frac 0.205 (35s)
+    430s [113/640] cheetah-run      rand_count a=0.1   ep1 ret    241.9 succ 0 frac 0.326 (34s)
+    434s [114/640] cheetah-run      rand_count a=0.2   ep1 ret     77.6 succ 0 frac 0.56 (31s)
+    443s [115/640] cheetah-run      rand_count a=0.3   ep1 ret     47.0 succ 0 frac 0.713 (31s)
+    450s [116/640] cheetah-run      rand_count a=0.5   ep1 ret     23.5 succ 0 frac 0.839 (30s)
+    453s [117/640] cheetah-run      rand_pred  a=0.05  ep1 ret    831.9 succ 0 frac 0.006 (33s)
+    457s [118/640] cheetah-run      rand_pred  a=0.1   ep1 ret    765.0 succ 0 frac 0.022 (33s)
+    463s [119/640] cheetah-run      rand_pred  a=0.2   ep1 ret    552.6 succ 0 frac 0.107 (34s)
+    464s [120/640] cheetah-run      rand_pred  a=0.3   ep1 ret    197.2 succ 0 frac 0.173 (34s)
+    465s [121/640] cheetah-run      rand_pred  a=0.5   ep1 ret    108.5 succ 0 frac 0.397 (31s)
+    469s [122/640] mw-push          none       a=0     ep1 ret   1808.4 succ 1 frac None (5s)
+    471s [123/640] mw-push          weak       a=0.05  ep1 ret   1808.7 succ 1 frac 0.292 (6s)
+    475s [124/640] mw-push          weak       a=0.1   ep1 ret   1797.3 succ 1 frac 0.504 (6s)
+    476s [125/640] mw-push          weak       a=0.2   ep1 ret    215.5 succ 0 frac 0.675 (6s)
+    481s [126/640] mw-push          weak       a=0.3   ep1 ret      9.0 succ 0 frac 0.776 (6s)
+    482s [127/640] cheetah-run      strong     a=0.05  ep1 ret      9.9 succ 0 frac 0.172 (39s)
+    482s [128/640] mw-push          weak       a=0.5   ep1 ret      3.7 succ 0 frac 0.864 (6s)
+Episode length: 100
+Discount factor: 0.95
+    488s [129/640] mw-push          rand_count a=0.05  ep1 ret    144.3 succ 0 frac 0.259 (7s)
+    488s [130/640] mw-push          rand_count a=0.2   ep1 ret    185.8 succ 0 frac 0.669 (6s)
+    489s [131/640] cheetah-run      strong     a=0.1   ep1 ret     17.4 succ 0 frac 0.298 (39s)
+    489s [132/640] mw-push          rand_count a=0.1   ep1 ret   1779.4 succ 1 frac 0.496 (7s)
+    495s [133/640] mw-push          rand_count a=0.5   ep1 ret     47.9 succ 0 frac 0.862 (6s)
+    495s [134/640] mw-push          rand_pred  a=0.05  ep1 ret   1810.6 succ 1 frac 0.011 (6s)
+    495s [135/640] mw-push          rand_pred  a=0.1   ep1 ret   1805.5 succ 1 frac 0.033 (6s)
+    495s [136/640] mw-push          rand_count a=0.3   ep1 ret     48.6 succ 0 frac 0.772 (7s)
+    496s [137/640] cheetah-run      strong     a=0.2   ep1 ret     35.9 succ 0 frac 0.543 (43s)
+    500s [138/640] cheetah-run      strong     a=0.3   ep1 ret     42.4 succ 0 frac 0.721 (43s)
+    501s [139/640] mw-push          rand_pred  a=0.2   ep1 ret   1788.3 succ 1 frac 0.096 (6s)
+    501s [140/640] mw-push          rand_pred  a=0.3   ep1 ret   1726.3 succ 1 frac 0.186 (6s)
+    501s [141/640] mw-push          rand_pred  a=0.5   ep1 ret   1640.2 succ 1 frac 0.428 (6s)
+    504s [142/640] mw-push          strong     a=0.05  ep1 ret     15.7 succ 0 frac 0.257 (9s)
+    505s [143/640] mw-push          strong     a=0.1   ep1 ret     29.5 succ 0 frac 0.426 (9s)
+    505s [144/640] cheetah-run      strong     a=0.5   ep1 ret     19.7 succ 0 frac 0.857 (43s)
+    506s [145/640] mw-pick-place    none       a=0     ep1 ret   1726.1 succ 1 frac None (4s)
+    509s [146/640] mw-push          strong     a=0.2   ep1 ret      6.0 succ 0 frac 0.636 (9s)
+    509s [147/640] mw-push          strong     a=0.3   ep1 ret    256.6 succ 0 frac 0.751 (8s)
+    509s [148/640] mw-push          strong     a=0.5   ep1 ret    650.5 succ 1 frac 0.882 (8s)
+    510s [149/640] mw-pick-place    weak       a=0.05  ep1 ret   1717.8 succ 1 frac 0.3 (6s)
+    511s [150/640] mw-pick-place    weak       a=0.1   ep1 ret   1679.8 succ 1 frac 0.506 (6s)
+    511s [151/640] mw-pick-place    weak       a=0.3   ep1 ret      6.6 succ 0 frac 0.766 (5s)
+    511s [152/640] mw-pick-place    weak       a=0.2   ep1 ret    563.8 succ 0 frac 0.661 (6s)
+    514s [153/640] mw-pick-place    weak       a=0.5   ep1 ret      7.1 succ 0 frac 0.862 (6s)
+    515s [154/640] mw-pick-place    rand_count a=0.05  ep1 ret     95.1 succ 0 frac 0.261 (6s)
+    516s [155/640] mw-pick-place    rand_count a=0.1   ep1 ret      6.2 succ 0 frac 0.428 (6s)
+    517s [156/640] mw-pick-place    rand_count a=0.2   ep1 ret    722.0 succ 0 frac 0.659 (7s)
+    517s [157/640] mw-pick-place    rand_count a=0.5   ep1 ret    214.5 succ 0 frac 0.869 (6s)
+    518s [158/640] mw-pick-place    rand_count a=0.3   ep1 ret    240.3 succ 0 frac 0.762 (7s)
+    518s [159/640] mw-pick-place    rand_pred  a=0.05  ep1 ret   1726.6 succ 1 frac 0.004 (7s)
+    521s [160/640] mw-pick-place    rand_pred  a=0.1   ep1 ret   1710.5 succ 1 frac 0.025 (7s)
+    521s [161/640] mw-pick-place    rand_pred  a=0.2   ep1 ret   1586.5 succ 1 frac 0.103 (6s)
+    522s [162/640] mw-pick-place    rand_pred  a=0.3   ep1 ret   1331.0 succ 1 frac 0.19 (6s)
+    524s [163/640] mw-pick-place    rand_pred  a=0.5   ep1 ret   1057.4 succ 1 frac 0.367 (7s)
+    525s [164/640] mw-pick-place    strong     a=0.05  ep1 ret    101.4 succ 0 frac 0.248 (8s)
+    526s [165/640] mw-pick-place    strong     a=0.1   ep1 ret      4.6 succ 0 frac 0.415 (9s)
+    527s [166/640] mw-pick-place    strong     a=0.2   ep1 ret     10.7 succ 0 frac 0.618 (9s)
+    530s [167/640] mw-pick-place    strong     a=0.5   ep1 ret     32.3 succ 0 frac 0.905 (8s)
+    530s [168/640] mw-pick-place    strong     a=0.3   ep1 ret     10.4 succ 0 frac 0.777 (9s)
+    542s [169/640] walker-walk      none       a=0     ep2 ret    976.0 succ 0 frac None (20s)
+    553s [170/640] walker-walk      weak       a=0.1   ep2 ret    973.7 succ 0 frac 0.375 (27s)
+    554s [171/640] walker-walk      weak       a=0.05  ep2 ret    976.9 succ 0 frac 0.202 (30s)
+    556s [172/640] walker-walk      weak       a=0.2   ep2 ret    340.9 succ 0 frac 0.63 (30s)
+    557s [173/640] walker-walk      weak       a=0.3   ep2 ret     94.9 succ 0 frac 0.741 (30s)
+    557s [174/640] walker-walk      weak       a=0.5   ep2 ret     50.5 succ 0 frac 0.832 (27s)
+    565s [175/640] walker-walk      rand_count a=0.05  ep2 ret    280.6 succ 0 frac 0.207 (35s)
+    573s [176/640] walker-walk      rand_count a=0.1   ep2 ret     49.1 succ 0 frac 0.375 (31s)
+    583s [177/640] walker-walk      rand_count a=0.2   ep2 ret     42.3 succ 0 frac 0.631 (31s)
+    587s [178/640] walker-walk      rand_count a=0.3   ep2 ret     38.6 succ 0 frac 0.752 (34s)
+    587s [179/640] walker-walk      rand_pred  a=0.1   ep2 ret    966.2 succ 0 frac 0.087 (31s)
+    590s [180/640] walker-walk      rand_count a=0.5   ep2 ret     41.1 succ 0 frac 0.849 (34s)
+    590s [181/640] walker-walk      rand_pred  a=0.05  ep2 ret    975.9 succ 0 frac 0.011 (34s)
+    599s [182/640] walker-walk      rand_pred  a=0.2   ep2 ret    845.4 succ 0 frac 0.245 (34s)
+    604s [183/640] walker-walk      rand_pred  a=0.3   ep2 ret    323.3 succ 0 frac 0.309 (31s)
+    615s [184/640] walker-walk      rand_pred  a=0.5   ep2 ret    121.1 succ 0 frac 0.512 (32s)
+    624s [185/640] cheetah-run      none       a=0     ep2 ret    871.3 succ 0 frac None (20s)
+    627s [186/640] walker-walk      strong     a=0.1   ep2 ret     43.3 succ 0 frac 0.362 (40s)
+    632s [187/640] walker-walk      strong     a=0.05  ep2 ret     32.8 succ 0 frac 0.205 (44s)
+    634s [188/640] walker-walk      strong     a=0.2   ep2 ret     43.6 succ 0 frac 0.626 (44s)
+    635s [189/640] walker-walk      strong     a=0.3   ep2 ret     38.4 succ 0 frac 0.746 (44s)
+    642s [190/640] cheetah-run      weak       a=0.05  ep2 ret    812.9 succ 0 frac 0.216 (27s)
+    644s [191/640] walker-walk      strong     a=0.5   ep2 ret     32.1 succ 0 frac 0.85 (45s)
+    651s [192/640] cheetah-run      weak       a=0.1   ep2 ret    626.6 succ 0 frac 0.358 (27s)
+    654s [193/640] cheetah-run      weak       a=0.2   ep2 ret     68.6 succ 0 frac 0.569 (27s)
+    661s [194/640] cheetah-run      weak       a=0.3   ep2 ret     35.2 succ 0 frac 0.735 (29s)
+    663s [195/640] cheetah-run      weak       a=0.5   ep2 ret      7.9 succ 0 frac 0.844 (29s)
+    669s [196/640] cheetah-run      rand_count a=0.05  ep2 ret    531.7 succ 0 frac 0.206 (34s)
+    673s [197/640] cheetah-run      rand_count a=0.1   ep2 ret    273.9 succ 0 frac 0.33 (31s)
+    677s [198/640] cheetah-run      rand_count a=0.2   ep2 ret     71.3 succ 0 frac 0.56 (34s)
+    682s [199/640] cheetah-run      rand_count a=0.3   ep2 ret     42.2 succ 0 frac 0.713 (30s)
+    684s [200/640] cheetah-run      rand_count a=0.5   ep2 ret     19.5 succ 0 frac 0.839 (30s)
+    694s [201/640] cheetah-run      rand_pred  a=0.05  ep2 ret    846.2 succ 0 frac 0.006 (34s)
+    697s [202/640] cheetah-run      rand_pred  a=0.1   ep2 ret    778.7 succ 0 frac 0.022 (34s)
+    703s [203/640] cheetah-run      rand_pred  a=0.2   ep2 ret    498.7 succ 0 frac 0.106 (34s)
+    704s [204/640] cheetah-run      rand_pred  a=0.3   ep2 ret    305.0 succ 0 frac 0.175 (31s)
+    708s [205/640] mw-push          none       a=0     ep2 ret   1811.4 succ 1 frac None (4s)
+    711s [206/640] cheetah-run      rand_pred  a=0.5   ep2 ret     77.0 succ 0 frac 0.396 (34s)
+    714s [207/640] mw-push          weak       a=0.05  ep2 ret   1809.1 succ 1 frac 0.297 (6s)
+    718s [208/640] mw-push          weak       a=0.1   ep2 ret   1797.8 succ 1 frac 0.506 (6s)
+    720s [209/640] mw-push          weak       a=0.2   ep2 ret   1416.6 succ 0 frac 0.684 (6s)
+    720s [210/640] cheetah-run      strong     a=0.05  ep2 ret      9.7 succ 0 frac 0.172 (39s)
+    723s [211/640] cheetah-run      strong     a=0.1   ep2 ret     35.0 succ 0 frac 0.299 (39s)
+    724s [212/640] mw-push          weak       a=0.3   ep2 ret     11.1 succ 0 frac 0.777 (6s)
+    725s [213/640] mw-push          weak       a=0.5   ep2 ret     51.7 succ 0 frac 0.868 (5s)
+    727s [214/640] mw-push          rand_count a=0.05  ep2 ret   1793.4 succ 1 frac 0.296 (6s)
+    730s [215/640] mw-push          rand_count a=0.1   ep2 ret   1696.7 succ 1 frac 0.498 (6s)
+    731s [216/640] mw-push          rand_count a=0.2   ep2 ret    536.9 succ 0 frac 0.662 (7s)
+    731s [217/640] mw-push          rand_count a=0.3   ep2 ret   1421.3 succ 0 frac 0.773 (6s)
+    733s [218/640] mw-push          rand_count a=0.5   ep2 ret     67.6 succ 0 frac 0.866 (6s)
+    736s [219/640] mw-push          rand_pred  a=0.05  ep2 ret   1808.9 succ 1 frac 0.011 (6s)
+    737s [220/640] cheetah-run      strong     a=0.2   ep2 ret     38.0 succ 0 frac 0.544 (43s)
+    738s [221/640] mw-push          rand_pred  a=0.1   ep2 ret   1805.9 succ 1 frac 0.033 (7s)
+    738s [222/640] mw-push          rand_pred  a=0.2   ep2 ret   1803.7 succ 1 frac 0.095 (6s)
+    739s [223/640] mw-push          rand_pred  a=0.3   ep2 ret   1747.3 succ 1 frac 0.187 (6s)
+    740s [224/640] cheetah-run      strong     a=0.3   ep2 ret     42.7 succ 0 frac 0.722 (43s)
+    742s [225/640] mw-push          rand_pred  a=0.5   ep2 ret     61.0 succ 0 frac 0.414 (6s)
+    745s [226/640] cheetah-run      strong     a=0.5   ep2 ret      5.7 succ 0 frac 0.856 (43s)
+    746s [227/640] mw-push          strong     a=0.2   ep2 ret     12.1 succ 0 frac 0.636 (8s)
+    746s [228/640] mw-push          strong     a=0.05  ep2 ret     55.1 succ 0 frac 0.26 (9s)
+    746s [229/640] mw-push          strong     a=0.1   ep2 ret    106.6 succ 0 frac 0.427 (9s)
+    747s [230/640] mw-pick-place    none       a=0     ep2 ret   1726.1 succ 1 frac None (4s)
+    747s [231/640] mw-push          strong     a=0.3   ep2 ret     16.5 succ 0 frac 0.749 (8s)
+    748s [232/640] mw-push          strong     a=0.5   ep2 ret    278.8 succ 0 frac 0.877 (9s)
+    751s [233/640] mw-pick-place    weak       a=0.1   ep2 ret   1714.0 succ 1 frac 0.519 (5s)
+    751s [234/640] mw-pick-place    weak       a=0.05  ep2 ret   1720.6 succ 1 frac 0.311 (6s)
+    752s [235/640] mw-pick-place    weak       a=0.2   ep2 ret     17.3 succ 0 frac 0.644 (6s)
+    752s [236/640] mw-pick-place    weak       a=0.5   ep2 ret    242.8 succ 0 frac 0.872 (6s)
+    752s [237/640] mw-pick-place    weak       a=0.3   ep2 ret    372.0 succ 0 frac 0.782 (6s)
+    754s [238/640] mw-pick-place    rand_count a=0.05  ep2 ret    289.8 succ 0 frac 0.252 (6s)
+    755s [239/640] mw-pick-place    rand_count a=0.1   ep2 ret   1580.3 succ 1 frac 0.512 (7s)
+    757s [240/640] mw-pick-place    rand_count a=0.2   ep2 ret     33.8 succ 0 frac 0.644 (6s)
+    758s [241/640] mw-pick-place    rand_count a=0.3   ep2 ret    173.3 succ 1 frac 0.763 (7s)
+    758s [242/640] mw-pick-place    rand_pred  a=0.05  ep2 ret   1714.9 succ 1 frac 0.004 (6s)
+    758s [243/640] mw-pick-place    rand_count a=0.5   ep2 ret    307.3 succ 0 frac 0.873 (7s)
+    759s [244/640] mw-pick-place    rand_pred  a=0.1   ep2 ret   1718.3 succ 1 frac 0.031 (7s)
+    760s [245/640] mw-pick-place    rand_pred  a=0.2   ep2 ret     64.4 succ 0 frac 0.091 (6s)
+    762s [246/640] mw-pick-place    rand_pred  a=0.3   ep2 ret     16.1 succ 0 frac 0.172 (7s)
+    764s [247/640] mw-pick-place    rand_pred  a=0.5   ep2 ret      6.8 succ 0 frac 0.347 (6s)
+    766s [248/640] mw-pick-place    strong     a=0.1   ep2 ret      2.0 succ 0 frac 0.42 (8s)
+    767s [249/640] mw-pick-place    strong     a=0.05  ep2 ret     10.3 succ 0 frac 0.242 (9s)
+    767s [250/640] mw-pick-place    strong     a=0.2   ep2 ret      6.8 succ 0 frac 0.62 (9s)
+    768s [251/640] mw-pick-place    strong     a=0.5   ep2 ret    123.4 succ 0 frac 0.909 (8s)
+    768s [252/640] mw-pick-place    strong     a=0.3   ep2 ret     10.8 succ 0 frac 0.777 (9s)
+    784s [253/640] walker-walk      none       a=0     ep3 ret    994.9 succ 0 frac None (22s)
+    791s [254/640] walker-walk      weak       a=0.05  ep3 ret    993.6 succ 0 frac 0.202 (27s)
+    793s [255/640] walker-walk      weak       a=0.1   ep3 ret    993.8 succ 0 frac 0.374 (27s)
+    795s [256/640] walker-walk      weak       a=0.5   ep3 ret     56.5 succ 0 frac 0.832 (27s)
+    796s [257/640] walker-walk      weak       a=0.2   ep3 ret    444.8 succ 0 frac 0.63 (30s)
+    797s [258/640] walker-walk      weak       a=0.3   ep3 ret    274.6 succ 0 frac 0.74 (30s)
+    803s [259/640] walker-walk      rand_count a=0.05  ep3 ret    211.3 succ 0 frac 0.206 (35s)
+    818s [260/640] walker-walk      rand_count a=0.1   ep3 ret    180.0 succ 0 frac 0.375 (34s)
+    821s [261/640] walker-walk      rand_count a=0.2   ep3 ret     47.2 succ 0 frac 0.631 (30s)
+    824s [262/640] walker-walk      rand_count a=0.3   ep3 ret    153.5 succ 0 frac 0.752 (30s)
+    825s [263/640] walker-walk      rand_count a=0.5   ep3 ret     41.4 succ 0 frac 0.849 (30s)
+    830s [264/640] walker-walk      rand_pred  a=0.05  ep3 ret    990.4 succ 0 frac 0.011 (33s)
+    830s [265/640] walker-walk      rand_pred  a=0.1   ep3 ret    915.2 succ 0 frac 0.087 (33s)
+    836s [266/640] walker-walk      rand_pred  a=0.2   ep3 ret    438.5 succ 0 frac 0.245 (33s)
+    852s [267/640] walker-walk      rand_pred  a=0.3   ep3 ret    372.5 succ 0 frac 0.309 (34s)
+    853s [268/640] walker-walk      rand_pred  a=0.5   ep3 ret     57.7 succ 0 frac 0.514 (31s)
+    863s [269/640] walker-walk      strong     a=0.05  ep3 ret     39.2 succ 0 frac 0.205 (39s)
+    865s [270/640] walker-walk      strong     a=0.1   ep3 ret     75.7 succ 0 frac 0.362 (40s)
+    874s [271/640] walker-walk      strong     a=0.2   ep3 ret     48.6 succ 0 frac 0.627 (44s)
+    874s [272/640] cheetah-run      none       a=0     ep3 ret    863.1 succ 0 frac None (22s)
+    874s [273/640] walker-walk      strong     a=0.3   ep3 ret     57.7 succ 0 frac 0.746 (44s)
+    880s [274/640] walker-walk      strong     a=0.5   ep3 ret     44.8 succ 0 frac 0.851 (44s)
+    880s [275/640] cheetah-run      weak       a=0.05  ep3 ret    736.8 succ 0 frac 0.217 (27s)
+    890s [276/640] cheetah-run      weak       a=0.1   ep3 ret    664.8 succ 0 frac 0.364 (27s)
+    892s [277/640] cheetah-run      weak       a=0.2   ep3 ret     59.6 succ 0 frac 0.569 (27s)
+    903s [278/640] cheetah-run      weak       a=0.3   ep3 ret     31.6 succ 0 frac 0.736 (29s)
+    903s [279/640] cheetah-run      weak       a=0.5   ep3 ret      1.5 succ 0 frac 0.838 (29s)
+    909s [280/640] cheetah-run      rand_count a=0.05  ep3 ret    389.7 succ 0 frac 0.201 (34s)
+    911s [281/640] cheetah-run      rand_count a=0.2   ep3 ret     93.6 succ 0 frac 0.562 (31s)
+    914s [282/640] cheetah-run      rand_count a=0.1   ep3 ret    232.6 succ 0 frac 0.326 (34s)
+    921s [283/640] cheetah-run      rand_count a=0.3   ep3 ret     26.0 succ 0 frac 0.711 (31s)
+    922s [284/640] cheetah-run      rand_count a=0.5   ep3 ret     31.0 succ 0 frac 0.84 (30s)
+    936s [285/640] cheetah-run      rand_pred  a=0.05  ep3 ret    846.8 succ 0 frac 0.006 (34s)
+    937s [286/640] cheetah-run      rand_pred  a=0.1   ep3 ret    761.1 succ 0 frac 0.022 (34s)
+    942s [287/640] cheetah-run      rand_pred  a=0.3   ep3 ret    141.6 succ 0 frac 0.173 (31s)
+    943s [288/640] cheetah-run      rand_pred  a=0.2   ep3 ret    513.3 succ 0 frac 0.106 (34s)
+    947s [289/640] mw-push          none       a=0     ep3 ret   1779.7 succ 1 frac None (5s)
+    948s [290/640] cheetah-run      rand_pred  a=0.5   ep3 ret     76.7 succ 0 frac 0.397 (34s)
+    954s [291/640] mw-push          weak       a=0.05  ep3 ret   1776.5 succ 1 frac 0.299 (6s)
+    954s [292/640] mw-push          weak       a=0.1   ep3 ret   1716.3 succ 1 frac 0.511 (6s)
+    960s [293/640] mw-push          weak       a=0.2   ep3 ret   1698.6 succ 1 frac 0.717 (6s)
+    960s [294/640] cheetah-run      strong     a=0.05  ep3 ret     13.5 succ 0 frac 0.173 (39s)
+    960s [295/640] mw-push          weak       a=0.3   ep3 ret     18.7 succ 0 frac 0.774 (6s)
+    961s [296/640] cheetah-run      strong     a=0.1   ep3 ret     22.7 succ 0 frac 0.299 (39s)
+    966s [297/640] mw-push          weak       a=0.5   ep3 ret      2.8 succ 0 frac 0.862 (6s)
+    966s [298/640] mw-push          rand_count a=0.05  ep3 ret   1740.4 succ 1 frac 0.294 (6s)
+    967s [299/640] mw-push          rand_count a=0.1   ep3 ret    102.5 succ 0 frac 0.459 (7s)
+    968s [300/640] mw-push          rand_count a=0.2   ep3 ret    416.8 succ 1 frac 0.671 (6s)
+    972s [301/640] mw-push          rand_count a=0.3   ep3 ret   1384.1 succ 1 frac 0.773 (7s)
+    973s [302/640] mw-push          rand_count a=0.5   ep3 ret    482.9 succ 0 frac 0.864 (6s)
+    974s [303/640] mw-push          rand_pred  a=0.1   ep3 ret   1769.5 succ 1 frac 0.033 (6s)
+    974s [304/640] mw-push          rand_pred  a=0.05  ep3 ret   1771.8 succ 1 frac 0.011 (7s)
+    979s [305/640] cheetah-run      strong     a=0.2   ep3 ret     34.0 succ 0 frac 0.543 (43s)
+    979s [306/640] mw-push          rand_pred  a=0.3   ep3 ret   1766.1 succ 1 frac 0.182 (6s)
+    979s [307/640] cheetah-run      strong     a=0.3   ep3 ret     28.7 succ 0 frac 0.72 (43s)
+    979s [308/640] mw-push          rand_pred  a=0.2   ep3 ret   1763.9 succ 1 frac 0.095 (7s)
+    980s [309/640] mw-push          rand_pred  a=0.5   ep3 ret    252.7 succ 0 frac 0.415 (6s)
+    981s [310/640] cheetah-run      strong     a=0.5   ep3 ret     14.2 succ 0 frac 0.857 (39s)
+    983s [311/640] mw-push          strong     a=0.05  ep3 ret     67.2 succ 0 frac 0.256 (9s)
+    985s [312/640] mw-pick-place    none       a=0     ep3 ret   1666.0 succ 1 frac None (4s)
+    986s [313/640] mw-pick-place    weak       a=0.05  ep3 ret   1660.1 succ 1 frac 0.326 (6s)
+    987s [314/640] mw-push          strong     a=0.2   ep3 ret      9.1 succ 0 frac 0.638 (8s)
+    988s [315/640] mw-push          strong     a=0.1   ep3 ret      4.1 succ 0 frac 0.424 (9s)
+    988s [316/640] mw-push          strong     a=0.3   ep3 ret   1091.5 succ 1 frac 0.768 (9s)
+    988s [317/640] mw-push          strong     a=0.5   ep3 ret     85.4 succ 0 frac 0.876 (9s)
+    989s [318/640] mw-pick-place    weak       a=0.1   ep3 ret   1648.3 succ 1 frac 0.536 (6s)
+    990s [319/640] mw-pick-place    weak       a=0.2   ep3 ret    443.3 succ 0 frac 0.665 (5s)
+    992s [320/640] mw-pick-place    weak       a=0.3   ep3 ret      8.5 succ 0 frac 0.761 (5s)
+    992s [321/640] mw-pick-place    weak       a=0.5   ep3 ret     14.1 succ 0 frac 0.866 (5s)
+    995s [322/640] mw-pick-place    rand_count a=0.05  ep3 ret   1620.0 succ 1 frac 0.321 (7s)
+    995s [323/640] mw-pick-place    rand_count a=0.1   ep3 ret     26.9 succ 0 frac 0.432 (7s)
+    995s [324/640] mw-pick-place    rand_count a=0.2   ep3 ret    477.2 succ 0 frac 0.664 (7s)
+    996s [325/640] mw-pick-place    rand_count a=0.3   ep3 ret     47.1 succ 0 frac 0.753 (7s)
+    996s [326/640] mw-pick-place    rand_count a=0.5   ep3 ret     11.7 succ 0 frac 0.866 (6s)
+    998s [327/640] mw-pick-place    rand_pred  a=0.05  ep3 ret   1649.5 succ 1 frac 0.004 (6s)
+    998s [328/640] mw-pick-place    rand_pred  a=0.1   ep3 ret   1642.9 succ 1 frac 0.032 (6s)
+   1001s [329/640] mw-pick-place    rand_pred  a=0.2   ep3 ret   1632.0 succ 1 frac 0.115 (7s)
+   1002s [330/640] mw-pick-place    rand_pred  a=0.3   ep3 ret   1588.0 succ 1 frac 0.204 (7s)
+   1002s [331/640] mw-pick-place    rand_pred  a=0.5   ep3 ret      8.2 succ 0 frac 0.348 (7s)
+   1004s [332/640] mw-pick-place    strong     a=0.1   ep3 ret      1.8 succ 0 frac 0.421 (8s)
+   1004s [333/640] mw-pick-place    strong     a=0.05  ep3 ret     23.0 succ 0 frac 0.242 (9s)
+   1006s [334/640] mw-pick-place    strong     a=0.2   ep3 ret      7.3 succ 0 frac 0.616 (8s)
+   1006s [335/640] mw-pick-place    strong     a=0.3   ep3 ret      4.1 succ 0 frac 0.758 (8s)
+   1010s [336/640] mw-pick-place    strong     a=0.5   ep3 ret      6.0 succ 0 frac 0.902 (9s)
+   1024s [337/640] walker-walk      none       a=0     ep4 ret    974.7 succ 0 frac None (22s)
+   1031s [338/640] walker-walk      weak       a=0.1   ep4 ret    953.0 succ 0 frac 0.374 (27s)
+   1032s [339/640] walker-walk      weak       a=0.05  ep4 ret    972.5 succ 0 frac 0.202 (30s)
+   1033s [340/640] walker-walk      weak       a=0.3   ep4 ret    303.0 succ 0 frac 0.741 (27s)
+   1034s [341/640] walker-walk      weak       a=0.5   ep4 ret    104.9 succ 0 frac 0.831 (27s)
+   1034s [342/640] walker-walk      weak       a=0.2   ep4 ret    548.9 succ 0 frac 0.629 (30s)
+   1045s [343/640] walker-walk      rand_count a=0.05  ep4 ret    211.6 succ 0 frac 0.207 (35s)
+   1057s [344/640] walker-walk      rand_count a=0.1   ep4 ret     73.9 succ 0 frac 0.376 (34s)
+   1062s [345/640] walker-walk      rand_count a=0.2   ep4 ret     73.9 succ 0 frac 0.632 (30s)
+   1064s [346/640] walker-walk      rand_count a=0.5   ep4 ret     38.9 succ 0 frac 0.849 (30s)
+   1064s [347/640] walker-walk      rand_pred  a=0.05  ep4 ret    973.1 succ 0 frac 0.011 (30s)
+   1065s [348/640] walker-walk      rand_count a=0.3   ep4 ret     43.8 succ 0 frac 0.752 (33s)
+   1067s [349/640] walker-walk      rand_pred  a=0.1   ep4 ret    946.2 succ 0 frac 0.087 (33s)
+   1079s [350/640] walker-walk      rand_pred  a=0.2   ep4 ret    755.4 succ 0 frac 0.245 (34s)
+   1092s [351/640] walker-walk      rand_pred  a=0.3   ep4 ret    200.5 succ 0 frac 0.308 (34s)
+   1093s [352/640] walker-walk      rand_pred  a=0.5   ep4 ret     96.2 succ 0 frac 0.512 (31s)
+   1103s [353/640] walker-walk      strong     a=0.05  ep4 ret     31.1 succ 0 frac 0.205 (40s)
+   1104s [354/640] walker-walk      strong     a=0.1   ep4 ret     81.4 succ 0 frac 0.361 (40s)
+   1109s [355/640] walker-walk      strong     a=0.2   ep4 ret     78.6 succ 0 frac 0.627 (44s)
+   1111s [356/640] walker-walk      strong     a=0.3   ep4 ret     50.5 succ 0 frac 0.746 (44s)
+   1114s [357/640] cheetah-run      none       a=0     ep4 ret    872.1 succ 0 frac None (22s)
+   1120s [358/640] cheetah-run      weak       a=0.05  ep4 ret    834.9 succ 0 frac 0.217 (27s)
+   1123s [359/640] walker-walk      strong     a=0.5   ep4 ret     48.3 succ 0 frac 0.851 (44s)
+   1130s [360/640] cheetah-run      weak       a=0.1   ep4 ret    370.3 succ 0 frac 0.347 (27s)
+   1131s [361/640] cheetah-run      weak       a=0.2   ep4 ret     60.4 succ 0 frac 0.569 (27s)
+   1138s [362/640] cheetah-run      weak       a=0.3   ep4 ret     21.1 succ 0 frac 0.73 (29s)
+   1140s [363/640] cheetah-run      weak       a=0.5   ep4 ret      7.2 succ 0 frac 0.843 (29s)
+   1148s [364/640] cheetah-run      rand_count a=0.05  ep4 ret    520.9 succ 0 frac 0.206 (34s)
+   1151s [365/640] cheetah-run      rand_count a=0.1   ep4 ret    156.2 succ 0 frac 0.323 (31s)
+   1157s [366/640] cheetah-run      rand_count a=0.2   ep4 ret     62.7 succ 0 frac 0.56 (34s)
+   1161s [367/640] cheetah-run      rand_count a=0.3   ep4 ret     38.4 succ 0 frac 0.712 (31s)
+   1161s [368/640] cheetah-run      rand_count a=0.5   ep4 ret     25.4 succ 0 frac 0.84 (30s)
+   1172s [369/640] cheetah-run      rand_pred  a=0.05  ep4 ret    845.1 succ 0 frac 0.006 (34s)
+   1174s [370/640] cheetah-run      rand_pred  a=0.1   ep4 ret    317.4 succ 0 frac 0.02 (34s)
+   1182s [371/640] cheetah-run      rand_pred  a=0.2   ep4 ret    474.6 succ 0 frac 0.105 (34s)
+   1182s [372/640] cheetah-run      rand_pred  a=0.3   ep4 ret    122.5 succ 0 frac 0.172 (31s)
+   1186s [373/640] mw-push          none       a=0     ep4 ret   1795.8 succ 1 frac None (4s)
+   1191s [374/640] cheetah-run      rand_pred  a=0.5   ep4 ret     89.4 succ 0 frac 0.397 (34s)
+   1192s [375/640] mw-push          weak       a=0.05  ep4 ret   1794.4 succ 1 frac 0.297 (6s)
+   1197s [376/640] mw-push          weak       a=0.1   ep4 ret   1770.1 succ 1 frac 0.511 (6s)
+   1198s [377/640] mw-push          weak       a=0.2   ep4 ret    109.8 succ 0 frac 0.675 (6s)
+   1200s [378/640] cheetah-run      strong     a=0.05  ep4 ret     11.5 succ 0 frac 0.172 (39s)
+   1200s [379/640] cheetah-run      strong     a=0.1   ep4 ret     29.0 succ 0 frac 0.299 (39s)
+   1203s [380/640] mw-push          weak       a=0.5   ep4 ret     24.4 succ 0 frac 0.87 (6s)
+   1203s [381/640] mw-push          weak       a=0.3   ep4 ret     23.0 succ 0 frac 0.784 (6s)
+   1206s [382/640] mw-push          rand_count a=0.05  ep4 ret   1781.3 succ 1 frac 0.299 (6s)
+   1207s [383/640] mw-push          rand_count a=0.1   ep4 ret     15.6 succ 0 frac 0.461 (6s)
+   1209s [384/640] mw-push          rand_count a=0.2   ep4 ret     84.6 succ 0 frac 0.663 (6s)
+   1210s [385/640] mw-push          rand_count a=0.3   ep4 ret     73.7 succ 0 frac 0.765 (7s)
+   1213s [386/640] mw-push          rand_count a=0.5   ep4 ret   1212.3 succ 1 frac 0.872 (6s)
+   1213s [387/640] mw-push          rand_pred  a=0.05  ep4 ret   1790.1 succ 1 frac 0.011 (6s)
+   1215s [388/640] cheetah-run      strong     a=0.2   ep4 ret     30.1 succ 0 frac 0.542 (43s)
+   1216s [389/640] mw-push          rand_pred  a=0.1   ep4 ret   1787.8 succ 1 frac 0.033 (6s)
+   1217s [390/640] cheetah-run      strong     a=0.3   ep4 ret     18.7 succ 0 frac 0.719 (43s)
+   1217s [391/640] mw-push          rand_pred  a=0.2   ep4 ret   1777.5 succ 1 frac 0.098 (7s)
+   1219s [392/640] mw-push          rand_pred  a=0.3   ep4 ret     15.4 succ 0 frac 0.174 (6s)
+   1219s [393/640] mw-push          rand_pred  a=0.5   ep4 ret     24.5 succ 0 frac 0.413 (6s)
+   1223s [394/640] mw-push          strong     a=0.05  ep4 ret     10.1 succ 0 frac 0.252 (9s)
+   1224s [395/640] mw-pick-place    none       a=0     ep4 ret   1704.1 succ 1 frac None (4s)
+   1224s [396/640] mw-push          strong     a=0.1   ep4 ret     84.3 succ 0 frac 0.43 (8s)
+   1225s [397/640] cheetah-run      strong     a=0.5   ep4 ret      4.2 succ 0 frac 0.856 (43s)
+   1226s [398/640] mw-push          strong     a=0.2   ep4 ret     44.4 succ 0 frac 0.639 (9s)
+   1226s [399/640] mw-push          strong     a=0.3   ep4 ret     74.0 succ 0 frac 0.751 (9s)
+   1227s [400/640] mw-push          strong     a=0.5   ep4 ret     75.7 succ 0 frac 0.873 (8s)
+   1229s [401/640] mw-pick-place    weak       a=0.1   ep4 ret   1694.6 succ 1 frac 0.508 (5s)
+   1229s [402/640] mw-pick-place    weak       a=0.2   ep4 ret    105.5 succ 0 frac 0.652 (5s)
+   1229s [403/640] mw-pick-place    weak       a=0.05  ep4 ret   1705.0 succ 1 frac 0.296 (6s)
+   1230s [404/640] mw-pick-place    weak       a=0.3   ep4 ret     58.6 succ 0 frac 0.764 (6s)
+   1231s [405/640] mw-pick-place    weak       a=0.5   ep4 ret      7.0 succ 0 frac 0.868 (6s)
+   1233s [406/640] mw-pick-place    rand_count a=0.05  ep4 ret   1666.9 succ 1 frac 0.298 (7s)
+   1233s [407/640] mw-pick-place    rand_count a=0.1   ep4 ret     20.7 succ 0 frac 0.43 (6s)
+   1235s [408/640] mw-pick-place    rand_count a=0.2   ep4 ret   1360.4 succ 1 frac 0.691 (6s)
+   1235s [409/640] mw-pick-place    rand_count a=0.3   ep4 ret     16.4 succ 0 frac 0.751 (6s)
+   1236s [410/640] mw-pick-place    rand_count a=0.5   ep4 ret     17.3 succ 0 frac 0.862 (7s)
+   1237s [411/640] mw-pick-place    rand_pred  a=0.05  ep4 ret   1699.1 succ 1 frac 0.004 (7s)
+   1238s [412/640] mw-pick-place    rand_pred  a=0.1   ep4 ret   1688.8 succ 1 frac 0.028 (7s)
+   1239s [413/640] mw-pick-place    rand_pred  a=0.2   ep4 ret   1668.8 succ 1 frac 0.107 (7s)
+   1239s [414/640] mw-pick-place    rand_pred  a=0.3   ep4 ret    703.2 succ 0 frac 0.182 (6s)
+   1242s [415/640] mw-pick-place    rand_pred  a=0.5   ep4 ret      7.3 succ 0 frac 0.347 (6s)
+   1243s [416/640] mw-pick-place    strong     a=0.05  ep4 ret      1.6 succ 0 frac 0.238 (8s)
+   1245s [417/640] mw-pick-place    strong     a=0.1   ep4 ret      1.2 succ 0 frac 0.406 (9s)
+   1246s [418/640] mw-pick-place    strong     a=0.2   ep4 ret      3.7 succ 0 frac 0.622 (9s)
+   1247s [419/640] mw-pick-place    strong     a=0.3   ep4 ret      6.4 succ 0 frac 0.767 (9s)
+   1248s [420/640] mw-pick-place    strong     a=0.5   ep4 ret      1.5 succ 0 frac 0.902 (9s)
+   1260s [421/640] walker-walk      none       a=0     ep5 ret    990.9 succ 0 frac None (20s)
+   1269s [422/640] walker-walk      weak       a=0.05  ep5 ret    991.0 succ 0 frac 0.203 (27s)
+   1270s [423/640] walker-walk      weak       a=0.1   ep5 ret    990.1 succ 0 frac 0.375 (27s)
+   1275s [424/640] walker-walk      weak       a=0.2   ep5 ret    538.8 succ 0 frac 0.629 (30s)
+   1276s [425/640] walker-walk      weak       a=0.3   ep5 ret    314.2 succ 0 frac 0.743 (30s)
+   1277s [426/640] walker-walk      weak       a=0.5   ep5 ret    111.6 succ 0 frac 0.83 (30s)
+   1283s [427/640] walker-walk      rand_pred  a=0.05  ep5 ret    990.2 succ 0 frac 0.011 (35s)
+   1291s [428/640] walker-walk      rand_pred  a=0.1   ep5 ret    955.9 succ 0 frac 0.087 (32s)
+   1297s [429/640] cheetah-run      none       a=0     ep5 ret    866.7 succ 0 frac None (22s)
+   1301s [430/640] walker-walk      rand_pred  a=0.2   ep5 ret    787.4 succ 0 frac 0.245 (32s)
+   1302s [431/640] walker-walk      rand_pred  a=0.3   ep5 ret    269.3 succ 0 frac 0.308 (32s)
+   1306s [432/640] cheetah-run      weak       a=0.05  ep5 ret    819.3 succ 0 frac 0.215 (29s)
+   1310s [433/640] walker-walk      rand_pred  a=0.5   ep5 ret     88.0 succ 0 frac 0.512 (35s)
+   1313s [434/640] cheetah-run      weak       a=0.1   ep5 ret    618.5 succ 0 frac 0.361 (29s)
+   1318s [435/640] cheetah-run      weak       a=0.2   ep5 ret     69.1 succ 0 frac 0.57 (27s)
+   1326s [436/640] cheetah-run      weak       a=0.3   ep5 ret     18.1 succ 0 frac 0.729 (29s)
+   1327s [437/640] cheetah-run      weak       a=0.5   ep5 ret     11.3 succ 0 frac 0.846 (26s)
+   1331s [438/640] mw-push          none       a=0     ep5 ret   1793.7 succ 1 frac None (4s)
+   1333s [439/640] mw-push          weak       a=0.05  ep5 ret   1792.3 succ 1 frac 0.295 (6s)
+   1333s [440/640] cheetah-run      rand_pred  a=0.05  ep5 ret    838.3 succ 0 frac 0.006 (31s)
+   1337s [441/640] mw-push          weak       a=0.1   ep5 ret   1782.5 succ 1 frac 0.503 (6s)
+   1338s [442/640] mw-push          weak       a=0.2   ep5 ret   1299.7 succ 1 frac 0.701 (5s)
+   1339s [443/640] mw-push          weak       a=0.3   ep5 ret     21.8 succ 0 frac 0.775 (5s)
+   1340s [444/640] cheetah-run      rand_pred  a=0.1   ep5 ret    746.2 succ 0 frac 0.022 (34s)
+   1342s [445/640] mw-push          weak       a=0.5   ep5 ret     12.9 succ 0 frac 0.87 (6s)
+   1343s [446/640] cheetah-run      rand_pred  a=0.2   ep5 ret    380.6 succ 0 frac 0.104 (34s)
+   1344s [447/640] mw-push          rand_pred  a=0.05  ep5 ret   1792.0 succ 1 frac 0.011 (6s)
+   1345s [448/640] mw-push          rand_pred  a=0.1   ep5 ret   1789.8 succ 1 frac 0.033 (6s)
+   1346s [449/640] cheetah-run      rand_pred  a=0.3   ep5 ret    154.4 succ 0 frac 0.173 (34s)
+   1347s [450/640] mw-push          rand_pred  a=0.2   ep5 ret   1780.3 succ 1 frac 0.095 (7s)
+   1348s [451/640] mw-pick-place    none       a=0     ep5 ret   1697.5 succ 1 frac None (4s)
+   1349s [452/640] cheetah-run      rand_pred  a=0.5   ep5 ret     72.5 succ 0 frac 0.396 (31s)
+   1349s [453/640] mw-push          rand_pred  a=0.3   ep5 ret   1745.0 succ 1 frac 0.187 (7s)
+   1350s [454/640] mw-pick-place    weak       a=0.05  ep5 ret   1692.5 succ 1 frac 0.314 (5s)
+   1351s [455/640] mw-push          rand_pred  a=0.5   ep5 ret    112.6 succ 0 frac 0.415 (7s)
+   1352s [456/640] mw-pick-place    weak       a=0.1   ep5 ret   1685.1 succ 1 frac 0.514 (6s)
+   1353s [457/640] mw-pick-place    weak       a=0.2   ep5 ret     34.7 succ 0 frac 0.644 (6s)
+   1354s [458/640] mw-pick-place    weak       a=0.3   ep5 ret     12.9 succ 0 frac 0.765 (5s)
+   1354s [459/640] mw-pick-place    weak       a=0.5   ep5 ret      5.6 succ 0 frac 0.876 (5s)
+   1356s [460/640] mw-pick-place    rand_pred  a=0.05  ep5 ret   1699.1 succ 1 frac 0.004 (7s)
+   1356s [461/640] mw-pick-place    rand_pred  a=0.1   ep5 ret   1681.9 succ 1 frac 0.031 (6s)
+   1357s [462/640] mw-pick-place    rand_pred  a=0.2   ep5 ret    695.5 succ 0 frac 0.095 (7s)
+   1359s [463/640] mw-pick-place    rand_pred  a=0.3   ep5 ret     13.6 succ 0 frac 0.173 (7s)
+   1360s [464/640] mw-pick-place    rand_pred  a=0.5   ep5 ret     16.8 succ 0 frac 0.352 (7s)
+   1374s [465/640] walker-walk      none       a=0     ep6 ret    991.5 succ 0 frac None (20s)
+   1381s [466/640] walker-walk      weak       a=0.05  ep6 ret    991.5 succ 0 frac 0.202 (27s)
+   1384s [467/640] walker-walk      weak       a=0.2   ep6 ret    371.2 succ 0 frac 0.63 (27s)
+   1386s [468/640] walker-walk      weak       a=0.1   ep6 ret    989.5 succ 0 frac 0.374 (30s)
+   1387s [469/640] walker-walk      weak       a=0.3   ep6 ret    164.0 succ 0 frac 0.742 (30s)
+   1389s [470/640] walker-walk      weak       a=0.5   ep6 ret    144.1 succ 0 frac 0.83 (30s)
+   1395s [471/640] walker-walk      rand_pred  a=0.05  ep6 ret    990.2 succ 0 frac 0.011 (35s)
+   1406s [472/640] walker-walk      rand_pred  a=0.1   ep6 ret    977.2 succ 0 frac 0.087 (32s)
+   1409s [473/640] cheetah-run      none       a=0     ep6 ret    873.1 succ 0 frac None (22s)
+   1413s [474/640] walker-walk      rand_pred  a=0.2   ep6 ret    665.0 succ 0 frac 0.245 (32s)
+   1415s [475/640] walker-walk      rand_pred  a=0.3   ep6 ret    369.9 succ 0 frac 0.31 (32s)
+   1418s [476/640] cheetah-run      weak       a=0.05  ep6 ret    362.9 succ 0 frac 0.204 (29s)
+   1421s [477/640] walker-walk      rand_pred  a=0.5   ep6 ret    139.9 succ 0 frac 0.512 (35s)
+   1424s [478/640] cheetah-run      weak       a=0.1   ep6 ret    644.9 succ 0 frac 0.363 (29s)
+   1432s [479/640] cheetah-run      weak       a=0.2   ep6 ret     66.5 succ 0 frac 0.57 (26s)
+   1438s [480/640] cheetah-run      weak       a=0.3   ep6 ret      6.9 succ 0 frac 0.729 (29s)
+   1440s [481/640] cheetah-run      weak       a=0.5   ep6 ret      3.1 succ 0 frac 0.84 (26s)
+   1442s [482/640] mw-push          none       a=0     ep6 ret   1777.7 succ 1 frac None (4s)
+   1445s [483/640] mw-push          weak       a=0.05  ep6 ret   1774.4 succ 1 frac 0.297 (5s)
+   1447s [484/640] cheetah-run      rand_pred  a=0.05  ep6 ret    833.5 succ 0 frac 0.006 (31s)
+   1448s [485/640] mw-push          weak       a=0.1   ep6 ret   1769.8 succ 1 frac 0.514 (6s)
+   1450s [486/640] mw-push          weak       a=0.2   ep6 ret   1696.8 succ 1 frac 0.707 (5s)
+   1452s [487/640] mw-push          weak       a=0.3   ep6 ret     16.2 succ 0 frac 0.778 (5s)
+   1452s [488/640] cheetah-run      rand_pred  a=0.1   ep6 ret    759.8 succ 0 frac 0.022 (34s)
+   1454s [489/640] mw-push          weak       a=0.5   ep6 ret      2.5 succ 0 frac 0.861 (6s)
+   1454s [490/640] cheetah-run      rand_pred  a=0.2   ep6 ret    412.3 succ 0 frac 0.105 (34s)
+   1457s [491/640] mw-push          rand_pred  a=0.05  ep6 ret   1774.9 succ 1 frac 0.011 (6s)
+   1457s [492/640] cheetah-run      rand_pred  a=0.3   ep6 ret    188.1 succ 0 frac 0.173 (34s)
+   1458s [493/640] mw-push          rand_pred  a=0.1   ep6 ret   1765.9 succ 1 frac 0.033 (6s)
+   1459s [494/640] mw-push          rand_pred  a=0.2   ep6 ret   1766.2 succ 1 frac 0.096 (7s)
+   1460s [495/640] mw-push          rand_pred  a=0.3   ep6 ret   1662.6 succ 1 frac 0.184 (7s)
+   1461s [496/640] mw-pick-place    none       a=0     ep6 ret   1658.2 succ 1 frac None (4s)
+   1461s [497/640] mw-push          rand_pred  a=0.5   ep6 ret    178.6 succ 0 frac 0.414 (7s)
+   1462s [498/640] cheetah-run      rand_pred  a=0.5   ep6 ret     96.8 succ 0 frac 0.397 (30s)
+   1463s [499/640] mw-pick-place    weak       a=0.05  ep6 ret   1651.4 succ 1 frac 0.338 (6s)
+   1463s [500/640] mw-pick-place    weak       a=0.1   ep6 ret   1637.0 succ 1 frac 0.55 (5s)
+   1465s [501/640] mw-pick-place    weak       a=0.2   ep6 ret    206.7 succ 0 frac 0.664 (6s)
+   1466s [502/640] mw-pick-place    weak       a=0.5   ep6 ret      8.3 succ 0 frac 0.869 (5s)
+   1466s [503/640] mw-pick-place    weak       a=0.3   ep6 ret     11.1 succ 0 frac 0.76 (6s)
+   1468s [504/640] mw-pick-place    rand_pred  a=0.05  ep6 ret   1647.6 succ 1 frac 0.005 (7s)
+   1469s [505/640] mw-pick-place    rand_pred  a=0.1   ep6 ret   1636.3 succ 1 frac 0.034 (6s)
+   1470s [506/640] mw-pick-place    rand_pred  a=0.3   ep6 ret    808.7 succ 1 frac 0.193 (6s)
+   1470s [507/640] mw-pick-place    rand_pred  a=0.2   ep6 ret     27.9 succ 0 frac 0.089 (7s)
+   1472s [508/640] mw-pick-place    rand_pred  a=0.5   ep6 ret     26.0 succ 0 frac 0.347 (7s)
+   1486s [509/640] walker-walk      none       a=0     ep7 ret    994.6 succ 0 frac None (20s)
+   1496s [510/640] walker-walk      weak       a=0.05  ep7 ret    994.2 succ 0 frac 0.202 (30s)
+   1496s [511/640] walker-walk      weak       a=0.2   ep7 ret    499.0 succ 0 frac 0.629 (27s)
+   1497s [512/640] walker-walk      weak       a=0.3   ep7 ret    401.4 succ 0 frac 0.745 (27s)
+   1498s [513/640] walker-walk      weak       a=0.1   ep7 ret    972.1 succ 0 frac 0.375 (30s)
+   1500s [514/640] walker-walk      weak       a=0.5   ep7 ret     92.7 succ 0 frac 0.83 (30s)
+   1507s [515/640] walker-walk      rand_pred  a=0.05  ep7 ret    992.6 succ 0 frac 0.011 (35s)
+   1518s [516/640] walker-walk      rand_pred  a=0.1   ep7 ret    980.6 succ 0 frac 0.087 (32s)
+   1519s [517/640] cheetah-run      none       a=0     ep7 ret    872.6 succ 0 frac None (21s)
+   1528s [518/640] walker-walk      rand_pred  a=0.3   ep7 ret    473.0 succ 0 frac 0.309 (32s)
+   1529s [519/640] cheetah-run      weak       a=0.05  ep7 ret    537.1 succ 0 frac 0.206 (29s)
+   1529s [520/640] walker-walk      rand_pred  a=0.5   ep7 ret    128.6 succ 0 frac 0.512 (32s)
+   1531s [521/640] walker-walk      rand_pred  a=0.2   ep7 ret    823.5 succ 0 frac 0.246 (35s)
+   1536s [522/640] cheetah-run      weak       a=0.1   ep7 ret    171.9 succ 0 frac 0.336 (29s)
+   1544s [523/640] cheetah-run      weak       a=0.2   ep7 ret     80.0 succ 0 frac 0.57 (26s)
+   1548s [524/640] cheetah-run      weak       a=0.3   ep7 ret     19.0 succ 0 frac 0.731 (29s)
+   1552s [525/640] mw-push          none       a=0     ep7 ret   1805.7 succ 1 frac None (5s)
+   1554s [526/640] cheetah-run      weak       a=0.5   ep7 ret      9.0 succ 0 frac 0.844 (26s)
+   1558s [527/640] mw-push          weak       a=0.05  ep7 ret   1805.4 succ 1 frac 0.3 (6s)
+   1559s [528/640] mw-push          weak       a=0.1   ep7 ret   1784.4 succ 1 frac 0.519 (5s)
+   1560s [529/640] cheetah-run      rand_pred  a=0.1   ep7 ret    192.0 succ 0 frac 0.019 (31s)
+   1563s [530/640] cheetah-run      rand_pred  a=0.05  ep7 ret    812.5 succ 0 frac 0.006 (34s)
+   1564s [531/640] mw-push          weak       a=0.2   ep7 ret      4.1 succ 0 frac 0.671 (6s)
+   1564s [532/640] cheetah-run      rand_pred  a=0.2   ep7 ret    337.0 succ 0 frac 0.104 (34s)
+   1565s [533/640] mw-push          weak       a=0.3   ep7 ret    226.5 succ 0 frac 0.781 (5s)
+   1565s [534/640] mw-push          weak       a=0.5   ep7 ret     27.0 succ 0 frac 0.869 (5s)
+   1569s [535/640] cheetah-run      rand_pred  a=0.3   ep7 ret    110.4 succ 0 frac 0.173 (34s)
+   1569s [536/640] mw-push          rand_pred  a=0.05  ep7 ret   1803.3 succ 1 frac 0.011 (7s)
+   1571s [537/640] mw-push          rand_pred  a=0.1   ep7 ret   1800.8 succ 1 frac 0.034 (7s)
+   1571s [538/640] mw-push          rand_pred  a=0.3   ep7 ret   1764.4 succ 1 frac 0.188 (6s)
+   1571s [539/640] mw-push          rand_pred  a=0.2   ep7 ret   1799.1 succ 1 frac 0.098 (7s)
+   1571s [540/640] mw-push          rand_pred  a=0.5   ep7 ret     39.7 succ 0 frac 0.414 (6s)
+   1574s [541/640] mw-pick-place    none       a=0     ep7 ret   1728.3 succ 1 frac None (4s)
+   1575s [542/640] cheetah-run      rand_pred  a=0.5   ep7 ret     66.6 succ 0 frac 0.396 (31s)
+   1575s [543/640] mw-pick-place    weak       a=0.05  ep7 ret   1720.7 succ 1 frac 0.314 (6s)
+   1576s [544/640] mw-pick-place    weak       a=0.2   ep7 ret   1167.6 succ 0 frac 0.729 (5s)
+   1577s [545/640] mw-pick-place    weak       a=0.1   ep7 ret   1717.4 succ 1 frac 0.527 (6s)
+   1577s [546/640] mw-pick-place    weak       a=0.5   ep7 ret     17.5 succ 0 frac 0.87 (5s)
+   1577s [547/640] mw-pick-place    weak       a=0.3   ep7 ret      2.6 succ 0 frac 0.753 (6s)
+   1581s [548/640] mw-pick-place    rand_pred  a=0.05  ep7 ret   1713.6 succ 1 frac 0.004 (7s)
+   1581s [549/640] mw-pick-place    rand_pred  a=0.1   ep7 ret   1696.9 succ 1 frac 0.031 (6s)
+   1582s [550/640] mw-pick-place    rand_pred  a=0.2   ep7 ret    431.0 succ 0 frac 0.093 (7s)
+   1583s [551/640] mw-pick-place    rand_pred  a=0.3   ep7 ret   1597.3 succ 1 frac 0.2 (6s)
+   1584s [552/640] mw-pick-place    rand_pred  a=0.5   ep7 ret     25.2 succ 0 frac 0.35 (7s)
+   1597s [553/640] walker-walk      none       a=0     ep8 ret    993.4 succ 0 frac None (20s)
+   1607s [554/640] walker-walk      weak       a=0.05  ep8 ret    992.7 succ 0 frac 0.203 (30s)
+   1608s [555/640] walker-walk      weak       a=0.2   ep8 ret    429.6 succ 0 frac 0.63 (27s)
+   1610s [556/640] walker-walk      weak       a=0.5   ep8 ret     99.2 succ 0 frac 0.831 (27s)
+   1610s [557/640] walker-walk      weak       a=0.1   ep8 ret    991.3 succ 0 frac 0.374 (30s)
+   1612s [558/640] walker-walk      weak       a=0.3   ep8 ret    225.6 succ 0 frac 0.741 (30s)
+   1619s [559/640] walker-walk      rand_pred  a=0.05  ep8 ret    991.4 succ 0 frac 0.011 (35s)
+   1628s [560/640] walker-walk      rand_pred  a=0.1   ep8 ret    950.1 succ 0 frac 0.087 (32s)
+   1632s [561/640] cheetah-run      none       a=0     ep8 ret    841.5 succ 0 frac None (21s)
+   1640s [562/640] walker-walk      rand_pred  a=0.3   ep8 ret    138.6 succ 0 frac 0.31 (32s)
+   1641s [563/640] cheetah-run      weak       a=0.05  ep8 ret    785.5 succ 0 frac 0.218 (29s)
+   1641s [564/640] walker-walk      rand_pred  a=0.2   ep8 ret    813.1 succ 0 frac 0.245 (35s)
+   1642s [565/640] walker-walk      rand_pred  a=0.5   ep8 ret    138.1 succ 0 frac 0.514 (32s)
+   1648s [566/640] cheetah-run      weak       a=0.1   ep8 ret    351.8 succ 0 frac 0.346 (29s)
+   1655s [567/640] cheetah-run      weak       a=0.2   ep8 ret     55.6 succ 0 frac 0.57 (26s)
+   1660s [568/640] cheetah-run      weak       a=0.3   ep8 ret     26.8 succ 0 frac 0.733 (29s)
+   1665s [569/640] mw-push          none       a=0     ep8 ret   1791.0 succ 1 frac None (4s)
+   1667s [570/640] cheetah-run      weak       a=0.5   ep8 ret      8.0 succ 0 frac 0.844 (26s)
+   1671s [571/640] mw-push          weak       a=0.05  ep8 ret   1790.3 succ 1 frac 0.298 (6s)
+   1672s [572/640] mw-push          weak       a=0.1   ep8 ret   1748.0 succ 1 frac 0.507 (5s)
+   1673s [573/640] cheetah-run      rand_pred  a=0.2   ep8 ret    310.2 succ 0 frac 0.104 (31s)
+   1675s [574/640] cheetah-run      rand_pred  a=0.05  ep8 ret    847.8 succ 0 frac 0.006 (34s)
+   1675s [575/640] cheetah-run      rand_pred  a=0.1   ep8 ret    735.1 succ 0 frac 0.022 (34s)
+   1677s [576/640] mw-push          weak       a=0.2   ep8 ret     43.4 succ 0 frac 0.675 (6s)
+   1677s [577/640] mw-push          weak       a=0.3   ep8 ret      4.6 succ 0 frac 0.776 (5s)
+   1678s [578/640] mw-push          weak       a=0.5   ep8 ret      6.2 succ 0 frac 0.862 (5s)
+   1681s [579/640] mw-push          rand_pred  a=0.05  ep8 ret   1786.8 succ 1 frac 0.011 (7s)
+   1681s [580/640] cheetah-run      rand_pred  a=0.3   ep8 ret    169.2 succ 0 frac 0.173 (34s)
+   1682s [581/640] mw-push          rand_pred  a=0.1   ep8 ret   1785.7 succ 1 frac 0.033 (7s)
+   1683s [582/640] mw-push          rand_pred  a=0.2   ep8 ret     23.1 succ 0 frac 0.087 (7s)
+   1684s [583/640] mw-push          rand_pred  a=0.3   ep8 ret     53.5 succ 0 frac 0.171 (6s)
+   1684s [584/640] mw-push          rand_pred  a=0.5   ep8 ret    115.0 succ 0 frac 0.413 (6s)
+   1685s [585/640] cheetah-run      rand_pred  a=0.5   ep8 ret     65.5 succ 0 frac 0.396 (30s)
+   1686s [586/640] mw-pick-place    none       a=0     ep8 ret   1687.3 succ 1 frac None (4s)
+   1687s [587/640] mw-pick-place    weak       a=0.05  ep8 ret   1681.5 succ 1 frac 0.314 (6s)
+   1688s [588/640] mw-pick-place    weak       a=0.1   ep8 ret   1484.6 succ 1 frac 0.494 (6s)
+   1689s [589/640] mw-pick-place    weak       a=0.3   ep8 ret      7.2 succ 0 frac 0.762 (5s)
+   1689s [590/640] mw-pick-place    weak       a=0.2   ep8 ret   1128.3 succ 0 frac 0.709 (6s)
+   1690s [591/640] mw-pick-place    weak       a=0.5   ep8 ret      7.0 succ 0 frac 0.873 (5s)
+   1692s [592/640] mw-pick-place    rand_pred  a=0.05  ep8 ret   1680.3 succ 1 frac 0.004 (6s)
+   1693s [593/640] mw-pick-place    rand_pred  a=0.1   ep8 ret   1663.4 succ 1 frac 0.031 (7s)
+   1694s [594/640] mw-pick-place    rand_pred  a=0.2   ep8 ret   1672.3 succ 1 frac 0.113 (7s)
+   1695s [595/640] mw-pick-place    rand_pred  a=0.3   ep8 ret   1598.7 succ 1 frac 0.202 (7s)
+   1696s [596/640] mw-pick-place    rand_pred  a=0.5   ep8 ret   1115.3 succ 1 frac 0.37 (6s)
+   1711s [597/640] walker-walk      none       a=0     ep9 ret    995.2 succ 0 frac None (22s)
+   1717s [598/640] walker-walk      weak       a=0.05  ep9 ret    994.3 succ 0 frac 0.202 (27s)
+   1719s [599/640] walker-walk      weak       a=0.1   ep9 ret    992.4 succ 0 frac 0.374 (27s)
+   1722s [600/640] walker-walk      weak       a=0.2   ep9 ret    109.4 succ 0 frac 0.626 (30s)
+   1724s [601/640] walker-walk      weak       a=0.3   ep9 ret    246.6 succ 0 frac 0.74 (30s)
+   1724s [602/640] walker-walk      weak       a=0.5   ep9 ret    197.0 succ 0 frac 0.834 (30s)
+   1728s [603/640] walker-walk      rand_pred  a=0.05  ep9 ret    993.0 succ 0 frac 0.011 (32s)
+   1745s [604/640] cheetah-run      none       a=0     ep9 ret    873.6 succ 0 frac None (21s)
+   1745s [605/640] walker-walk      rand_pred  a=0.1   ep9 ret    981.9 succ 0 frac 0.087 (34s)
+   1749s [606/640] walker-walk      rand_pred  a=0.2   ep9 ret    848.8 succ 0 frac 0.246 (32s)
+   1750s [607/640] walker-walk      rand_pred  a=0.3   ep9 ret    430.9 succ 0 frac 0.309 (32s)
+   1754s [608/640] cheetah-run      weak       a=0.05  ep9 ret    841.0 succ 0 frac 0.214 (29s)
+   1754s [609/640] cheetah-run      weak       a=0.1   ep9 ret    578.7 succ 0 frac 0.358 (27s)
+   1757s [610/640] walker-walk      rand_pred  a=0.5   ep9 ret     57.4 succ 0 frac 0.514 (34s)
+   1774s [611/640] cheetah-run      weak       a=0.2   ep9 ret     71.1 succ 0 frac 0.57 (29s)
+   1774s [612/640] cheetah-run      weak       a=0.3   ep9 ret     14.0 succ 0 frac 0.728 (29s)
+   1775s [613/640] cheetah-run      weak       a=0.5   ep9 ret     12.5 succ 0 frac 0.843 (26s)
+   1779s [614/640] mw-push          none       a=0     ep9 ret   1772.5 succ 1 frac None (4s)
+   1780s [615/640] mw-push          weak       a=0.05  ep9 ret   1767.7 succ 1 frac 0.3 (5s)
+   1782s [616/640] cheetah-run      rand_pred  a=0.05  ep9 ret    829.1 succ 0 frac 0.006 (31s)
+   1785s [617/640] mw-push          weak       a=0.1   ep9 ret   1713.0 succ 1 frac 0.503 (6s)
+   1785s [618/640] cheetah-run      rand_pred  a=0.2   ep9 ret    378.3 succ 0 frac 0.105 (31s)
+   1786s [619/640] mw-push          weak       a=0.2   ep9 ret    528.6 succ 0 frac 0.682 (5s)
+   1787s [620/640] mw-push          weak       a=0.3   ep9 ret     19.5 succ 0 frac 0.779 (5s)
+   1787s [621/640] cheetah-run      rand_pred  a=0.1   ep9 ret    741.0 succ 0 frac 0.022 (34s)
+   1790s [622/640] cheetah-run      rand_pred  a=0.3   ep9 ret    185.4 succ 0 frac 0.173 (34s)
+   1791s [623/640] mw-push          weak       a=0.5   ep9 ret      2.2 succ 0 frac 0.867 (6s)
+   1791s [624/640] mw-push          rand_pred  a=0.05  ep9 ret   1763.4 succ 1 frac 0.011 (6s)
+   1792s [625/640] mw-push          rand_pred  a=0.1   ep9 ret   1762.3 succ 1 frac 0.033 (6s)
+   1793s [626/640] mw-push          rand_pred  a=0.2   ep9 ret   1729.3 succ 1 frac 0.095 (6s)
+   1794s [627/640] mw-push          rand_pred  a=0.3   ep9 ret   1720.6 succ 1 frac 0.186 (7s)
+   1795s [628/640] mw-pick-place    none       a=0     ep9 ret   1661.1 succ 1 frac None (4s)
+   1797s [629/640] mw-pick-place    weak       a=0.05  ep9 ret   1654.1 succ 1 frac 0.323 (5s)
+   1797s [630/640] mw-push          rand_pred  a=0.5   ep9 ret    705.2 succ 0 frac 0.416 (7s)
+   1797s [631/640] mw-pick-place    weak       a=0.1   ep9 ret   1619.1 succ 1 frac 0.536 (5s)
+   1798s [632/640] mw-pick-place    weak       a=0.2   ep9 ret    535.1 succ 0 frac 0.671 (5s)
+   1800s [633/640] mw-pick-place    weak       a=0.3   ep9 ret     11.7 succ 0 frac 0.763 (6s)
+   1801s [634/640] mw-pick-place    weak       a=0.5   ep9 ret      7.3 succ 0 frac 0.873 (6s)
+   1803s [635/640] mw-pick-place    rand_pred  a=0.05  ep9 ret   1646.6 succ 1 frac 0.004 (6s)
+   1803s [636/640] mw-pick-place    rand_pred  a=0.2   ep9 ret   1621.0 succ 1 frac 0.114 (6s)
+   1803s [637/640] mw-pick-place    rand_pred  a=0.1   ep9 ret   1640.3 succ 1 frac 0.031 (6s)
+   1804s [638/640] mw-pick-place    rand_pred  a=0.3   ep9 ret      6.9 succ 0 frac 0.174 (5s)
+   1805s [639/640] mw-pick-place    rand_pred  a=0.5   ep9 ret    309.4 succ 1 frac 0.358 (5s)
+   1805s [640/640] cheetah-run      rand_pred  a=0.5   ep9 ret     99.0 succ 0 frac 0.397 (31s)
+GRID_DONE
+=== decision 03:48:52
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+walker-walk: state 0/500 (5s)
+mw-pick-place: state 0/500 (5s)
+cheetah-run: state 0/500 (5s)
+mw-push: state 0/500 (6s)
+mw-pick-place: state 50/500 (160s)
+walker-walk: state 50/500 (163s)
+mw-push: state 50/500 (166s)
+cheetah-run: state 50/500 (167s)
+mw-pick-place: state 100/500 (327s)
+mw-push: state 100/500 (333s)
+walker-walk: state 100/500 (336s)
+cheetah-run: state 100/500 (339s)
+mw-pick-place: state 150/500 (494s)
+mw-push: state 150/500 (501s)
+walker-walk: state 150/500 (509s)
+cheetah-run: state 150/500 (512s)
+mw-pick-place: state 200/500 (662s)
+mw-push: state 200/500 (669s)
+walker-walk: state 200/500 (682s)
+cheetah-run: state 200/500 (684s)
+mw-pick-place: state 250/500 (832s)
+mw-push: state 250/500 (838s)
+walker-walk: state 250/500 (856s)
+cheetah-run: state 250/500 (858s)
+mw-pick-place: state 300/500 (1000s)
+mw-push: state 300/500 (1005s)
+walker-walk: state 300/500 (1030s)
+cheetah-run: state 300/500 (1032s)
+mw-pick-place: state 350/500 (1168s)
+mw-push: state 350/500 (1173s)
+walker-walk: state 350/500 (1203s)
+cheetah-run: state 350/500 (1205s)
+mw-pick-place: state 400/500 (1335s)
+mw-push: state 400/500 (1340s)
+walker-walk: state 400/500 (1377s)
+cheetah-run: state 400/500 (1378s)
+mw-pick-place: state 450/500 (1504s)
+mw-push: state 450/500 (1508s)
+walker-walk: state 450/500 (1549s)
+cheetah-run: state 450/500 (1551s)
+DECISION mw-pick-place: 500 states in 1667s
+DECISION mw-push: 500 states in 1672s
+DECISION walker-walk: 500 states in 1710s
+DECISION cheetah-run: 500 states in 1711s
+DECISION_DONE
+=== analyze 04:17:30
+wm {'S1_tasks': ['mw-push', 'mw-pick-place'], 'S2a_tasks': [], 'S2a_nofloor_tasks': [], 'S2b_tasks': ['cheetah-run'], 'S2prime_tasks': [], 'S3': False, 'S3_specific': False, 'S3_secondary': False, 'verdict': '있음(다른 방향)'}
+q {'S1_tasks': [], 'S2a_tasks': [], 'S2a_nofloor_tasks': [], 'S2b_tasks': [], 'S2prime_tasks': [], 'S3': False, 'S3_specific': False, 'S3_secondary': False, 'verdict': '없음'}
+all {'S1_tasks': [], 'S2a_tasks': [], 'S2a_nofloor_tasks': [], 'S2b_tasks': ['cheetah-run'], 'S2prime_tasks': ['cheetah-run'], 'S3': False, 'S3_specific': False, 'S3_secondary': False, 'verdict': '없음'}
+=== done 04:17:35

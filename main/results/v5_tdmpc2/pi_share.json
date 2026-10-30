@@ -1,0 +1,110 @@
+{
+ "mw-push": {
+  "chosen_pi": 0.0,
+  "elite_pi": 0.0203125,
+  "elite_pi_w": 0.020194601695984603,
+  "n_steps": 50,
+  "ret": 1788.0270594358444,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "mw-pick-place": {
+  "chosen_pi": 0.02,
+  "elite_pi": 0.0115625,
+  "elite_pi_w": 0.011625440809875726,
+  "n_steps": 50,
+  "ret": 1683.948197286576,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "mw-door-open": {
+  "chosen_pi": 0.04,
+  "elite_pi": 0.024375,
+  "elite_pi_w": 0.024857199210673572,
+  "n_steps": 50,
+  "ret": 1450.3048654794693,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "mw-drawer-open": {
+  "chosen_pi": 0.0,
+  "elite_pi": 0.00375,
+  "elite_pi_w": 0.0037577256187796594,
+  "n_steps": 50,
+  "ret": 1821.3516397476196,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "mw-button-press-topdown": {
+  "chosen_pi": 0.02,
+  "elite_pi": 0.0171875,
+  "elite_pi_w": 0.01723976045846939,
+  "n_steps": 50,
+  "ret": 1340.7895242646337,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "mw-peg-insert-side": {
+  "chosen_pi": 0.02,
+  "elite_pi": 0.015625,
+  "elite_pi_w": 0.01571055669337511,
+  "n_steps": 50,
+  "ret": 1717.816775046289,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "mw-window-open": {
+  "chosen_pi": 0.0,
+  "elite_pi": 0.0059375,
+  "elite_pi_w": 0.0060826360806822775,
+  "n_steps": 50,
+  "ret": 1541.9147886037827,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "mw-sweep-into": {
+  "chosen_pi": 0.0,
+  "elite_pi": 0.006875,
+  "elite_pi_w": 0.006983591131865978,
+  "n_steps": 50,
+  "ret": 1836.0858764648438,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "cheetah-run": {
+  "chosen_pi": 0.004,
+  "elite_pi": 0.015375,
+  "elite_pi_w": 0.015459555719047785,
+  "n_steps": 250,
+  "ret": 860.3132823109627,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "walker-walk": {
+  "chosen_pi": 0.012,
+  "elite_pi": 0.0120625,
+  "elite_pi_w": 0.01207225689291954,
+  "n_steps": 250,
+  "ret": 977.15580159612,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "quadruped-walk": {
+  "chosen_pi": 0.0,
+  "elite_pi": 0.0021875,
+  "elite_pi_w": 0.0021875677295029165,
+  "n_steps": 250,
+  "ret": 959.7609356380999,
+  "n_pi": 24,
+  "n_samples": 512
+ },
+ "finger-turn-hard": {
+  "chosen_pi": 0.0,
+  "elite_pi": 0.0,
+  "elite_pi_w": 0.0,
+  "n_steps": 250,
+  "ret": 986.0,
+  "n_pi": 24,
+  "n_samples": 512
+ }
+}

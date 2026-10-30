@@ -1,0 +1,231 @@
+{
+ "exp": "e2",
+ "manifest_jobs": 4482,
+ "by_type": {
+  "episodes": 4482
+ },
+ "result_files_extra": [],
+ "episode_records": 22410,
+ "conditions": 747,
+ "conditions_not_30_eps": [],
+ "task_setting_groups": 60,
+ "task_setting_groups_expected": 60,
+ "variant_set_mismatch": [],
+ "env_host_gpu_cvd_mps_torch": [
+  [
+   "yonghwi-racedreamer",
+   "NVIDIA RTX A5000",
+   "0",
+   "/home/yonghwi/pmx/A/mps/pipe",
+   "2.7.1+cu126",
+   4482
+  ]
+ ],
+ "errors_dir_files": 0,
+ "lock_files": 0,
+ "missing_fields": {},
+ "nonfinite_fields": {},
+ "indep_same_mean_by_variant": {
+  "det": 1.0,
+  "detshift": 0.0,
+  "ind": 0.0,
+  "shep": 1.0,
+  "shiter": 0.0,
+  "shstep": 1.0
+ },
+ "fresh_same_mean_by_variant": {
+  "shep": 0.0,
+  "shstep": 0.0
+ },
+ "oei_steps_per_episode": {
+  "cheetah-run|N1024": {
+   "50": 360
+  },
+  "cheetah-run|N1024k": {
+   "50": 360
+  },
+  "cheetah-run|N128": {
+   "50": 360
+  },
+  "cheetah-run|N128k": {
+   "50": 360
+  },
+  "cheetah-run|N256": {
+   "50": 360
+  },
+  "cheetah-run|N256k": {
+   "50": 360
+  },
+  "cheetah-run|N64": {
+   "50": 360
+  },
+  "cheetah-run|N64k": {
+   "50": 360
+  },
+  "cheetah-run|T01": {
+   "50": 360
+  },
+  "cheetah-run|T2": {
+   "50": 360
+  },
+  "cheetah-run|base": {
+   "50": 630
+  },
+  "cheetah-run|el2": {
+   "50": 360
+  },
+  "cheetah-run|el25": {
+   "50": 360
+  },
+  "cheetah-run|it1": {
+   "50": 360
+  },
+  "cheetah-run|it12": {
+   "50": 360
+  },
+  "cheetah-run|it3": {
+   "50": 360
+  },
+  "cheetah-run|nows1": {
+   "50": 360
+  },
+  "cheetah-run|nows12": {
+   "50": 360
+  },
+  "cheetah-run|nows3": {
+   "50": 360
+  },
+  "cheetah-run|nows6": {
+   "50": 360
+  },
+  "mw-pick-place|N1024": {
+   "25": 360
+  },
+  "mw-pick-place|N1024k": {
+   "25": 360
+  },
+  "mw-pick-place|N128": {
+   "25": 360
+  },
+  "mw-pick-place|N128k": {
+   "25": 360
+  },
+  "mw-pick-place|N256": {
+   "25": 360
+  },
+  "mw-pick-place|N256k": {
+   "25": 360
+  },
+  "mw-pick-place|N64": {
+   "25": 360
+  },
+  "mw-pick-place|N64k": {
+   "25": 360
+  },
+  "mw-pick-place|T01": {
+   "25": 360
+  },
+  "mw-pick-place|T2": {
+   "25": 360
+  },
+  "mw-pick-place|base": {
+   "25": 630
+  },
+  "mw-pick-place|el2": {
+   "25": 360
+  },
+  "mw-pick-place|el25": {
+   "25": 360
+  },
+  "mw-pick-place|it1": {
+   "25": 360
+  },
+  "mw-pick-place|it12": {
+   "25": 360
+  },
+  "mw-pick-place|it3": {
+   "25": 360
+  },
+  "mw-pick-place|nows1": {
+   "25": 360
+  },
+  "mw-pick-place|nows12": {
+   "25": 360
+  },
+  "mw-pick-place|nows3": {
+   "25": 360
+  },
+  "mw-pick-place|nows6": {
+   "25": 360
+  },
+  "mw-push|N1024": {
+   "25": 360
+  },
+  "mw-push|N1024k": {
+   "25": 360
+  },
+  "mw-push|N128": {
+   "25": 360
+  },
+  "mw-push|N128k": {
+   "25": 360
+  },
+  "mw-push|N256": {
+   "25": 360
+  },
+  "mw-push|N256k": {
+   "25": 360
+  },
+  "mw-push|N64": {
+   "25": 360
+  },
+  "mw-push|N64k": {
+   "25": 360
+  },
+  "mw-push|T01": {
+   "25": 360
+  },
+  "mw-push|T2": {
+   "25": 360
+  },
+  "mw-push|base": {
+   "25": 630
+  },
+  "mw-push|el2": {
+   "25": 360
+  },
+  "mw-push|el25": {
+   "25": 360
+  },
+  "mw-push|it1": {
+   "25": 360
+  },
+  "mw-push|it12": {
+   "25": 360
+  },
+  "mw-push|it3": {
+   "25": 360
+  },
+  "mw-push|nows1": {
+   "25": 360
+  },
+  "mw-push|nows12": {
+   "25": 360
+  },
+  "mw-push|nows3": {
+   "25": 360
+  },
+  "mw-push|nows6": {
+   "25": 360
+  }
+ },
+ "perr_missing_episodes": null,
+ "time_span_utc": [
+  "2026-10-22T19:33:08Z",
+  "2026-10-23T06:17:53Z"
+ ],
+ "job_secs_total": 618437.5605251789,
+ "problems": {},
+ "indep_reeval_identities_ok": true,
+ "ALL_OK": true
+}

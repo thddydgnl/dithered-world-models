@@ -1,0 +1,37 @@
+# R2-7 작업 로그 (UTC, 2026-10-21)
+
+- 06:16Z 조정자 지시 수신(R2-1 사후 발견을 R2-7로 사전등록 파일럿화). IDEAS_ROUND2.md R2-7 절과 R2-3 보고서(D-fix 정의 배경)를 읽음. 동시 실행 pod 4대
+- 06:20Z `pod_up.sh r2n7` → **A40 48GB, $0.59/h**(t7wt1xjf7u79ll), 30초 만에 ssh 준비. 마감(자동 삭제) 10:20Z
+- 06:22~06:25Z setup7.sh(약 3분)
+  - 필요한 파일만 풀었다: 체크포인트 pusht·wall_single, PushT는 obs mp4 제외, Wall은 메타 .pth만
+  - 디스크 사용 6.7GB(R2-1에서는 wall obs를 풀다 50GB 디스크가 찼다)
+- 06:25Z PLAN.md 작성(사전등록)
+- 06:25~06:29Z 스모크(과제별 held 2 episode: base·FV·AK와 모집단 재생)
+  - 정상: τ=0.3에서는 발동하지 않아 FV·AK가 base와 똑같은 결과를 냈다(같은 seed 확인)
+  - Wall 300후보 재생은 6 worker로 population당 약 0.7s
+- 06:30Z 본 실행 시작(run_main7.sh)
+  - Wall: held·eval base를 차례로
+  - PushT: held base와 eval base를 동시에(E=3)
+  - 이후 순서: τ 계산 → held FV·AK → 규칙 선택 → eval 선택 규칙 → 모집단 재생
+- 06:43Z Wall held·eval base 완료(70 episode, 모집단 기록)
+- 06:50Z 오류: s4_7.py가 truth 파일 이름에서 episode 번호를 잘못 읽음(`0_truth`) → 고쳐서 Wall S4를 다시 실행
+- 06:55Z PushT held base 완료 → τ 계산(PushT τ_0.5 = 0.132, Wall 0.236)
+- 06:55Z 오류: PushT held FV·AK가 GPU 메모리 부족(OOM)으로 시작 직후 죽음
+  - 원인: PushT eval base 13GB + Wall FV 13GB + Wall S4 10GB가 이미 점유 중이었다
+  - 조치: run_main7.sh를 중단하고 run_main7b.sh로 같은 작업을 같은 설정으로 순차 재실행. 죽은 run의 jsonl은 비어 있었고 지운 뒤 다시 돌렸다
+- 06:59Z 분석 코드 점검을 위해 부분 데이터로 analyze7.py를 한 번 실행했다(PushT held 20, Wall 70). 이 결과를 보고 분석 정의를 바꾸지 않았다
+- 07:04Z Wall S4 완료(656s). weak 비율은 층마다 82~95%(α=0.2, m_j = 99.9 분위수). 손상 비는 weak 1.20, D-fix 2.07(D-fix 비율 20%, 교란 크기 일치)
+- 07:32Z held FV·AK 완료 → 규칙 선택(held 20 episode, 같은 seed 기본 대비)
+  - ES(0.25/0.5/0.75): 평균 −45 / −40 / −30%p
+  - FV(0.5): −15%p(PushT 0, Wall −30)
+  - AK(0.5): −17.5%p
+  - 사전 규칙대로 가장 덜 나쁜 **FV(0.5)**를 평가에 썼다. 거의 모든 episode에서 step 1에 바로 발동했다(trig_frac 1.0)
+- 07:33Z eval FV 실행 시작(PushT E=4, Wall E=5). PushT eval base와 동시에 돌렸다
+- 07:43Z PushT eval base 완료(50). 모집단 재생 → S4 PushT 시작(eval FV 실행과 동시)
+- 08:02Z S4 PushT 완료(1144s)
+  - weak 비율은 층마다 74~82%, D-fix 비율 34.6%(교란 크기 일치 0.169 대 0.168)
+  - 손상 비: weak 9.4, D-fix 12.1
+- 08:10Z PushT eval FV 완료 → 08:11Z 최종 analyze7.py
+- 08:12Z 그림 2의 범례 겹침을 고쳐 다시 생성. 결과·로그·코드 회수. pod 코드와 로컬 code/ 일치 확인(run_s4_wall.sh는 pod 판을 보관)
+- 08:13Z `pod_down.sh r2n7` → budget.py에서 r2n7 **gone**, 장부 비용 $1.14(가동 1시간 52분)
+- 메모: 하위 에이전트의 Write 도구가 보고서 파일을 막아 REPORT.md는 PILOT_RULES 6절대로 Bash heredoc으로 작성함

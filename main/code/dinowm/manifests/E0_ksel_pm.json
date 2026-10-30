@@ -1,0 +1,148 @@
+{
+ "name": "E0_ksel_pm",
+ "config": {
+  "split": "held",
+  "ep0": 0,
+  "ep1": 20,
+  "ranges": "main",
+  "diag": true,
+  "tasks": {
+   "pointmaze": {
+    "E": 1,
+    "ks": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "vars": [
+     "det"
+    ],
+    "chunk": 10
+   }
+  },
+  "rule": "largest k in {3,4,5,6} with det success drop >= 20pp on the 20 held episodes"
+ },
+ "jobs": [
+  {
+   "id": "held_none_e000-010",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "none",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 10,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "held_det_k3_e000-010",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "det",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 10,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "held_det_k4_e000-010",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 10,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "held_det_k5_e000-010",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "det",
+   "k": 5,
+   "ep0": 0,
+   "ep1": 10,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "held_det_k6_e000-010",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "det",
+   "k": 6,
+   "ep0": 0,
+   "ep1": 10,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "held_none_e010-020",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "none",
+   "k": 0,
+   "ep0": 10,
+   "ep1": 20,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "held_det_k3_e010-020",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "det",
+   "k": 3,
+   "ep0": 10,
+   "ep1": 20,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "held_det_k4_e010-020",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "det",
+   "k": 4,
+   "ep0": 10,
+   "ep1": 20,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "held_det_k5_e010-020",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "det",
+   "k": 5,
+   "ep0": 10,
+   "ep1": 20,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "held_det_k6_e010-020",
+   "task": "pointmaze",
+   "split": "held",
+   "var": "det",
+   "k": 6,
+   "ep0": 10,
+   "ep1": 20,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  }
+ ]
+}

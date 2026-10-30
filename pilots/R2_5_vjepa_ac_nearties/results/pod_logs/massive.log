@@ -1,0 +1,304 @@
+/usr/local/lib/python3.11/dist-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/usr/lib/python3.11/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+{
+ "note": "\uc0ac\ud6c4/\ubd80\uac00 \ubd84\uc11d (coordinator add-on)",
+ "D": 1408,
+ "top_k": 14,
+ "encoder_ln": {
+  "n_tokens": 136704,
+  "mean_abs_max_over_median": 35.3109777863518,
+  "var_max_over_median": 259.6046612066626,
+  "top10_mean_abs_idx": [
+   406,
+   1015,
+   990,
+   1209,
+   907,
+   744,
+   540,
+   480,
+   70,
+   1038
+  ],
+  "top10_mean_abs_vals": [
+   12.8423,
+   5.8939,
+   4.9806,
+   4.9441,
+   4.5418,
+   3.9229,
+   3.3748,
+   3.3404,
+   3.3357,
+   3.2013
+  ],
+  "top10_var_idx": [
+   1015,
+   990,
+   540,
+   480,
+   317,
+   1038,
+   143,
+   1173,
+   1343,
+   674
+  ],
+  "top10_var_vals": [
+   51.2729,
+   34.4237,
+   16.7648,
+   16.1,
+   15.1897,
+   14.9387,
+   11.8712,
+   11.5567,
+   11.0038,
+   10.7893
+  ],
+  "median_mean_abs": 0.36369182576847436,
+  "median_var": 0.19750375118580463,
+  "n_mean_abs_gt10x_median": 6,
+  "n_var_gt10x_median": 88,
+  "top1pct_var_share_of_total_var": 0.24068731628381337,
+  "n_frames": 534
+ },
+ "encoder_raw_preLN": {
+  "n_tokens": 24576,
+  "mean_abs_max_over_median": 35.141158989647444,
+  "var_max_over_median": 281.87251409439835,
+  "top10_mean_abs_idx": [
+   406,
+   1015,
+   990,
+   1209,
+   907,
+   744,
+   70,
+   540,
+   480,
+   1038
+  ],
+  "top10_mean_abs_vals": [
+   37.3325,
+   17.4367,
+   14.2338,
+   13.7454,
+   13.4967,
+   11.5817,
+   9.9169,
+   9.7239,
+   9.6264,
+   9.5078
+  ],
+  "top10_var_idx": [
+   1015,
+   990,
+   540,
+   480,
+   1038,
+   317,
+   143,
+   1173,
+   1306,
+   1343
+  ],
+  "top10_var_vals": [
+   466.8165,
+   273.8813,
+   138.6225,
+   133.7135,
+   130.3952,
+   120.5214,
+   99.7714,
+   98.2229,
+   94.4976,
+   89.0167
+  ],
+  "median_mean_abs": 1.0623584414521852,
+  "median_var": 1.656126439122863,
+  "n_mean_abs_gt10x_median": 6,
+  "n_var_gt10x_median": 88,
+  "top1pct_var_share_of_total_var": 0.24104483809836202,
+  "n_frames": 96
+ },
+ "predictor_out_preLN": {
+  "n_tokens": 1310720,
+  "mean_abs_max_over_median": 79.9312236349507,
+  "var_max_over_median": 1834.690627478458,
+  "top10_mean_abs_idx": [
+   406,
+   1015,
+   990,
+   907,
+   1044,
+   1209,
+   70,
+   744,
+   519,
+   480
+  ],
+  "top10_mean_abs_vals": [
+   26.9078,
+   11.8036,
+   7.1503,
+   6.6838,
+   5.7545,
+   5.4534,
+   5.2478,
+   5.1805,
+   4.8085,
+   4.6127
+  ],
+  "top10_var_idx": [
+   1015,
+   406,
+   990,
+   480,
+   317,
+   540,
+   1038,
+   1173,
+   1343,
+   143
+  ],
+  "top10_var_vals": [
+   304.5255,
+   247.975,
+   81.1949,
+   31.4595,
+   30.0913,
+   29.332,
+   27.67,
+   23.1985,
+   20.5327,
+   19.8687
+  ],
+  "median_mean_abs": 0.33663653880357747,
+  "median_var": 0.16598194847786163,
+  "n_mean_abs_gt10x_median": 20,
+  "n_var_gt10x_median": 118,
+  "top1pct_var_share_of_total_var": 0.5010635817411746
+ },
+ "predictor_out_postLN": {
+  "n_tokens": 1310720,
+  "mean_abs_max_over_median": 73.11478149849742,
+  "var_max_over_median": 1043.3754826864915,
+  "top10_mean_abs_idx": [
+   406,
+   1015,
+   990,
+   907,
+   1209,
+   1044,
+   744,
+   70,
+   480,
+   519
+  ],
+  "top10_mean_abs_vals": [
+   19.1059,
+   7.8475,
+   5.3933,
+   4.965,
+   4.2842,
+   4.1451,
+   3.9828,
+   3.9678,
+   3.5275,
+   3.4692
+  ],
+  "top10_var_idx": [
+   1015,
+   990,
+   406,
+   480,
+   540,
+   317,
+   1038,
+   1173,
+   674,
+   143
+  ],
+  "top10_var_vals": [
+   95.3942,
+   39.8714,
+   22.3554,
+   16.9036,
+   15.9566,
+   15.9309,
+   13.6953,
+   11.4761,
+   10.9322,
+   10.2645
+  ],
+  "median_mean_abs": 0.26131374612450603,
+  "median_var": 0.09142841747858958,
+  "n_mean_abs_gt10x_median": 19,
+  "n_var_gt10x_median": 105,
+  "top1pct_var_share_of_total_var": 0.3999865212674293
+ },
+ "energy_variance_share_top1pct": {
+  "enc_var_top": {
+   "mean": 0.0867259128221642,
+   "median": 0.08312578044960452,
+   "p90": 0.11111725569005433
+  },
+  "pred_var_top": {
+   "mean": 0.09355990303975492,
+   "median": 0.09479830239558874,
+   "p90": 0.11863958072048053
+  },
+  "random": {
+   "mean": 0.010330849554539768,
+   "median": 0.010417699165844565,
+   "p90": 0.011668290189368853
+  },
+  "own_enc_var_top": {
+   "mean": 0.009156863829627392,
+   "median": 0.007733307161149063,
+   "p90": 0.015400945020738873
+  },
+  "own_pred_var_top": {
+   "mean": 0.01162971508887402,
+   "median": 0.010225524436969382,
+   "p90": 0.016658962564146586
+  },
+  "n_instances": 80
+ },
+ "top1pct_coords_enc_var": [
+  1015,
+  990,
+  540,
+  480,
+  317,
+  1038,
+  143,
+  1173,
+  1343,
+  674,
+  1306,
+  1336,
+  1209,
+  70
+ ],
+ "top1pct_coords_pred_var": [
+  1015,
+  990,
+  406,
+  480,
+  540,
+  317,
+  1038,
+  1173,
+  674,
+  143,
+  1343,
+  771,
+  1336,
+  1306
+ ]
+}
+MASSIVE_DONE

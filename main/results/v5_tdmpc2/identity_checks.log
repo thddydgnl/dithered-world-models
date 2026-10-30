@@ -1,0 +1,35 @@
+=== v5 checks 2026-10-22T07:47:57Z
+RUNNER_DONE ok 13 failed 0 in 151s
+SAME smoke_mw-push_s1_k0_none_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_det_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_ind_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_shiter_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_shstep_base_c00 (1 ep; new oei fields: chosen_pi drift e_fresh e_indep elite_pi elite_pi_w fresh_same indep_same oei_fresh oei_indep sel_fresh sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_shep_base_c00 (1 ep; new oei fields: chosen_pi drift e_fresh e_indep elite_pi elite_pi_w fresh_same indep_same oei_fresh oei_indep sel_fresh sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_detshift_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_cheetah-run_s1_k4_det_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_shiter_N128it3_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_det_nows_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_cheetah-run_s2_k5_shiter_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-door-open_s3_k4_detshift_base_c00 (2 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_walker-walk_s1_k2_det_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+COMPARE_DONE identical 13 differing 0 missing 0 episodes 14
+V5_CHECKS_DONE 2026-10-22T07:57:43Z
+=== v5 checks 2 2026-10-22T08:00:53Z
+RUNNER_DONE ok 13 failed 0 in 152s
+SAME smoke_mw-push_s1_k0_none_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_det_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_ind_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_shiter_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_shstep_base_c00 (1 ep; new oei fields: chosen_pi drift e_fresh e_indep elite_pi elite_pi_w fresh_same indep_same oei_fresh oei_indep sel_fresh sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_shep_base_c00 (1 ep; new oei fields: chosen_pi drift e_fresh e_indep elite_pi elite_pi_w fresh_same indep_same oei_fresh oei_indep sel_fresh sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_detshift_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_cheetah-run_s1_k4_det_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_shiter_N128it3_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-push_s1_k3_det_nows_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_cheetah-run_s2_k5_shiter_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_mw-door-open_s3_k4_detshift_base_c00 (2 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+SAME smoke_walker-walk_s1_k2_det_base_c00 (1 ep; new oei fields: chosen_pi drift e_indep elite_pi elite_pi_w indep_same oei_indep sel_indep sel_last)
+COMPARE_DONE identical 13 differing 0 missing 0 episodes 14
+RUNNER_DONE ok 2 failed 0 in 15s
+V5_CHECKS2_DONE 2026-10-22T08:03:40Z

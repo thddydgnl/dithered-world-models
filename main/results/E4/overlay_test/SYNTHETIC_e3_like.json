@@ -1,0 +1,75 @@
+{
+ "note": "SYNTHETIC test input for e4_overlay.py (built from E4 simulation curves; not experiment data)",
+ "cells": {
+  "syn-cheetah:5:neff1": {
+   "variants": {
+    "shstep": {
+     "D": 9.863182615237104,
+     "oei": -215.81781707430648,
+     "n_eff": 1,
+     "var_cand": 6369.076920818613
+    }
+   }
+  },
+  "syn-cheetah:5:neff4": {
+   "variants": {
+    "shstep": {
+     "D": 9.04257535351191,
+     "oei": -136.9704659188781,
+     "n_eff": 4,
+     "var_cand": 1874.269244988267
+    }
+   }
+  },
+  "syn-cheetah:5:neff16": {
+   "variants": {
+    "shstep": {
+     "D": 7.54273780292192,
+     "oei": -83.53424556239074,
+     "n_eff": 16,
+     "var_cand": 453.77368047746205
+    }
+   }
+  },
+  "syn-cheetah:5:neff64": {
+   "variants": {
+    "shstep": {
+     "D": 7.019565718300928,
+     "oei": -69.39286896179848,
+     "n_eff": 64,
+     "var_cand": 194.72213836375715
+    }
+   }
+  },
+  "syn-cheetah:5:neff256": {
+   "variants": {
+    "shstep": {
+     "D": 6.232923222071223,
+     "oei": -63.53379062879807,
+     "n_eff": 256,
+     "var_cand": 106.23624458979481
+    }
+   }
+  },
+  "syn-cheetah:5:neff1024": {
+   "variants": {
+    "shstep": {
+     "D": 3.61805724940393,
+     "oei": -28.128219430004403,
+     "n_eff": 1024,
+     "var_cand": 27.521900219146833
+    }
+   }
+  },
+  "syn-cheetah:5:neff4096": {
+   "variants": {
+    "shstep": {
+     "D": 1.2426471530930916,
+     "oei": -8.188468157047849,
+     "n_eff": 4096,
+     "var_cand": 6.997606158990425
+    }
+   }
+  }
+ }
+}

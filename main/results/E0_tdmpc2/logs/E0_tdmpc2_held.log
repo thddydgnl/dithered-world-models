@@ -1,0 +1,1874 @@
+600 jobs -> /home/yonghwi/pmx/A/tdmpc2_main/out/manifests/held.jsonl: {'episodes': 600}
+=== held pass 1 2026-10-21T14:29:30Z
+600 jobs in manifest, 0 done, running 600 with 16 workers
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     499s [1/600] OK  held_cheetah-run_s2_k0_none_base_c00 (498s) ret    909.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     502s [2/600] OK  held_cheetah-run_s1_k0_none_base_c00 (500s) ret    866.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     504s [3/600] OK  held_walker-walk_s1_k0_none_base_c00 (502s) ret    988.0 succ 0/5
+     504s [4/600] OK  held_cheetah-run_s3_k0_none_base_c00 (503s) ret    927.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     657s [5/600] OK  held_cheetah-run_s3_k3_det_base_c00 (656s) ret     15.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     658s [6/600] OK  held_cheetah-run_s1_k3_det_base_c00 (657s) ret    140.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     658s [7/600] OK  held_cheetah-run_s2_k6_det_base_c00 (656s) ret    775.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     660s [8/600] OK  held_cheetah-run_s3_k4_det_base_c00 (658s) ret    208.4 succ 0/5
+     660s [9/600] OK  held_cheetah-run_s1_k4_det_base_c00 (658s) ret    377.0 succ 0/5
+     660s [10/600] OK  held_cheetah-run_s1_k6_det_base_c00 (658s) ret    743.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     660s [11/600] OK  held_cheetah-run_s2_k3_det_base_c00 (658s) ret     47.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     661s [12/600] OK  held_cheetah-run_s3_k6_det_base_c00 (659s) ret    887.4 succ 0/5
+     661s [13/600] OK  held_cheetah-run_s2_k5_det_base_c00 (659s) ret    523.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     661s [14/600] OK  held_cheetah-run_s3_k5_det_base_c00 (659s) ret    460.4 succ 0/5
+     661s [15/600] OK  held_cheetah-run_s2_k4_det_base_c00 (659s) ret    185.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     662s [16/600] OK  held_cheetah-run_s1_k5_det_base_c00 (660s) ret    446.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1168s [17/600] OK  held_walker-walk_s1_k3_det_base_c00 (668s) ret    443.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1170s [18/600] OK  held_walker-walk_s1_k4_det_base_c00 (669s) ret    775.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1171s [19/600] OK  held_walker-walk_s2_k0_none_base_c00 (514s) ret    988.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1172s [20/600] OK  held_walker-walk_s1_k6_det_base_c00 (668s) ret    986.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1173s [21/600] OK  held_walker-walk_s1_k5_det_base_c00 (670s) ret    974.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1174s [22/600] OK  held_walker-walk_s3_k0_none_base_c00 (514s) ret    988.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1178s [23/600] OK  held_quadruped-walk_s1_k0_none_base_c00 (517s) ret    978.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1327s [24/600] OK  held_walker-walk_s2_k4_det_base_c00 (669s) ret    850.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1329s [25/600] OK  held_walker-walk_s2_k5_det_base_c00 (669s) ret    977.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1330s [26/600] OK  held_walker-walk_s2_k3_det_base_c00 (672s) ret    519.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1331s [27/600] OK  held_walker-walk_s3_k4_det_base_c00 (670s) ret    820.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1331s [28/600] OK  held_walker-walk_s3_k3_det_base_c00 (671s) ret    341.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1332s [29/600] OK  held_walker-walk_s2_k6_det_base_c00 (672s) ret    987.3 succ 0/5
+    1332s [30/600] OK  held_walker-walk_s3_k6_det_base_c00 (671s) ret    985.9 succ 0/5
+    1332s [31/600] OK  held_walker-walk_s3_k5_det_base_c00 (671s) ret    908.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1335s [32/600] OK  held_quadruped-walk_s1_k3_det_base_c00 (673s) ret    313.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1656s [33/600] OK  held_quadruped-walk_s2_k0_none_base_c00 (484s) ret    984.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1837s [34/600] OK  held_quadruped-walk_s1_k4_det_base_c00 (670s) ret    841.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1842s [35/600] OK  held_quadruped-walk_s1_k5_det_base_c00 (671s) ret    973.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1842s [36/600] OK  held_finger-turn-hard_s1_k0_none_base_c00 (510s) ret    985.2 succ 0/5
+    1842s [37/600] OK  held_quadruped-walk_s2_k3_det_base_c00 (669s) ret    177.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1842s [38/600] OK  held_quadruped-walk_s1_k6_det_base_c00 (671s) ret    977.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1845s [39/600] OK  held_quadruped-walk_s2_k4_det_base_c00 (671s) ret    970.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1846s [40/600] OK  held_quadruped-walk_s3_k0_none_base_c00 (517s) ret    983.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1847s [41/600] OK  held_quadruped-walk_s2_k5_det_base_c00 (670s) ret    982.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2018s [42/600] OK  held_finger-turn-hard_s1_k3_det_base_c00 (686s) ret    290.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2019s [43/600] OK  held_quadruped-walk_s3_k3_det_base_c00 (689s) ret    305.6 succ 0/5
+    2020s [44/600] OK  held_quadruped-walk_s2_k6_det_base_c00 (693s) ret    984.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2020s [45/600] OK  held_quadruped-walk_s3_k5_det_base_c00 (689s) ret    976.1 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2022s [46/600] OK  held_quadruped-walk_s3_k6_det_base_c00 (690s) ret    980.3 succ 0/5
+    2022s [47/600] OK  held_finger-turn-hard_s1_k4_det_base_c00 (687s) ret    786.6 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2024s [48/600] OK  held_quadruped-walk_s3_k4_det_base_c00 (693s) ret    933.5 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2118s [49/600] OK  held_mw-push_s1_k0_none_base_c00 (98s) ret   1785.2 succ 5/5
+    2151s [50/600] OK  held_mw-push_s1_k4_det_base_c00 (129s) ret   1589.7 succ 3/5
+    2151s [51/600] OK  held_mw-push_s1_k3_det_base_c00 (130s) ret    235.6 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2153s [52/600] OK  held_mw-push_s1_k5_det_base_c00 (129s) ret   1779.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2247s [53/600] OK  held_mw-push_s1_k6_det_base_c00 (129s) ret   1780.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2250s [54/600] OK  held_mw-push_s2_k0_none_base_c00 (98s) ret   1783.3 succ 5/5
+    2281s [55/600] OK  held_mw-push_s2_k3_det_base_c00 (129s) ret    882.8 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    2282s [56/600] OK  held_mw-push_s2_k4_det_base_c00 (129s) ret   1706.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2343s [57/600] OK  held_finger-turn-hard_s2_k0_none_base_c00 (502s) ret    986.6 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+    2343s [58/600] OK  held_finger-turn-hard_s1_k5_det_base_c00 (687s) ret    985.4 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2346s [59/600] OK  held_finger-turn-hard_s3_k0_none_base_c00 (500s) ret    984.6 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2375s [60/600] OK  held_mw-push_s2_k5_det_base_c00 (129s) ret   1773.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2378s [61/600] OK  held_mw-push_s2_k6_det_base_c00 (129s) ret   1778.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2379s [62/600] OK  held_mw-push_s3_k0_none_base_c00 (98s) ret   1781.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2410s [63/600] OK  held_mw-push_s3_k3_det_base_c00 (128s) ret   1564.4 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2470s [64/600] OK  held_mw-push_s3_k4_det_base_c00 (127s) ret   1770.1 succ 5/5
+    2470s [65/600] OK  held_mw-push_s3_k5_det_base_c00 (127s) ret   1771.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2472s [66/600] OK  held_mw-pick-place_s1_k0_none_base_c00 (97s) ret   1671.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2474s [67/600] OK  held_mw-push_s3_k6_det_base_c00 (127s) ret   1771.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2494s [68/600] OK  held_finger-turn-hard_s1_k6_det_base_c00 (656s) ret    986.2 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2497s [69/600] OK  held_finger-turn-hard_s2_k5_det_base_c00 (654s) ret    985.6 succ 0/5
+    2497s [70/600] OK  held_finger-turn-hard_s2_k3_det_base_c00 (655s) ret    501.4 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2498s [71/600] OK  held_finger-turn-hard_s2_k4_det_base_c00 (656s) ret    587.0 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+    2498s [72/600] OK  held_finger-turn-hard_s2_k6_det_base_c00 (654s) ret    983.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2500s [73/600] OK  held_finger-turn-hard_s3_k3_det_base_c00 (653s) ret    392.2 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2506s [74/600] OK  held_mw-pick-place_s1_k3_det_base_c00 (127s) ret   1125.3 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2506s [75/600] OK  held_mw-pick-place_s1_k4_det_base_c00 (127s) ret   1472.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2537s [76/600] OK  held_mw-pick-place_s1_k5_det_base_c00 (127s) ret   1659.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2567s [77/600] OK  held_mw-pick-place_s2_k0_none_base_c00 (97s) ret   1668.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2594s [78/600] OK  held_mw-pick-place_s3_k0_none_base_c00 (97s) ret   1666.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2598s [79/600] OK  held_mw-pick-place_s1_k6_det_base_c00 (128s) ret   1664.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2600s [80/600] OK  held_mw-pick-place_s2_k3_det_base_c00 (128s) ret    872.2 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2601s [81/600] OK  held_mw-pick-place_s2_k4_det_base_c00 (127s) ret   1657.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2603s [82/600] OK  held_mw-door-open_s1_k0_none_base_c00 (97s) ret   1530.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2621s [83/600] OK  held_mw-pick-place_s2_k5_det_base_c00 (127s) ret   1662.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2624s [84/600] OK  held_mw-pick-place_s2_k6_det_base_c00 (127s) ret   1663.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2626s [85/600] OK  held_mw-pick-place_s3_k4_det_base_c00 (127s) ret   1265.8 succ 3/5
+    2626s [86/600] OK  held_mw-pick-place_s3_k3_det_base_c00 (128s) ret   1037.2 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2628s [87/600] OK  held_mw-pick-place_s3_k5_det_base_c00 (128s) ret   1658.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2633s [88/600] OK  held_mw-pick-place_s3_k6_det_base_c00 (128s) ret   1660.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2652s [89/600] OK  held_finger-turn-hard_s3_k6_det_base_c00 (632s) ret    983.0 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2653s [90/600] OK  held_finger-turn-hard_s3_k4_det_base_c00 (635s) ret    583.4 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2655s [91/600] OK  held_finger-turn-hard_s3_k5_det_base_c00 (636s) ret    985.8 succ 0/5
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2665s [92/600] OK  held_mw-door-open_s1_k3_det_base_c00 (127s) ret   1455.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2694s [93/600] OK  held_mw-door-open_s1_k4_det_base_c00 (127s) ret   1126.4 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2697s [94/600] OK  held_mw-door-open_s2_k0_none_base_c00 (97s) ret   1615.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2721s [95/600] OK  held_mw-door-open_s1_k5_det_base_c00 (127s) ret   1531.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2722s [96/600] OK  held_mw-door-open_s3_k0_none_base_c00 (97s) ret   1604.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2725s [97/600] OK  held_mw-door-open_s1_k6_det_base_c00 (127s) ret   1532.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2728s [98/600] OK  held_mw-door-open_s2_k3_det_base_c00 (127s) ret   1530.0 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    2731s [99/600] OK  held_mw-door-open_s2_k4_det_base_c00 (127s) ret    735.5 succ 1/5
+Episode length: 100
+Discount factor: 0.95
+    2748s [100/600] OK  held_mw-door-open_s2_k5_det_base_c00 (127s) ret   1587.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2750s [101/600] OK  held_mw-drawer-open_s1_k0_none_base_c00 (96s) ret   1821.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2751s [102/600] OK  held_mw-door-open_s2_k6_det_base_c00 (127s) ret   1603.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2754s [103/600] OK  held_mw-door-open_s3_k3_det_base_c00 (128s) ret   1404.7 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2756s [104/600] OK  held_mw-door-open_s3_k4_det_base_c00 (127s) ret   1558.3 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    2761s [105/600] OK  held_mw-door-open_s3_k5_det_base_c00 (127s) ret   1568.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2779s [106/600] OK  held_mw-door-open_s3_k6_det_base_c00 (127s) ret   1600.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2783s [107/600] OK  held_mw-drawer-open_s1_k3_det_base_c00 (128s) ret   1801.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2792s [108/600] OK  held_mw-drawer-open_s1_k4_det_base_c00 (127s) ret   1807.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2818s [109/600] OK  held_mw-drawer-open_s2_k0_none_base_c00 (97s) ret   1821.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2821s [110/600] OK  held_mw-drawer-open_s1_k5_det_base_c00 (127s) ret   1815.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2824s [111/600] OK  held_mw-drawer-open_s1_k6_det_base_c00 (127s) ret   1815.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2845s [112/600] OK  held_mw-drawer-open_s3_k0_none_base_c00 (97s) ret   1822.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2850s [113/600] OK  held_mw-drawer-open_s2_k3_det_base_c00 (128s) ret   1260.3 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2853s [114/600] OK  held_mw-drawer-open_s2_k4_det_base_c00 (128s) ret   1806.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2857s [115/600] OK  held_mw-drawer-open_s2_k5_det_base_c00 (129s) ret   1811.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2860s [116/600] OK  held_mw-button-press-topdown_s1_k0_none_base_c00 (99s) ret   1348.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2861s [117/600] OK  held_mw-drawer-open_s2_k6_det_base_c00 (130s) ret   1820.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2882s [118/600] OK  held_mw-drawer-open_s3_k3_det_base_c00 (133s) ret   1658.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2885s [119/600] OK  held_mw-drawer-open_s3_k4_det_base_c00 (134s) ret   1790.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2887s [120/600] OK  held_mw-drawer-open_s3_k5_det_base_c00 (133s) ret   1817.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2890s [121/600] OK  held_mw-drawer-open_s3_k6_det_base_c00 (134s) ret   1818.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2920s [122/600] OK  held_mw-button-press-topdown_s1_k3_det_base_c00 (140s) ret    535.7 succ 1/5
+Episode length: 100
+Discount factor: 0.95
+    2921s [123/600] OK  held_mw-button-press-topdown_s1_k4_det_base_c00 (138s) ret   1257.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2932s [124/600] OK  held_mw-button-press-topdown_s2_k0_none_base_c00 (111s) ret   1355.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2935s [125/600] OK  held_mw-button-press-topdown_s1_k5_det_base_c00 (143s) ret   1308.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2959s [126/600] OK  held_mw-button-press-topdown_s1_k6_det_base_c00 (142s) ret   1345.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2966s [127/600] OK  held_mw-button-press-topdown_s2_k3_det_base_c00 (142s) ret    761.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2972s [128/600] OK  held_mw-button-press-topdown_s3_k0_none_base_c00 (114s) ret   1357.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2996s [129/600] OK  held_mw-peg-insert-side_s1_k0_none_base_c00 (109s) ret   1620.8 succ 5/5
+    2996s [130/600] OK  held_mw-button-press-topdown_s2_k4_det_base_c00 (151s) ret   1314.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3001s [131/600] OK  held_mw-button-press-topdown_s2_k5_det_base_c00 (151s) ret   1267.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3002s [132/600] OK  held_mw-button-press-topdown_s3_k3_det_base_c00 (142s) ret    637.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3003s [133/600] OK  held_mw-button-press-topdown_s3_k4_det_base_c00 (142s) ret   1199.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3004s [134/600] OK  held_mw-button-press-topdown_s2_k6_det_base_c00 (151s) ret   1347.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3023s [135/600] OK  held_mw-button-press-topdown_s3_k5_det_base_c00 (141s) ret   1331.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3031s [136/600] OK  held_mw-peg-insert-side_s1_k3_det_base_c00 (141s) ret    106.5 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3033s [137/600] OK  held_mw-button-press-topdown_s3_k6_det_base_c00 (148s) ret   1345.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3044s [138/600] OK  held_mw-peg-insert-side_s2_k0_none_base_c00 (109s) ret   1651.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3058s [139/600] OK  held_mw-peg-insert-side_s1_k5_det_base_c00 (137s) ret   1620.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3063s [140/600] OK  held_mw-peg-insert-side_s1_k4_det_base_c00 (143s) ret    921.7 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    3073s [141/600] OK  held_mw-peg-insert-side_s1_k6_det_base_c00 (141s) ret   1673.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3092s [142/600] OK  held_mw-peg-insert-side_s2_k3_det_base_c00 (133s) ret    525.3 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    3098s [143/600] OK  held_mw-peg-insert-side_s3_k0_none_base_c00 (102s) ret   1687.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3099s [144/600] OK  held_mw-peg-insert-side_s2_k4_det_base_c00 (133s) ret   1096.7 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3107s [145/600] OK  held_mw-peg-insert-side_s2_k5_det_base_c00 (136s) ret   1438.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3120s [146/600] OK  held_mw-window-open_s1_k0_none_base_c00 (97s) ret   1565.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3128s [147/600] OK  held_mw-peg-insert-side_s2_k6_det_base_c00 (132s) ret   1261.3 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3134s [148/600] OK  held_mw-peg-insert-side_s3_k4_det_base_c00 (132s) ret   1213.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3134s [149/600] OK  held_mw-peg-insert-side_s3_k3_det_base_c00 (133s) ret    761.0 succ 4/5
+    3135s [150/600] OK  held_mw-peg-insert-side_s3_k5_det_base_c00 (132s) ret   1594.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3137s [151/600] OK  held_mw-peg-insert-side_s3_k6_det_base_c00 (133s) ret   1683.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3160s [152/600] OK  held_mw-window-open_s1_k3_det_base_c00 (128s) ret    826.6 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    3161s [153/600] OK  held_mw-window-open_s2_k0_none_base_c00 (99s) ret   1591.6 succ 5/5
+    3162s [154/600] OK  held_mw-window-open_s1_k4_det_base_c00 (129s) ret   1115.8 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3174s [155/600] OK  held_mw-window-open_s1_k5_det_base_c00 (129s) ret   1571.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3187s [156/600] OK  held_mw-window-open_s1_k6_det_base_c00 (129s) ret   1563.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3203s [157/600] OK  held_mw-window-open_s2_k3_det_base_c00 (129s) ret   1205.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3206s [158/600] OK  held_mw-window-open_s3_k0_none_base_c00 (99s) ret   1624.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3221s [159/600] OK  held_mw-window-open_s2_k4_det_base_c00 (129s) ret   1410.2 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3227s [160/600] OK  held_mw-window-open_s2_k6_det_base_c00 (128s) ret   1603.9 succ 5/5
+    3227s [161/600] OK  held_mw-window-open_s2_k5_det_base_c00 (130s) ret   1526.5 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3232s [162/600] OK  held_mw-sweep-into_s1_k0_none_base_c00 (97s) ret   1484.3 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3248s [163/600] OK  held_mw-window-open_s3_k3_det_base_c00 (128s) ret    286.3 succ 1/5
+Episode length: 100
+Discount factor: 0.95
+    3256s [164/600] OK  held_mw-window-open_s3_k4_det_base_c00 (129s) ret   1548.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3262s [165/600] OK  held_mw-window-open_s3_k5_det_base_c00 (128s) ret   1608.0 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3262s [166/600] OK  held_mw-window-open_s3_k6_det_base_c00 (128s) ret   1621.8 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3265s [167/600] OK  held_mw-sweep-into_s1_k3_det_base_c00 (128s) ret   1194.0 succ 4/5
+Episode length: 500
+Discount factor: 0.99
+    3270s [168/600] OK  held_mw-sweep-into_s2_k0_none_base_c00 (97s) ret   1809.7 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3287s [169/600] OK  held_mw-sweep-into_s1_k4_det_base_c00 (128s) ret   1763.5 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3289s [170/600] OK  held_mw-sweep-into_s1_k5_det_base_c00 (127s) ret   1719.5 succ 5/5
+    3289s [171/600] OK  held_mw-sweep-into_s1_k6_det_base_c00 (127s) ret   1806.4 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    3316s [172/600] OK  held_mw-sweep-into_s2_k3_det_base_c00 (128s) ret   1466.4 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3324s [173/600] OK  held_mw-sweep-into_s3_k0_none_base_c00 (97s) ret   1809.5 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3330s [174/600] OK  held_mw-sweep-into_s2_k4_det_base_c00 (128s) ret   1502.3 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3334s [175/600] OK  held_mw-sweep-into_s2_k5_det_base_c00 (128s) ret   1751.1 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3349s [176/600] OK  held_mw-sweep-into_s2_k6_det_base_c00 (128s) ret   1805.1 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3355s [177/600] OK  held_mw-sweep-into_s3_k3_det_base_c00 (128s) ret   1737.4 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3361s [178/600] OK  held_mw-sweep-into_s3_k4_det_base_c00 (129s) ret   1803.6 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3377s [179/600] OK  held_mw-sweep-into_s3_k5_det_base_c00 (129s) ret   1749.1 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3385s [180/600] OK  held_mw-sweep-into_s3_k6_det_base_c00 (129s) ret   1807.1 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3750s [181/600] OK  held_cheetah-run_s1_k0_none_base_c01 (488s) ret    866.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3775s [182/600] OK  held_cheetah-run_s2_k0_none_base_c01 (486s) ret    923.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3821s [183/600] OK  held_cheetah-run_s3_k0_none_base_c01 (487s) ret    927.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3874s [184/600] OK  held_walker-walk_s1_k0_none_base_c01 (489s) ret    991.2 succ 0/5
+    3904s [185/600] OK  held_cheetah-run_s1_k3_det_base_c01 (642s) ret    112.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3908s [186/600] OK  held_cheetah-run_s1_k4_det_base_c01 (643s) ret    236.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3913s [187/600] OK  held_cheetah-run_s1_k5_det_base_c01 (643s) ret    497.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3932s [188/600] OK  held_cheetah-run_s1_k6_det_base_c01 (644s) ret    521.1 succ 0/5
+    3932s [189/600] OK  held_cheetah-run_s2_k3_det_base_c01 (643s) ret     49.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    3961s [190/600] OK  held_cheetah-run_s2_k4_det_base_c01 (645s) ret    196.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3968s [191/600] OK  held_cheetah-run_s2_k5_det_base_c01 (644s) ret    475.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3972s [192/600] OK  held_cheetah-run_s2_k6_det_base_c01 (642s) ret    881.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3993s [193/600] OK  held_cheetah-run_s3_k3_det_base_c01 (644s) ret     20.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3998s [194/600] OK  held_cheetah-run_s3_k4_det_base_c01 (643s) ret    282.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4006s [195/600] OK  held_cheetah-run_s3_k5_det_base_c01 (645s) ret    532.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4021s [196/600] OK  held_cheetah-run_s3_k6_det_base_c01 (644s) ret    900.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4388s [197/600] OK  held_walker-walk_s2_k0_none_base_c01 (484s) ret    990.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4393s [198/600] OK  held_walker-walk_s1_k3_det_base_c01 (642s) ret    453.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4415s [199/600] OK  held_walker-walk_s1_k4_det_base_c01 (640s) ret    893.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4447s [200/600] OK  held_walker-walk_s3_k0_none_base_c01 (487s) ret    990.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4461s [201/600] OK  held_walker-walk_s1_k5_det_base_c01 (640s) ret    977.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4493s [202/600] OK  held_quadruped-walk_s1_k0_none_base_c01 (487s) ret    982.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4516s [203/600] OK  held_walker-walk_s1_k6_det_base_c01 (641s) ret    988.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4548s [204/600] OK  held_walker-walk_s2_k3_det_base_c01 (640s) ret    503.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4554s [205/600] OK  held_walker-walk_s2_k4_det_base_c01 (641s) ret    758.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4571s [206/600] OK  held_walker-walk_s2_k6_det_base_c01 (640s) ret    985.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4573s [207/600] OK  held_walker-walk_s2_k5_det_base_c01 (641s) ret    980.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4610s [208/600] OK  held_walker-walk_s3_k3_det_base_c01 (641s) ret    332.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4612s [209/600] OK  held_walker-walk_s3_k4_det_base_c01 (640s) ret    780.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4634s [210/600] OK  held_walker-walk_s3_k5_det_base_c01 (642s) ret    914.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4638s [211/600] OK  held_walker-walk_s3_k6_det_base_c01 (640s) ret    985.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4663s [212/600] OK  held_quadruped-walk_s1_k3_det_base_c01 (642s) ret    455.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4934s [213/600] OK  held_quadruped-walk_s2_k0_none_base_c01 (487s) ret    980.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5028s [214/600] OK  held_quadruped-walk_s1_k4_det_base_c01 (640s) ret    882.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5036s [215/600] OK  held_quadruped-walk_s1_k5_det_base_c01 (643s) ret    970.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5040s [216/600] OK  held_quadruped-walk_s3_k0_none_base_c01 (486s) ret    984.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5056s [217/600] OK  held_quadruped-walk_s1_k6_det_base_c01 (640s) ret    982.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5101s [218/600] OK  held_quadruped-walk_s2_k3_det_base_c01 (640s) ret    284.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5117s [219/600] OK  held_finger-turn-hard_s1_k0_none_base_c01 (482s) ret    980.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5136s [220/600] OK  held_quadruped-walk_s2_k4_det_base_c01 (643s) ret    954.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5158s [221/600] OK  held_quadruped-walk_s2_k5_det_base_c01 (642s) ret    969.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5188s [222/600] OK  held_quadruped-walk_s2_k6_det_base_c01 (640s) ret    979.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5212s [223/600] OK  held_quadruped-walk_s3_k3_det_base_c01 (640s) ret    275.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5215s [224/600] OK  held_quadruped-walk_s3_k4_det_base_c01 (642s) ret    939.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    5252s [225/600] OK  held_quadruped-walk_s3_k5_det_base_c01 (642s) ret    979.9 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5253s [226/600] OK  held_quadruped-walk_s3_k6_det_base_c01 (641s) ret    983.1 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5276s [227/600] OK  held_finger-turn-hard_s1_k3_det_base_c01 (638s) ret    540.4 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5303s [228/600] OK  held_finger-turn-hard_s1_k4_det_base_c01 (639s) ret    591.2 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5350s [229/600] OK  held_mw-push_s1_k0_none_base_c01 (98s) ret   1783.7 succ 5/5
+    5382s [230/600] OK  held_mw-push_s1_k3_det_base_c01 (129s) ret    744.3 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5405s [231/600] OK  held_mw-push_s1_k4_det_base_c01 (129s) ret   1611.8 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    5432s [232/600] OK  held_mw-push_s1_k5_det_base_c01 (129s) ret   1788.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5479s [233/600] OK  held_mw-push_s1_k6_det_base_c01 (129s) ret   1794.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5480s [234/600] OK  held_mw-push_s2_k0_none_base_c01 (98s) ret   1796.5 succ 5/5
+    5518s [235/600] OK  held_finger-turn-hard_s2_k0_none_base_c01 (482s) ret    940.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5534s [236/600] OK  held_mw-push_s2_k3_det_base_c01 (129s) ret   1379.8 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    5561s [237/600] OK  held_mw-push_s2_k4_det_base_c01 (129s) ret   1773.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5573s [238/600] OK  held_finger-turn-hard_s1_k5_det_base_c01 (638s) ret    962.0 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5607s [239/600] OK  held_mw-push_s2_k5_det_base_c01 (128s) ret   1788.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5608s [240/600] OK  held_mw-push_s2_k6_det_base_c01 (128s) ret   1794.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5616s [241/600] OK  held_mw-push_s3_k0_none_base_c01 (98s) ret   1783.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5618s [242/600] OK  held_finger-turn-hard_s3_k0_none_base_c01 (482s) ret    981.6 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5662s [243/600] OK  held_mw-push_s3_k3_det_base_c01 (128s) ret   1759.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5663s [244/600] OK  held_finger-turn-hard_s1_k6_det_base_c01 (635s) ret    980.6 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5675s [245/600] OK  held_finger-turn-hard_s2_k3_det_base_c01 (636s) ret    153.0 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5689s [246/600] OK  held_mw-push_s3_k4_det_base_c01 (128s) ret   1782.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5691s [247/600] OK  held_finger-turn-hard_s2_k4_det_base_c01 (635s) ret    416.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5701s [248/600] OK  held_mw-push_s3_k5_det_base_c01 (128s) ret   1758.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5704s [249/600] OK  held_mw-pick-place_s1_k0_none_base_c01 (97s) ret   1690.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5735s [250/600] OK  held_mw-push_s3_k6_det_base_c01 (128s) ret   1763.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5736s [251/600] OK  held_finger-turn-hard_s2_k5_det_base_c01 (635s) ret    973.6 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5743s [252/600] OK  held_mw-pick-place_s1_k3_det_base_c01 (127s) ret   1296.5 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    5745s [253/600] OK  held_mw-pick-place_s1_k4_det_base_c01 (127s) ret   1507.9 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    5752s [254/600] OK  held_finger-turn-hard_s2_k6_det_base_c01 (635s) ret    964.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5772s [255/600] OK  held_mw-pick-place_s2_k0_none_base_c01 (97s) ret   1693.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5789s [256/600] OK  held_mw-pick-place_s1_k5_det_base_c01 (127s) ret   1685.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5790s [257/600] OK  held_mw-pick-place_s1_k6_det_base_c01 (127s) ret   1684.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5793s [258/600] OK  held_finger-turn-hard_s3_k3_det_base_c01 (636s) ret    313.2 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5816s [259/600] OK  held_mw-pick-place_s2_k3_det_base_c01 (127s) ret    819.2 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    5818s [260/600] OK  held_mw-pick-place_s2_k4_det_base_c01 (127s) ret   1671.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5822s [261/600] OK  held_finger-turn-hard_s3_k4_det_base_c01 (634s) ret    587.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5829s [262/600] OK  held_mw-pick-place_s2_k5_det_base_c01 (128s) ret   1679.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5832s [263/600] OK  held_mw-pick-place_s2_k6_det_base_c01 (127s) ret   1694.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5832s [264/600] OK  held_mw-pick-place_s3_k0_none_base_c01 (97s) ret   1686.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5845s [265/600] OK  held_finger-turn-hard_s3_k5_det_base_c01 (633s) ret    979.0 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5850s [266/600] OK  held_finger-turn-hard_s3_k6_det_base_c01 (635s) ret    980.6 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    5863s [267/600] OK  held_mw-pick-place_s3_k3_det_base_c01 (127s) ret   1332.5 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    5869s [268/600] OK  held_mw-door-open_s1_k0_none_base_c01 (97s) ret   1563.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5871s [269/600] OK  held_mw-pick-place_s3_k4_det_base_c01 (128s) ret   1578.5 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    5873s [270/600] OK  held_mw-pick-place_s3_k5_det_base_c01 (128s) ret   1680.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5879s [271/600] OK  held_mw-pick-place_s3_k6_det_base_c01 (128s) ret   1629.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5914s [272/600] OK  held_mw-door-open_s2_k0_none_base_c01 (97s) ret   1626.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5916s [273/600] OK  held_mw-door-open_s1_k3_det_base_c01 (127s) ret   1402.9 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    5917s [274/600] OK  held_mw-door-open_s1_k4_det_base_c01 (127s) ret   1115.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5921s [275/600] OK  held_mw-door-open_s1_k5_det_base_c01 (128s) ret   1547.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5941s [276/600] OK  held_mw-door-open_s3_k0_none_base_c01 (97s) ret   1579.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5944s [277/600] OK  held_mw-door-open_s1_k6_det_base_c01 (128s) ret   1580.2 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    5950s [278/600] OK  held_mw-door-open_s2_k3_det_base_c01 (128s) ret   1512.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5957s [279/600] OK  held_mw-door-open_s2_k4_det_base_c01 (128s) ret    984.5 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    5959s [280/600] OK  held_mw-door-open_s2_k5_det_base_c01 (127s) ret   1590.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5960s [281/600] OK  held_mw-door-open_s2_k6_det_base_c01 (128s) ret   1606.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5970s [282/600] OK  held_mw-drawer-open_s1_k0_none_base_c01 (97s) ret   1822.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5978s [283/600] OK  held_mw-door-open_s3_k3_det_base_c01 (128s) ret   1426.0 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    5990s [284/600] OK  held_mw-door-open_s3_k4_det_base_c01 (127s) ret   1573.2 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    5996s [285/600] OK  held_mw-door-open_s3_k5_det_base_c01 (128s) ret   1588.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    5999s [286/600] OK  held_mw-door-open_s3_k6_det_base_c01 (128s) ret   1555.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6007s [287/600] OK  held_mw-drawer-open_s1_k3_det_base_c01 (128s) ret   1799.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6018s [288/600] OK  held_mw-drawer-open_s2_k0_none_base_c01 (97s) ret   1813.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6041s [289/600] OK  held_mw-drawer-open_s1_k4_det_base_c01 (127s) ret   1806.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6043s [290/600] OK  held_mw-drawer-open_s1_k5_det_base_c01 (127s) ret   1815.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6044s [291/600] OK  held_mw-drawer-open_s1_k6_det_base_c01 (127s) ret   1816.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6055s [292/600] OK  held_mw-drawer-open_s3_k0_none_base_c01 (96s) ret   1822.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6068s [293/600] OK  held_mw-drawer-open_s2_k3_det_base_c01 (127s) ret   1264.6 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    6071s [294/600] OK  held_mw-drawer-open_s2_k4_det_base_c01 (127s) ret   1806.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6077s [295/600] OK  held_mw-drawer-open_s2_k5_det_base_c01 (127s) ret   1812.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6085s [296/600] OK  held_mw-drawer-open_s2_k6_det_base_c01 (128s) ret   1820.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6087s [297/600] OK  held_mw-drawer-open_s3_k3_det_base_c01 (127s) ret   1686.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6093s [298/600] OK  held_mw-button-press-topdown_s1_k0_none_base_c01 (96s) ret   1352.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6097s [299/600] OK  held_mw-drawer-open_s3_k4_det_base_c01 (127s) ret   1787.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6106s [300/600] OK  held_mw-drawer-open_s3_k5_det_base_c01 (128s) ret   1818.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6118s [301/600] OK  held_mw-drawer-open_s3_k6_det_base_c01 (127s) ret   1819.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6126s [302/600] OK  held_mw-button-press-topdown_s1_k3_det_base_c01 (128s) ret    490.6 succ 1/5
+Episode length: 100
+Discount factor: 0.95
+    6134s [303/600] OK  held_mw-button-press-topdown_s1_k4_det_base_c01 (127s) ret   1262.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6140s [304/600] OK  held_mw-button-press-topdown_s2_k0_none_base_c01 (96s) ret   1355.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6145s [305/600] OK  held_mw-button-press-topdown_s1_k5_det_base_c01 (127s) ret   1321.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6168s [306/600] OK  held_mw-button-press-topdown_s1_k6_det_base_c01 (127s) ret   1342.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6171s [307/600] OK  held_mw-button-press-topdown_s2_k3_det_base_c01 (127s) ret   1038.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6173s [308/600] OK  held_mw-button-press-topdown_s3_k0_none_base_c01 (96s) ret   1356.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6182s [309/600] OK  held_mw-button-press-topdown_s2_k4_det_base_c01 (127s) ret   1188.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6194s [310/600] OK  held_mw-button-press-topdown_s2_k5_det_base_c01 (126s) ret   1335.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6198s [311/600] OK  held_mw-button-press-topdown_s2_k6_det_base_c01 (127s) ret   1345.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6204s [312/600] OK  held_mw-peg-insert-side_s1_k0_none_base_c01 (98s) ret   1705.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6212s [313/600] OK  held_mw-button-press-topdown_s3_k3_det_base_c01 (127s) ret    676.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6213s [314/600] OK  held_mw-button-press-topdown_s3_k4_det_base_c01 (126s) ret   1305.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6219s [315/600] OK  held_mw-button-press-topdown_s3_k5_det_base_c01 (126s) ret   1342.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6224s [316/600] OK  held_mw-button-press-topdown_s3_k6_det_base_c01 (126s) ret   1348.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6243s [317/600] OK  held_mw-peg-insert-side_s2_k0_none_base_c01 (98s) ret   1702.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6245s [318/600] OK  held_mw-peg-insert-side_s1_k3_det_base_c01 (128s) ret     21.1 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    6255s [319/600] OK  held_mw-peg-insert-side_s1_k4_det_base_c01 (128s) ret   1096.7 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6262s [320/600] OK  held_mw-peg-insert-side_s1_k5_det_base_c01 (128s) ret   1473.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6267s [321/600] OK  held_mw-peg-insert-side_s1_k6_det_base_c01 (127s) ret   1650.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6292s [322/600] OK  held_mw-peg-insert-side_s3_k0_none_base_c01 (97s) ret   1703.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6296s [323/600] OK  held_mw-peg-insert-side_s2_k3_det_base_c01 (128s) ret   1231.4 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6299s [324/600] OK  held_mw-peg-insert-side_s2_k4_det_base_c01 (128s) ret    836.1 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    6301s [325/600] OK  held_mw-peg-insert-side_s2_k5_det_base_c01 (128s) ret   1632.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6310s [326/600] OK  held_mw-peg-insert-side_s2_k6_det_base_c01 (128s) ret   1695.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6315s [327/600] OK  held_mw-window-open_s1_k0_none_base_c01 (96s) ret   1589.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6327s [328/600] OK  held_mw-peg-insert-side_s3_k3_det_base_c01 (129s) ret   1098.9 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6332s [329/600] OK  held_mw-peg-insert-side_s3_k4_det_base_c01 (129s) ret   1553.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6341s [330/600] OK  held_mw-peg-insert-side_s3_k5_det_base_c01 (129s) ret   1388.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6342s [331/600] OK  held_mw-peg-insert-side_s3_k6_det_base_c01 (129s) ret   1700.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6351s [332/600] OK  held_mw-window-open_s1_k3_det_base_c01 (127s) ret    999.3 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    6358s [333/600] OK  held_mw-window-open_s2_k0_none_base_c01 (97s) ret   1588.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6370s [334/600] OK  held_mw-window-open_s1_k4_det_base_c01 (127s) ret   1180.1 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    6372s [335/600] OK  held_mw-window-open_s1_k5_det_base_c01 (127s) ret   1542.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6382s [336/600] OK  held_mw-window-open_s1_k6_det_base_c01 (127s) ret   1599.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6394s [337/600] OK  held_mw-window-open_s2_k3_det_base_c01 (127s) ret   1129.5 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6397s [338/600] OK  held_mw-window-open_s3_k0_none_base_c01 (97s) ret   1619.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6419s [339/600] OK  held_mw-window-open_s2_k4_det_base_c01 (127s) ret   1449.8 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6423s [340/600] OK  held_mw-window-open_s2_k5_det_base_c01 (127s) ret   1545.9 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6426s [341/600] OK  held_mw-window-open_s2_k6_det_base_c01 (127s) ret   1577.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6437s [342/600] OK  held_mw-window-open_s3_k3_det_base_c01 (127s) ret    586.2 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    6438s [343/600] OK  held_mw-sweep-into_s1_k0_none_base_c01 (97s) ret   1823.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6443s [344/600] OK  held_mw-window-open_s3_k4_det_base_c01 (127s) ret   1553.5 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6454s [345/600] OK  held_mw-window-open_s3_k5_det_base_c01 (127s) ret   1597.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6460s [346/600] OK  held_mw-window-open_s3_k6_det_base_c01 (128s) ret   1614.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6469s [347/600] OK  held_mw-sweep-into_s2_k0_none_base_c01 (96s) ret   1821.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6470s [348/600] OK  held_mw-sweep-into_s1_k3_det_base_c01 (128s) ret   1292.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6479s [349/600] OK  held_mw-sweep-into_s1_k4_det_base_c01 (128s) ret   1406.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6486s [350/600] OK  held_mw-sweep-into_s1_k5_det_base_c01 (127s) ret   1816.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6497s [351/600] OK  held_mw-sweep-into_s1_k6_det_base_c01 (128s) ret   1776.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6510s [352/600] OK  held_mw-sweep-into_s2_k3_det_base_c01 (128s) ret   1371.7 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6520s [353/600] OK  held_mw-sweep-into_s3_k0_none_base_c01 (97s) ret   1818.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6521s [354/600] OK  held_mw-sweep-into_s2_k4_det_base_c01 (127s) ret   1757.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6524s [355/600] OK  held_mw-sweep-into_s2_k5_det_base_c01 (127s) ret   1813.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6546s [356/600] OK  held_mw-sweep-into_s2_k6_det_base_c01 (127s) ret   1810.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6551s [357/600] OK  held_mw-push_s1_k0_none_base_c02 (97s) ret   1797.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6553s [358/600] OK  held_mw-sweep-into_s3_k3_det_base_c01 (127s) ret   1775.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6564s [359/600] OK  held_mw-sweep-into_s3_k4_det_base_c01 (127s) ret   1812.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6566s [360/600] OK  held_mw-sweep-into_s3_k5_det_base_c01 (128s) ret   1816.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6570s [361/600] OK  held_mw-sweep-into_s3_k6_det_base_c01 (128s) ret   1817.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6583s [362/600] OK  held_mw-push_s2_k0_none_base_c02 (97s) ret   1797.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6588s [363/600] OK  held_mw-push_s1_k3_det_base_c02 (128s) ret    679.7 succ 1/5
+Episode length: 100
+Discount factor: 0.95
+    6596s [364/600] OK  held_mw-push_s1_k4_det_base_c02 (128s) ret   1762.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6598s [365/600] OK  held_mw-push_s1_k5_det_base_c02 (128s) ret   1790.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6606s [366/600] OK  held_mw-push_s1_k6_det_base_c02 (128s) ret   1793.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6621s [367/600] OK  held_mw-push_s3_k0_none_base_c02 (97s) ret   1781.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6625s [368/600] OK  held_mw-push_s2_k3_det_base_c02 (128s) ret   1242.7 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    6638s [369/600] OK  held_mw-push_s2_k4_det_base_c02 (128s) ret   1685.9 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    6647s [370/600] OK  held_mw-push_s2_k5_det_base_c02 (127s) ret   1793.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6649s [371/600] OK  held_mw-push_s2_k6_det_base_c02 (127s) ret   1794.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6663s [372/600] OK  held_mw-pick-place_s1_k0_none_base_c02 (97s) ret   1685.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6673s [373/600] OK  held_mw-push_s3_k3_det_base_c02 (127s) ret   1600.9 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    6679s [374/600] OK  held_mw-push_s3_k4_det_base_c02 (128s) ret   1763.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6680s [375/600] OK  held_mw-push_s3_k5_det_base_c02 (127s) ret   1764.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6691s [376/600] OK  held_mw-push_s3_k6_det_base_c02 (127s) ret   1770.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6694s [377/600] OK  held_mw-pick-place_s2_k0_none_base_c02 (97s) ret   1681.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6698s [378/600] OK  held_mw-pick-place_s1_k3_det_base_c02 (127s) ret    827.1 succ 1/5
+Episode length: 100
+Discount factor: 0.95
+    6710s [379/600] OK  held_mw-pick-place_s1_k4_det_base_c02 (128s) ret   1642.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6716s [380/600] OK  held_mw-pick-place_s1_k5_det_base_c02 (127s) ret   1675.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6724s [381/600] OK  held_mw-pick-place_s1_k6_det_base_c02 (127s) ret   1678.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6734s [382/600] OK  held_mw-pick-place_s2_k3_det_base_c02 (128s) ret   1173.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6744s [383/600] OK  held_mw-pick-place_s3_k0_none_base_c02 (96s) ret   1671.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6749s [384/600] OK  held_mw-pick-place_s2_k4_det_base_c02 (127s) ret   1664.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6753s [385/600] OK  held_mw-pick-place_s2_k5_det_base_c02 (128s) ret   1671.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6766s [386/600] OK  held_mw-pick-place_s2_k6_det_base_c02 (128s) ret   1676.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6776s [387/600] OK  held_mw-pick-place_s3_k3_det_base_c02 (127s) ret   1449.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6777s [388/600] OK  held_mw-door-open_s1_k0_none_base_c02 (97s) ret   1580.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6790s [389/600] OK  held_mw-pick-place_s3_k4_det_base_c02 (128s) ret   1556.5 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6800s [390/600] OK  held_mw-pick-place_s3_k5_det_base_c02 (127s) ret   1660.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6806s [391/600] OK  held_mw-pick-place_s3_k6_det_base_c02 (128s) ret   1669.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6812s [392/600] OK  held_mw-door-open_s2_k0_none_base_c02 (97s) ret   1583.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6818s [393/600] OK  held_mw-door-open_s1_k3_det_base_c02 (127s) ret   1348.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6822s [394/600] OK  held_mw-door-open_s1_k4_det_base_c02 (127s) ret    768.0 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    6825s [395/600] OK  held_mw-door-open_s1_k5_det_base_c02 (128s) ret   1599.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6838s [396/600] OK  held_mw-door-open_s1_k6_det_base_c02 (128s) ret   1573.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6850s [397/600] OK  held_mw-door-open_s3_k0_none_base_c02 (97s) ret   1608.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6851s [398/600] OK  held_mw-door-open_s2_k3_det_base_c02 (128s) ret   1402.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6862s [399/600] OK  held_mw-door-open_s2_k4_det_base_c02 (128s) ret   1040.2 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    6871s [400/600] OK  held_mw-door-open_s2_k5_det_base_c02 (127s) ret   1580.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6876s [401/600] OK  held_mw-door-open_s2_k6_det_base_c02 (128s) ret   1604.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6894s [402/600] OK  held_mw-door-open_s3_k3_det_base_c02 (128s) ret   1409.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6897s [403/600] OK  held_mw-drawer-open_s1_k0_none_base_c02 (96s) ret   1822.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6904s [404/600] OK  held_mw-door-open_s3_k4_det_base_c02 (127s) ret   1525.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6904s [405/600] OK  held_mw-door-open_s3_k5_det_base_c02 (127s) ret   1583.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6919s [406/600] OK  held_mw-door-open_s3_k6_det_base_c02 (128s) ret   1601.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6922s [407/600] OK  held_mw-drawer-open_s2_k0_none_base_c02 (97s) ret   1812.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6934s [408/600] OK  held_mw-drawer-open_s1_k3_det_base_c02 (128s) ret   1794.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6940s [409/600] OK  held_mw-drawer-open_s1_k4_det_base_c02 (128s) ret   1811.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6945s [410/600] OK  held_mw-drawer-open_s1_k5_det_base_c02 (127s) ret   1815.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6949s [411/600] OK  held_mw-drawer-open_s1_k6_det_base_c02 (128s) ret   1816.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6966s [412/600] OK  held_mw-drawer-open_s2_k3_det_base_c02 (128s) ret   1308.6 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    6968s [413/600] OK  held_mw-drawer-open_s3_k0_none_base_c02 (97s) ret   1822.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6977s [414/600] OK  held_mw-drawer-open_s2_k4_det_base_c02 (128s) ret   1782.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6978s [415/600] OK  held_mw-drawer-open_s2_k5_det_base_c02 (127s) ret   1813.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    6990s [416/600] OK  held_mw-drawer-open_s2_k6_det_base_c02 (128s) ret   1821.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7000s [417/600] OK  held_mw-button-press-topdown_s1_k0_none_base_c02 (96s) ret   1333.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7003s [418/600] OK  held_mw-drawer-open_s3_k3_det_base_c02 (127s) ret   1652.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7022s [419/600] OK  held_mw-drawer-open_s3_k4_det_base_c02 (128s) ret   1782.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7024s [420/600] OK  held_mw-drawer-open_s3_k5_det_base_c02 (127s) ret   1817.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7031s [421/600] OK  held_mw-drawer-open_s3_k6_det_base_c02 (127s) ret   1818.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7042s [422/600] OK  held_mw-button-press-topdown_s2_k0_none_base_c02 (97s) ret   1336.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7046s [423/600] OK  held_mw-button-press-topdown_s1_k3_det_base_c02 (128s) ret    443.7 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    7049s [424/600] OK  held_mw-button-press-topdown_s1_k4_det_base_c02 (127s) ret   1177.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7061s [425/600] OK  held_mw-button-press-topdown_s1_k5_det_base_c02 (127s) ret   1269.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7068s [426/600] OK  held_mw-button-press-topdown_s1_k6_det_base_c02 (128s) ret   1324.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7075s [427/600] OK  held_mw-button-press-topdown_s3_k0_none_base_c02 (96s) ret   1337.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7077s [428/600] OK  held_mw-button-press-topdown_s2_k3_det_base_c02 (128s) ret    928.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7093s [429/600] OK  held_mw-button-press-topdown_s2_k4_det_base_c02 (127s) ret   1274.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7094s [430/600] OK  held_mw-button-press-topdown_s2_k5_det_base_c02 (126s) ret   1314.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7104s [431/600] OK  held_mw-button-press-topdown_s2_k6_det_base_c02 (127s) ret   1325.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7117s [432/600] OK  held_mw-button-press-topdown_s3_k3_det_base_c02 (127s) ret    554.8 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7121s [433/600] OK  held_mw-peg-insert-side_s1_k0_none_base_c02 (97s) ret   1686.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7126s [434/600] OK  held_mw-button-press-topdown_s3_k4_det_base_c02 (126s) ret   1225.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7129s [435/600] OK  held_mw-button-press-topdown_s3_k5_det_base_c02 (126s) ret   1318.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7148s [436/600] OK  held_mw-button-press-topdown_s3_k6_det_base_c02 (126s) ret   1326.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7156s [437/600] OK  held_mw-peg-insert-side_s1_k3_det_base_c02 (126s) ret      3.4 succ 0/5
+    7157s [438/600] OK  held_mw-peg-insert-side_s2_k0_none_base_c02 (95s) ret   1661.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    7161s [439/600] OK  held_mw-peg-insert-side_s1_k4_det_base_c02 (120s) ret   1072.3 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7164s [440/600] OK  held_mw-peg-insert-side_s1_k5_det_base_c02 (118s) ret   1178.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7165s [441/600] OK  held_mw-peg-insert-side_s1_k6_det_base_c02 (116s) ret   1674.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7172s [442/600] OK  held_mw-peg-insert-side_s3_k0_none_base_c02 (78s) ret   1649.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7174s [443/600] OK  held_mw-peg-insert-side_s2_k3_det_base_c02 (106s) ret    977.9 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7177s [444/600] OK  held_mw-peg-insert-side_s2_k4_det_base_c02 (102s) ret   1004.5 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7178s [445/600] OK  held_mw-peg-insert-side_s2_k5_det_base_c02 (101s) ret   1528.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7186s [446/600] OK  held_mw-peg-insert-side_s2_k6_det_base_c02 (93s) ret   1629.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7188s [447/600] OK  held_mw-window-open_s1_k0_none_base_c02 (58s) ret   1575.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7192s [448/600] OK  held_mw-peg-insert-side_s3_k3_det_base_c02 (88s) ret    596.9 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    7198s [449/600] OK  held_mw-peg-insert-side_s3_k4_det_base_c02 (81s) ret   1178.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7199s [450/600] OK  held_mw-peg-insert-side_s3_k5_det_base_c02 (78s) ret   1597.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7202s [451/600] OK  held_mw-peg-insert-side_s3_k6_det_base_c02 (75s) ret   1571.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7210s [452/600] OK  held_mw-window-open_s2_k0_none_base_c02 (46s) ret   1561.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7211s [453/600] OK  held_mw-window-open_s1_k3_det_base_c02 (63s) ret    704.7 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    7216s [454/600] OK  held_mw-window-open_s1_k4_det_base_c02 (60s) ret    952.2 succ 1/5
+    7216s [455/600] OK  held_mw-window-open_s1_k5_det_base_c02 (60s) ret   1475.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    7221s [456/600] OK  held_mw-window-open_s1_k6_det_base_c02 (60s) ret   1526.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7224s [457/600] OK  held_mw-window-open_s3_k0_none_base_c02 (45s) ret   1606.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7224s [458/600] OK  held_mw-window-open_s2_k3_det_base_c02 (60s) ret   1040.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7231s [459/600] OK  held_mw-window-open_s2_k4_det_base_c02 (60s) ret   1395.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7234s [460/600] OK  held_mw-window-open_s2_k5_det_base_c02 (60s) ret   1548.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7237s [461/600] OK  held_mw-window-open_s2_k6_det_base_c02 (60s) ret   1555.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7245s [462/600] OK  held_mw-sweep-into_s1_k0_none_base_c02 (46s) ret   1820.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7246s [463/600] OK  held_mw-window-open_s3_k3_det_base_c02 (60s) ret    366.7 succ 1/5
+Episode length: 100
+Discount factor: 0.95
+    7247s [464/600] OK  held_mw-window-open_s3_k4_det_base_c02 (60s) ret   1426.3 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7252s [465/600] OK  held_mw-window-open_s3_k5_det_base_c02 (60s) ret   1565.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7258s [466/600] OK  held_mw-window-open_s3_k6_det_base_c02 (60s) ret   1588.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7261s [467/600] OK  held_mw-sweep-into_s1_k3_det_base_c02 (60s) ret    952.9 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7262s [468/600] OK  held_mw-sweep-into_s2_k0_none_base_c02 (46s) ret   1819.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7270s [469/600] OK  held_mw-sweep-into_s1_k4_det_base_c02 (60s) ret   1619.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7271s [470/600] OK  held_mw-sweep-into_s1_k5_det_base_c02 (60s) ret   1809.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7276s [471/600] OK  held_mw-sweep-into_s1_k6_det_base_c02 (60s) ret   1815.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7279s [472/600] OK  held_mw-sweep-into_s3_k0_none_base_c02 (46s) ret   1819.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7281s [473/600] OK  held_mw-sweep-into_s2_k3_det_base_c02 (60s) ret   1438.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7284s [474/600] OK  held_mw-sweep-into_s2_k4_det_base_c02 (60s) ret   1773.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7284s [475/600] OK  held_mw-sweep-into_s2_k5_det_base_c02 (60s) ret   1777.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7291s [476/600] OK  held_mw-sweep-into_s2_k6_det_base_c02 (60s) ret   1814.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7297s [477/600] OK  held_mw-sweep-into_s3_k3_det_base_c02 (60s) ret   1774.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7297s [478/600] OK  held_mw-push_s1_k0_none_base_c03 (46s) ret   1789.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7305s [479/600] OK  held_mw-sweep-into_s3_k4_det_base_c02 (60s) ret   1808.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7306s [480/600] OK  held_mw-sweep-into_s3_k5_det_base_c02 (60s) ret   1769.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7307s [481/600] OK  held_mw-sweep-into_s3_k6_det_base_c02 (60s) ret   1815.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7317s [482/600] OK  held_mw-push_s2_k0_none_base_c03 (46s) ret   1801.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7318s [483/600] OK  held_mw-push_s1_k3_det_base_c03 (60s) ret    608.3 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    7321s [484/600] OK  held_mw-push_s1_k4_det_base_c03 (60s) ret   1761.5 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    7322s [485/600] OK  held_mw-push_s1_k5_det_base_c03 (60s) ret   1792.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7330s [486/600] OK  held_mw-push_s3_k0_none_base_c03 (46s) ret   1658.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7330s [487/600] OK  held_mw-push_s1_k6_det_base_c03 (60s) ret   1798.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7336s [488/600] OK  held_mw-push_s2_k3_det_base_c03 (60s) ret   1282.8 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7339s [489/600] OK  held_mw-push_s2_k4_det_base_c03 (60s) ret   1758.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7341s [490/600] OK  held_mw-push_s2_k5_det_base_c03 (60s) ret   1795.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7344s [491/600] OK  held_mw-push_s2_k6_det_base_c03 (60s) ret   1795.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7352s [492/600] OK  held_mw-push_s3_k3_det_base_c03 (60s) ret   1482.1 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7352s [493/600] OK  held_mw-pick-place_s1_k0_none_base_c03 (46s) ret   1687.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7357s [494/600] OK  held_mw-push_s3_k4_det_base_c03 (60s) ret   1776.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7357s [495/600] OK  held_mw-push_s3_k5_det_base_c03 (60s) ret   1721.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7365s [496/600] OK  held_mw-push_s3_k6_det_base_c03 (60s) ret   1792.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7367s [497/600] OK  held_mw-pick-place_s1_k3_det_base_c03 (60s) ret    992.4 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7368s [498/600] OK  held_mw-pick-place_s2_k0_none_base_c03 (46s) ret   1686.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7377s [499/600] OK  held_mw-pick-place_s1_k4_det_base_c03 (60s) ret   1660.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7378s [500/600] OK  held_mw-pick-place_s1_k5_det_base_c03 (60s) ret   1671.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7381s [501/600] OK  held_mw-pick-place_s1_k6_det_base_c03 (60s) ret   1672.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7387s [502/600] OK  held_mw-pick-place_s3_k0_none_base_c03 (46s) ret   1671.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7390s [503/600] OK  held_mw-pick-place_s2_k3_det_base_c03 (60s) ret    426.2 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    7390s [504/600] OK  held_mw-pick-place_s2_k4_det_base_c03 (60s) ret   1667.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7396s [505/600] OK  held_mw-pick-place_s2_k5_det_base_c03 (60s) ret   1672.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7399s [506/600] OK  held_mw-pick-place_s2_k6_det_base_c03 (60s) ret   1681.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7403s [507/600] OK  held_mw-door-open_s1_k0_none_base_c03 (46s) ret   1553.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7404s [508/600] OK  held_mw-pick-place_s3_k3_det_base_c03 (60s) ret   1336.0 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7412s [509/600] OK  held_mw-pick-place_s3_k4_det_base_c03 (60s) ret   1667.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7412s [510/600] OK  held_mw-pick-place_s3_k5_det_base_c03 (60s) ret   1666.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7417s [511/600] OK  held_mw-pick-place_s3_k6_det_base_c03 (60s) ret   1673.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7424s [512/600] OK  held_mw-door-open_s2_k0_none_base_c03 (46s) ret   1607.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7425s [513/600] OK  held_mw-door-open_s1_k3_det_base_c03 (60s) ret   1391.5 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7427s [514/600] OK  held_mw-door-open_s1_k4_det_base_c03 (60s) ret    562.5 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    7428s [515/600] OK  held_mw-door-open_s1_k5_det_base_c03 (60s) ret   1531.5 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7437s [516/600] OK  held_mw-door-open_s1_k6_det_base_c03 (60s) ret   1563.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7441s [517/600] OK  held_mw-door-open_s2_k3_det_base_c03 (60s) ret   1383.7 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7442s [518/600] OK  held_mw-door-open_s3_k0_none_base_c03 (46s) ret   1580.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7447s [519/600] OK  held_mw-door-open_s2_k4_det_base_c03 (60s) ret   1186.4 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7450s [520/600] OK  held_mw-door-open_s2_k5_det_base_c03 (60s) ret   1563.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7451s [521/600] OK  held_mw-door-open_s2_k6_det_base_c03 (60s) ret   1596.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7457s [522/600] OK  held_mw-drawer-open_s1_k0_none_base_c03 (45s) ret   1822.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7459s [523/600] OK  held_mw-door-open_s3_k3_det_base_c03 (60s) ret   1443.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7463s [524/600] OK  held_mw-door-open_s3_k4_det_base_c03 (60s) ret   1494.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7464s [525/600] OK  held_mw-door-open_s3_k5_det_base_c03 (60s) ret   1582.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7472s [526/600] OK  held_mw-door-open_s3_k6_det_base_c03 (61s) ret   1590.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7473s [527/600] OK  held_mw-drawer-open_s2_k0_none_base_c03 (46s) ret   1822.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7477s [528/600] OK  held_mw-drawer-open_s1_k3_det_base_c03 (60s) ret   1794.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7484s [529/600] OK  held_mw-drawer-open_s1_k4_det_base_c03 (60s) ret   1809.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7485s [530/600] OK  held_mw-drawer-open_s1_k5_det_base_c03 (60s) ret   1816.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7487s [531/600] OK  held_mw-drawer-open_s1_k6_det_base_c03 (60s) ret   1816.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7496s [532/600] OK  held_mw-drawer-open_s3_k0_none_base_c03 (46s) ret   1823.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7497s [533/600] OK  held_mw-drawer-open_s2_k3_det_base_c03 (60s) ret   1268.6 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7501s [534/600] OK  held_mw-drawer-open_s2_k4_det_base_c03 (60s) ret   1794.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7501s [535/600] OK  held_mw-drawer-open_s2_k5_det_base_c03 (60s) ret   1812.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7507s [536/600] OK  held_mw-drawer-open_s2_k6_det_base_c03 (60s) ret   1820.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7510s [537/600] OK  held_mw-button-press-topdown_s1_k0_none_base_c03 (46s) ret   1312.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7511s [538/600] OK  held_mw-drawer-open_s3_k3_det_base_c03 (60s) ret   1718.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7517s [539/600] OK  held_mw-drawer-open_s3_k4_det_base_c03 (60s) ret   1788.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7520s [540/600] OK  held_mw-drawer-open_s3_k5_det_base_c03 (60s) ret   1816.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7523s [541/600] OK  held_mw-drawer-open_s3_k6_det_base_c03 (60s) ret   1819.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7531s [542/600] OK  held_mw-button-press-topdown_s2_k0_none_base_c03 (46s) ret   1318.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7532s [543/600] OK  held_mw-button-press-topdown_s1_k3_det_base_c03 (60s) ret    453.3 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    7533s [544/600] OK  held_mw-button-press-topdown_s1_k4_det_base_c03 (60s) ret   1183.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7536s [545/600] OK  held_mw-button-press-topdown_s1_k5_det_base_c03 (60s) ret   1281.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7544s [546/600] OK  held_mw-button-press-topdown_s1_k6_det_base_c03 (60s) ret   1304.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7546s [547/600] OK  held_mw-button-press-topdown_s2_k3_det_base_c03 (60s) ret    849.1 succ 4/5
+    7547s [548/600] OK  held_mw-button-press-topdown_s3_k0_none_base_c03 (45s) ret   1318.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    7555s [549/600] OK  held_mw-button-press-topdown_s2_k4_det_base_c03 (59s) ret   1094.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7557s [550/600] OK  held_mw-button-press-topdown_s2_k5_det_base_c03 (59s) ret   1295.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7560s [551/600] OK  held_mw-button-press-topdown_s2_k6_det_base_c03 (59s) ret   1311.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7565s [552/600] OK  held_mw-button-press-topdown_s3_k3_det_base_c03 (59s) ret    786.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7566s [553/600] OK  held_mw-peg-insert-side_s1_k0_none_base_c03 (47s) ret   1673.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7569s [554/600] OK  held_mw-button-press-topdown_s3_k4_det_base_c03 (59s) ret   1263.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7570s [555/600] OK  held_mw-button-press-topdown_s3_k5_det_base_c03 (59s) ret   1289.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7576s [556/600] OK  held_mw-button-press-topdown_s3_k6_det_base_c03 (59s) ret   1306.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7583s [557/600] OK  held_mw-peg-insert-side_s2_k0_none_base_c03 (46s) ret   1678.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7584s [558/600] OK  held_mw-peg-insert-side_s1_k3_det_base_c03 (61s) ret      2.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    7591s [559/600] OK  held_mw-peg-insert-side_s1_k4_det_base_c03 (60s) ret    759.5 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7592s [560/600] OK  held_mw-peg-insert-side_s1_k5_det_base_c03 (61s) ret   1083.0 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7594s [561/600] OK  held_mw-peg-insert-side_s1_k6_det_base_c03 (61s) ret   1640.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7604s [562/600] OK  held_mw-peg-insert-side_s3_k0_none_base_c03 (47s) ret   1676.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7605s [563/600] OK  held_mw-peg-insert-side_s2_k3_det_base_c03 (61s) ret   1344.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7607s [564/600] OK  held_mw-peg-insert-side_s2_k4_det_base_c03 (61s) ret    613.8 succ 2/5
+    7607s [565/600] OK  held_mw-peg-insert-side_s2_k5_det_base_c03 (61s) ret   1603.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    7615s [566/600] OK  held_mw-window-open_s1_k0_none_base_c03 (45s) ret   1538.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7616s [567/600] OK  held_mw-peg-insert-side_s2_k6_det_base_c03 (61s) ret   1664.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7620s [568/600] OK  held_mw-peg-insert-side_s3_k3_det_base_c03 (61s) ret   1160.8 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7626s [569/600] OK  held_mw-peg-insert-side_s3_k4_det_base_c03 (61s) ret   1406.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7627s [570/600] OK  held_mw-peg-insert-side_s3_k5_det_base_c03 (61s) ret   1529.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7630s [571/600] OK  held_mw-peg-insert-side_s3_k6_det_base_c03 (61s) ret   1658.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7636s [572/600] OK  held_mw-window-open_s1_k3_det_base_c03 (59s) ret   1131.0 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7637s [573/600] OK  held_mw-window-open_s2_k0_none_base_c03 (45s) ret   1560.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7642s [574/600] OK  held_mw-window-open_s1_k4_det_base_c03 (60s) ret    744.3 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7644s [575/600] OK  held_mw-window-open_s1_k5_det_base_c03 (60s) ret   1489.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7650s [576/600] OK  held_mw-window-open_s1_k6_det_base_c03 (60s) ret   1356.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7653s [577/600] OK  held_mw-window-open_s3_k0_none_base_c03 (46s) ret   1570.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7654s [578/600] OK  held_mw-window-open_s2_k3_det_base_c03 (60s) ret   1329.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7664s [579/600] OK  held_mw-window-open_s2_k4_det_base_c03 (60s) ret   1333.7 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7665s [580/600] OK  held_mw-window-open_s2_k5_det_base_c03 (60s) ret   1459.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    7667s [581/600] OK  held_mw-window-open_s2_k6_det_base_c03 (60s) ret   1541.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7673s [582/600] OK  held_mw-sweep-into_s1_k0_none_base_c03 (46s) ret   1822.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    7675s [583/600] OK  held_mw-window-open_s3_k3_det_base_c03 (60s) ret    600.4 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7676s [584/600] OK  held_mw-window-open_s3_k4_det_base_c03 (60s) ret   1355.0 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    7680s [585/600] OK  held_mw-window-open_s3_k5_det_base_c03 (60s) ret   1546.4 succ 5/5
+    7685s [586/600] OK  held_mw-window-open_s3_k6_det_base_c03 (59s) ret   1562.4 succ 5/5
+    7689s [587/600] OK  held_mw-sweep-into_s2_k0_none_base_c03 (45s) ret   1819.4 succ 5/5
+    7689s [588/600] OK  held_mw-sweep-into_s1_k3_det_base_c03 (59s) ret    561.1 succ 1/5
+    7694s [589/600] OK  held_mw-sweep-into_s1_k4_det_base_c03 (58s) ret   1802.9 succ 5/5
+    7694s [590/600] OK  held_mw-sweep-into_s1_k5_det_base_c03 (57s) ret   1785.7 succ 5/5
+    7697s [591/600] OK  held_mw-sweep-into_s1_k6_det_base_c03 (55s) ret   1819.5 succ 5/5
+    7702s [592/600] OK  held_mw-sweep-into_s2_k3_det_base_c03 (51s) ret   1337.8 succ 3/5
+    7703s [593/600] OK  held_mw-sweep-into_s3_k0_none_base_c03 (38s) ret   1820.6 succ 5/5
+    7703s [594/600] OK  held_mw-sweep-into_s2_k4_det_base_c03 (50s) ret   1760.2 succ 5/5
+    7704s [595/600] OK  held_mw-sweep-into_s2_k5_det_base_c03 (50s) ret   1810.2 succ 5/5
+    7707s [596/600] OK  held_mw-sweep-into_s2_k6_det_base_c03 (44s) ret   1817.1 succ 5/5
+    7707s [597/600] OK  held_mw-sweep-into_s3_k3_det_base_c03 (41s) ret   1452.0 succ 4/5
+    7709s [598/600] OK  held_mw-sweep-into_s3_k6_det_base_c03 (33s) ret   1816.8 succ 5/5
+    7709s [599/600] OK  held_mw-sweep-into_s3_k4_det_base_c03 (36s) ret   1812.1 succ 5/5
+    7710s [600/600] OK  held_mw-sweep-into_s3_k5_det_base_c03 (35s) ret   1815.4 succ 5/5
+RUNNER_DONE ok 600 failed 0 in 7711s
+=== held pass 2 2026-10-21T16:38:01Z
+600 jobs in manifest, 600 done, running 0 with 16 workers
+RUNNER_DONE
+| 과제 | 기준(성공률 또는 return) | det k=3 | k=4 | k=5 | k=6 | 1차 k | 칸 | 1차 k(20 ep 문자 그대로 / ckpt1만) |
+|---|---|---|---|---|---|---|---|---|
+| mw-button-press-topdown | 100% (100/100/100) | 38 [28, 48] | 0 [0, 0] | 0 [0, 0] | 0 [0, 0] | 3 | [2, 3, 4] | 3 / 3 |
+| mw-door-open | 100% (100/100/100) | 18 [10, 27] | 30 [20, 40] | 2 [0, 5] | 2 [0, 5] | 4 | [3, 4, 5] | 4 / 4 |
+| mw-drawer-open | 100% (100/100/100) | 12 [5, 18] | 0 [0, 0] | 0 [0, 0] | 0 [0, 0] | 3 | [2, 3, 4] | None / None |
+| mw-peg-insert-side | 100% (100/100/100) | 53 [43, 63] | 28 [18, 38] | 3 [0, 8] | 2 [0, 5] | 4 | [3, 4, 5] | 4 / 4 |
+| mw-pick-place | 100% (100/100/100) | 33 [23, 43] | 8 [3, 15] | 0 [0, 0] | 0 [0, 0] | 3 | [2, 3, 4] | 3 / 3 |
+| mw-push | 100% (100/100/100) | 52 [42, 62] | 13 [7, 20] | 0 [0, 0] | 0 [0, 0] | 3 | [2, 3, 4] | 3 / 4 |
+| mw-sweep-into | 98% (95/100/100) | 20 [12, 30] | -2 [-5, 0] | -2 [-5, 0] | -2 [-5, 0] | 3 | [2, 3, 4] | None / 3 |
+| mw-window-open | 100% (100/100/100) | 38 [28, 48] | 32 [22, 42] | 5 [2, 10] | 2 [0, 5] | 4 | [3, 4, 5] | 4 / 4 |
+| cheetah-run | 903.5 (866/916/928) | 93 [90, 95] | 73 [69, 76] | 46 [41, 51] | 13 [8, 20] | 5 | [4, 5, 6] | 5 / 6 |
+| finger-turn-hard | 976.5 (983/964/983) | 63 [50, 75] | 39 [26, 54] | -0 [-2, 1] | -0 [-1, 0] | 4 | [3, 4, 5] | 4 / 4 |
+| quadruped-walk | 982.3 (980/982/984) | 69 [59, 79] | 6 [5, 8] | 1 [0, 1] | 0 [-0, 0] | 3 | [2, 3, 4] | 3 / 3 |
+| walker-walk | 989.5 (990/989/990) | 56 [52, 61] | 18 [15, 21] | 3 [2, 5] | 0 [0, 0] | 3 | [2, 3, 4] | 3 / 3 |
+HELD_DONE 2026-10-21T16:38:02Z

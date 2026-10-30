@@ -1,0 +1,220 @@
+{
+ "label": "post-hoc, descriptive; no verdict uses it",
+ "n_blocks": 480,
+ "r_quantiles": {
+  "1": 0.7490194078183275,
+  "5": 0.9572094920782824,
+  "25": 0.9873535501557184,
+  "50": 1.0,
+  "75": 1.024181633597021,
+  "95": 1.3520022739917532,
+  "99": 1.381168105865631
+ },
+ "share_slower_15pct": 0.17083333333333334,
+ "share_faster_15pct": 0.029166666666666667,
+ "slow_runs_in_time_order": {
+  "n_runs": 65,
+  "longest": 4,
+  "mean_length": 1.2615384615384615
+ },
+ "slow_share_by_round": [
+  0.22916666666666666,
+  0.17708333333333334,
+  0.11458333333333333,
+  0.16666666666666666,
+  0.16666666666666666
+ ],
+ "spearman_r_vs": {
+  "host_load1": -0.0405280095138935,
+  "cpu_busy": 0.11586458094779767,
+  "sm_clock_end": -0.44678170274291595
+ },
+ "sm_clock_end_below_max_share": 0.11666666666666667,
+ "overhead_robustness": {
+  "mw-push|int8|it3": {
+   "pooled": -0.05330017493634801,
+   "median_of_rounds": -0.02263983404374058,
+   "share_rounds_abs_gt_10pct": 0.4
+  },
+  "mw-push|int4|it3": {
+   "pooled": -0.027012878573552727,
+   "median_of_rounds": -0.006821857686081508,
+   "share_rounds_abs_gt_10pct": 0.4
+  },
+  "mw-push|int4p|it3": {
+   "pooled": 0.01637119754865907,
+   "median_of_rounds": 0.015505779342182812,
+   "share_rounds_abs_gt_10pct": 0.6
+  },
+  "mw-push|int8|it6": {
+   "pooled": 0.037551529443776786,
+   "median_of_rounds": 0.027160675161262682,
+   "share_rounds_abs_gt_10pct": 0.6
+  },
+  "mw-push|int4|it6": {
+   "pooled": -0.017057869895268356,
+   "median_of_rounds": -0.02025499210132042,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "mw-push|int4p|it6": {
+   "pooled": 0.0037423492263251945,
+   "median_of_rounds": 0.013735678988580882,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "mw-push|int8|it12": {
+   "pooled": 0.008827503934007169,
+   "median_of_rounds": 0.02042868710614961,
+   "share_rounds_abs_gt_10pct": 0.0
+  },
+  "mw-push|int4|it12": {
+   "pooled": -0.0031036820769127166,
+   "median_of_rounds": 0.0031799477069869215,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "mw-push|int4p|it12": {
+   "pooled": 0.022771887562813377,
+   "median_of_rounds": 0.030012117599209565,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "mw-pick-place|int8|it3": {
+   "pooled": -0.03247393712458851,
+   "median_of_rounds": -0.047324157049410766,
+   "share_rounds_abs_gt_10pct": 0.4
+  },
+  "mw-pick-place|int4|it3": {
+   "pooled": 0.012835775074191591,
+   "median_of_rounds": -0.004673094191488557,
+   "share_rounds_abs_gt_10pct": 0.0
+  },
+  "mw-pick-place|int4p|it3": {
+   "pooled": -0.058167028425902226,
+   "median_of_rounds": -0.01785625246133222,
+   "share_rounds_abs_gt_10pct": 0.4
+  },
+  "mw-pick-place|int8|it6": {
+   "pooled": 0.0019346727468859668,
+   "median_of_rounds": -0.012134604636025536,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "mw-pick-place|int4|it6": {
+   "pooled": 0.003958862634056979,
+   "median_of_rounds": -0.0035136578682018918,
+   "share_rounds_abs_gt_10pct": 0.6
+  },
+  "mw-pick-place|int4p|it6": {
+   "pooled": 0.023611751088225,
+   "median_of_rounds": 0.009202298326668275,
+   "share_rounds_abs_gt_10pct": 0.4
+  },
+  "mw-pick-place|int8|it12": {
+   "pooled": -0.01336508427881195,
+   "median_of_rounds": -0.011072071239152322,
+   "share_rounds_abs_gt_10pct": 0.4
+  },
+  "mw-pick-place|int4|it12": {
+   "pooled": -0.009140176951351504,
+   "median_of_rounds": -0.00483927647692206,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "mw-pick-place|int4p|it12": {
+   "pooled": 0.00503540989269831,
+   "median_of_rounds": 0.015115743189870232,
+   "share_rounds_abs_gt_10pct": 0.6
+  },
+  "cheetah-run|int8|it3": {
+   "pooled": -0.007712221140264407,
+   "median_of_rounds": 0.01189458914244356,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "cheetah-run|int4|it3": {
+   "pooled": 0.021709791866328872,
+   "median_of_rounds": 0.023714889917814817,
+   "share_rounds_abs_gt_10pct": 0.6
+  },
+  "cheetah-run|int4p|it3": {
+   "pooled": 0.037367249667029596,
+   "median_of_rounds": 0.017771129283562385,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "cheetah-run|int8|it6": {
+   "pooled": 0.0314662318550602,
+   "median_of_rounds": 0.07802185543665024,
+   "share_rounds_abs_gt_10pct": 0.4
+  },
+  "cheetah-run|int4|it6": {
+   "pooled": 0.05789688184584501,
+   "median_of_rounds": 0.30101850628616733,
+   "share_rounds_abs_gt_10pct": 0.6
+  },
+  "cheetah-run|int4p|it6": {
+   "pooled": -0.015537719521297975,
+   "median_of_rounds": -0.004753810313809252,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "cheetah-run|int8|it12": {
+   "pooled": 0.00420665335141632,
+   "median_of_rounds": 0.0008828821156489627,
+   "share_rounds_abs_gt_10pct": 0.0
+  },
+  "cheetah-run|int4|it12": {
+   "pooled": 0.0018248295506996003,
+   "median_of_rounds": 0.0075157934231225255,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "cheetah-run|int4p|it12": {
+   "pooled": -0.022768541306991026,
+   "median_of_rounds": -0.038845614180421886,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "walker-walk|int8|it3": {
+   "pooled": -0.017875560594651712,
+   "median_of_rounds": 0.009022021321481066,
+   "share_rounds_abs_gt_10pct": 0.6
+  },
+  "walker-walk|int4|it3": {
+   "pooled": 0.005772215659778292,
+   "median_of_rounds": -0.010184027240805978,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "walker-walk|int4p|it3": {
+   "pooled": 0.06904492810925268,
+   "median_of_rounds": 0.0424451349942973,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "walker-walk|int8|it6": {
+   "pooled": -0.010095536858642003,
+   "median_of_rounds": -0.005573366139521523,
+   "share_rounds_abs_gt_10pct": 0.2
+  },
+  "walker-walk|int4|it6": {
+   "pooled": 0.011772572531778963,
+   "median_of_rounds": 0.04966917456631473,
+   "share_rounds_abs_gt_10pct": 0.8
+  },
+  "walker-walk|int4p|it6": {
+   "pooled": 0.003267538981519214,
+   "median_of_rounds": 0.01998211446688251,
+   "share_rounds_abs_gt_10pct": 0.4
+  },
+  "walker-walk|int8|it12": {
+   "pooled": 0.007535580002071876,
+   "median_of_rounds": 0.008128919020789467,
+   "share_rounds_abs_gt_10pct": 0.4
+  },
+  "walker-walk|int4|it12": {
+   "pooled": 0.008924756289863505,
+   "median_of_rounds": 0.01354957170795863,
+   "share_rounds_abs_gt_10pct": 0.4
+  },
+  "walker-walk|int4p|it12": {
+   "pooled": -0.02604763961743542,
+   "median_of_rounds": -0.03107488635516723,
+   "share_rounds_abs_gt_10pct": 0.4
+  }
+ },
+ "overhead_median_of_rounds_max": {
+  "int8": 0.07802185543665024,
+  "int4": 0.30101850628616733,
+  "int4p": 0.0424451349942973
+ }
+}

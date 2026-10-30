@@ -1,0 +1,35 @@
+# E5 TD-MPC2 분석 작업 로그 (작업자, UTC, 서버 시계 기준)
+
+- 22:14Z경(10-23) 조정자 지시 수신: TD-MPC2 E5(통계 36, held 1,056 + QAT 자료 132, QAT 학습 33, 평가 1,728 job; 22:11Z 끝, 실패 0) 자료 점검, `analyze_e5.py` 대조, 본 분석(H3b TD-MPC2 몫, QAT 규칙, 가중치 탐색, 기준선 선택 표), 보고. 기준: DESIGN_main v5 §7.3, v5.1 §8.1, 설계 §6.5·§6.8, v4 §6.1(고치지 않음). GPU 0에서는 E7 성공률이 MPS로 돈다 → GPU를 쓰지 않는다
+- 22:15Z 서버 상태: out_e5 episode 2,916(= held 1,056 + QAT 자료 132 + 평가 900 + 가중치 432 + QAT 평가 396), e5stats 36, qat_train 33. errors 폴더 없음, lock 0. queue flag e5held.done 17:46Z, e5qattrain.done 17:51Z, e5eval.done 22:11Z. `out_e5/e5/selection.json` mtime 17:51Z. 디스크 여유 265G
+- 22:16Z 코드 md5(맥북 = 서버): run_queue_g0.sh, e5lib.py, e5_select.py, analyze_e5.py, make_manifest.py, runner.py, qlib.py 모두 같음. queue는 e5_held.jsonl + e5_qatdata.jsonl → e5_held_qatdata.jsonl, e5_eval + e5_w + e5_qateval → e5_eval_all.jsonl로 합쳐 돌렸다(17:51Z). 선택은 queue가 QAT 학습 뒤, 평가 전에 `e5_select.py`로 했다
+- 22:16Z 결과 파일 구조 확인(키와 spec만): held·평가 episode에 `ptq_resolved`, `layer_k`, QAT 평가에 `qat_path`, 가중치에 spec `wq`, QAT 학습에 `hist`(21점)·`n_windows`, e5stats에 `mse_alpha`(k별 층별)·`check`(E0 범위와의 차)
+- 22:17Z 새 점검 스크립트 `code/tdmpc2/integrity_e5.py`(H3b·QAT·가중치 결과 수치는 출력하지 않음). 칸 목록(19칸, QAT 11칸, 가중치 4과제), seed 분할, 격자 끝값은 DESIGN v5 §7.3·v5.1 §8.1 문구에서 옮겨 적었다. 기준선 선택은 held episode에서 따로 다시 계산해 selection.json과 비교한다
+- 22:18Z 첫 실행: QAT 경로 비교 2종(33·396건)이 불일치로 나옴 → 내 점검 코드가 상대 경로(`../out_e5`)와 결과 파일의 절대 경로를 비교한 탓. `os.path.abspath`로 고쳐 다시 실행(md5 a492a3ab…)
+- 22:19Z **자료 점검 ALL_OK**(`work_e5/integrity_e5.json`, CPU 수십 초)
+  - manifest 7개 job 수: 통계 36, held 1,056, QAT 자료 132, QAT 학습 33, 평가 900, 가중치 432, QAT 평가 396. 모든 결과가 있고 spec이 manifest와 같다. 남는 파일 0. queue가 돌린 합본 manifest 2개(e5_held_qatdata, e5_eval_all)는 원래 manifest를 그대로 이은 것과 같다
+  - seed: held seed0 12000(ep 0~19), 평가·가중치·QAT 평가 60000(ep 0~29), QAT 자료 65000(ep 0~19). episode seed = seed0 + ep. 585조건 모두 episode 수가 완전하다(20 또는 30)
+  - 칸: 평가·held 19칸(MW 12, DMC 7)이 v5 §7.3 목록과 같다. QAT 11칸, 가중치 4과제도 같다
+  - 장비: 통계 36 job은 10-22 08:47Z에 GPU 0(MPS 없이 1 worker), 나머지 2,949 job(episode 2,916 + QAT 학습 33)은 모두 GPU 0 MPS pipe, 같은 host·A5000·torch 2.7.1
+  - 평가 job의 `ptq_resolved`가 모두 selection.json의 B와 같다. mixed 기준선 job은 layer_k = {dyn1: 8, rew1: 8}. selection.json 작성 17:51:56Z, 첫 평가 job 시작 17:51:59Z(선택 뒤)
+  - **선택 재계산**: held episode에서 칸마다 D_det(B)를 다시 계산하고 argmin(같으면 목록 앞쪽)을 구했다. 19칸 모두 B와 D_det 4개 값(1e-12 이내), 짝 수 60이 파일과 같다. 최솟값 동률인 칸은 없다
+  - **MSE α**: k=3 범위 0.25~0.90, k=4 범위 0.40~0.90. 격자 끝(0.10, 1.1)에 걸린 경우 0/288
+  - 통계의 per-tensor 범위는 E0 범위와 정확히 같다(36×4층). QAT 학습 33개: spec이 설계(5,000 step, batch 256, lr 1e-4, clip 20)와 같고, 가중치 파일이 있고, 손실 기록이 step 4,999까지 유한하다. QAT 평가는 해당 (과제, 체크포인트, k)의 QAT 가중치를 읽었다. QAT 자료 npz 660개가 모두 있다
+  - errors 0, lock 0
+- 22:19~22:20Z **`analyze_e5.py` 대조**(E5 결과 수치를 읽기 전). 대조한 규칙: v5 §7.3(칸, seed, 기준선 선택, H3b, QAT 규칙, 가중치 탐색), 설계 §6.5·§6.8, v4 §6.1(짝 bootstrap RandomState(0) 10,000회, 백분위 CI, DMC는 재표본마다 상대 return 하락 비율)
+  - 규칙대로인 것: D는 E5 none(같은 seed) 대비. H3b 칸 = none·B+det·B+sh-iter의 공통 90짝, 차 D(B+det) − D(B+sh-iter)의 짝 bootstrap CI, 통과 = CI 하한 > 0, 성립 = 19칸 중 10칸 이상. QAT 조건 = D(QAT+det) CI 상한 < 0.05(MW 5%p = 0.05 비율, DMC 0.05). 가중치는 E5 none 대비 D. 선택 표는 selection.json(재계산으로 확인함)
+  - 규칙과 다르게 계산하는 곳: 없음. 이 단계에는 ρ 문턱이 없어 v5_common의 허용 오차는 쓰이지 않는다(공용 코드는 E2·E3 판 그대로)
+  - 더한 것(판정 계산은 그대로): MW·DMC별 통과 수, MW 칸의 McNemar 정확 p(보조, 설계 §6.8), QAT 조건이 걸린 칸 목록과 "어느 칸이라도" 표시, 가중치 변형 짝 대조(w4rtn − w4srK, w4rtn − w4awq, w8rtn − w4rtn; 기술), QAT 학습 손실 처음·끝, `family_points_e5_tdmpc2.json`, 행 CSV
+  - 참고: H3b 규칙(v5 §7.3)은 칸별 보정 없는 95% CI다. 설계 §6.8의 Holm 보정 대상(1차: H1, H3a)에 H3b는 없다. 규칙대로 보정 없이 계산한다
+- 22:20Z 맥북 문법 검사(ast), 서버 복사(md5 93b813c9…). 가짜 자료 dry run(`test_v5_analyses.py`, e5_eval_all manifest 1,728 job, `work_e5/fake_e5`): 2초, 모든 출력이 나온다
+- 22:20:33~22:20:34Z **본 분석 실행**(서버 CPU 1 프로세스, nice 10, 4스레드, `CUDA_VISIBLE_DEVICES=""`): `analyze_e5.py --res ../out_e5 --outdir ../analysis_e5`
+  - H3b: 19칸 중 10칸 통과 → TD-MPC2 몫 성립(정확히 문턱). Meta-World 6/12, DMC 4/7
+  - 경계 칸: mw-pick-place k=3과 mw-drawer-open k=3은 CI 하한이 정확히 0.0이라 불통과, walker k=4는 −0.00016으로 불통과, quadruped k=4는 +0.00084로 통과. 한 칸이 바뀌면 판정이 바뀐다
+  - QAT 조건: 0/11칸(D(QAT+det) 0.29~0.85, CI 상한 모두 ≥ 0.38) → 조건이 걸리지 않음. QAT+det가 같은 seed의 B+det보다 11칸 모두 크게 나쁘고(CI 겹치지 않음), E1의 일반 det보다 나쁜 칸도 7/11 → 이 QAT(20 episode, 5,000 step; MW는 1,960창을 약 650회 반복)는 약한 기준선으로 보인다(기술)
+  - 가중치(탐색): w8rtn 손상 없음, w4rtn 0.42~0.93, SR 사본 K가 클수록 손상이 준다(네 과제 모두). K = 4는 MW 두 과제와 cheetah에서 RTN보다 낫고 walker에서 나쁘다
+- 22:22~22:23Z 맥북으로 옮김(JSON·CSV·PNG): `results/E5_tdmpc2/`(e5_tdmpc2_summary.json, family_points_e5_tdmpc2.json, e5_tdmpc2_rows.csv, integrity_e5.json, e5_h3b_cells.png). 그림은 `code/tdmpc2/plot_e5_tdmpc2.py`(summary만 읽음)로 서버에서 그렸고, 오른쪽 축 이름이 잘려 줄여서 다시 그렸다
+- 22:23Z 보고용 보조 계산(통계 아님): 단계별 시간대와 job 시간 합(`code/tdmpc2/e5_stage_times.py`), 결과 JSON에서 정확한 CI 값 확인
+- 22:23~22:26Z 보고서 `reports/E5_tdmpc2.md` 작성. 숫자를 JSON과 대조해 고친 곳: job 총수(3,081 → 2,985), MPS job 수(2,949), "smooth가 가장 나쁨"(모든 칸 → 19칸 중 14칸)
+- 22:26Z 서버 정리: 내가 만든 임시 파일만 지움(`work_e5/fake_e5`, `fake_analysis_e5`, `mplcfg`, 확인용 스크립트 2개). `work_e5/`에는 점검 JSON·로그와 실행 로그만 남는다
+- 22:26Z 최종 md5(맥북 = 서버): analyze_e5 93b813c9…, integrity_e5 a492a3ab…, plot_e5_tdmpc2 334f3291…, e5_stage_times d4c6466b…, v5_common ee92bb3f…(E2·E3 판 그대로). 결과 sha256: family_points_e5_tdmpc2.json 80c90219…, e5_tdmpc2_summary.json ecdf1746…
+- 22:26Z 돌고 있는 내 작업 없음(ps 확인). GPU를 쓰지 않았고, E7 queue·MPS·out_e5·manifest는 읽기만 했다. MAIN_STATUS.md, main/LOG.md, DESIGN_main.md는 고치지 않았다

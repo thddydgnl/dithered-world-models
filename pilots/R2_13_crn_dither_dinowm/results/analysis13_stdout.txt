@@ -1,0 +1,111 @@
+== pusht k=4 n=50
+  none     39/50 (78%) med margin 0.453 rho_last 0.557 (J_none 0.557, n 50) rho_it0 0.936
+  det      26/50 (52%) D +26pp [14,40] McN p 0.000977 (14/1) med margin 0.920 rho_last 0.382 (J_none 0.678, n 50) rho_it0 0.939 | cost err it0 +0.2986 last-pop -0.0514 argmin -0.0872 | spec err it0 0.258 last 0.833 rho(J,Jnone) it0 0.982
+  ind      41/50 (82%) D -4pp [-10,0] McN p 0.5 (0/2) med margin 0.483 rho_last 0.526 (J_none 0.553, n 50) rho_it0 0.937 | cost err it0 +0.0088 last-pop +0.0086 argmin +0.0016 | spec err it0 0.067 last 0.295 rho(J,Jnone) it0 0.997
+  shiter   40/50 (80%) D -2pp [-10,6] McN p 1 (2/3) med margin 0.476 rho_last 0.531 (J_none 0.579, n 50) rho_it0 0.936 | cost err it0 +0.0108 last-pop +0.0090 argmin +0.0037 | spec err it0 0.054 last 0.295 rho(J,Jnone) it0 0.998
+  shfixed  41/50 (82%) D -4pp [-12,4] McN p 0.625 (1/3) med margin 0.463 rho_last 0.532 (J_none 0.580, n 50) rho_it0 0.936 | cost err it0 +0.0100 last-pop +0.0050 argmin +0.0033 | spec err it0 0.057 last 0.274 rho(J,Jnone) it0 0.998
+  red_shiter: {'r': 1.076923076923077, 'ci95': [0.75, 1.5999999999999999], 'n_boot_valid': 10000}
+  red_shfixed: {'r': 1.1538461538461537, 'ci95': [0.8823529411764707, 1.7142857142857142], 'n_boot_valid': 10000}
+  red_ind: {'r': 1.1538461538461537, 'ci95': [1.0, 1.5000000000000002], 'n_boot_valid': 10000}
+  shiter_vs_det: {'a_only': 15, 'b_only': 1, 'mcnemar_p': 0.000518798828125, 'D_a_minus_D_b': 0.28, 'ci95': [0.14, 0.42]}
+  shfixed_vs_det: {'a_only': 15, 'b_only': 0, 'mcnemar_p': 6.103515625e-05, 'D_a_minus_D_b': 0.3, 'ci95': [0.18, 0.44]}
+  shiter_vs_ind: {'a_only': 2, 'b_only': 3, 'mcnemar_p': 1.0, 'D_a_minus_D_b': -0.02, 'ci95': [-0.1, 0.06]}
+  shiter_vs_shfixed: {'a_only': 1, 'b_only': 2, 'mcnemar_p': 1.0, 'D_a_minus_D_b': -0.02, 'ci95': [-0.08, 0.04]}
+  ind_vs_det: {'a_only': 16, 'b_only': 1, 'mcnemar_p': 0.000274658203125, 'D_a_minus_D_b': 0.3, 'ci95': [0.16, 0.44]}
+  err {'ds': {'det': 0.00564, 'ind': 0.00686, 'shiter': 0.00661, 'shfixed': 0.00698}, 'plan': {'det': 0.06523, 'ind': 0.06703, 'shiter': 0.06763, 'shfixed': 0.07084}}
+  plan_dev {'det': 4.173, 'ind': 3.689, 'shiter': 3.717, 'shfixed': 3.719} time {'none': 14.4, 'det': 16.4, 'ind': 16.2, 'shiter': 16.6, 'shfixed': 16.7}
+== wall k=3 n=50
+  none     24/50 (48%) med margin 1.098 rho_last 0.524 (J_none 0.524, n 50) rho_it0 0.922
+  det       4/50 (8%) D +40pp [26,54] McN p 1.1e-05 (21/1) med margin 3.049 rho_last 0.168 (J_none 0.464, n 50) rho_it0 0.682 | cost err it0 +2.3599 last-pop +0.3196 argmin +0.0344 | spec err it0 3.363 last 2.100 rho(J,Jnone) it0 0.692
+  ind      26/50 (52%) D -4pp [-16,8] McN p 0.754 (4/6) med margin 0.913 rho_last 0.529 (J_none 0.558, n 50) rho_it0 0.903 | cost err it0 +0.1223 last-pop +0.0542 argmin -0.0013 | spec err it0 0.272 last 0.393 rho(J,Jnone) it0 0.966
+  shiter   29/50 (58%) D -10pp [-24,6] McN p 0.302 (5/10) med margin 0.927 rho_last 0.538 (J_none 0.557, n 50) rho_it0 0.919 | cost err it0 +0.1160 last-pop +0.0578 argmin +0.0161 | spec err it0 0.196 last 0.358 rho(J,Jnone) it0 0.984
+  shfixed  28/50 (56%) D -8pp [-20,4] McN p 0.344 (3/7) med margin 0.928 rho_last 0.502 (J_none 0.529, n 50) rho_it0 0.918 | cost err it0 +0.1212 last-pop +0.0501 argmin -0.0029 | spec err it0 0.196 last 0.415 rho(J,Jnone) it0 0.983
+  red_shiter: {'r': 1.25, 'ci95': [0.9, 1.8750000000000002], 'n_boot_valid': 10000}
+  red_shfixed: {'r': 1.2, 'ci95': [0.9090909090909092, 1.6666666666666667], 'n_boot_valid': 10000}
+  red_ind: {'r': 1.0999999999999999, 'ci95': [0.8148148148148149, 1.5333333333333332], 'n_boot_valid': 10000}
+  shiter_vs_det: {'a_only': 25, 'b_only': 0, 'mcnemar_p': 5.960464477539063e-08, 'D_a_minus_D_b': 0.5, 'ci95': [0.36, 0.64]}
+  shfixed_vs_det: {'a_only': 25, 'b_only': 1, 'mcnemar_p': 8.046627044677734e-07, 'D_a_minus_D_b': 0.48, 'ci95': [0.34, 0.62]}
+  shiter_vs_ind: {'a_only': 7, 'b_only': 4, 'mcnemar_p': 0.548828125, 'D_a_minus_D_b': 0.06, 'ci95': [-0.06, 0.18]}
+  shiter_vs_shfixed: {'a_only': 8, 'b_only': 7, 'mcnemar_p': 1.0, 'D_a_minus_D_b': 0.02, 'ci95': [-0.12, 0.16]}
+  ind_vs_det: {'a_only': 23, 'b_only': 1, 'mcnemar_p': 2.9802322387695312e-06, 'D_a_minus_D_b': 0.44, 'ci95': [0.3, 0.58]}
+  err {'ds': {'det': 0.05646, 'ind': 0.03107, 'shiter': 0.03073, 'shfixed': 0.0312}, 'plan': {'det': 0.34028, 'ind': 0.19817, 'shiter': 0.20417, 'shfixed': 0.19532}}
+  plan_dev {'det': 7.048, 'ind': 4.26, 'shiter': 3.814, 'shfixed': 4.159} time {'none': 4.0, 'det': 4.8, 'ind': 4.8, 'shiter': 4.8, 'shfixed': 4.8}
+{
+ "qualifying_tasks": [
+  "pusht",
+  "wall"
+ ],
+ "S1": true,
+ "S1_cells": {
+  "pusht": {
+   "r": 1.076923076923077,
+   "ok": true
+  },
+  "wall": {
+   "r": 1.25,
+   "ok": true
+  }
+ },
+ "S1_side_ok": {
+  "pusht": true,
+  "wall": true
+ },
+ "S1_strict": true,
+ "S1_side_strict": {
+  "pusht": true,
+  "wall": true
+ },
+ "S2": false,
+ "S2_literal_all_tasks": false,
+ "S2_cells": {
+  "pusht": {
+   "shfixed_sig_better_than_det": true,
+   "p": 6.103515625e-05,
+   "r_fixed": 1.1538461538461537
+  },
+  "wall": {
+   "shfixed_sig_better_than_det": true,
+   "p": 8.046627044677734e-07,
+   "r_fixed": 1.2
+  }
+ },
+ "S3": true,
+ "S3_cells": {
+  "pusht": {
+   "D_shiter": -0.02,
+   "D_ind": -0.04,
+   "ok": false,
+   "p": 1.0
+  },
+  "wall": {
+   "D_shiter": -0.1,
+   "D_ind": -0.04,
+   "ok": true,
+   "p": 0.548828125
+  }
+ },
+ "S4": false,
+ "S4_plan_err": true,
+ "S4_cases": {
+  "ds": [],
+  "plan": [
+   {
+    "task": "pusht",
+    "a": "det",
+    "b": "ind",
+    "err_rel_diff": 0.02749616582736447,
+    "D_a": 0.26,
+    "D_b": -0.04
+   },
+   {
+    "task": "pusht",
+    "a": "det",
+    "b": "shiter",
+    "err_rel_diff": 0.03680515934013005,
+    "D_a": 0.26,
+    "D_b": -0.02
+   }
+  ]
+ },
+ "verdict": "\uc870\uac74\ubd80 \uc788\uc74c"
+}

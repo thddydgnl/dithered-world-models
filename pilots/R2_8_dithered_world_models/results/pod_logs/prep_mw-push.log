@@ -1,0 +1,17 @@
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push k=2: det: e1 3.8411 e3 6.4631 er 3.1655 | ind: e1 1.6809 e3 2.9778 er 3.2880 | sh: e1 1.6580 e3 2.8510 er 2.6110 | sub: e1 1.5055 e3 2.7959 er 3.9498
+mw-push k=3: det: e1 0.8241 e3 2.0190 er 0.0740 | ind: e1 0.5619 e3 1.2393 er 0.2944 | sh: e1 0.5972 e3 1.2215 er 0.1645 | sub: e1 0.3303 e3 0.7978 er 0.1211
+mw-push k=4: det: e1 0.0784 e3 0.2627 er 0.0097 | ind: e1 0.1464 e3 0.3731 er 0.0241 | sh: e1 0.1570 e3 0.3824 er 0.0217 | sub: e1 0.0754 e3 0.1999 er 0.0101
+mw-push k=5: det: e1 0.0169 e3 0.0565 er 0.0023 | ind: e1 0.0332 e3 0.0891 er 0.0033 | sh: e1 0.0350 e3 0.1014 er 0.0043 | sub: e1 0.0179 e3 0.0491 er 0.0021
+mw-push k=6: det: e1 0.0047 e3 0.0153 er 0.0006 | ind: e1 0.0087 e3 0.0238 er 0.0011 | sh: e1 0.0091 e3 0.0260 er 0.0014 | sub: e1 0.0045 e3 0.0124 er 0.0005
+mw-push k=7: det: e1 0.0012 e3 0.0040 er 0.0002 | ind: e1 0.0022 e3 0.0064 er 0.0003 | sh: e1 0.0023 e3 0.0074 er 0.0003 | sub: e1 0.0012 e3 0.0036 er 0.0001
+mw-push k=8: det: e1 0.0004 e3 0.0015 er 0.0000 | ind: e1 0.0006 e3 0.0021 er 0.0001 | sh: e1 0.0007 e3 0.0022 er 0.0001 | sub: e1 0.0004 e3 0.0014 er 0.0000
+mw-push old conditions alpha 0.1 done (90s)
+mw-push old conditions alpha 0.2 done (163s)
+mw-push old conditions alpha 0.3 done (194s)
+PREP mw-push done in 194s

@@ -1,0 +1,10 @@
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-pick-place k=3: det: e1 0.2694 e3 1.3630 er 5.3839 | ind: e1 0.4701 e3 1.0782 er 0.3025 | shfwd: e1 0.4589 e3 1.1251 er 0.1485 | shstep: e1 0.4647 e3 1.0105 er 0.0989 | shep: e1 0.4647 e3 1.0105 er 0.0989
+mw-pick-place k=4: det: e1 0.0531 e3 0.1724 er 0.0465 | ind: e1 0.1035 e3 0.2533 er 0.0312 | shfwd: e1 0.1041 e3 0.2607 er 0.0298 | shstep: e1 0.0985 e3 0.2493 er 0.0228 | shep: e1 0.0985 e3 0.2493 er 0.0228
+mw-pick-place ranges R2-8 vs this pod: dyn0 hi 6.673/6.673, dyn1 hi 5.124/5.124, rew0 hi 6.971/6.971, rew1 hi 8.584/8.584
+PREP mw-pick-place done in 12s

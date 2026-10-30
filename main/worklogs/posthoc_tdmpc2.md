@@ -1,0 +1,28 @@
+# TD-MPC2 사후 점검 준비·무장 작업 로그 (작업자, UTC, 서버 시계 기준)
+
+- 02:42Z경(10-24) 조정자 지시 수신(사용자 승인): DESIGN_main v5.3(10절, 02:38Z 고정)의 두 사후 점검 준비와 무장, E5 보고의 QAT 절에 10.1 결정 반영. 10.2·10.3·10.4의 실행 세부는 고치지 않는다
+- 02:43Z DESIGN_main.md 10절 읽음(맥북 사본 sha256 eee46e0a…). 10.2: QAT 가중치(11칸 × 체크포인트 3)를 활성 양자화 없이, E5 seed 60000~60029(90짝), 원래 가중치 E5 none과 짝을 맞춘 D(QAT+none)와 짝 bootstrap CI, 기술, MPS 허용. 10.3: 첫 측정과 같은 96조건·규약, 10회전, 회전마다 같은 (과제, 반복 수, kernel 비트)의 det·dither block을 바로 이어 잼(짝 안 순서 무작위, 짝 순서 회전마다 섞음), 짝 오버헤드의 조건별 중앙값과 bootstrap 95% CI, 첫 측정의 사전 정의 계산도 함께, block마다 SM clock·호스트 부하·외부 프로세스 수. 10.4: DINO-WM v5 실행 뒤, QAT+none은 GPU 0이 비면, 지연은 MPS를 멈추고 두 DINO-WM 사슬이 끝나 GPU가 배타일 때
+- 02:43Z 서버 확인(읽기만): DINO-WM 사슬 `A-v5-dinowm-g0`(02:17Z, `v5_chain.py --gpu 0`, 로그 `~/pmx/A/logs/v5_dinowm_g0.log`), `A-v5-dinowm-g1`(로그 `v5_dinowm_g1.log`). 사슬은 끝날 때 `V5C <시각> gpu<g> ALL_DONE (...)` 또는 `... STOPPED`를 찍는다(v5_chain.py 171·173행). 지금 두 로그에 그런 줄은 없다. 기존 queue의 MPS·외부 프로세스 점검 함수(run_queue_g0.sh)와 mps.sh를 다시 쓴다
+- 02:44~02:47Z 코드 작성(맥북, 결과를 보기 전): `make_posthoc_manifests.py`(qatnone manifest), `smoke_posthoc_qatnone.py`, `analyze_posthoc_qatnone.py`, `e7_latency_paired.py`(새 스크립트, `e7_latency.py`의 함수만 가져다 씀, 첫 측정 파일에 쓰기를 거부), `analyze_e7_posthoc_latency.py`, `run_posthoc_g0.sh`(기존 queue의 MPS·외부 프로세스 점검 함수 재사용, `POSTHOC_DRYRUN=1`은 조건만 찍고 끝남). bash -n·ast 통과, 서버 code/로 복사(md5 같음)
+  - QAT+none job: E5 QAT 평가 job(e5qat)과 같은 꼴(`"qat": true`, k = 칸의 QAT k라서 `<out>/qat/<task>_s<ckpt>_k<k>.pt`를 읽음), 변형만 none, ptag `e5qatnone`, seed0 60000, ep 0~29. 출력 `out_posthoc_qatnone`에 scales·calib 링크와 `qat -> out_e5/qat` 링크(읽기만)
+  - 지연 짝 모드: 단위 = 같은 (과제, 반복 수, kernel 비트)의 det·dither block 한 쌍(int8, int4 그릇판, packed int4; 단위 안 순서 무작위) 또는 fp32·bf16 단일 block. 회전마다 단위 순서를 섞음(numpy seed 0), 10회전 = 960 block. block 측정은 첫 측정과 같은 코드(warmup 50 + 200 step, CUDA event, step마다 동기화, 체크포인트 1). block마다 시작 시각, 1분 load, CPU 사용률, 시작·끝 GPU 상태(SM clock 등), 외부 프로세스 수 기록. 출력 `v5/e7_latency_posthoc.json`(step 값 포함)
+- 02:47Z 서버에서 manifest 생성: `posthoc/manifests/qatnone.jsonl` 198 job(11과제 × 체크포인트 3 × 6묶음). DRYRUN: 사슬 g0·g1 실행 중, GPU 0 compute 프로세스 1개(type C, DINO-WM), MPS 꺼짐
+- 02:47~02:49Z **스모크**(GPU 0, MPS 없이; DINO-WM 사슬과 함께 씀. GPU 사용 합계 약 50초)
+  - `smoke_posthoc_qatnone.py`(mw-push k=3, 체크포인트 1, seed 60000, 18초): **ALL_OK**. QAT 가중치가 원래와 다르다(최대 차 0.385). 복원이 정확하다. job이 `out_e5/qat/mw-push_s1_k3.pt`(링크)를 읽는다. QAT+none은 Quantizer mode None·양자화 호출 0이고, QAT+det는 7,600회다. 원래 가중치 + none의 return이 저장된 E5 none ep0과 같다(1795.138…). QAT+det도 저장된 E5 QAT+det ep0과 같다(303.435…). runner 경로와 직접 실행의 QAT+none이 같다(36.888…)
+  - 실제 runner job 1개(`e5_mw-push_s1_k3_none_e5qatnone_c00`, 5 episode, worker 1, 20초): OK. spec이 manifest와 같고 qat_path가 기록되었다. MPS 없이 돌았다
+  - `e7_latency_paired.py --quick --force`(공유 GPU, 수치는 의미 없음, 12초): 8 block(짝 3 + 단일 2), 외부 프로세스가 있는 block 8/8(DINO-WM, 예상대로). 출력은 `work_posthoc/e7_latency_posthoc_quick.json`. 첫 측정 파일 `v5/e7_latency.json`은 그대로다(md5 bf753964…, 02:15Z)
+  - 분석 스크립트 두 개를 스모크 출력으로 돌림(CPU, 1초 미만): 표·JSON이 나온다(회전 1개라 CI는 NaN)
+  - 참고(스모크일 뿐, 결과 아님): 스모크 칸의 QAT+none 5 episode는 모두 실패했다(성공 0/5)
+- 02:49:04Z **무장**: tmux `A-posthoc-g0` = `bash ~/pmx/A/tdmpc2_main/code/run_posthoc_g0.sh`(md5 6265464b…). 로그 `~/pmx/A/logs/posthoc_g0.log`. 첫 줄: "=== post-hoc queue armed (pid 316823, workers 16, poll 300s, …)", "(a) start waits for: DINO-WM chain(s) of GPU 0 ended and 0 compute processes on GPU 0, at two consecutive 300s polls". done 표시는 `~/pmx/A/tdmpc2_main/posthoc/queue/`
+- 02:50Z `reports/E5_tdmpc2.md`에 v5.3 §10.1 결정 반영: 머리 기준 목록, §0 QAT 행, §6 QAT 판정 아래 "보고 방식" 단락, §9 결정 2(결정됨으로 바꿈)
+- (10-24 16:26:20Z queue `POSTHOC_DONE`. QAT+none 14:24~14:46Z 198 job 실패 0, 지연 재측정 14:51:42~16:26:20Z 960 block 외부 프로세스 0. 무장 뒤 시작 조건까지 11.6시간을 기다렸다)
+- 16:30Z 조정자 지시 수신(사용자 승인): 두 사후 점검의 점검·정리·보고. 서버 확인: tmux 없음, GPU 두 장 빔, MPS 꺼짐. 첫 측정 파일 md5 bf753964…로 그대로다. out_posthoc_qatnone 198 결과, errors 없음
+- 16:31~16:33Z `code/tdmpc2/posthoc_check_tdmpc2.py` 작성·실행(서버 CPU, 1초). 원자료만 읽고 결과는 새 폴더 `analysis_posthoc_check/`에 쓴다
+  - 지연: 설정·96조건·36짝 조건 × 10짝 확인. 스크립트 난수 과정을 다시 만들어 기록된 단위 위치·짝 안 순서와 비교했다(960 block 모두 일치, det 먼저 49.7%). 모든 짝의 두 block이 시간상 붙어 있다. block 기록 항목이 다 있고, 외부 프로세스는 0이다
+  - 다시 계산한 값(step에서 낸 block 중앙값, 짝 오버헤드, 조건별 중앙값과 bootstrap CI, 같은 자료의 합친 중앙값, 첫 측정 값)이 분석 출력과 차이 0이다
+  - QAT+none: 11칸 모두 90짝이고, 원래 가중치 E5 none과 같은 짝, seed 60000 + ep다. D와 짝 bootstrap CI를 다시 계산했고 분석 출력과 차이 0이다
+- 16:33Z 사후 기술 추가(결과를 본 뒤 정함): 두 모드(19.2% 느림, 첫 측정 17.1%), SM clock 1,890MHz 문턱(떨어진 block 10.9% 중 81%가 느림, 느린 block의 46%), 부하와의 Spearman(+0.45, +0.51), 짝 안 모드 엇갈림 26.7%, 빠른-빠른 짝 241개의 오버헤드(중앙값 −0.04%), cheetah int4 반복 6 비교, QAT+sh-iter − QAT+none
+- 16:34Z 그림 `code/tdmpc2/plot_posthoc_tdmpc2.py`(지연 짝 오버헤드, 두 모드 시간축, QAT+none). 시간축 그림이 뭉개져서 원인을 찾았다: block CSV의 시각을 6자리 유효숫자로 적은 내 코드 문제였다. 3자리 소수 epoch 초로 고치고 점검·그림을 다시 만들었다(점검 스크립트 md5 b92e72f7…, 그림 6c414b0c…)
+- 16:35Z 결과를 맥북 `results/posthoc_tdmpc2/`로 옮김: posthoc_qatnone_summary.json, e7_posthoc_latency_summary.json, posthoc_check_summary.json, posthoc_latency_blocks.csv, PNG 3개. 원자료(4.1MB)는 서버에만 둔다
+- 16:35~16:38Z 보고서 `reports/posthoc_tdmpc2.md` 작성(맨 앞에 "사후, v5.3, 판정을 바꾸지 않음"). `reports/E5_tdmpc2.md` §13, `reports/E7_tdmpc2.md` §12에 "사후 점검(v5.3)" 짧은 절을 더했다. 기존 판정 문장은 바꾸지 않았다
+- 16:38Z 서버 정리: 내 임시 파일만 지움(`work_posthoc/mplcfg`, 확인용 스크립트). 스모크 기록과 점검 로그는 남김. 돌고 있는 내 작업 없음(tmux 없음). GPU·지연 측정은 다시 돌리지 않았고 원자료·out 폴더는 읽기만 했다. MAIN_STATUS·LOG·DESIGN_main은 고치지 않았다

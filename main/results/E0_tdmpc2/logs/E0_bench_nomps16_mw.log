@@ -1,0 +1,204 @@
+800 jobs in manifest, 0 done, running 800 with 16 workers
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+      44s [1/800] OK  bench_mw-push_s1_k3_det_base_c01 (42s) ret   1536.8 succ 1/2
+      46s [2/800] OK  bench_mw-push_s1_k3_det_base_c00 (45s) ret    909.4 succ 1/2
+      53s [3/800] OK  bench_mw-push_s1_k3_det_base_c03 (52s) ret     53.0 succ 0/2
+Episode length: 100
+Discount factor: 0.95
+      57s [4/800] OK  bench_mw-push_s1_k3_shiter_base_c02 (55s) ret   1772.9 succ 2/2
+      57s [5/800] OK  bench_mw-pick-place_s1_k3_det_base_c02 (55s) ret    382.9 succ 0/2
+      58s [6/800] OK  bench_mw-push_s1_k3_det_base_c02 (56s) ret   1696.5 succ 1/2
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+      61s [7/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c03 (59s) ret   1663.1 succ 2/2
+      61s [8/800] OK  bench_mw-pick-place_s1_k3_det_base_c01 (59s) ret   1153.0 succ 2/2
+      61s [9/800] OK  bench_mw-pick-place_s1_k3_det_base_c03 (59s) ret    782.1 succ 0/2
+      61s [10/800] OK  bench_mw-pick-place_s1_k3_det_base_c00 (60s) ret    754.0 succ 1/2
+      62s [11/800] OK  bench_mw-push_s1_k3_shiter_base_c03 (60s) ret   1769.8 succ 2/2
+      62s [12/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c02 (60s) ret    934.9 succ 1/2
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+      63s [13/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c00 (61s) ret   1156.9 succ 1/2
+      63s [14/800] OK  bench_mw-push_s1_k3_shiter_base_c01 (61s) ret   1759.0 succ 2/2
+      63s [15/800] OK  bench_mw-push_s1_k3_shiter_base_c00 (61s) ret   1787.4 succ 2/2
+      63s [16/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c01 (62s) ret   1511.4 succ 2/2
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+      96s [17/800] OK  bench_mw-push_s1_k3_det_base_c04 (52s) ret    143.1 succ 0/2
+     100s [18/800] OK  bench_mw-push_s1_k3_shiter_base_c04 (54s) ret   1775.7 succ 2/2
+     108s [19/800] OK  bench_mw-pick-place_s1_k3_det_base_c04 (54s) ret   1245.1 succ 1/2
+     112s [20/800] OK  bench_mw-push_s1_k3_det_base_c05 (54s) ret    823.3 succ 1/2
+     112s [21/800] OK  bench_mw-push_s1_k3_shiter_base_c05 (54s) ret   1782.2 succ 2/2
+     112s [22/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c04 (56s) ret   1359.5 succ 1/2
+     114s [23/800] OK  bench_mw-pick-place_s1_k3_det_base_c05 (53s) ret    868.2 succ 0/2
+     116s [24/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c05 (54s) ret    864.8 succ 1/2
+     116s [25/800] OK  bench_mw-push_s1_k3_det_base_c06 (55s) ret    344.1 succ 0/2
+     116s [26/800] OK  bench_mw-pick-place_s1_k3_det_base_c06 (55s) ret    932.0 succ 0/2
+     117s [27/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c06 (54s) ret    828.7 succ 1/2
+     117s [28/800] OK  bench_mw-push_s1_k3_shiter_base_c06 (56s) ret   1768.3 succ 2/2
+     117s [29/800] OK  bench_mw-push_s1_k3_shiter_base_c07 (55s) ret   1784.1 succ 2/2
+     118s [30/800] OK  bench_mw-push_s1_k3_det_base_c07 (55s) ret     66.2 succ 0/2
+     118s [31/800] OK  bench_mw-pick-place_s1_k3_det_base_c07 (55s) ret    705.2 succ 1/2
+     118s [32/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c07 (55s) ret   1680.8 succ 2/2
+     149s [33/800] OK  bench_mw-push_s1_k3_det_base_c08 (54s) ret    975.4 succ 1/2
+     155s [34/800] OK  bench_mw-push_s1_k3_shiter_base_c08 (55s) ret   1778.2 succ 2/2
+     161s [35/800] OK  bench_mw-pick-place_s1_k3_det_base_c08 (53s) ret    669.6 succ 0/2
+     165s [36/800] OK  bench_mw-push_s1_k3_det_base_c09 (53s) ret     29.8 succ 0/2
+Episode length: 100
+Discount factor: 0.95
+     166s [37/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c08 (55s) ret   1636.8 succ 2/2
+     167s [38/800] OK  bench_mw-pick-place_s1_k3_det_base_c09 (53s) ret   1249.0 succ 1/2
+     167s [39/800] OK  bench_mw-push_s1_k3_shiter_base_c09 (55s) ret   1769.2 succ 2/2
+Episode length: 100
+Discount factor: 0.95
+     169s [40/800] OK  bench_mw-push_s1_k3_det_base_c10 (53s) ret    495.9 succ 0/2
+     169s [41/800] OK  bench_mw-pick-place_s1_k3_det_base_c10 (53s) ret   1189.6 succ 1/2
+     170s [42/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c09 (55s) ret   1656.5 succ 2/2
+Episode length: 100
+Discount factor: 0.95
+     170s [43/800] OK  bench_mw-push_s1_k3_det_base_c11 (53s) ret    804.8 succ 0/2
+     171s [44/800] OK  bench_mw-push_s1_k3_shiter_base_c10 (55s) ret   1788.3 succ 2/2
+Episode length: 100
+Discount factor: 0.95
+     171s [45/800] OK  bench_mw-pick-place_s1_k3_det_base_c11 (53s) ret   1167.7 succ 1/2
+Episode length: 100
+Discount factor: 0.95
+     172s [46/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c10 (54s) ret   1662.7 succ 2/2
+     172s [47/800] OK  bench_mw-push_s1_k3_shiter_base_c11 (54s) ret   1761.3 succ 2/2
+     173s [48/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c11 (55s) ret   1619.9 succ 2/2
+     202s [49/800] OK  bench_mw-push_s1_k3_det_base_c12 (53s) ret     42.3 succ 0/2
+     210s [50/800] OK  bench_mw-push_s1_k3_shiter_base_c12 (54s) ret   1768.7 succ 2/2
+     214s [51/800] OK  bench_mw-pick-place_s1_k3_det_base_c12 (53s) ret   1452.3 succ 2/2
+     219s [52/800] OK  bench_mw-push_s1_k3_det_base_c13 (53s) ret    961.7 succ 1/2
+     220s [53/800] OK  bench_mw-pick-place_s1_k3_det_base_c13 (53s) ret   1019.4 succ 1/2
+     221s [54/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c12 (56s) ret   1654.1 succ 2/2
+     223s [55/800] OK  bench_mw-push_s1_k3_shiter_base_c13 (56s) ret   1764.3 succ 2/2
+     224s [56/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c13 (55s) ret   1627.5 succ 2/2
+     224s [57/800] OK  bench_mw-push_s1_k3_det_base_c14 (55s) ret    861.7 succ 0/2
+     224s [58/800] OK  bench_mw-push_s1_k3_det_base_c15 (53s) ret     98.0 succ 0/2
+     225s [59/800] OK  bench_mw-pick-place_s1_k3_det_base_c14 (55s) ret   1190.2 succ 2/2
+     225s [60/800] OK  bench_mw-pick-place_s1_k3_det_base_c15 (53s) ret   1150.3 succ 0/2
+     226s [61/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c14 (55s) ret   1684.5 succ 2/2
+     227s [62/800] OK  bench_mw-push_s1_k3_shiter_base_c15 (55s) ret   1775.4 succ 2/2
+     227s [63/800] OK  bench_mw-push_s1_k3_shiter_base_c14 (57s) ret   1773.3 succ 2/2
+     228s [64/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c15 (55s) ret   1657.1 succ 2/2
+     256s [65/800] OK  bench_mw-push_s1_k3_det_base_c16 (54s) ret     54.4 succ 0/2
+     265s [66/800] OK  bench_mw-push_s1_k3_shiter_base_c16 (55s) ret   1680.2 succ 2/2
+     267s [67/800] OK  bench_mw-pick-place_s1_k3_det_base_c16 (53s) ret   1090.6 succ 0/2
+     273s [68/800] OK  bench_mw-push_s1_k3_det_base_c17 (53s) ret    884.9 succ 1/2
+     274s [69/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c16 (55s) ret   1674.9 succ 2/2
+     276s [70/800] OK  bench_mw-push_s1_k3_shiter_base_c17 (55s) ret   1489.8 succ 2/2
+     276s [71/800] OK  bench_mw-pick-place_s1_k3_det_base_c17 (53s) ret    822.2 succ 1/2
+     277s [72/800] OK  bench_mw-push_s1_k3_det_base_c18 (53s) ret    141.4 succ 0/2
+     278s [73/800] OK  bench_mw-pick-place_s1_k3_det_base_c18 (53s) ret   1205.4 succ 1/2
+     279s [74/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c17 (55s) ret   1680.0 succ 2/2
+     279s [75/800] OK  bench_mw-push_s1_k3_shiter_base_c18 (55s) ret   1765.8 succ 2/2
+     279s [76/800] OK  bench_mw-push_s1_k3_det_base_c19 (53s) ret   1064.6 succ 1/2
+     280s [77/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c18 (55s) ret    842.4 succ 1/2
+     280s [78/800] OK  bench_mw-pick-place_s1_k3_det_base_c19 (53s) ret   1310.6 succ 2/2
+     282s [79/800] OK  bench_mw-push_s1_k3_shiter_base_c19 (55s) ret   1725.6 succ 2/2
+     283s [80/800] OK  bench_mw-pick-place_s1_k3_shiter_base_c19 (55s) ret    992.4 succ 0/2
+RUNNER_STOPPED ok 80 failed 0 in 301s

@@ -1,0 +1,7 @@
+Episode length: 500
+Discount factor: 0.99
+cheetah-run: state 0/150 (3s)
+cheetah-run: state 50/150 (21s)
+cheetah-run: state 100/150 (38s)
+DECISION cheetah-run: 150 states in 55s
+DECISION_DONE

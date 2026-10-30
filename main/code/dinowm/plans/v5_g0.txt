@@ -1,0 +1,12 @@
+# DINO-WM v5 chain on GPU 0 (DESIGN_main v5 section 7.5: "when the TD-MPC2 queue is done, GPU 0 also takes the remaining
+# DINO-WM cells"). Started by the coordinator on 2026-10-24T02:17Z after QUEUE_DONE of A-v5-queue-g0 (MPS stopped, E7
+# latency finished). Cells and cmd stages are claimed atomically, so this chain takes only cells that the GPU 1 chain has
+# not claimed. 2026-10-24T02:25Z (coordinator, scheduling only): the QAT stages (cmd qat_pusht_k4, man E5_dinowm_qat) are
+# left to the GPU 1 chain, so that this chain goes on to E2_dinowm_EO instead of waiting about 2 h for the QAT training.
+man E2_dinowm_N
+man E3_dinowm
+man E5_dinowm_held
+cmd e5_select E5_dinowm_held
+man E5_dinowm_eval
+man E5_dinowm_w
+man E2_dinowm_EO

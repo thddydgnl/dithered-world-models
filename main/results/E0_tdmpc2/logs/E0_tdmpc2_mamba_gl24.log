@@ -1,0 +1,222 @@
+Using Cached Shard Index for conda-forge/linux-64                                                   ✔ Done
+Using Cached Shard Index for conda-forge/noarch                                                     ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.1 sec)
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.1 sec)
+
+Transaction
+
+  Prefix: /home/yonghwi/pmx/envs/micromamba/envs/gl24
+
+  Updating specs:
+
+   - mesalib=24.3.4
+   - glew
+
+
+  Package                   Version  Build             Channel           Size
+───────────────────────────────────────────────────────────────────────────────
+  Install:
+───────────────────────────────────────────────────────────────────────────────
+
+  + _openmp_mutex               4.5  20_gnu            conda-forge     Cached
+  + bzip2                     1.0.8  hda65f42_10       conda-forge      258kB
+  + c-ares                   1.34.9  hebe6cf0_0        conda-forge      234kB
+  + ca-certificates      2026.10.19  hbd8a1cb_0        conda-forge      131kB
+  + elfutils                  0.192  hebdcf93_2        conda-forge        1MB
+  + glew                      2.3.0  h71661d4_0        conda-forge     Cached
+  + gmp                       6.3.0  hfd2156b_3        conda-forge      493kB
+  + gnutls                   3.8.13  h18acefa_0        conda-forge        2MB
+  + icu                        78.3  py310h44b86e0_2   conda-forge     Cached
+  + keyutils                  1.6.3  h7cc23a3_1        conda-forge      135kB
+  + krb5                     1.22.2  hbc21106_2        conda-forge        1MB
+  + libarchive                3.8.9  gpl_h3152399_101  conda-forge      875kB
+  + libcurl                  8.23.0  ha042cf0_0        conda-forge      506kB
+  + libdrm                  2.4.129  h7cc23a3_0        conda-forge     Cached
+  + libedit            3.1.20260512  pl5321h373387f_0  conda-forge      136kB
+  + libev                      4.33  h280c20c_3        conda-forge       43kB
+  + libexpat                  2.8.5  hd2095e1_0        conda-forge     Cached
+  + libffi                    3.7.0  h81df57d_1        conda-forge       68kB
+  + libgcc                   16.2.0  ha9f2e26_7        conda-forge     Cached
+  + libgcc-ng                16.2.0  h69a702a_7        conda-forge       29kB
+  + libgl                     1.7.0  ha4b6fd6_5        conda-forge     Cached
+  + libglu                    9.0.3  h5888daf_1        conda-forge     Cached
+  + libglvnd                  1.7.0  ha4b6fd6_5        conda-forge     Cached
+  + libglx                    1.7.0  ha4b6fd6_5        conda-forge     Cached
+  + libgomp                  16.2.0  he0feb66_7        conda-forge     Cached
+  + libiconv                   1.18  h0cb94f2_3        conda-forge     Cached
+  + libidn2                   2.3.8  hfac485b_1        conda-forge      139kB
+  + libllvm19                19.1.7  hf7376ad_2        conda-forge       41MB
+  + liblzma                   5.8.3  hb03c661_1        conda-forge     Cached
+  + libmicrohttpd            1.0.10  hc2fc477_0        conda-forge      303kB
+  + libnghttp2               1.68.1  h74cf4be_1        conda-forge      650kB
+  + libopengl                 1.7.0  ha4b6fd6_5        conda-forge     Cached
+  + libpciaccess               0.19  hb03c661_1        conda-forge     Cached
+  + libpsl                   0.23.1  hd9e3e90_1        conda-forge       73kB
+  + libsqlite                3.54.1  h13e7031_0        conda-forge      984kB
+  + libssh2                  1.11.1  h6154650_1        conda-forge      306kB
+  + libstdcxx                16.2.0  h934c35e_7        conda-forge     Cached
+  + libtasn1                 4.21.0  hb03c661_1        conda-forge      119kB
+  + libunistring             0.9.10  h7f98852_0        conda-forge        1MB
+  + libxcb                   1.17.0  hb83e432_2        conda-forge     Cached
+  + libxml2                  2.15.4  h7df9aa5_1        conda-forge     Cached
+  + libxml2-16               2.15.4  hf3af7cc_1        conda-forge     Cached
+  + libzlib                   1.3.2  h25fd6f3_3        conda-forge     Cached
+  + lz4-c                    1.10.0  hee9eb32_2        conda-forge      182kB
+  + lzo                        2.10  hebe6cf0_1003     conda-forge      192kB
+  + mesalib                  24.3.4  h0b126fc_1        conda-forge        4MB
+  + ncurses                     6.6  hdb14827_1        conda-forge      911kB
+  + nettle                   3.10.1  h5ef0d04_1        conda-forge        1MB
+  + openssl                   3.6.5  h781a0a9_0        conda-forge        3MB
+  + p11-kit                  0.26.5  h8d769aa_2        conda-forge        4MB
+  + pthread-stubs               0.4  h7cc23a3_1004     conda-forge     Cached
+  + xorg-libx11              1.8.14  hb83e432_0        conda-forge     Cached
+  + xorg-libxau              1.0.12  h7cc23a3_2        conda-forge     Cached
+  + xorg-libxdamage           1.1.6  hb9d3cd8_0        conda-forge       13kB
+  + xorg-libxdmcp             1.1.5  h7cc23a3_2        conda-forge     Cached
+  + xorg-libxext              1.3.7  h7cc23a3_1        conda-forge     Cached
+  + xorg-libxfixes            6.0.2  h7cc23a3_1        conda-forge       21kB
+  + xorg-libxrandr            1.5.5  h7cc23a3_1        conda-forge     Cached
+  + xorg-libxrender          0.9.13  h7cc23a3_0        conda-forge     Cached
+  + xorg-libxshmfence         1.3.3  hb9d3cd8_0        conda-forge     Cached
+  + xorg-libxxf86vm           1.1.7  hb03c661_0        conda-forge     Cached
+  + zstd                      1.5.7  hb78ec9c_7        conda-forge     Cached
+
+  Summary:
+
+  Install: 62 packages
+
+  Total download: 66MB
+
+───────────────────────────────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking libglvnd-1.7.0-ha4b6fd6_5
+Linking libgomp-16.2.0-he0feb66_7
+Linking libzlib-1.3.2-h25fd6f3_3
+Linking libopengl-1.7.0-ha4b6fd6_5
+Linking _openmp_mutex-4.5-20_gnu
+Linking zstd-1.5.7-hb78ec9c_7
+Linking libgcc-16.2.0-ha9f2e26_7
+Linking libiconv-1.18-h0cb94f2_3
+Linking libgcc-ng-16.2.0-h69a702a_7
+Linking xorg-libxau-1.0.12-h7cc23a3_2
+Linking xorg-libxdmcp-1.1.5-h7cc23a3_2
+Linking c-ares-1.34.9-hebe6cf0_0
+Linking libev-4.33-h280c20c_3
+Linking keyutils-1.6.3-h7cc23a3_1
+Linking libffi-3.7.0-h81df57d_1
+Linking libtasn1-4.21.0-hb03c661_1
+Linking lzo-2.10-hebe6cf0_1003
+Linking liblzma-5.8.3-hb03c661_1
+Linking libpciaccess-0.19-hb03c661_1
+Linking bzip2-1.0.8-hda65f42_10
+Linking libexpat-2.8.5-hd2095e1_0
+Linking ncurses-6.6-hdb14827_1
+Linking pthread-stubs-0.4-h7cc23a3_1004
+Linking libstdcxx-16.2.0-h934c35e_7
+Linking xorg-libxshmfence-1.3.3-hb9d3cd8_0
+Linking libunistring-0.9.10-h7f98852_0
+Linking p11-kit-0.26.5-h8d769aa_2
+Linking libdrm-2.4.129-h7cc23a3_0
+Linking libedit-3.1.20260512-pl5321h373387f_0
+Linking libxcb-1.17.0-hb83e432_2
+Linking icu-78.3-py310h44b86e0_2
+Linking gmp-6.3.0-hfd2156b_3
+Linking lz4-c-1.10.0-hee9eb32_2
+Linking libglu-9.0.3-h5888daf_1
+Linking libidn2-2.3.8-hfac485b_1
+Linking xorg-libx11-1.8.14-hb83e432_0
+Linking libxml2-16-2.15.4-hf3af7cc_1
+Linking libsqlite-3.54.1-h13e7031_0
+Linking libpsl-0.23.1-hd9e3e90_1
+Linking nettle-3.10.1-h5ef0d04_1
+Linking xorg-libxrender-0.9.13-h7cc23a3_0
+Linking libglx-1.7.0-ha4b6fd6_5
+Linking xorg-libxext-1.3.7-h7cc23a3_1
+Linking xorg-libxfixes-6.0.2-h7cc23a3_1
+Linking libxml2-2.15.4-h7df9aa5_1
+Linking gnutls-3.8.13-h18acefa_0
+Linking libgl-1.7.0-ha4b6fd6_5
+Linking xorg-libxxf86vm-1.1.7-hb03c661_0
+Linking xorg-libxrandr-1.5.5-h7cc23a3_1
+Linking xorg-libxdamage-1.1.6-hb9d3cd8_0
+Linking libllvm19-19.1.7-hf7376ad_2
+Linking libmicrohttpd-1.0.10-hc2fc477_0
+Linking glew-2.3.0-h71661d4_0
+Linking ca-certificates-2026.10.19-hbd8a1cb_0
+Linking openssl-3.6.5-h781a0a9_0
+Linking libssh2-1.11.1-h6154650_1
+Linking krb5-1.22.2-hbc21106_2
+Linking libnghttp2-1.68.1-h74cf4be_1
+Linking libarchive-3.8.9-gpl_h3152399_101
+Linking libcurl-8.23.0-ha042cf0_0
+Linking elfutils-0.192-hebdcf93_2
+Linking mesalib-24.3.4-h0b126fc_1
+
+Transaction finished
+
+
+To activate this environment, use:
+
+    micromamba activate gl24
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -n gl24 mycommand
+
+Using Cached Shard Index for conda-forge/linux-64                                                   ✔ Done
+Using Cached Shard Index for conda-forge/noarch                                                     ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.3 sec)
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.3 sec)
+
+Transaction
+
+  Prefix: /home/yonghwi/pmx/envs/micromamba/envs/gl24
+
+  Updating specs:
+
+   - mesalib=24.3.4
+   - libgl-devel
+
+
+  Package           Version  Build       Channel          Size
+────────────────────────────────────────────────────────────────
+  Install:
+────────────────────────────────────────────────────────────────
+
+  + libgl-devel       1.7.0  ha4b6fd6_5  conda-forge     116kB
+  + libglx-devel      1.7.0  ha4b6fd6_5  conda-forge      28kB
+  + xorg-xorgproto   2025.1  hebe6cf0_3  conda-forge     596kB
+
+  Summary:
+
+  Install: 3 packages
+
+  Total download: 740kB
+
+────────────────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking xorg-xorgproto-2025.1-hebe6cf0_3
+Linking libglx-devel-1.7.0-ha4b6fd6_5
+Linking libgl-devel-1.7.0-ha4b6fd6_5
+warning  libmamba [libgl-devel-1.7.0-ha4b6fd6_5] The following files were already present in the environment:
+    - include/GL/gl.h
+    - include/GL/glcorearb.h
+    - include/GL/glext.h
+    - include/KHR/khrplatform.h
+
+Transaction finished
+

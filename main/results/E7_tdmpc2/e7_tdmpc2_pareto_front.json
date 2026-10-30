@@ -1,0 +1,58 @@
+{
+ "label": "descriptive: overall Pareto front of the 18 configurations per task (point estimates, int4 latency = container kernel)",
+ "front": {
+  "mw-push": [
+   {
+    "config": "fp32_none|it3",
+    "latency_ms": 8.9726881980896,
+    "success": 1.0
+   }
+  ],
+  "mw-pick-place": [
+   {
+    "config": "fp32_none|it3",
+    "latency_ms": 8.630608081817627,
+    "success": 0.9777777777777777
+   },
+   {
+    "config": "int8_shiter|it3",
+    "latency_ms": 10.139472007751465,
+    "success": 1.0
+   }
+  ],
+  "cheetah-run": [
+   {
+    "config": "fp32_none|it3",
+    "latency_ms": 8.813776016235352,
+    "success": 881.7538231806195
+   },
+   {
+    "config": "bf16_none|it3",
+    "latency_ms": 11.12116813659668,
+    "success": 886.1835031185195
+   },
+   {
+    "config": "fp32_none|it6",
+    "latency_ms": 15.474768161773682,
+    "success": 896.2484519243965
+   },
+   {
+    "config": "bf16_none|it6",
+    "latency_ms": 19.926703453063965,
+    "success": 901.365472952918
+   }
+  ],
+  "walker-walk": [
+   {
+    "config": "fp32_none|it3",
+    "latency_ms": 8.572304248809814,
+    "success": 984.9506206730122
+   },
+   {
+    "config": "fp32_none|it6",
+    "latency_ms": 16.6635684967041,
+    "success": 986.1536210649543
+   }
+  ]
+ }
+}

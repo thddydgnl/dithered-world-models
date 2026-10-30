@@ -1,0 +1,2 @@
+{"task": "mw-push", "ep": 1, "seed": 1001, "ret": 1808.363767258823, "success": 1.0, "success_any": 1.0, "steps": 100, "secs": 4.427969455718994, "n_dec": 50}
+{"task": "mw-push", "ep": 0, "seed": 1000, "ret": 1770.1320390477777, "success": 1.0, "success_any": 1.0, "steps": 100, "secs": 4.454813003540039, "n_dec": 50}

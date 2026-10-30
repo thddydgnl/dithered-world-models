@@ -1,0 +1,154 @@
+{
+ "name": "E0_bench_g1",
+ "config": {
+  "purpose": "solo GPU-0 throughput (smoke split), E1 batch sizes vs pilot batch sizes",
+  "split": "smoke",
+  "gpu": 1
+ },
+ "jobs": [
+  {
+   "id": "bE1_smoke_none_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "none",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE1_smoke_det_k4_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE1_smoke_shiter_k4_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE2_smoke_none_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "none",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE2_smoke_det_k4_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE2_smoke_shiter_k4_e000-002",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 2,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE2_smoke_none_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "none",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE2_smoke_det_k3_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "det",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE2_smoke_shiter_k3_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 2,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE4_smoke_none_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "none",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE4_smoke_det_k3_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "det",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "bE4_smoke_shiter_k3_e000-004",
+   "task": "wall",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 3,
+   "ep0": 0,
+   "ep1": 4,
+   "E": 4,
+   "ranges": "main",
+   "diag": true
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+# R2-3b 작업 로그 (UTC, 2026-10-21)
+
+- 05:30Z 조정자 지시 수신(R2-3b, tag r2n3b, 상한 $1.5). R2-3 코드를 `followup_3b/code/`에 복사
+- 05:31:42Z pod 생성: `pod_up.sh r2n3b`. RTX A5000과 3090을 확보하지 못해 **NVIDIA A40($0.59/h)**, id `iuo7miuke2w9ve`. CPU 할당 7.65코어
+- 05:32~05:35Z setup_pod.sh와 setup_mw.sh 완료(약 3분)
+  - **비제거 mw-push seed 1000의 return이 1769.3으로 A5000 pod(1770.1)와 달랐다.** GPU 모델이 다르면 episode가 비트 단위로 같지 않다
+- 05:32~05:36Z 코드 수정
+  - nt_lib에 D-fix 모드(고정 무작위 unit 부분집합, 연속 크기)와 D-dir 모드(고정 무작위 방향)를 추가
+  - prep에 seed 3개 × (D-fix1, D-fix3, D-dir1) 이분 탐색을 추가하고, A·B 통계와 D1z/D3z 매칭도 재계산하게 했다
+  - grid는 기준선과 A·B·D1z·D3z를 포함해 짝 설계를 이 pod 안에서 완결하게 했다. analyze_3b와 run 스크립트도 작성
+- 05:35~05:37Z 스모크(mw-push, α=0.2, 조건당 1 episode) 완료. 매칭 정확도 확인(D-fix1 err1 0.1030 = A 0.1030)
+- 05:37Z PLAN_3b.md 작성(판정 기준 원문, 1차/보조 규칙, 구조적 성질을 미리 밝힘)
+- 05:37:40Z **본 실행 시작**: 8칸 × 13조건 × 10 episode + 기준선 40 = 1,080 episode
+- 05:39~05:41Z calib 40 episode와 prep 4과제 완료(과제당 29~38초). A의 오차는 R2-3(A5000)과 약간 달랐다(예: cheetah α=0.1 err1 0.0319 vs 0.0274). calibration rollout이 GPU 수치 차이로 갈라졌기 때문이다
+- 05:41:22Z grid 시작(1,080 job)
+- 05:59Z α=0.2 칸 예비 분석: D-fix1이 A와 같거나 더 해롭고 D1z보다 크게 해로움
+- 06:17:09Z grid 완료(36분). 교차 GPU 비교에서 360개 짝 중 비트 일치 0개(평균 return은 잡음 수준에서 같음)
+- 06:17~06:19Z decision(150 상태, 2.3분)과 analyze 완료. 판정: **일관성**(1차 8/8·6/8, 약한 활성 고유 0/8). 보조 판정도 모두 일관성
+- 06:19Z 결과 회수(3.5MB)와 md5 대조
+- 06:20:13Z `pod_down.sh r2n3b`로 pod 삭제. `budget.py status`에서 `gone`과 $0.49 확인
+- REPORT_3b.md는 Bash heredoc으로 작성

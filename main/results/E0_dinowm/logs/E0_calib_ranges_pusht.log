@@ -1,0 +1,27 @@
+/home/yonghwi/pmx/envs/a-dinowm/lib/python3.11/site-packages/gym/wrappers/monitoring/video_recorder.py:9: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  import distutils.spawn
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Using cache found in /home/yonghwi/pmx/torch/hub/facebookresearch_dinov2_main
+num_action_repeat: 1
+num_proprio_repeat: 1
+proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+)
+action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+)
+proprio_dim: 10, after repeat: 10
+action_dim: 10, after repeat: 10
+emb_dim: 404
+Model emb_dim:  404
+Loaded 18685 rollouts
+Loaded 21 rollouts
+calibration windows: (64, 3, 224, 224, 3) rendered in 7s
+layer 0: lo -0.1699 hi(99.99%) 1.500 max 3.531 p50 -0.0325 p99 0.426 frac<0 0.888
+layer 1: lo -0.1699 hi(99.99%) 1.609 max 3.812 p50 -0.0454 p99 0.367 frac<0 0.920
+layer 2: lo -0.1699 hi(99.99%) 1.766 max 5.656 p50 -0.0488 p99 0.391 frac<0 0.844
+layer 3: lo -0.1699 hi(99.99%) 2.062 max 5.406 p50 -0.0312 p99 0.418 frac<0 0.744
+layer 4: lo -0.1699 hi(99.99%) 1.773 max 6.094 p50 -0.0187 p99 0.404 frac<0 0.691
+layer 5: lo -0.1699 hi(99.99%) 1.516 max 5.656 p50 -0.0135 p99 0.363 frac<0 0.663

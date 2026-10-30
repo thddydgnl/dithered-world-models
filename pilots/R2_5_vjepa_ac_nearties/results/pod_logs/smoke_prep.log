@@ -1,0 +1,9 @@
+05:36:52 episodes 100 eligible windows 6774 sigma [0.0163, 0.0187, 0.0206, 0.04, 0.0454, 0.0637, 0.0983]
+05:36:52 calibration 4 eval 5
+/usr/local/lib/python3.11/dist-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+05:37:34 loaded {'ckpt_keys': ['encoder', 'predictor', 'opt', 'scaler', 'target_encoder', 'epoch', 'loss', 'batch_size', 'world_size', 'lr'], 'enc_missing': 0, 'enc_unexpected': 0, 'enc_examples': [[], []], 'pred_missing': 0, 'pred_unexpected': 0, 'pred_examples': [[], []], 'load_s': 41.7, 'pred_mlp': "MLP(   (fc1): Linear(in_features=1024, out_features=4096, bias=True)   (act): GELU(approximate='none')   (fc2): Linear(in_features=4096, out_features=1024, bias=True)   (drop): Dropout(p=0.0, inplace=False) )", 'n_blocks': 24, 'pred_params_M': 305.2}
+/usr/lib/python3.11/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+05:37:35 encoded 0 9
+05:37:36 PREP_DONE 9 pose_err 0.0 transform diff 0.0

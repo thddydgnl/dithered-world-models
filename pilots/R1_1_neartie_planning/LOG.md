@@ -1,0 +1,42 @@
+# R1-1 작업 로그 (UTC, 2026-10-21)
+
+- 02:43Z 규칙(PILOT_RULES.md)과 IDEAS_ROUND1.md R1-1, 이전 연구 코드(setup_pod.sh, i2lib.py) 확인. 예산 상태: 이 연구 지출 $0.00
+- 02:55~03:00Z 맥북에서 코드 작성(nt_lib, calib, prep, grid, decision, analyze). 맥북에서는 `py_compile`만 돌렸다
+- 03:01Z pod 생성: `pod_up.sh r1n1`, id `xsft8a80xbo1y5`, **RTX A5000, $0.27/h**. CPU 할당은 cgroup 기준 7.65코어(nproc은 96으로 보임). 메모리 503GB. /workspace는 네트워크 FS(MooseFS)
+- 03:01Z 오류: tar로 코드 전송 시 chown 실패(MooseFS) → `tar --no-same-owner`로 해결
+- 03:02Z setup_pod.sh 완료(약 1분): torch 2.7.1, tensordict 0.8.3, dm-control 1.0.16, mujoco 3.1.2. 공식 repo commit 332f19e. 체크포인트 7개(각 31MB)
+- 03:03Z 오류: DMControl 래퍼에 `close()`가 없어 `env.close()`에서 AttributeError → 호출 제거
+- 03:03Z 단일 프로세스 속도(walker-walk): 비제거 37 ms/step, weak 41, rand 62(행별 정렬 방식), strong 49
+  - rand를 행별 Bernoulli(p = r·c/n) 방식으로 바꿨다. 행별 기대 개수는 일치한다. kernel 수가 약 25개에서 약 10개로 줄었다
+- 03:04~03:08Z Meta-World 설치(시간 상자 20분 중 약 5분 사용)
+  - uv가 gym 0.21.0의 옛 메타데이터를 거부 → pip 23.3.1(`--no-build-isolation`)로 설치
+  - mujoco210 압축 해제 시 chown 실패 → `--no-same-owner`
+  - mujoco-py 컴파일 성공
+  - repo `envs/metaworld.py`의 `env.max_episode_steps` 대입이 read-only property와 충돌 → 같은 값을 넣는 setter shim 추가
+  - 확인: mw-push 2/2 성공(return 1770, 1808), mw-pick-place 2/2 성공(1650, 1726). DMC도 같은 venv(`/root/venv_mw`)에서 동작 → 모든 과제를 이 venv로 돌린다
+- 03:09~03:13Z 스모크(walker-walk와 mw-push, 각 2 episode, α ∈ {0.1, 0.3})
+  - calib → prep → grid → decision → analyze가 끝까지 돌았다
+  - 프로세스 7개 동시 실행 시 DMC episode당 40~58초. GPU 사용률 94~100%
+- 03:13Z 측정 타당성 문제 발견: 마지막 MPPI iteration 후보 집합에서 argmax 뒤집힘이 포화(seed만 바꾼 대조도 70~100%)
+  - PLAN.md §6.1에 기록하고 S3의 1차 집합을 첫 iteration으로 바꿨다(본 실행 전)
+  - 공통 이동을 뺀 가치 오차 지표를 추가했다
+- 03:14Z CUDA MPS 벤치(7 프로세스, walker-walk weak): MPS 없이 94 step/s → MPS 사용 시 131 step/s. 이후 MPS를 켜고 실행한다
+- 03:16Z **본 실행 시작**: 4과제(walker-walk, cheetah-run, mw-push, mw-pick-place), 워커 7개, MPS 사용
+- 03:17~03:19Z calib 완료(40 episode, 94초). prep 4과제 완료(과제당 12~16초). 이후 WM grid 시작(640 job, 약 18.5 job/분)
+- 03:20Z 조정자 메모 수신(신규성 검토). 요청: Q-ensemble 제거를 핵심 조건으로(WM / Q / ALL 비교), 결정 지표 2개 추가(elite regret, MPPI elite 가중치 엔트로피)
+  - 03:21Z PLAN.md §7에 시점을 적은 사전등록 수정을 추가했다. 그 시점에 본 것: WM 예측 쪽 수치, walker ep0 계획 episode 약 15개. Q 결과와 새 지표는 아직 없었다
+- 03:21~03:26Z 구현
+  - nt_lib.Ablator에 Q hook을 추가했다. Ensemble의 vmap forward를 같은 파라미터의 멤버 loop로 바꿔 멤버별 m_j를 쓰게 했다
+  - prep_q.py(Q의 m_j, errq, r_q 이분 탐색), grid `--scope q,all`, decision에 scope 3종과 regret·엔트로피·가중치 겹침 지표를 추가했다
+  - analyze.py를 scope별 판정 구조로 다시 썼다
+  - 스모크 출력으로 확인했다
+- 03:24Z prep_q 4과제 완료(과제당 10~14초)
+- 03:25Z run_q_chain.sh 대기 시작: WM grid가 끝나면 Q·ALL grid(480 job)를 decision과 동시에 돌리고, 끝나면 analyze
+- 03:48:50Z WM grid 완료(640 episode, 30분). 비제거 grid episode의 return이 calibration episode와 비트 단위로 같았다(짝 설계가 결정적임을 확인)
+- 03:48:52Z decision 시작(4과제 병렬, 상태 500개 × 32조건 × 후보 집합 2개 + 계획 재실행 250 상태). 03:49Z Q·ALL grid(480 episode) 동시 시작
+- 03:50Z WM 예비 analyze 결과: S1 2/4(MW), S2 둘째 가지는 cheetah만 성립
+- 04:17Z decision 완료(과제당 1,672~1,711초). S3 확인: 첫 iteration 집합에서도 argmax 뒤집힘이 포화(weak Q1 0.944 vs Q4 0.900) → S3 실패
+- 04:22Z Q·ALL grid 완료. 최종 analyze 실행. posthoc.py(사후 짝 비교, 오차 누적 비율) 실행
+- 04:23Z 결과 회수(14MB. 상태별 결정 CSV는 gzip). fig_flip_by_gap의 범례가 막대를 가려 그림 아래로 옮겨 다시 그렸다. 다시 그린 뒤 summary.json·table_*.csv의 md5가 회수본과 같음을 확인
+- 04:24:02Z `pod_down.sh r1n1`로 pod 삭제. `budget.py status`에서 `gone`과 $0.38 확인
+- 정정: PLAN.md §2에 적은 "Meta-World 설치 약 12분"은 당시의 추정치다. pod 시각 기준 실제로는 약 5분(03:03:39~03:08Z)이었다

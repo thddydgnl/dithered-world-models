@@ -1,0 +1,88 @@
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     24s calib walker-walk        ep0 ret    993.9 succ 0 steps 500 (16s)
+     25s calib walker-walk        ep1 ret    993.6 succ 0 steps 500 (16s)
+CALIB_DONE
+Episode length: 500
+Discount factor: 0.99
+walker-walk alpha 0.1: frac weak 0.347 (dyn 0.411) err1 weak 0.0621 rand_count 1.2427 strong 5.2081 | pred-matched r_dyn 0.0908 -> err1 0.0620, r_rew 0.1637 -> errr 0.0856 (weak errr 0.0894)
+walker-walk alpha 0.3: frac weak 0.714 (dyn 0.834) err1 weak 0.4015 rand_count 3.8343 strong 4.1665 | pred-matched r_dyn 0.2298 -> err1 0.4021, r_rew 0.5994 -> errr 1.4292 (weak errr 1.3988)
+PREP walker-walk done in 16s
+PREP_DONE
+18 jobs (0 already done)
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     52s [1/18] walker-walk      none       a=0     ep0 ret    993.9 succ 0 frac None (42s)
+     60s [2/18] walker-walk      weak       a=0.3   ep0 ret    243.5 succ 0 frac 0.715 (51s)
+     69s [3/18] walker-walk      rand_pred  a=0.1   ep0 ret    986.2 succ 0 frac 0.043 (57s)
+     70s [4/18] walker-walk      rand_pred  a=0.3   ep0 ret    433.6 succ 0 frac 0.28 (58s)
+     71s [5/18] walker-walk      weak       a=0.1   ep0 ret    990.6 succ 0 frac 0.348 (57s)
+     73s [6/18] walker-walk      rand_count a=0.3   ep0 ret     76.7 succ 0 frac 0.723 (58s)
+     74s [7/18] walker-walk      rand_count a=0.1   ep0 ret    142.6 succ 0 frac 0.358 (58s)
+    110s [8/18] walker-walk      none       a=0     ep1 ret    993.6 succ 0 frac None (41s)
+    121s [9/18] walker-walk      strong     a=0.1   ep0 ret     85.4 succ 0 frac 0.346 (69s)
+    124s [10/18] walker-walk      weak       a=0.1   ep1 ret    990.3 succ 0 frac 0.349 (54s)
+    125s [11/18] walker-walk      weak       a=0.3   ep1 ret    414.7 succ 0 frac 0.716 (54s)
+    127s [12/18] walker-walk      rand_count a=0.1   ep1 ret     55.2 succ 0 frac 0.357 (54s)
+    128s [13/18] walker-walk      rand_count a=0.3   ep1 ret     43.0 succ 0 frac 0.724 (54s)
+    129s [14/18] walker-walk      strong     a=0.3   ep0 ret     71.1 succ 0 frac 0.72 (69s)
+    150s [15/18] walker-walk      rand_pred  a=0.1   ep1 ret    985.5 succ 0 frac 0.043 (40s)
+    155s [16/18] walker-walk      rand_pred  a=0.3   ep1 ret    166.2 succ 0 frac 0.282 (34s)
+    161s [17/18] walker-walk      strong     a=0.1   ep1 ret     78.7 succ 0 frac 0.346 (37s)
+    162s [18/18] walker-walk      strong     a=0.3   ep1 ret     51.0 succ 0 frac 0.72 (37s)
+GRID_DONE
+Episode length: 500
+Discount factor: 0.99
+walker-walk: state 0/40 (2s)
+DECISION walker-walk: 40 states in 21s
+DECISION_DONE
+{
+ "S3_pooled": {
+  "flip_by_quartile": {
+   "1": 1.0,
+   "2": 1.0,
+   "3": 1.0,
+   "4": 0.8
+  },
+  "flips_q1": 10,
+  "n_q1": 10,
+  "controls": {
+   "rand_pred": {
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0
+   },
+   "seednoise": {
+    "1": 1.0,
+    "2": 0.9,
+    "3": 0.8,
+    "4": 0.7
+   }
+  }
+ },
+ "S3": false,
+ "S3_specific": false,
+ "S1_tasks": [],
+ "S1": false,
+ "S2a_tasks": [],
+ "S2a_nofloor_tasks": [],
+ "S2b_tasks": [],
+ "S2": false,
+ "S2prime_tasks": [],
+ "verdict": "\uc5c6\uc74c"
+}

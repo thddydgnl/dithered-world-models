@@ -1,0 +1,44 @@
+10 jobs in manifest, 0 done, running 10 with 5 workers
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+      64s [1/10] OK  smoke_mw-push_s1_k0_none_base_c00 (62s) ret   1797.1 succ 1/1
+      82s [2/10] OK  smoke_mw-push_s1_k3_det_base_c00 (81s) ret    116.4 succ 0/1
+      84s [3/10] OK  smoke_mw-push_s1_k3_shstep_base_c00 (82s) ret   1730.1 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+      88s [4/10] OK  smoke_mw-push_s1_k3_shiter_base_c00 (86s) ret    885.5 succ 0/1
+      89s [5/10] OK  smoke_mw-push_s1_k3_ind_base_c00 (88s) ret     60.6 succ 0/1
+     138s [6/10] OK  smoke_mw-push_s1_k3_shiter_N128it3_c00 (50s) ret   1272.7 succ 0/1
+     143s [7/10] OK  smoke_mw-push_s1_k3_shep_base_c00 (79s) ret     99.5 succ 0/1
+     164s [8/10] OK  smoke_mw-push_s1_k3_det_nows_c00 (74s) ret   1643.1 succ 0/1
+     169s [9/10] OK  smoke_mw-push_s1_k3_detshift_base_c00 (86s) ret   1787.3 succ 1/1
+     383s [10/10] OK  smoke_cheetah-run_s1_k4_det_base_c00 (299s) ret    434.8 succ 0/1
+RUNNER_DONE ok 10 failed 0 in 383s

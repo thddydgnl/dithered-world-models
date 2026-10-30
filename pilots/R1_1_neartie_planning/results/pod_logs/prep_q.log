@@ -1,0 +1,37 @@
+Episode length: 500
+Discount factor: 0.99
+walker-walk Q alpha 0.05: frac weak 0.160 errq weak 0.0106 rand_count 8.7207 strong 18368.7129 | pred-matched r_q 0.0011 -> errq 0.0105 (frac 0.000)
+walker-walk Q alpha 0.1: frac weak 0.276 errq weak 0.8742 rand_count 120.9787 strong 17984.7754 | pred-matched r_q 0.0530 -> errq 0.8810 (frac 0.017)
+walker-walk Q alpha 0.2: frac weak 0.400 errq weak 15.5268 rand_count 1047.9098 strong 5987.2368 | pred-matched r_q 0.5057 -> errq 17.1533 (frac 0.241)
+walker-walk Q alpha 0.3: frac weak 0.499 errq weak 29.6466 rand_count 2548.2527 strong 9080.7412 | pred-matched r_q 0.4811 -> errq 32.0818 (frac 0.295)
+walker-walk Q alpha 0.5: frac weak 0.671 errq weak 41.4559 rand_count 3408.5227 strong 12141.7705 | pred-matched r_q 0.4417 -> errq 43.8460 (frac 0.348)
+PREP_Q walker-walk done in 14s
+Episode length: 500
+Discount factor: 0.99
+cheetah-run Q alpha 0.05: frac weak 0.161 errq weak 0.0061 rand_count 0.0808 strong 0.4543 | pred-matched r_q 0.1327 -> errq 0.0061 (frac 0.021)
+cheetah-run Q alpha 0.1: frac weak 0.317 errq weak 0.0987 rand_count 0.3996 strong 1.1196 | pred-matched r_q 0.5503 -> errq 0.0999 (frac 0.172)
+cheetah-run Q alpha 0.2: frac weak 0.554 errq weak 2.5598 rand_count 8.4115 strong 80.1975 | pred-matched r_q 0.8267 -> errq 2.5517 (frac 0.460)
+cheetah-run Q alpha 0.3: frac weak 0.695 errq weak 8.5752 rand_count 58.0299 strong 215.3983 | pred-matched r_q 0.7647 -> errq 8.5035 (frac 0.534)
+cheetah-run Q alpha 0.5: frac weak 0.838 errq weak 28.7906 rand_count 227.8480 strong 318.2061 | pred-matched r_q 0.7141 -> errq 28.8139 (frac 0.603)
+PREP_Q cheetah-run done in 13s
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push Q alpha 0.05: frac weak 0.085 errq weak 0.0093 rand_count 0.0459 strong 1.1795 | pred-matched r_q 0.2556 -> errq 0.0102 (frac 0.022)
+mw-push Q alpha 0.1: frac weak 0.187 errq weak 0.0733 rand_count 0.1825 strong 82.6468 | pred-matched r_q 0.6125 -> errq 0.0751 (frac 0.115)
+mw-push Q alpha 0.2: frac weak 0.396 errq weak 0.3532 rand_count 2.6409 strong 130.5466 | pred-matched r_q 0.6018 -> errq 0.3523 (frac 0.241)
+mw-push Q alpha 0.3: frac weak 0.554 errq weak 0.6873 rand_count 14.1050 strong 153.7902 | pred-matched r_q 0.5229 -> errq 0.6598 (frac 0.290)
+mw-push Q alpha 0.5: frac weak 0.747 errq weak 2.4018 rand_count 60.8374 strong 168.2884 | pred-matched r_q 0.5208 -> errq 2.3757 (frac 0.388)
+PREP_Q mw-push done in 10s
+Episode length: 100
+Discount factor: 0.95
+mw-pick-place Q alpha 0.05: frac weak 0.114 errq weak 0.0072 rand_count 0.0861 strong 6.4070 | pred-matched r_q 0.0758 -> errq 0.0068 (frac 0.009)
+mw-pick-place Q alpha 0.1: frac weak 0.256 errq weak 0.1315 rand_count 0.2549 strong 26.0161 | pred-matched r_q 0.6631 -> errq 0.1364 (frac 0.170)
+mw-pick-place Q alpha 0.2: frac weak 0.528 errq weak 0.4029 rand_count 2.8583 strong 27.0250 | pred-matched r_q 0.5939 -> errq 0.4072 (frac 0.315)
+mw-pick-place Q alpha 0.3: frac weak 0.682 errq weak 0.5180 rand_count 8.6813 strong 27.1888 | pred-matched r_q 0.5056 -> errq 0.5263 (frac 0.347)
+mw-pick-place Q alpha 0.5: frac weak 0.826 errq weak 0.9947 rand_count 18.6846 strong 27.7281 | pred-matched r_q 0.5013 -> errq 0.9993 (frac 0.419)
+PREP_Q mw-pick-place done in 10s
+PREP_Q_DONE

@@ -1,0 +1,32 @@
+# E7 TD-MPC2 분석 작업 로그 (작업자, UTC, 서버 시계 기준)
+
+- 02:18Z경(10-24) 조정자 지시 수신: TD-MPC2 E7(성공률 1,296 job 01:28:55Z 끝, 지연 01:28:55~02:15:26Z, QUEUE_DONE 02:15:26Z) 자료 점검, `analyze_e7.py` 대조, 본 분석(H5, 실제 kernel 성공률, Pareto 그림), 보고. 기준: DESIGN_main v5 §7.4, §6.7·§6.8, LOG 10-22T09:03Z·09:04Z의 E7 편차(고치지 않음). GPU 0·1 모두 DINO-WM이 쓴다 → GPU를 쓰지 않고, 지연을 다시 재지 않는다
+- 02:19Z 서버 상태: out_e7 episode 결과 1,296, errors 폴더 없음, lock 0, manifest e7.jsonl 1,296줄. `v5/e7_latency.json`(151KB, 02:15Z), queue flag e7.done 01:28Z·e7lat.done 02:15Z. GPU 0·1에 DINO-WM 프로세스 각 1개(tmux `A-v5-dinowm-g0` 02:17Z 생성, `A-v5-dinowm-g1`). load 19.7, 디스크 여유 265G
+- 02:19Z 지연 로그 `~/pmx/A/logs/v5_e7lat.log` 끝 30줄을 보았다. 회전 5개가 568~2,786초에 끝났고, 끝에 지연 요약과 dither 오버헤드가 찍혀 있어서 **분석 코드 대조를 끝내기 전에 지연 결과 수치를 보았다**(성공률 수치는 아직 보지 않음). 그래서 아래 코드 수정은 설계 문구에 근거한 것만 하고, 근거를 적는다
+- 02:20Z 코드 md5(맥북 = 서버): analyze_e7.py, e7_latency.py, e7lib.py, run_queue_g0.sh 같음. queue는 E7 성공률 단계가 끝나자 MPS daemon을 멈추고(01:28:55Z) MPS pipe 변수를 지운 뒤 `e7_latency.py --gpu_check --wait_exclusive 7200`을 돌렸다. 지연 로그에 대기 줄이 없어 GPU 0이 시작 때 바로 배타였다
+- 02:21~02:23Z 새 점검 스크립트 `code/tdmpc2/integrity_e7.py`(성공률 수치는 출력하지 않음, 격자는 DESIGN v5 §7.4 문구에서 옮겨 적음). **ALL_OK**(`work_e7/integrity_e7.json`)
+  - 성공률: manifest 1,296 job = 결과 1,296, spec 같음, 남는 파일 0. 216조건(4과제 × 체크포인트 3 × 6정밀도 × 반복 3) × 30 episode, seed 70000 + ep(90짝). kernel 정보: int8·int4는 W8 가중치, 활성 int8 그릇(int4도 그릇판). 모두 GPU 0 MPS pipe, 같은 host·A5000·torch 2.7.1. 10-23 22:11:14Z ~ 10-24 01:28:54Z. errors 0, lock 0
+  - 지연(e7_latency.json): settings가 규약대로다(5회전, warmup 50, 200 step, gpu_check 켬, force·quick 끔, 4과제 × 반복 {3, 6, 12} × 8정밀도 = 96조건). 조건마다 1,000 step, 회전 5개. 외부 compute 프로세스가 있었던 block 0/480. 회전마다 순서가 다르다(스크립트의 numpy seed 0으로 다시 만든 순열). 단일 프로세스, CUDA event, eager(코드 확인)
+  - 기록된 상태(기술): 호스트 1분 load 20.4~32.5(중앙값 21.5, 64스레드), block 동안 CPU 사용률 31~38%. GPU SM clock 1,262~1,890MHz(읽은 값의 89%가 최대 1,890), 온도 49~61℃, 전력 67~206W
+- 02:23~02:26Z **`analyze_e7.py` 대조**(성공률 수치를 읽기 전, 지연 요약은 이미 봄). 대조한 규칙: v5 §7.4(격자, 90짝, H5 두 부분), §6.7, §6.8, v4 §6.1(짝 bootstrap, DMC 상대 return 하락)
+  - 규칙대로인 것: 성공률은 과제마다 18설정 공통 90짝, 평균과 짝 bootstrap CI, D는 같은 반복 수의 fp32 대비(DMC는 재표본마다 비율). 오버헤드는 지연 스크립트가 조건별 중앙값으로 계산한 (dither − det)/det. Pareto는 "dither + 낮은 비트"(int4 sh-iter) 대 "det + 높은 비트"(int8 det), 같은 과제 안 모든 반복 수 조합, 지연 ≤·성공 ≥·하나는 엄격, 점 추정
+  - 격자 안에서 "det + 높은 비트"가 될 수 있는 것은 int8 det뿐이다(fp32·bf16은 det 변형이 아니다). 그래서 Pareto 대조 범위는 원래 코드대로 둔다
+  - 고친 것: 10% 비교를 `v5_common.le`(공용 허용 오차)로 바꿈(조정자 지시). 결과 전 메모가 조정자에게 남긴 두 갈래(int4 kernel: 그릇판·packed / 오버헤드: 모든 조건·조건 중앙값)마다 H5 판정을 명시적으로 계산하도록 했다(원래는 판정을 내지 않았음)
+  - 더한 것(기술): 회전별 오버헤드(회전별 block 중앙값), 조건별 fp32 대비 지연, Pareto 사례마다 성공 차 CI와 "5회전 모두 지연이 낮은가", 같은 반복 수 사례 표시, 같은 정밀도·반복 수에서 det − dither 손상 차, `family_points_e7_tdmpc2.json`, CSV
+- 02:26Z 맥북 문법 검사, 서버 복사(md5 fe130366…). 가짜 성공률 자료(`test_v5_analyses.py`, e7 manifest, `work_e7/fake_e7`)와 실제 지연 파일로 dry run: 모든 출력이 나온다
+- 02:22:53~02:22:54Z **본 분석 실행**(서버 CPU 1 프로세스, nice 10): `analyze_e7.py --res ../out_e7 --latency ../v5/e7_latency.json --outdir ../analysis_e7`
+  - H5: 네 갈래 읽기(int4 그릇판·packed × 모든 조건·조건 중앙값) 모두 성립. 오버헤드(조건별 중앙값 기준) int8 −5.3% ~ +3.8%, int4 그릇판 −2.7% ~ +5.8%, packed int4 −5.8% ~ +6.9%. Pareto 사례는 mw-push에서만 4개(그릇판 지연)·4개(packed 지연)
+  - Pareto 사례의 질: 같은 반복 수 사례 2개(it3·it6)는 성공이 같고(0.989/0.989, 1.000/1.000) 지연 차 3~5%가 5회전 모두에서 유지되지 않는다. 반복 수가 다른 사례 2개(int4 dither it3·it6 대 int8 det it12)는 지연이 5회전 모두 낮지만, 성공 차의 CI가 0을 포함하거나 하한이 0이다(+0.011 [−0.022, +0.056], +0.022 [0.000, +0.056])
+  - 성공률(실제 kernel): int8은 det·dither 모두 fp32와 차이가 없다(|D| ≤ 0.022). int4 det 손상: push 0.11~0.16, pick-place 0.04~0.06, cheetah 0.70~0.71, walker 0.17~0.23. int4 dither는 반복이 늘수록 좋아진다(cheetah 0.753 → 0.538 → 0.295, walker 0.283 → 0.135 → 0.090). 반복 3에서는 DMC 두 과제에서 dither가 det보다 해롭다(−0.041, −0.049)
+  - E1 k=4 fake-quant(반복 6, 다른 seed)와 E7 int4 반복 6의 D가 가깝다: push det 0.122/0.111, sh-iter −0.011/0.000; cheetah 0.716/0.703, 0.518/0.538; walker 0.172/0.191, 0.136/0.135; pick-place 0.033/0.044, 0.011/0.044
+  - 지연(기술): 정수 kernel이 fp32보다 느리다(fp32 대비 중앙값 +17.5~18%, 범위 +10~+28%). bf16은 +28%. 과제마다 18설정의 전체 Pareto front는 거의 fp32다(mw-push: fp32 it3; pick-place: fp32 it3, int8 dither it3; cheetah: fp32·bf16 it3·it6; walker: fp32 it3·it6)
+- 02:24~02:27Z **사후 분석**(지연 요약을 본 뒤 정함, 판정에 쓰지 않음): `code/tdmpc2/posthoc_e7_latency_variation.py`
+  - block 단위 지연이 두 모드다. 480 block 중 17%가 같은 조건의 보통 block보다 15% 넘게 느리다(대개 +35%). fp32도 같다(예: mw-push fp32 it6 회전 0 20.8ms, 나머지 15.4~16.2ms)
+  - 느린 block은 시간 순서로 흩어져 있다(65번, 평균 1.3 block, 가장 긴 것 4 block). 회전마다 11~23%
+  - 기록된 상태와의 Spearman: 호스트 1분 load −0.04, block CPU 사용률 +0.12, block 끝 SM clock −0.45. 느린 block 일부는 SM clock이 1,695MHz로 내려가 있었다(block 끝 기준 11.7%). 원인은 이 자료로 가를 수 없다
+  - 그래서 회전별 오버헤드가 −30% ~ +38%로 흔들린다. 조건별 중앙값(사전 정의 계산)으로는 모두 ±7% 안이다. "회전별 오버헤드의 중앙값"으로 읽으면 최대 int8 7.8%, packed int4 4.2%, int4 그릇판 30.1%(cheetah it6: dither block 5개 중 3개가 느린 모드)
+- 02:25~02:27Z 그림 `code/tdmpc2/plot_e7_tdmpc2.py`(summary만 읽음): 과제별 지연–성공률, 반복 수 3→6→12 곡선. 전체 Pareto front는 기술로 따로 JSON에 남김. 결과를 맥북 `results/E7_tdmpc2/`로 옮김(JSON·CSV·PNG)
+- 02:27Z 보고서 `reports/E7_tdmpc2.md` 작성. 숫자는 summary·사후 JSON에서 옮기고 대조했다
+- 02:28Z 서버 정리: 내가 만든 임시 파일만 지움(`work_e7/fake_e7`, `fake_analysis_e7`, `mplcfg`, 확인용 스크립트). `work_e7/`에는 점검 JSON·로그와 실행 로그만 남는다
+- 02:28Z 최종 md5(맥북 = 서버): analyze_e7 fe130366…, integrity_e7 18dd6029…, plot_e7_tdmpc2 557bfd02…, posthoc_e7_latency_variation 1126adf4…, v5_common ee92bb3f…(E2·E3 판 그대로). 결과 sha256: family_points_e7_tdmpc2.json b5e927a0…, e7_tdmpc2_summary.json 01acb5f2…
+- 02:28Z 돌고 있는 내 작업 없음(ps 확인). GPU를 쓰지 않았고 지연을 다시 재지 않았다. out_e7·manifest·e7_latency.json은 읽기만 했다. MAIN_STATUS.md, main/LOG.md, DESIGN_main.md는 고치지 않았다

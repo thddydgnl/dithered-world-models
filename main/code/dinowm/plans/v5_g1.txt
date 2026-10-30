@@ -1,0 +1,11 @@
+# DINO-WM v5 chain on GPU 1 (DESIGN_main v5 section 7.5): E2 N sweep -> E3 -> E5 -> E2 elite/opt_steps.
+# Re-read after every cell. E5 held/eval manifests are written after the E1 analysis (the chain waits for them).
+man E2_dinowm_N
+man E3_dinowm
+man E5_dinowm_held
+cmd e5_select E5_dinowm_held
+man E5_dinowm_eval
+man E5_dinowm_w
+cmd qat_pusht_k4
+man E5_dinowm_qat
+man E2_dinowm_EO

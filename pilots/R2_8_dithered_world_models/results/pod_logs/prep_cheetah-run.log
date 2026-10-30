@@ -1,0 +1,13 @@
+Episode length: 500
+Discount factor: 0.99
+cheetah-run k=2: det: e1 1.6309 e3 2.2325 er 0.4730 | ind: e1 1.8920 e3 2.9512 er 1.7155 | sh: e1 1.9932 e3 3.0794 er 1.6343 | sub: e1 2.0388 e3 3.0511 er 2.0956
+cheetah-run k=3: det: e1 0.3048 e3 0.9919 er 0.2164 | ind: e1 0.7745 e3 1.7151 er 0.5928 | sh: e1 0.8273 e3 1.9942 er 0.7147 | sub: e1 0.5610 e3 1.3219 er 0.4954
+cheetah-run k=4: det: e1 0.1201 e3 0.5395 er 0.2273 | ind: e1 0.2336 e3 0.6185 er 0.3990 | sh: e1 0.2541 e3 0.5934 er 0.3176 | sub: e1 0.1289 e3 0.3561 er 0.2527
+cheetah-run k=5: det: e1 0.0214 e3 0.0621 er 0.1415 | ind: e1 0.0490 e3 0.1412 er 0.1096 | sh: e1 0.0529 e3 0.1547 er 0.0972 | sub: e1 0.0321 e3 0.0948 er 0.0857
+cheetah-run k=6: det: e1 0.0074 e3 0.0218 er 0.0213 | ind: e1 0.0148 e3 0.0436 er 0.0330 | sh: e1 0.0161 e3 0.0590 er 0.0317 | sub: e1 0.0093 e3 0.0268 er 0.0223
+cheetah-run k=7: det: e1 0.0037 e3 0.0107 er 0.0049 | ind: e1 0.0054 e3 0.0153 er 0.0091 | sh: e1 0.0059 e3 0.0155 er 0.0088 | sub: e1 0.0037 e3 0.0099 er 0.0056
+cheetah-run k=8: det: e1 0.0023 e3 0.0054 er 0.0015 | ind: e1 0.0027 e3 0.0066 er 0.0026 | sh: e1 0.0028 e3 0.0067 er 0.0025 | sub: e1 0.0024 e3 0.0057 er 0.0015
+cheetah-run old conditions alpha 0.1 done (94s)
+cheetah-run old conditions alpha 0.2 done (169s)
+cheetah-run old conditions alpha 0.3 done (198s)
+PREP cheetah-run done in 198s

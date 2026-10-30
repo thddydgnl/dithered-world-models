@@ -1,0 +1,27 @@
+/usr/local/lib/python3.11/dist-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+05:39:19 loaded {'ckpt_keys': ['encoder', 'predictor', 'opt', 'scaler', 'target_encoder', 'epoch', 'loss', 'batch_size', 'world_size', 'lr'], 'pred_missing': 0, 'pred_unexpected': 0, 'pred_examples': [[], []], 'load_s': 22.2, 'pred_mlp': "MLP(   (fc1): Linear(in_features=1024, out_features=4096, bias=True)   (act): GELU(approximate='none')   (fc2): Linear(in_features=4096, out_features=1024, bias=True)   (drop): Dropout(p=0.0, inplace=False) )", 'n_blocks': 24, 'pred_params_M': 305.2}
+/usr/lib/python3.11/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+05:39:37 STATS_DONE {'n_cal': 4, 'rows_per_block_for_quantile': 8192, 'tokens_per_block': 198144.0, 'm_quantiles_over_units': [0.0, 0.003520773723721504, 0.38671875, 1.8349609375, 39.09375], 'm_dead_units': 592, 'weak_frac_all': {'0.05': 0.5931443620303085, '0.1': 0.7264746844922542, '0.2': 0.8593027594272274}, 'weak_frac_cond_tokens': {'0.05': 0.5907663967874315, '0.1': 0.729464206430647, '0.2': 0.8333670364485846}, 'weak_frac_patch_tokens': {'0.05': 0.5931629398837686, '0.1': 0.7264513288521104, '0.2': 0.8595053822629981}, 'mean_abs_mu': {'0.05': 0.0065453085117042065, '0.1': 0.01407667063176632, '0.2': 0.021699462085962296}, 'mean_mu': {'0.05': -0.0056577096693217754, '0.1': -0.01284598559141159, '0.2': -0.018652260303497314}, 'mean_delta': {'0.05': 0.0033302854280918837, '0.1': 0.010173320770263672, '0.2': 0.01726474240422249}, 'mean_abs_delta': {'0.05': 0.003589359112083912, '0.1': 0.010579889640212059, '0.2': 0.018864072859287262}, 'mean_abar': -0.006302564404904842, 'seconds': 17.2, 'prec': 'tf32'}
+/workspace/r25/code/run.py:105: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  S = {k: v.cuda() for k, v in torch.load(f"{args.out}/stats.pt").items()}
+05:40:22 match F2@0.05: target 0.0905 -> p 3.131e-02 delta 0.0899 (3 evals)
+05:40:48 match F1@0.05: target 0.1192 -> p 4.808e-02 delta 0.1213 (4 evals)
+05:41:08 match D2@0.05: target 0.0905 -> p 3.085e-02 delta 0.0897 (3 evals)
+05:41:36 match D1@0.05: target 0.1192 -> p 4.743e-02 delta 0.1194 (4 evals)
+05:42:22 match F2@0.1: target 0.1877 -> p 1.183e-01 delta 0.1896 (4 evals)
+05:42:55 match F1@0.1: target 0.2647 -> p 1.992e-01 delta 0.2639 (5 evals)
+05:43:22 match D2@0.1: target 0.1877 -> p 1.175e-01 delta 0.1898 (4 evals)
+05:44:10 match D1@0.1: target 0.2647 -> p 2.127e-01 delta 0.2646 (7 evals)
+05:45:14 match F2@0.2: target 0.2771 -> p 2.495e-01 delta 0.2774 (6 evals)
+05:46:05 match F1@0.2: target 0.3909 -> p 4.333e-01 delta 0.3962 (7 evals)
+05:47:26 match D2@0.2: target 0.2771 -> p 2.505e-01 delta 0.2824 (6 evals)
+05:48:35 match D1@0.2: target 0.3909 -> p 4.364e-01 delta 0.3934 (7 evals)
+05:48:35 MATCH_DONE 538.1 s
+05:49:37 eval 1/5 windows, 61s, 61.4s/window
+05:50:39 eval 2/5 windows, 123s, 61.4s/window
+05:51:40 eval 3/5 windows, 184s, 61.4s/window
+05:52:41 eval 4/5 windows, 245s, 61.4s/window
+05:53:56 eval 5/5 windows, 321s, 64.1s/window
+05:53:56 EVAL_DONE

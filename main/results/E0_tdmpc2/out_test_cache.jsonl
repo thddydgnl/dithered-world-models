@@ -1,0 +1,12 @@
+Episode length: 100
+Discount factor: 0.95
+{"task": "mw-push", "ckpt": 1, "ret": 116.36395911313593, "n_steps_rec": 25, "n_nan_e_chosen": 0, "cache": [["mw-push", 1]]}
+Episode length: 100
+Discount factor: 0.95
+{"task": "mw-pick-place", "ckpt": 1, "ret": 984.2351222693687, "n_steps_rec": 25, "n_nan_e_chosen": 0, "cache": [["mw-push", 1], ["mw-pick-place", 1]]}
+Episode length: 100
+Discount factor: 0.95
+{"task": "mw-push", "ckpt": 2, "ret": 1475.019116833806, "n_steps_rec": 25, "n_nan_e_chosen": 0, "cache": [["mw-pick-place", 1], ["mw-push", 2]]}
+Episode length: 100
+Discount factor: 0.95
+{"task": "mw-push", "ckpt": 1, "ret": 116.36395911313593, "n_steps_rec": 25, "n_nan_e_chosen": 0, "cache": [["mw-push", 2], ["mw-push", 1]]}

@@ -1,0 +1,127 @@
+{
+ "name": "E0_smoke_pm",
+ "config": {
+  "split": "smoke",
+  "ep0": 0,
+  "ep1": 4,
+  "ranges": "main",
+  "diag": true,
+  "tasks": {
+   "pointmaze": {
+    "E": 1,
+    "ks": [
+     4
+    ],
+    "vars": [
+     "det",
+     "ind",
+     "shiter",
+     "shstep",
+     "shep",
+     "detshift"
+    ],
+    "chunk": 1,
+    "ep0": 0,
+    "ep1": 1
+   }
+  }
+ },
+ "jobs": [
+  {
+   "id": "smoke_none_e000-001",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "none",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_nonealt_e000-001",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "nonealt",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-001",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_ind_k4_e000-001",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "ind",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shiter_k4_e000-001",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shstep_k4_e000-001",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "shstep",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_shep_k4_e000-001",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "shep",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_detshift_k4_e000-001",
+   "task": "pointmaze",
+   "split": "smoke",
+   "var": "detshift",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  }
+ ]
+}

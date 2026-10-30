@@ -1,0 +1,52 @@
+{
+ "checks": {
+  "identity_max_abs_err": 0.0
+ },
+ "b1_H2a_indep_pusht": {
+  "det_oei": -0.2972374537959695,
+  "det_oei_ci": [
+   -0.3503554584090598,
+   -0.247708567410009
+  ],
+  "shiter_oei": 0.00483362261831644,
+  "shiter_oei_ci": [
+   -7.944563458295146e-06,
+   0.00987066462493385
+  ],
+  "det_upper_lt0": true,
+  "shiter_ci_contains0": true,
+  "holds": true
+ },
+ "b2_H2a_prime_pusht_k4": {
+  "drift_det": -0.26908837085282356,
+  "drift_det_ci": [
+   -0.3181462704479559,
+   -0.22366719504480717
+  ],
+  "cond1_drift_det_upper_lt0": true,
+  "r_shiter": -0.013186633356932927,
+  "r_shiter_ci": [
+   -0.031946773547600574,
+   0.00443281703207612
+  ],
+  "r_shiter_dropped": 0,
+  "cond2_r_shiter_upper_lt_half": true,
+  "holds": true,
+  "positive_control_r_shplan": 0.010674543716092773,
+  "positive_control_r_shplan_ci": [
+   -0.008813150814678004,
+   0.030999254865669366
+  ],
+  "positive_control_lower_gt_half": false,
+  "r_ind": -0.008785846927081734,
+  "r_ind_ci": [
+   -0.018573273671025754,
+   -7.012810676152138e-05
+  ],
+  "r_detshift": 0.002747963376815062,
+  "r_detshift_ci": [
+   -0.008627694144874088,
+   0.013489479984852107
+  ]
+ }
+}

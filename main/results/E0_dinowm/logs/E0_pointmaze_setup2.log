@@ -1,0 +1,57 @@
++ UV=/home/yonghwi/.local/bin/uv
++ export UV_PYTHON_INSTALL_DIR=/home/yonghwi/pmx/envs/uv-python
++ UV_PYTHON_INSTALL_DIR=/home/yonghwi/pmx/envs/uv-python
++ V=/home/yonghwi/pmx/envs/a-dinowm-pm
++ MJ=/home/yonghwi/pmx/envs/mujoco210
++ GL=/home/yonghwi/pmx/envs/micromamba/envs/gl24
++ '[' -f /home/yonghwi/pmx/envs/mujoco210/bin/libmujoco210.so ']'
++ '[' -f /home/yonghwi/pmx/envs/micromamba/envs/gl24/lib/libOSMesa.so.8 ']'
++ DL=/home/yonghwi/pmx/data/dinowm/pm_dl
++ '[' '!' -d /home/yonghwi/pmx/data/dinowm/point_maze ']'
++ ls -la /home/yonghwi/pmx/data/dinowm/point_maze
+total 9412
+drwxrwxr-x 3 yonghwi yonghwi    4096 Oct 21 13:57 .
+drwxrwxr-x 6 yonghwi yonghwi    4096 Oct 21 13:57 ..
+-rw-rw-r-- 1 yonghwi yonghwi 3201180 Jan  8  2025 actions.pth
+drwxrwxr-x 2 yonghwi yonghwi    4096 Oct 21 13:57 obses
+-rw-rw-r-- 1 yonghwi yonghwi   17200 Jan  8  2025 seq_lengths.pth
+-rw-rw-r-- 1 yonghwi yonghwi 6401111 Jan  8  2025 states.pth
++ ln -sfn /home/yonghwi/pmx/data/dinowm/point_maze /home/yonghwi/pmx/A/dinowm_main/ds/point_maze
++ '[' -x /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python ']'
++ /home/yonghwi/.local/bin/uv pip install -q --python /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python torch==2.4.1 torchvision==0.19.1 --index-url https://download.pytorch.org/whl/cu124
++ /home/yonghwi/.local/bin/uv pip install -q --python /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python setuptools==65.5.0 wheel==0.38.0 'cython<3' patchelf 'numpy<2' hydra-core==1.3.2 gym==0.23.1 einops pymunk==6.2.1 shapely opencv-python-headless pygame scikit-image matplotlib scipy pandas tqdm accelerate decord h5py termcolor click
++ /home/yonghwi/.local/bin/uv pip install -q --python /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python --no-build-isolation mujoco-py==2.1.2.14
++ /home/yonghwi/.local/bin/uv pip install -q --python /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python --no-deps 'd4rl @ git+https://github.com/Farama-Foundation/D4RL.git'
++ export PATH=/home/yonghwi/pmx/envs/a-dinowm-pm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin MUJOCO_PY_MUJOCO_PATH=/home/yonghwi/pmx/envs/mujoco210 CPATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/include LIBRARY_PATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ PATH=/home/yonghwi/pmx/envs/a-dinowm-pm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ MUJOCO_PY_MUJOCO_PATH=/home/yonghwi/pmx/envs/mujoco210
++ CPATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/include
++ LIBRARY_PATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ export LD_LIBRARY_PATH=/home/yonghwi/pmx/envs/mujoco210/bin:/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ LD_LIBRARY_PATH=/home/yonghwi/pmx/envs/mujoco210/bin:/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python -c 'import mujoco_py; print('\''mujoco_py ok'\'', mujoco_py.__file__)'
+running build_ext
+mujoco_py ok /home/yonghwi/pmx/envs/a-dinowm-pm/lib/python3.11/site-packages/mujoco_py/__init__.py
++ /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python -c 'import d4rl.offline_env; print('\''d4rl ok'\'')'
+Warning: All of online environments libraries in D4RL have been moved ]8;;https://github.com/Farama-Foundation/Gymnasium\Gymnasium]8;;\, ]8;;https://github.com/Farama-Foundation/MiniGrid\MiniGrid]8;;\ and ]8;;https://github.com/Farama-Foundation/Gymnasium-Robotics\Gymnasium-Robotics]8;;\, and all offline datasets in D4RL have been moved to ]8;;https://github.com/Farama-Foundation/Minari\Minari]8;;\.
+These new versions include large bug fixes, new versions of Python, and are where all new development will continue. Please upgrade these libraries as soon as you're able to do so.
+If you'd like to read more about the story behind this switch, please check out ]8;;https://farama.org/Announcing-Minari\this blog post]8;;\.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+<frozen importlib._bootstrap>:283: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.12; use exec_module() instead
+Warning: Mujoco-based envs failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'mjrl'
+Warning: Flow failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'flow'
+Warning: FrankaKitchen failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'dm_control'
+Warning: CARLA failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'carla'
+Warning: GymBullet failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'pybullet_envs'
+d4rl ok
++ /home/yonghwi/.local/bin/uv pip freeze --python /home/yonghwi/pmx/envs/a-dinowm-pm/bin/python
+Using Python 3.11.17 environment at: /home/yonghwi/pmx/envs/a-dinowm-pm
++ echo PM_ENV_DONE
+PM_ENV_DONE

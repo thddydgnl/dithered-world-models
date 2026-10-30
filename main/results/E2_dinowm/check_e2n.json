@@ -1,0 +1,252 @@
+{
+ "cells": {
+  "pusht_k4_N1024t30": {
+   "N": 1024,
+   "planner": {
+    "num_samples": 1024,
+    "topk": 30,
+    "max_rows": 300
+   },
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-22T19:04:31Z",
+   "t_end": "2026-10-23T04:50:44Z",
+   "gpu_h": 9.76561487601863,
+   "peak_mem_gb": 6.305212020874023,
+   "n_none": 100,
+   "hook_calls_none": [
+    0
+   ],
+   "s_per_ep_none": 108.05136944055558,
+   "n_det": 100,
+   "hook_calls_det": [
+    3630
+   ],
+   "s_per_ep_det": 115.8533472108841,
+   "n_shiter": 100,
+   "hook_calls_shiter": [
+    3870
+   ],
+   "s_per_ep_shiter": 127.65741888523102,
+   "pop_files": 300,
+   "it0_J_none_identical_episodes": 100
+  },
+  "pusht_k4_N512t30": {
+   "N": 512,
+   "planner": {
+    "num_samples": 512,
+    "topk": 30
+   },
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T04:50:52Z",
+   "t_end": "2026-10-23T09:39:48Z",
+   "gpu_h": 4.81215315050549,
+   "peak_mem_gb": 8.600244045257568,
+   "n_none": 100,
+   "hook_calls_none": [
+    0
+   ],
+   "s_per_ep_none": 51.84539427042007,
+   "n_det": 100,
+   "hook_calls_det": [
+    930
+   ],
+   "s_per_ep_det": 57.726096472740174,
+   "n_shiter": 100,
+   "hook_calls_shiter": [
+    990
+   ],
+   "s_per_ep_shiter": 63.66602267503738,
+   "pop_files": 300,
+   "it0_J_none_identical_episodes": 100
+  },
+  "pusht_k4_N256t30": {
+   "N": 256,
+   "planner": {
+    "num_samples": 256,
+    "topk": 30
+   },
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T09:39:56Z",
+   "t_end": "2026-10-23T12:04:35Z",
+   "gpu_h": 2.4080979420079127,
+   "peak_mem_gb": 4.389201641082764,
+   "n_none": 100,
+   "hook_calls_none": [
+    0
+   ],
+   "s_per_ep_none": 25.944811470508576,
+   "n_det": 100,
+   "hook_calls_det": [
+    930
+   ],
+   "s_per_ep_det": 28.909467170238496,
+   "n_shiter": 100,
+   "hook_calls_shiter": [
+    990
+   ],
+   "s_per_ep_shiter": 31.83724727153778,
+   "pop_files": 300,
+   "it0_J_none_identical_episodes": 100
+  },
+  "pusht_k4_N128t30": {
+   "N": 128,
+   "planner": {
+    "num_samples": 128,
+    "topk": 30
+   },
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T12:04:42Z",
+   "t_end": "2026-10-23T13:17:51Z",
+   "gpu_h": 1.216875101857715,
+   "peak_mem_gb": 2.2836804389953613,
+   "n_none": 100,
+   "hook_calls_none": [
+    0
+   ],
+   "s_per_ep_none": 13.109415962696076,
+   "n_det": 100,
+   "hook_calls_det": [
+    930
+   ],
+   "s_per_ep_det": 14.612688574790955,
+   "n_shiter": 100,
+   "hook_calls_shiter": [
+    990
+   ],
+   "s_per_ep_shiter": 16.085399129390716,
+   "pop_files": 300,
+   "it0_J_none_identical_episodes": 100
+  },
+  "pusht_k4_N64t30": {
+   "N": 64,
+   "planner": {
+    "num_samples": 64,
+    "topk": 30
+   },
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T13:18:00Z",
+   "t_end": "2026-10-23T13:55:24Z",
+   "gpu_h": 0.6212766045994229,
+   "peak_mem_gb": 1.2309207916259766,
+   "n_none": 100,
+   "hook_calls_none": [
+    0
+   ],
+   "s_per_ep_none": 6.6895814037323,
+   "n_det": 100,
+   "hook_calls_det": [
+    930
+   ],
+   "s_per_ep_det": 7.461523859500885,
+   "n_shiter": 100,
+   "hook_calls_shiter": [
+    990
+   ],
+   "s_per_ep_shiter": 8.214852502346039,
+   "pop_files": 300,
+   "it0_J_none_identical_episodes": 100
+  }
+ },
+ "e1_point": {
+  "none": {
+   "n": 100,
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "gpu_h": 0.9515385113822089,
+   "t_start": "2026-10-22T06:16:22Z",
+   "t_end": "2026-10-22T13:22:16Z"
+  },
+  "det": {
+   "n": 100,
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "gpu_h": 1.0508558130926555,
+   "t_start": "2026-10-22T06:32:08Z",
+   "t_end": "2026-10-22T13:34:04Z"
+  },
+  "shiter": {
+   "n": 100,
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "gpu_h": 1.1424236245287789,
+   "t_start": "2026-10-22T06:50:14Z",
+   "t_end": "2026-10-22T13:46:27Z"
+  }
+ },
+ "manifest": {
+  "name": "E2_dinowm_N",
+  "n_jobs": 150,
+  "settings": {
+   "N1024t30": {
+    "num_samples": 1024,
+    "topk": 30,
+    "max_rows": 300
+   },
+   "N512t30": {
+    "num_samples": 512,
+    "topk": 30
+   },
+   "N256t30": {
+    "num_samples": 256,
+    "topk": 30
+   },
+   "N128t30": {
+    "num_samples": 128,
+    "topk": 30
+   },
+   "N64t30": {
+    "num_samples": 64,
+    "topk": 30
+   }
+  },
+  "config_k": 4,
+  "config_split": "eval6"
+ },
+ "problems": [],
+ "n_problems": 0
+}

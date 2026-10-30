@@ -1,0 +1,1554 @@
+=== calib 05:37:40
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+     11s calib mw-push            ep1 ret   1807.8 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     12s calib mw-pick-place      ep1 ret   1719.9 succ 1 steps 100 (4s)
+     12s calib mw-push            ep0 ret   1769.3 succ 1 steps 100 (4s)
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     13s calib mw-pick-place      ep0 ret   1647.7 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     17s calib mw-pick-place      ep2 ret   1726.1 succ 1 steps 100 (4s)
+     17s calib mw-push            ep2 ret   1811.4 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     22s calib mw-push            ep3 ret   1779.7 succ 1 steps 100 (4s)
+     26s calib cheetah-run        ep0 ret    868.5 succ 0 steps 500 (19s)
+     26s calib mw-pick-place      ep3 ret   1666.0 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     29s calib walker-walk        ep0 ret    994.0 succ 0 steps 500 (21s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     30s calib cheetah-run        ep1 ret    834.7 succ 0 steps 500 (20s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     32s calib walker-walk        ep1 ret    993.6 succ 0 steps 500 (20s)
+Episode length: 500
+Discount factor: 0.99
+     33s calib cheetah-run        ep2 ret    845.4 succ 0 steps 500 (19s)
+Episode length: 500
+Discount factor: 0.99
+     34s calib mw-push            ep4 ret   1795.9 succ 1 steps 100 (4s)
+     35s calib mw-pick-place      ep4 ret   1707.4 succ 1 steps 100 (4s)
+     36s calib walker-walk        ep2 ret    976.8 succ 0 steps 500 (19s)
+Episode length: 500
+Discount factor: 0.99
+     38s calib mw-push            ep5 ret   1793.4 succ 1 steps 100 (4s)
+     39s calib mw-pick-place      ep5 ret   1689.2 succ 1 steps 100 (4s)
+Episode length: 100
+Discount factor: 0.95
+     44s calib mw-push            ep6 ret   1778.4 succ 1 steps 100 (5s)
+     45s calib cheetah-run        ep3 ret    788.4 succ 0 steps 500 (19s)
+     47s calib walker-walk        ep3 ret    994.9 succ 0 steps 500 (20s)
+     49s calib mw-pick-place      ep6 ret   1658.0 succ 1 steps 100 (4s)
+     53s calib cheetah-run        ep4 ret    857.6 succ 0 steps 500 (20s)
+Episode length: 100
+Discount factor: 0.95
+     53s calib walker-walk        ep4 ret    974.6 succ 0 steps 500 (19s)
+     53s calib mw-push            ep7 ret   1805.7 succ 1 steps 100 (4s)
+Episode length: 500
+Discount factor: 0.99
+     56s calib cheetah-run        ep5 ret    868.8 succ 0 steps 500 (19s)
+     57s calib mw-pick-place      ep7 ret   1728.4 succ 1 steps 100 (4s)
+     59s calib walker-walk        ep5 ret    991.5 succ 0 steps 500 (20s)
+Episode length: 500
+Discount factor: 0.99
+     60s calib mw-push            ep8 ret   1791.5 succ 1 steps 100 (4s)
+     62s calib mw-pick-place      ep8 ret   1693.2 succ 1 steps 100 (4s)
+     65s calib cheetah-run        ep6 ret    872.3 succ 0 steps 500 (19s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     66s calib mw-push            ep9 ret   1773.5 succ 1 steps 100 (4s)
+     68s calib walker-walk        ep6 ret    991.5 succ 0 steps 500 (20s)
+     69s calib mw-pick-place      ep9 ret   1660.7 succ 1 steps 100 (4s)
+     72s calib cheetah-run        ep7 ret    870.5 succ 0 steps 500 (18s)
+     74s calib walker-walk        ep7 ret    994.6 succ 0 steps 500 (20s)
+     77s calib walker-walk        ep8 ret    993.5 succ 0 steps 500 (16s)
+     77s calib cheetah-run        ep8 ret    853.4 succ 0 steps 500 (18s)
+     82s calib cheetah-run        ep9 ret    861.0 succ 0 steps 500 (15s)
+     83s calib walker-walk        ep9 ret    995.0 succ 0 steps 500 (15s)
+CALIB_DONE
+=== prep 05:39:03
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push alpha 0.1: A: e1 0.0242 e3 0.1111 er 0.0044 | B: e1 0.0169 e3 0.0690 er 0.0020 | D1z: e1 0.0243 e3 0.0676 er 0.0037 | D3z: e1 0.0398 e3 0.1106 er 0.0037 | Dfix1_s0: e1 0.0242 e3 0.1162 er 0.0044 | Dfix3_s0: e1 0.0234 e3 0.1111 er 0.0044 | Ddir1_s0: e1 0.0242 e3 0.1631 er 0.0044 | Dfix1_s1: e1 0.0242 e3 0.1336 er 0.0044 | Dfix3_s1: e1 0.0191 e3 0.1111 er 0.0044 | Ddir1_s1: e1 0.0242 e3 0.1347 er 0.0044 | Dfix1_s2: e1 0.0242 e3 0.1397 er 0.0044 | Dfix3_s2: e1 0.0186 e3 0.1111 er 0.0044 | Ddir1_s2: e1 0.0242 e3 0.1044 er 0.0044
+   params: D1z (0.08848, 0.04573), D3z (0.1422, 0.04573), Dfix1_s0 (0.04291, 0.1007), Dfix3_s0 (0.0421, 0.1007), Ddir1_s0 (1.737, 2.297), Dfix1_s1 (0.04077, 0.01705), Dfix3_s1 (0.0357, 0.01705), Ddir1_s1 (2.378, 4.799), Dfix1_s2 (0.03256, 0.03189), Dfix3_s2 (0.02715, 0.03189), Ddir1_s2 (2.359, 2.242)
+mw-push alpha 0.2: A: e1 0.1145 e3 0.3831 er 0.0091 | B: e1 0.1440 e3 0.4618 er 0.0068 | D1z: e1 0.1145 e3 0.3093 er 0.0079 | D3z: e1 0.1412 e3 0.3788 er 0.0079 | Dfix1_s0: e1 0.1145 e3 0.3972 er 0.0091 | Dfix3_s0: e1 0.1108 e3 0.3831 er 0.0091 | Ddir1_s0: e1 0.1145 e3 0.6420 er 0.0091 | Dfix1_s1: e1 0.1145 e3 0.4340 er 0.0091 | Dfix3_s1: e1 0.1025 e3 0.3831 er 0.0091 | Ddir1_s1: e1 0.1145 e3 0.5637 er 0.0091 | Dfix1_s2: e1 0.1145 e3 0.4939 er 0.0091 | Dfix3_s2: e1 0.0924 e3 0.3831 er 0.0091 | Ddir1_s2: e1 0.1145 e3 0.4421 er 0.0091
+   params: D1z (0.2321, 0.057), D3z (0.2769, 0.057), Dfix1_s0 (0.2165, 0.1475), Dfix3_s0 (0.21, 0.1475), Ddir1_s0 (3.791, 3.37), Dfix1_s1 (0.1196, 0.04078), Dfix3_s1 (0.1111, 0.04078), Ddir1_s1 (5.363, 6.468), Dfix1_s2 (0.1804, 0.03233), Dfix3_s2 (0.1664, 0.03233), Ddir1_s2 (5.298, 3.265)
+PREP mw-push done in 30s
+Episode length: 100
+Discount factor: 0.95
+mw-pick-place alpha 0.1: A: e1 0.0292 e3 0.1349 er 0.0420 | B: e1 0.0150 e3 0.0693 er 0.0047 | D1z: e1 0.0294 e3 0.0715 er 0.0420 | D3z: e1 0.0557 e3 0.1346 er 0.0420 | Dfix1_s0: e1 0.0292 e3 0.1508 er 0.0420 | Dfix3_s0: e1 0.0268 e3 0.1349 er 0.0420 | Ddir1_s0: e1 0.0292 e3 0.1979 er 0.0420 | Dfix1_s1: e1 0.0292 e3 0.1800 er 0.0420 | Dfix3_s1: e1 0.0222 e3 0.1349 er 0.0420 | Ddir1_s1: e1 0.0292 e3 0.1306 er 0.0420 | Dfix1_s2: e1 0.0292 e3 0.1624 er 0.0420 | Dfix3_s2: e1 0.0244 e3 0.1349 er 0.0420 | Ddir1_s2: e1 0.0292 e3 0.1603 er 0.0420
+   params: D1z (0.127, 0.01464), D3z (0.231, 0.01464), Dfix1_s0 (0.04396, 0.1031), Dfix3_s0 (0.03811, 0.1031), Ddir1_s0 (1.633, 4.486), Dfix1_s1 (0.02529, 0.1239), Dfix3_s1 (0.02505, 0.1239), Ddir1_s1 (1.897, 8.196), Dfix1_s2 (0.05452, 0.3447), Dfix3_s2 (0.05345, 0.3447), Ddir1_s2 (1.839, 5.885)
+mw-pick-place alpha 0.2: A: e1 0.1219 e3 0.4346 er 0.1727 | B: e1 0.1320 e3 0.5072 er 0.0088 | D1z: e1 0.1221 e3 0.2941 er 0.1675 | D3z: e1 0.1826 e3 0.4341 er 0.1675 | Dfix1_s0: e1 0.1219 e3 0.4587 er 0.1727 | Dfix3_s0: e1 0.1128 e3 0.4346 er 0.1727 | Ddir1_s0: e1 0.1219 e3 0.7728 er 0.1727 | Dfix1_s1: e1 0.1219 e3 0.5247 er 0.1728 | Dfix3_s1: e1 0.0776 e3 0.4346 er 0.1728 | Ddir1_s1: e1 0.1219 e3 0.5201 er 0.1727 | Dfix1_s2: e1 0.1219 e3 0.6156 er 0.1726 | Dfix3_s2: e1 0.0886 e3 0.4346 er 0.1726 | Ddir1_s2: e1 0.1219 e3 0.6655 er 0.1727
+   params: D1z (0.2957, 0.04197), D3z (0.4083, 0.04197), Dfix1_s0 (0.2348, 0.6718), Dfix3_s0 (0.2271, 0.6718), Ddir1_s0 (3.337, 7.61), Dfix1_s1 (0.197, 0.1242), Dfix3_s1 (0.08499, 0.1242), Ddir1_s1 (3.947, 11.03), Dfix1_s2 (0.1825, 0.5008), Dfix3_s2 (0.158, 0.5008), Ddir1_s2 (3.826, 9.145)
+PREP mw-pick-place done in 29s
+Episode length: 500
+Discount factor: 0.99
+cheetah-run alpha 0.1: A: e1 0.0319 e3 0.1451 er 0.0313 | B: e1 0.0173 e3 0.0632 er 0.0070 | D1z: e1 0.0321 e3 0.1027 er 0.0307 | D3z: e1 0.0461 e3 0.1444 er 0.0307 | Dfix1_s0: e1 0.0319 e3 0.1135 er 0.0312 | Dfix3_s0: e1 0.0378 e3 0.1451 er 0.0312 | Ddir1_s0: e1 0.0319 e3 0.2603 er 0.0313 | Dfix1_s1: e1 0.0319 e3 0.1220 er 0.0313 | Dfix3_s1: e1 0.0375 e3 0.1451 er 0.0313 | Ddir1_s1: e1 0.0319 e3 0.2775 er 0.0313 | Dfix1_s2: e1 0.0319 e3 0.2721 er 0.0313 | Dfix3_s2: e1 0.0142 e3 0.1451 er 0.0313 | Ddir1_s2: e1 0.0319 e3 0.1524 er 0.0313
+   params: D1z (0.09496, 0.03477), D3z (0.1337, 0.03477), Dfix1_s0 (0.03524, 0.05092), Dfix3_s0 (0.04462, 0.05092), Ddir1_s0 (2.208, 0.4014), Dfix1_s1 (0.06228, 0.05153), Dfix3_s1 (0.0697, 0.05153), Ddir1_s1 (1.43, 6.825), Dfix1_s2 (0.01982, 0.08319), Dfix3_s2 (0.007551, 0.08319), Ddir1_s2 (1.892, 3.605)
+cheetah-run alpha 0.2: A: e1 0.1990 e3 0.6974 er 0.1412 | B: e1 0.1380 e3 0.4858 er 0.0560 | D1z: e1 0.1993 e3 0.5579 er 0.1434 | D3z: e1 0.2556 e3 0.6997 er 0.1434 | Dfix1_s0: e1 0.1990 e3 0.5991 er 0.1411 | Dfix3_s0: e1 0.2631 e3 0.6974 er 0.1411 | Ddir1_s0: e1 0.1990 e3 1.0834 er 0.1412 | Dfix1_s1: e1 0.1990 e3 0.6406 er 0.1413 | Dfix3_s1: e1 0.2249 e3 0.6974 er 0.1413 | Ddir1_s1: e1 0.1990 e3 1.1921 er 0.1412 | Dfix1_s2: e1 0.1990 e3 0.6377 er 0.1412 | Dfix3_s2: e1 0.2147 e3 0.6974 er 0.1412 | Ddir1_s2: e1 0.1990 e3 0.7332 er 0.1412
+   params: D1z (0.2777, 0.08969), D3z (0.3395, 0.08969), Dfix1_s0 (0.1832, 0.05103), Dfix3_s0 (0.2244, 0.05103), Ddir1_s0 (5.569, 0.794), Dfix1_s1 (0.2416, 0.06092), Dfix3_s1 (0.2849, 0.06092), Ddir1_s1 (3.464, 17.21), Dfix1_s2 (0.1335, 0.1731), Dfix3_s2 (0.134, 0.1731), Ddir1_s2 (4.922, 9.309)
+PREP cheetah-run done in 37s
+Episode length: 500
+Discount factor: 0.99
+walker-walk alpha 0.1: A: e1 0.0665 e3 0.1712 er 0.2367 | B: e1 0.0264 e3 0.0815 er 0.0203 | D1z: e1 0.0667 e3 0.1848 er 0.2350 | D3z: e1 0.0613 e3 0.1709 er 0.2350 | Dfix1_s0: e1 0.0665 e3 0.2094 er 0.2367 | Dfix3_s0: e1 0.0553 e3 0.1712 er 0.2367 | Ddir1_s0: e1 0.0665 e3 0.3273 er 0.2367 | Dfix1_s1: e1 0.0665 e3 0.2706 er 0.2368 | Dfix3_s1: e1 0.0462 e3 0.1712 er 0.2368 | Ddir1_s1: e1 0.0665 e3 0.2539 er 0.2367 | Dfix1_s2: e1 0.0665 e3 0.2153 er 0.2367 | Dfix3_s2: e1 0.0463 e3 0.1712 er 0.2367 | Ddir1_s2: e1 0.0665 e3 0.2622 er 0.2367
+   params: D1z (0.09099, 0.4324), D3z (0.08395, 0.4324), Dfix1_s0 (0.05345, 0.1029), Dfix3_s0 (0.04585, 0.1029), Ddir1_s0 (2.447, 8.578), Dfix1_s1 (0.02538, 0.3684), Dfix3_s1 (0.02449, 0.3684), Ddir1_s1 (2.294, 1.004), Dfix1_s2 (0.0504, 0.1194), Dfix3_s2 (0.03487, 0.1194), Ddir1_s2 (2.415, 1.564)
+walker-walk alpha 0.2: A: e1 0.2342 e3 0.5495 er 1.3564 | B: e1 0.1486 e3 0.3686 er 0.1315 | D1z: e1 0.2346 e3 0.5909 er 1.3535 | D3z: e1 0.2185 e3 0.5537 er 1.3535 | Dfix1_s0: e1 0.2342 e3 0.6742 er 1.3566 | Dfix3_s0: e1 0.1965 e3 0.5495 er 1.3566 | Ddir1_s0: e1 0.2342 e3 0.9790 er 1.3564 | Dfix1_s1: e1 0.2342 e3 0.6975 er 1.3564 | Dfix3_s1: e1 0.1601 e3 0.5495 er 1.3564 | Ddir1_s1: e1 0.2342 e3 0.7887 er 1.3564 | Dfix1_s2: e1 0.2342 e3 0.6532 er 1.3564 | Dfix3_s2: e1 0.1845 e3 0.5495 er 1.3564 | Ddir1_s2: e1 0.2342 e3 0.7881 er 1.3564
+   params: D1z (0.1642, 0.7034), D3z (0.1546, 0.7034), Dfix1_s0 (0.1366, 0.4273), Dfix3_s0 (0.1241, 0.4273), Ddir1_s0 (4.718, 21.6), Dfix1_s1 (0.1138, 0.7028), Dfix3_s1 (0.07481, 0.7028), Ddir1_s1 (4.599, 2.716), Dfix1_s2 (0.1658, 0.4394), Dfix3_s2 (0.1438, 0.4394), Ddir1_s2 (4.494, 4.177)
+PREP walker-walk done in 38s
+PREP_DONE
+=== grid 05:41:22
+1080 jobs (0 already done)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     10s [1/1080] mw-pick-place  none     a=0    ep0 ret   1647.7 succ 1 frac None (4s)
+Episode length: 500
+Discount factor: 0.99
+     11s [2/1080] mw-push        none     a=0    ep0 ret   1769.3 succ 1 frac None (4s)
+     12s [3/1080] mw-pick-place  none     a=0    ep1 ret   1719.9 succ 1 frac None (4s)
+     14s [4/1080] mw-push        none     a=0    ep1 ret   1807.8 succ 1 frac None (5s)
+Episode length: 500
+Discount factor: 0.99
+     15s [5/1080] mw-push        none     a=0    ep2 ret   1811.4 succ 1 frac None (4s)
+Episode length: 500
+Discount factor: 0.99
+     17s [6/1080] mw-pick-place  none     a=0    ep2 ret   1726.1 succ 1 frac None (4s)
+Episode length: 100
+Discount factor: 0.95
+     21s [7/1080] mw-push        none     a=0    ep3 ret   1779.7 succ 1 frac None (4s)
+     25s [8/1080] mw-pick-place  none     a=0    ep3 ret   1666.0 succ 1 frac None (4s)
+Episode length: 500
+Discount factor: 0.99
+     28s [9/1080] cheetah-run    none     a=0    ep1 ret    834.7 succ 0 frac None (20s)
+Episode length: 500
+Discount factor: 0.99
+     29s [10/1080] walker-walk    none     a=0    ep0 ret    994.0 succ 0 frac None (20s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     29s [11/1080] cheetah-run    none     a=0    ep0 ret    868.5 succ 0 frac None (21s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     31s [12/1080] walker-walk    none     a=0    ep1 ret    993.6 succ 0 frac None (21s)
+Episode length: 500
+Discount factor: 0.99
+     33s [13/1080] mw-push        none     a=0    ep4 ret   1795.9 succ 1 frac None (4s)
+     34s [14/1080] mw-pick-place  none     a=0    ep4 ret   1707.4 succ 1 frac None (4s)
+Episode length: 100
+Discount factor: 0.95
+     35s [15/1080] walker-walk    none     a=0    ep2 ret    976.8 succ 0 frac None (19s)
+Episode length: 100
+Discount factor: 0.95
+     35s [16/1080] cheetah-run    none     a=0    ep2 ret    845.4 succ 0 frac None (21s)
+     39s [17/1080] mw-push        none     a=0    ep5 ret   1793.4 succ 1 frac None (4s)
+Episode length: 500
+Discount factor: 0.99
+     39s [18/1080] mw-pick-place  none     a=0    ep5 ret   1689.2 succ 1 frac None (4s)
+     44s [19/1080] mw-push        none     a=0    ep6 ret   1778.4 succ 1 frac None (4s)
+     45s [20/1080] cheetah-run    none     a=0    ep3 ret    788.4 succ 0 frac None (19s)
+     48s [21/1080] mw-pick-place  none     a=0    ep6 ret   1658.0 succ 1 frac None (4s)
+     49s [22/1080] walker-walk    none     a=0    ep3 ret    994.9 succ 0 frac None (21s)
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     52s [23/1080] cheetah-run    none     a=0    ep4 ret    857.6 succ 0 frac None (21s)
+     53s [24/1080] walker-walk    none     a=0    ep4 ret    974.6 succ 0 frac None (19s)
+Episode length: 500
+Discount factor: 0.99
+     54s [25/1080] mw-push        none     a=0    ep7 ret   1805.7 succ 1 frac None (4s)
+     56s [26/1080] cheetah-run    none     a=0    ep5 ret    868.8 succ 0 frac None (21s)
+     57s [27/1080] mw-pick-place  none     a=0    ep7 ret   1728.4 succ 1 frac None (4s)
+     60s [28/1080] walker-walk    none     a=0    ep5 ret    991.5 succ 0 frac None (21s)
+     61s [29/1080] mw-push        none     a=0    ep8 ret   1791.5 succ 1 frac None (4s)
+Episode length: 500
+Discount factor: 0.99
+     61s [30/1080] mw-pick-place  none     a=0    ep8 ret   1693.2 succ 1 frac None (4s)
+Episode length: 100
+Discount factor: 0.95
+     64s [31/1080] cheetah-run    none     a=0    ep6 ret    872.3 succ 0 frac None (19s)
+     66s [32/1080] mw-push        none     a=0    ep9 ret   1773.5 succ 1 frac None (4s)
+     67s [33/1080] walker-walk    none     a=0    ep6 ret    991.5 succ 0 frac None (20s)
+     68s [34/1080] mw-pick-place  none     a=0    ep9 ret   1660.7 succ 1 frac None (4s)
+     72s [35/1080] cheetah-run    none     a=0    ep7 ret    870.5 succ 0 frac None (19s)
+     73s [36/1080] mw-push        A        a=0.2  ep0 ret   1661.0 succ 1 frac 0.721 (5s)
+     75s [37/1080] walker-walk    none     a=0    ep7 ret    994.6 succ 0 frac None (21s)
+     77s [38/1080] mw-push        B        a=0.2  ep0 ret     56.2 succ 0 frac 0.691 (5s)
+     80s [39/1080] mw-push        D1z      a=0.2  ep0 ret   1730.8 succ 1 frac 0.095 (6s)
+     80s [40/1080] cheetah-run    none     a=0    ep8 ret    853.4 succ 0 frac None (20s)
+     81s [41/1080] mw-push        D3z      a=0.2  ep0 ret   1750.1 succ 1 frac 0.11 (7s)
+     81s [42/1080] walker-walk    none     a=0    ep8 ret    993.5 succ 0 frac None (21s)
+     82s [43/1080] mw-push        Dfix1_s0 a=0.2  ep0 ret   1758.7 succ 1 frac 0.181 (4s)
+     84s [44/1080] mw-push        Dfix1_s1 a=0.2  ep0 ret   1747.5 succ 1 frac 0.079 (4s)
+     85s [45/1080] mw-push        Dfix1_s2 a=0.2  ep0 ret     14.3 succ 0 frac 0.106 (5s)
+     86s [46/1080] mw-push        Dfix3_s0 a=0.2  ep0 ret   1761.4 succ 1 frac 0.178 (5s)
+     86s [47/1080] mw-push        Dfix3_s2 a=0.2  ep0 ret    219.1 succ 0 frac 0.099 (4s)
+     86s [48/1080] mw-push        Dfix3_s1 a=0.2  ep0 ret   1745.2 succ 1 frac 0.074 (5s)
+     86s [49/1080] cheetah-run    none     a=0    ep9 ret    861.0 succ 0 frac None (20s)
+     86s [50/1080] walker-walk    none     a=0    ep9 ret    995.0 succ 0 frac None (19s)
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     88s [51/1080] mw-push        Ddir1_s0 a=0.2  ep0 ret   1765.9 succ 1 frac 0.0 (4s)
+     89s [52/1080] mw-push        Ddir1_s1 a=0.2  ep0 ret     43.9 succ 0 frac 0.0 (4s)
+     90s [53/1080] mw-push        Ddir1_s2 a=0.2  ep0 ret    974.0 succ 1 frac 0.0 (4s)
+Episode length: 100
+Discount factor: 0.95
+     91s [54/1080] mw-pick-place  A        a=0.2  ep0 ret    372.0 succ 0 frac 0.669 (5s)
+     91s [55/1080] mw-pick-place  B        a=0.2  ep0 ret      6.4 succ 0 frac 0.659 (5s)
+     92s [56/1080] mw-pick-place  Dfix1_s0 a=0.2  ep0 ret     16.3 succ 0 frac 0.452 (4s)
+     92s [57/1080] mw-pick-place  D3z      a=0.2  ep0 ret    545.0 succ 0 frac 0.122 (6s)
+     92s [58/1080] mw-pick-place  D1z      a=0.2  ep0 ret   1610.6 succ 1 frac 0.11 (6s)
+     93s [59/1080] mw-pick-place  Dfix1_s1 a=0.2  ep0 ret      3.5 succ 0 frac 0.159 (4s)
+     94s [60/1080] mw-pick-place  Dfix1_s2 a=0.2  ep0 ret     15.1 succ 0 frac 0.34 (4s)
+     95s [61/1080] mw-pick-place  Dfix3_s0 a=0.2  ep0 ret     12.8 succ 0 frac 0.448 (4s)
+     96s [62/1080] mw-pick-place  Dfix3_s1 a=0.2  ep0 ret    584.7 succ 0 frac 0.103 (4s)
+     96s [63/1080] mw-pick-place  Dfix3_s2 a=0.2  ep0 ret      7.1 succ 0 frac 0.328 (4s)
+     96s [64/1080] mw-pick-place  Ddir1_s0 a=0.2  ep0 ret   1608.4 succ 1 frac 0.0 (4s)
+Episode length: 500
+Discount factor: 0.99
+     96s [65/1080] mw-pick-place  Ddir1_s1 a=0.2  ep0 ret   1582.4 succ 1 frac 0.0 (4s)
+     98s [66/1080] mw-pick-place  Ddir1_s2 a=0.2  ep0 ret      4.5 succ 0 frac 0.0 (4s)
+    116s [67/1080] cheetah-run    Dfix1_s0 a=0.2  ep0 ret     15.7 succ 0 frac 0.116 (20s)
+    118s [68/1080] cheetah-run    Dfix1_s1 a=0.2  ep0 ret     14.1 succ 0 frac 0.151 (21s)
+    119s [69/1080] cheetah-run    Dfix1_s2 a=0.2  ep0 ret     55.0 succ 0 frac 0.152 (21s)
+    119s [70/1080] cheetah-run    B        a=0.2  ep0 ret     89.5 succ 0 frac 0.627 (24s)
+    121s [71/1080] cheetah-run    A        a=0.2  ep0 ret     75.5 succ 0 frac 0.614 (27s)
+    125s [72/1080] cheetah-run    D3z      a=0.2  ep0 ret    225.6 succ 0 frac 0.136 (29s)
+    127s [73/1080] cheetah-run    D1z      a=0.2  ep0 ret    359.8 succ 0 frac 0.118 (32s)
+    133s [74/1080] mw-push        A        a=0.2  ep1 ret   1631.3 succ 1 frac 0.711 (6s)
+    136s [75/1080] cheetah-run    Dfix3_s0 a=0.2  ep0 ret      4.5 succ 0 frac 0.137 (20s)
+    139s [76/1080] mw-push        B        a=0.2  ep1 ret    109.3 succ 0 frac 0.698 (6s)
+    139s [77/1080] cheetah-run    Ddir1_s0 a=0.2  ep0 ret    187.9 succ 0 frac 0.0 (20s)
+    140s [78/1080] cheetah-run    Dfix3_s1 a=0.2  ep0 ret      3.4 succ 0 frac 0.172 (22s)
+    141s [79/1080] cheetah-run    Dfix3_s2 a=0.2  ep0 ret     43.5 succ 0 frac 0.152 (22s)
+    142s [80/1080] cheetah-run    Ddir1_s1 a=0.2  ep0 ret     70.6 succ 0 frac 0.0 (21s)
+    143s [81/1080] mw-push        D1z      a=0.2  ep1 ret   1690.4 succ 1 frac 0.095 (6s)
+    143s [82/1080] mw-push        Dfix1_s0 a=0.2  ep1 ret     20.1 succ 0 frac 0.181 (4s)
+    144s [83/1080] mw-push        Dfix1_s1 a=0.2  ep1 ret    138.0 succ 0 frac 0.079 (4s)
+    145s [84/1080] cheetah-run    Ddir1_s2 a=0.2  ep0 ret    146.8 succ 0 frac 0.0 (20s)
+    145s [85/1080] mw-push        Dfix1_s2 a=0.2  ep1 ret    392.8 succ 0 frac 0.106 (4s)
+    145s [86/1080] mw-push        D3z      a=0.2  ep1 ret   1783.5 succ 1 frac 0.109 (6s)
+    147s [87/1080] mw-push        Dfix3_s0 a=0.2  ep1 ret   1405.4 succ 1 frac 0.178 (4s)
+    147s [88/1080] mw-push        Dfix3_s1 a=0.2  ep1 ret   1791.8 succ 1 frac 0.074 (4s)
+    147s [89/1080] mw-push        Dfix3_s2 a=0.2  ep1 ret     31.6 succ 0 frac 0.099 (4s)
+    149s [90/1080] mw-push        Ddir1_s0 a=0.2  ep1 ret   1760.0 succ 1 frac 0.0 (4s)
+    149s [91/1080] mw-push        Ddir1_s1 a=0.2  ep1 ret    126.5 succ 0 frac 0.0 (4s)
+    150s [92/1080] mw-push        Ddir1_s2 a=0.2  ep1 ret    101.1 succ 0 frac 0.0 (4s)
+    151s [93/1080] mw-pick-place  A        a=0.2  ep1 ret      8.3 succ 0 frac 0.647 (5s)
+    152s [94/1080] mw-pick-place  B        a=0.2  ep1 ret      7.9 succ 0 frac 0.657 (5s)
+    153s [95/1080] mw-pick-place  D1z      a=0.2  ep1 ret    243.5 succ 0 frac 0.089 (6s)
+    153s [96/1080] mw-pick-place  Dfix1_s1 a=0.2  ep1 ret    305.4 succ 0 frac 0.159 (4s)
+    153s [97/1080] mw-pick-place  Dfix1_s0 a=0.2  ep1 ret      9.2 succ 0 frac 0.452 (4s)
+    153s [98/1080] mw-pick-place  D3z      a=0.2  ep1 ret   1042.2 succ 1 frac 0.12 (6s)
+    154s [99/1080] mw-pick-place  Dfix1_s2 a=0.2  ep1 ret   1702.4 succ 1 frac 0.34 (4s)
+    155s [100/1080] mw-pick-place  Dfix3_s0 a=0.2  ep1 ret     13.7 succ 0 frac 0.448 (4s)
+    156s [101/1080] mw-pick-place  Dfix3_s1 a=0.2  ep1 ret    773.9 succ 0 frac 0.103 (4s)
+    157s [102/1080] mw-pick-place  Dfix3_s2 a=0.2  ep1 ret     54.7 succ 0 frac 0.328 (4s)
+    157s [103/1080] mw-pick-place  Ddir1_s0 a=0.2  ep1 ret   1707.4 succ 1 frac 0.0 (4s)
+    157s [104/1080] mw-pick-place  Ddir1_s1 a=0.2  ep1 ret    477.6 succ 0 frac 0.0 (4s)
+    157s [105/1080] mw-pick-place  Ddir1_s2 a=0.2  ep1 ret   1317.2 succ 1 frac 0.0 (4s)
+    177s [106/1080] cheetah-run    Dfix1_s0 a=0.2  ep1 ret     30.1 succ 0 frac 0.116 (20s)
+    177s [107/1080] cheetah-run    Dfix1_s2 a=0.2  ep1 ret     53.0 succ 0 frac 0.152 (20s)
+    179s [108/1080] cheetah-run    Dfix1_s1 a=0.2  ep1 ret      5.4 succ 0 frac 0.151 (21s)
+    180s [109/1080] cheetah-run    A        a=0.2  ep1 ret     89.7 succ 0 frac 0.617 (27s)
+    181s [110/1080] cheetah-run    B        a=0.2  ep1 ret     73.5 succ 0 frac 0.627 (26s)
+    186s [111/1080] cheetah-run    D3z      a=0.2  ep1 ret    354.9 succ 0 frac 0.138 (29s)
+    188s [112/1080] cheetah-run    D1z      a=0.2  ep1 ret    501.6 succ 0 frac 0.12 (32s)
+    194s [113/1080] mw-push        A        a=0.2  ep2 ret    925.1 succ 0 frac 0.704 (6s)
+    197s [114/1080] cheetah-run    Dfix3_s0 a=0.2  ep1 ret      4.0 succ 0 frac 0.137 (20s)
+    197s [115/1080] cheetah-run    Dfix3_s1 a=0.2  ep1 ret      3.0 succ 0 frac 0.172 (20s)
+    199s [116/1080] mw-push        B        a=0.2  ep2 ret   1352.4 succ 0 frac 0.708 (6s)
+    200s [117/1080] cheetah-run    Dfix3_s2 a=0.2  ep1 ret     28.7 succ 0 frac 0.152 (22s)
+    202s [118/1080] cheetah-run    Ddir1_s0 a=0.2  ep1 ret    161.5 succ 0 frac 0.0 (21s)
+    202s [119/1080] cheetah-run    Ddir1_s1 a=0.2  ep1 ret     73.6 succ 0 frac 0.0 (21s)
+    203s [120/1080] mw-push        D1z      a=0.2  ep2 ret   1802.1 succ 1 frac 0.095 (6s)
+    203s [121/1080] mw-push        D3z      a=0.2  ep2 ret   1801.5 succ 1 frac 0.111 (6s)
+    204s [122/1080] mw-push        Dfix1_s0 a=0.2  ep2 ret    286.8 succ 0 frac 0.181 (4s)
+    205s [123/1080] mw-push        Dfix1_s1 a=0.2  ep2 ret   1792.4 succ 1 frac 0.079 (4s)
+    206s [124/1080] cheetah-run    Ddir1_s2 a=0.2  ep1 ret    117.1 succ 0 frac 0.0 (20s)
+    206s [125/1080] mw-push        Dfix1_s2 a=0.2  ep2 ret    900.7 succ 0 frac 0.106 (4s)
+    207s [126/1080] mw-push        Dfix3_s0 a=0.2  ep2 ret     51.4 succ 0 frac 0.178 (4s)
+    207s [127/1080] mw-push        Dfix3_s1 a=0.2  ep2 ret     95.0 succ 0 frac 0.074 (4s)
+    208s [128/1080] mw-push        Dfix3_s2 a=0.2  ep2 ret   1786.7 succ 1 frac 0.099 (4s)
+    208s [129/1080] mw-push        Ddir1_s0 a=0.2  ep2 ret   1811.8 succ 1 frac 0.0 (4s)
+    209s [130/1080] mw-push        Ddir1_s1 a=0.2  ep2 ret     86.6 succ 0 frac 0.0 (4s)
+    210s [131/1080] mw-push        Ddir1_s2 a=0.2  ep2 ret    173.2 succ 0 frac 0.0 (4s)
+    211s [132/1080] mw-pick-place  A        a=0.2  ep2 ret     13.4 succ 0 frac 0.65 (5s)
+    212s [133/1080] mw-pick-place  B        a=0.2  ep2 ret      5.3 succ 0 frac 0.653 (5s)
+    212s [134/1080] mw-pick-place  Dfix1_s0 a=0.2  ep2 ret      4.9 succ 0 frac 0.452 (4s)
+    213s [135/1080] mw-pick-place  D1z      a=0.2  ep2 ret   1512.6 succ 1 frac 0.103 (6s)
+    213s [136/1080] mw-pick-place  Dfix1_s1 a=0.2  ep2 ret      4.4 succ 0 frac 0.159 (4s)
+    213s [137/1080] mw-pick-place  D3z      a=0.2  ep2 ret     45.3 succ 0 frac 0.111 (6s)
+    214s [138/1080] mw-pick-place  Dfix1_s2 a=0.2  ep2 ret      7.0 succ 0 frac 0.34 (4s)
+    216s [139/1080] mw-pick-place  Dfix3_s0 a=0.2  ep2 ret    234.7 succ 0 frac 0.448 (5s)
+    216s [140/1080] mw-pick-place  Dfix3_s1 a=0.2  ep2 ret    872.5 succ 0 frac 0.103 (5s)
+    217s [141/1080] mw-pick-place  Dfix3_s2 a=0.2  ep2 ret   1687.1 succ 1 frac 0.328 (4s)
+    217s [142/1080] mw-pick-place  Ddir1_s0 a=0.2  ep2 ret   1717.0 succ 1 frac 0.0 (4s)
+    217s [143/1080] mw-pick-place  Ddir1_s2 a=0.2  ep2 ret      6.0 succ 0 frac 0.0 (4s)
+    218s [144/1080] mw-pick-place  Ddir1_s1 a=0.2  ep2 ret    894.0 succ 1 frac 0.0 (4s)
+    237s [145/1080] cheetah-run    Dfix1_s0 a=0.2  ep2 ret     10.1 succ 0 frac 0.116 (20s)
+    237s [146/1080] cheetah-run    Dfix1_s1 a=0.2  ep2 ret     15.2 succ 0 frac 0.151 (20s)
+    238s [147/1080] cheetah-run    A        a=0.2  ep2 ret     85.8 succ 0 frac 0.618 (25s)
+    239s [148/1080] cheetah-run    Dfix1_s2 a=0.2  ep2 ret     29.4 succ 0 frac 0.152 (21s)
+    242s [149/1080] cheetah-run    B        a=0.2  ep2 ret     61.2 succ 0 frac 0.625 (26s)
+    248s [150/1080] cheetah-run    D1z      a=0.2  ep2 ret    425.5 succ 0 frac 0.119 (32s)
+    248s [151/1080] cheetah-run    D3z      a=0.2  ep2 ret    473.1 succ 0 frac 0.14 (32s)
+    254s [152/1080] mw-push        A        a=0.2  ep3 ret     29.0 succ 0 frac 0.688 (6s)
+    257s [153/1080] cheetah-run    Dfix3_s0 a=0.2  ep2 ret      4.7 succ 0 frac 0.137 (20s)
+    258s [154/1080] cheetah-run    Dfix3_s1 a=0.2  ep2 ret      4.5 succ 0 frac 0.172 (20s)
+    259s [155/1080] cheetah-run    Dfix3_s2 a=0.2  ep2 ret     13.6 succ 0 frac 0.152 (20s)
+    260s [156/1080] mw-push        B        a=0.2  ep3 ret      7.6 succ 0 frac 0.693 (6s)
+    260s [157/1080] cheetah-run    Ddir1_s0 a=0.2  ep2 ret    226.1 succ 0 frac 0.0 (21s)
+    263s [158/1080] mw-push        Dfix1_s0 a=0.2  ep3 ret     73.2 succ 0 frac 0.181 (4s)
+    263s [159/1080] mw-push        D1z      a=0.2  ep3 ret   1770.9 succ 1 frac 0.096 (6s)
+    263s [160/1080] cheetah-run    Ddir1_s1 a=0.2  ep2 ret     64.0 succ 0 frac 0.0 (21s)
+    264s [161/1080] mw-push        D3z      a=0.2  ep3 ret   1758.0 succ 1 frac 0.11 (6s)
+    264s [162/1080] mw-push        Dfix1_s1 a=0.2  ep3 ret   1066.3 succ 0 frac 0.079 (4s)
+    265s [163/1080] mw-push        Dfix1_s2 a=0.2  ep3 ret   1731.8 succ 1 frac 0.106 (4s)
+    267s [164/1080] mw-push        Dfix3_s0 a=0.2  ep3 ret    772.3 succ 0 frac 0.178 (4s)
+    267s [165/1080] mw-push        Dfix3_s1 a=0.2  ep3 ret   1767.7 succ 1 frac 0.074 (4s)
+    268s [166/1080] mw-push        Dfix3_s2 a=0.2  ep3 ret   1665.9 succ 1 frac 0.099 (4s)
+    268s [167/1080] mw-push        Ddir1_s0 a=0.2  ep3 ret   1770.9 succ 1 frac 0.0 (4s)
+    268s [168/1080] mw-push        Ddir1_s1 a=0.2  ep3 ret   1722.6 succ 1 frac 0.0 (4s)
+    269s [169/1080] cheetah-run    Ddir1_s2 a=0.2  ep2 ret     99.4 succ 0 frac 0.0 (21s)
+    269s [170/1080] mw-push        Ddir1_s2 a=0.2  ep3 ret    141.4 succ 0 frac 0.0 (4s)
+    272s [171/1080] mw-pick-place  A        a=0.2  ep3 ret    998.8 succ 1 frac 0.726 (5s)
+    272s [172/1080] mw-pick-place  B        a=0.2  ep3 ret     85.9 succ 0 frac 0.659 (5s)
+    273s [173/1080] mw-pick-place  Dfix1_s0 a=0.2  ep3 ret      9.9 succ 0 frac 0.452 (4s)
+    273s [174/1080] mw-pick-place  Dfix1_s1 a=0.2  ep3 ret    159.6 succ 0 frac 0.159 (4s)
+    273s [175/1080] mw-pick-place  Dfix1_s2 a=0.2  ep3 ret     17.5 succ 0 frac 0.34 (4s)
+    273s [176/1080] mw-pick-place  D3z      a=0.2  ep3 ret   1626.0 succ 1 frac 0.149 (6s)
+    274s [177/1080] mw-pick-place  D1z      a=0.2  ep3 ret   1633.9 succ 1 frac 0.112 (6s)
+    276s [178/1080] mw-pick-place  Dfix3_s0 a=0.2  ep3 ret      2.2 succ 0 frac 0.448 (4s)
+    276s [179/1080] mw-pick-place  Dfix3_s1 a=0.2  ep3 ret   1666.1 succ 1 frac 0.103 (4s)
+    277s [180/1080] mw-pick-place  Dfix3_s2 a=0.2  ep3 ret     18.1 succ 0 frac 0.328 (4s)
+    278s [181/1080] mw-pick-place  Ddir1_s2 a=0.2  ep3 ret     12.5 succ 0 frac 0.0 (4s)
+    278s [182/1080] mw-pick-place  Ddir1_s0 a=0.2  ep3 ret   1423.6 succ 1 frac 0.0 (4s)
+    278s [183/1080] mw-pick-place  Ddir1_s1 a=0.2  ep3 ret   1568.1 succ 1 frac 0.0 (4s)
+    297s [184/1080] cheetah-run    Dfix1_s0 a=0.2  ep3 ret     13.4 succ 0 frac 0.116 (20s)
+    299s [185/1080] cheetah-run    Dfix1_s2 a=0.2  ep3 ret     64.2 succ 0 frac 0.152 (21s)
+    299s [186/1080] cheetah-run    Dfix1_s1 a=0.2  ep3 ret      4.7 succ 0 frac 0.151 (21s)
+    300s [187/1080] cheetah-run    B        a=0.2  ep3 ret     85.5 succ 0 frac 0.63 (24s)
+    300s [188/1080] cheetah-run    A        a=0.2  ep3 ret     79.6 succ 0 frac 0.614 (27s)
+    305s [189/1080] cheetah-run    D1z      a=0.2  ep3 ret    378.3 succ 0 frac 0.118 (29s)
+    309s [190/1080] cheetah-run    D3z      a=0.2  ep3 ret    322.8 succ 0 frac 0.138 (32s)
+    315s [191/1080] mw-push        A        a=0.2  ep4 ret    142.1 succ 0 frac 0.689 (6s)
+    318s [192/1080] cheetah-run    Dfix3_s0 a=0.2  ep3 ret      4.6 succ 0 frac 0.137 (20s)
+    320s [193/1080] cheetah-run    Ddir1_s0 a=0.2  ep3 ret     77.4 succ 0 frac 0.0 (20s)
+    320s [194/1080] mw-push        B        a=0.2  ep4 ret     79.5 succ 0 frac 0.687 (6s)
+    321s [195/1080] cheetah-run    Dfix3_s1 a=0.2  ep3 ret      3.0 succ 0 frac 0.172 (22s)
+    321s [196/1080] cheetah-run    Dfix3_s2 a=0.2  ep3 ret     42.9 succ 0 frac 0.152 (22s)
+    322s [197/1080] cheetah-run    Ddir1_s1 a=0.2  ep3 ret     60.8 succ 0 frac 0.0 (21s)
+    324s [198/1080] mw-push        D1z      a=0.2  ep4 ret   1779.5 succ 1 frac 0.097 (6s)
+    325s [199/1080] mw-push        Dfix1_s0 a=0.2  ep4 ret   1756.3 succ 1 frac 0.181 (4s)
+    325s [200/1080] cheetah-run    Ddir1_s2 a=0.2  ep3 ret    143.0 succ 0 frac 0.0 (20s)
+    325s [201/1080] mw-push        Dfix1_s1 a=0.2  ep4 ret     32.8 succ 0 frac 0.079 (4s)
+    325s [202/1080] mw-push        Dfix1_s2 a=0.2  ep4 ret    158.9 succ 0 frac 0.106 (4s)
+    326s [203/1080] mw-push        Dfix3_s0 a=0.2  ep4 ret     14.3 succ 0 frac 0.178 (4s)
+    326s [204/1080] mw-push        D3z      a=0.2  ep4 ret   1562.0 succ 1 frac 0.108 (6s)
+    328s [205/1080] mw-push        Dfix3_s1 a=0.2  ep4 ret     23.9 succ 0 frac 0.074 (4s)
+    329s [206/1080] mw-push        Ddir1_s0 a=0.2  ep4 ret    305.0 succ 0 frac 0.0 (4s)
+    329s [207/1080] mw-push        Dfix3_s2 a=0.2  ep4 ret   1781.6 succ 1 frac 0.099 (4s)
+    330s [208/1080] mw-push        Ddir1_s1 a=0.2  ep4 ret    238.5 succ 0 frac 0.0 (4s)
+    330s [209/1080] mw-push        Ddir1_s2 a=0.2  ep4 ret   1708.4 succ 1 frac 0.0 (4s)
+    331s [210/1080] mw-pick-place  B        a=0.2  ep4 ret      4.8 succ 0 frac 0.644 (5s)
+    331s [211/1080] mw-pick-place  A        a=0.2  ep4 ret   1472.9 succ 1 frac 0.713 (5s)
+    333s [212/1080] mw-pick-place  Dfix1_s0 a=0.2  ep4 ret      6.9 succ 0 frac 0.452 (4s)
+    334s [213/1080] mw-pick-place  D1z      a=0.2  ep4 ret   1692.3 succ 1 frac 0.106 (6s)
+    334s [214/1080] mw-pick-place  Dfix1_s1 a=0.2  ep4 ret     10.6 succ 0 frac 0.159 (4s)
+    334s [215/1080] mw-pick-place  Dfix1_s2 a=0.2  ep4 ret     10.2 succ 0 frac 0.34 (4s)
+    334s [216/1080] mw-pick-place  D3z      a=0.2  ep4 ret   1662.1 succ 1 frac 0.137 (6s)
+    335s [217/1080] mw-pick-place  Dfix3_s0 a=0.2  ep4 ret      9.4 succ 0 frac 0.448 (4s)
+    336s [218/1080] mw-pick-place  Dfix3_s1 a=0.2  ep4 ret   1708.5 succ 1 frac 0.103 (4s)
+    338s [219/1080] mw-pick-place  Dfix3_s2 a=0.2  ep4 ret    973.8 succ 1 frac 0.328 (4s)
+    338s [220/1080] mw-pick-place  Ddir1_s0 a=0.2  ep4 ret   1410.8 succ 1 frac 0.0 (4s)
+    338s [221/1080] mw-pick-place  Ddir1_s1 a=0.2  ep4 ret   1626.8 succ 1 frac 0.0 (4s)
+    338s [222/1080] mw-pick-place  Ddir1_s2 a=0.2  ep4 ret      2.7 succ 0 frac 0.0 (4s)
+    358s [223/1080] cheetah-run    Dfix1_s0 a=0.2  ep4 ret     22.4 succ 0 frac 0.116 (20s)
+    359s [224/1080] cheetah-run    A        a=0.2  ep4 ret    105.9 succ 0 frac 0.617 (25s)
+    359s [225/1080] cheetah-run    B        a=0.2  ep4 ret     98.7 succ 0 frac 0.628 (24s)
+    360s [226/1080] cheetah-run    Dfix1_s1 a=0.2  ep4 ret      6.0 succ 0 frac 0.151 (21s)
+    360s [227/1080] cheetah-run    Dfix1_s2 a=0.2  ep4 ret     42.8 succ 0 frac 0.152 (21s)
+    367s [228/1080] cheetah-run    D1z      a=0.2  ep4 ret    484.2 succ 0 frac 0.12 (32s)
+    369s [229/1080] cheetah-run    D3z      a=0.2  ep4 ret    317.9 succ 0 frac 0.138 (32s)
+    375s [230/1080] mw-push        A        a=0.2  ep5 ret     22.2 succ 0 frac 0.681 (6s)
+    378s [231/1080] cheetah-run    Dfix3_s0 a=0.2  ep4 ret      9.5 succ 0 frac 0.137 (20s)
+    379s [232/1080] cheetah-run    Dfix3_s1 a=0.2  ep4 ret      2.9 succ 0 frac 0.172 (20s)
+    380s [233/1080] cheetah-run    Dfix3_s2 a=0.2  ep4 ret     38.7 succ 0 frac 0.152 (20s)
+    381s [234/1080] mw-push        B        a=0.2  ep5 ret   1189.6 succ 0 frac 0.716 (6s)
+    381s [235/1080] cheetah-run    Ddir1_s0 a=0.2  ep4 ret    143.5 succ 0 frac 0.0 (21s)
+    381s [236/1080] cheetah-run    Ddir1_s1 a=0.2  ep4 ret     62.3 succ 0 frac 0.0 (21s)
+    384s [237/1080] mw-push        Dfix1_s0 a=0.2  ep5 ret   1758.7 succ 1 frac 0.181 (4s)
+    384s [238/1080] mw-push        D1z      a=0.2  ep5 ret   1779.3 succ 1 frac 0.096 (6s)
+    385s [239/1080] mw-push        Dfix1_s1 a=0.2  ep5 ret   1764.4 succ 1 frac 0.079 (4s)
+    385s [240/1080] mw-push        Dfix1_s2 a=0.2  ep5 ret   1757.0 succ 1 frac 0.106 (4s)
+    385s [241/1080] mw-push        D3z      a=0.2  ep5 ret   1769.9 succ 1 frac 0.109 (6s)
+    385s [242/1080] mw-push        Dfix3_s0 a=0.2  ep5 ret   1085.5 succ 1 frac 0.178 (4s)
+    388s [243/1080] mw-push        Dfix3_s1 a=0.2  ep5 ret   1740.4 succ 1 frac 0.074 (4s)
+    388s [244/1080] mw-push        Dfix3_s2 a=0.2  ep5 ret    841.6 succ 0 frac 0.099 (4s)
+    388s [245/1080] cheetah-run    Ddir1_s2 a=0.2  ep4 ret     85.8 succ 0 frac 0.0 (21s)
+    389s [246/1080] mw-push        Ddir1_s2 a=0.2  ep5 ret    777.1 succ 1 frac 0.0 (4s)
+    389s [247/1080] mw-push        Ddir1_s0 a=0.2  ep5 ret   1795.0 succ 1 frac 0.0 (4s)
+    389s [248/1080] mw-push        Ddir1_s1 a=0.2  ep5 ret     50.3 succ 0 frac 0.0 (4s)
+    391s [249/1080] mw-pick-place  A        a=0.2  ep5 ret     10.4 succ 0 frac 0.642 (5s)
+    393s [250/1080] mw-pick-place  B        a=0.2  ep5 ret     12.3 succ 0 frac 0.661 (5s)
+    393s [251/1080] mw-pick-place  Dfix1_s0 a=0.2  ep5 ret      5.9 succ 0 frac 0.452 (4s)
+    394s [252/1080] mw-pick-place  Dfix1_s2 a=0.2  ep5 ret     11.1 succ 0 frac 0.34 (4s)
+    394s [253/1080] mw-pick-place  D1z      a=0.2  ep5 ret    387.6 succ 0 frac 0.091 (6s)
+    394s [254/1080] mw-pick-place  Dfix1_s1 a=0.2  ep5 ret   1559.4 succ 1 frac 0.159 (4s)
+    394s [255/1080] mw-pick-place  D3z      a=0.2  ep5 ret     85.5 succ 0 frac 0.114 (6s)
+    395s [256/1080] mw-pick-place  Dfix3_s0 a=0.2  ep5 ret     10.8 succ 0 frac 0.448 (4s)
+    397s [257/1080] mw-pick-place  Dfix3_s1 a=0.2  ep5 ret     67.0 succ 0 frac 0.103 (4s)
+    397s [258/1080] mw-pick-place  Dfix3_s2 a=0.2  ep5 ret     11.2 succ 0 frac 0.328 (4s)
+    398s [259/1080] mw-pick-place  Ddir1_s1 a=0.2  ep5 ret   1491.0 succ 1 frac 0.0 (4s)
+    398s [260/1080] mw-pick-place  Ddir1_s0 a=0.2  ep5 ret   1694.8 succ 1 frac 0.0 (4s)
+    398s [261/1080] mw-pick-place  Ddir1_s2 a=0.2  ep5 ret      4.7 succ 0 frac 0.0 (4s)
+    418s [262/1080] cheetah-run    Dfix1_s0 a=0.2  ep5 ret     10.8 succ 0 frac 0.116 (20s)
+    420s [263/1080] cheetah-run    Dfix1_s1 a=0.2  ep5 ret     10.4 succ 0 frac 0.151 (21s)
+    420s [264/1080] cheetah-run    Dfix1_s2 a=0.2  ep5 ret     41.9 succ 0 frac 0.152 (21s)
+    421s [265/1080] cheetah-run    A        a=0.2  ep5 ret     87.7 succ 0 frac 0.617 (26s)
+    421s [266/1080] cheetah-run    B        a=0.2  ep5 ret     41.7 succ 0 frac 0.621 (26s)
+    426s [267/1080] cheetah-run    D1z      a=0.2  ep5 ret    307.5 succ 0 frac 0.117 (29s)
+    427s [268/1080] cheetah-run    D3z      a=0.2  ep5 ret    294.5 succ 0 frac 0.137 (29s)
+    432s [269/1080] mw-push        A        a=0.2  ep6 ret     85.3 succ 0 frac 0.687 (5s)
+    437s [270/1080] mw-push        B        a=0.2  ep6 ret   1025.3 succ 0 frac 0.712 (5s)
+    438s [271/1080] cheetah-run    Dfix3_s0 a=0.2  ep5 ret      5.1 succ 0 frac 0.137 (20s)
+    441s [272/1080] cheetah-run    Dfix3_s2 a=0.2  ep5 ret     43.7 succ 0 frac 0.152 (22s)
+    442s [273/1080] cheetah-run    Dfix3_s1 a=0.2  ep5 ret      1.4 succ 0 frac 0.172 (22s)
+    442s [274/1080] cheetah-run    Ddir1_s0 a=0.2  ep5 ret    139.1 succ 0 frac 0.0 (21s)
+    442s [275/1080] cheetah-run    Ddir1_s1 a=0.2  ep5 ret     68.2 succ 0 frac 0.0 (21s)
+    443s [276/1080] mw-push        D1z      a=0.2  ep6 ret   1763.6 succ 1 frac 0.096 (6s)
+    444s [277/1080] mw-push        D3z      a=0.2  ep6 ret   1771.0 succ 1 frac 0.111 (6s)
+    446s [278/1080] cheetah-run    Ddir1_s2 a=0.2  ep5 ret     58.1 succ 0 frac 0.0 (20s)
+    446s [279/1080] mw-push        Dfix1_s0 a=0.2  ep6 ret     17.9 succ 0 frac 0.181 (4s)
+    446s [280/1080] mw-push        Dfix1_s1 a=0.2  ep6 ret   1758.6 succ 1 frac 0.079 (4s)
+    446s [281/1080] mw-push        Dfix1_s2 a=0.2  ep6 ret    132.3 succ 0 frac 0.106 (4s)
+    447s [282/1080] mw-push        Dfix3_s0 a=0.2  ep6 ret     28.9 succ 0 frac 0.178 (4s)
+    448s [283/1080] mw-push        Dfix3_s1 a=0.2  ep6 ret   1753.2 succ 1 frac 0.074 (4s)
+    448s [284/1080] mw-push        Dfix3_s2 a=0.2  ep6 ret    895.7 succ 0 frac 0.099 (4s)
+    450s [285/1080] mw-push        Ddir1_s0 a=0.2  ep6 ret   1765.1 succ 1 frac 0.0 (4s)
+    450s [286/1080] mw-push        Ddir1_s1 a=0.2  ep6 ret    155.7 succ 0 frac 0.0 (4s)
+    450s [287/1080] mw-push        Ddir1_s2 a=0.2  ep6 ret    311.5 succ 0 frac 0.0 (4s)
+    452s [288/1080] mw-pick-place  A        a=0.2  ep6 ret    110.1 succ 0 frac 0.654 (5s)
+    452s [289/1080] mw-pick-place  B        a=0.2  ep6 ret     51.2 succ 0 frac 0.669 (5s)
+    453s [290/1080] mw-pick-place  D1z      a=0.2  ep6 ret   1070.0 succ 0 frac 0.103 (6s)
+    454s [291/1080] mw-pick-place  Dfix1_s0 a=0.2  ep6 ret      9.7 succ 0 frac 0.452 (4s)
+    454s [292/1080] mw-pick-place  D3z      a=0.2  ep6 ret   1175.2 succ 1 frac 0.138 (6s)
+    454s [293/1080] mw-pick-place  Dfix1_s1 a=0.2  ep6 ret    764.4 succ 1 frac 0.159 (4s)
+    455s [294/1080] mw-pick-place  Dfix1_s2 a=0.2  ep6 ret     10.6 succ 0 frac 0.34 (4s)
+    456s [295/1080] mw-pick-place  Dfix3_s0 a=0.2  ep6 ret    670.8 succ 1 frac 0.448 (4s)
+    457s [296/1080] mw-pick-place  Dfix3_s1 a=0.2  ep6 ret   1498.2 succ 1 frac 0.103 (4s)
+    457s [297/1080] mw-pick-place  Dfix3_s2 a=0.2  ep6 ret     16.9 succ 0 frac 0.328 (4s)
+    458s [298/1080] mw-pick-place  Ddir1_s0 a=0.2  ep6 ret   1621.8 succ 1 frac 0.0 (4s)
+    458s [299/1080] mw-pick-place  Ddir1_s1 a=0.2  ep6 ret   1530.9 succ 1 frac 0.0 (4s)
+    459s [300/1080] mw-pick-place  Ddir1_s2 a=0.2  ep6 ret      6.4 succ 0 frac 0.0 (4s)
+    478s [301/1080] cheetah-run    Dfix1_s0 a=0.2  ep6 ret     17.1 succ 0 frac 0.116 (20s)
+    478s [302/1080] cheetah-run    Dfix1_s1 a=0.2  ep6 ret      3.5 succ 0 frac 0.151 (20s)
+    480s [303/1080] cheetah-run    Dfix1_s2 a=0.2  ep6 ret     43.1 succ 0 frac 0.152 (21s)
+    481s [304/1080] cheetah-run    A        a=0.2  ep6 ret     73.5 succ 0 frac 0.615 (27s)
+    482s [305/1080] cheetah-run    B        a=0.2  ep6 ret     91.0 succ 0 frac 0.629 (26s)
+    486s [306/1080] cheetah-run    D3z      a=0.2  ep6 ret    379.1 succ 0 frac 0.138 (29s)
+    488s [307/1080] cheetah-run    D1z      a=0.2  ep6 ret    442.1 succ 0 frac 0.119 (32s)
+    494s [308/1080] mw-push        A        a=0.2  ep7 ret      4.3 succ 0 frac 0.677 (6s)
+    498s [309/1080] cheetah-run    Dfix3_s0 a=0.2  ep6 ret      8.3 succ 0 frac 0.137 (20s)
+    498s [310/1080] cheetah-run    Dfix3_s1 a=0.2  ep6 ret      4.4 succ 0 frac 0.172 (20s)
+    500s [311/1080] mw-push        B        a=0.2  ep7 ret    945.9 succ 0 frac 0.714 (6s)
+    502s [312/1080] cheetah-run    Dfix3_s2 a=0.2  ep6 ret     31.2 succ 0 frac 0.152 (22s)
+    502s [313/1080] cheetah-run    Ddir1_s0 a=0.2  ep6 ret    163.3 succ 0 frac 0.0 (21s)
+    503s [314/1080] cheetah-run    Ddir1_s1 a=0.2  ep6 ret     90.1 succ 0 frac 0.0 (21s)
+    504s [315/1080] mw-push        Dfix1_s0 a=0.2  ep7 ret     21.9 succ 0 frac 0.181 (4s)
+    504s [316/1080] mw-push        D1z      a=0.2  ep7 ret   1783.4 succ 1 frac 0.097 (6s)
+    504s [317/1080] mw-push        D3z      a=0.2  ep7 ret   1655.0 succ 1 frac 0.11 (6s)
+    506s [318/1080] cheetah-run    Ddir1_s2 a=0.2  ep6 ret     96.9 succ 0 frac 0.0 (20s)
+    506s [319/1080] mw-push        Dfix1_s1 a=0.2  ep7 ret    162.5 succ 0 frac 0.079 (4s)
+    507s [320/1080] mw-push        Dfix1_s2 a=0.2  ep7 ret    130.1 succ 0 frac 0.106 (4s)
+    508s [321/1080] mw-push        Dfix3_s0 a=0.2  ep7 ret     48.0 succ 0 frac 0.178 (4s)
+    508s [322/1080] mw-push        Dfix3_s2 a=0.2  ep7 ret    689.2 succ 0 frac 0.099 (4s)
+    508s [323/1080] mw-push        Ddir1_s0 a=0.2  ep7 ret   1729.5 succ 1 frac 0.0 (4s)
+    509s [324/1080] mw-push        Dfix3_s1 a=0.2  ep7 ret   1792.0 succ 1 frac 0.074 (4s)
+    510s [325/1080] mw-push        Ddir1_s1 a=0.2  ep7 ret     97.5 succ 0 frac 0.0 (4s)
+    511s [326/1080] mw-push        Ddir1_s2 a=0.2  ep7 ret    185.0 succ 0 frac 0.0 (4s)
+    512s [327/1080] mw-pick-place  A        a=0.2  ep7 ret    574.4 succ 0 frac 0.681 (5s)
+    513s [328/1080] mw-pick-place  Dfix1_s0 a=0.2  ep7 ret      4.3 succ 0 frac 0.452 (4s)
+    513s [329/1080] mw-pick-place  B        a=0.2  ep7 ret     27.3 succ 0 frac 0.661 (5s)
+    514s [330/1080] mw-pick-place  D1z      a=0.2  ep7 ret   1101.2 succ 0 frac 0.103 (6s)
+    514s [331/1080] mw-pick-place  Dfix1_s1 a=0.2  ep7 ret     19.3 succ 0 frac 0.159 (4s)
+    514s [332/1080] mw-pick-place  D3z      a=0.2  ep7 ret   1509.5 succ 1 frac 0.141 (6s)
+    515s [333/1080] mw-pick-place  Dfix1_s2 a=0.2  ep7 ret    397.9 succ 0 frac 0.34 (4s)
+    516s [334/1080] mw-pick-place  Dfix3_s0 a=0.2  ep7 ret     32.5 succ 0 frac 0.448 (4s)
+    517s [335/1080] mw-pick-place  Dfix3_s1 a=0.2  ep7 ret   1725.1 succ 1 frac 0.103 (4s)
+    517s [336/1080] mw-pick-place  Dfix3_s2 a=0.2  ep7 ret      8.8 succ 0 frac 0.328 (5s)
+    518s [337/1080] mw-pick-place  Ddir1_s0 a=0.2  ep7 ret   1459.9 succ 1 frac 0.0 (4s)
+    518s [338/1080] mw-pick-place  Ddir1_s1 a=0.2  ep7 ret   1652.0 succ 1 frac 0.0 (4s)
+    518s [339/1080] mw-pick-place  Ddir1_s2 a=0.2  ep7 ret    333.1 succ 0 frac 0.0 (4s)
+    538s [340/1080] cheetah-run    Dfix1_s2 a=0.2  ep7 ret     41.2 succ 0 frac 0.152 (20s)
+    538s [341/1080] cheetah-run    Dfix1_s1 a=0.2  ep7 ret      9.5 succ 0 frac 0.151 (20s)
+    538s [342/1080] cheetah-run    Dfix1_s0 a=0.2  ep7 ret     17.7 succ 0 frac 0.116 (20s)
+    541s [343/1080] cheetah-run    A        a=0.2  ep7 ret     74.2 succ 0 frac 0.616 (27s)
+    543s [344/1080] cheetah-run    B        a=0.2  ep7 ret     86.3 succ 0 frac 0.625 (26s)
+    549s [345/1080] cheetah-run    D1z      a=0.2  ep7 ret    142.7 succ 0 frac 0.116 (32s)
+    549s [346/1080] cheetah-run    D3z      a=0.2  ep7 ret    443.2 succ 0 frac 0.139 (31s)
+    555s [347/1080] mw-push        A        a=0.2  ep8 ret      6.0 succ 0 frac 0.679 (6s)
+    558s [348/1080] cheetah-run    Dfix3_s1 a=0.2  ep7 ret      7.1 succ 0 frac 0.172 (20s)
+    558s [349/1080] cheetah-run    Dfix3_s0 a=0.2  ep7 ret     13.9 succ 0 frac 0.137 (20s)
+    558s [350/1080] cheetah-run    Dfix3_s2 a=0.2  ep7 ret     39.7 succ 0 frac 0.152 (20s)
+    560s [351/1080] mw-push        B        a=0.2  ep8 ret      5.8 succ 0 frac 0.692 (6s)
+    563s [352/1080] cheetah-run    Ddir1_s0 a=0.2  ep7 ret    244.8 succ 0 frac 0.0 (21s)
+    563s [353/1080] mw-push        Dfix1_s0 a=0.2  ep8 ret    121.2 succ 0 frac 0.181 (4s)
+    564s [354/1080] cheetah-run    Ddir1_s1 a=0.2  ep7 ret     70.2 succ 0 frac 0.0 (21s)
+    564s [355/1080] mw-push        D1z      a=0.2  ep8 ret     80.8 succ 0 frac 0.09 (6s)
+    564s [356/1080] mw-push        D3z      a=0.2  ep8 ret   1782.9 succ 1 frac 0.11 (6s)
+    565s [357/1080] mw-push        Dfix1_s1 a=0.2  ep8 ret     16.4 succ 0 frac 0.079 (4s)
+    567s [358/1080] mw-push        Dfix3_s0 a=0.2  ep8 ret    157.1 succ 0 frac 0.178 (4s)
+    567s [359/1080] mw-push        Dfix1_s2 a=0.2  ep8 ret     37.0 succ 0 frac 0.106 (4s)
+    568s [360/1080] mw-push        Dfix3_s1 a=0.2  ep8 ret     14.7 succ 0 frac 0.074 (4s)
+    568s [361/1080] mw-push        Ddir1_s0 a=0.2  ep8 ret   1789.7 succ 1 frac 0.0 (4s)
+    569s [362/1080] mw-push        Dfix3_s2 a=0.2  ep8 ret    265.6 succ 0 frac 0.099 (4s)
+    569s [363/1080] mw-push        Ddir1_s1 a=0.2  ep8 ret     48.6 succ 0 frac 0.0 (4s)
+    570s [364/1080] cheetah-run    Ddir1_s2 a=0.2  ep7 ret    100.9 succ 0 frac 0.0 (21s)
+    571s [365/1080] mw-push        Ddir1_s2 a=0.2  ep8 ret    508.4 succ 0 frac 0.0 (4s)
+    572s [366/1080] mw-pick-place  A        a=0.2  ep8 ret    266.3 succ 0 frac 0.659 (5s)
+    573s [367/1080] mw-pick-place  Dfix1_s0 a=0.2  ep8 ret     42.0 succ 0 frac 0.452 (4s)
+    573s [368/1080] mw-pick-place  B        a=0.2  ep8 ret      0.2 succ 0 frac 0.659 (5s)
+    574s [369/1080] mw-pick-place  Dfix1_s1 a=0.2  ep8 ret      8.8 succ 0 frac 0.159 (4s)
+    574s [370/1080] mw-pick-place  D1z      a=0.2  ep8 ret   1657.3 succ 1 frac 0.111 (6s)
+    574s [371/1080] mw-pick-place  D3z      a=0.2  ep8 ret   1654.2 succ 1 frac 0.146 (6s)
+    575s [372/1080] mw-pick-place  Dfix1_s2 a=0.2  ep8 ret      9.2 succ 0 frac 0.34 (4s)
+    577s [373/1080] mw-pick-place  Dfix3_s0 a=0.2  ep8 ret    382.4 succ 0 frac 0.448 (4s)
+    578s [374/1080] mw-pick-place  Dfix3_s1 a=0.2  ep8 ret   1687.0 succ 1 frac 0.103 (4s)
+    578s [375/1080] mw-pick-place  Dfix3_s2 a=0.2  ep8 ret      2.4 succ 0 frac 0.328 (4s)
+    578s [376/1080] mw-pick-place  Ddir1_s0 a=0.2  ep8 ret   1296.7 succ 1 frac 0.0 (4s)
+    578s [377/1080] mw-pick-place  Ddir1_s1 a=0.2  ep8 ret    410.2 succ 0 frac 0.0 (4s)
+    578s [378/1080] mw-pick-place  Ddir1_s2 a=0.2  ep8 ret    322.3 succ 0 frac 0.0 (4s)
+    598s [379/1080] cheetah-run    Dfix1_s1 a=0.2  ep8 ret      7.7 succ 0 frac 0.151 (20s)
+    598s [380/1080] cheetah-run    Dfix1_s2 a=0.2  ep8 ret     41.1 succ 0 frac 0.152 (20s)
+    599s [381/1080] cheetah-run    A        a=0.2  ep8 ret     58.7 succ 0 frac 0.616 (25s)
+    600s [382/1080] cheetah-run    Dfix1_s0 a=0.2  ep8 ret     12.0 succ 0 frac 0.116 (21s)
+    603s [383/1080] cheetah-run    B        a=0.2  ep8 ret     80.5 succ 0 frac 0.627 (26s)
+    609s [384/1080] cheetah-run    D1z      a=0.2  ep8 ret    281.6 succ 0 frac 0.117 (32s)
+    609s [385/1080] cheetah-run    D3z      a=0.2  ep8 ret    350.6 succ 0 frac 0.138 (32s)
+    615s [386/1080] mw-push        A        a=0.2  ep9 ret     10.1 succ 0 frac 0.68 (6s)
+    618s [387/1080] cheetah-run    Dfix3_s0 a=0.2  ep8 ret      8.7 succ 0 frac 0.137 (20s)
+    619s [388/1080] cheetah-run    Dfix3_s1 a=0.2  ep8 ret      4.1 succ 0 frac 0.172 (20s)
+    620s [389/1080] cheetah-run    Dfix3_s2 a=0.2  ep8 ret     39.2 succ 0 frac 0.152 (20s)
+    621s [390/1080] mw-push        B        a=0.2  ep9 ret     81.2 succ 0 frac 0.695 (6s)
+    621s [391/1080] cheetah-run    Ddir1_s0 a=0.2  ep8 ret     95.0 succ 0 frac 0.0 (21s)
+    624s [392/1080] mw-push        Dfix1_s0 a=0.2  ep9 ret    385.1 succ 0 frac 0.181 (4s)
+    624s [393/1080] cheetah-run    Ddir1_s1 a=0.2  ep8 ret     43.1 succ 0 frac 0.0 (21s)
+    624s [394/1080] mw-push        D1z      a=0.2  ep9 ret   1764.2 succ 1 frac 0.093 (6s)
+    625s [395/1080] mw-push        D3z      a=0.2  ep9 ret   1746.1 succ 1 frac 0.108 (6s)
+    625s [396/1080] mw-push        Dfix1_s1 a=0.2  ep9 ret    127.1 succ 0 frac 0.079 (4s)
+    625s [397/1080] mw-push        Dfix1_s2 a=0.2  ep9 ret    123.3 succ 0 frac 0.106 (4s)
+    628s [398/1080] mw-push        Dfix3_s0 a=0.2  ep9 ret   1765.9 succ 1 frac 0.178 (4s)
+    629s [399/1080] mw-push        Dfix3_s1 a=0.2  ep9 ret    388.7 succ 0 frac 0.074 (4s)
+    629s [400/1080] mw-push        Dfix3_s2 a=0.2  ep9 ret     97.7 succ 0 frac 0.099 (4s)
+    629s [401/1080] mw-push        Ddir1_s0 a=0.2  ep9 ret   1773.0 succ 1 frac 0.0 (4s)
+    629s [402/1080] mw-push        Ddir1_s1 a=0.2  ep9 ret    113.4 succ 0 frac 0.0 (4s)
+    630s [403/1080] mw-push        Ddir1_s2 a=0.2  ep9 ret    168.7 succ 0 frac 0.0 (4s)
+    630s [404/1080] cheetah-run    Ddir1_s2 a=0.2  ep8 ret     80.1 succ 0 frac 0.0 (21s)
+    633s [405/1080] mw-pick-place  A        a=0.2  ep9 ret     52.3 succ 0 frac 0.656 (5s)
+    634s [406/1080] mw-pick-place  B        a=0.2  ep9 ret      6.4 succ 0 frac 0.656 (5s)
+    634s [407/1080] mw-pick-place  Dfix1_s0 a=0.2  ep9 ret   1173.2 succ 1 frac 0.452 (4s)
+    634s [408/1080] mw-pick-place  Dfix1_s1 a=0.2  ep9 ret    849.7 succ 0 frac 0.159 (4s)
+    634s [409/1080] mw-pick-place  Dfix1_s2 a=0.2  ep9 ret   1059.2 succ 1 frac 0.34 (4s)
+    634s [410/1080] mw-pick-place  D1z      a=0.2  ep9 ret   1626.3 succ 1 frac 0.113 (6s)
+    635s [411/1080] mw-pick-place  D3z      a=0.2  ep9 ret   1619.1 succ 1 frac 0.145 (6s)
+    637s [412/1080] mw-pick-place  Dfix3_s0 a=0.2  ep9 ret     17.3 succ 0 frac 0.448 (4s)
+    638s [413/1080] mw-pick-place  Dfix3_s2 a=0.2  ep9 ret      4.5 succ 0 frac 0.328 (4s)
+    638s [414/1080] mw-pick-place  Ddir1_s0 a=0.2  ep9 ret   1628.3 succ 1 frac 0.0 (4s)
+    638s [415/1080] mw-pick-place  Dfix3_s1 a=0.2  ep9 ret   1491.6 succ 1 frac 0.103 (5s)
+    639s [416/1080] mw-pick-place  Ddir1_s2 a=0.2  ep9 ret      5.5 succ 0 frac 0.0 (4s)
+    639s [417/1080] mw-pick-place  Ddir1_s1 a=0.2  ep9 ret   1490.9 succ 1 frac 0.0 (4s)
+    658s [418/1080] cheetah-run    Dfix1_s1 a=0.2  ep9 ret     11.6 succ 0 frac 0.151 (20s)
+    659s [419/1080] cheetah-run    A        a=0.2  ep9 ret     69.9 succ 0 frac 0.615 (25s)
+    660s [420/1080] cheetah-run    Dfix1_s0 a=0.2  ep9 ret     18.3 succ 0 frac 0.116 (21s)
+    660s [421/1080] cheetah-run    Dfix1_s2 a=0.2  ep9 ret     40.1 succ 0 frac 0.152 (21s)
+    661s [422/1080] cheetah-run    B        a=0.2  ep9 ret     81.6 succ 0 frac 0.625 (24s)
+    670s [423/1080] cheetah-run    D3z      a=0.2  ep9 ret     91.3 succ 0 frac 0.135 (32s)
+    670s [424/1080] cheetah-run    D1z      a=0.2  ep9 ret    486.7 succ 0 frac 0.12 (32s)
+    676s [425/1080] mw-push        A        a=0.1  ep0 ret   1746.0 succ 1 frac 0.509 (6s)
+    679s [426/1080] cheetah-run    Dfix3_s0 a=0.2  ep9 ret     15.6 succ 0 frac 0.137 (20s)
+    679s [427/1080] cheetah-run    Dfix3_s1 a=0.2  ep9 ret      4.1 succ 0 frac 0.172 (20s)
+    681s [428/1080] cheetah-run    Ddir1_s1 a=0.2  ep9 ret     49.8 succ 0 frac 0.0 (20s)
+    681s [429/1080] cheetah-run    Ddir1_s0 a=0.2  ep9 ret    103.9 succ 0 frac 0.0 (21s)
+    681s [430/1080] mw-push        B        a=0.1  ep0 ret   1323.4 succ 1 frac 0.494 (6s)
+    682s [431/1080] cheetah-run    Dfix3_s2 a=0.2  ep9 ret     29.4 succ 0 frac 0.152 (22s)
+    685s [432/1080] mw-push        D1z      a=0.1  ep0 ret   1760.9 succ 1 frac 0.032 (6s)
+    685s [433/1080] mw-push        Dfix1_s0 a=0.1  ep0 ret   1757.5 succ 1 frac 0.07 (4s)
+    685s [434/1080] mw-push        D3z      a=0.1  ep0 ret   1752.8 succ 1 frac 0.043 (6s)
+    686s [435/1080] mw-push        Dfix1_s1 a=0.1  ep0 ret   1744.4 succ 1 frac 0.027 (4s)
+    686s [436/1080] mw-push        Dfix1_s2 a=0.1  ep0 ret   1759.9 succ 1 frac 0.031 (4s)
+    686s [437/1080] mw-push        Dfix3_s0 a=0.1  ep0 ret   1755.9 succ 1 frac 0.07 (4s)
+    689s [438/1080] mw-push        Dfix3_s1 a=0.1  ep0 ret   1764.9 succ 1 frac 0.025 (4s)
+    689s [439/1080] mw-push        Dfix3_s2 a=0.1  ep0 ret   1764.6 succ 1 frac 0.028 (4s)
+    689s [440/1080] mw-push        Ddir1_s0 a=0.1  ep0 ret   1768.0 succ 1 frac 0.0 (4s)
+    690s [441/1080] mw-push        Ddir1_s1 a=0.1  ep0 ret   1750.4 succ 1 frac 0.0 (4s)
+    690s [442/1080] mw-push        Ddir1_s2 a=0.1  ep0 ret   1763.5 succ 1 frac 0.0 (4s)
+    691s [443/1080] cheetah-run    Ddir1_s2 a=0.2  ep9 ret    119.1 succ 0 frac 0.0 (21s)
+    691s [444/1080] mw-pick-place  A        a=0.1  ep0 ret   1625.7 succ 1 frac 0.516 (5s)
+    694s [445/1080] mw-pick-place  B        a=0.1  ep0 ret   1633.8 succ 1 frac 0.522 (5s)
+    694s [446/1080] mw-pick-place  Dfix1_s0 a=0.1  ep0 ret   1615.1 succ 1 frac 0.072 (4s)
+    694s [447/1080] mw-pick-place  Dfix1_s1 a=0.1  ep0 ret   1630.0 succ 1 frac 0.073 (4s)
+    695s [448/1080] mw-pick-place  Dfix1_s2 a=0.1  ep0 ret   1636.8 succ 1 frac 0.198 (4s)
+    695s [449/1080] mw-pick-place  D1z      a=0.1  ep0 ret   1635.6 succ 1 frac 0.03 (6s)
+    695s [450/1080] mw-pick-place  D3z      a=0.1  ep0 ret    923.4 succ 0 frac 0.043 (6s)
+    696s [451/1080] mw-pick-place  Dfix3_s0 a=0.1  ep0 ret   1610.7 succ 1 frac 0.069 (4s)
+    698s [452/1080] mw-pick-place  Dfix3_s1 a=0.1  ep0 ret   1476.2 succ 1 frac 0.073 (4s)
+    699s [453/1080] mw-pick-place  Ddir1_s0 a=0.1  ep0 ret   1639.3 succ 1 frac 0.0 (4s)
+    699s [454/1080] mw-pick-place  Dfix3_s2 a=0.1  ep0 ret   1625.8 succ 1 frac 0.198 (4s)
+    699s [455/1080] mw-pick-place  Ddir1_s1 a=0.1  ep0 ret     17.3 succ 0 frac 0.0 (4s)
+    699s [456/1080] mw-pick-place  Ddir1_s2 a=0.1  ep0 ret    144.6 succ 0 frac 0.0 (4s)
+    719s [457/1080] cheetah-run    Dfix1_s2 a=0.1  ep0 ret    357.2 succ 0 frac 0.051 (20s)
+    720s [458/1080] cheetah-run    A        a=0.1  ep0 ret    374.1 succ 0 frac 0.368 (24s)
+    720s [459/1080] cheetah-run    Dfix1_s0 a=0.1  ep0 ret    464.1 succ 0 frac 0.043 (21s)
+    721s [460/1080] cheetah-run    Dfix1_s1 a=0.1  ep0 ret    134.2 succ 0 frac 0.056 (21s)
+    722s [461/1080] cheetah-run    B        a=0.1  ep0 ret    599.1 succ 0 frac 0.399 (26s)
+    727s [462/1080] cheetah-run    D1z      a=0.1  ep0 ret    752.3 succ 0 frac 0.025 (29s)
+    730s [463/1080] cheetah-run    D3z      a=0.1  ep0 ret    762.5 succ 0 frac 0.033 (32s)
+    736s [464/1080] mw-push        A        a=0.1  ep1 ret   1796.8 succ 1 frac 0.508 (6s)
+    740s [465/1080] cheetah-run    Dfix3_s0 a=0.1  ep0 ret    182.2 succ 0 frac 0.047 (20s)
+    740s [466/1080] cheetah-run    Dfix3_s1 a=0.1  ep0 ret    146.0 succ 0 frac 0.06 (20s)
+    742s [467/1080] mw-push        B        a=0.1  ep1 ret   1801.3 succ 1 frac 0.512 (6s)
+    742s [468/1080] cheetah-run    Ddir1_s0 a=0.1  ep0 ret    228.7 succ 0 frac 0.0 (21s)
+    742s [469/1080] cheetah-run    Dfix3_s2 a=0.1  ep0 ret    462.6 succ 0 frac 0.044 (22s)
+    743s [470/1080] cheetah-run    Ddir1_s1 a=0.1  ep0 ret    753.8 succ 0 frac 0.0 (21s)
+    746s [471/1080] mw-push        D1z      a=0.1  ep1 ret   1798.5 succ 1 frac 0.031 (6s)
+    746s [472/1080] mw-push        D3z      a=0.1  ep1 ret   1800.0 succ 1 frac 0.042 (6s)
+    746s [473/1080] mw-push        Dfix1_s0 a=0.1  ep1 ret   1747.9 succ 1 frac 0.07 (4s)
+    746s [474/1080] mw-push        Dfix1_s2 a=0.1  ep1 ret   1773.4 succ 1 frac 0.031 (4s)
+    746s [475/1080] mw-push        Dfix1_s1 a=0.1  ep1 ret   1807.0 succ 1 frac 0.027 (5s)
+    747s [476/1080] cheetah-run    Ddir1_s2 a=0.1  ep0 ret    514.4 succ 0 frac 0.0 (20s)
+    747s [477/1080] mw-push        Dfix3_s0 a=0.1  ep1 ret    247.1 succ 0 frac 0.07 (4s)
+    750s [478/1080] mw-push        Dfix3_s1 a=0.1  ep1 ret   1804.7 succ 1 frac 0.025 (4s)
+    750s [479/1080] mw-push        Dfix3_s2 a=0.1  ep1 ret   1313.7 succ 1 frac 0.028 (4s)
+    750s [480/1080] mw-push        Ddir1_s0 a=0.1  ep1 ret   1810.9 succ 1 frac 0.0 (4s)
+    751s [481/1080] mw-push        Ddir1_s1 a=0.1  ep1 ret   1807.3 succ 1 frac 0.0 (4s)
+    751s [482/1080] mw-push        Ddir1_s2 a=0.1  ep1 ret   1799.9 succ 1 frac 0.0 (4s)
+    752s [483/1080] mw-pick-place  A        a=0.1  ep1 ret   1685.5 succ 1 frac 0.507 (5s)
+    753s [484/1080] mw-pick-place  B        a=0.1  ep1 ret   1672.3 succ 1 frac 0.511 (5s)
+    755s [485/1080] mw-pick-place  Dfix1_s0 a=0.1  ep1 ret   1692.2 succ 1 frac 0.072 (4s)
+    755s [486/1080] mw-pick-place  Dfix1_s2 a=0.1  ep1 ret      9.2 succ 0 frac 0.198 (4s)
+    755s [487/1080] mw-pick-place  Dfix1_s1 a=0.1  ep1 ret   1542.3 succ 1 frac 0.073 (4s)
+    756s [488/1080] mw-pick-place  Dfix3_s0 a=0.1  ep1 ret   1695.7 succ 1 frac 0.069 (4s)
+    756s [489/1080] mw-pick-place  D1z      a=0.1  ep1 ret   1722.2 succ 1 frac 0.029 (6s)
+    756s [490/1080] mw-pick-place  D3z      a=0.1  ep1 ret   1716.8 succ 1 frac 0.05 (6s)
+    757s [491/1080] mw-pick-place  Dfix3_s1 a=0.1  ep1 ret   1260.6 succ 1 frac 0.073 (4s)
+    759s [492/1080] mw-pick-place  Dfix3_s2 a=0.1  ep1 ret     55.5 succ 0 frac 0.198 (4s)
+    759s [493/1080] mw-pick-place  Ddir1_s0 a=0.1  ep1 ret   1728.6 succ 1 frac 0.0 (4s)
+    759s [494/1080] mw-pick-place  Ddir1_s1 a=0.1  ep1 ret   1669.3 succ 1 frac 0.0 (4s)
+    760s [495/1080] mw-pick-place  Ddir1_s2 a=0.1  ep1 ret   1718.3 succ 1 frac 0.0 (4s)
+    780s [496/1080] cheetah-run    Dfix1_s2 a=0.1  ep1 ret    522.8 succ 0 frac 0.051 (20s)
+    780s [497/1080] cheetah-run    B        a=0.1  ep1 ret    659.9 succ 0 frac 0.405 (24s)
+    780s [498/1080] cheetah-run    A        a=0.1  ep1 ret    578.2 succ 0 frac 0.384 (25s)
+    781s [499/1080] cheetah-run    Dfix1_s0 a=0.1  ep1 ret    524.7 succ 0 frac 0.043 (21s)
+    781s [500/1080] cheetah-run    Dfix1_s1 a=0.1  ep1 ret    134.8 succ 0 frac 0.056 (21s)
+    789s [501/1080] cheetah-run    D1z      a=0.1  ep1 ret    738.5 succ 0 frac 0.025 (32s)
+    791s [502/1080] cheetah-run    D3z      a=0.1  ep1 ret    732.6 succ 0 frac 0.033 (32s)
+    796s [503/1080] mw-push        A        a=0.1  ep2 ret   1745.3 succ 1 frac 0.513 (6s)
+    800s [504/1080] cheetah-run    Dfix3_s0 a=0.1  ep1 ret    370.3 succ 0 frac 0.047 (20s)
+    801s [505/1080] cheetah-run    Dfix3_s1 a=0.1  ep1 ret    119.3 succ 0 frac 0.06 (20s)
+    801s [506/1080] cheetah-run    Dfix3_s2 a=0.1  ep1 ret    561.6 succ 0 frac 0.044 (20s)
+    802s [507/1080] mw-push        B        a=0.1  ep2 ret   1780.0 succ 0 frac 0.519 (6s)
+    802s [508/1080] cheetah-run    Ddir1_s0 a=0.1  ep1 ret    513.7 succ 0 frac 0.0 (21s)
+    802s [509/1080] cheetah-run    Ddir1_s1 a=0.1  ep1 ret    759.0 succ 0 frac 0.0 (21s)
+    805s [510/1080] mw-push        Dfix1_s0 a=0.1  ep2 ret   1808.1 succ 1 frac 0.07 (4s)
+    806s [511/1080] mw-push        D1z      a=0.1  ep2 ret   1809.1 succ 1 frac 0.031 (6s)
+    806s [512/1080] mw-push        Dfix1_s1 a=0.1  ep2 ret   1776.5 succ 1 frac 0.027 (4s)
+    806s [513/1080] mw-push        D3z      a=0.1  ep2 ret   1804.9 succ 1 frac 0.042 (6s)
+    807s [514/1080] mw-push        Dfix1_s2 a=0.1  ep2 ret   1809.2 succ 1 frac 0.031 (4s)
+    807s [515/1080] mw-push        Dfix3_s0 a=0.1  ep2 ret   1806.8 succ 1 frac 0.07 (4s)
+    809s [516/1080] mw-push        Dfix3_s1 a=0.1  ep2 ret   1810.8 succ 1 frac 0.025 (4s)
+    810s [517/1080] cheetah-run    Ddir1_s2 a=0.1  ep1 ret    493.1 succ 0 frac 0.0 (21s)
+    810s [518/1080] mw-push        Dfix3_s2 a=0.1  ep2 ret   1806.9 succ 1 frac 0.028 (4s)
+    811s [519/1080] mw-push        Ddir1_s1 a=0.1  ep2 ret   1806.7 succ 1 frac 0.0 (4s)
+    811s [520/1080] mw-push        Ddir1_s0 a=0.1  ep2 ret   1811.4 succ 1 frac 0.0 (4s)
+    811s [521/1080] mw-push        Ddir1_s2 a=0.1  ep2 ret   1788.5 succ 1 frac 0.0 (4s)
+    812s [522/1080] mw-pick-place  A        a=0.1  ep2 ret   1714.7 succ 1 frac 0.522 (5s)
+    814s [523/1080] mw-pick-place  B        a=0.1  ep2 ret   1530.7 succ 1 frac 0.504 (5s)
+    815s [524/1080] mw-pick-place  Dfix1_s0 a=0.1  ep2 ret   1721.9 succ 1 frac 0.072 (4s)
+    815s [525/1080] mw-pick-place  Dfix1_s1 a=0.1  ep2 ret   1732.7 succ 1 frac 0.073 (4s)
+    815s [526/1080] mw-pick-place  Dfix1_s2 a=0.1  ep2 ret   1722.8 succ 1 frac 0.198 (4s)
+    816s [527/1080] mw-pick-place  D3z      a=0.1  ep2 ret   1708.4 succ 1 frac 0.052 (6s)
+    816s [528/1080] mw-pick-place  D1z      a=0.1  ep2 ret   1713.8 succ 1 frac 0.031 (6s)
+    816s [529/1080] mw-pick-place  Dfix3_s0 a=0.1  ep2 ret   1722.1 succ 1 frac 0.069 (4s)
+    818s [530/1080] mw-pick-place  Dfix3_s1 a=0.1  ep2 ret   1733.6 succ 1 frac 0.073 (4s)
+    819s [531/1080] mw-pick-place  Dfix3_s2 a=0.1  ep2 ret   1722.4 succ 1 frac 0.198 (4s)
+    819s [532/1080] mw-pick-place  Ddir1_s0 a=0.1  ep2 ret   1718.5 succ 1 frac 0.0 (4s)
+    819s [533/1080] mw-pick-place  Ddir1_s1 a=0.1  ep2 ret   1693.4 succ 1 frac 0.0 (4s)
+    820s [534/1080] mw-pick-place  Ddir1_s2 a=0.1  ep2 ret   1720.7 succ 1 frac 0.0 (4s)
+    840s [535/1080] cheetah-run    Dfix1_s2 a=0.1  ep2 ret    406.4 succ 0 frac 0.051 (20s)
+    841s [536/1080] cheetah-run    Dfix1_s0 a=0.1  ep2 ret    190.1 succ 0 frac 0.043 (21s)
+    841s [537/1080] cheetah-run    Dfix1_s1 a=0.1  ep2 ret    203.7 succ 0 frac 0.056 (21s)
+    842s [538/1080] cheetah-run    A        a=0.1  ep2 ret    568.6 succ 0 frac 0.38 (26s)
+    842s [539/1080] cheetah-run    B        a=0.1  ep2 ret    584.9 succ 0 frac 0.397 (26s)
+    847s [540/1080] cheetah-run    D1z      a=0.1  ep2 ret    728.7 succ 0 frac 0.025 (29s)
+    848s [541/1080] cheetah-run    D3z      a=0.1  ep2 ret    762.6 succ 0 frac 0.033 (29s)
+    853s [542/1080] mw-push        A        a=0.1  ep3 ret   1674.5 succ 1 frac 0.508 (5s)
+    858s [543/1080] mw-push        B        a=0.1  ep3 ret   1768.5 succ 1 frac 0.516 (5s)
+    860s [544/1080] cheetah-run    Dfix3_s0 a=0.1  ep2 ret    325.1 succ 0 frac 0.047 (20s)
+    863s [545/1080] cheetah-run    Dfix3_s2 a=0.1  ep2 ret    471.5 succ 0 frac 0.044 (22s)
+    863s [546/1080] cheetah-run    Dfix3_s1 a=0.1  ep2 ret    355.0 succ 0 frac 0.06 (22s)
+    864s [547/1080] cheetah-run    Ddir1_s0 a=0.1  ep2 ret    492.5 succ 0 frac 0.0 (21s)
+    864s [548/1080] cheetah-run    Ddir1_s1 a=0.1  ep2 ret    770.6 succ 0 frac 0.0 (21s)
+    865s [549/1080] mw-push        D1z      a=0.1  ep3 ret   1768.8 succ 1 frac 0.032 (6s)
+    866s [550/1080] mw-push        D3z      a=0.1  ep3 ret   1772.6 succ 1 frac 0.042 (6s)
+    867s [551/1080] cheetah-run    Ddir1_s2 a=0.1  ep2 ret    542.0 succ 0 frac 0.0 (20s)
+    867s [552/1080] mw-push        Dfix1_s0 a=0.1  ep3 ret   1569.8 succ 0 frac 0.07 (4s)
+    867s [553/1080] mw-push        Dfix1_s1 a=0.1  ep3 ret   1772.3 succ 1 frac 0.027 (4s)
+    868s [554/1080] mw-push        Dfix1_s2 a=0.1  ep3 ret   1776.9 succ 1 frac 0.031 (4s)
+    868s [555/1080] mw-push        Dfix3_s0 a=0.1  ep3 ret   1775.3 succ 1 frac 0.07 (4s)
+    869s [556/1080] mw-push        Dfix3_s1 a=0.1  ep3 ret   1770.0 succ 1 frac 0.025 (4s)
+    870s [557/1080] mw-push        Dfix3_s2 a=0.1  ep3 ret   1778.0 succ 1 frac 0.028 (4s)
+    871s [558/1080] mw-push        Ddir1_s0 a=0.1  ep3 ret   1776.0 succ 1 frac 0.0 (4s)
+    871s [559/1080] mw-push        Ddir1_s1 a=0.1  ep3 ret   1771.5 succ 1 frac 0.0 (4s)
+    872s [560/1080] mw-push        Ddir1_s2 a=0.1  ep3 ret   1721.4 succ 1 frac 0.0 (4s)
+    873s [561/1080] mw-pick-place  B        a=0.1  ep3 ret   1566.2 succ 1 frac 0.542 (5s)
+    873s [562/1080] mw-pick-place  A        a=0.1  ep3 ret   1634.8 succ 1 frac 0.539 (5s)
+    875s [563/1080] mw-pick-place  D1z      a=0.1  ep3 ret   1637.9 succ 1 frac 0.033 (6s)
+    875s [564/1080] mw-pick-place  Dfix1_s0 a=0.1  ep3 ret   1651.0 succ 1 frac 0.072 (4s)
+    876s [565/1080] mw-pick-place  Dfix1_s1 a=0.1  ep3 ret   1665.2 succ 1 frac 0.073 (4s)
+    876s [566/1080] mw-pick-place  Dfix1_s2 a=0.1  ep3 ret   1640.6 succ 1 frac 0.198 (4s)
+    876s [567/1080] mw-pick-place  D3z      a=0.1  ep3 ret   1644.3 succ 1 frac 0.055 (6s)
+    878s [568/1080] mw-pick-place  Dfix3_s0 a=0.1  ep3 ret   1556.0 succ 1 frac 0.069 (4s)
+    878s [569/1080] mw-pick-place  Dfix3_s1 a=0.1  ep3 ret   1666.3 succ 1 frac 0.073 (4s)
+    879s [570/1080] mw-pick-place  Dfix3_s2 a=0.1  ep3 ret   1634.8 succ 1 frac 0.198 (4s)
+    879s [571/1080] mw-pick-place  Ddir1_s0 a=0.1  ep3 ret   1666.2 succ 1 frac 0.0 (4s)
+    880s [572/1080] mw-pick-place  Ddir1_s1 a=0.1  ep3 ret      8.1 succ 0 frac 0.0 (4s)
+    880s [573/1080] mw-pick-place  Ddir1_s2 a=0.1  ep3 ret   1641.8 succ 1 frac 0.0 (4s)
+    899s [574/1080] cheetah-run    Dfix1_s0 a=0.1  ep3 ret    465.2 succ 0 frac 0.043 (20s)
+    901s [575/1080] cheetah-run    A        a=0.1  ep3 ret    435.6 succ 0 frac 0.371 (25s)
+    902s [576/1080] cheetah-run    Dfix1_s2 a=0.1  ep3 ret    557.4 succ 0 frac 0.051 (21s)
+    902s [577/1080] cheetah-run    Dfix1_s1 a=0.1  ep3 ret    170.7 succ 0 frac 0.056 (21s)
+    904s [578/1080] cheetah-run    B        a=0.1  ep3 ret    305.1 succ 0 frac 0.37 (26s)
+    908s [579/1080] cheetah-run    D3z      a=0.1  ep3 ret    774.3 succ 0 frac 0.033 (29s)
+    909s [580/1080] cheetah-run    D1z      a=0.1  ep3 ret    778.6 succ 0 frac 0.025 (32s)
+    915s [581/1080] mw-push        A        a=0.1  ep4 ret   1788.2 succ 1 frac 0.524 (6s)
+    919s [582/1080] cheetah-run    Dfix3_s0 a=0.1  ep3 ret    241.1 succ 0 frac 0.047 (20s)
+    921s [583/1080] mw-push        B        a=0.1  ep4 ret   1788.2 succ 1 frac 0.52 (6s)
+    921s [584/1080] cheetah-run    Dfix3_s1 a=0.1  ep3 ret    192.5 succ 0 frac 0.06 (20s)
+    923s [585/1080] cheetah-run    Ddir1_s0 a=0.1  ep3 ret    561.5 succ 0 frac 0.0 (21s)
+    923s [586/1080] cheetah-run    Dfix3_s2 a=0.1  ep3 ret    585.7 succ 0 frac 0.044 (22s)
+    925s [587/1080] cheetah-run    Ddir1_s1 a=0.1  ep3 ret     43.6 succ 0 frac 0.0 (21s)
+    925s [588/1080] mw-push        D1z      a=0.1  ep4 ret   1789.7 succ 1 frac 0.032 (6s)
+    925s [589/1080] mw-push        Dfix1_s0 a=0.1  ep4 ret     81.0 succ 0 frac 0.07 (4s)
+    927s [590/1080] mw-push        Dfix1_s1 a=0.1  ep4 ret     75.3 succ 0 frac 0.027 (4s)
+    927s [591/1080] cheetah-run    Ddir1_s2 a=0.1  ep3 ret    600.2 succ 0 frac 0.0 (20s)
+    927s [592/1080] mw-push        D3z      a=0.1  ep4 ret   1785.7 succ 1 frac 0.043 (7s)
+    928s [593/1080] mw-push        Dfix1_s2 a=0.1  ep4 ret   1791.0 succ 1 frac 0.031 (4s)
+    929s [594/1080] mw-push        Dfix3_s1 a=0.1  ep4 ret   1680.7 succ 1 frac 0.025 (4s)
+    929s [595/1080] mw-push        Dfix3_s2 a=0.1  ep4 ret   1792.3 succ 1 frac 0.028 (4s)
+    930s [596/1080] mw-push        Dfix3_s0 a=0.1  ep4 ret   1668.3 succ 1 frac 0.07 (4s)
+    931s [597/1080] mw-push        Ddir1_s1 a=0.1  ep4 ret   1791.3 succ 1 frac 0.0 (4s)
+    931s [598/1080] mw-push        Ddir1_s0 a=0.1  ep4 ret   1794.3 succ 1 frac 0.0 (4s)
+    932s [599/1080] mw-push        Ddir1_s2 a=0.1  ep4 ret   1788.7 succ 1 frac 0.0 (4s)
+    933s [600/1080] mw-pick-place  A        a=0.1  ep4 ret   1694.2 succ 1 frac 0.506 (5s)
+    934s [601/1080] mw-pick-place  B        a=0.1  ep4 ret   1660.1 succ 1 frac 0.507 (5s)
+    935s [602/1080] mw-pick-place  D1z      a=0.1  ep4 ret   1687.0 succ 1 frac 0.029 (6s)
+    935s [603/1080] mw-pick-place  Dfix1_s0 a=0.1  ep4 ret   1656.4 succ 1 frac 0.072 (4s)
+    936s [604/1080] mw-pick-place  D3z      a=0.1  ep4 ret   1676.4 succ 1 frac 0.049 (6s)
+    936s [605/1080] mw-pick-place  Dfix1_s1 a=0.1  ep4 ret   1713.0 succ 1 frac 0.073 (4s)
+    936s [606/1080] mw-pick-place  Dfix1_s2 a=0.1  ep4 ret   1679.6 succ 1 frac 0.198 (4s)
+    937s [607/1080] mw-pick-place  Dfix3_s0 a=0.1  ep4 ret      7.2 succ 0 frac 0.069 (4s)
+    938s [608/1080] mw-pick-place  Dfix3_s1 a=0.1  ep4 ret   1712.4 succ 1 frac 0.073 (4s)
+    939s [609/1080] mw-pick-place  Dfix3_s2 a=0.1  ep4 ret   1672.3 succ 1 frac 0.198 (4s)
+    939s [610/1080] mw-pick-place  Ddir1_s0 a=0.1  ep4 ret   1690.9 succ 1 frac 0.0 (4s)
+    940s [611/1080] mw-pick-place  Ddir1_s1 a=0.1  ep4 ret   1688.4 succ 1 frac 0.0 (4s)
+    940s [612/1080] mw-pick-place  Ddir1_s2 a=0.1  ep4 ret   1686.6 succ 1 frac 0.0 (4s)
+    959s [613/1080] cheetah-run    Dfix1_s0 a=0.1  ep4 ret    292.0 succ 0 frac 0.043 (20s)
+    962s [614/1080] cheetah-run    Dfix1_s1 a=0.1  ep4 ret    224.3 succ 0 frac 0.056 (21s)
+    962s [615/1080] cheetah-run    Dfix1_s2 a=0.1  ep4 ret    435.4 succ 0 frac 0.051 (22s)
+    963s [616/1080] cheetah-run    A        a=0.1  ep4 ret    411.5 succ 0 frac 0.37 (27s)
+    964s [617/1080] cheetah-run    B        a=0.1  ep4 ret    421.0 succ 0 frac 0.381 (26s)
+    968s [618/1080] cheetah-run    D1z      a=0.1  ep4 ret    751.9 succ 0 frac 0.026 (29s)
+    969s [619/1080] cheetah-run    D3z      a=0.1  ep4 ret    773.5 succ 0 frac 0.033 (29s)
+    974s [620/1080] mw-push        A        a=0.1  ep5 ret     76.4 succ 0 frac 0.462 (5s)
+    979s [621/1080] mw-push        B        a=0.1  ep5 ret   1760.8 succ 1 frac 0.518 (5s)
+    979s [622/1080] cheetah-run    Dfix3_s0 a=0.1  ep4 ret    498.0 succ 0 frac 0.047 (20s)
+    983s [623/1080] cheetah-run    Dfix3_s1 a=0.1  ep4 ret    247.7 succ 0 frac 0.06 (22s)
+    984s [624/1080] cheetah-run    Dfix3_s2 a=0.1  ep4 ret    412.0 succ 0 frac 0.044 (22s)
+    984s [625/1080] cheetah-run    Ddir1_s0 a=0.1  ep4 ret    489.8 succ 0 frac 0.0 (21s)
+    985s [626/1080] cheetah-run    Ddir1_s1 a=0.1  ep4 ret    702.0 succ 0 frac 0.0 (21s)
+    985s [627/1080] mw-push        D1z      a=0.1  ep5 ret   1784.0 succ 1 frac 0.031 (6s)
+    985s [628/1080] mw-push        D3z      a=0.1  ep5 ret   1759.4 succ 1 frac 0.042 (6s)
+    987s [629/1080] cheetah-run    Ddir1_s2 a=0.1  ep4 ret    270.3 succ 0 frac 0.0 (20s)
+    988s [630/1080] mw-push        Dfix1_s0 a=0.1  ep5 ret   1788.6 succ 1 frac 0.07 (4s)
+    988s [631/1080] mw-push        Dfix1_s1 a=0.1  ep5 ret   1783.0 succ 1 frac 0.027 (4s)
+    988s [632/1080] mw-push        Dfix1_s2 a=0.1  ep5 ret   1793.4 succ 1 frac 0.031 (4s)
+    989s [633/1080] mw-push        Dfix3_s0 a=0.1  ep5 ret   1788.3 succ 1 frac 0.07 (4s)
+    990s [634/1080] mw-push        Dfix3_s1 a=0.1  ep5 ret   1791.7 succ 1 frac 0.025 (4s)
+    990s [635/1080] mw-push        Dfix3_s2 a=0.1  ep5 ret   1788.2 succ 1 frac 0.028 (4s)
+    991s [636/1080] mw-push        Ddir1_s0 a=0.1  ep5 ret   1721.2 succ 1 frac 0.0 (4s)
+    992s [637/1080] mw-push        Ddir1_s1 a=0.1  ep5 ret   1786.5 succ 1 frac 0.0 (4s)
+    992s [638/1080] mw-push        Ddir1_s2 a=0.1  ep5 ret   1661.8 succ 1 frac 0.0 (4s)
+    994s [639/1080] mw-pick-place  A        a=0.1  ep5 ret   1690.5 succ 1 frac 0.524 (5s)
+    994s [640/1080] mw-pick-place  B        a=0.1  ep5 ret     24.4 succ 0 frac 0.439 (5s)
+    995s [641/1080] mw-pick-place  D1z      a=0.1  ep5 ret   1684.7 succ 1 frac 0.031 (6s)
+    995s [642/1080] mw-pick-place  Dfix1_s0 a=0.1  ep5 ret   1681.1 succ 1 frac 0.072 (4s)
+    995s [643/1080] mw-pick-place  D3z      a=0.1  ep5 ret   1673.1 succ 1 frac 0.053 (6s)
+    996s [644/1080] mw-pick-place  Dfix1_s1 a=0.1  ep5 ret   1702.2 succ 1 frac 0.073 (4s)
+    997s [645/1080] mw-pick-place  Dfix1_s2 a=0.1  ep5 ret   1698.5 succ 1 frac 0.198 (4s)
+    998s [646/1080] mw-pick-place  Dfix3_s0 a=0.1  ep5 ret   1677.1 succ 1 frac 0.069 (4s)
+    999s [647/1080] mw-pick-place  Dfix3_s1 a=0.1  ep5 ret   1707.8 succ 1 frac 0.073 (4s)
+    999s [648/1080] mw-pick-place  Ddir1_s0 a=0.1  ep5 ret   1702.4 succ 1 frac 0.0 (4s)
+    999s [649/1080] mw-pick-place  Ddir1_s1 a=0.1  ep5 ret   1637.5 succ 1 frac 0.0 (4s)
+   1000s [650/1080] mw-pick-place  Dfix3_s2 a=0.1  ep5 ret   1697.2 succ 1 frac 0.198 (4s)
+   1001s [651/1080] mw-pick-place  Ddir1_s2 a=0.1  ep5 ret   1451.1 succ 1 frac 0.0 (4s)
+   1019s [652/1080] cheetah-run    Dfix1_s0 a=0.1  ep5 ret    469.5 succ 0 frac 0.043 (20s)
+   1019s [653/1080] cheetah-run    Dfix1_s1 a=0.1  ep5 ret    272.5 succ 0 frac 0.056 (20s)
+   1022s [654/1080] cheetah-run    Dfix1_s2 a=0.1  ep5 ret    302.9 succ 0 frac 0.051 (21s)
+   1023s [655/1080] cheetah-run    A        a=0.1  ep5 ret    539.9 succ 0 frac 0.381 (27s)
+   1024s [656/1080] cheetah-run    B        a=0.1  ep5 ret    340.2 succ 0 frac 0.377 (26s)
+   1029s [657/1080] cheetah-run    D3z      a=0.1  ep5 ret    751.0 succ 0 frac 0.033 (29s)
+   1030s [658/1080] cheetah-run    D1z      a=0.1  ep5 ret    719.8 succ 0 frac 0.025 (32s)
+   1036s [659/1080] mw-push        A        a=0.1  ep6 ret   1711.8 succ 1 frac 0.516 (6s)
+   1040s [660/1080] cheetah-run    Dfix3_s0 a=0.1  ep5 ret    380.0 succ 0 frac 0.047 (20s)
+   1040s [661/1080] cheetah-run    Dfix3_s1 a=0.1  ep5 ret     86.4 succ 0 frac 0.06 (20s)
+   1042s [662/1080] mw-push        B        a=0.1  ep6 ret   1766.9 succ 1 frac 0.515 (6s)
+   1044s [663/1080] cheetah-run    Dfix3_s2 a=0.1  ep5 ret    701.6 succ 0 frac 0.044 (22s)
+   1044s [664/1080] cheetah-run    Ddir1_s0 a=0.1  ep5 ret    195.8 succ 0 frac 0.0 (21s)
+   1045s [665/1080] cheetah-run    Ddir1_s1 a=0.1  ep5 ret    591.9 succ 0 frac 0.0 (21s)
+   1046s [666/1080] mw-push        D1z      a=0.1  ep6 ret   1765.6 succ 1 frac 0.032 (6s)
+   1046s [667/1080] mw-push        D3z      a=0.1  ep6 ret   1771.1 succ 1 frac 0.043 (6s)
+   1046s [668/1080] mw-push        Dfix1_s0 a=0.1  ep6 ret   1771.5 succ 1 frac 0.07 (4s)
+   1048s [669/1080] cheetah-run    Ddir1_s2 a=0.1  ep5 ret    537.5 succ 0 frac 0.0 (20s)
+   1048s [670/1080] mw-push        Dfix1_s1 a=0.1  ep6 ret   1774.5 succ 1 frac 0.027 (4s)
+   1049s [671/1080] mw-push        Dfix1_s2 a=0.1  ep6 ret   1764.6 succ 1 frac 0.031 (4s)
+   1050s [672/1080] mw-push        Dfix3_s0 a=0.1  ep6 ret   1765.3 succ 1 frac 0.07 (4s)
+   1050s [673/1080] mw-push        Dfix3_s1 a=0.1  ep6 ret   1775.8 succ 1 frac 0.025 (4s)
+   1050s [674/1080] mw-push        Dfix3_s2 a=0.1  ep6 ret   1763.6 succ 1 frac 0.028 (4s)
+   1051s [675/1080] mw-push        Ddir1_s0 a=0.1  ep6 ret   1774.7 succ 1 frac 0.0 (4s)
+   1052s [676/1080] mw-push        Ddir1_s1 a=0.1  ep6 ret   1772.8 succ 1 frac 0.0 (4s)
+   1053s [677/1080] mw-push        Ddir1_s2 a=0.1  ep6 ret   1773.9 succ 1 frac 0.0 (4s)
+   1054s [678/1080] mw-pick-place  A        a=0.1  ep6 ret   1636.0 succ 1 frac 0.549 (5s)
+   1055s [679/1080] mw-pick-place  Dfix1_s0 a=0.1  ep6 ret   1615.7 succ 1 frac 0.072 (4s)
+   1055s [680/1080] mw-pick-place  B        a=0.1  ep6 ret   1552.1 succ 1 frac 0.548 (5s)
+   1056s [681/1080] mw-pick-place  D1z      a=0.1  ep6 ret   1637.8 succ 1 frac 0.034 (6s)
+   1056s [682/1080] mw-pick-place  D3z      a=0.1  ep6 ret   1638.2 succ 1 frac 0.058 (6s)
+   1056s [683/1080] mw-pick-place  Dfix1_s1 a=0.1  ep6 ret   1653.9 succ 1 frac 0.073 (4s)
+   1057s [684/1080] mw-pick-place  Dfix1_s2 a=0.1  ep6 ret    117.9 succ 0 frac 0.198 (4s)
+   1058s [685/1080] mw-pick-place  Dfix3_s0 a=0.1  ep6 ret     77.6 succ 0 frac 0.069 (4s)
+   1059s [686/1080] mw-pick-place  Dfix3_s2 a=0.1  ep6 ret   1620.1 succ 1 frac 0.198 (4s)
+   1059s [687/1080] mw-pick-place  Dfix3_s1 a=0.1  ep6 ret   1639.9 succ 1 frac 0.073 (5s)
+   1060s [688/1080] mw-pick-place  Ddir1_s0 a=0.1  ep6 ret   1662.2 succ 1 frac 0.0 (4s)
+   1060s [689/1080] mw-pick-place  Ddir1_s1 a=0.1  ep6 ret     83.2 succ 0 frac 0.0 (4s)
+   1060s [690/1080] mw-pick-place  Ddir1_s2 a=0.1  ep6 ret   1628.3 succ 1 frac 0.0 (4s)
+   1080s [691/1080] cheetah-run    Dfix1_s0 a=0.1  ep6 ret    197.3 succ 0 frac 0.043 (20s)
+   1080s [692/1080] cheetah-run    Dfix1_s1 a=0.1  ep6 ret    463.5 succ 0 frac 0.056 (20s)
+   1080s [693/1080] cheetah-run    Dfix1_s2 a=0.1  ep6 ret    565.7 succ 0 frac 0.051 (20s)
+   1084s [694/1080] cheetah-run    A        a=0.1  ep6 ret    639.0 succ 0 frac 0.386 (27s)
+   1085s [695/1080] cheetah-run    B        a=0.1  ep6 ret    653.1 succ 0 frac 0.404 (26s)
+   1091s [696/1080] cheetah-run    D1z      a=0.1  ep6 ret    718.9 succ 0 frac 0.025 (32s)
+   1091s [697/1080] cheetah-run    D3z      a=0.1  ep6 ret    703.2 succ 0 frac 0.033 (32s)
+   1097s [698/1080] mw-push        A        a=0.1  ep7 ret   1772.6 succ 1 frac 0.522 (6s)
+   1100s [699/1080] cheetah-run    Dfix3_s0 a=0.1  ep6 ret    105.8 succ 0 frac 0.047 (20s)
+   1100s [700/1080] cheetah-run    Dfix3_s1 a=0.1  ep6 ret    204.6 succ 0 frac 0.06 (20s)
+   1100s [701/1080] cheetah-run    Dfix3_s2 a=0.1  ep6 ret    379.7 succ 0 frac 0.044 (20s)
+   1102s [702/1080] mw-push        B        a=0.1  ep7 ret   1794.7 succ 1 frac 0.519 (6s)
+   1105s [703/1080] cheetah-run    Ddir1_s0 a=0.1  ep6 ret    489.7 succ 0 frac 0.0 (21s)
+   1105s [704/1080] mw-push        Dfix1_s0 a=0.1  ep7 ret   1745.8 succ 1 frac 0.07 (4s)
+   1106s [705/1080] mw-push        D1z      a=0.1  ep7 ret   1797.9 succ 1 frac 0.032 (6s)
+   1106s [706/1080] cheetah-run    Ddir1_s1 a=0.1  ep6 ret    750.7 succ 0 frac 0.0 (21s)
+   1106s [707/1080] mw-push        D3z      a=0.1  ep7 ret   1797.7 succ 1 frac 0.043 (6s)
+   1107s [708/1080] mw-push        Dfix1_s1 a=0.1  ep7 ret   1800.0 succ 1 frac 0.027 (4s)
+   1109s [709/1080] mw-push        Dfix3_s0 a=0.1  ep7 ret   1743.7 succ 1 frac 0.07 (4s)
+   1109s [710/1080] mw-push        Dfix1_s2 a=0.1  ep7 ret   1796.1 succ 1 frac 0.031 (4s)
+   1110s [711/1080] mw-push        Dfix3_s1 a=0.1  ep7 ret   1800.8 succ 1 frac 0.025 (4s)
+   1110s [712/1080] mw-push        Ddir1_s0 a=0.1  ep7 ret   1806.3 succ 1 frac 0.0 (4s)
+   1110s [713/1080] mw-push        Dfix3_s2 a=0.1  ep7 ret   1803.9 succ 1 frac 0.028 (4s)
+   1111s [714/1080] mw-push        Ddir1_s1 a=0.1  ep7 ret   1796.0 succ 1 frac 0.0 (4s)
+   1112s [715/1080] cheetah-run    Ddir1_s2 a=0.1  ep6 ret    328.2 succ 0 frac 0.0 (21s)
+   1113s [716/1080] mw-push        Ddir1_s2 a=0.1  ep7 ret   1753.4 succ 1 frac 0.0 (4s)
+   1114s [717/1080] mw-pick-place  A        a=0.1  ep7 ret   1721.0 succ 1 frac 0.53 (5s)
+   1115s [718/1080] mw-pick-place  B        a=0.1  ep7 ret   1488.7 succ 1 frac 0.533 (5s)
+   1116s [719/1080] mw-pick-place  Dfix1_s0 a=0.1  ep7 ret   1719.3 succ 1 frac 0.072 (4s)
+   1116s [720/1080] mw-pick-place  D1z      a=0.1  ep7 ret   1707.7 succ 1 frac 0.032 (6s)
+   1116s [721/1080] mw-pick-place  Dfix1_s1 a=0.1  ep7 ret   1727.5 succ 1 frac 0.073 (4s)
+   1116s [722/1080] mw-pick-place  D3z      a=0.1  ep7 ret   1711.9 succ 1 frac 0.053 (6s)
+   1117s [723/1080] mw-pick-place  Dfix1_s2 a=0.1  ep7 ret   1677.0 succ 1 frac 0.198 (4s)
+   1119s [724/1080] mw-pick-place  Dfix3_s0 a=0.1  ep7 ret   1719.0 succ 1 frac 0.069 (4s)
+   1119s [725/1080] mw-pick-place  Dfix3_s1 a=0.1  ep7 ret   1725.7 succ 1 frac 0.073 (4s)
+   1120s [726/1080] mw-pick-place  Ddir1_s0 a=0.1  ep7 ret   1724.7 succ 1 frac 0.0 (4s)
+   1120s [727/1080] mw-pick-place  Dfix3_s2 a=0.1  ep7 ret   1677.2 succ 1 frac 0.198 (4s)
+   1121s [728/1080] mw-pick-place  Ddir1_s1 a=0.1  ep7 ret   1684.9 succ 1 frac 0.0 (4s)
+   1121s [729/1080] mw-pick-place  Ddir1_s2 a=0.1  ep7 ret   1726.7 succ 1 frac 0.0 (4s)
+   1141s [730/1080] cheetah-run    Dfix1_s0 a=0.1  ep7 ret    343.8 succ 0 frac 0.043 (21s)
+   1141s [731/1080] cheetah-run    A        a=0.1  ep7 ret    393.6 succ 0 frac 0.371 (25s)
+   1142s [732/1080] cheetah-run    Dfix1_s1 a=0.1  ep7 ret    145.7 succ 0 frac 0.056 (21s)
+   1142s [733/1080] cheetah-run    Dfix1_s2 a=0.1  ep7 ret    533.5 succ 0 frac 0.051 (21s)
+   1145s [734/1080] cheetah-run    B        a=0.1  ep7 ret    582.9 succ 0 frac 0.394 (26s)
+   1148s [735/1080] cheetah-run    D1z      a=0.1  ep7 ret    724.4 succ 0 frac 0.025 (29s)
+   1149s [736/1080] cheetah-run    D3z      a=0.1  ep7 ret    685.0 succ 0 frac 0.032 (29s)
+   1154s [737/1080] mw-push        A        a=0.1  ep8 ret   1711.3 succ 1 frac 0.51 (5s)
+   1160s [738/1080] mw-push        B        a=0.1  ep8 ret   1747.1 succ 1 frac 0.511 (5s)
+   1162s [739/1080] cheetah-run    Dfix3_s1 a=0.1  ep7 ret    234.2 succ 0 frac 0.06 (20s)
+   1163s [740/1080] cheetah-run    Dfix3_s0 a=0.1  ep7 ret    107.4 succ 0 frac 0.047 (22s)
+   1164s [741/1080] cheetah-run    Ddir1_s0 a=0.1  ep7 ret    646.1 succ 0 frac 0.0 (21s)
+   1164s [742/1080] cheetah-run    Dfix3_s2 a=0.1  ep7 ret    437.7 succ 0 frac 0.044 (22s)
+   1166s [743/1080] mw-push        D1z      a=0.1  ep8 ret   1632.9 succ 1 frac 0.03 (6s)
+   1166s [744/1080] cheetah-run    Ddir1_s1 a=0.1  ep7 ret    752.2 succ 0 frac 0.0 (21s)
+   1168s [745/1080] mw-push        Dfix1_s0 a=0.1  ep8 ret   1792.1 succ 1 frac 0.07 (4s)
+   1168s [746/1080] mw-push        D3z      a=0.1  ep8 ret   1779.2 succ 1 frac 0.042 (6s)
+   1168s [747/1080] mw-push        Dfix1_s1 a=0.1  ep8 ret   1786.6 succ 1 frac 0.027 (4s)
+   1168s [748/1080] cheetah-run    Ddir1_s2 a=0.1  ep7 ret    571.4 succ 0 frac 0.0 (20s)
+   1168s [749/1080] mw-push        Dfix1_s2 a=0.1  ep8 ret   1789.0 succ 1 frac 0.031 (4s)
+   1170s [750/1080] mw-push        Dfix3_s0 a=0.1  ep8 ret   1789.0 succ 1 frac 0.07 (4s)
+   1170s [751/1080] mw-push        Dfix3_s1 a=0.1  ep8 ret   1791.3 succ 1 frac 0.025 (4s)
+   1172s [752/1080] mw-push        Ddir1_s0 a=0.1  ep8 ret   1792.2 succ 1 frac 0.0 (4s)
+   1172s [753/1080] mw-push        Dfix3_s2 a=0.1  ep8 ret   1790.9 succ 1 frac 0.028 (4s)
+   1172s [754/1080] mw-push        Ddir1_s2 a=0.1  ep8 ret   1788.5 succ 1 frac 0.0 (4s)
+   1172s [755/1080] mw-push        Ddir1_s1 a=0.1  ep8 ret   1778.6 succ 1 frac 0.0 (4s)
+   1174s [756/1080] mw-pick-place  A        a=0.1  ep8 ret   1674.1 succ 1 frac 0.528 (5s)
+   1175s [757/1080] mw-pick-place  B        a=0.1  ep8 ret   1664.7 succ 1 frac 0.536 (5s)
+   1176s [758/1080] mw-pick-place  Dfix1_s1 a=0.1  ep8 ret   1694.9 succ 1 frac 0.073 (4s)
+   1176s [759/1080] mw-pick-place  Dfix1_s0 a=0.1  ep8 ret   1696.9 succ 1 frac 0.072 (4s)
+   1177s [760/1080] mw-pick-place  Dfix1_s2 a=0.1  ep8 ret   1674.6 succ 1 frac 0.198 (4s)
+   1177s [761/1080] mw-pick-place  D1z      a=0.1  ep8 ret   1671.9 succ 1 frac 0.032 (6s)
+   1178s [762/1080] mw-pick-place  D3z      a=0.1  ep8 ret   1665.1 succ 1 frac 0.053 (6s)
+   1178s [763/1080] mw-pick-place  Dfix3_s0 a=0.1  ep8 ret   1679.4 succ 1 frac 0.069 (4s)
+   1179s [764/1080] mw-pick-place  Dfix3_s1 a=0.1  ep8 ret   1695.2 succ 1 frac 0.073 (4s)
+   1180s [765/1080] mw-pick-place  Dfix3_s2 a=0.1  ep8 ret   1676.3 succ 1 frac 0.198 (4s)
+   1181s [766/1080] mw-pick-place  Ddir1_s0 a=0.1  ep8 ret    127.4 succ 0 frac 0.0 (4s)
+   1181s [767/1080] mw-pick-place  Ddir1_s1 a=0.1  ep8 ret   1694.3 succ 1 frac 0.0 (4s)
+   1181s [768/1080] mw-pick-place  Ddir1_s2 a=0.1  ep8 ret   1582.6 succ 1 frac 0.0 (4s)
+   1202s [769/1080] cheetah-run    Dfix1_s0 a=0.1  ep8 ret    214.5 succ 0 frac 0.043 (21s)
+   1202s [770/1080] cheetah-run    A        a=0.1  ep8 ret    543.5 succ 0 frac 0.381 (25s)
+   1202s [771/1080] cheetah-run    Dfix1_s2 a=0.1  ep8 ret    424.9 succ 0 frac 0.051 (21s)
+   1202s [772/1080] cheetah-run    Dfix1_s1 a=0.1  ep8 ret    265.7 succ 0 frac 0.056 (22s)
+   1204s [773/1080] cheetah-run    B        a=0.1  ep8 ret    621.3 succ 0 frac 0.399 (26s)
+   1208s [774/1080] cheetah-run    D1z      a=0.1  ep8 ret    692.8 succ 0 frac 0.025 (29s)
+   1209s [775/1080] cheetah-run    D3z      a=0.1  ep8 ret    679.8 succ 0 frac 0.032 (29s)
+   1215s [776/1080] mw-push        A        a=0.1  ep9 ret   1757.4 succ 1 frac 0.514 (5s)
+   1220s [777/1080] mw-push        B        a=0.1  ep9 ret   1765.4 succ 1 frac 0.518 (5s)
+   1223s [778/1080] cheetah-run    Dfix3_s1 a=0.1  ep8 ret    158.5 succ 0 frac 0.06 (20s)
+   1224s [779/1080] cheetah-run    Dfix3_s0 a=0.1  ep8 ret    192.4 succ 0 frac 0.047 (22s)
+   1224s [780/1080] cheetah-run    Ddir1_s0 a=0.1  ep8 ret    572.0 succ 0 frac 0.0 (21s)
+   1224s [781/1080] cheetah-run    Dfix3_s2 a=0.1  ep8 ret    108.2 succ 0 frac 0.044 (22s)
+   1225s [782/1080] cheetah-run    Ddir1_s1 a=0.1  ep8 ret    613.6 succ 0 frac 0.0 (21s)
+   1226s [783/1080] mw-push        D1z      a=0.1  ep9 ret   1760.9 succ 1 frac 0.032 (6s)
+   1228s [784/1080] cheetah-run    Ddir1_s2 a=0.1  ep8 ret    615.4 succ 0 frac 0.0 (20s)
+   1228s [785/1080] mw-push        Dfix1_s0 a=0.1  ep9 ret   1768.9 succ 1 frac 0.07 (4s)
+   1228s [786/1080] mw-push        Dfix1_s1 a=0.1  ep9 ret   1768.5 succ 1 frac 0.027 (4s)
+   1229s [787/1080] mw-push        D3z      a=0.1  ep9 ret   1760.2 succ 1 frac 0.043 (6s)
+   1229s [788/1080] mw-push        Dfix1_s2 a=0.1  ep9 ret   1765.5 succ 1 frac 0.031 (4s)
+   1230s [789/1080] mw-push        Dfix3_s0 a=0.1  ep9 ret   1769.0 succ 1 frac 0.07 (4s)
+   1230s [790/1080] mw-push        Dfix3_s1 a=0.1  ep9 ret   1772.5 succ 1 frac 0.025 (4s)
+   1232s [791/1080] mw-push        Dfix3_s2 a=0.1  ep9 ret   1764.9 succ 1 frac 0.028 (4s)
+   1233s [792/1080] mw-push        Ddir1_s1 a=0.1  ep9 ret   1770.9 succ 1 frac 0.0 (4s)
+   1233s [793/1080] mw-push        Ddir1_s0 a=0.1  ep9 ret   1772.0 succ 1 frac 0.0 (4s)
+   1233s [794/1080] mw-push        Ddir1_s2 a=0.1  ep9 ret   1772.5 succ 1 frac 0.0 (4s)
+   1234s [795/1080] mw-pick-place  A        a=0.1  ep9 ret   1596.2 succ 1 frac 0.536 (5s)
+   1235s [796/1080] mw-pick-place  B        a=0.1  ep9 ret   1628.6 succ 1 frac 0.535 (5s)
+   1236s [797/1080] mw-pick-place  D1z      a=0.1  ep9 ret   1642.5 succ 1 frac 0.032 (6s)
+   1237s [798/1080] mw-pick-place  Dfix1_s2 a=0.1  ep9 ret   1650.7 succ 1 frac 0.198 (4s)
+   1237s [799/1080] mw-pick-place  Dfix1_s1 a=0.1  ep9 ret   1595.4 succ 1 frac 0.073 (4s)
+   1237s [800/1080] mw-pick-place  Dfix1_s0 a=0.1  ep9 ret   1647.9 succ 1 frac 0.072 (4s)
+   1238s [801/1080] mw-pick-place  D3z      a=0.1  ep9 ret   1634.7 succ 1 frac 0.054 (6s)
+   1238s [802/1080] mw-pick-place  Dfix3_s0 a=0.1  ep9 ret    956.7 succ 0 frac 0.069 (4s)
+   1239s [803/1080] mw-pick-place  Dfix3_s1 a=0.1  ep9 ret   1653.4 succ 1 frac 0.073 (4s)
+   1240s [804/1080] mw-pick-place  Dfix3_s2 a=0.1  ep9 ret   1651.4 succ 1 frac 0.198 (4s)
+   1241s [805/1080] mw-pick-place  Ddir1_s0 a=0.1  ep9 ret   1654.6 succ 1 frac 0.0 (4s)
+   1241s [806/1080] mw-pick-place  Ddir1_s1 a=0.1  ep9 ret     30.0 succ 0 frac 0.0 (4s)
+   1241s [807/1080] mw-pick-place  Ddir1_s2 a=0.1  ep9 ret   1552.0 succ 1 frac 0.0 (4s)
+   1260s [808/1080] cheetah-run    Dfix1_s0 a=0.1  ep9 ret    263.2 succ 0 frac 0.043 (20s)
+   1262s [809/1080] cheetah-run    A        a=0.1  ep9 ret    584.3 succ 0 frac 0.384 (25s)
+   1263s [810/1080] cheetah-run    Dfix1_s1 a=0.1  ep9 ret    181.3 succ 0 frac 0.056 (21s)
+   1263s [811/1080] cheetah-run    Dfix1_s2 a=0.1  ep9 ret    371.6 succ 0 frac 0.051 (21s)
+   1265s [812/1080] cheetah-run    B        a=0.1  ep9 ret    119.9 succ 0 frac 0.35 (26s)
+   1269s [813/1080] cheetah-run    D3z      a=0.1  ep9 ret    735.0 succ 0 frac 0.033 (29s)
+   1271s [814/1080] cheetah-run    D1z      a=0.1  ep9 ret    770.5 succ 0 frac 0.025 (32s)
+   1281s [815/1080] cheetah-run    Dfix3_s0 a=0.1  ep9 ret    372.8 succ 0 frac 0.047 (20s)
+   1283s [816/1080] cheetah-run    Dfix3_s1 a=0.1  ep9 ret    198.8 succ 0 frac 0.06 (20s)
+   1284s [817/1080] cheetah-run    Ddir1_s0 a=0.1  ep9 ret    491.9 succ 0 frac 0.0 (21s)
+   1284s [818/1080] cheetah-run    Dfix3_s2 a=0.1  ep9 ret    546.5 succ 0 frac 0.044 (22s)
+   1286s [819/1080] cheetah-run    Ddir1_s1 a=0.1  ep9 ret    744.3 succ 0 frac 0.0 (21s)
+   1289s [820/1080] cheetah-run    Ddir1_s2 a=0.1  ep9 ret    427.5 succ 0 frac 0.0 (20s)
+Episode length: 500
+Discount factor: 0.99
+   1298s [821/1080] walker-walk    A        a=0.2  ep0 ret    523.9 succ 0 frac 0.63 (27s)
+   1305s [822/1080] walker-walk    B        a=0.2  ep0 ret    339.2 succ 0 frac 0.636 (24s)
+   1306s [823/1080] walker-walk    Dfix1_s0 a=0.2  ep0 ret    308.8 succ 0 frac 0.28 (22s)
+   1307s [824/1080] walker-walk    Dfix1_s1 a=0.2  ep0 ret    144.1 succ 0 frac 0.406 (21s)
+   1309s [825/1080] walker-walk    Dfix1_s2 a=0.2  ep0 ret    331.6 succ 0 frac 0.3 (20s)
+   1312s [826/1080] walker-walk    D1z      a=0.2  ep0 ret    598.5 succ 0 frac 0.242 (29s)
+   1316s [827/1080] walker-walk    D3z      a=0.2  ep0 ret    809.6 succ 0 frac 0.239 (32s)
+   1320s [828/1080] walker-walk    Dfix3_s0 a=0.2  ep0 ret    236.1 succ 0 frac 0.274 (22s)
+   1326s [829/1080] walker-walk    Dfix3_s1 a=0.2  ep0 ret    485.6 succ 0 frac 0.387 (20s)
+   1328s [830/1080] walker-walk    Dfix3_s2 a=0.2  ep0 ret    545.7 succ 0 frac 0.29 (22s)
+   1329s [831/1080] walker-walk    Ddir1_s0 a=0.2  ep0 ret    141.0 succ 0 frac 0.0 (21s)
+   1329s [832/1080] walker-walk    Ddir1_s1 a=0.2  ep0 ret    947.7 succ 0 frac 0.0 (20s)
+   1331s [833/1080] walker-walk    Ddir1_s2 a=0.2  ep0 ret    982.2 succ 0 frac 0.0 (20s)
+   1343s [834/1080] walker-walk    A        a=0.1  ep0 ret    992.3 succ 0 frac 0.375 (27s)
+   1346s [835/1080] walker-walk    B        a=0.1  ep0 ret    990.3 succ 0 frac 0.378 (27s)
+   1349s [836/1080] walker-walk    Dfix1_s1 a=0.1  ep0 ret    990.5 succ 0 frac 0.195 (20s)
+   1350s [837/1080] walker-walk    Dfix1_s0 a=0.1  ep0 ret    591.3 succ 0 frac 0.077 (21s)
+   1351s [838/1080] walker-walk    Dfix1_s2 a=0.1  ep0 ret    983.1 succ 0 frac 0.084 (20s)
+   1355s [839/1080] walker-walk    D1z      a=0.1  ep0 ret    987.1 succ 0 frac 0.087 (29s)
+   1360s [840/1080] walker-walk    D3z      a=0.1  ep0 ret    934.7 succ 0 frac 0.086 (32s)
+   1365s [841/1080] walker-walk    Dfix3_s0 a=0.1  ep0 ret    224.8 succ 0 frac 0.073 (22s)
+   1368s [842/1080] walker-walk    Dfix3_s1 a=0.1  ep0 ret    988.7 succ 0 frac 0.195 (22s)
+   1369s [843/1080] walker-walk    Dfix3_s2 a=0.1  ep0 ret    984.1 succ 0 frac 0.076 (20s)
+   1371s [844/1080] walker-walk    Ddir1_s0 a=0.1  ep0 ret    307.8 succ 0 frac 0.0 (21s)
+   1371s [845/1080] walker-walk    Ddir1_s1 a=0.1  ep0 ret    991.6 succ 0 frac 0.0 (20s)
+   1375s [846/1080] walker-walk    Ddir1_s2 a=0.1  ep0 ret    993.0 succ 0 frac 0.0 (20s)
+   1387s [847/1080] walker-walk    A        a=0.2  ep1 ret    341.4 succ 0 frac 0.63 (27s)
+   1391s [848/1080] walker-walk    B        a=0.2  ep1 ret    377.1 succ 0 frac 0.636 (26s)
+   1391s [849/1080] walker-walk    Dfix1_s1 a=0.2  ep1 ret    823.4 succ 0 frac 0.406 (20s)
+   1393s [850/1080] walker-walk    Dfix1_s0 a=0.2  ep1 ret    440.3 succ 0 frac 0.28 (21s)
+   1395s [851/1080] walker-walk    Dfix1_s2 a=0.2  ep1 ret    199.8 succ 0 frac 0.3 (20s)
+   1398s [852/1080] walker-walk    D3z      a=0.2  ep1 ret    885.6 succ 0 frac 0.239 (29s)
+   1400s [853/1080] walker-walk    D1z      a=0.2  ep1 ret    477.5 succ 0 frac 0.242 (32s)
+   1409s [854/1080] walker-walk    Dfix3_s0 a=0.2  ep1 ret    421.3 succ 0 frac 0.274 (22s)
+   1412s [855/1080] walker-walk    Dfix3_s2 a=0.2  ep1 ret    536.4 succ 0 frac 0.29 (20s)
+   1413s [856/1080] walker-walk    Dfix3_s1 a=0.2  ep1 ret    553.0 succ 0 frac 0.387 (22s)
+   1414s [857/1080] walker-walk    Ddir1_s0 a=0.2  ep1 ret    209.6 succ 0 frac 0.0 (21s)
+   1414s [858/1080] walker-walk    Ddir1_s1 a=0.2  ep1 ret    601.5 succ 0 frac 0.0 (20s)
+   1418s [859/1080] walker-walk    Ddir1_s2 a=0.2  ep1 ret    826.6 succ 0 frac 0.0 (20s)
+   1427s [860/1080] walker-walk    A        a=0.1  ep1 ret    981.3 succ 0 frac 0.375 (27s)
+   1434s [861/1080] walker-walk    Dfix1_s1 a=0.1  ep1 ret    968.1 succ 0 frac 0.195 (20s)
+   1435s [862/1080] walker-walk    B        a=0.1  ep1 ret    980.0 succ 0 frac 0.378 (26s)
+   1436s [863/1080] walker-walk    Dfix1_s0 a=0.1  ep1 ret    341.6 succ 0 frac 0.077 (21s)
+   1438s [864/1080] walker-walk    Dfix1_s2 a=0.1  ep1 ret    950.1 succ 0 frac 0.084 (20s)
+   1441s [865/1080] walker-walk    D1z      a=0.1  ep1 ret    980.1 succ 0 frac 0.088 (29s)
+   1444s [866/1080] walker-walk    D3z      a=0.1  ep1 ret    930.8 succ 0 frac 0.086 (32s)
+   1449s [867/1080] walker-walk    Dfix3_s0 a=0.1  ep1 ret    366.4 succ 0 frac 0.073 (22s)
+   1455s [868/1080] walker-walk    Dfix3_s1 a=0.1  ep1 ret    986.8 succ 0 frac 0.195 (20s)
+   1457s [869/1080] walker-walk    Ddir1_s0 a=0.1  ep1 ret    436.0 succ 0 frac 0.0 (21s)
+   1457s [870/1080] walker-walk    Dfix3_s2 a=0.1  ep1 ret    985.7 succ 0 frac 0.076 (22s)
+   1458s [871/1080] walker-walk    Ddir1_s1 a=0.1  ep1 ret    986.1 succ 0 frac 0.0 (20s)
+   1461s [872/1080] walker-walk    Ddir1_s2 a=0.1  ep1 ret    976.2 succ 0 frac 0.0 (20s)
+   1472s [873/1080] walker-walk    A        a=0.2  ep2 ret    558.1 succ 0 frac 0.629 (27s)
+   1475s [874/1080] walker-walk    B        a=0.2  ep2 ret    287.9 succ 0 frac 0.635 (26s)
+   1478s [875/1080] walker-walk    Dfix1_s1 a=0.2  ep2 ret    349.5 succ 0 frac 0.406 (20s)
+   1478s [876/1080] walker-walk    Dfix1_s0 a=0.2  ep2 ret     77.9 succ 0 frac 0.28 (21s)
+   1481s [877/1080] walker-walk    Dfix1_s2 a=0.2  ep2 ret    609.7 succ 0 frac 0.3 (20s)
+   1484s [878/1080] walker-walk    D1z      a=0.2  ep2 ret    577.9 succ 0 frac 0.243 (29s)
+   1489s [879/1080] walker-walk    D3z      a=0.2  ep2 ret    867.8 succ 0 frac 0.24 (32s)
+   1493s [880/1080] walker-walk    Dfix3_s0 a=0.2  ep2 ret    118.0 succ 0 frac 0.274 (22s)
+   1497s [881/1080] walker-walk    Dfix3_s1 a=0.2  ep2 ret    946.5 succ 0 frac 0.387 (22s)
+   1499s [882/1080] walker-walk    Dfix3_s2 a=0.2  ep2 ret    427.5 succ 0 frac 0.29 (20s)
+   1500s [883/1080] walker-walk    Ddir1_s0 a=0.2  ep2 ret    140.6 succ 0 frac 0.0 (21s)
+   1500s [884/1080] walker-walk    Ddir1_s1 a=0.2  ep2 ret    715.3 succ 0 frac 0.0 (20s)
+   1504s [885/1080] walker-walk    Ddir1_s2 a=0.2  ep2 ret    940.3 succ 0 frac 0.0 (20s)
+   1516s [886/1080] walker-walk    A        a=0.1  ep2 ret    974.4 succ 0 frac 0.374 (27s)
+   1520s [887/1080] walker-walk    B        a=0.1  ep2 ret    963.8 succ 0 frac 0.378 (26s)
+   1520s [888/1080] walker-walk    Dfix1_s1 a=0.1  ep2 ret    969.2 succ 0 frac 0.195 (20s)
+   1521s [889/1080] walker-walk    Dfix1_s0 a=0.1  ep2 ret    598.6 succ 0 frac 0.077 (21s)
+   1524s [890/1080] walker-walk    Dfix1_s2 a=0.1  ep2 ret    974.3 succ 0 frac 0.084 (20s)
+   1528s [891/1080] walker-walk    D3z      a=0.1  ep2 ret    969.1 succ 0 frac 0.086 (29s)
+   1529s [892/1080] walker-walk    D1z      a=0.1  ep2 ret    966.5 succ 0 frac 0.088 (32s)
+   1538s [893/1080] walker-walk    Dfix3_s0 a=0.1  ep2 ret    646.2 succ 0 frac 0.073 (22s)
+   1541s [894/1080] walker-walk    Dfix3_s2 a=0.1  ep2 ret    974.8 succ 0 frac 0.076 (20s)
+   1542s [895/1080] walker-walk    Dfix3_s1 a=0.1  ep2 ret    971.2 succ 0 frac 0.195 (22s)
+   1543s [896/1080] walker-walk    Ddir1_s0 a=0.1  ep2 ret    534.0 succ 0 frac 0.0 (21s)
+   1544s [897/1080] walker-walk    Ddir1_s1 a=0.1  ep2 ret    918.1 succ 0 frac 0.0 (20s)
+   1547s [898/1080] walker-walk    Ddir1_s2 a=0.1  ep2 ret    973.3 succ 0 frac 0.0 (20s)
+   1556s [899/1080] walker-walk    A        a=0.2  ep3 ret    564.6 succ 0 frac 0.63 (27s)
+   1564s [900/1080] walker-walk    Dfix1_s1 a=0.2  ep3 ret    607.3 succ 0 frac 0.406 (20s)
+   1564s [901/1080] walker-walk    B        a=0.2  ep3 ret    318.5 succ 0 frac 0.635 (26s)
+   1564s [902/1080] walker-walk    Dfix1_s0 a=0.2  ep3 ret    379.3 succ 0 frac 0.28 (22s)
+   1567s [903/1080] walker-walk    Dfix1_s2 a=0.2  ep3 ret    281.1 succ 0 frac 0.3 (20s)
+   1570s [904/1080] walker-walk    D1z      a=0.2  ep3 ret    273.3 succ 0 frac 0.243 (29s)
+   1573s [905/1080] walker-walk    D3z      a=0.2  ep3 ret    448.2 succ 0 frac 0.239 (32s)
+   1578s [906/1080] walker-walk    Dfix3_s0 a=0.2  ep3 ret     90.2 succ 0 frac 0.274 (22s)
+   1584s [907/1080] walker-walk    Dfix3_s1 a=0.2  ep3 ret    218.3 succ 0 frac 0.387 (20s)
+   1586s [908/1080] walker-walk    Ddir1_s0 a=0.2  ep3 ret    166.8 succ 0 frac 0.0 (21s)
+   1586s [909/1080] walker-walk    Dfix3_s2 a=0.2  ep3 ret    651.1 succ 0 frac 0.29 (22s)
+   1587s [910/1080] walker-walk    Ddir1_s1 a=0.2  ep3 ret    587.6 succ 0 frac 0.0 (20s)
+   1590s [911/1080] walker-walk    Ddir1_s2 a=0.2  ep3 ret    988.2 succ 0 frac 0.0 (20s)
+   1600s [912/1080] walker-walk    A        a=0.1  ep3 ret    993.3 succ 0 frac 0.375 (27s)
+   1605s [913/1080] walker-walk    B        a=0.1  ep3 ret    975.7 succ 0 frac 0.378 (27s)
+   1607s [914/1080] walker-walk    Dfix1_s1 a=0.1  ep3 ret    988.3 succ 0 frac 0.195 (20s)
+   1607s [915/1080] walker-walk    Dfix1_s0 a=0.1  ep3 ret    414.7 succ 0 frac 0.077 (21s)
+   1610s [916/1080] walker-walk    Dfix1_s2 a=0.1  ep3 ret    975.2 succ 0 frac 0.084 (20s)
+   1613s [917/1080] walker-walk    D1z      a=0.1  ep3 ret    942.8 succ 0 frac 0.088 (29s)
+   1617s [918/1080] walker-walk    D3z      a=0.1  ep3 ret    948.9 succ 0 frac 0.086 (32s)
+   1622s [919/1080] walker-walk    Dfix3_s0 a=0.1  ep3 ret    235.8 succ 0 frac 0.073 (22s)
+   1627s [920/1080] walker-walk    Dfix3_s1 a=0.1  ep3 ret    986.1 succ 0 frac 0.195 (22s)
+   1628s [921/1080] walker-walk    Dfix3_s2 a=0.1  ep3 ret    992.7 succ 0 frac 0.076 (20s)
+   1629s [922/1080] walker-walk    Ddir1_s0 a=0.1  ep3 ret    665.0 succ 0 frac 0.0 (21s)
+   1629s [923/1080] walker-walk    Ddir1_s1 a=0.1  ep3 ret    984.2 succ 0 frac 0.0 (20s)
+   1633s [924/1080] walker-walk    Ddir1_s2 a=0.1  ep3 ret    993.6 succ 0 frac 0.0 (20s)
+   1644s [925/1080] walker-walk    A        a=0.2  ep4 ret    492.3 succ 0 frac 0.629 (27s)
+   1649s [926/1080] walker-walk    B        a=0.2  ep4 ret    247.9 succ 0 frac 0.636 (26s)
+   1649s [927/1080] walker-walk    Dfix1_s1 a=0.2  ep4 ret     66.6 succ 0 frac 0.406 (20s)
+   1650s [928/1080] walker-walk    Dfix1_s0 a=0.2  ep4 ret    392.6 succ 0 frac 0.28 (21s)
+   1653s [929/1080] walker-walk    Dfix1_s2 a=0.2  ep4 ret     80.9 succ 0 frac 0.3 (20s)
+   1657s [930/1080] walker-walk    D3z      a=0.2  ep4 ret    487.8 succ 0 frac 0.239 (29s)
+   1658s [931/1080] walker-walk    D1z      a=0.2  ep4 ret    612.7 succ 0 frac 0.242 (32s)
+   1666s [932/1080] walker-walk    Dfix3_s0 a=0.2  ep4 ret    346.4 succ 0 frac 0.274 (22s)
+   1670s [933/1080] walker-walk    Dfix3_s2 a=0.2  ep4 ret    628.6 succ 0 frac 0.29 (20s)
+   1671s [934/1080] walker-walk    Dfix3_s1 a=0.2  ep4 ret     49.2 succ 0 frac 0.387 (22s)
+   1671s [935/1080] walker-walk    Ddir1_s0 a=0.2  ep4 ret     78.5 succ 0 frac 0.0 (21s)
+   1673s [936/1080] walker-walk    Ddir1_s1 a=0.2  ep4 ret    668.8 succ 0 frac 0.0 (20s)
+   1677s [937/1080] walker-walk    Ddir1_s2 a=0.2  ep4 ret    953.8 succ 0 frac 0.0 (20s)
+   1685s [938/1080] walker-walk    A        a=0.1  ep4 ret    971.8 succ 0 frac 0.375 (27s)
+   1693s [939/1080] walker-walk    B        a=0.1  ep4 ret    960.6 succ 0 frac 0.378 (26s)
+   1693s [940/1080] walker-walk    Dfix1_s1 a=0.1  ep4 ret    959.2 succ 0 frac 0.195 (20s)
+   1693s [941/1080] walker-walk    Dfix1_s0 a=0.1  ep4 ret    891.8 succ 0 frac 0.077 (21s)
+   1696s [942/1080] walker-walk    Dfix1_s2 a=0.1  ep4 ret    951.6 succ 0 frac 0.084 (20s)
+   1699s [943/1080] walker-walk    D1z      a=0.1  ep4 ret    951.1 succ 0 frac 0.088 (29s)
+   1702s [944/1080] walker-walk    D3z      a=0.1  ep4 ret    886.2 succ 0 frac 0.086 (32s)
+   1707s [945/1080] walker-walk    Dfix3_s0 a=0.1  ep4 ret    569.7 succ 0 frac 0.073 (22s)
+   1713s [946/1080] walker-walk    Dfix3_s2 a=0.1  ep4 ret    845.1 succ 0 frac 0.076 (20s)
+   1714s [947/1080] walker-walk    Ddir1_s0 a=0.1  ep4 ret    464.2 succ 0 frac 0.0 (21s)
+   1715s [948/1080] walker-walk    Dfix3_s1 a=0.1  ep4 ret    960.0 succ 0 frac 0.195 (22s)
+   1716s [949/1080] walker-walk    Ddir1_s1 a=0.1  ep4 ret    951.3 succ 0 frac 0.0 (20s)
+   1719s [950/1080] walker-walk    Ddir1_s2 a=0.1  ep4 ret    970.3 succ 0 frac 0.0 (20s)
+   1729s [951/1080] walker-walk    A        a=0.2  ep5 ret    478.3 succ 0 frac 0.63 (27s)
+   1734s [952/1080] walker-walk    B        a=0.2  ep5 ret    231.1 succ 0 frac 0.635 (26s)
+   1736s [953/1080] walker-walk    Dfix1_s0 a=0.2  ep5 ret    433.0 succ 0 frac 0.28 (21s)
+   1736s [954/1080] walker-walk    Dfix1_s1 a=0.2  ep5 ret     35.0 succ 0 frac 0.406 (20s)
+   1738s [955/1080] walker-walk    Dfix1_s2 a=0.2  ep5 ret    246.8 succ 0 frac 0.3 (20s)
+   1742s [956/1080] walker-walk    D1z      a=0.2  ep5 ret    793.4 succ 0 frac 0.243 (29s)
+   1746s [957/1080] walker-walk    D3z      a=0.2  ep5 ret    868.3 succ 0 frac 0.239 (32s)
+   1751s [958/1080] walker-walk    Dfix3_s0 a=0.2  ep5 ret    457.7 succ 0 frac 0.274 (22s)
+   1756s [959/1080] walker-walk    Dfix3_s1 a=0.2  ep5 ret    441.3 succ 0 frac 0.387 (22s)
+   1756s [960/1080] walker-walk    Ddir1_s0 a=0.2  ep5 ret    102.7 succ 0 frac 0.0 (20s)
+   1758s [961/1080] walker-walk    Dfix3_s2 a=0.2  ep5 ret    547.6 succ 0 frac 0.29 (22s)
+   1758s [962/1080] walker-walk    Ddir1_s1 a=0.2  ep5 ret    884.5 succ 0 frac 0.0 (20s)
+   1762s [963/1080] walker-walk    Ddir1_s2 a=0.2  ep5 ret    976.8 succ 0 frac 0.0 (20s)
+   1773s [964/1080] walker-walk    A        a=0.1  ep5 ret    977.6 succ 0 frac 0.375 (27s)
+   1778s [965/1080] walker-walk    B        a=0.1  ep5 ret    986.0 succ 0 frac 0.378 (26s)
+   1778s [966/1080] walker-walk    Dfix1_s1 a=0.1  ep5 ret    980.5 succ 0 frac 0.195 (20s)
+   1780s [967/1080] walker-walk    Dfix1_s0 a=0.1  ep5 ret    359.8 succ 0 frac 0.077 (21s)
+   1782s [968/1080] walker-walk    Dfix1_s2 a=0.1  ep5 ret    980.8 succ 0 frac 0.084 (20s)
+   1785s [969/1080] walker-walk    D3z      a=0.1  ep5 ret    984.2 succ 0 frac 0.086 (29s)
+   1787s [970/1080] walker-walk    D1z      a=0.1  ep5 ret    982.1 succ 0 frac 0.088 (32s)
+   1795s [971/1080] walker-walk    Dfix3_s0 a=0.1  ep5 ret    614.8 succ 0 frac 0.073 (22s)
+   1799s [972/1080] walker-walk    Dfix3_s2 a=0.1  ep5 ret    989.4 succ 0 frac 0.076 (20s)
+   1800s [973/1080] walker-walk    Dfix3_s1 a=0.1  ep5 ret    985.6 succ 0 frac 0.195 (22s)
+   1801s [974/1080] walker-walk    Ddir1_s0 a=0.1  ep5 ret    666.3 succ 0 frac 0.0 (22s)
+   1802s [975/1080] walker-walk    Ddir1_s1 a=0.1  ep5 ret    989.1 succ 0 frac 0.0 (20s)
+   1805s [976/1080] walker-walk    Ddir1_s2 a=0.1  ep5 ret    990.9 succ 0 frac 0.0 (20s)
+   1814s [977/1080] walker-walk    A        a=0.2  ep6 ret    493.3 succ 0 frac 0.629 (27s)
+   1821s [978/1080] walker-walk    B        a=0.2  ep6 ret    246.3 succ 0 frac 0.636 (26s)
+   1822s [979/1080] walker-walk    Dfix1_s1 a=0.2  ep6 ret     39.6 succ 0 frac 0.406 (20s)
+   1823s [980/1080] walker-walk    Dfix1_s0 a=0.2  ep6 ret    487.5 succ 0 frac 0.28 (22s)
+   1825s [981/1080] walker-walk    Dfix1_s2 a=0.2  ep6 ret    407.0 succ 0 frac 0.3 (20s)
+   1828s [982/1080] walker-walk    D1z      a=0.2  ep6 ret    696.2 succ 0 frac 0.243 (29s)
+   1831s [983/1080] walker-walk    D3z      a=0.2  ep6 ret    564.0 succ 0 frac 0.239 (32s)
+   1836s [984/1080] walker-walk    Dfix3_s0 a=0.2  ep6 ret    585.0 succ 0 frac 0.274 (22s)
+   1843s [985/1080] walker-walk    Dfix3_s2 a=0.2  ep6 ret    524.0 succ 0 frac 0.29 (20s)
+   1843s [986/1080] walker-walk    Dfix3_s1 a=0.2  ep6 ret    304.5 succ 0 frac 0.387 (22s)
+   1844s [987/1080] walker-walk    Ddir1_s0 a=0.2  ep6 ret    146.1 succ 0 frac 0.0 (21s)
+   1845s [988/1080] walker-walk    Ddir1_s1 a=0.2  ep6 ret    754.6 succ 0 frac 0.0 (20s)
+   1848s [989/1080] walker-walk    Ddir1_s2 a=0.2  ep6 ret    979.8 succ 0 frac 0.0 (20s)
+   1858s [990/1080] walker-walk    A        a=0.1  ep6 ret    990.4 succ 0 frac 0.374 (27s)
+   1863s [991/1080] walker-walk    B        a=0.1  ep6 ret    987.4 succ 0 frac 0.377 (26s)
+   1865s [992/1080] walker-walk    Dfix1_s1 a=0.1  ep6 ret    980.1 succ 0 frac 0.195 (20s)
+   1865s [993/1080] walker-walk    Dfix1_s0 a=0.1  ep6 ret    342.2 succ 0 frac 0.077 (21s)
+   1868s [994/1080] walker-walk    Dfix1_s2 a=0.1  ep6 ret    929.2 succ 0 frac 0.084 (20s)
+   1872s [995/1080] walker-walk    D1z      a=0.1  ep6 ret    880.8 succ 0 frac 0.088 (29s)
+   1875s [996/1080] walker-walk    D3z      a=0.1  ep6 ret    979.3 succ 0 frac 0.086 (32s)
+   1880s [997/1080] walker-walk    Dfix3_s0 a=0.1  ep6 ret    213.5 succ 0 frac 0.073 (22s)
+   1885s [998/1080] walker-walk    Dfix3_s1 a=0.1  ep6 ret    984.8 succ 0 frac 0.195 (22s)
+   1885s [999/1080] walker-walk    Dfix3_s2 a=0.1  ep6 ret    983.3 succ 0 frac 0.076 (20s)
+   1887s [1000/1080] walker-walk    Ddir1_s0 a=0.1  ep6 ret    433.7 succ 0 frac 0.0 (21s)
+   1888s [1001/1080] walker-walk    Ddir1_s1 a=0.1  ep6 ret    989.4 succ 0 frac 0.0 (20s)
+   1892s [1002/1080] walker-walk    Ddir1_s2 a=0.1  ep6 ret    989.6 succ 0 frac 0.0 (20s)
+   1902s [1003/1080] walker-walk    A        a=0.2  ep7 ret    553.6 succ 0 frac 0.629 (27s)
+   1907s [1004/1080] walker-walk    B        a=0.2  ep7 ret    274.3 succ 0 frac 0.636 (26s)
+   1908s [1005/1080] walker-walk    Dfix1_s1 a=0.2  ep7 ret    154.3 succ 0 frac 0.406 (20s)
+   1908s [1006/1080] walker-walk    Dfix1_s0 a=0.2  ep7 ret    342.6 succ 0 frac 0.28 (21s)
+   1911s [1007/1080] walker-walk    Dfix1_s2 a=0.2  ep7 ret    368.2 succ 0 frac 0.3 (20s)
+   1914s [1008/1080] walker-walk    D3z      a=0.2  ep7 ret    853.7 succ 0 frac 0.238 (29s)
+   1916s [1009/1080] walker-walk    D1z      a=0.2  ep7 ret    805.2 succ 0 frac 0.242 (32s)
+   1924s [1010/1080] walker-walk    Dfix3_s0 a=0.2  ep7 ret    127.3 succ 0 frac 0.274 (22s)
+   1928s [1011/1080] walker-walk    Dfix3_s2 a=0.2  ep7 ret    368.5 succ 0 frac 0.29 (20s)
+   1929s [1012/1080] walker-walk    Dfix3_s1 a=0.2  ep7 ret    898.2 succ 0 frac 0.387 (22s)
+   1930s [1013/1080] walker-walk    Ddir1_s0 a=0.2  ep7 ret    143.9 succ 0 frac 0.0 (21s)
+   1931s [1014/1080] walker-walk    Ddir1_s1 a=0.2  ep7 ret    743.4 succ 0 frac 0.0 (20s)
+   1934s [1015/1080] walker-walk    Ddir1_s2 a=0.2  ep7 ret    943.7 succ 0 frac 0.0 (20s)
+   1943s [1016/1080] walker-walk    A        a=0.1  ep7 ret    994.0 succ 0 frac 0.374 (27s)
+   1950s [1017/1080] walker-walk    B        a=0.1  ep7 ret    912.7 succ 0 frac 0.377 (26s)
+   1951s [1018/1080] walker-walk    Dfix1_s0 a=0.1  ep7 ret    284.7 succ 0 frac 0.077 (22s)
+   1951s [1019/1080] walker-walk    Dfix1_s1 a=0.1  ep7 ret    989.1 succ 0 frac 0.195 (20s)
+   1954s [1020/1080] walker-walk    Dfix1_s2 a=0.1  ep7 ret    976.5 succ 0 frac 0.084 (20s)
+   1957s [1021/1080] walker-walk    D1z      a=0.1  ep7 ret    974.2 succ 0 frac 0.088 (29s)
+   1960s [1022/1080] walker-walk    D3z      a=0.1  ep7 ret    929.5 succ 0 frac 0.086 (32s)
+   1965s [1023/1080] walker-walk    Dfix3_s0 a=0.1  ep7 ret    564.2 succ 0 frac 0.073 (22s)
+   1971s [1024/1080] walker-walk    Ddir1_s0 a=0.1  ep7 ret    429.6 succ 0 frac 0.0 (20s)
+   1972s [1025/1080] walker-walk    Dfix3_s1 a=0.1  ep7 ret    991.7 succ 0 frac 0.195 (22s)
+   1973s [1026/1080] walker-walk    Dfix3_s2 a=0.1  ep7 ret    991.3 succ 0 frac 0.076 (22s)
+   1974s [1027/1080] walker-walk    Ddir1_s1 a=0.1  ep7 ret    989.4 succ 0 frac 0.0 (20s)
+   1977s [1028/1080] walker-walk    Ddir1_s2 a=0.1  ep7 ret    992.8 succ 0 frac 0.0 (20s)
+   1987s [1029/1080] walker-walk    A        a=0.2  ep8 ret    296.8 succ 0 frac 0.629 (27s)
+   1992s [1030/1080] walker-walk    B        a=0.2  ep8 ret    258.5 succ 0 frac 0.636 (26s)
+   1994s [1031/1080] walker-walk    Dfix1_s1 a=0.2  ep8 ret    252.3 succ 0 frac 0.406 (20s)
+   1995s [1032/1080] walker-walk    Dfix1_s0 a=0.2  ep8 ret    363.9 succ 0 frac 0.28 (21s)
+   1997s [1033/1080] walker-walk    Dfix1_s2 a=0.2  ep8 ret    398.3 succ 0 frac 0.3 (20s)
+   2000s [1034/1080] walker-walk    D1z      a=0.2  ep8 ret    730.3 succ 0 frac 0.244 (29s)
+   2004s [1035/1080] walker-walk    D3z      a=0.2  ep8 ret    652.2 succ 0 frac 0.239 (32s)
+   2009s [1036/1080] walker-walk    Dfix3_s0 a=0.2  ep8 ret    373.7 succ 0 frac 0.274 (22s)
+   2014s [1037/1080] walker-walk    Dfix3_s1 a=0.2  ep8 ret    626.6 succ 0 frac 0.387 (22s)
+   2014s [1038/1080] walker-walk    Dfix3_s2 a=0.2  ep8 ret    488.4 succ 0 frac 0.29 (20s)
+   2016s [1039/1080] walker-walk    Ddir1_s0 a=0.2  ep8 ret    135.9 succ 0 frac 0.0 (21s)
+   2017s [1040/1080] walker-walk    Ddir1_s1 a=0.2  ep8 ret    413.5 succ 0 frac 0.0 (20s)
+   2020s [1041/1080] walker-walk    Ddir1_s2 a=0.2  ep8 ret    984.4 succ 0 frac 0.0 (20s)
+   2031s [1042/1080] walker-walk    A        a=0.1  ep8 ret    964.3 succ 0 frac 0.374 (27s)
+   2036s [1043/1080] walker-walk    B        a=0.1  ep8 ret    968.6 succ 0 frac 0.378 (26s)
+   2036s [1044/1080] walker-walk    Dfix1_s1 a=0.1  ep8 ret    991.5 succ 0 frac 0.195 (20s)
+   2037s [1045/1080] walker-walk    Dfix1_s0 a=0.1  ep8 ret    622.7 succ 0 frac 0.077 (22s)
+   2040s [1046/1080] walker-walk    Dfix1_s2 a=0.1  ep8 ret    978.3 succ 0 frac 0.084 (20s)
+   2043s [1047/1080] walker-walk    D3z      a=0.1  ep8 ret    981.2 succ 0 frac 0.086 (29s)
+   2045s [1048/1080] walker-walk    D1z      a=0.1  ep8 ret    954.7 succ 0 frac 0.088 (32s)
+   2053s [1049/1080] walker-walk    Dfix3_s0 a=0.1  ep8 ret    268.6 succ 0 frac 0.073 (22s)
+   2057s [1050/1080] walker-walk    Dfix3_s2 a=0.1  ep8 ret    991.9 succ 0 frac 0.076 (20s)
+   2058s [1051/1080] walker-walk    Dfix3_s1 a=0.1  ep8 ret    990.4 succ 0 frac 0.195 (22s)
+   2059s [1052/1080] walker-walk    Ddir1_s0 a=0.1  ep8 ret    516.6 succ 0 frac 0.0 (21s)
+   2060s [1053/1080] walker-walk    Ddir1_s1 a=0.1  ep8 ret    986.5 succ 0 frac 0.0 (20s)
+   2063s [1054/1080] walker-walk    Ddir1_s2 a=0.1  ep8 ret    991.9 succ 0 frac 0.0 (20s)
+   2072s [1055/1080] walker-walk    A        a=0.2  ep9 ret    549.8 succ 0 frac 0.63 (27s)
+   2079s [1056/1080] walker-walk    B        a=0.2  ep9 ret    408.0 succ 0 frac 0.636 (26s)
+   2080s [1057/1080] walker-walk    Dfix1_s1 a=0.2  ep9 ret    474.7 succ 0 frac 0.406 (20s)
+   2080s [1058/1080] walker-walk    Dfix1_s0 a=0.2  ep9 ret    204.4 succ 0 frac 0.28 (22s)
+   2083s [1059/1080] walker-walk    Dfix1_s2 a=0.2  ep9 ret    434.6 succ 0 frac 0.3 (20s)
+   2086s [1060/1080] walker-walk    D1z      a=0.2  ep9 ret    119.5 succ 0 frac 0.242 (29s)
+   2089s [1061/1080] walker-walk    D3z      a=0.2  ep9 ret    821.4 succ 0 frac 0.24 (32s)
+   2094s [1062/1080] walker-walk    Dfix3_s0 a=0.2  ep9 ret    586.4 succ 0 frac 0.274 (22s)
+   2101s [1063/1080] walker-walk    Dfix3_s2 a=0.2  ep9 ret    574.6 succ 0 frac 0.29 (20s)
+   2101s [1064/1080] walker-walk    Dfix3_s1 a=0.2  ep9 ret    279.5 succ 0 frac 0.387 (22s)
+   2102s [1065/1080] walker-walk    Ddir1_s0 a=0.2  ep9 ret    318.3 succ 0 frac 0.0 (21s)
+   2103s [1066/1080] walker-walk    Ddir1_s1 a=0.2  ep9 ret    744.3 succ 0 frac 0.0 (20s)
+   2106s [1067/1080] walker-walk    Ddir1_s2 a=0.2  ep9 ret    985.2 succ 0 frac 0.0 (20s)
+   2116s [1068/1080] walker-walk    A        a=0.1  ep9 ret    988.7 succ 0 frac 0.374 (27s)
+   2121s [1069/1080] walker-walk    B        a=0.1  ep9 ret    961.5 succ 0 frac 0.378 (26s)
+   2123s [1070/1080] walker-walk    Dfix1_s1 a=0.1  ep9 ret    986.4 succ 0 frac 0.195 (20s)
+   2123s [1071/1080] walker-walk    Dfix1_s0 a=0.1  ep9 ret    477.7 succ 0 frac 0.077 (21s)
+   2126s [1072/1080] walker-walk    Dfix1_s2 a=0.1  ep9 ret    984.6 succ 0 frac 0.084 (20s)
+   2130s [1073/1080] walker-walk    D1z      a=0.1  ep9 ret    977.7 succ 0 frac 0.088 (29s)
+   2133s [1074/1080] walker-walk    D3z      a=0.1  ep9 ret    983.2 succ 0 frac 0.086 (32s)
+   2137s [1075/1080] walker-walk    Dfix3_s0 a=0.1  ep9 ret    323.6 succ 0 frac 0.073 (21s)
+   2141s [1076/1080] walker-walk    Dfix3_s1 a=0.1  ep9 ret    989.8 succ 0 frac 0.195 (20s)
+   2142s [1077/1080] walker-walk    Ddir1_s0 a=0.1  ep9 ret    652.8 succ 0 frac 0.0 (19s)
+   2142s [1078/1080] walker-walk    Dfix3_s2 a=0.1  ep9 ret    993.7 succ 0 frac 0.076 (19s)
+   2143s [1079/1080] walker-walk    Ddir1_s1 a=0.1  ep9 ret    987.4 succ 0 frac 0.0 (17s)
+   2146s [1080/1080] walker-walk    Ddir1_s2 a=0.1  ep9 ret    993.6 succ 0 frac 0.0 (16s)
+GRID_DONE
+=== decision 06:17:09
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+cheetah-run: state 0/150 (4s)
+walker-walk: state 0/150 (4s)
+mw-push: state 0/150 (4s)
+mw-pick-place: state 0/150 (4s)
+cheetah-run: state 50/150 (50s)
+walker-walk: state 50/150 (49s)
+mw-push: state 50/150 (50s)
+mw-pick-place: state 50/150 (49s)
+walker-walk: state 100/150 (94s)
+cheetah-run: state 100/150 (94s)
+mw-push: state 100/150 (95s)
+mw-pick-place: state 100/150 (94s)
+DECISION cheetah-run: 150 states in 138s
+DECISION walker-walk: 150 states in 138s
+DECISION mw-pick-place: 150 states in 137s
+DECISION mw-push: 150 states in 140s
+DECISION_DONE
+=== analyze 06:19:36
+{
+ "determinism_all_identical": false,
+ "primary": {
+  "family": "Dfix1",
+  "random": "D1z",
+  "n_cells": 8,
+  "consistency_i_not_smaller_than_A": [
+   "mw-push@0.1",
+   "mw-push@0.2",
+   "mw-pick-place@0.1",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.1",
+   "walker-walk@0.2"
+  ],
+  "consistency_ii_larger_than_random": [
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.1",
+   "walker-walk@0.2"
+  ],
+  "consistency": true,
+  "weak_specific_cells": [],
+  "weak_specific": false,
+  "verdict": "consistency",
+  "eligible": [
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.2"
+  ],
+  "share_of_A_per_cell": {
+   "mw-push@0.2": 0.8749999999999999,
+   "mw-pick-place@0.2": 1.0416666666666667,
+   "cheetah-run@0.1": 1.49302516667633,
+   "cheetah-run@0.2": 1.0731487124125243,
+   "walker-walk@0.2": 1.318371861124193
+  },
+  "share_of_A_pooled": 1.1057265578690156
+ },
+ "secondary_Dfix3": {
+  "family": "Dfix3",
+  "random": "D3z",
+  "n_cells": 8,
+  "consistency_i_not_smaller_than_A": [
+   "mw-push@0.1",
+   "mw-pick-place@0.1",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.1",
+   "walker-walk@0.2"
+  ],
+  "consistency_ii_larger_than_random": [
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.1",
+   "walker-walk@0.2"
+  ],
+  "consistency": true,
+  "weak_specific_cells": [],
+  "weak_specific": false,
+  "verdict": "consistency",
+  "eligible": [
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.2"
+  ],
+  "share_of_A_per_cell": {
+   "mw-push@0.2": 0.7083333333333333,
+   "mw-pick-place@0.2": 0.8749999999999999,
+   "cheetah-run@0.1": 1.561907238269172,
+   "cheetah-run@0.2": 1.083511756398972,
+   "walker-walk@0.2": 1.0739150602351626
+  },
+  "share_of_A_pooled": 1.0022472560578042
+ },
+ "secondary_return_metric": {
+  "family": "Dfix1",
+  "random": "D1z",
+  "n_cells": 8,
+  "consistency_i_not_smaller_than_A": [
+   "mw-push@0.1",
+   "mw-push@0.2",
+   "mw-pick-place@0.1",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.1",
+   "walker-walk@0.2"
+  ],
+  "consistency_ii_larger_than_random": [
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.1",
+   "walker-walk@0.2"
+  ],
+  "consistency": true,
+  "weak_specific_cells": [],
+  "weak_specific": false,
+  "verdict": "consistency",
+  "eligible": [
+   "mw-push@0.1",
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.2"
+  ],
+  "share_of_A_per_cell": {
+   "mw-push@0.1": 0.6241355366421437,
+   "mw-push@0.2": 0.8348313819224186,
+   "mw-pick-place@0.2": 1.0878004711694846,
+   "cheetah-run@0.1": 1.49302516667633,
+   "cheetah-run@0.2": 1.0731487124125243,
+   "walker-walk@0.2": 1.318371861124193
+  },
+  "share_of_A_pooled": 1.09481281892933
+ },
+ "secondary_eligible_Dfix1": {
+  "family": "Dfix1",
+  "eligible": [
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.2"
+  ],
+  "threshold": 4,
+  "not_smaller_than_A": [
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.2"
+  ],
+  "larger_than_random": [
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.2"
+  ],
+  "weak_specific_cells": [],
+  "consistency": true,
+  "weak_specific": false,
+  "verdict": "consistency"
+ },
+ "secondary_eligible_Dfix3": {
+  "family": "Dfix3",
+  "eligible": [
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.2"
+  ],
+  "threshold": 4,
+  "not_smaller_than_A": [
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.2"
+  ],
+  "larger_than_random": [
+   "mw-push@0.2",
+   "mw-pick-place@0.2",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.2"
+  ],
+  "weak_specific_cells": [],
+  "consistency": true,
+  "weak_specific": false,
+  "verdict": "consistency"
+ },
+ "dir_vs_random": {
+  "Ddir1>D1z": [
+   "mw-push@0.2",
+   "mw-pick-place@0.1",
+   "cheetah-run@0.1",
+   "cheetah-run@0.2",
+   "walker-walk@0.1"
+  ],
+  "A>Ddir1": [
+   "mw-pick-place@0.2",
+   "cheetah-run@0.2",
+   "walker-walk@0.2"
+  ]
+ }
+}
+=== done 06:19:39

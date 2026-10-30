@@ -1,0 +1,99 @@
+{
+ "exp": "e3",
+ "manifest_jobs": 2124,
+ "by_type": {
+  "episodes": 2088,
+  "decision": 36
+ },
+ "result_files_extra": [],
+ "episode_records": 10440,
+ "conditions": 348,
+ "conditions_not_30_eps": [],
+ "task_setting_groups": 12,
+ "task_setting_groups_expected": 12,
+ "variant_set_mismatch": [],
+ "env_host_gpu_cvd_mps_torch": [
+  [
+   "yonghwi-racedreamer",
+   "NVIDIA RTX A5000",
+   "0",
+   "/home/yonghwi/pmx/A/mps/pipe",
+   "2.7.1+cu126",
+   2124
+  ]
+ ],
+ "errors_dir_files": 0,
+ "lock_files": 0,
+ "missing_fields": {},
+ "nonfinite_fields": {},
+ "indep_same_mean_by_variant": {
+  "det": 1.0,
+  "ind": 0.0,
+  "indep": 1.0,
+  "indstep": 1.0,
+  "shep": 1.0,
+  "shiter": 0.0,
+  "shiter_g32": 0.0,
+  "shiter_l": 0.0,
+  "shstep": 1.0,
+  "shstep_g32": 1.0,
+  "shstep_l": 1.0,
+  "shstep_u": 1.0
+ },
+ "fresh_same_mean_by_variant": {
+  "indep": 0.0,
+  "indstep": 0.0,
+  "shep": 0.0,
+  "shstep": 0.0,
+  "shstep_g32": 0.0,
+  "shstep_l": 0.0,
+  "shstep_u": 0.0
+ },
+ "oei_steps_per_episode": {
+  "cheetah-run|base": {
+   "50": 1170
+  },
+  "finger-turn-hard|base": {
+   "50": 720
+  },
+  "mw-button-press-topdown|base": {
+   "25": 720
+  },
+  "mw-door-open|base": {
+   "25": 720
+  },
+  "mw-drawer-open|base": {
+   "25": 720
+  },
+  "mw-peg-insert-side|base": {
+   "25": 720
+  },
+  "mw-pick-place|base": {
+   "25": 1170
+  },
+  "mw-push|base": {
+   "25": 1170
+  },
+  "mw-sweep-into|base": {
+   "25": 720
+  },
+  "mw-window-open|base": {
+   "25": 720
+  },
+  "quadruped-walk|base": {
+   "50": 720
+  },
+  "walker-walk|base": {
+   "50": 1170
+  }
+ },
+ "perr_missing_episodes": 0,
+ "time_span_utc": [
+  "2026-10-23T08:33:52Z",
+  "2026-10-23T14:51:36Z"
+ ],
+ "job_secs_total": 361846.4704577923,
+ "problems": {},
+ "indep_reeval_identities_ok": true,
+ "ALL_OK": true
+}

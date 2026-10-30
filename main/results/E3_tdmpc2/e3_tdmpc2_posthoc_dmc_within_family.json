@@ -1,0 +1,47 @@
+{
+ "label": "post-hoc, descriptive (after the one-shot E3 final result); not used for any verdict",
+ "groups": {
+  "all_12_preregistered_value": {
+   "tasks": [
+    "mw-button-press-topdown",
+    "mw-door-open",
+    "mw-drawer-open",
+    "mw-peg-insert-side",
+    "mw-pick-place",
+    "mw-push",
+    "mw-sweep-into",
+    "mw-window-open",
+    "cheetah-run",
+    "finger-turn-hard",
+    "quadruped-walk",
+    "walker-walk"
+   ],
+   "spearman_S_red": 0.8266212326392487,
+   "spearman_density_red": -0.2662000579685716
+  },
+  "meta_world_8": {
+   "tasks": [
+    "mw-button-press-topdown",
+    "mw-door-open",
+    "mw-drawer-open",
+    "mw-peg-insert-side",
+    "mw-pick-place",
+    "mw-push",
+    "mw-sweep-into",
+    "mw-window-open"
+   ],
+   "spearman_S_red": 0.5748606057183643,
+   "spearman_density_red": -0.814385858101016
+  },
+  "dmc_4": {
+   "tasks": [
+    "cheetah-run",
+    "finger-turn-hard",
+    "quadruped-walk",
+    "walker-walk"
+   ],
+   "spearman_S_red": 1.0,
+   "spearman_density_red": 0.7999999999999999
+  }
+ }
+}

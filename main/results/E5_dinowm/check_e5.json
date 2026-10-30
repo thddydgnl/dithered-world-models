@@ -1,0 +1,653 @@
+{
+ "manifests": {
+  "E5_dinowm_held": {
+   "n_jobs": 42,
+   "cells": [
+    "pointmaze_k3_held",
+    "pusht_k3_held",
+    "pusht_k4_held"
+   ]
+  },
+  "E5_dinowm_eval": {
+   "n_jobs": 60,
+   "cells": [
+    "pointmaze_k3_B",
+    "pusht_k3_B",
+    "pusht_k4_B"
+   ]
+  },
+  "E5_dinowm_w": {
+   "n_jobs": 60,
+   "cells": [
+    "pusht_w4awq",
+    "pusht_w4rtn",
+    "pusht_w4sr1",
+    "pusht_w4sr2",
+    "pusht_w4sr4",
+    "pusht_w8rtn"
+   ]
+  },
+  "E5_dinowm_qat": {
+   "n_jobs": 30,
+   "cells": [
+    "pusht_k4_qat"
+   ]
+  }
+ },
+ "cells": {
+  "E5_dinowm_held|pointmaze_k3_held": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T01:02:03Z",
+   "t_end": "2026-10-24T01:31:48Z",
+   "gpu_h": 0.494309094481998,
+   "hook_calls": {
+    "det|pc": [
+     330
+    ],
+    "det|p999": [
+     330
+    ],
+    "det|main": [
+     330
+    ],
+    "det|p99999": [
+     330
+    ],
+    "det|mse": [
+     330
+    ],
+    "det|smooth": [
+     330
+    ],
+    "det|last8": [
+     330
+    ]
+   },
+   "episodes": {
+    "det|pc": 20,
+    "det|p999": 20,
+    "det|main": 20,
+    "det|p99999": 20,
+    "det|mse": 20,
+    "det|smooth": 20,
+    "det|last8": 20
+   }
+  },
+  "E5_dinowm_held|pusht_k3_held": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T22:22:59Z",
+   "t_end": "2026-10-23T23:42:23Z",
+   "gpu_h": 1.3217703913980061,
+   "hook_calls": {
+    "det|pc": [
+     930
+    ],
+    "det|p999": [
+     930
+    ],
+    "det|main": [
+     930
+    ],
+    "det|p99999": [
+     930
+    ],
+    "det|mse": [
+     930
+    ],
+    "det|smooth": [
+     930
+    ],
+    "det|last8": [
+     930
+    ]
+   },
+   "episodes": {
+    "det|pc": 20,
+    "det|p999": 20,
+    "det|main": 20,
+    "det|p99999": 20,
+    "det|mse": 20,
+    "det|smooth": 20,
+    "det|last8": 20
+   }
+  },
+  "E5_dinowm_held|pusht_k4_held": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-23T23:42:32Z",
+   "t_end": "2026-10-24T01:01:55Z",
+   "gpu_h": 1.3217147796021567,
+   "hook_calls": {
+    "det|pc": [
+     930
+    ],
+    "det|p999": [
+     930
+    ],
+    "det|main": [
+     930
+    ],
+    "det|p99999": [
+     930
+    ],
+    "det|mse": [
+     930
+    ],
+    "det|smooth": [
+     930
+    ],
+    "det|last8": [
+     930
+    ]
+   },
+   "episodes": {
+    "det|pc": 20,
+    "det|p999": 20,
+    "det|main": 20,
+    "det|p99999": 20,
+    "det|mse": 20,
+    "det|smooth": 20,
+    "det|last8": 20
+   }
+  },
+  "E5_dinowm_eval|pointmaze_k3_B": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T03:30:47Z",
+   "t_end": "2026-10-24T04:17:32Z",
+   "gpu_h": 0.7774398533503214,
+   "hook_calls": {
+    "det|last8": [
+     330
+    ],
+    "shiter|last8": [
+     390
+    ]
+   },
+   "episodes": {
+    "det|last8": 100,
+    "shiter|last8": 100
+   }
+  },
+  "E5_dinowm_eval|pusht_k3_B": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T01:31:55Z",
+   "t_end": "2026-10-24T03:30:40Z",
+   "gpu_h": 1.977236174941063,
+   "hook_calls": {
+    "det|p999": [
+     930
+    ],
+    "shiter|p999": [
+     990
+    ]
+   },
+   "episodes": {
+    "det|p999": 100,
+    "shiter|p999": 100
+   }
+  },
+  "E5_dinowm_eval|pusht_k4_B": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T02:17:26Z",
+   "t_end": "2026-10-24T04:16:28Z",
+   "gpu_h": 1.9820320767826505,
+   "hook_calls": {
+    "det|pc": [
+     930
+    ],
+    "shiter|pc": [
+     990
+    ]
+   },
+   "episodes": {
+    "det|pc": 100,
+    "shiter|pc": 100
+   }
+  },
+  "E5_dinowm_w|pusht_w4awq": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T04:17:41Z",
+   "t_end": "2026-10-24T05:12:02Z",
+   "gpu_h": 0.9046583862437142,
+   "hook_calls": {
+    "w4awq|None": [
+     0
+    ]
+   },
+   "episodes": {
+    "w4awq|None": 100
+   }
+  },
+  "E5_dinowm_w|pusht_w4rtn": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T04:16:37Z",
+   "t_end": "2026-10-24T05:10:32Z",
+   "gpu_h": 0.897681406935056,
+   "hook_calls": {
+    "w4rtn|None": [
+     0
+    ]
+   },
+   "episodes": {
+    "w4rtn|None": 100
+   }
+  },
+  "E5_dinowm_w|pusht_w4sr1": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T05:10:40Z",
+   "t_end": "2026-10-24T06:04:36Z",
+   "gpu_h": 0.898016225496928,
+   "hook_calls": {
+    "w4sr1|None": [
+     0
+    ]
+   },
+   "episodes": {
+    "w4sr1|None": 100
+   }
+  },
+  "E5_dinowm_w|pusht_w4sr2": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T05:12:26Z",
+   "t_end": "2026-10-24T06:06:46Z",
+   "gpu_h": 0.9045363799730937,
+   "hook_calls": {
+    "w4sr2|None": [
+     0
+    ]
+   },
+   "episodes": {
+    "w4sr2|None": 100
+   }
+  },
+  "E5_dinowm_w|pusht_w4sr4": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "0",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T06:04:45Z",
+   "t_end": "2026-10-24T06:58:40Z",
+   "gpu_h": 0.8975340900156233,
+   "hook_calls": {
+    "w4sr4|None": [
+     0
+    ]
+   },
+   "episodes": {
+    "w4sr4|None": 100
+   }
+  },
+  "E5_dinowm_w|pusht_w8rtn": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T06:06:55Z",
+   "t_end": "2026-10-24T07:01:11Z",
+   "gpu_h": 0.9032131192419264,
+   "hook_calls": {
+    "w8rtn|None": [
+     0
+    ]
+   },
+   "episodes": {
+    "w8rtn|None": 100
+   }
+  },
+  "E5_dinowm_qat|pusht_k4_qat": {
+   "gpu": [
+    [
+     "NVIDIA RTX A5000",
+     "1",
+     "yonghwi-racedreamer"
+    ]
+   ],
+   "t_start": "2026-10-24T09:01:38Z",
+   "t_end": "2026-10-24T11:51:11Z",
+   "gpu_h": 2.823550482855903,
+   "hook_calls": {
+    "none|None": [
+     0
+    ],
+    "det|None": [
+     930
+    ],
+    "shiter|None": [
+     990
+    ]
+   },
+   "episodes": {
+    "none|None": 100,
+    "det|None": 100,
+    "shiter|None": 100
+   }
+  }
+ },
+ "selection": {
+  "pusht_k3": {
+   "recomputed": "p999",
+   "selection_json": "p999",
+   "held": [
+    {
+     "tag": "pc",
+     "s": 9,
+     "n": 20
+    },
+    {
+     "tag": "p999",
+     "s": 17,
+     "n": 20
+    },
+    {
+     "tag": "main",
+     "s": 7,
+     "n": 20
+    },
+    {
+     "tag": "p99999",
+     "s": 1,
+     "n": 20
+    },
+    {
+     "tag": "mse",
+     "s": 15,
+     "n": 20
+    },
+    {
+     "tag": "smooth",
+     "s": 0,
+     "n": 20
+    },
+    {
+     "tag": "last8",
+     "s": 9,
+     "n": 20
+    }
+   ],
+   "tied_at_max": [
+    "p999"
+   ],
+   "matches": true
+  },
+  "pusht_k4": {
+   "recomputed": "pc",
+   "selection_json": "pc",
+   "held": [
+    {
+     "tag": "pc",
+     "s": 17,
+     "n": 20
+    },
+    {
+     "tag": "p999",
+     "s": 17,
+     "n": 20
+    },
+    {
+     "tag": "main",
+     "s": 9,
+     "n": 20
+    },
+    {
+     "tag": "p99999",
+     "s": 13,
+     "n": 20
+    },
+    {
+     "tag": "mse",
+     "s": 17,
+     "n": 20
+    },
+    {
+     "tag": "smooth",
+     "s": 14,
+     "n": 20
+    },
+    {
+     "tag": "last8",
+     "s": 9,
+     "n": 20
+    }
+   ],
+   "tied_at_max": [
+    "pc",
+    "p999",
+    "mse"
+   ],
+   "matches": true
+  },
+  "pointmaze_k3": {
+   "recomputed": "last8",
+   "selection_json": "last8",
+   "held": [
+    {
+     "tag": "pc",
+     "s": 14,
+     "n": 20
+    },
+    {
+     "tag": "p999",
+     "s": 14,
+     "n": 20
+    },
+    {
+     "tag": "main",
+     "s": 14,
+     "n": 20
+    },
+    {
+     "tag": "p99999",
+     "s": 12,
+     "n": 20
+    },
+    {
+     "tag": "mse",
+     "s": 16,
+     "n": 20
+    },
+    {
+     "tag": "smooth",
+     "s": 16,
+     "n": 20
+    },
+    {
+     "tag": "last8",
+     "s": 18,
+     "n": 20
+    }
+   ],
+   "tied_at_max": [
+    "last8"
+   ],
+   "matches": true
+  }
+ },
+ "qat_log": {
+  "final": true,
+  "step": 10083,
+  "minutes": 120.04236770868302,
+  "max_minutes": 120.0,
+  "max_steps": 1000000,
+  "lr": 5e-05,
+  "bs": 32,
+  "ranges": "main",
+  "k": 4,
+  "gpu": "1",
+  "gpu_name": "NVIDIA RTX A5000",
+  "n_loss_entries": 201,
+  "first": {
+   "step": 50,
+   "loss": 0.06248551122844219,
+   "z_visual": 0.06649914383888245,
+   "z_proprio": 0.0058305650018155575,
+   "min": 0.7559099634488423
+  },
+  "last": {
+   "step": 10050,
+   "loss": 0.05597446545958519,
+   "z_visual": 0.051198288798332214,
+   "z_proprio": 0.004152604844421148,
+   "min": 119.65757749875387
+  },
+  "all_finite": true
+ },
+ "e1_links": {
+  "E5_dinowm_eval|pusht_k3_B|det|p999": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_eval|pusht_k3_B|shiter|p999": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_eval|pusht_k4_B|det|pc": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_eval|pusht_k4_B|shiter|pc": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_eval|pointmaze_k3_B|det|last8": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_eval|pointmaze_k3_B|shiter|last8": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_w|pusht_w4rtn|w4rtn|None": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_w|pusht_w4awq|w4awq|None": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_w|pusht_w4sr1|w4sr1|None": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_w|pusht_w4sr2|w4sr2|None": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_w|pusht_w4sr4|w4sr4|None": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_w|pusht_w8rtn|w8rtn|None": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.0
+  },
+  "E5_dinowm_qat|pusht_k4_qat|none|None": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.9948215484619141
+  },
+  "E5_dinowm_qat|pusht_k4_qat|det|None": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.9948215484619141
+  },
+  "E5_dinowm_qat|pusht_k4_qat|shiter|None": {
+   "n": 100,
+   "same_plan_seed_and_E": 100,
+   "it0_arrays": 100,
+   "it0_J_none_max_abs_diff_vs_E1_none": 0.9948215484619141
+  }
+ },
+ "problems": [],
+ "n_problems": 0
+}

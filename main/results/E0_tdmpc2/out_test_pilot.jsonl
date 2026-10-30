@@ -1,0 +1,12 @@
+Episode length: 100
+Discount factor: 0.95
+{"lib": "pilot", "variant": "det", "seed": 19000, "instr": false, "ret": 116.36395911313593, "success": 0.0, "ahash": "df40d5d4eef6eb3a"}
+{"lib": "pilot", "variant": "det", "seed": 19001, "instr": false, "ret": 707.5410208255053, "success": 1.0, "ahash": "6ce7ec63992154dc"}
+{"lib": "pilot", "variant": "ind", "seed": 19000, "instr": false, "ret": 60.61605384977884, "success": 0.0, "ahash": "b9aa825474c5786b"}
+{"lib": "pilot", "variant": "ind", "seed": 19001, "instr": false, "ret": 1747.394653558731, "success": 1.0, "ahash": "e5a44fb0a806c5a4"}
+{"lib": "pilot", "variant": "shiter", "seed": 19000, "instr": false, "ret": 885.49891962111, "success": 0.0, "ahash": "b5dec1fd0f365a9d"}
+{"lib": "pilot", "variant": "shiter", "seed": 19001, "instr": false, "ret": 1798.1996617987752, "success": 1.0, "ahash": "7b1654fc6dd5458b"}
+{"lib": "pilot", "variant": "shstep", "seed": 19000, "instr": false, "ret": 1730.1188535913825, "success": 1.0, "ahash": "a3bbb432d3033780"}
+{"lib": "pilot", "variant": "shstep", "seed": 19001, "instr": false, "ret": 1766.6230519488454, "success": 1.0, "ahash": "90bbac73efd94754"}
+{"lib": "pilot", "variant": "shep", "seed": 19000, "instr": false, "ret": 99.47295995242894, "success": 0.0, "ahash": "95dc51975be5b8a0"}
+{"lib": "pilot", "variant": "shep", "seed": 19001, "instr": false, "ret": 45.50429927976802, "success": 0.0, "ahash": "20960541b5ec8c0c"}

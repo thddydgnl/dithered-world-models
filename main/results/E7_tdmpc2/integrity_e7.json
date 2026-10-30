@@ -1,0 +1,73 @@
+{
+ "manifest_jobs": 1296,
+ "grid_complete": true,
+ "grid_conditions": 216,
+ "grid_expected": 216,
+ "conditions_not_30_eps": [],
+ "env": [
+  [
+   "yonghwi-racedreamer",
+   "NVIDIA RTX A5000",
+   "0",
+   "/home/yonghwi/pmx/A/mps/pipe",
+   "2.7.1+cu126",
+   1296
+  ]
+ ],
+ "result_files_extra": [],
+ "errors_dir_files": 0,
+ "lock_files": 0,
+ "success_time_span_utc": [
+  "2026-10-23T22:11:14Z",
+  "2026-10-24T01:28:54Z"
+ ],
+ "latency": {
+  "settings": {
+   "tasks": "mw-push,mw-pick-place,cheetah-run,walker-walk",
+   "iters": "3,6,12",
+   "precs": "all",
+   "rounds": 5,
+   "warmup": 50,
+   "steps": 200,
+   "out": "/home/yonghwi/pmx/A/tdmpc2_main/v5/e7_latency.json",
+   "gpu_check": true,
+   "wait_exclusive": 7200,
+   "force": false,
+   "quick": false
+  },
+  "gpu": "NVIDIA RTX A5000",
+  "torch": "2.7.1+cu126",
+  "secs": 2785.6650755405426,
+  "blocks_with_foreign_processes": 0,
+  "conditions": 96,
+  "foreign_blocks_recount": 0,
+  "orders_differ_between_rounds": true,
+  "host_loadavg1": {
+   "min": 20.41162109375,
+   "median": 21.5458984375,
+   "max": 32.54541015625
+  },
+  "host_cpu_busy": {
+   "min": 0.31078621693763653,
+   "median": 0.3343437534444142,
+   "max": 0.37760690636796834
+  },
+  "gpu_sm_clock_mhz": {
+   "min": 1262.0,
+   "median": 1890.0,
+   "max": 1890.0,
+   "share_at_max": 0.8875
+  },
+  "gpu_temp_c": {
+   "min": 49.0,
+   "max": 61.0
+  },
+  "gpu_power_w": {
+   "min": 66.83,
+   "max": 205.62
+  },
+  "problems": {}
+ },
+ "problems": {},
+ "ALL_OK": true
+}

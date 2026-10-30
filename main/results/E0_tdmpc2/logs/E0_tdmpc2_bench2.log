@@ -1,0 +1,10 @@
+MPS already running
+800 jobs -> /home/yonghwi/pmx/A/tdmpc2_main/out_bench/bench_mw.jsonl: {'episodes': 800}
+240 jobs -> /home/yonghwi/pmx/A/tdmpc2_main/out_bench/bench_dmc.jsonl: {'episodes': 240}
+800 jobs -> /home/yonghwi/pmx/A/tdmpc2_main/out_bench/benchn_mw.jsonl: {'episodes': 800}
+240 jobs -> /home/yonghwi/pmx/A/tdmpc2_main/out_bench/benchn_dmc.jsonl: {'episodes': 240}
+=== mps16b dmc W=16 start 17:55:17
+=== mps16b dmc end 18:02:18 RUNNER_STOPPED ok 96 failed 0 in 421s
+=== mps16b mw W=16 start 18:02:28
+=== mps16b mw end 18:07:29 RUNNER_STOPPED ok 148 failed 0 in 301s
+BENCH_DONE

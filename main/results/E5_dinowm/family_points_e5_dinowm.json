@@ -1,0 +1,510 @@
+{
+ "source": "analyze_e5.py (DINO-WM; eval pairs 0-99 (PushT eval6, PointMaze eval), 100 pairs; B selected on held pairs 0-19)",
+ "rule_H3b": "majority of the E1-eligible 3-4-bit confirmatory cells with D(B+det) - D(B+sh-iter) 95% CI lower > 0 (v5 7.3)",
+ "units": "D: success-rate drop (fraction) vs the E1 none of the same pairs and planner seeds",
+ "H3b": {
+  "cells": 3,
+  "passing": 1,
+  "holds": false,
+  "complete": true
+ },
+ "H3b_cells": {
+  "pusht_k3": {
+   "task": "pusht",
+   "k": 3,
+   "B": "p999",
+   "held": [
+    {
+     "tag": "pc",
+     "s": 9,
+     "n": 20,
+     "err1": 0.2520091796527718
+    },
+    {
+     "tag": "p999",
+     "s": 17,
+     "n": 20,
+     "err1": 0.04818327316875741
+    },
+    {
+     "tag": "main",
+     "s": 7,
+     "n": 20,
+     "err1": 0.284341770990387
+    },
+    {
+     "tag": "p99999",
+     "s": 1,
+     "n": 20,
+     "err1": 1.5868342356514282
+    },
+    {
+     "tag": "mse",
+     "s": 15,
+     "n": 20,
+     "err1": 0.04036841203379087
+    },
+    {
+     "tag": "smooth",
+     "s": 0,
+     "n": 20,
+     "err1": 0.3334913707332684
+    },
+    {
+     "tag": "last8",
+     "s": 9,
+     "n": 20,
+     "err1": 0.2064983869554995
+    }
+   ],
+   "held_tied_at_max": [
+    "p999"
+   ],
+   "n": 100,
+   "D_Bdet": 0.03,
+   "D_Bdet_ci": [
+    -0.02,
+    0.08
+   ],
+   "D_Bshiter": 0.05,
+   "D_Bshiter_ci": [
+    0.0,
+    0.1
+   ],
+   "Da_minus_Db": -0.02,
+   "Da_minus_Db_ci": [
+    -0.06,
+    0.02
+   ],
+   "passes": false,
+   "red": -0.6666666666666669,
+   "red_ci": [
+    -4.0,
+    0.5
+   ],
+   "mcnemar": {
+    "shiter_only": 1,
+    "det_only": 3,
+    "p": 0.625
+   }
+  },
+  "pusht_k4": {
+   "task": "pusht",
+   "k": 4,
+   "B": "pc",
+   "held": [
+    {
+     "tag": "pc",
+     "s": 17,
+     "n": 20,
+     "err1": 0.022360289370948173
+    },
+    {
+     "tag": "p999",
+     "s": 17,
+     "n": 20,
+     "err1": 0.01859530354348609
+    },
+    {
+     "tag": "main",
+     "s": 9,
+     "n": 20,
+     "err1": 0.05563411679586022
+    },
+    {
+     "tag": "p99999",
+     "s": 13,
+     "n": 20,
+     "err1": 0.0874326757122212
+    },
+    {
+     "tag": "mse",
+     "s": 17,
+     "n": 20,
+     "err1": 0.014838590299516983
+    },
+    {
+     "tag": "smooth",
+     "s": 14,
+     "n": 20,
+     "err1": 0.05048019083028556
+    },
+    {
+     "tag": "last8",
+     "s": 9,
+     "n": 20,
+     "err1": 0.03919793898810291
+    }
+   ],
+   "held_tied_at_max": [
+    "pc",
+    "p999",
+    "mse"
+   ],
+   "n": 100,
+   "D_Bdet": 0.04,
+   "D_Bdet_ci": [
+    -0.02,
+    0.1
+   ],
+   "D_Bshiter": 0.02,
+   "D_Bshiter_ci": [
+    0.0,
+    0.05
+   ],
+   "Da_minus_Db": 0.02,
+   "Da_minus_Db_ci": [
+    -0.04,
+    0.08
+   ],
+   "passes": false,
+   "red": 0.5,
+   "red_ci": [
+    -1.3333333333333337,
+    1.0
+   ],
+   "mcnemar": {
+    "shiter_only": 6,
+    "det_only": 4,
+    "p": 0.75390625
+   }
+  },
+  "pointmaze_k3": {
+   "task": "pointmaze",
+   "k": 3,
+   "B": "last8",
+   "held": [
+    {
+     "tag": "pc",
+     "s": 14,
+     "n": 20,
+     "err1": 0.2537795392987715
+    },
+    {
+     "tag": "p999",
+     "s": 14,
+     "n": 20,
+     "err1": 0.09695151986226871
+    },
+    {
+     "tag": "main",
+     "s": 14,
+     "n": 20,
+     "err1": 0.3296150971621198
+    },
+    {
+     "tag": "p99999",
+     "s": 12,
+     "n": 20,
+     "err1": 1.4709339492481461
+    },
+    {
+     "tag": "mse",
+     "s": 16,
+     "n": 20,
+     "err1": 0.07525330222970986
+    },
+    {
+     "tag": "smooth",
+     "s": 16,
+     "n": 20,
+     "err1": 0.4587319890058083
+    },
+    {
+     "tag": "last8",
+     "s": 18,
+     "n": 20,
+     "err1": 0.17585432215041621
+    }
+   ],
+   "held_tied_at_max": [
+    "last8"
+   ],
+   "n": 100,
+   "D_Bdet": 0.11,
+   "D_Bdet_ci": [
+    0.02,
+    0.2
+   ],
+   "D_Bshiter": -0.01,
+   "D_Bshiter_ci": [
+    -0.08,
+    0.06
+   ],
+   "Da_minus_Db": 0.12,
+   "Da_minus_Db_ci": [
+    0.04,
+    0.2
+   ],
+   "passes": true,
+   "red": 1.0909090909090908,
+   "red_ci": [
+    0.5,
+    3.0
+   ],
+   "mcnemar": {
+    "shiter_only": 16,
+    "det_only": 4,
+    "p": 0.01181793212890625
+   }
+  }
+ },
+ "qat": {
+  "rule": "design 6.5 / v5 7.3: if D(QAT+det) 95% CI upper < 5 pp, the value of dither is reported as a training-free PTQ prescription",
+  "flag_training_free_only": false,
+  "conditions": {
+   "none": {
+    "D": 0.27,
+    "D_ci": [
+     0.19,
+     0.36
+    ],
+    "success": 0.56,
+    "n": 100
+   },
+   "det": {
+    "D": 0.06,
+    "D_ci": [
+     -0.01,
+     0.13
+    ],
+    "success": 0.77,
+    "n": 100
+   },
+   "shiter": {
+    "D": 0.22,
+    "D_ci": [
+     0.14,
+     0.3
+    ],
+    "success": 0.61,
+    "n": 100
+   }
+  },
+  "contrasts": {
+   "D_qatdet_minus_D_Bdet": {
+    "n": 100,
+    "diff": 0.02,
+    "ci": [
+     -0.05,
+     0.1
+    ],
+    "mcnemar": {
+     "b_only": 8,
+     "a_only": 6,
+     "p": 0.79052734375
+    },
+    "B": "pc"
+   },
+   "D_qatdet_minus_D_E1det": {
+    "n": 100,
+    "diff": -0.18,
+    "ci": [
+     -0.28,
+     -0.08
+    ],
+    "mcnemar": {
+     "b_only": 6,
+     "a_only": 24,
+     "p": 0.0014309063553810122
+    }
+   },
+   "E1det": {
+    "n": 100,
+    "success": 0.59,
+    "D": 0.24,
+    "D_ci": [
+     0.14,
+     0.34
+    ],
+    "complete": true
+   },
+   "D_qatdet_minus_D_qatshiter": {
+    "n": 100,
+    "diff": -0.16,
+    "ci": [
+     -0.25,
+     -0.07
+    ],
+    "mcnemar": {
+     "b_only": 3,
+     "a_only": 19,
+     "p": 0.0008554458618164062
+    }
+   },
+   "D_qatnone_vs_E1none_mcnemar": {
+    "n": 100,
+    "diff": 0.27,
+    "ci": [
+     0.19,
+     0.36
+    ],
+    "mcnemar": {
+     "b_only": 27,
+     "a_only": 0,
+     "p": 1.4901161193847656e-08
+    }
+   },
+   "D_det_vs_QATnone": {
+    "n": 100,
+    "success": 0.77,
+    "D": -0.21,
+    "D_ci": [
+     -0.3,
+     -0.12
+    ],
+    "complete": true
+   },
+   "D_shiter_vs_QATnone": {
+    "n": 100,
+    "success": 0.61,
+    "D": -0.05,
+    "D_ci": [
+     -0.1,
+     0.0
+    ],
+    "complete": true
+   }
+  },
+  "train": {
+   "final": true,
+   "step": 10083,
+   "minutes": 120.04236770868302,
+   "lr": 5e-05,
+   "bs": 32,
+   "ranges": "main",
+   "k": 4,
+   "first": {
+    "step": 50,
+    "loss": 0.06248551122844219,
+    "z_visual": 0.06649914383888245,
+    "z_proprio": 0.0058305650018155575,
+    "min": 0.7559099634488423
+   },
+   "last": {
+    "step": 10050,
+    "loss": 0.05597446545958519,
+    "z_visual": 0.051198288798332214,
+    "z_proprio": 0.004152604844421148,
+    "min": 119.65757749875387
+   },
+   "min_loss": 0.05420810662209988
+  }
+ },
+ "weights": {
+  "conditions": {
+   "w8rtn": {
+    "D": 0.03,
+    "D_ci": [
+     -0.01,
+     0.08
+    ],
+    "success": 0.8,
+    "n": 100
+   },
+   "w4rtn": {
+    "D": 0.55,
+    "D_ci": [
+     0.44,
+     0.66
+    ],
+    "success": 0.28,
+    "n": 100
+   },
+   "w4awq": {
+    "D": 0.71,
+    "D_ci": [
+     0.62,
+     0.8
+    ],
+    "success": 0.12,
+    "n": 100
+   },
+   "w4sr1": {
+    "D": 0.76,
+    "D_ci": [
+     0.67,
+     0.84
+    ],
+    "success": 0.07,
+    "n": 100
+   },
+   "w4sr2": {
+    "D": 0.68,
+    "D_ci": [
+     0.58,
+     0.77
+    ],
+    "success": 0.15,
+    "n": 100
+   },
+   "w4sr4": {
+    "D": 0.71,
+    "D_ci": [
+     0.62,
+     0.8
+    ],
+    "success": 0.12,
+    "n": 100
+   }
+  },
+  "contrasts": {
+   "w4rtn-w4sr1": {
+    "diff": -0.21,
+    "ci": [
+     -0.31,
+     -0.11
+    ],
+    "mcnemar_p": 0.00019219517707824707
+   },
+   "w4rtn-w4sr2": {
+    "diff": -0.13,
+    "ci": [
+     -0.24,
+     -0.01
+    ],
+    "mcnemar_p": 0.04703102743951604
+   },
+   "w4rtn-w4sr4": {
+    "diff": -0.16,
+    "ci": [
+     -0.27,
+     -0.05
+    ],
+    "mcnemar_p": 0.0070003666914999485
+   },
+   "w4rtn-w4awq": {
+    "diff": -0.16,
+    "ci": [
+     -0.26,
+     -0.06
+    ],
+    "mcnemar_p": 0.0037191659212112427
+   },
+   "w8rtn-w4rtn": {
+    "diff": -0.52,
+    "ci": [
+     -0.63,
+     -0.41
+    ],
+    "mcnemar_p": 4.4325654258159375e-14
+   },
+   "w4sr1-w4sr2": {
+    "diff": 0.08,
+    "ci": [
+     -0.01,
+     0.17
+    ],
+    "mcnemar_p": 0.11531829833984375
+   },
+   "w4sr2-w4sr4": {
+    "diff": -0.03,
+    "ci": [
+     -0.13,
+     0.07
+    ],
+    "mcnemar_p": 0.6900379657745361
+   }
+  }
+ }
+}

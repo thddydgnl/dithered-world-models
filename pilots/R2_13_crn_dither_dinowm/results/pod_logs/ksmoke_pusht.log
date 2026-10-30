@@ -1,0 +1,56 @@
+Using cache found in /root/.cache/torch/hub/facebookresearch_dinov2_main
+num_action_repeat: 1
+num_proprio_repeat: 1
+proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+)
+action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+)
+proprio_dim: 10, after repeat: 10
+action_dim: 10, after repeat: 10
+emb_dim: 404
+Model emb_dim:  404
+Loaded 18685 rollouts
+Loaded 21 rollouts
+pusht held none:0 ep 0 success True margin 0.397 (19.8s/ep, total 40s)
+pusht held none:0 ep 1 success True margin 0.677 (19.8s/ep, total 40s)
+pusht held det:4 ep 0 success False margin 1.264 (33.3s/ep, total 107s)
+pusht held det:4 ep 1 success False margin 1.662 (33.3s/ep, total 107s)
+pusht held none:0 ep 2 success True margin 0.487 (31.5s/ep, total 170s)
+pusht held none:0 ep 3 success True margin 0.397 (31.5s/ep, total 170s)
+pusht held det:4 ep 2 success True margin 0.823 (33.3s/ep, total 236s)
+pusht held det:4 ep 3 success False margin 1.545 (33.3s/ep, total 236s)
+pusht held none:0 ep 4 success False margin 2.218 (31.3s/ep, total 299s)
+pusht held none:0 ep 5 success True margin 0.414 (31.3s/ep, total 299s)
+pusht held det:4 ep 4 success False margin 2.218 (32.9s/ep, total 365s)
+pusht held det:4 ep 5 success False margin 1.307 (32.9s/ep, total 365s)
+pusht held none:0 ep 6 success True margin 0.262 (31.2s/ep, total 427s)
+pusht held none:0 ep 7 success True margin 0.418 (31.2s/ep, total 427s)
+pusht held det:4 ep 6 success True margin 0.983 (32.9s/ep, total 493s)
+pusht held det:4 ep 7 success False margin 1.307 (32.9s/ep, total 493s)
+pusht held none:0 ep 8 success True margin 0.362 (31.1s/ep, total 556s)
+pusht held none:0 ep 9 success True margin 0.512 (31.1s/ep, total 556s)
+pusht held det:4 ep 8 success True margin 0.503 (33.3s/ep, total 623s)
+pusht held det:4 ep 9 success False margin 1.401 (33.3s/ep, total 623s)
+pusht held none:0 ep 10 success True margin 0.279 (31.0s/ep, total 685s)
+pusht held none:0 ep 11 success False margin 4.175 (31.0s/ep, total 685s)
+pusht held det:4 ep 10 success False margin 1.144 (33.4s/ep, total 752s)
+pusht held det:4 ep 11 success True margin 0.702 (33.4s/ep, total 752s)
+pusht held none:0 ep 12 success True margin 0.416 (31.0s/ep, total 814s)
+pusht held none:0 ep 13 success True margin 0.678 (31.0s/ep, total 814s)
+pusht held det:4 ep 12 success True margin 0.818 (33.0s/ep, total 880s)
+pusht held det:4 ep 13 success True margin 0.811 (33.0s/ep, total 880s)
+pusht held none:0 ep 14 success True margin 0.479 (31.1s/ep, total 942s)
+pusht held none:0 ep 15 success False margin 1.751 (31.1s/ep, total 942s)
+pusht held det:4 ep 14 success True margin 0.240 (32.8s/ep, total 1008s)
+pusht held det:4 ep 15 success False margin 2.044 (32.8s/ep, total 1008s)
+pusht held none:0 ep 16 success True margin 0.719 (30.6s/ep, total 1069s)
+pusht held none:0 ep 17 success True margin 0.217 (30.6s/ep, total 1069s)
+pusht held det:4 ep 16 success False margin 1.339 (33.3s/ep, total 1136s)
+pusht held det:4 ep 17 success False margin 1.007 (33.3s/ep, total 1136s)
+pusht held none:0 ep 18 success True margin 0.576 (31.3s/ep, total 1198s)
+pusht held none:0 ep 19 success True margin 0.505 (31.3s/ep, total 1198s)
+pusht held det:4 ep 18 success True margin 0.751 (16.3s/ep, total 1231s)
+pusht held det:4 ep 19 success False margin 1.561 (16.3s/ep, total 1231s)
+CEM13_DONE pusht held none:0,det:4 0-20 in 1231s

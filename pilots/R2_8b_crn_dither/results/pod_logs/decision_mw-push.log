@@ -1,0 +1,11 @@
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv_mw/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+mw-push: state 0/150 (2s)
+mw-push: state 50/150 (19s)
+mw-push: state 100/150 (37s)
+DECISION mw-push: 150 states in 54s
+DECISION_DONE

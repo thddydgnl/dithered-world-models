@@ -1,0 +1,35 @@
+# R2-5 작업 로그 (UTC, 2026-10-21)
+
+- 05:16Z 규칙(PILOT_RULES.md), IDEAS_ROUND2.md R2-5·R2-3, R1-1 REPORT, phaseB 파이프라인(setup_pod.sh, convert_droid.py, extract.py, LOG.md)을 읽음. 동시 실행 pod 4대(r2n1·r2n2·r2n3·r2n4)
+- 05:24:19Z pod 생성: `pod_up.sh r2n5` → id `7wtf9yhpv13cwv`, **A40 48GB, $0.59/h**(첫 후보로 바로 잡힘). nproc 96, RAM 503GB, /workspace는 네트워크 FS(56GB), torch 2.4.1+cu124
+- 05:24~05:31Z setup_pod.sh(약 7분)
+  - phaseB보다 빨라진 이유: 체크포인트(11.76GB)를 aria2c 16연결로 받음(약 5분), TF venv 설치와 병렬
+  - phaseB 함정 미리 처리: opencv-python-headless<4.11 설치, hub URL 패치(이번 commit 204698b에서는 이미 공식 주소라 sed 무변화)
+- 05:27~05:31Z 공식 저장소 확인(pod에서)
+  - `notebooks/utils/mpc_utils.py`: energy = `l1(final.flatten(1), goal.flatten(1))` = 전 토큰·차원 |차| 평균, 최종 프레임만 사용. CEM 표본은 xyz·gripper만 뽑고 회전은 0. rollout은 예측 latent를 layer_norm해서 이어 붙임
+  - `world_model_wrapper.py`: 기본 rollout=2. `compute_new_pose`는 gripper를 [0, 1]로 자름
+  - 체크포인트 key: encoder, predictor, target_encoder 등. 공식 hub는 `encoder`를 strict=False, `predictor`를 strict=True로 로드 → 같은 key 정리로 직접 로드, missing·unexpected 0
+- 05:32Z 조정자 수정 1 수신: 후보 일관 고정 mask 무작위 대조(D-fix) 추가, mask 3개 이상, 독립 mask D1/D2 유지. 코드에 F1/F2 모드로 반영(스모크 수치를 보기 전)
+- 05:35~05:36Z DROID-100 변환(100 episode, 약 1분, img1만 1.4GB)
+- 05:37~05:54Z 스모크(평가 5창, 보정 4창, TF32): prep → checks → stats → match → eval → analyze 전부 동작
+  - checks: compute_new_pose 복제 = 공식(차 2.7e-15), 변환 결정적, hook 무개입 = hook 없음(비트 단위), 반복 결정적
+  - **정밀도 문제 발견:** bf16(공식 추론 설정)은 fp32 대비 1위 일치 60%, 1−τ 0.069. 반올림만으로 near-tie가 섞인다. TF32는 정확하지만 창·조건당 1.52 s로 느림. fp16은 1−τ 0.010, 1위 100%, 0.77 s → 본 실행은 fp16
+  - 첫 5창에서 실제 행동열 순위가 17~42위로 낮아 규약 오류를 의심함 → 공식 DROID 학습 설정을 확인
+    - `droid-256px-8f.yaml`: ratio 0.75~1.35, scale 1.777 → 16:9 프레임에서는 항상 중앙 1.35 비율 crop으로 fallback. notebook·phaseB의 정사각 crop과 다름
+    - 행동 규약(poses_to_diffs, frameskip=tubelet_size=1)과 프레임 간격(fps 4 → 4프레임 간격)은 우리 구현과 같음
+- 05:45~05:50Z crop 비교(32창, fp16, 개입 없음): 두 crop의 차이 없음(실제 행동 평균 순위 14.6 vs 14.3, 0 행동보다 낮은 energy 72% vs 72%). energy가 교란 크기에 따라 단조 증가 → 모델은 행동에 반응함. 실제 행동이 1위를 못 하는 것은 0.1σ·0.25σ 교란 16개가 거의 동률이기 때문 → 공식 square crop 유지
+- 05:50~05:58Z PLAN.md 작성(판정 기준 원문 복사, 주 판정 = B vs F2(D-fix), 창 160개, fp16, 수치 바닥 조건)
+- 05:53:01Z **본 실행 시작**(`run_main.sh`): prep 05:54:11 완료(178창)
+- 05:55Z 분석 코드 확인용으로 스모크 4창 analyze 출력을 처음 봄(PLAN §6에 수치 기록, 규칙 변경 없음)
+- 05:54~06:01Z stats(보정 18창: 한 보정 episode의 움직이는 창이 1개뿐이라 20 → 18. 54 s)와 match(6창, 12개 탐색, 366 s). 모든 매칭이 목표 ±3% 안
+- 06:01:37Z eval 시작. 창당 35.9 s(앞 30창은 TF32·fp32 수치 바닥 포함). A/B hook은 조건당 약 1.03 s, 기준 0.79 s
+- 06:22Z 부분 결과(35창)로 analyze 동작 확인. 규칙 변경 없음
+- 06:23Z 조정자 부가 요청 2 수신: massive coordinate 점검(사후/부가). 06:24~06:26Z 본 eval과 병렬로 `massive.py` 실행(평가 40창 rollout, 534 프레임 latent, 원시 인코더 96 프레임)
+  - 운영 메모: `cd ... && setsid nohup ... &`는 목록 전체가 백그라운드 subshell이 되어 ssh가 끝까지 기다림. 결과에는 영향 없음
+- 06:52Z 부분 결과(90창)로 그림 확인. 라벨 겹침을 고치고 S1 그림에 D-fix 대비를 추가함(analyze.py 그림 부분만 수정, 지표·판정 코드는 그대로)
+- 07:29:18Z **eval 완료**: 160창 × 37조건, 5261 s(창당 32.9 s), 최대 GPU 메모리 10.7GB, fp16 비유한 값 0건. run_main.sh가 analyze 자동 실행
+- 07:29~07:30Z posthoc.py(사후), raw energy를 float32 압축본으로 저장, results 묶음(5.5MB) 회수
+- 07:30:35Z `pod_down.sh r2n5`로 pod 삭제. `budget.py status`에서 `gone`, **$1.28** 확인
+- 07:31Z 로컬에서 회수한 eval_raw로 짧은 numpy 점검 2개(수 초): S1 Δ_B의 창 bootstrap CI [0.099, 0.103], D-fix mask별 1−τ 차이
+- 07:35Z REPORT.md 작성. Write 도구가 REPORT.md 쓰기를 막아 규칙(PILOT_RULES §6)대로 Bash heredoc으로 저장함
+- **최종 판정(사전등록 규칙): 없음.** S1 경계 실패(Δ 0.1009 > 0.10), S2 실패(B/F2 순위 손상 비 0.85·1.06·1.05), S3 통과(2/3). 주(D-fix)·보조(독립) 판정 같음

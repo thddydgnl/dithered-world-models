@@ -1,0 +1,6 @@
+Episode length: 500
+Discount factor: 0.99
+walker-walk k=3: det: e1 0.2686 e3 0.7420 er 5.1742 | ind: e1 0.8876 e3 2.0001 er 3.1280 | shfwd: e1 0.8933 e3 1.9981 er 3.1581 | shstep: e1 0.8938 e3 2.1523 er 3.1759 | shep: e1 0.8938 e3 2.1523 er 3.1759
+walker-walk k=4: det: e1 0.0953 e3 0.2843 er 3.7155 | ind: e1 0.2596 e3 0.6247 er 1.5564 | shfwd: e1 0.2614 e3 0.6184 er 1.6741 | shstep: e1 0.2644 e3 0.6752 er 1.6703 | shep: e1 0.2644 e3 0.6752 er 1.6703
+walker-walk ranges R2-8 vs this pod: dyn0 hi 9.355/9.355, dyn1 hi 8.723/8.723, rew0 hi 11.588/11.588, rew1 hi 7.742/7.742
+PREP walker-walk done in 93s

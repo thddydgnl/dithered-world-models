@@ -1,0 +1,22 @@
+# R2-3 작업 로그 (UTC, 2026-10-21)
+
+- 04:30Z 조정자 지시 수신(R1-1 후속, tag r2n3, 상한 $3). IDEAS_ROUND2.md R2-3 절 확인
+- 04:32Z R1-1 코드를 `code/`에 복사(nt_lib, calib, prep, grid, decision, setup 스크립트). setup_pod.sh의 체크포인트를 4과제로 줄이고, setup_mw.sh의 환경 확인을 nt_lib 경유로 바꿨다(Timeout shim 포함)
+- 04:32:48Z pod 생성: `pod_up.sh r2n3` → id `lnwbng93dr1v4s`, **RTX A5000, $0.27/h**. CPU 할당 7.65코어. 이번 pod의 /workspace는 로컬 디스크다
+- 04:33~04:35Z setup_pod.sh(약 1분)와 setup_mw.sh(약 2분) 완료. mw-push seed 1000의 return이 1770.1로 R1-1 pod와 같았다(pod 간 재현)
+- 04:33~04:35Z 코드 수정
+  - nt_lib.Ablator에 A(0) / B(조건부 평균 대체) / C(평균 이동만) / D(무작위 0 또는 평균 대체) 모드 추가
+  - prep.py에 μ, δ, ā 통계 계산과 D1z/D3z/D1m/D3m 매칭(1-step 또는 3-step, 이분 탐색 하한 1e-5) 추가
+  - grid.py에 우선순위 job 순서, decision.py에 새 조건 반영
+- 04:35~04:37Z 스모크(mw-push, 2 episode, α 0.1/0.2) 완료. 로컬 네트워크 끊김(ssh broken pipe)이 한 번 있었지만 원격 명령은 정상 실행됐다
+  - 관찰: α=0.2에서 B의 err1(0.197)이 A(0.114)보다 컸다. 계획은 A 1/2, B 0/2, C 0/2, D 2/2 성공(PLAN §7에 기록)
+- 04:37~04:39Z PLAN.md 작성(판정 기준 원문 복사, D = D1m 해석, 대상 칸 규칙)
+- 04:39:26Z **본 실행 시작**: 4과제 × α 3개 × 7조건 × 10 episode + 기준선 = 880 episode, 워커 7개, MPS 사용
+- 04:40~04:42Z calib 40 episode(94초)와 prep 4과제(과제당 22~28초) 완료. A의 예측 오차가 R1-1과 수치까지 같았다
+- 04:42:41Z grid 시작(880 job, 우선순위 순서)
+- 04:53Z 1순위 칸(MW 2과제 + cheetah, α=0.2) 완료 후 예비 analyze를 실행했다. 판정 규칙은 그대로 두었다
+- 05:20:09Z grid 완료(37분). 예비 판정: 혼합(A1 8/12, A2 3/9, I1 4/12, I2 0.484)
+- 05:20~05:24Z decision(300 상태, 계획 재실행 150 상태, 3.6분)과 analyze 완료
+- 05:24Z 결과 회수(6.7MB. 상태별 결정 CSV는 gzip)와 md5 대조. fig_random_controls의 범례 위치를 고쳐 다시 그렸다(수치 파일의 md5는 그대로)
+- 05:24:55Z `pod_down.sh r2n3`로 pod 삭제. `budget.py status`에서 `gone`과 $0.24 확인
+- REPORT.md는 R1-1에서 Write 도구가 보고서 파일을 막았으므로 처음부터 Bash heredoc으로 썼다(PILOT_RULES 허용)

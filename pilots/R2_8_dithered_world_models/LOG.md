@@ -1,0 +1,25 @@
+# R2-8 작업 로그 (UTC, 2026-10-21)
+
+- 06:24Z 조정자 지시 수신(R2-8, tag r2n8, 상한 $2). IDEAS_ROUND2.md R2-8 절 확인
+- 06:25Z R2-3b 코드를 `code/`에 복사했다(nt_lib, calib, prep, grid, decision, setup). R2-3 prep은 `prep_r23.py`로 복사했다(참고용, 실행하지 않음)
+- 06:27:08Z pod 생성: `pod_up.sh r2n8` → A5000·3090을 확보하지 못해 **NVIDIA A40($0.59/h)**, id `v9h1giamzub07q`
+- 06:27~06:29Z setup(설치 + Meta-World) 완료. 비제거 mw-push seed 1000의 return은 1769.3으로, R2-3b의 A40과 같았다
+- 06:25~06:31Z 코드 작성
+  - nt_lib에 양자화 모드 추가: det, ind(항목별 확률적 반올림), sh(unit별 dither를 forward 안의 모든 후보가 공유), sub(subtractive)
+  - prep_r28: R2-3·3b 조건 재매개변수화 + 층별 양자화 범위 + k=2~8 예측 오차
+  - decision에 CVB 지표(elite 가중 평균 첫 행동의 이동)와 조건 목록 인자 추가
+  - grid_r28, analyze_r28(S1~S3) 작성. R2-3·3b의 표와 prep JSON을 `inputs/`로 pod에 올림
+- 06:29:48~06:31Z calibration(40 episode). 06:31~06:34Z prep 4과제 병렬(각 약 195초)
+- 06:35Z mw-push 스모크(det·ind × k=2~6, 3 episode): det은 k=2에서 0/3, k=3에서 1/3, k≥4에서 3/3 성공. 스모크 decision과 analyze_r28도 끝까지 돌았다
+- 06:36Z PLAN.md 작성
+  - 비트 수 K = {3, 4, 5}. IDEAS의 {2, 3, 4}에서 한 칸 올렸다. 근거는 PLAN §3이다(k=2는 모든 변형이 붕괴)
+  - S1~S3 원문과 세부 규칙을 적었다
+  - 관찰: mw-push k=3에서는 확률적 반올림의 err1(0.56)이 결정적 반올림(0.82)보다 **작았다**(S2의 "오차가 작지 않다" 조건에 걸릴 수 있음)
+- 06:36:29Z **본 실행 시작**(grid 520 episode → decision 51조건 → analyze)
+- 06:55:47Z grid 완료(19분). 예비 S2/S3 계산 결과: S2 0/4, S3 0/4(반대 방향: 공통 dither가 독립 dither보다 덜 해로움)
+- 06:55~06:58Z decision(51조건 + seed noise, 150 상태)과 analyze_r28 완료
+  - S1: CVB ρ 0.741 vs err1 0.695 → 불성립
+  - 판정: **없음**
+- 07:00~07:06Z 결과 회수(8.9MB, 상태별 결정 CSV는 gzip). 네트워크가 느려 5분 넘게 걸렸다. md5는 일치
+- 07:07:00Z `pod_down.sh r2n8`로 pod 삭제. `budget.py status`에서 `gone`과 $0.40 확인
+- REPORT.md는 Bash heredoc으로 작성

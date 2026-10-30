@@ -1,0 +1,244 @@
+# A_dithered_world_models 본 실험 기록 (조정자)
+
+- 2026-10-21T13:00Z 본 실험 시작. 규칙은 MAIN_RULES.md, 진행 상황은 MAIN_STATUS.md.
+- 2026-10-21T18:14Z DESIGN_main.md v1 고정(A 전체의 가설·판정 규칙 + TD-MPC2 세부). sha256 9f84ab7f597ffc829ad9736ac6556ec9b43d87de0c65fd15b4bd1ec713a5a3ef. 조정자 결정(설계 범위 안): held는 체크포인트 3개 합, k−1=2 칸 포함, drawer-open은 R2-13 대체 규칙, Meta-World는 서버(mujoco-py 성공).
+- 2026-10-21T19:11Z TD-MPC2 E1 1시간 점검에서 prederr·decision job 95개가 CUDA 메모리 부족으로 실패한 것을 발견했다(작업자 16개가 큰 held 후보 집합을 동시에 GPU에 올림). episode job은 정상이었다(911개 완료). 실행 방식만 고쳤다: run_e1_split.sh로 episode는 16개씩 돌리고, 칸 단위 job은 그 뒤에 3개씩, 마지막에 2개씩 재시도한다. 실패 기록은 out/errors_archive로 옮겼다. 설계나 판정 규칙의 변경은 없다.
+- 2026-10-21T20:01Z DESIGN_main.md v2(DINO-WM 세부) 덧붙임, sha256 05bf601481450ed75afc23cb38f2cc15c77e0dbf15b76cd733a82bd96ff53020. 조정자 결정(설계 범위 안): PointMaze는 R2-13 대체 규칙으로 k=3·칸 {2,3,4}, Wall은 규칙대로 칸 {4,5,6}에 k=3 탐색 칸 추가, open-loop에서 sh-step=sh-ep라 하나만 돈다. 사용자 확인 대기: PushT eval 쌍 겹침 처리, DINO-WM OEI 기준. Wall·PointMaze E1 먼저 시작(GPU 1), PushT E1은 결정 뒤.
+- 2026-10-21T22:54Z 사용자 승인: DINO-WM OEI 확증 지표는 비양자화 모델 비용 기준(참 비용은 보조), PushT eval 쌍은 held와 겹치지 않게 다시 뽑기. DESIGN_main v3 sha256 9b86506e744af729665bae470dd617e20211b514cf3d26e0c63012745208719c. 설계 문서 4.3절 문구 정정.
+- 2026-10-22T06:19Z 1시간 점검에서 TD-MPC2 E1의 칸 단위 job 95개(prederr 83개, decision 12개)이 06:08Z에 모두 CUDA 초기화 단계에서 실패한 것을 발견했다("Error 205: mapping of buffer object failed"). episode job 4,104개는 그 전에 모두 끝났다. 원인: episode 단계가 끝나자 PushT E1 runner가 MPS를 쓰지 않는 프로세스로 GPU 0에서 시작했고, 그 뒤 새로 붙는 MPS client가 초기화에 실패했다. 실행 방식만 고쳤다. A의 MPS daemon을 멈추고 실패 기록을 out/errors_archive2로 옮겼다. 칸 단위 job은 MPS 없이 작업자 2개로 다시 돌린다(`run_e1_cells.sh`, tmux `A-E1-tdmpc2-cells`, 06:20Z). 첫 16개가 오류 없이 끝났다. 설계나 판정 규칙의 변경은 없다.
+- 2026-10-22T06:55Z DESIGN_main.md v4 덧붙임(조정자, TD-MPC2 E1 결과와 E1 OEI 결과를 보기 전), sha256 b814a4092a4b216f566c65ac2802398e8bd7ee5fb2e781f5b6f8709ed4149404. 6.1절 판정의 계산 세부를 두 계열에 같게 고정했다(DINO-WM 작업자의 10-21 23:10Z 규칙을 TD-MPC2에도 적용: 과제별 Holm, 한쪽 α 0.025, DMC는 상대 return 하락). E1 자료로 계산하는 H2a·H2b의 세부도 고정했다(H2b 주 계산은 과제 안 Spearman 차의 과제 평균). 설계 범위 안의 조작적 정의이고, 가설과 문턱은 바꾸지 않았다.
+- 2026-10-22T06:45Z TD-MPC2 E1 칸 단위 job 216개 완료(MPS 없이 다시 돈 95개 포함, 실패 0). 자료 20,520 episode, 모두 GPU 0.
+- 2026-10-22T07:40Z TD-MPC2 E1 분석 보고 접수([reports/E1_tdmpc2.md](reports/E1_tdmpc2.md), v4 그대로 계산). H1: Meta-World·DMC 성립. H3a: Meta-World 성립(자격 19칸 모두 red ≥ 0.5), DMC 불성립(5/12, walker k=3에서 sh-iter가 det보다 +22.1% [18.0, 26.3] 해로움), 전체 불성립. H2a: TD-MPC2 3과제 모두 불성립(sh-iter OEI도 유의하게 음수)이라 PushT와 관계없이 불성립. H2b: 불성립(0.079 < 0.15). 사후 분석: OEI = 마지막 평가 안의 선택 + 반복에 걸친 이동(drift). drift는 지속 오차 변형에서만 크다. 주장 수준의 결정(기전·진단 서술, DMC 대응)을 사용자에게 묻는다. go/no-go는 DINO-WM H3a를 기다린다.
+- 2026-10-22T07:50Z DINO-WM E2·E3·E5 운영 제안 접수([reports/E2E3E5_dinowm_proposal.md](reports/E2E3E5_dinowm_proposal.md)). 스모크에서 새 코드가 E1 job과 비트 단위로 같다. 조정자 결정(설계 범위 안): E2 모든 점 100 episode(프로토콜 그대로). 설계 6.9절의 E2 예산 10 GPU-시간은 넘는다(DINO-WM E2만 약 30 GPU-시간, 서버라 비용 없음). E1을 먼저 끝낸다(GPU 0: PushT k=4 → k=3, GPU 1: PointMaze → PushT k=5, 약 19Z). 그 뒤 GPU 1은 DINO-WM E2·E3·E5, GPU 0은 TD-MPC2 sweep(MPS). E5 코드는 지금 구현한다. E2 세부는 사용자 결정(drift 가설 추가 여부) 뒤 v5로 고정한다. v5 전에는 DINO-WM OEI 분해와 H4b 상관을 계산하지 않는다.
+- 2026-10-22T08:00Z 두 계열의 OEI 구현이 한 점에서 다르다는 것을 확인했다(DINO-WM 작업자 답). DINO-WM `oei_ref_mf`는 계획이 끝난 뒤 실행 계획의 오차를 다시 잰다. 새로 뽑는 변형(ind, sh-iter, det+shift)은 이때 선택과 독립인 새 draw를 쓴다. TD-MPC2(v1 §0.4)는 실행 elite를 고른 그 draw의 오차를 쓴다. 그래서 새로 뽑는 잡음에서 같은 draw 안 승자의 저주가 TD-MPC2 OEI에만 들어간다. H2a의 예측("확률적 변형에서 0 근처")은 독립 draw판에 맞는다. 조치 제안(사용자 확인 대기): TD-MPC2 H2a·H2b의 불성립은 고정 정의대로 기록하고, E2부터 두 계열 모두 두 판을 함께 잰다. TD-MPC2 H2a 3칸은 독립 draw판을 더해 다시 돌리되 사후 정정으로 표시한다. E1 DINO-WM 분해는 v5 전까지 계산하지 않는다.
+- 2026-10-22T09:00Z DESIGN_main.md v5 덧붙임(조정자, E2·E3·E5·E7 본 실행 전), sha256 a7895d735cf4d425534b7638b1cd24a0e7cb24731ec1de8a2bebb7b9745681a4. 두 작업자 초안을 바탕으로 정했다(설계 범위 안).
+  - 모든 설정을 프로토콜 episode 수로 돈다(TD-MPC2 90짝, DINO-WM 100 ep).
+  - E2: TD-MPC2 OFAT 16설정, N sweep은 elite·정책 prior 비율 고정. H2c는 "각각 N에 대한 단조성"(과제 4개 중 3개)으로 읽는다.
+  - E3: TD-MPC2 6번째 칸 indep을 넣고, 같은 거칠기의 새로 뽑기 대조를 보조로 둔다. DINO-WM은 세 과제의 1차 k로 넓힌다.
+  - H4a는 공유 표 4수준, 계열마다 과반, 두 계열 모두. H4b는 near-tie 밀도 = −gap 중앙값, TD-MPC2 12과제가 확증이다.
+  - DMC 설명 규칙(S_det = drift_det/oei_det, 문턱 0.5)을 고정했다. 주장을 좁힐지는 사용자가 정한다.
+  - E5 전체판, E7 융합 Triton kernel(torchao는 별도 venv에만), 일정은 E1을 먼저 끝낸다.
+  - 사용자 결정 두 가지(E2 층 (b), TD-MPC2 H2a 재측정)는 v5.1로 미룬다.
+  - 설계 6.9절 예산 대비 GPU 시간은 늘었다(약 36 → 85 GPU-시간, 서버라 비용 없음).
+- 2026-10-22T08:50Z v5 실행 준비 완료.
+  - TD-MPC2: GPU 0 queue `A-v5-queue-g0`. PushT가 GPU 0을 비우면 MPS로 E2 → E3 → E5 → E7 성공률을 돈다. H2a 재측정은 flag가 있을 때만 돈다. 합계 약 30 GPU-시간.
+  - DINO-WM: GPU 1 사슬 `A-v5-dinowm-g1`. PushT k=5 뒤 E2 N sweep → E3 → E5 → E2 elite·opt_steps 순서로 돈다. 약 55 GPU-시간.
+  - 실행 목록 점검 오류는 0이다.
+  - 조정자 수정(E5 결과 전): TD-MPC2 E5의 MSE clip α 격자가 k=3에서 아래 끝 0.5에 102/144번 걸렸다. 그래서 격자를 {0.10, 0.15, …, 0.45, 0.5, …, 1.1}로 넓힌다. 경계에 걸리는 비율이 5%를 넘으면 더 넓힌다. 기준선을 약하게 두지 않으려는 보정이고, v5.1에 적는다.
+  - 규칙: queue가 GPU 0에서 MPS를 돌리는 동안에는 GPU 0에 MPS가 아닌 프로세스를 올리지 않는다.
+- 2026-10-22T09:05Z E7 실제 kernel 구현·정확성 시험 완료(TD-MPC2 작업자, `e7lib.py`, 융합 Triton int8 kernel, Philox dither, packed int4는 지연용). 정수 MLP와 같은 W8 fake-quant의 상대 차는 8e-5(k=8)다. 조정자 결정: torchao 선택 기준선은 돌리지 않는다. CUDA graph(보조)는 구현하지 않았다. int4 성공률은 int8 그릇판으로 잰다. 셋 모두 편차로 기록한다. E7 지연 측정(배타 GPU, 약 50분)은 GPU 0 queue의 마지막 단계로 넣는다(MPS를 멈춘 뒤).
+- 2026-10-22T09:15Z E4 이론·모의 완료(보고 [reports/E4_theory.md](reports/E4_theory.md), CPU 11.6시간, 사전 선언 격자 504 job). 유도와 모의가 잘 맞는다(선택 항 기울기 0.97~1.05, SAA drift 0.92~1.02, CRN (1−ρ) 비례). 결정 사항 셋을 받았다. 같은 draw OEI 때문에 H2a가 실패할 것이라는 예측은 E1과 같은 방향이다. 나머지 둘은 H2c의 elite 처리와 H4a의 var_cand다. 작업자는 몇 분 동안 CPU 프로세스 9개(상한 8 초과)를 돌렸고, 작업 로그에 기록했다.
+- 2026-10-22T09:30Z DESIGN_main v5.1 덧붙임(E2·E3·E5 자료 전, 조정자). 바꾼 것은 셋이다: E5 MSE α 격자를 넓혔다. H2c 확증을 elite 수 고정 sweep으로 바로잡았다(설계 4.4절 극값 예측과 맞춤; 비율 고정은 TD-MPC2 보조로만 돌린다). E3에 var_cand 측정을 더했다. 사용자 결정 두 가지는 v5.2로 미룬다.
+- 2026-10-22T09:50Z **사용자 승인**: 보완 추천안 1과 추천안 2를 그대로 진행한다. DESIGN_main v5.2(9절) 고정, sha256 41e1f39d6bd8ddcdefae9a55f55aec28287be43d25604b77e46a30b89e8d72ac.
+  - 기전 주장은 "반복에 걸쳐 지속되는 오차의 이용"으로 좁히고, "OEI가 1-step 오차보다 손상을 더 잘 예측한다"는 진단 주장은 뺀다.
+  - TD-MPC2 H2a 3칸은 독립 draw판으로 재측정한다(새로 뽑는 변형 3개, 810 ep, 사후 정정). 서버에 `FLAG_h2a_indep_fresh3`을 만들어 GPU 0 queue의 첫 단계로 넣었다.
+  - E2 층 (b)는 H2a_indep와 H2a′(drift)이고, 영역 효과 대조는 기술용이다. H2c′는 두지 않는다.
+  - DMC는 설계 7장 대응을 그대로 따른다.
+  - 설계 문서 머리에 진행 상황을 적었다.
+- 2026-10-22T19:14Z E1 DINO-WM 실행 완료(PushT k=5 18:55Z, k=3 18:56Z. Wall·PointMaze는 13:15Z). v5 사슬이 자동으로 시작했다.
+  - GPU 0 queue: 19:05Z MPS, H2a 재측정. 끝난 job은 E1과 비트 단위로 같다.
+  - GPU 1 사슬: E2 N sweep N1024부터 돈다.
+  - DINO-WM E1 분석과 go/no-go 보고를 기다린다.
+- 2026-10-22T19:40Z DINO-WM E1 분석 보고 접수([reports/E1_dinowm.md](reports/E1_dinowm.md), v4 그대로 계산). 56칸 모두 100 ep이고 불일치는 0이다.
+  - H1 성립: 자격 5칸(PushT k=3·4·5, PointMaze k=2·3) 모두에서 det의 1-step 오차가 sh-iter보다 작다.
+  - H3a 성립: red_sh-iter ≥ 0.5가 4/5 = 80%이고 해로운 칸은 없다. 경계: Wall k=4의 해 점검 하한이 +4%p다.
+  - H2a는 PushT k=4에서 성립(경계: sh-iter CI 하한 −8e−6)하지만, TD-MPC2 3과제가 불성립이라 전체로는 불성립이다. H2b 불성립(−0.144).
+  - Wall 확증 칸은 det 하락이 실재하지 않는다. 탐색 칸 Wall k=3은 +50%p이고 dither red 0.92~1.08이다.
+  - v5.2(PushT): (b1) 성립, (b2) H2a′ 성립. 양성 대조 sh-plan은 예상과 달리 drift가 거의 없다. (b3) det drift의 약 2/3가 영역 효과다.
+  - **go/no-go(§6.1): TD-MPC2 Meta-World와 DINO-WM의 H3a가 모두 성립하므로 go다.**
+  - 기전 문장의 최종 문구(영역 효과, sh-plan)는 E2·E3 결과 뒤 A 최종 보고에서 정하고 사용자에게 묻는다.
+- 2026-10-22T19:40Z TD-MPC2 H2a 독립 draw판 재측정 완료(v5.2 사후 정정, [reports/E1_tdmpc2.md](reports/E1_tdmpc2.md) §15). 810 ep 모두 E1과 비트 단위로 같아 세 칸 모두 판정했다.
+  - cheetah-run 성립(sh-iter +0.10 [−0.06, 0.26]).
+  - mw-pick-place 불성립(sh-iter −13.66), mw-push 불성립(sh-iter −4.56).
+  - PushT를 더해도 4과제 중 2개라 독립 draw판으로도 H2a는 불성립이다.
+  - 같은 draw의 winner's curse(sel)는 독립 draw에서 0 근처로 사라진다. Meta-World에 남은 음수는 sh-iter의 작은 drift(−4.2, −12.0)다. 원인 후보는 비선형 전파 편향이나 영역 효과이고, E2 (b3)가 가른다.
+  - E2는 19:33Z에 시작했다(4,482 job, 약 07Z 끝).
+- 2026-10-23T06:18Z TD-MPC2 E2 완료(4,482/4,482, 실패 0, 38,687초). 로그의 traceback 6줄은 runner가 끝난 뒤 나온 multiprocessing semaphore 정리 메시지라 무해하다.
+- 2026-10-23T08:35Z **오류 발견·수정(정기 점검을 멈춘 동안)**: GPU 0 queue가 06:18Z부터 E3 시작 전 점검에서 멈춰 있었다. GPU 0은 약 2.3시간 놀았다.
+  - 원인: MPS server(10-22 19:05Z부터 동작)가 새 client를 받지 못하는 상태가 됐다. 시험 client가 CUDA 초기화에서 "Error 205: mapping of buffer object failed"로 실패했다.
+  - GPU 0에 MPS가 아닌 프로세스는 없었고, /dev/shm도 정상이었다(252G 여유).
+  - 조치: E3 job을 띄우기 전이라 결과에 영향이 없는 상태에서 MPS daemon을 다시 켰다(`mps.sh stop 0` → `start 0`). 시험 client가 정상으로 붙었다. queue는 다음 5분 점검에서 E3를 시작한다.
+  - 같은 날 RunPod 예산 감시 스크립트도 꺼져 있어 다시 켰다(켜진 pod 없음, 누적 $20.27).
+- 2026-10-23T13:55Z DINO-WM E2 N sweep 완료(E2_dinowm_N 150/150 job, 10-22 19:04Z 시작, 실패 0). GPU 1 사슬이 바로 E3를 시작했다.
+- 2026-10-23T14:51Z TD-MPC2 E3 완료(2,124/2,124 job, 실패 0, 22,666초). E5 통계는 10-22 준비 때 끝나 있어 바로 넘어갔고, E5 held(1,188 job)가 14:51:41Z에 시작했다. 이번 단계 전환에서는 MPS client가 정상으로 붙었다.
+- 2026-10-23T15:27Z 정기 점검 재개(사용자 요청). 맥북이 재부팅돼 Tailscale과 RunPod 예산 감시 스크립트가 꺼져 있었다. 사용자가 Tailscale을 켰고, 감시 스크립트는 다시 켰다(pod 없음). 08:35Z 점검 뒤 서버 작업의 실패와 오류는 없다.
+- 2026-10-23T15:55Z DINO-WM E2 N sweep 분석 보고 접수([reports/E2_dinowm.md](reports/E2_dinowm.md), v5 §7.1·v5.1 §8.2 그대로 계산, 규칙과 다른 계산은 없었고 출력만 보탬). 자료 점검 불일치 0(150/150 job, 5칸 × 3변형 × 100 ep, eval6 쌍·planner 설정 일치).
+  - **H2c의 PushT 몫: 불성립(경계)**. ρ_s(N, |OEI_det|) = +0.943(≥ 0.8), ρ_s(N, D_det) = +0.771(< 0.8). D_det는 N 64 → 300에서 +7 → +24%p로 오르고 300·512·1024에서 +24·+23·+22%p로 평탄하다. 6점이라 0.829 다음 값이 0.771이다.
+  - 조정자가 job JSON에서 직접 다시 계산해 N별 D_det, OEI_det, 두 ρ가 보고와 같음을 확인했다.
+  - 그래서 H2c 전체(4과제 중 3과제)가 성립하려면 TD-MPC2 3과제가 모두 성립해야 한다.
+  - 기술: det OEI의 약 90%가 drift이고, 선택 성분(sel_indep, sel_same elite판)은 N 64 → 1024에서 2배 넘게 커진다.
+  - H4b 보조용 DINO-WM 값(E1, 1차 k): near-tie 밀도(마지막 반복) PushT −0.012, Wall −0.057, PointMaze −0.014. CRN 이득 +1, +5, 0%p(모두 CI가 0을 포함).
+  - 조정자 결정(설계 범위 안, 기술 항목): sh-iter의 같은 draw판 sel_last 중 mf판은 GPU 재평가가 필요해 재지 않고, elite판으로 보고한다.
+- 2026-10-23T16:05Z TD-MPC2 E2·E3 분석 보고 접수([reports/E2_tdmpc2.md](reports/E2_tdmpc2.md), [reports/E3_tdmpc2.md](reports/E3_tdmpc2.md)). 자료 점검 ALL_OK: E2 4,482 job·22,410 ep, E3 2,124 job·10,440 ep, 모두 GPU 0(MPS), 오류 0.
+  - 코드 수정(결과 수치를 읽기 전, 15:38~15:48Z, 규칙은 그대로)
+    1. 문턱 비교에 허용 오차 1e-9를 넣었다. scipy가 정확한 −0.8·0.8을 −0.7999999999999999·0.7999999999999999로 낸다. v5 §7.2의 "이웃 자리바꿈 한 번 허용"과 "≥" 문턱을 쓰인 대로 계산하려면 필요하다.
+    2. bootstrap ρ의 동순위를 평균 순위로 바꿨다(보조 통계에만 쓰임).
+    3. `--final`(H4b·DMC 설명)은 한 번만 돌게 막았다.
+  - E2(TD-MPC2 몫)
+    - H2a 재현: 0/3. sh-iter의 동결 OEI도 유의하게 음수라 E1과 같다.
+    - H2c: 3/3 성립. ρ(N, |OEI_det|)/ρ(N, D_det)는 mw-push 1.00/1.00, mw-pick-place 0.90/0.90, cheetah-run 1.00/1.00이다.
+    - (b1) H2a_indep: 1/3(cheetah-run만).
+    - (b2) H2a′: 3/3 성립. r_sh-iter 0.10, 0.24, 0.03이고, 양성 대조 sh-step·sh-ep는 CI 하한이 모두 0.5보다 크다.
+    - (b3): det drift_ref가 양수다. TD-MPC2에서는 영역 효과가 det drift와 반대 방향이다.
+  - E3(TD-MPC2 몫)
+    - H4a: 3/4 성립(경계). mw-push·mw-pick-place가 정확히 −0.8(이웃 자리바꿈 한 번, 규칙이 허용), cheetah-run −1.00, walker-walk +0.40.
+    - H4b: 불성립. 12과제 ρ = +0.03, 첫 반복 집합 −0.35.
+    - DMC 설명: "설명됨". ρ(S_det, red_sh-iter) = +0.83, 12과제 모두 포함.
+    - 기술: 지속 비용 D(shstep_g) − D(shiter_g)는 12개 모두 CI가 0보다 크다. 사전 예상 indstep ≈ ind ≈ indep는 D에서 3~4/12과제가 어긋난다(slot 표가 더 해롭다).
+  - 조정자 대조: family·final JSON에서 H2c의 ρ, H4a의 D 순위, H4b ρ, DMC ρ를 다시 계산해 보고와 같음을 확인했다. 허용 오차 수정은 작업 로그상 본 분석(15:49Z) 전에 가짜 순위로만 확인하고 넣었다.
+- 2026-10-23T16:10Z **계열 합산 판정**(조정자, v5 §7.1·§7.2, v5.2 §9.1 규칙 그대로)
+  - H2a 재현(동결 OEI): TD-MPC2 0/3 + PushT(E1) 성립 = 1/4 → 불성립(E1과 같은 결론).
+  - **H2c: TD-MPC2 3/3 + PushT 불성립 = 3/4 → 성립.**
+  - (b1) H2a_indep: 1/3 + PushT = 2/4 → 불성립.
+  - **(b2) H2a′: 3/3 + PushT = 4/4 → 성립.**
+  - H4a: TD-MPC2 몫은 성립(경계). DINO-WM 몫은 E3 진행 중이라 기다린다.
+  - H4b: 확증 불성립. 보조 15과제(TD-MPC2 12 + DINO-WM 3) Spearman은 마지막 반복 밀도 −0.32, 첫 반복 밀도 +0.21이다.
+  - DMC: v5.2 §9.2대로 E1 DMC H3a 불성립은 그대로다. 처방 주장은 Meta-World와 DINO-WM에 대해 하고, DMC는 S_det(지속 편향 비중)로 서술한다.
+  - A 최종 보고 때 사용자에게 물을 것(DINO-WM E3·E2 EO 결과 뒤): 기전 문장의 최종 문구(E2_tdmpc2 §8의 선택지 A/B/C), 그리고 처방 범위("반복하는 계획기"). 반복 1회에서는 sh-iter가 det만큼 해롭다는 기술 결과가 근거다.
+- 2026-10-23T17:52Z TD-MPC2 E5 held 완료(1,188/1,188 job, 실패 0, 10,514초)와 QAT 학습 완료(33/33, 296초). 기준선 선택(`e5_select.py`, `out_e5/e5/selection.json`)이 끝났고 E5 평가(1,728 job)가 17:51:58Z에 시작했다. 두 번의 단계 전환 모두 MPS client가 정상으로 붙었다.
+- 2026-10-23T22:11Z TD-MPC2 E5 평가 완료(1,728/1,728 job, 실패 0, 15,552초). E5 실행 전체가 끝났다. E7 성공률(1,296 job)이 22:11:13Z에 시작했고, MPS client는 정상으로 붙었다. 22:15Z에 E5 분석을 TD-MPC2 작업자에게 맡겼다(H3b의 TD-MPC2 몫, QAT 보고 규칙, 가중치 양자화 기술).
+- 2026-10-23T22:23Z DINO-WM E3 완료(E3_dinowm 130/130 job, 13:55Z 시작, 실패 claim 없음, traceback 0). GPU 1 사슬은 E5_dinowm_held로 넘어갔다. 22:27Z에 E3 분석을 DINO-WM 작업자에게 맡겼다.
+  - 조정자의 H4a 자격 판단(v5 §7.2 규칙 적용): E1 1차 k 칸에서 det 하락이 실재한 sweep 과제는 PushT k=4와 PointMaze k=3이다. Wall k=5는 실재하지 않았다.
+  - "과반"은 절반 초과로 읽는다. 그래서 자격 2개 모두 성립해야 DINO-WM 계열이 성립한다. Wall k=5의 sweep은 기술로 싣는다.
+- 2026-10-23T22:27Z TD-MPC2 E5 분석 보고 접수([reports/E5_tdmpc2.md](reports/E5_tdmpc2.md), v5 §7.3·v5.1 §8.1 그대로 계산, 규칙과 다른 계산 없음). 자료 점검 ALL_OK: job 2,985, 585조건의 episode가 모두 있고 seed 분할이 맞다. selection.json을 held에서 따로 다시 계산해 19칸 모두 일치했다. MSE α가 격자 끝에 걸린 경우는 0/288이다.
+  - **H3b의 TD-MPC2 몫: 성립(경계)**. D(B+det) − D(B+sh-iter)의 CI 하한이 0보다 큰 칸이 정확히 10/19칸이다(Meta-World 6/12, DMC 4/7). 조정자가 family JSON에서 칸별 CI로 다시 세어 같음을 확인했다.
+  - 경계 칸: mw-pick-place k=3·mw-drawer-open k=3은 CI 하한이 정확히 0이라 불통과다. quadruped k=3은 dither가 B+det보다 해롭다(−0.012 [−0.018, −0.006]).
+  - 최선 PTQ B는 per-channel 17칸, mseclip 1칸, mixed 1칸이다. B가 det 손상을 크게 줄여(Meta-World D(B+det) 0.000~0.167) dither가 더할 여지가 작은 칸이 많다.
+  - QAT 보고 조건(설계 6.5): 걸리지 않았다(0/11칸). 다만 QAT+det 손상이 0.29~0.85로, 11칸 모두 B+det보다 나쁘고 7/11칸은 E1의 일반 det보다도 나쁘다. 이 QAT 설정은 약한 기준선으로 보인다. QAT+none은 돌리지 않아 원인을 가를 수 없다.
+  - 가중치 양자화(탐색): w8rtn은 손상이 없고 w4rtn은 0.42~0.93이다. SR 사본을 K = 1 → 4로 늘리면 네 과제 모두 손상이 준다. K = 4는 RTN보다 push·pick-place·cheetah에서 낫고 walker에서 나쁘다.
+  - 조정자 결정(설계 범위 안): H3b는 v5 §7.3에 적힌 칸별 95% CI 규칙대로 보정 없이 판정한다. §6.8의 보정 대상(H1, H3a)이 아니다.
+  - 사용자에게 물을 것: QAT 결과의 처리(약한 QAT라는 단서를 달아 보고할지, QAT를 다시 돌릴지)
+- 2026-10-23T22:39Z DINO-WM E3 분석 보고 접수([reports/E3_dinowm.md](reports/E3_dinowm.md), v5 §7.2·v5.1 §8.3 그대로 계산, 규칙과 다른 계산 없음). 자료 점검 불일치 0: 130/130 job, 칸마다 GPU 한 장. E3 episode 1,300개의 첫 반복 비양자화 비용이 E1 none과 비트 단위로 같다.
+  - 문턱 비교의 허용 오차: 미리 쓴 코드에 1e-12가 이미 있었다. 결과를 보기 전(22:30Z)에 TD-MPC2와 같은 1e-9로 맞췄다. 4수준 순서 패턴 256가지 전부에서 분수 정확 판정과 같다.
+  - **H4a의 DINO-WM 몫: 성립(경계)**. 자격 2과제 모두 성립이다.
+    - PushT k=4: ρ = −0.80(L2·L3 이웃 자리바꿈 한 번). 수준별 D: L0 −1, L1 +5, L2 +11, L3 +8%p
+    - PointMaze k=3: ρ = −1.00. 수준별 D: +2, +7, +9, +14%p
+    - Wall k=5는 비자격이라 기술만 싣는다: ρ = −0.20. 탐색 칸 Wall k=3은 ρ = −1.00이고, L3에서만 +37%p다.
+  - 조정자가 job JSON(E3 + E1)에서 수준별 D와 ρ를 다시 계산해 같음을 확인했다.
+  - 2축 대조(기술): 사전 예상 indplan ≈ ind와 맞는다. 모든 칸에서 D 차의 CI가 0을 포함한다.
+  - var_cand(보조): 표가 작을수록 커진다(ρ(N_eff, var_cand) = −1). ρ(var_cand, D)는 PushT +0.80, PointMaze +1.00이다.
+- 2026-10-23T22:40Z **H4a 계열 합산 판정**(조정자, v5 §7.2): TD-MPC2 몫 성립(3/4) + DINO-WM 몫 성립(2/2) → **H4a 성립**(두 계열 모두).
+  - 단서: 성립한 5과제 중 3과제(mw-push, mw-pick-place, PushT)가 정확히 −0.8이다. 규칙이 허용한 이웃 자리바꿈 한 번에 기댄 경계 성립이라 최종 보고에 밝힌다.
+  - 문턱 비교의 부동소수점 수정은 두 계열 모두 결과를 보기 전에 했다.
+- 2026-10-24T02:15Z **TD-MPC2 GPU 0 queue 완료**(QUEUE_DONE 02:15:26Z). TD-MPC2 실험 단계가 모두 끝났다.
+  - E7 성공률: 1,296/1,296 job, 01:28:55Z, 실패 0, 11,862초
+  - MPS daemon을 멈췄다(01:28:55Z).
+  - E7 지연: 배타 GPU 0에서 5회전, 01:28:55 ~ 02:15:26Z, `v5/e7_latency.json`
+  - 단계 표시: h2a, e2, e3, e5stats, e5held, e5qattrain, e5eval, e7, e7lat 모두 done
+- 2026-10-24T02:17Z 조정자: v5 §7.5 계획대로 GPU 0에 DINO-WM 두 번째 사슬을 띄웠다.
+  - tmux `A-v5-dinowm-g0`, `code/dinowm/plans/v5_g0.txt`(v5_g1.txt와 같은 단계와 순서), 로그 `~/pmx/A/logs/v5_dinowm_g0.log`
+  - 칸과 cmd 단계는 claim으로 원자적으로 나뉘어, GPU 1이 잡지 않은 칸만 맡는다. v5 §7.0이 DINO-WM 칸의 GPU 간 배정을 허용한다(두 GPU 결과가 비트 단위로 같음).
+  - 같은 시각 GPU 1 사슬은 E5_dinowm_eval의 PushT k=3 칸(6/20)을 돌고 있었다.
+  - 02:20Z에 E7 분석을 TD-MPC2 작업자에게 맡겼다.
+- 2026-10-24T02:25Z 조정자(실행 순서만 조정): GPU 0 사슬이 E5_dinowm_eval의 PushT k=4 칸을 잡아 정상으로 돈다(episode당 33.8초). GPU 1은 PushT k=3 칸을 돈다.
+  - `plans/v5_g0.txt`에서 QAT 두 단계(cmd qat_pusht_k4, man E5_dinowm_qat)를 뺐다. QAT는 GPU 1 사슬이 맡는다.
+  - 이유: 원래 순서대로면 한 GPU가 QAT 학습을 하는 약 2시간 동안 다른 GPU는 cmd 단계에서 기다린다. 바꾼 뒤에는 GPU 0이 그동안 E2_dinowm_EO 칸을 돈다.
+  - 계획 파일은 칸마다 다시 읽힌다. 단계, 칸, 설정은 그대로이고, v5 §7.0이 칸의 GPU 간 배정을 허용한다.
+- 2026-10-24T02:30Z TD-MPC2 E7 분석 보고 접수([reports/E7_tdmpc2.md](reports/E7_tdmpc2.md), v5 §7.4 그대로 계산).
+  - 자료 점검 ALL_OK
+    - 성공률: 1,296 job, 216조건 × 30 episode, seed 70000+, 모두 GPU 0 MPS
+    - 지연: 5회전 × (warmup 50 + 200 step), 96조건, 외부 프로세스가 있던 block 0/480
+  - **H5 성립**: int4 그릇판·packed × 오버헤드 읽기 둘(모든 조건, 조건 중앙값), 네 읽기 모두에서 성립한다.
+    - ① dither 오버헤드: 12조건 모두 10% 이하다. int8 −5.3 ~ +3.8%, int4 그릇판 −2.7 ~ +5.8%, packed int4 −5.8 ~ +6.9%.
+    - ② Pareto 지배: mw-push에서만 성립한다(int4 dither가 int8 det를 지배, kernel마다 4사례).
+    - ②의 단서: 반복 수가 같은 사례는 성공이 같고, 지연 차 3~5%가 5회전 모두에서 유지되지 않는다. 반복 수가 다른 사례(int4 dither 3·6회 대 int8 det 12회)는 지연 이득이 반복 수에서 오고, 성공 차 CI가 0을 포함하거나 0에 닿는다.
+  - 조정자가 family JSON의 조건별 오버헤드와 Pareto 사례로 판정을 다시 확인했다.
+  - 기술 결과
+    - 정수 kernel이 fp32보다 느리다(중앙값 +18%). int4와 int8의 지연 차가 없고, Pareto front는 대부분 fp32다. 이 구현에서는 낮은 비트로 지연 이득이 없다.
+    - int4 성공률은 E1 fake-quant와 방향과 크기가 맞는다. 반복이 늘수록 dither 이득이 커지고, 반복 3의 DMC에서는 dither가 해롭다(E2 반복 곡선과 같은 방향).
+  - 사후(판정에 안 씀): block 지연이 두 모드다. 17%의 block이 약 35% 느리고, SM clock과 ρ −0.45다. 그래서 회전별 오버헤드가 −30 ~ +38%로 흔들린다. 회전별 중앙값으로 모으면 int4 그릇판 cheetah 반복 6이 +30.1%다(사전 정의 계산으로는 +5.8%).
+  - 작업자 공개: 지연 로그를 점검하다 코드 대조를 마치기 전에 지연 요약을 보았다. 코드 수정은 설계 문구와 지시에 근거한 것(문턱 허용 오차, 네 읽기를 명시적으로 계산, 기술 출력)뿐이고, 판정에는 영향이 없다.
+  - 사용자에게 물을 것: 사후 점검 여부(E7 지연 재측정, QAT+none 진단). A 최종 보고 때 물을 것: RQ5 주장 범위("같은 비트에서 dither 추가 지연은 무시할 수준"으로 한정).
+- 2026-10-24T02:30Z **TD-MPC2 계열의 실험과 단계 분석이 모두 끝났다**(E0~E5, E7). 남은 A 실행은 DINO-WM E5(평가 → 가중치 → QAT)와 E2 EO이고, 두 GPU에서 돈다.
+- 2026-10-24T02:38Z **사용자 승인**: QAT는 약한 기준선이라는 단서를 달아 보고한다. DINO-WM 실험이 끝난 뒤 사후 점검으로 QAT+none 진단과 E7 지연 재측정만 돌린다.
+  - DESIGN_main v5.3(10절) 고정, sha256 eee46e0aa4f0016e735319b54d8b4c10c71bbfda43b90f163dd3b35c94b667b4
+  - 10.1: QAT 보고 방식(규칙 결과 + 약한 기준선 단서, dither는 학습 없는 처방으로 서술. DINO-WM QAT도 같은 양상이면 같은 단서)
+  - 10.2: QAT+none(11칸 × 체크포인트 3, E5 seed 90짝, 기술)
+  - 10.3: 지연 재측정(96조건, 10회전, 같은 비트의 det·dither block을 회전 안에서 짝지어 잼, 짝 오버헤드 중앙값과 CI, 기술)
+  - 10.4: 실행 순서(QAT+none은 GPU 0 DINO-WM 사슬 뒤, 지연은 두 사슬이 모두 끝난 뒤 배타 GPU)
+  - 두 점검 모두 사후로 표시하고, 어떤 판정도 바꾸지 않는다.
+- 2026-10-24T02:49Z 사후 점검 queue를 무장했다(v5.3 §10.4, TD-MPC2 작업자, tmux `A-posthoc-g0`, `code/tdmpc2/run_posthoc_g0.sh`, 로그 `~/pmx/A/logs/posthoc_g0.log`).
+  - 순서
+    1. GPU 0의 DINO-WM 사슬이 끝나고 GPU 0이 두 poll 연속 비면 MPS를 켠다.
+    2. QAT+none 198 job(11칸 × 체크포인트 3 × 30 ep, E5 seed)을 돌린다.
+    3. MPS를 멈춘다.
+    4. 두 DINO-WM 사슬이 모두 끝나고 GPU 0이 배타면 짝 모드 지연 재측정(`e7_latency_paired.py`, 96조건 × 10회전, 출력 `v5/e7_latency_posthoc.json`)을 한다.
+    5. POSTHOC_DONE을 기록한다.
+  - 스모크(GPU 0, MPS 없이 약 50초) 통과
+    - QAT 가중치가 실제로 로드된다(원래와 최대 차 0.385).
+    - none은 양자화 호출이 0이다.
+    - 원래 가중치 none과 QAT+det의 return이 저장된 E5 episode와 비트 단위로 같다.
+    - 지연 짝 모드 코드 경로가 동작하고, 첫 측정 파일은 그대로다.
+  - E5 보고에 v5.3 §10.1(QAT 보고 방식)을 반영했다.
+  - 조정자 확인: tmux 3개 정상, MPS 꺼짐, 대기 줄 정상, 맥북과 서버의 스크립트 md5가 같다.
+- 2026-10-24T02:54Z 사용자 요청으로 정기 점검을 멈췄다(다시 시작하라고 할 때까지). 서버 작업은 그대로 돈다.
+  - 도는 것: DINO-WM 사슬 두 개(GPU 0·1), 무장한 사후 점검 queue
+  - 남은 분석: DINO-WM E5(H3b의 DINO-WM 몫)와 E2 EO(기술), 사후 점검 분석(queue가 자동으로 돌림), 그다음 A 최종 보고
+  - 조정자의 A 세부 점검 스크립트를 `runpod_main/check_a_detail.sh`로 두었다(읽기만 함).
+- 2026-10-24T11:56Z 사용자 요청으로 한 번 점검했다(정기 점검은 멈춘 그대로).
+  - DINO-WM E5 전부 완료: 가중치 60/60, QAT 학습과 QAT 평가 30/30(11:51Z, GPU 1)
+  - E2 EO 52/150. 실패 claim 없음, 실제 traceback 0
+- 2026-10-24T12:18Z 사용자 승인으로 DINO-WM E5 분석을 DINO-WM 작업자에게 맡겼다.
+  - 대상: H3b의 DINO-WM 몫, QAT(v5.3 §10.1의 양상 점검과 QAT+none 기술), 가중치 양자화 기술
+- 2026-10-24T12:29Z DINO-WM E5 분석 보고 접수([reports/E5_dinowm.md](reports/E5_dinowm.md), v5 §7.3 그대로 계산, 규칙과 다른 계산 없음).
+  - 자료 점검 불일치 0: held 42, eval 60, w 60, qat 30 job. selection.json을 held에서 다시 계산해 세 칸 모두 같다(PushT k=4는 pc·p999·mse가 17/20 동률이라 목록 앞쪽인 pc). QAT 학습 로그는 final(10,083 step, 120분 예산)이다.
+  - **H3b의 DINO-WM 몫: 불성립(1/3칸, 2칸 필요)**
+    - PushT k=3(B = p999): 차 −2 [−6, 2]
+    - PushT k=4(B = pc): 차 +2 [−4, 8]
+    - PointMaze k=3(B = last8): 차 +12 [4, 20]으로 통과
+    - PushT에서는 최선 PTQ만으로 det 손상이 거의 사라져(D(B+det) +3, +4%p) dither가 더할 여지가 없다.
+  - 조정자가 E5·E1 job JSON에서 칸별 D와 차, 짝 bootstrap CI를 다시 계산해 같은 판정(1/3)을 확인했다.
+  - **H3b 계열별 결과**(v5 §7.3, 계열마다 판정): TD-MPC2 성립(10/19, 경계), DINO-WM 불성립(1/3)
+  - QAT(PushT k=4): QAT+none +27 [19, 36], QAT+det +6 [−1, 13], QAT+sh-iter +22 [14, 30]%p
+    - 규칙 조건(QAT+det CI 상한 < 5%p)은 걸리지 않는다(13%p).
+    - QAT+det − B+det = +2 [−5, +10]으로 둘을 가를 수 없다.
+  - **조정자 판단**(v5.3 §10.1 적용, 설계 범위 안): DINO-WM QAT는 TD-MPC2와 "같은 양상"이 아니다. TD-MPC2는 11칸 모두 QAT+det가 B+det보다 뚜렷이 나빴지만, DINO-WM은 짝 CI가 0을 포함한다. 그래서 "약한 기준선" 단서 대신 "QAT+det는 최선 PTQ와 비슷하고, 규칙 조건은 CI 폭 때문에 걸리지 않았다"고 기술한다. QAT에 대한 결론은 두 계열 모두 내리지 않는다.
+  - QAT+none은 원래 모델보다 27%p 나쁘다. QAT 모델 안에서는 det가 none보다 21%p 낫다. 그래서 학습이 모델을 망쳤다기보다 det 양자화 활성에 맞춘 모델로 보인다(기술).
+  - 가중치(탐색): W8 RTN +3, W4 RTN +55, AWQ식 +71, SR K = 1·2·4는 +76·+68·+71%p다. SR이 RTN보다 나쁘고 K에 따른 단조 감소가 없다. TD-MPC2와 방향이 다르다.
+  - A 최종 보고 때 사용자에게 물을 것에 더한다: H3b 계열별 결과(TD-MPC2 성립, DINO-WM 불성립)의 서술
+- 2026-10-24T14:41Z **DINO-WM v5 실행 완료, A의 본 실험 실행이 모두 끝났다.** E2_dinowm_EO 150/150(top6·top38·it10·it5는 GPU 0, top75는 GPU 1). GPU 0 사슬은 14:16:27Z, GPU 1 사슬은 14:40:56Z에 ALL_DONE이다. 실패 claim 없음, 실제 traceback 0.
+- 2026-10-24T14:46Z 사후 점검 1(v5.3 §10.2) 완료: TD-MPC2 QAT+none 198 job(MPS, 14:24~14:46Z), 빠진 job 0. 분석 `~/pmx/A/tdmpc2_main/analysis_posthoc_qatnone/`.
+  - 기술 결과: QAT+none 손상이 11칸 모두 크다(+0.20 ~ +0.82). 양자화 없이도 QAT 학습 자체가 모델을 크게 나쁘게 만들었다. 그래서 v5.3 §10.1의 "약한 기준선" 단서에 근거가 생겼다.
+  - DINO-WM(QAT+det가 QAT+none보다 21%p 나음)과 달리, TD-MPC2 QAT는 det 양자화에 적응한 모델로도 보기 어렵다.
+- 2026-10-24T14:51Z 사후 점검 2(v5.3 §10.3) 시작: MPS를 멈추고(14:46Z), 두 사슬이 끝나 GPU 0이 배타가 된 뒤 짝 모드 지연 재측정(10회전)을 시작했다. 첫 측정 속도로 보면 약 16:25Z에 끝난다.
+- 2026-10-24T15:46Z 사용자 승인: 지연 재측정이 끝나면 DINO-WM E2 EO 분석과 사후 점검 정리를 바로 맡긴다. 정기 점검은 멈춘 그대로 둔다. 조정자는 POSTHOC_DONE 한 번만 기다리는 대기(3분 간격)를 걸었다.
+- 2026-10-24T16:26Z **사후 점검 queue 완료**(POSTHOC_DONE). 지연 재측정은 14:51~16:26Z, 10회전, 960 block, 외부 프로세스 0이었다. 원자료 `v5/e7_latency_posthoc.json`, 분석 `analysis_posthoc_e7lat/`.
+  - queue 요약: 짝 오버헤드 중앙값의 최댓값은 int8 1.8%, int4 2.1%, int4p 2.7%다. CI 상한의 최댓값은 33~35%다. 15% 넘게 느린 block은 19%다.
+  - **이것으로 A의 서버 GPU 작업이 모두 끝났다.** tmux 없음, MPS 꺼짐, 두 GPU 빔.
+- 2026-10-24T16:30Z 사용자 승인대로 DINO-WM E2 EO 분석(DINO-WM 작업자)과 사후 점검 정리(TD-MPC2 작업자)를 맡겼다.
+- 2026-10-24T16:38Z DINO-WM E2 EO 분석 보고 접수([reports/E2_dinowm.md](reports/E2_dinowm.md) §7, v5 §7.1 기술 보고, 규칙과 다른 계산 없음). 자료 점검 불일치 0(150/150, 칸마다 GPU 한 장). N sweep의 기존 수치와 판정은 차이 0이다.
+  - **opt_steps가 det 손상을 가장 크게 움직인다**(N = 300, top-30)
+    - 반복 5: D_det +7, 이득 +9%p
+    - 반복 10: D_det +17, 이득 +14%p
+    - 반복 30(E1): D_det +24, 이득 +24%p
+    - sh-iter는 모든 설정에서 none 수준이다. det drift는 반복과 함께 커진다(−0.212 → −0.269).
+  - elite 비율(top 6·30·38·75): D_det +19·+24·+20·+17%p로 단조 관계가 없다. 이득은 네 비율 모두 CI 하한이 0보다 크다. top-6에서는 det OEI가 거의 다 drift다.
+  - TD-MPC2와의 대비: TD-MPC2는 det 손상이 반복 수와 거의 무관하고, sh-iter 손상이 반복과 함께 준다. DINO-WM은 det 손상이 반복과 함께 커진다. 두 계열 모두 sh-iter 이득과 det drift는 반복과 함께 커진다.
+  - 조정자가 job JSON(EO + E1)에서 설정별 D_det, D_sh-iter, 이득을 다시 계산해 같음을 확인했다.
+- 2026-10-24T16:39Z 사후 점검 정리 접수([reports/posthoc_tdmpc2.md](reports/posthoc_tdmpc2.md), 사후, v5.3 §10.2·§10.3, 판정 변경 없음). E5 보고 §13과 E7 보고 §12에 사후 절을 더했다(기존 판정 문장은 그대로).
+  - 지연 재측정
+    - 짝 오버헤드 중앙값은 36조건 모두 −3.2 ~ +2.7%다. CI는 35/36조건에서 0을 포함한다(예외: packed pick-place 반복 3, +2.4% [+0.8, +33.3]).
+    - CI 상한이 10%를 넘는 조건이 16/36이다. 그래서 "조건별 95% 상한 < 10%"는 보이지 못한다.
+    - block 두 모드가 다시 나왔다: 19.2%의 block이 약 +33% 느리다. SM clock 저하, 호스트 부하와 같이 움직인다.
+    - 두 block이 모두 빠른 짝 241개는 오버헤드 중앙값 −0.04%이고, 92%가 ±5% 안이다.
+  - QAT+none: 11/11칸에서 원래 모델보다 크게 나쁘다(D 0.20 ~ 0.82, 모두 CI 하한 > 0). 6칸(door, peg, pick-place, push, window, walker)에서는 "QAT 학습이 모델 자체를 손상했다"는 서술이 자료와 맞는다.
+  - 조정자 재계산: 결과 JSON의 짝 오버헤드에서 조건별 중앙값, CI 상한 > 10% 조건 수(16/36), 0을 포함하는 CI 수(35/36), QAT+none의 CI 하한 > 0 칸 수(11/11)를 다시 계산해 같음을 확인했다.
+  - **A의 단계 분석이 모두 끝났다**(E0 ~ E7, 사후 점검). 남은 것은 A 최종 보고와 주장 문구 결정이다.
+- 2026-10-24T16:42Z 사용자 요청으로 A 최종 종합 보고(reports/FINAL_A.md) 초안을 작성 작업자에게 맡겼다. 판정은 조정자가 확정한 계열 합산 판정 그대로 쓴다. 사용자가 정할 주장 문구는 추천안과 선택지로 모은다.
+- 2026-10-24T22:33Z A 최종 종합 보고 초안 완료([reports/FINAL_A.md](reports/FINAL_A.md), 955줄). 사용 한도로 한 번 멈췄다가 이어 썼다. 판정은 계열 합산 판정 그대로다. §7에 결정 항목 13개를 추천안과 선택지로 정리했다. 작성자가 판정 수치를 결과 JSON과 대조했고 모두 같았다.
+  - 작성자가 `A_dithered_world_models/paper/README.md`(10-24 14:55Z, 다른 세션에서 씀)를 찾았다. LOG와 MAIN_STATUS에 없던 내용이 두 가지 있다.
+    - 사용자가 10-24에 JKAIA 2026 포스터 원고의 주장 범위 "추천 1~5"를 승인했다.
+    - A의 투고처를 JKAIA(마감 10-25)·TMLR·ICLR 2027 워크숍으로 바꿨다(이전 계획은 RSS 2027 stage 1).
+  - 조정자가 원고(`paper/jkaia2026/`)를 결과와 대조했다. 고칠 곳 두 군데를 찾았고, 원고는 고치지 않고 사용자에게 알렸다.
+    1. 초록의 "overrates the plan it selects"(국문 초록 abstract_ko.txt의 "자신이 고른 계획을 과대평가한다"도 같음)
+       - DINO-WM의 가장 큰 손상 칸 PushT k=3에서 det OEI가 +0.217 [0.165, 0.274]로 양수다. PushT k=5도 +0.030이다(e1_dinowm_cells.csv).
+       - 손상 칸 5개 중 2개에서 "고른 계획을 과대평가"가 성립하지 않는다.
+    2. 국문 검토본 82행 "두 계열의 손상 칸 어디에서도 det보다 나쁘지 않다"
+       - DMC walker k=3(TD-MPC2 계열)에서 sh-iter가 해로운 것(84행)과 충돌한다.
+       - 영문 "in their affected cells"는 Meta-World·DINO-WM을 가리켜 맞지만 모호하다.
+  - 지연: README가 미리 정한 기준("짝 오버헤드가 어떤 조건에서 10%를 넘으면 고친다")으로는 고칠 필요가 없다. 재측정 중앙값이 36조건 모두 ±3.2% 안이다.
+- 2026-10-24T22:48Z 사용자 승인으로 JKAIA 원고를 고쳤다(`paper/jkaia2026/`). 고친 파일은 영문 main.tex, 국문 검토본 main_ko.tex, EasyChair 국문 초록 abstract_ko.txt다.
+  - 초록의 "overrates the plan it selects"(자신이 고른 계획을 과대평가한다)를 뺐다.
+  - "never worse than det in their affected cells"(두 계열의 손상 칸)를 "any affected Meta-World or DINO-WM cell"(Meta-World와 DINO-WM의 손상 칸)로 바꿨다.
+  - tectonic으로 두 PDF를 다시 만들었다. main.pdf와 main_ko.pdf 모두 2쪽이다(pypdf로 셈). 고친 문장을 렌더링한 쪽 이미지에서 확인했다. 그림은 다시 만들지 않았다.
+  - `paper/README.md`에 10-25 수정 기록을 남기고 제출 전 확인 두 항목을 끝냈다. 고치기 전 사본은 조정자 scratchpad에 있다.

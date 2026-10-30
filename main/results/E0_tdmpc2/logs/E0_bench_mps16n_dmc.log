@@ -1,0 +1,134 @@
+240 jobs in manifest, 0 done, running 240 with 16 workers
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+      58s [1/240] OK  bench_cheetah-run_s1_k4_det_base_c00 (57s) ret    517.4 succ 0/1
+      59s [2/240] OK  bench_cheetah-run_s1_k4_det_base_c02 (58s) ret    414.9 succ 0/1
+      60s [3/240] OK  bench_cheetah-run_s1_k4_det_base_c06 (59s) ret    523.9 succ 0/1
+      61s [4/240] OK  bench_cheetah-run_s1_k4_det_base_c01 (60s) ret    476.8 succ 0/1
+      62s [5/240] OK  bench_cheetah-run_s1_k4_shiter_base_c02 (60s) ret    450.1 succ 0/1
+      63s [6/240] OK  bench_cheetah-run_s1_k4_det_base_c03 (61s) ret    461.7 succ 0/1
+      63s [7/240] OK  bench_cheetah-run_s1_k4_det_base_c05 (62s) ret    359.5 succ 0/1
+      64s [8/240] OK  bench_cheetah-run_s1_k4_det_base_c07 (62s) ret    457.2 succ 0/1
+      64s [9/240] OK  bench_cheetah-run_s1_k4_det_base_c04 (63s) ret    441.8 succ 0/1
+      65s [10/240] OK  bench_cheetah-run_s1_k4_shiter_base_c01 (64s) ret    608.7 succ 0/1
+      67s [11/240] OK  bench_cheetah-run_s1_k4_shiter_base_c05 (65s) ret    643.5 succ 0/1
+      68s [12/240] OK  bench_cheetah-run_s1_k4_shiter_base_c03 (67s) ret    546.1 succ 0/1
+      68s [13/240] OK  bench_cheetah-run_s1_k4_shiter_base_c07 (67s) ret    570.5 succ 0/1
+      68s [14/240] OK  bench_cheetah-run_s1_k4_shiter_base_c00 (67s) ret    529.2 succ 0/1
+      68s [15/240] OK  bench_cheetah-run_s1_k4_shiter_base_c06 (67s) ret    295.1 succ 0/1
+      69s [16/240] OK  bench_cheetah-run_s1_k4_shiter_base_c04 (67s) ret    246.3 succ 0/1
+     116s [17/240] OK  bench_cheetah-run_s1_k4_det_base_c08 (58s) ret    407.7 succ 0/1
+     118s [18/240] OK  bench_cheetah-run_s1_k4_det_base_c09 (58s) ret    395.5 succ 0/1
+     119s [19/240] OK  bench_cheetah-run_s1_k4_det_base_c10 (58s) ret    143.1 succ 0/1
+     121s [20/240] OK  bench_cheetah-run_s1_k4_det_base_c11 (58s) ret    432.5 succ 0/1
+     121s [21/240] OK  bench_cheetah-run_s1_k4_shiter_base_c08 (62s) ret    600.6 succ 0/1
+     122s [22/240] OK  bench_cheetah-run_s1_k4_det_base_c12 (58s) ret    211.1 succ 0/1
+     123s [23/240] OK  bench_cheetah-run_s1_k4_shiter_base_c09 (62s) ret    605.4 succ 0/1
+     124s [24/240] OK  bench_cheetah-run_s1_k4_det_base_c13 (58s) ret    243.7 succ 0/1
+     125s [25/240] OK  bench_cheetah-run_s1_k4_shiter_base_c10 (62s) ret    321.0 succ 0/1
+     126s [26/240] OK  bench_cheetah-run_s1_k4_det_base_c14 (58s) ret    269.7 succ 0/1
+     126s [27/240] OK  bench_cheetah-run_s1_k4_det_base_c15 (58s) ret    299.9 succ 0/1
+     126s [28/240] OK  bench_cheetah-run_s1_k4_shiter_base_c11 (62s) ret    360.6 succ 0/1
+     127s [29/240] OK  bench_cheetah-run_s1_k4_shiter_base_c12 (62s) ret    345.2 succ 0/1
+     130s [30/240] OK  bench_cheetah-run_s1_k4_shiter_base_c13 (62s) ret    550.4 succ 0/1
+     131s [31/240] OK  bench_cheetah-run_s1_k4_shiter_base_c14 (62s) ret    553.6 succ 0/1
+     131s [32/240] OK  bench_cheetah-run_s1_k4_shiter_base_c15 (62s) ret    470.3 succ 0/1
+     174s [33/240] OK  bench_cheetah-run_s1_k4_det_base_c16 (58s) ret    411.1 succ 0/1
+     177s [34/240] OK  bench_cheetah-run_s1_k4_det_base_c17 (58s) ret    398.2 succ 0/1
+     179s [35/240] OK  bench_cheetah-run_s1_k4_det_base_c18 (58s) ret    374.3 succ 0/1
+     180s [36/240] OK  bench_cheetah-run_s1_k4_shiter_base_c16 (62s) ret    588.1 succ 0/1
+     181s [37/240] OK  bench_cheetah-run_s1_k4_det_base_c19 (58s) ret    404.0 succ 0/1
+     183s [38/240] OK  bench_cheetah-run_s1_k4_det_base_c20 (58s) ret    462.4 succ 0/1
+     183s [39/240] OK  bench_cheetah-run_s1_k4_shiter_base_c17 (62s) ret    572.9 succ 0/1
+     184s [40/240] OK  bench_cheetah-run_s1_k4_det_base_c21 (58s) ret    509.8 succ 0/1
+     184s [41/240] OK  bench_cheetah-run_s1_k4_shiter_base_c18 (62s) ret    537.2 succ 0/1
+     185s [42/240] OK  bench_cheetah-run_s1_k4_det_base_c22 (58s) ret    473.0 succ 0/1
+     186s [43/240] OK  bench_cheetah-run_s1_k4_shiter_base_c19 (62s) ret    580.7 succ 0/1
+     188s [44/240] OK  bench_cheetah-run_s1_k4_shiter_base_c20 (62s) ret    631.8 succ 0/1
+     188s [45/240] OK  bench_cheetah-run_s1_k4_det_base_c23 (58s) ret    446.2 succ 0/1
+     189s [46/240] OK  bench_cheetah-run_s1_k4_shiter_base_c21 (62s) ret    345.2 succ 0/1
+     192s [47/240] OK  bench_cheetah-run_s1_k4_shiter_base_c22 (62s) ret    484.7 succ 0/1
+     193s [48/240] OK  bench_cheetah-run_s1_k4_shiter_base_c23 (62s) ret    560.1 succ 0/1
+     231s [49/240] OK  bench_cheetah-run_s1_k4_det_base_c24 (58s) ret    314.9 succ 0/1
+     237s [50/240] OK  bench_cheetah-run_s1_k4_det_base_c25 (58s) ret    477.3 succ 0/1
+     239s [51/240] OK  bench_cheetah-run_s1_k4_det_base_c26 (58s) ret    421.6 succ 0/1
+     239s [52/240] OK  bench_cheetah-run_s1_k4_shiter_base_c24 (62s) ret    347.0 succ 0/1
+     241s [53/240] OK  bench_cheetah-run_s1_k4_det_base_c27 (58s) ret    426.0 succ 0/1
+     242s [54/240] OK  bench_cheetah-run_s1_k4_shiter_base_c25 (62s) ret    573.8 succ 0/1
+     242s [55/240] OK  bench_cheetah-run_s1_k4_det_base_c28 (58s) ret    329.6 succ 0/1
+     244s [56/240] OK  bench_cheetah-run_s1_k4_det_base_c29 (58s) ret    401.8 succ 0/1
+     245s [57/240] OK  bench_cheetah-run_s1_k4_shiter_base_c26 (62s) ret    376.0 succ 0/1
+     246s [58/240] OK  bench_cheetah-run_s1_k4_shiter_base_c27 (62s) ret    172.7 succ 0/1
+     246s [59/240] OK  bench_cheetah-run_s1_k4_det_base_c30 (58s) ret    390.0 succ 0/1
+     247s [60/240] OK  bench_cheetah-run_s1_k4_shiter_base_c28 (62s) ret    468.1 succ 0/1
+     250s [61/240] OK  bench_cheetah-run_s1_k4_det_base_c31 (58s) ret    472.8 succ 0/1
+     250s [62/240] OK  bench_cheetah-run_s1_k4_shiter_base_c29 (62s) ret    513.5 succ 0/1
+     251s [63/240] OK  bench_cheetah-run_s1_k4_shiter_base_c30 (62s) ret    222.2 succ 0/1
+     255s [64/240] OK  bench_cheetah-run_s1_k4_shiter_base_c31 (62s) ret    572.5 succ 0/1
+     289s [65/240] OK  bench_cheetah-run_s1_k4_det_base_c32 (58s) ret    453.0 succ 0/1
+     296s [66/240] OK  bench_cheetah-run_s1_k4_det_base_c33 (58s) ret    444.9 succ 0/1
+     299s [67/240] OK  bench_cheetah-run_s1_k4_det_base_c34 (58s) ret    503.3 succ 0/1
+     299s [68/240] OK  bench_cheetah-run_s1_k4_shiter_base_c32 (62s) ret    533.2 succ 0/1
+     300s [69/240] OK  bench_cheetah-run_s1_k4_det_base_c35 (58s) ret    488.7 succ 0/1
+     301s [70/240] OK  bench_cheetah-run_s1_k4_shiter_base_c33 (62s) ret    614.7 succ 0/1
+     303s [71/240] OK  bench_cheetah-run_s1_k4_det_base_c36 (58s) ret    491.7 succ 0/1
+     304s [72/240] OK  bench_cheetah-run_s1_k4_shiter_base_c34 (62s) ret    597.5 succ 0/1
+     304s [73/240] OK  bench_cheetah-run_s1_k4_det_base_c37 (58s) ret    366.6 succ 0/1
+     306s [74/240] OK  bench_cheetah-run_s1_k4_shiter_base_c35 (62s) ret    569.2 succ 0/1
+     308s [75/240] OK  bench_cheetah-run_s1_k4_det_base_c38 (58s) ret    384.4 succ 0/1
+     308s [76/240] OK  bench_cheetah-run_s1_k4_shiter_base_c36 (62s) ret    591.7 succ 0/1
+     309s [77/240] OK  bench_cheetah-run_s1_k4_det_base_c39 (58s) ret    461.9 succ 0/1
+     309s [78/240] OK  bench_cheetah-run_s1_k4_shiter_base_c37 (62s) ret    610.5 succ 0/1
+     313s [79/240] OK  bench_cheetah-run_s1_k4_shiter_base_c38 (62s) ret    589.0 succ 0/1
+     317s [80/240] OK  bench_cheetah-run_s1_k4_shiter_base_c39 (62s) ret    149.2 succ 0/1
+     347s [81/240] OK  bench_cheetah-run_s1_k4_det_base_c40 (58s) ret    432.8 succ 0/1
+     356s [82/240] OK  bench_cheetah-run_s1_k4_det_base_c41 (58s) ret    270.8 succ 0/1
+     358s [83/240] OK  bench_cheetah-run_s1_k4_det_base_c42 (58s) ret    520.4 succ 0/1
+     359s [84/240] OK  bench_cheetah-run_s1_k4_shiter_base_c40 (62s) ret    617.5 succ 0/1
+     361s [85/240] OK  bench_cheetah-run_s1_k4_det_base_c43 (58s) ret    383.7 succ 0/1
+     361s [86/240] OK  bench_cheetah-run_s1_k4_shiter_base_c41 (62s) ret    474.0 succ 0/1
+     362s [87/240] OK  bench_cheetah-run_s1_k4_det_base_c44 (58s) ret    474.6 succ 0/1
+     364s [88/240] OK  bench_cheetah-run_s1_k4_shiter_base_c42 (62s) ret    179.1 succ 0/1
+     366s [89/240] OK  bench_cheetah-run_s1_k4_det_base_c45 (58s) ret    349.2 succ 0/1
+     366s [90/240] OK  bench_cheetah-run_s1_k4_shiter_base_c43 (62s) ret    561.0 succ 0/1
+     367s [91/240] OK  bench_cheetah-run_s1_k4_det_base_c46 (58s) ret    269.0 succ 0/1
+     368s [92/240] OK  bench_cheetah-run_s1_k4_shiter_base_c44 (62s) ret    388.6 succ 0/1
+     370s [93/240] OK  bench_cheetah-run_s1_k4_shiter_base_c45 (62s) ret    547.0 succ 0/1
+     371s [94/240] OK  bench_cheetah-run_s1_k4_det_base_c47 (58s) ret    499.1 succ 0/1
+     372s [95/240] OK  bench_cheetah-run_s1_k4_shiter_base_c46 (62s) ret    557.9 succ 0/1
+     379s [96/240] OK  bench_cheetah-run_s1_k4_shiter_base_c47 (62s) ret    534.5 succ 0/1
+     405s [97/240] OK  bench_cheetah-run_s1_k4_det_base_c48 (58s) ret    271.7 succ 0/1
+     416s [98/240] OK  bench_cheetah-run_s1_k4_det_base_c49 (58s) ret    393.9 succ 0/1
+     418s [99/240] OK  bench_cheetah-run_s1_k4_det_base_c50 (58s) ret    267.0 succ 0/1
+     418s [100/240] OK  bench_cheetah-run_s1_k4_shiter_base_c48 (62s) ret    594.2 succ 0/1
+RUNNER_STOPPED ok 100 failed 0 in 421s

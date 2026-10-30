@@ -1,0 +1,15 @@
+# OS and Python caches
+.DS_Store
+__pycache__/
+*.pyc
+
+# Runner lock files
+*.lock
+
+# LaTeX build files
+/paper/**/*.aux
+/paper/**/*.out
+/paper/**/*.synctex.gz
+/paper/**/*.fls
+/paper/**/*.fdb_latexmk
+/paper/**/*.xdv

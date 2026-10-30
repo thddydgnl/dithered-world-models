@@ -1,0 +1,193 @@
+{
+ "name": "E5_smoke",
+ "config": {
+  "purpose": "E5 code smokes (smoke split only)"
+ },
+ "jobs": [
+  {
+   "id": "smoke_shstep_k4_e000-001_identity",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shstep",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-001_pc",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "pc",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-001_smooth",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "smooth",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-001_mse_k4",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "mse_k4",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-001_p999",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "p999",
+   "diag": true
+  },
+  {
+   "id": "smoke_shiter_k4_e000-001_pc",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "shiter",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "pc",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-001_last8",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true,
+   "qopts": {
+    "last_bits": 8
+   }
+  },
+  {
+   "id": "smoke_w8rtn_k8_e000-001",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "w8rtn",
+   "k": 8,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_w4rtn_k4_e000-001",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "w4rtn",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_w4awq_k4_e000-001",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "w4awq",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_w4sr1_k4_e000-001",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "w4sr1",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_w4sr4_k4_e000-001",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "w4sr4",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  },
+  {
+   "id": "smoke_det_k4_e000-001_qatsmoke",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true,
+   "ckpt": "qatsmoke"
+  },
+  {
+   "id": "smoke_none_e000-001_qatsmoke",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "none",
+   "k": 0,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true,
+   "ckpt": "qatsmoke"
+  },
+  {
+   "id": "smoke_det_k4_e000-001_after_qat",
+   "task": "pusht",
+   "split": "smoke",
+   "var": "det",
+   "k": 4,
+   "ep0": 0,
+   "ep1": 1,
+   "E": 1,
+   "ranges": "main",
+   "diag": true
+  }
+ ]
+}

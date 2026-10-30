@@ -1,0 +1,28 @@
+# E3 DINO-WM 작업 로그 (분석 작업자, UTC)
+
+- 2026-10-23T22:25Z쯤 조정자 지시 수신: DINO-WM E3(`E3_dinowm`, 130/130 job, 10-23 13:55Z ~ 22:22:53Z, GPU 1) 분석. GPU 1 사슬은 E5_dinowm_held(pusht_k3_held부터)를, GPU 0 queue는 TD-MPC2 E7(MPS)을 돌고 있다. 둘 다 읽기만 한다. 서버 python은 모두 `CUDA_VISIBLE_DEVICES=""`, `nice -n 10`, 스레드 4, PYTHONDONTWRITEBYTECODE=1로 한 번에 하나씩 돌린다
+  - 기준: DESIGN_main v5 §7.2(DINO-WM 2축·표 크기 sweep·H4a), v5.1 §8.3(var_cand 보조), §6.8, v4 §6.1. E2 작업 때 읽은 그대로이고, §7.2 DINO-WM 부분과 판정 문구를 다시 읽었다
+- 22:27Z 서버 상태: 부하 평균 37, GPU 0·1 모두 사용 중, 디스크 여유 265 GB. 사슬 로그: E3 칸 순서 pusht_k4(13:55~18:12Z) → pointmaze_k3(~19:57Z) → pusht_k3(~21:07Z) → wall_k5(~21:45Z) → wall_k3(~22:22:53Z), 모두 try 1. 이어 E5_dinowm_held 시작
+- 22:29Z **자료 점검**(`code/dinowm/check_e3.py`, 새로 씀, 서버 CPU 1.4초) → **불일치 0**
+  - manifest `E3_dinowm` 130 job: pusht_k4 40(indplan·shunit·shgroup·shlayer × 10묶음), pointmaze_k3 40, pusht_k3 10(indplan만), wall_k5 20(4변형 × E=2의 20 ep 묶음 5개), wall_k3 20. JSON 130개가 모두 있고 manifest 밖 파일은 없다
+  - job JSON의 job = manifest job. meta: planner 기본값(덮어쓰기 없음), opt_steps PushT 30·Wall 10·PointMaze 10, salt·pair seed(eval6: eval6·6, eval: eval5·5), 범위 main, qopts·ckpt 없음, bf16·TF32·SDPA, PCI_BUS_ID
+  - record: 칸·변형마다 episode 0~99가 한 번씩, planner seed(PushT 4000 + ep, Wall·PointMaze 3000 + ep), E(Wall 2, 나머지 1), 반복별 best = opt_steps개, OEI 입력(it0_rand_dJ_sd 포함) 유한, 계획 시점 오차 있음. hook 호출 수가 (칸, 변형)마다 일정(PushT 990, Wall·PointMaze 390)
+  - GPU: E3 5칸 모두 GPU 1 한 장
+  - **E1 연결**: 같은 (과제, k)의 E1 none(k=0)·det·ind·sh-iter·sh-plan이 각 100 ep, 같은 split·planner seed·E. E1 칸은 PushT가 GPU 0, Wall·PointMaze가 GPU 1이다(v5 §7.0: 칸을 GPU 사이에 나눠도 됨). E3 episode 1,300개 모두 첫 반복 비양자화 비용 배열(it0_J_none)이 E1 none과 비트 단위로 같다(최대 차 0, PushT는 GPU 1 대 GPU 0). 같은 시작·목표 쌍과 같은 후보 난수열이다
+- 22:30~22:33Z **스크립트 대조와 수정**(analyze_e3.py, E3 결과 수치를 계산하기 전)
+  - 규칙 대조: 2축(sh-iter·sh-plan·ind = E1, indplan = E3, indplan − ind 짝 CI), 표 크기 sweep 4수준(L0 shstep E1 > L1 shunit > L2 shgroup > L3 shlayer, N_eff 순위 4·3·2·1과 D의 Spearman), 과제 성립 = ρ ≤ −0.8, 자격 = E1 요약 JSON의 1차 k `drop_real_holm`, 계열 = 자격 과제 2개 이상이 성립(DINO-WM 3개 중 2개), var_cand = it0_rand_dJ_sd²의 episode 평균, ρ(var_cand, D). **규칙과 다르게 계산하는 곳은 없었다**
+  - **부동소수점 문턱 점검(22:30Z)**: 4수준 D의 모든 순서 패턴(동률 포함 256가지)을 scipy와 분수 정확 계산으로 비교했다. 정확히 −0.8인 패턴 3개(이웃 자리바꿈 한 번)에서 scipy가 −0.7999999999999999를 낸다. 그대로 `<= -0.8`로 비교하면 셋 다 떨어진다. 미리 쓴 코드에는 이미 `<= -0.8 + 1e-12`가 있어 256가지 모두 정확 판정과 같았다. TD-MPC2 계열과 맞추려고 허용 오차를 EPS_RHO = 1e-9로 바꿨다(1e-9도 256가지 모두 정확 판정과 같음). 4점 Spearman에서 −0.8 바로 위의 다음 값은 −0.7746이라 어느 허용 오차든 판정이 같다
+  - 더한 것(판정 계산은 그대로): (1) 과제별 ρ의 결합 bootstrap(조정자 요청: 4수준과 none에 같은 쌍 번호, 10,000회, RandomState(0); 95% 구간, 중앙값, P(ρ* ≤ −0.8)) (2) H4a 블록에 자격 근거(E1 D_det·CI·Holm), 개수, 엄격 과반 수, 자격 과제만의 ρ 중앙값(TD-MPC2 관례)을 미리 쓴 3과제 중앙값 옆에 (3) ρ(N_eff, var_cand)(기술) (4) 2축 짝 대비: OEI·drift의 indplan − ind, D_sh-plan − D_sh-iter, D_ind − D_sh-iter, D_indplan − D_sh-plan (5) 완전성 표시(수준마다 100 ep), `--family` 출력
+  - 가짜 자료(서버 `analysis/E3_dinowm/fake_res`)로 시험했다: −0.7999999999999999가 성립으로 잡히고, 자격 2개 중 1개 성립이면 계열 불성립, bootstrap D 구간이 칸 CI와 같다(같은 재표본). 12.8초. 가짜 자료는 지웠다
+  - 맥북·서버 analyze_e3.py md5 같음(37c13091…)
+- 22:33:42Z **analyze_e3.py 본 실행, 한 번**(서버 CPU 24.5초; 자격 입력 = 맥북 `results/E1/e1_dinowm_summary.json` 사본, md5 7be2e7f7…). 출력 `~/pmx/A/dinowm_main/analysis/E3_dinowm/`
+  - **H4a DINO-WM 몫 성립(경계)**: 자격 PushT k=4·PointMaze k=3(E1 Holm 실재), Wall k=5는 비자격. PushT ρ_s(N_eff, D) = −0.7999999999999999(정확히 −0.8, L2·L3 자리바꿈) → 허용 오차로 성립, PointMaze −1.0 → 성립. 2/2
+  - 수준별 D(L0 → L3): PushT −1, +5, +11, +8%p; PointMaze +2, +7, +9, +14; Wall k=5 +1, 0, −3, +2(ρ −0.2, 기술); Wall k=3(탐색) −4, −2, +3, +37(ρ −1.0)
+  - ρ bootstrap: PushT [−1.00, −0.32], P(ρ* ≤ −0.8) 0.70; PointMaze [−1.00, −0.32], 0.83
+  - var_cand: 네 sweep 모두 ρ(N_eff, var_cand) = −1. ρ(var_cand, D): +0.8, +1.0(자격), +0.2(Wall k=5), +1.0(Wall k=3)
+  - 2축: D_indplan − D_ind = 0, +2, +4, 0, −2%p, 모두 CI가 0을 포함 → 사전 예상 indplan ≈ ind와 맞음. OEI·drift 차도 0 근처
+  - H4b 입력값은 E2 보고에 낸 값과 같다
+- 22:35Z **e3_posthoc_dinowm.py**(사후, 표를 본 뒤 고름, 1.5초): D(L3) − D(L0) PushT +9 [+2, +16], PointMaze +12 [+4, +20]; PushT D(L3) − D(L2) −3 [−12, +6]
+- 22:35Z 결과 JSON 4개와 E3 job JSON 130개를 맥북 `results/E3_dinowm/`로 옮겼다(표 .md와 출력 .txt, 자격 입력 사본은 서버에만). 사슬 로그 E3 구간 Traceback 0건 확인
+- 22:36~22:39Z 보고서 `reports/E3_dinowm.md`
+- 22:39Z 마무리 점검: 분석 스크립트 8개(analyze.py, analyze_e2.py, analyze_e3.py, h4b_dinowm.py, check_e2n.py, check_e3.py, e2_posthoc_dinowm.py, e3_posthoc_dinowm.py) md5가 맥북과 서버에서 같다. 서버에 내 프로세스는 없다. 가짜 시험 자료는 지웠다

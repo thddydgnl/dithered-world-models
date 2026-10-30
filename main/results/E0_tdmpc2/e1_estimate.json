@@ -1,0 +1,51 @@
+{
+ "episodes": {
+  "mw": 13680,
+  "dmc": 6840
+ },
+ "cells_task_k_ckpt": 108,
+ "by_cfg": {
+  "mps16": {
+   "rate_mw": 3200.0,
+   "rate_dmc": 811.2676056338029,
+   "hours_episodes": 12.706249999999999,
+   "hours_mw": 4.275,
+   "hours_dmc": 8.431249999999999
+  },
+  "mps16b": {
+   "rate_mw": 3716.1290322580644,
+   "rate_dmc": 859.7014925373135,
+   "hours_episodes": 11.6375,
+   "hours_mw": 3.68125,
+   "hours_dmc": 7.95625
+  },
+  "mps16n": {
+   "rate_mw": 4800.0,
+   "rate_dmc": 929.0322580645161,
+   "hours_episodes": 10.2125,
+   "hours_mw": 2.85,
+   "hours_dmc": 7.3625
+  },
+  "mps24": {
+   "rate_mw": 3200.0,
+   "rate_dmc": 807.4766355140187,
+   "hours_episodes": 12.745833333333334,
+   "hours_mw": 4.275,
+   "hours_dmc": 8.470833333333333
+  },
+  "mps8": {
+   "rate_mw": 3200.0,
+   "rate_dmc": 778.3783783783783,
+   "hours_episodes": 13.062500000000002,
+   "hours_mw": 4.275,
+   "hours_dmc": 8.787500000000001
+  },
+  "nomps16": {
+   "rate_mw": 2094.5454545454545,
+   "rate_dmc": 488.135593220339,
+   "hours_episodes": 20.54375,
+   "hours_mw": 6.53125,
+   "hours_dmc": 14.0125
+  }
+ }
+}

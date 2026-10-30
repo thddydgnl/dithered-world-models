@@ -1,0 +1,2 @@
+{"task": "walker-walk", "ep": 0, "seed": 1000, "ret": 993.8569517433643, "success": 0.0, "success_any": 0.0, "steps": 500, "secs": 16.37970519065857, "n_dec": 50}
+{"task": "walker-walk", "ep": 1, "seed": 1001, "ret": 993.6168554127216, "success": 0.0, "success_any": 0.0, "steps": 500, "secs": 16.15973138809204, "n_dec": 50}

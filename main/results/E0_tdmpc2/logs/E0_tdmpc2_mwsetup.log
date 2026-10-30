@@ -1,0 +1,141 @@
++ UV=/home/yonghwi/.local/bin/uv
++ export UV_PYTHON_INSTALL_DIR=/home/yonghwi/pmx/envs/python UV_PYTHON_PREFERENCE=only-managed
++ UV_PYTHON_INSTALL_DIR=/home/yonghwi/pmx/envs/python
++ UV_PYTHON_PREFERENCE=only-managed
++ W=/home/yonghwi/pmx/A/tdmpc2_main
++ E=/home/yonghwi/pmx/envs
++ V=/home/yonghwi/pmx/envs/a-mw
++ MJ=/home/yonghwi/pmx/envs/mujoco210
++ MR=/home/yonghwi/pmx/envs/micromamba
++ GL=/home/yonghwi/pmx/envs/micromamba/envs/gl24
++ rm -f /home/yonghwi/pmx/A/tdmpc2_main/MW_DONE /home/yonghwi/pmx/A/tdmpc2_main/MW_FAILED
++ '[' '!' -f /home/yonghwi/pmx/envs/mujoco210/bin/libmujoco210.so ']'
++ ls /home/yonghwi/pmx/envs/mujoco210/bin
+basic
+compile
+derivative
+libglew.so
+libglewegl.so
+libglewosmesa.so
+libglfw.so.3
+libglfw3.a
+libmujoco210.so
+libmujoco210nogl.so
+record
+simulate
+testspeed
+testxml
++ ldd /home/yonghwi/pmx/envs/mujoco210/bin/libmujoco210.so /home/yonghwi/pmx/envs/mujoco210/bin/libglewosmesa.so
++ grep -E 'not found|=>'
++ sort -u
+	libc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000078e14ddab000)
+	libc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007db39e3d7000)
+	libgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000078e14e662000)
+	libm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x000078e14e682000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x000078e14dfd4000)
++ mkdir -p /home/yonghwi/pmx/envs/micromamba/bin
++ '[' -x /home/yonghwi/pmx/envs/micromamba/bin/micromamba ']'
++ chmod +x /home/yonghwi/pmx/envs/micromamba/bin/micromamba
++ export MAMBA_ROOT_PREFIX=/home/yonghwi/pmx/envs/micromamba
++ MAMBA_ROOT_PREFIX=/home/yonghwi/pmx/envs/micromamba
++ /home/yonghwi/pmx/envs/micromamba/bin/micromamba --version
+2.9.0
++ '[' -d /home/yonghwi/pmx/envs/micromamba/envs/gl24/conda-meta ']'
++ /home/yonghwi/pmx/envs/micromamba/bin/micromamba list -p /home/yonghwi/pmx/envs/micromamba/envs/gl24
++ grep -E -i 'mesa|glew|libgl|llvm|osmesa'
+  glew               2.3.0         h71661d4_0        conda-forge
+  libgl              1.7.0         ha4b6fd6_5        conda-forge
+  libgl-devel        1.7.0         ha4b6fd6_5        conda-forge
+  libglu             9.0.3         h5888daf_1        conda-forge
+  libglvnd           1.7.0         ha4b6fd6_5        conda-forge
+  libglx             1.7.0         ha4b6fd6_5        conda-forge
+  libglx-devel       1.7.0         ha4b6fd6_5        conda-forge
+  libllvm19          19.1.7        hf7376ad_2        conda-forge
+  mesalib            24.3.4        h0b126fc_1        conda-forge
++ grep -E -i 'osmesa|libGL|glapi|glew|gl.h|^GL'
++ ls /home/yonghwi/pmx/envs/micromamba/envs/gl24/include/GL /home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ head -40
+eglew.h
+gl.h
+glcorearb.h
+glew.h
+glext.h
+glu.h
+glx.h
+glxew.h
+glxext.h
+glxint.h
+glxmd.h
+glxproto.h
+glxtokens.h
+osmesa.h
+wglew.h
+libGL.so
+libGL.so.1
+libGL.so.1.7.0
+libGLEW.so
+libGLEW.so.2.3
+libGLEW.so.2.3.0
+libGLU.a
+libGLU.so
+libGLU.so.1
+libGLU.so.1.3.1
+libGLX.so
+libGLX.so.0
+libGLX.so.0.0.0
+libGLdispatch.so.0
+libGLdispatch.so.0.0.0
+libOSMesa.so
+libOSMesa.so.8
+libOSMesa.so.8.0.0
+libglapi.so
+libglapi.so.0
+libglapi.so.0.0.0
++ '[' -x /home/yonghwi/pmx/envs/a-mw/bin/python ']'
++ /home/yonghwi/.local/bin/uv pip install --python /home/yonghwi/pmx/envs/a-mw/bin/python torch==2.7.1 tensordict==0.8.3 dm-control==1.0.16 mujoco==3.1.2 numpy==1.24.4 gymnasium==0.29.1 hydra-core==1.3.2 omegaconf==2.3.0 termcolor tqdm pandas==2.3.3 scipy==1.15.3 matplotlib==3.10.9 'cython<3' setuptools==65.5.0 wheel==0.38.0 patchelf
+Using Python 3.11.17 environment at: pmx/envs/a-mw
+Checked 17 packages in 6ms
++ /home/yonghwi/.local/bin/uv pip install --python /home/yonghwi/pmx/envs/a-mw/bin/python pip==23.3.1
+Using Python 3.11.17 environment at: pmx/envs/a-mw
+Checked 1 package in 1ms
++ /home/yonghwi/pmx/envs/a-mw/bin/python -m pip install --no-build-isolation gym==0.21.0
+Requirement already satisfied: gym==0.21.0 in ./pmx/envs/a-mw/lib/python3.11/site-packages (0.21.0)
+Requirement already satisfied: numpy>=1.18.0 in ./pmx/envs/a-mw/lib/python3.11/site-packages (from gym==0.21.0) (1.24.4)
+Requirement already satisfied: cloudpickle>=1.2.0 in ./pmx/envs/a-mw/lib/python3.11/site-packages (from gym==0.21.0) (3.1.2)
++ /home/yonghwi/.local/bin/uv pip install --python /home/yonghwi/pmx/envs/a-mw/bin/python --no-build-isolation --no-deps 'metaworld @ git+https://github.com/Farama-Foundation/Metaworld.git@04be337a12305e393c0caf0cbf5ec7755c7c8feb'
+Using Python 3.11.17 environment at: pmx/envs/a-mw
+Checked 1 package in 1ms
++ /home/yonghwi/.local/bin/uv pip install --python /home/yonghwi/pmx/envs/a-mw/bin/python --no-build-isolation mujoco-py==2.1.2.14
+Using Python 3.11.17 environment at: pmx/envs/a-mw
+Checked 1 package in 2ms
++ ls -la /home/yonghwi/pmx/envs/a-mw/bin/patchelf
+-rwxrwxr-x 2 yonghwi yonghwi 1394928 Oct 21 13:28 /home/yonghwi/pmx/envs/a-mw/bin/patchelf
++ export PATH=/home/yonghwi/pmx/envs/a-mw/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin MUJOCO_PY_MUJOCO_PATH=/home/yonghwi/pmx/envs/mujoco210 MUJOCO_GL=disable
++ PATH=/home/yonghwi/pmx/envs/a-mw/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ MUJOCO_PY_MUJOCO_PATH=/home/yonghwi/pmx/envs/mujoco210
++ MUJOCO_GL=disable
++ export CPATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/include LIBRARY_PATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ CPATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/include
++ LIBRARY_PATH=/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ export LD_LIBRARY_PATH=/home/yonghwi/pmx/envs/mujoco210/bin:/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ LD_LIBRARY_PATH=/home/yonghwi/pmx/envs/mujoco210/bin:/home/yonghwi/pmx/envs/micromamba/envs/gl24/lib
++ /home/yonghwi/pmx/envs/a-mw/bin/python -c 'import mujoco_py; print('\''mujoco_py ok'\'', mujoco_py.__file__)'
+running build_ext
+building 'mujoco_py.cymj' extension
+cc -pthread -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -Ipmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py -I/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py -I/home/yonghwi/pmx/envs/mujoco210/include -I/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/numpy/core/include -I/home/yonghwi/pmx/envs/a-mw/include -I/home/yonghwi/pmx/envs/python/cpython-3.11.17-linux-x86_64-gnu/include/python3.11 -c /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/cymj.c -o /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/cymj.o -fopenmp -w
+cc -pthread -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -Ipmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py -I/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py -I/home/yonghwi/pmx/envs/mujoco210/include -I/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/numpy/core/include -I/home/yonghwi/pmx/envs/a-mw/include -I/home/yonghwi/pmx/envs/python/cpython-3.11.17-linux-x86_64-gnu/include/python3.11 -c /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/gl/osmesashim.c -o /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/gl/osmesashim.o -fopenmp -w
+creating /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/lib.linux-x86_64-cpython-311
+creating /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/lib.linux-x86_64-cpython-311/mujoco_py
+cc -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/cymj.o /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/temp.linux-x86_64-cpython-311/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/gl/osmesashim.o -L/home/yonghwi/pmx/envs/mujoco210/bin -L/home/yonghwi/pmx/envs/python/cpython-3.11.17-linux-x86_64-gnu/lib -Wl,--enable-new-dtags,-R/home/yonghwi/pmx/envs/mujoco210/bin -lmujoco210 -lglewosmesa -lOSMesa -lGL -o /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/_pyxbld_2.1.2.14_311_linuxcpuextensionbuilder/lib.linux-x86_64-cpython-311/mujoco_py/cymj.cpython-311-x86_64-linux-gnu.so -fopenmp
+mujoco_py ok /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/__init__.py
+++ head -1
+++ ls /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/cymj_2.0.2.8_37_macextensionbuilder_37.so /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/cymj_2.1.2.14_311_linuxcpuextensionbuilder_311.so /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/cymj_2.1.2.14_37_macextensionbuilder_37.so
++ SO=/home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/cymj_2.0.2.8_37_macextensionbuilder_37.so
++ ldd /home/yonghwi/pmx/envs/a-mw/lib/python3.11/site-packages/mujoco_py/generated/cymj_2.0.2.8_37_macextensionbuilder_37.so
++ grep -E 'not found|mujoco|OSMesa|GL|glew'
+	not a dynamic executable
++ /home/yonghwi/.local/bin/uv pip freeze --python /home/yonghwi/pmx/envs/a-mw/bin/python
+Using Python 3.11.17 environment at: pmx/envs/a-mw
++ touch /home/yonghwi/pmx/A/tdmpc2_main/MW_DONE
++ echo MW_ALL_DONE
+MW_ALL_DONE
