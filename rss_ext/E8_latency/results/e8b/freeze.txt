@@ -1,0 +1,4 @@
+nvidia-cublas-cu12==12.8.4.1
+torch==2.9.1+cu128
+torchaudio==2.9.1+cu128
+triton==3.5.1

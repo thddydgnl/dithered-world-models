@@ -1,0 +1,49 @@
+# E9 4-bit 부동소수점 형식 — 작업 기록 (UTC)
+
+- 2026-10-31T08:52Z 조정자 지시 수신(E9, pod 태그 e9.1·e9.2, 상한 $7). DESIGN_ext §0·§2·§4, MAIN_RULES, PILOT_RULES §1–§4, runpod_rss README, E1 코드(qlib, runner, calib_lib, make_manifest, analyze_e1)와 E0·E1 TD-MPC2 보고를 읽었다.
+- 09:02Z E1 코드(`qlib.py`, `runner.py`)를 `code/`로 복사했다. E0 ranges 36개(`inputs/ranges/`, E0 `scales/*.json`과 값이 같음을 확인)와 E0 체크포인트 SHA256SUMS(`inputs/ckpt_SHA256SUMS`)도 복사했다.
+- 09:02–09:09Z 코드 작성
+  - `fp4lib.py`: NVFP4·MXFP4 fake quant. PyTorch 참조 구현과 같은 산술의 Triton 융합 kernel(호출당 kernel 1개)
+  - `qlib.py`: FP4 변형 4개(nvfp4_det, nvfp4_shiter, mxfp4_det, mxfp4_shiter) 추가. hook의 FP4 분기는 균일 격자 코드 앞에서 반환하므로 E1 변형 경로는 그대로다. sh-iter의 u는 E1 shiter와 같은 개별 generator에서 (1, W)로 뽑는다
+  - `runner.py`: scales "e1"(E0 ranges 파일), episode job의 `fp4_impl`, 새 job 종류 `heldperr`(none episode의 첫 반복 후보 → E1과 같은 `plan_inputs`·`pred_errors`)
+  - `make_manifest_e9.py`, `test_fp4.py`(단위 점검 7종), `check_smoke.py`, `bench_rate.py`, `setup_e9.sh`, `env_e9.sh`, `mps_e9.sh`, `run_runner.sh`
+- 09:09Z `pod_up.sh e9.1` → **A40**($0.59/h), id `1cpf99362kb99h`, 생성 09:09:28Z(자동 종료 13:08Z). cgroup CPU 할당 7.65코어(nproc 96은 호스트 값), RAM 503GB, /workspace는 MooseFS. (pod_up 호출 때 Bash에서 `cd /tmp`를 한 번 썼다. 이후로는 쓰지 않는다)
+- 09:10–09:13Z `setup_e9.sh` 161초: E1 고정판 그대로(torch 2.7.1+cu126, triton 3.3.1, mujoco-py는 CPU/OSMesa builder로 컴파일), tdmpc2 332f19e, 체크포인트 36개 SHA256이 E0 값과 모두 같다
+- 09:13Z 스모크 1차: Triton kernel이 `NameError('tl is not defined')`(kernel을 함수 안에서 정의해 JIT가 전역 이름을 못 찾음) → kernel을 모듈 수준으로 옮겼다
+- 09:15Z 스모크 2차
+  - E0 저장 episode 재현(seed 12000): none은 가깝지만 비트 단위로 같지 않다(mw-push 1785.18 대 1784.28, cheetah 871.44 대 861.54). det는 궤적이 갈라졌다(mw-push k3 1365.5 대 946.2). E0 §4가 적은 대로 GPU가 다르면(A40 대 A5000) 같은 seed라도 수치가 비트 단위로 같지 않다. 코드 경로 문제가 아님은 아래 점검으로 확인했다
+  - **E1 코드 경로 불변**: 손대지 않은 E1 `qlib.py`와 E9 `qlib.py`로 같은 pod에서 같은 episode(mw-push s1 seed 12000: none, det k3, shiter k3, shstep k3)를 돌려 return이 비트 단위로 같다
+  - 단위 점검 7종: 처음에는 Triton과 참조 구현이 "비트 단위로 다름"으로 나왔다. 조사해 보니 다른 값은 모두 0이었다: 참조는 0으로 반올림된 음수 항목에 −0.0을, Triton은 +0.0을 낸다. 부호 있는 0을 정규화(x + 0.0)하면 56경우 모두 비트 단위로 같다. 0의 부호는 다음 층 값에 영향이 없다(스모크 episode 8개의 return이 두 구현에서 같음). 점검을 "부호 있는 0 정규화 뒤 비트 일치"로 고치고 다시 돌려 **7종 모두 PASS**
+  - FP4 스모크 episode(seed 89000, mw-push·cheetah-run s1, 4변형 × 2구현): **두 구현의 return이 8쌍 모두 같다**. 워커 8개 동시 실행에서 episode당 시간은 Triton MW 5.1–5.6초·DMC 18.6–18.8초, 참조 MW 7.7–10.2초·DMC 29.8–36.5초(E1 균일 det는 MW 5.3초·DMC 22.8초)
+  - heldperr 스모크: 상태 시점 MW [0, 12, 28, 40, 56, 68, 84, 96], DMC [0, 70, …, 490](E1 규칙과 같음). 1-step 오차 err1h(mw-push): nvfp4 det 0.0081, sh-iter 0.0171, mxfp4 det 0.0216, sh-iter 0.0396
+- 09:19Z 처리량 측정 시작(MW, 워커 8 → 12)
+- 09:18–09:39Z 처리량 측정(A40, 5변형 섞음, 고정 시간): MW 워커 8 5,995 ep/h, 워커 12 4,443 ep/h(CPU 할당 7.65코어 초과로 느려짐), 워커 6 5,694 ep/h; DMC 워커 8 1,163 ep/h, 워커 6 1,155 ep/h → 워커 8로 정함
+- 09:37Z `pod_up.sh e9.2` → **A40**($0.59/h), id `hroms3ybgnwgpv`, 생성 09:37:04Z(자동 종료 13:36Z), CPU 할당 7.65코어(cgroup v2). 코드 전송 뒤 `setup_e9.sh` 시작
+- 09:38Z PLAN.md 작성(09:39:36Z 마지막 수정: 처리량 표·워커 수). 비용 추정 합 약 $2.4(상한 $7의 34%)
+- **09:39:39Z e9.1 본 실행 시작**: manifest `main_e9.1.jsonl` 972 job(MW 8과제 + cheetah-run, eval 810 job = 4,050 episode, heldperr 162 job = 810 episode), 워커 8, MPS, Triton 구현
+- 09:40Z e9.2 설치 완료(체크포인트 SHA256 36개 일치), `test_fp4.py` 7종 PASS
+- **09:40:36Z e9.2 본 실행 시작**: `main_e9.2.jsonl` 324 job(walker-walk, quadruped-walk, finger-turn-hard; eval 270 job = 1,350 episode, heldperr 54 job = 270 episode), 워커 8
+- 09:42Z `analyze_e9.py` 코드 경로 점검: 처리량 측정 job(seed 88000+)과 스모크 heldperr를 eval·heldperr 이름으로 링크한 임시 폴더(`/workspace/atest`)에서 끝까지 돌았다. 숫자는 보지 않았고 판정에 쓰지 않는다
+- 09:58Z 점검: e9.1 255/972 job(1,143초), e9.2 66/324 job(1,077초, 약 1,100 DMC ep/h). 오류 0. E9 지출 추정 $0.72. 예상 종료 e9.1 약 10:55Z, e9.2 약 11:15Z
+- 10:17Z 점검: e9.1 498/972, e9.2 140/324, 오류 0. 부분 결과를 맥북 `results/raw_e9.1`, `raw_e9.2`로 당겨 왔다(분석은 하지 않음)
+- 10:28Z 점검: e9.1 649/972, e9.2 184/324, 오류 0
+- 10:46Z 점검: e9.1 eval 810 job 완료, heldperr 87/162. e9.2 256/324(eval 거의 끝). 오류 0. E9 지출 추정 $1.68(e9.1 $0.98, e9.2 $0.70). 원격 sleep을 건 rsh 호출 하나가 응답 없이 맥북 쪽 시간 제한에 걸려 백그라운드로 넘어갔다(pod 작업에는 영향 없음, 직접 점검은 정상)
+- **10:52:39Z e9.1 본 실행 끝**: 972/972 job OK, 실패 0(4,379초). eval 810 job + heldperr 162 job
+- 10:54Z e9.1 결과·로그·manifest·처리량 파일을 맥북 `results/raw_e9.1/`, `logs_e9.1/`, `manifests/`로 당겨 왔다. 원격 md5 목록(1,003파일)과 모두 같다(`results/md5_e9.1_remote.txt`). `pod_down.sh e9.1` → budget.py에서 **gone**, $1.06
+- **11:03:30Z e9.2 본 실행 끝**: 324/324 job OK, 실패 0(4,973초)
+- 10:55–11:10Z 결과 모으기: e9.1 결과를 e9.2로 rsync push하던 중 맥북 쪽 연결이 끊겼다("Can't assign requested address", heldperr 6개에서 멈춤). 멈춘 원격 rsync를 끝내고 임시 파일을 지운 뒤 tar 한 줄기로 다시 보냈다. 합친 폴더(`/workspace/merged`)의 e9.1 파일 972개 md5가 맥북 사본과 같다(`results/md5_merged_remote.txt`). 합계 eval 1,080 job(5,400 episode), heldperr 216 job(1,080 episode)
+- 11:12Z e9.2에서 `analyze_e9.py`와 `plot_e9.py` 실행(문자 그대로의 p로 바뀌는 칸 없음). 결과·로그·manifest·분석 파일을 tar로 당겨 왔다. 원격 md5 325개가 모두 같다(`results/md5_e9.2_remote.txt`)
+- 11:13Z `pod_down.sh e9.2` → budget.py에서 e9.1·e9.2 모두 **gone**. 추정 지출 e9.1 $1.06 + e9.2 $0.97 = **$2.03**
+- 11:14Z 판정(사전 등록 규칙, `results/e9_summary.json`)
+  - F1 NVFP4 불성립(2/12, 셋째 칸 window-open p = 0.0056 > Holm 문턱 0.0050, 경계)
+  - F1 MXFP4 성립(4/12)
+  - F2 MW 성립(손상 칸 1개, red 0.89)
+  - F2 DMC 불성립(2/5)
+  - F3 성립(6/6)
+- 11:15Z 맥북에서 `e9_episodes.csv`로 24칸 D_det·D_sh-iter 점 추정과 짝 수를 순수 Python으로 다시 계산했다. 모두 일치한다
+- 11:16Z **[사후]** E1 k = 4와의 1-step 오차 크기 비교 표 `results/e9_posthoc_vs_e1_k4.csv`를 순수 Python으로 만들었다(기술, 판정에 쓰지 않음)
+- 11:20Z REPORT.md 작성. Write 도구가 보고서 파일 쓰기를 막아 규칙대로 Bash heredoc으로 썼다
+- 재계산 방법
+  - `raw_e9.1/jobs`와 `raw_e9.2/jobs`를 한 폴더 `jobs/`로 합친다(eval 1,080 + heldperr 216 파일).
+  - 다음을 돌린다: `python code/analyze_e9.py --res <그 폴더의 부모> --e1 ../main/results/E1_tdmpc2/e1_tdmpc2_cells.csv --outdir <out>`
+  - 맥북 계산 금지 규칙 때문에 pod에서 돌렸다.

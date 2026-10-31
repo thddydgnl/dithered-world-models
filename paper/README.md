@@ -3,8 +3,9 @@
 | 폴더 | 대상 | 양식 | 상태 (2026-10-24) |
 |---|---|---|---|
 | [`jkaia2026/`](jkaia2026/) | 2026 한국인공지능학회 추계학술대회(JKAIA 2026), **General (Poster) 트랙** | 학회 LaTeX 템플릿 `kaia.cls`, 2쪽 | 완성본 v1. 영문 제출본 `main.tex`/`main.pdf`, 한국어 검토본 `main_ko.tex`/`main_ko.pdf`, EasyChair 국문 초록 `abstract_ko.txt` |
-| (예정) `tmlr/` | TMLR | `tmlr.sty`, 이중맹검 | 아직 없음 |
-| (예정) ICLR 2027 워크숍 | 워크숍 목록 공개 11-29 | — | 아직 없음 |
+| (예정) `rss2027/` | RSS 2027 Stage 1 extended abstract (마감 2026-12-04 AoE) | 본문 5쪽 + 참고문헌 1쪽, 이중맹검 | 아직 없음. 10-31 사용자 결정. 보강 실험 E8~E10은 [`../rss_ext/`](../rss_ext/) |
+| ~~(예정) `tmlr/`~~ | ~~TMLR~~ | — | 10-31에 RSS로 바꿈(아래 5절) |
+| (예정) ICLR 2027 워크숍 | 워크숍 목록 공개 11-29 | — | 아직 없음. non-archival이면 RSS와 함께 낼 수 있음 |
 
 ```bash
 cd "A_dithered_world_models/paper/jkaia2026" && python3 build/make_fig.py && tectonic -X compile main.tex && tectonic -X compile main_ko.tex
@@ -171,6 +172,9 @@ cd "A_dithered_world_models/paper/jkaia2026" && python3 build/make_fig.py && tec
 
 ## 5. 다른 투고와의 관계
 
-- 10-24 이전 계획은 A → RSS 2027 stage 1(12-04)이었다. 10-24에 사용자가 A의 투고처로 JKAIA, TMLR, ICLR 2027 워크숍을 말했다. RSS와 TMLR은 동시 투고가 안 되므로, TMLR을 준비할 때 다시 확인한다.
+- **10-31: 사용자가 A를 RSS 2027 Stage 1(extended abstract, 12-04 AoE)에 내기로 정했다.** 같은 날 보강 실험 E8~E10을 RunPod에서 돌렸다([`../rss_ext/`](../rss_ext/)). 원고는 그 결과와 주장 재구성안(`../rss_ext/CLAIMS_rss.md`) 승인 뒤 쓴다.
+  - RSS 2027 CFP(10-31 공식 사이트 재확인): Stage 1은 본문 5쪽 + 참고문헌 1쪽, 가설·방법론을 심사, 메타리뷰가 요구 평가를 적고 그것이 Extension Charter가 된다(02-26 결정). 최종 8쪽은 04-16. 이중맹검이고 preprint는 허용된다. 동시 투고는 금지다.
+  - 그래서 RSS 심사 중에는 TMLR에 낼 수 없다. Stage 1에서 떨어지면(02-05) TMLR을 대안으로 쓴다.
+- (이전 기록) 10-24 이전 계획은 A → RSS 2027 stage 1(12-04)이었다. 10-24에 사용자가 A의 투고처로 JKAIA, TMLR, ICLR 2027 워크숍을 말했다. RSS와 TMLR은 동시 투고가 안 되므로, TMLR을 준비할 때 다시 확인한다.
 - TMLR은 병행 심사 중인 archival 학회와 글, 그림, 결과를 공유하는 것을 금지하고, non-archival 워크숍과 arXiv는 허용한다. JKAIA 포스터는 논문집에 실리지 않고 저작권도 양도하지 않으므로 충돌하지 않는다. TMLR 제출 때 이 사실을 밝힐 수 있게 CFP 안내를 보관한다.
 - ICLR 2027 워크숍은 non-archival인 곳을 골라야 TMLR과 겹치지 않는다.

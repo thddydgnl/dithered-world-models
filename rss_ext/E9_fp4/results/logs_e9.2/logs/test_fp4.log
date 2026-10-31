@@ -1,0 +1,16 @@
+PASS 1a_e2m1_rne_det_vs_bruteforce {"ok": true, "n": 6094, "n_bad": 0, "examples": [], "triton_equal": true}
+PASS 1b_e2m1_shiter_formula {"ok": true, "n": 6094, "n_bad": 0, "triton_equal": true}
+PASS 2_e4m3_rne {"ok": true, "n": 20501, "n_bad_vs_float8_cast": 0, "n_bad_vs_bruteforce": 0}
+PASS 3_block_scales {"ok": true, "n_blocks_nv": 8192, "n_bad_nv": 0, "n_blocks_mx": 4096, "n_bad_mx": 0, "g": 0.003178632352501154, "sixg": 0.0190717950463295, "zero_block_scale_nv": 0.003178632352501154, "zero_block_scale_mx": 1.0}
+PASS 4_shiter_unbiased {"ok": true, "nvfp4": {"max_abs_z": 3.396043090342962, "mean_abs_z": 0.7778824744004903, "n_unsat": 494, "n_sat": 18, "on_grid_exact": true, "saturated_exact": true}, "mxfp4": {"max_abs_z": 3.1984317788816226, "mean_abs_z": 0.755864338615182, "n_unsat": 505, "n_sat": 7, "on_grid_exact": true, "saturated_exact": true}}
+PASS 7_block_boundaries {"ok": true, "n": 32, "bad": []}
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+PASS 5_triton_equals_reference {"ok": true, "n_cases": 56, "n_not_bit_equal": 0, "bad": []}
+PASS 6_quantizer_hook {"ok": true, "nvfp4_det/triton": {"rows_identical": true, "second_call_differs": false, "reseed_reproduces": true, "gen_advance_ok": true, "global_rng_untouched": true, "nq_next": 2, "nq_after_next_next_reward": 6, "other_modules_untouched": true, "changes_output": true}, "nvfp4_det/ref": {"rows_identical": true, "second_call_differs": false, "reseed_reproduces": true, "gen_advance_ok": true, "glo
+DIAG {"real_mw-push_dyn0/nvfp4": {"sat_share": 0.033473968505859375, "zero_blocks": 0, "r_below_min": 0, "r_above_max": 255, "rel_mse_det": 0.012529930099844933}, "real_mw-push_dyn0/mxfp4": {"sat_share": 0.017864227294921875, "zero_blocks": 0, "rel_mse_det": 0.02601686865091324}, "real_mw-push_dyn1/nvfp4": {"sat_share": 0.03269195556640625, "zero_blocks": 0, "r_below_min": 0, "r_above_max": 11, "rel_mse_det": 0.008734498172998428}, "real_mw-push_dyn1/mxfp4": {"sat_share": 0.016082763671875, "zero_blocks": 0, "rel_mse_det": 0.025054339319467545}, "real_mw-push_rew0/nvfp4": {"sat_share": 0.042819976806640625, "zero_blocks": 0, "r_below_min": 0, "r_above_max": 89, "rel_mse_det": 0.008982648141682148}, "real_mw-push_rew0/mxfp4": {"sat_share": 0.015132904052734375, "zero_blocks": 0, "rel_mse_det": 0.023393996059894562}, "real_mw-push_rew1/nvfp4": {"sat_share": 0.045688629150390625, "zero_blocks": 0, "r_below_min": 0, "r_above_max": 0, "rel_mse_det": 0.008429895155131817}, "real_mw-push_rew1/mxfp4": {"sat_share": 0.015716552734375, "zero_blocks": 0, "rel_mse_det": 0.023770054802298546}}
+TEST_FP4_DONE n_fail=0

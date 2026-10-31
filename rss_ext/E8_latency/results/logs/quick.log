@@ -1,0 +1,12 @@
+09:47:16 selection {'5': 'a', '19': 'a', '48': 'a', '317': 'a'}; GPU NVIDIA A40
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+09:47:45 built 66 graphs in 21s; allocated 3.6 GiB, reserved 12.5 GiB
+09:48:35 round 0 done in 50s (total 79s)
+09:48:35 E8_MAIN_DONE

@@ -4,3 +4,22 @@
 - 2026-10-31T08:46Z RunPod 도구 `runpod_rss/` 생성(`runpod_main` 복사): 접두어 `arx`, START_BALANCE $98.23(08:37Z, 실행 중인 pod 없음), 감시 한도 $28(사용자 상한 $30), HARD_DEADLINE 11-15. 실험별 상한 E8 $3, E8b $2, E9 $7, E10 $13. `pod_up.sh`에 `--min-cuda-version`(기본 12.6) 추가, `budget.py`의 상한 키를 `<실험>.<n>` 태그에 맞게 고침. 감시 스크립트 `budget.py watch 300` 시작(08:43Z).
 - 2026-10-31T08:46Z RunPod 재고(08:40Z): RTX A5000 없음. A40 $0.59/h(High), RTX 4090 $0.89/h(Medium), RTX A6000 $0.59/h(Low), L40S $1.09/h(Low), RTX 5090 $1.19/h(Medium), RTX PRO 4500 Blackwell $0.72/h(Medium). 그래서 E8은 A40(E7 A5000과 같은 GA102 계열)에서 잰다.
 - 2026-10-31T08:46Z **설계 고정**: [DESIGN_ext.md](DESIGN_ext.md) sha256 `c660a10dc72ba044903996c0d8342cd90bc1941beeac9d654cbd00d1b050850c`. 어느 실험의 자료도 생기기 전이다.
+- 2026-10-31T09:50Z 조정자 점검 1: 추정 지출 $2.19(pod 5개 RUNNING: e8 A40, e9.1·e9.2 A40, e10.1·e10.2 RTX 4090), 감시 스크립트 살아 있음.
+  - E8: 스모크 통과, GEMM 경로는 네 크기 모두 (a) Triton 타일. 본 측정 전 구현 수정 두 가지(u를 forward마다 한 번만 그림, row kernel tile 규칙을 det 시간으로 고름)를 작업자 LOG에 기록. 본 측정 추정 약 108분.
+  - E9: 본 실행 09:39Z(e9.1: MW 8과제 + cheetah) / 09:40Z(e9.2: walker, quadruped, finger) 시작. PLAN 비용 추정 약 $2.4.
+  - E10: wrapper가 공식 다중 과제 경로와 비트 단위로 같음 확인. 스모크 결정당 73 ms(4090). 8과제 모두 자격(drawer-open은 문턱과 같은 0.700). k 선택 진행 중. PLAN 비용 추정 $6.5~7.3.
+- 2026-10-31T10:52Z 조정자 점검 2: 추정 지출 $5.89(e10.1 $1.67, e10.2 $1.47, e8 $0.98, e9.1 $1.02, e9.2 $0.74), 감시 스크립트 살아 있음(10:49Z 기록; `check_all.sh`의 pgrep 패턴이 상대 경로로 띄운 감시 프로세스를 못 찾아 "NOT RUNNING"으로 잘못 찍혀서 패턴을 고침).
+  - E8: 본 측정 09:51Z 시작, 10회전 중 5회전 끝(회전당 약 640초), 종료 예상 약 11:40Z.
+  - E9: e9.1 eval 810 job 끝, heldperr 진행. e9.2 eval 거의 끝. 오류 0. 작업자 추정 E9 지출 $1.68.
+  - E10: 작업자 2개 → 1개로 되돌림(PLAN §5 규칙, 2개가 4~8% 느림). 되돌리면서 운영 실수 2건으로 GPU 유휴 약 10분씩(결과 영향 없음). eval 진행 중.
+- 2026-10-31T11:20Z **E9 끝**(작업자 보고, pod 두 대 gone, 지출 $2.03). 조정자가 `results/e9_episodes.csv`·`e9_held_errors.csv`에서 판정을 독립 재계산(`verify_e9.py`, 같은 RandomState(0) 방식): F1 NVFP4 불성립 2/12, F1 MXFP4 성립 4/12, F2 Meta-World 형식상 성립(손상 칸 window-open MXFP4 하나, red 0.89), F2 DMC 불성립 2/5, F3 성립 6/6(det pt_err1h가 sh-iter의 0.48~0.63배). 모두 보고와 같다.
+  - 경계 칸 NVFP4 window-open: none 90/90, det 85/90(한 방향 불일치 5짝). 재표본 수가 무한일 때의 bootstrap p = (85/90)^90 = 0.0058로 Holm 3순위 문턱 0.005보다 크다. 사전등록 계산(0.0054~0.0056)과 같은 쪽이다. 다른 난수(seed 12345)로는 0.0050이 나와 뒤집히지만, 판정은 사전등록대로 불성립이다.
+- 2026-10-31T11:52Z 조정자 점검 3: 추정 지출 $8.90(e10.1 $2.61, e10.2 $2.41, e8 $1.59, e8b $0.26 RTX 5090, e9.1·e9.2 gone $2.03). 감시 스크립트 살아 있음.
+  - E8: 본 측정 10회전 11:38Z 끝, 분석 실행됨. e8 pod는 아직 RUNNING(작업자가 결과를 당긴 뒤 지울 예정). E8b가 RTX 5090에서 진행 중(첫 시도에서 CUDA graph 안 난수 offset 오류, eager 측정은 끝남).
+  - E10: k 선택 끝(push 5, pick-place 3, door-open 3, drawer-open 4, button-press-topdown 3, peg-insert-side 3, window-open 3, sweep-into 3; sweep-into k=3은 하락 0.200으로 문턱과 같아 허용 오차 규칙으로 해당). eval 진행 중, 종료 예상 12:45~13:00Z.
+- 2026-10-31T12:10Z **E8·E8b 끝**(작업자 보고, e8·e8b pod gone, 지출 E8 $1.64 + E8b $0.32). 조정자가 `results/main/e8_main.json`·`e8_reps.npz`(1,540 block, 짝 350개)에서 독립 재계산(`verify_e8.py`: block 값 = 회당 시간 중앙값, 조건 값 = block 값 중앙값, 짝 CI = RandomState(0) bootstrap 10,000회): L1 성립 12/12(int-det/fp32 0.307~0.538), L2 성립 10/12(최소 0.677 48M·N 512; 불통과 5M·N 2048 1.057, 317M·N 8192 0.927), L3 성립(짝 오버헤드 중앙값 −0.19~+2.07%, CI 상한 최대 +2.13%). 모두 보고와 같다.
+  - eager-step(N 512): 5M fp32 22.57 ms, int-det 28.79 ms(+27.6%), E7 kernel 25.03 ms(+10.9%; E7 A5000 +17.7%). 317M int-det/fp32 0.74, int-det/min(tf32, bf16) 0.95.
+- 2026-10-31T12:53Z 조정자 점검 4: 추정 지출 $10.75(e10.1 gone $3.40, e10.2 RUNNING $3.35, E8 $1.64, E8b $0.32, E9 $2.03). 감시 스크립트 살아 있음. E10: e10.1 12:42Z 끝·gone, e10.2는 sweep-into none eval 마무리 중(13:00Z 무렵 종료 예상).
+- 2026-10-31T13:02Z **E10 끝**(작업자 보고, e10.1·e10.2 gone, 지출 $6.79). 조정자가 원 job 파일(`results/raw_e10.*/jobs/{held,ksel,eval,perr}`)에서 독립 재계산(`verify_e10.py`): 자격 8/8(drawer-open 0.700 = 문턱), 1차 k push 5·drawer-open 4·나머지 3(보고와 같음), G1 성립 8/8(Holm, p ≤ 0.0002, D_det 0.122~0.989), G2 성립 8/8(red 0.75~1.04, D_sh − D_det CI 상한 8과제 모두 < 0), G3 성립 8/8(det pt_err1h 0.58~6.36 < sh-iter 1.06~9.53). 모두 보고와 같다.
+  - [사후] 1-step **보상** 오차(errr)는 det가 8/8에서 sh-iter보다 크다(det 4.9~10.1, sh-iter 0.005~1.36). 조정자가 E1(5M)도 확인: Meta-World 손상 19칸 중 19칸, DMC 12칸 중 7칸에서 det가 크다. 그래서 "1-step 오차로는 손상이 안 보인다"는 잠재(dynamics) 1-step 오차로 한정해야 한다(주장 문구 결정 사항).
+- 2026-10-31T13:02Z **세 실험 모두 끝**. 원장 추정 합 $10.78(E8 $1.64, E8b $0.32, E9 $2.03, E10 $6.79), 사용자 상한 $30의 36%. 모든 arx pod gone.

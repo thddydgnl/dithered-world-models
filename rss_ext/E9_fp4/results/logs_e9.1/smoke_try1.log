@@ -1,0 +1,130 @@
+MPS started
+=== 09:13:41 test_fp4
+Traceback (most recent call last):
+  File "/root/e9/code/test_fp4.py", line 389, in <module>
+    t_e2m1()
+  File "/root/e9/code/test_fp4.py", line 100, in t_e2m1
+    yr, yt = both(x, "mxfp4")
+             ^^^^^^^^^^^^^^^^
+  File "/root/e9/code/test_fp4.py", line 73, in both
+    return F.fake_quant_ref(x, fmt, u, hi), F.fake_quant_triton(x, fmt, u, hi)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/e9/code/fp4lib.py", line 188, in fake_quant_triton
+    kern[grid](x2, y, u if u is not None else x2, M, g, sixg, x2.stride(0), y.stride(0),
+  File "/root/venv/lib/python3.11/site-packages/triton/runtime/jit.py", line 347, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.11/site-packages/triton/runtime/jit.py", line 569, in run
+    kernel = self.compile(src, target=target, options=options.__dict__)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.11/site-packages/triton/compiler/compiler.py", line 278, in compile
+    module = src.make_ir(options, codegen_fns, module_map, context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.11/site-packages/triton/compiler/compiler.py", line 81, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+triton.compiler.errors.CompilationError: at 2:18:
+def fp4_kernel(X, Y, U, M, g, sixg, stride_x, stride_y,
+               W: tl.constexpr, BS: tl.constexpr, NV: tl.constexpr, STOCH: tl.constexpr,
+                  ^
+NameError('tl is not defined')
+TEST_FP4_ERROR
+=== 09:13:44 smoke manifest
+smoke: 22 jobs -> /workspace/manifests/smoke.jsonl
+22 jobs in manifest, 0 done, running 22 with 8 workers
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+       5s [1/22] ERR smoke_mw-push_s1_nvfp4_det_triton_c00 (4s) NameError('tl is not defined')
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+       5s [2/22] ERR smoke_mw-push_s1_mxfp4_det_triton_c00 (0s) NameError('tl is not defined')
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+       7s [3/22] ERR smoke_mw-push_s1_nvfp4_shiter_triton_c00 (5s) NameError('tl is not defined')
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+       7s [4/22] ERR smoke_mw-push_s1_mxfp4_shiter_triton_c00 (0s) NameError('tl is not defined')
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+       9s [5/22] OK  repro_mw-push_s1_none (8s) ret   1785.2 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+      10s [6/22] OK  repro_mw-push_s1_k3_det (9s) ret   1365.5 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+      10s [7/22] ERR smoke_cheetah-run_s1_nvfp4_det_triton_c00 (1s) NameError('tl is not defined')
+      10s [8/22] ERR smoke_cheetah-run_s1_nvfp4_shiter_triton_c00 (0s) NameError('tl is not defined')
+      13s [9/22] OK  smoke_mw-push_s1_mxfp4_det_ref_c00 (8s) ret   1794.8 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+      14s [10/22] ERR smoke_cheetah-run_s1_mxfp4_det_triton_c00 (0s) NameError('tl is not defined')
+      15s [11/22] OK  smoke_mw-push_s1_nvfp4_det_ref_c00 (14s) ret   1808.0 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+      16s [12/22] ERR smoke_cheetah-run_s1_mxfp4_shiter_triton_c00 (1s) NameError('tl is not defined')
+      16s [13/22] OK  smoke_mw-push_s1_mxfp4_shiter_ref_c00 (9s) ret   1803.4 succ 1/1
+      16s [14/22] OK  smoke_mw-push_s1_nvfp4_shiter_ref_c00 (15s) ret   1804.5 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+      21s [15/22] ERR smokeperr_mw-push_s1_c00 (5s) NameError('tl is not defined')
+      24s [16/22] OK  repro_cheetah-run_s1_none (23s) ret    871.4 succ 0/1
+      28s [17/22] OK  repro_cheetah-run_s1_k4_det (27s) ret    402.2 succ 0/1
+      33s [18/22] ERR smokeperr_cheetah-run_s1_c00 (17s) NameError('tl is not defined')
+      43s [19/22] OK  smoke_cheetah-run_s1_nvfp4_det_ref_c00 (33s) ret    822.7 succ 0/1
+      43s [20/22] OK  smoke_cheetah-run_s1_mxfp4_det_ref_c00 (30s) ret    723.2 succ 0/1
+      47s [21/22] OK  smoke_cheetah-run_s1_nvfp4_shiter_ref_c00 (36s) ret    823.9 succ 0/1
+      48s [22/22] OK  smoke_cheetah-run_s1_mxfp4_shiter_ref_c00 (32s) ret    762.4 succ 0/1
+RUNNER_DONE ok 12 failed 10 in 48s
+=== 09:14:32 check
+REPRO DIFF repro_cheetah-run_s1_k4_det: ret 402.2137 (E0 321.3105) succ 0.0 22.8s
+REPRO DIFF repro_cheetah-run_s1_none: ret 871.4439 (E0 861.5378) succ 0.0 19.1s
+REPRO DIFF repro_mw-push_s1_k3_det: ret 1365.4967 (E0 946.2061) succ 1.0 5.3s
+REPRO DIFF repro_mw-push_s1_none: ret 1785.1836 (E0 1784.2798) succ 1.0 4.5s
+CHECK_SMOKE_DONE repro 4 fp4 0 held 0 n_bad 4
+=== 09:14:32 SMOKE_ALL_DONE

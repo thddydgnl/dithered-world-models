@@ -1,0 +1,37 @@
+/usr/local/lib/python3.12/dist-packages/torch/_subclasses/functional_tensor.py:279: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+11:52:24 env {'torch': '2.9.1+cu128', 'cuda': '12.8', 'gpu': 'NVIDIA GeForce RTX 5090', 'capability': [12, 0], 'gpu_state': '180 MHz, 29, 20.18 W, 0x0000000000000000', 'nvidia_smi': 'NVIDIA GeForce RTX 5090, 595.91.07, 3090 MHz, 575.00 W, 32607 MiB', 'has_float4': True, 'has_e8m0': True}
+11:52:24 gemm conditions ok 0, errors 0
+11:52:24 gemm round 0 done (0s)
+11:52:24 gemm round 1 done (0s)
+11:52:24 gemm round 2 done (0s)
+11:52:24 quant-eager round 0 done (0s)
+11:52:24 quant-eager round 1 done (0s)
+11:52:24 quant-eager round 2 done (0s)
+11:52:39 quant-graph round 0 done (15s)
+11:52:53 quant-graph round 1 done (30s)
+11:53:08 quant-graph round 2 done (44s)
+11:53:08 {
+ "errors": {
+  "quant_check": "RuntimeError('skipped (section quant_eager not run)')"
+ }
+}
+11:53:08 L0|512 {}
+11:53:08 L0|2048 {}
+11:53:08 L0|8192 {}
+11:53:08 L1|512 {}
+11:53:08 L1|2048 {}
+11:53:08 L1|8192 {}
+11:53:08 L2dyn|512 {}
+11:53:08 L2dyn|2048 {}
+11:53:08 L2dyn|8192 {}
+11:53:08 L2rew|512 {}
+11:53:08 L2rew|2048 {}
+11:53:08 L2rew|8192 {}
+11:53:08 nvfp4|512|graph {'det_ms': 0.1339, 'shiter_ms': 0.1282, 'overhead': -0.0426}
+11:53:08 mxfp4|512|graph {'det_ms': 0.1314, 'shiter_ms': 0.1286, 'overhead': -0.0209}
+11:53:08 nvfp4|2048|graph {'det_ms': 0.8482, 'shiter_ms': 0.7532, 'overhead': -0.112}
+11:53:08 mxfp4|2048|graph {'det_ms': 0.8406, 'shiter_ms': 0.7452, 'overhead': -0.1135}
+11:53:08 nvfp4|8192|graph {'det_ms': 5.1519, 'shiter_ms': 4.4825, 'overhead': -0.1299}
+11:53:08 mxfp4|8192|graph {'det_ms': 5.1399, 'shiter_ms': 4.4546, 'overhead': -0.1333}
+11:53:08 E8B_DONE

@@ -1,0 +1,11 @@
+/usr/local/lib/python3.12/dist-packages/torch/_subclasses/functional_tensor.py:279: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+11:40:23 env {'torch': '2.9.1+cu128', 'cuda': '12.8', 'gpu': 'NVIDIA GeForce RTX 5090', 'capability': [12, 0], 'gpu_state': '1005 MHz, 28, 24.73 W, 0x0000000000000000', 'nvidia_smi': 'NVIDIA GeForce RTX 5090, 595.91.07, 3090 MHz, 575.00 W, 32607 MiB', 'has_float4': True, 'has_e8m0': True}
+11:40:24 gemm conditions ok 84, errors 12
+Traceback (most recent call last):
+  File "/workspace/e8/code/e8b_bench.py", line 271, in <module>
+    main()
+  File "/workspace/e8/code/e8b_bench.py", line 192, in main
+    x = torch.randn(M, 4096, device="cuda")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Offset increment outside graph capture encountered unexpectedly.

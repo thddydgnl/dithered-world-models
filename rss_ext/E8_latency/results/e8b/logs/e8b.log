@@ -1,0 +1,60 @@
+/usr/local/lib/python3.12/dist-packages/torch/_subclasses/functional_tensor.py:279: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+11:43:11 env {'torch': '2.9.1+cu128', 'cuda': '12.8', 'gpu': 'NVIDIA GeForce RTX 5090', 'capability': [12, 0], 'gpu_state': '180 MHz, 28, 21.62 W, 0x0000000000000000', 'nvidia_smi': 'NVIDIA GeForce RTX 5090, 595.91.07, 3090 MHz, 575.00 W, 32607 MiB', 'has_float4': True, 'has_e8m0': True}
+11:43:11 gemm conditions ok 84, errors 12
+11:45:04 gemm round 0 done (113s)
+11:46:55 gemm round 1 done (225s)
+11:48:47 gemm round 2 done (336s)
+11:49:01 quant-eager round 0 done (351s)
+11:49:15 quant-eager round 1 done (365s)
+11:49:29 quant-eager round 2 done (379s)
+11:49:30 quant-graph round 0 done (379s)
+11:49:30 quant-graph round 1 done (379s)
+11:49:30 quant-graph round 2 done (379s)
+11:49:30 {
+ "errors": {
+  "gemm|L0|512|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (512, 1) and scale_b should be (1, 4096), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be (",
+  "gemm|L0|2048|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (2048, 1) and scale_b should be (1, 4096), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be ",
+  "gemm|L0|8192|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (8192, 1) and scale_b should be (1, 4096), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be ",
+  "gemm|L1|512|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (512, 1) and scale_b should be (1, 4096), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be (",
+  "gemm|L1|2048|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (2048, 1) and scale_b should be (1, 4096), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be ",
+  "gemm|L1|8192|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (8192, 1) and scale_b should be (1, 4096), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be ",
+  "gemm|L2dyn|512|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (512, 1) and scale_b should be (1, 1376), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be (",
+  "gemm|L2dyn|2048|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (2048, 1) and scale_b should be (1, 1376), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be ",
+  "gemm|L2dyn|8192|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (8192, 1) and scale_b should be (1, 1376), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be ",
+  "gemm|L2rew|512|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (512, 1) and scale_b should be (1, 128), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be (5",
+  "gemm|L2rew|2048|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (2048, 1) and scale_b should be (1, 128), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be (",
+  "gemm|L2rew|8192|mxfp4": "RuntimeError: Invalid scaling configuration.\n- For TensorWise scaling, a and b should be float8, scales should be float and singletons.\n- For RowWise scaling, a and b should be float8, scales should be float, scale_a should be (8192, 1) and scale_b should be (1, 128), and both should be contiguous.\n- For BlockWise 1x128 scaling, a and b should be float8, scales should be float, scale_a should be (",
+  "quant|nvfp4|512|det|graph": "torch.AcceleratorError: CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_B",
+  "quant|nvfp4|512|shiter|graph": "RuntimeError: Offset increment outside graph capture encountered unexpectedly.",
+  "quant|mxfp4|512|det|graph": "torch.AcceleratorError: CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_B",
+  "quant|mxfp4|512|shiter|graph": "RuntimeError: Offset increment outside graph capture encountered unexpectedly.",
+  "quant|nvfp4|2048|det|graph": "torch.AcceleratorError: CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_B",
+  "quant|nvfp4|2048|shiter|graph": "RuntimeError: Offset increment outside graph capture encountered unexpectedly.",
+  "quant|mxfp4|2048|det|graph": "torch.AcceleratorError: CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_B",
+  "quant|mxfp4|2048|shiter|graph": "RuntimeError: Offset increment outside graph capture encountered unexpectedly.",
+  "quant|nvfp4|8192|det|graph": "torch.AcceleratorError: CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_B",
+  "quant|nvfp4|8192|shiter|graph": "RuntimeError: Offset increment outside graph capture encountered unexpectedly.",
+  "quant|mxfp4|8192|det|graph": "torch.AcceleratorError: CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_B",
+  "quant|mxfp4|8192|shiter|graph": "RuntimeError: Offset increment outside graph capture encountered unexpectedly."
+ }
+}
+11:49:30 L0|512 {'fp32': 0.1252, 'tf32': 0.0881, 'bf16': 0.0558, 'int8': 0.0396, 'fp8_tensor': 0.0621, 'fp8_row': 0.0431, 'nvfp4': 0.0603}
+11:49:30 L0|2048 {'fp32': 0.3983, 'tf32': 0.2867, 'bf16': 0.1535, 'int8': 0.071, 'fp8_tensor': 0.1014, 'fp8_row': 0.092, 'nvfp4': 0.0656}
+11:49:30 L0|8192 {'fp32': 1.5832, 'tf32': 0.9384, 'bf16': 0.4897, 'int8': 0.1931, 'fp8_tensor': 0.2627, 'fp8_row': 0.2531, 'nvfp4': 0.1292}
+11:49:30 L1|512 {'fp32': 0.2856, 'tf32': 0.2095, 'bf16': 0.1142, 'int8': 0.0549, 'fp8_tensor': 0.0898, 'fp8_row': 0.0732, 'nvfp4': 0.0615}
+11:49:30 L1|2048 {'fp32': 1.0906, 'tf32': 0.775, 'bf16': 0.3947, 'int8': 0.1397, 'fp8_tensor': 0.2157, 'fp8_row': 0.2183, 'nvfp4': 0.0986}
+11:49:30 L1|8192 {'fp32': 4.2179, 'tf32': 2.6009, 'bf16': 1.3234, 'int8': 0.4379, 'fp8_tensor': 0.6935, 'fp8_row': 0.6573, 'nvfp4': 0.2483}
+11:49:30 L2dyn|512 {'fp32': 0.137, 'tf32': 0.1154, 'bf16': 0.0598, 'int8': 0.0435, 'fp8_tensor': 0.0646, 'fp8_row': 0.0496, 'nvfp4': 0.061}
+11:49:30 L2dyn|2048 {'fp32': 0.4167, 'tf32': 0.4006, 'bf16': 0.2133, 'int8': 0.0797, 'fp8_tensor': 0.1172, 'fp8_row': 0.119, 'nvfp4': 0.0723}
+11:49:30 L2dyn|8192 {'fp32': 1.5688, 'tf32': 0.9718, 'bf16': 0.5832, 'int8': 0.1741, 'fp8_tensor': 0.2939, 'fp8_row': 0.2656, 'nvfp4': 0.1156}
+11:49:30 L2rew|512 {'fp32': 0.0438, 'tf32': 0.0395, 'bf16': 0.0414, 'int8': 0.0431, 'fp8_tensor': 0.0676, 'fp8_row': 0.047, 'nvfp4': 0.0674}
+11:49:30 L2rew|2048 {'fp32': 0.0774, 'tf32': 0.0458, 'bf16': 0.0412, 'int8': 0.0427, 'fp8_tensor': 0.062, 'fp8_row': 0.0493, 'nvfp4': 0.0611}
+11:49:30 L2rew|8192 {'fp32': 0.1897, 'tf32': 0.1232, 'bf16': 0.0753, 'int8': 0.0453, 'fp8_tensor': 0.0661, 'fp8_row': 0.0479, 'nvfp4': 0.0615}
+11:49:30 nvfp4|512|eager {'det_ms': 0.4494, 'shiter_ms': 0.4212, 'overhead': -0.0628}
+11:49:30 mxfp4|512|eager {'det_ms': 0.4471, 'shiter_ms': 0.4178, 'overhead': -0.0654}
+11:49:30 nvfp4|2048|eager {'det_ms': 0.9688, 'shiter_ms': 0.8453, 'overhead': -0.1275}
+11:49:30 mxfp4|2048|eager {'det_ms': 0.967, 'shiter_ms': 0.8281, 'overhead': -0.1436}
+11:49:30 nvfp4|8192|eager {'det_ms': 5.224, 'shiter_ms': 4.521, 'overhead': -0.1346}
+11:49:30 mxfp4|8192|eager {'det_ms': 5.1943, 'shiter_ms': 4.497, 'overhead': -0.1342}
+11:49:30 E8B_DONE

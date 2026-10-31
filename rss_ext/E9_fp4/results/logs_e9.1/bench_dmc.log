@@ -1,0 +1,132 @@
+MPS already running
+bench: 600 jobs -> /workspace/manifests/bench_dmc.jsonl
+=== 09:26:59 bench dmc workers 8 for 270 s
+     269s [84/600] OK  bench_cheetah-run_s1_mxfp4_det_c08 (24s) ret    681.4 succ 0/1
+     269s [85/600] OK  bench_walker-walk_s1_none_c08 (23s) ret    977.0 succ 0/1
+RUNNER_STOPPED ok 85 failed 0 in 271s
+{
+ "prefix": "bench_",
+ "n": 85,
+ "workers": 8,
+ "eps_per_hour": 1162.630006814108,
+ "span_s": 242.9864411354065,
+ "per_variant": {
+  "none": 18,
+  "mxfp4_det": 17,
+  "nvfp4_shiter": 17,
+  "nvfp4_det": 17,
+  "mxfp4_shiter": 16
+ },
+ "mean_secs_per_episode": {
+  "none": 22.01093226008945,
+  "mxfp4_det": 23.99987884128795,
+  "nvfp4_shiter": 24.871001972871667,
+  "nvfp4_det": 24.02324694745681,
+  "mxfp4_shiter": 24.85490331053734
+ }
+}
+=== 09:31:30 BENCH_DONE dmc 8
+MPS already running
+bench: 600 jobs -> /workspace/manifests/bench_dmc.jsonl
+=== 09:31:30 bench dmc workers 6 for 270 s
+     266s [83/600] OK  bench_cheetah-run_s1_nvfp4_shiter_c08 (19s) ret    527.8 succ 0/1
+     267s [84/600] OK  bench_cheetah-run_s1_mxfp4_det_c08 (19s) ret    681.4 succ 0/1
+RUNNER_STOPPED ok 84 failed 0 in 270s
+{
+ "prefix": "bench_",
+ "n": 84,
+ "workers": 6,
+ "eps_per_hour": 1154.682528555408,
+ "span_s": 246.0297749042511,
+ "per_variant": {
+  "mxfp4_det": 17,
+  "nvfp4_shiter": 17,
+  "nvfp4_det": 17,
+  "mxfp4_shiter": 16,
+  "none": 17
+ },
+ "mean_secs_per_episode": {
+  "mxfp4_det": 18.538761573679306,
+  "nvfp4_shiter": 19.127373218536377,
+  "nvfp4_det": 18.619902540655698,
+  "mxfp4_shiter": 19.117267355322838,
+  "none": 17.394790242700015
+ }
+}
+=== 09:36:02 BENCH_DONE dmc 6
+MPS already running
+bench: 600 jobs -> /workspace/manifests/bench_mw.jsonl
+=== 09:36:02 bench mw workers 6 for 150 s
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+     149s [227/600] OK  bench_mw-pick-place_s1_nvfp4_det_c22 (4s) ret   1658.9 succ 1/1
+     149s [228/600] OK  bench_mw-pick-place_s1_nvfp4_shiter_c22 (4s) ret   1650.2 succ 1/1
+RUNNER_STOPPED ok 228 failed 0 in 150s
+{
+ "prefix": "bench_",
+ "n": 228,
+ "workers": 6,
+ "eps_per_hour": 5694.046485491505,
+ "span_s": 142.03422665596008,
+ "per_variant": {
+  "nvfp4_shiter": 46,
+  "nvfp4_det": 46,
+  "none": 46,
+  "mxfp4_shiter": 45,
+  "mxfp4_det": 45
+ },
+ "mean_secs_per_episode": {
+  "nvfp4_shiter": 3.9138743773750635,
+  "nvfp4_det": 3.8035196014072583,
+  "none": 3.484447401502858,
+  "mxfp4_shiter": 3.890156062444051,
+  "mxfp4_det": 3.7918200386895076
+ }
+}
+=== 09:38:33 BENCH_DONE mw 6

@@ -1,0 +1,235 @@
+=== 2026-10-31T09:16:36Z run_e10.sh tasks=mw-push,mw-pick-place,mw-door-open,mw-drawer-open workers=2
+09:16:36       0s driver start: tasks ['mw-push', 'mw-pick-place', 'mw-door-open', 'mw-drawer-open'], workers 2, out /workspace/e10
+Episode length: 500
+Discount factor: Episode length: 500
+Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500],
+       device='cuda:0')
+tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500],
+       device='cuda:0')
+09:18:08      92s OK  held_mw-push_c0 (79s) succ 5/5 act 153.5ms ep 15.7s
+09:18:08      92s OK  held_mw-push_c1 (79s) succ 5/5 act 153.6ms ep 15.7s
+09:19:26     170s OK  held_mw-push_c2 (78s) succ 5/5 act 153.1ms ep 15.6s
+09:19:26     170s OK  held_mw-push_c3 (78s) succ 5/5 act 153.1ms ep 15.6s
+09:20:44     248s OK  held_mw-push_c4 (78s) succ 5/5 act 153.0ms ep 15.6s
+09:20:44     248s OK  held_mw-push_c5 (78s) succ 5/5 act 153.0ms ep 15.6s
+09:22:03     326s OK  held_mw-pick-place_c0 (78s) succ 5/5 act 153.0ms ep 15.6s
+09:22:03     326s OK  held_mw-pick-place_c1 (78s) succ 5/5 act 153.1ms ep 15.6s
+09:22:04     327s OK  ranges_mw-push (1s) dyn0:7.11 dyn1:1.86 rew0:29.5 rew1:2.78
+09:23:20     404s OK  held_mw-pick-place_c2 (77s) succ 4/5 act 153.0ms ep 15.4s
+09:23:21     404s OK  held_mw-pick-place_c3 (77s) succ 5/5 act 153.1ms ep 15.4s
+09:24:37     481s OK  held_mw-pick-place_c4 (77s) succ 5/5 act 153.0ms ep 15.4s
+09:24:38     482s OK  held_mw-pick-place_c5 (77s) succ 5/5 act 152.9ms ep 15.4s
+09:25:54     558s OK  held_mw-door-open_c0 (77s) succ 5/5 act 153.1ms ep 15.4s
+09:25:55     559s OK  ranges_mw-pick-place (1s) dyn0:7.26 dyn1:1.82 rew0:29.2 rew1:2.96
+09:25:55     559s OK  held_mw-door-open_c1 (77s) succ 5/5 act 153.0ms ep 15.3s
+09:27:14     637s OK  held_mw-door-open_c3 (79s) succ 3/5 act 153.6ms ep 15.7s
+09:27:14     637s OK  held_mw-door-open_c2 (79s) succ 4/5 act 153.6ms ep 15.7s
+09:28:33     716s OK  held_mw-door-open_c4 (79s) succ 4/5 act 153.6ms ep 15.7s
+09:28:33     716s OK  held_mw-door-open_c5 (79s) succ 5/5 act 153.7ms ep 15.7s
+09:29:51     795s OK  held_mw-drawer-open_c0 (78s) succ 3/5 act 153.3ms ep 15.6s
+09:29:51     795s OK  held_mw-drawer-open_c1 (78s) succ 4/5 act 153.3ms ep 15.6s
+09:29:52     796s OK  ranges_mw-door-open (1s) dyn0:7.03 dyn1:1.92 rew0:26.6 rew1:4.08
+09:31:08     872s OK  held_mw-drawer-open_c2 (77s) succ 3/5 act 153.3ms ep 15.4s
+09:31:09     873s OK  held_mw-drawer-open_c3 (77s) succ 4/5 act 153.2ms ep 15.3s
+09:32:25     949s OK  held_mw-drawer-open_c4 (77s) succ 4/5 act 153.4ms ep 15.3s
+09:32:26     950s OK  held_mw-drawer-open_c5 (77s) succ 3/5 act 153.4ms ep 15.4s
+09:33:46    1030s OK  ksel_mw-push_k5_c0 (81s) succ 4/5 act 160.6ms ep 16.2s
+09:33:47    1031s OK  ranges_mw-drawer-open (1s) dyn0:7.46 dyn1:1.69 rew0:28.8 rew1:3.33
+09:33:47    1031s OK  ksel_mw-push_k5_c1 (81s) succ 3/5 act 160.7ms ep 16.2s
+09:35:09    1113s OK  ksel_mw-push_k5_c3 (82s) succ 4/5 act 160.8ms ep 16.3s
+09:35:09    1113s OK  ksel_mw-push_k5_c2 (82s) succ 3/5 act 160.7ms ep 16.4s
+09:36:32    1195s OK  ksel_mw-push_k5_c5 (83s) succ 4/5 act 163.4ms ep 16.5s
+09:36:32    1195s OK  ksel_mw-push_k5_c4 (83s) succ 5/5 act 163.4ms ep 16.5s
+09:37:53    1277s OK  ksel_mw-pick-place_k5_c0 (82s) succ 4/5 act 160.8ms ep 16.4s
+09:37:53    1277s OK  ksel_mw-pick-place_k5_c1 (82s) succ 4/5 act 160.9ms ep 16.4s
+09:39:15    1359s OK  ksel_mw-pick-place_k5_c2 (82s) succ 5/5 act 160.8ms ep 16.4s
+09:39:15    1359s OK  ksel_mw-pick-place_k5_c3 (82s) succ 4/5 act 160.8ms ep 16.4s
+09:40:37    1441s OK  ksel_mw-pick-place_k5_c4 (82s) succ 5/5 act 160.9ms ep 16.4s
+09:40:37    1441s OK  ksel_mw-pick-place_k5_c5 (82s) succ 5/5 act 160.8ms ep 16.4s
+09:41:59    1523s OK  ksel_mw-pick-place_k4_c0 (82s) succ 5/5 act 160.8ms ep 16.4s
+09:41:59    1523s OK  ksel_mw-door-open_k5_c0 (82s) succ 4/5 act 160.8ms ep 16.4s
+09:43:21    1605s OK  ksel_mw-pick-place_k4_c1 (82s) succ 4/5 act 160.9ms ep 16.3s
+09:43:21    1605s OK  ksel_mw-pick-place_k4_c2 (82s) succ 5/5 act 160.9ms ep 16.3s
+09:44:43    1686s OK  ksel_mw-pick-place_k4_c3 (82s) succ 4/5 act 160.9ms ep 16.3s
+09:44:43    1686s OK  ksel_mw-pick-place_k4_c4 (82s) succ 3/5 act 160.9ms ep 16.3s
+09:46:04    1768s OK  ksel_mw-pick-place_k4_c5 (81s) succ 5/5 act 160.7ms ep 16.3s
+09:46:04    1768s OK  ksel_mw-door-open_k5_c1 (81s) succ 4/5 act 160.6ms ep 16.3s
+09:47:26    1849s OK  ksel_mw-door-open_k5_c2 (82s) succ 5/5 act 160.8ms ep 16.3s
+09:47:26    1849s OK  ksel_mw-pick-place_k3_c0 (82s) succ 0/5 act 160.8ms ep 16.3s
+09:48:47    1931s OK  ksel_mw-pick-place_k3_c1 (82s) succ 0/5 act 160.8ms ep 16.3s
+09:48:47    1931s OK  ksel_mw-pick-place_k3_c2 (82s) succ 0/5 act 160.8ms ep 16.3s
+09:50:09    2013s OK  ksel_mw-pick-place_k3_c3 (82s) succ 0/5 act 160.9ms ep 16.4s
+09:50:09    2013s OK  ksel_mw-pick-place_k3_c4 (82s) succ 0/5 act 160.9ms ep 16.4s
+09:51:31    2095s OK  ksel_mw-pick-place_k3_c5 (82s) succ 0/5 act 160.9ms ep 16.4s
+09:51:31    2095s OK  ksel_mw-door-open_k5_c3 (82s) succ 4/5 act 160.8ms ep 16.4s
+09:52:53    2177s OK  ksel_mw-door-open_k5_c4 (82s) succ 4/5 act 160.8ms ep 16.4s
+09:52:53    2177s OK  ksel_mw-door-open_k5_c5 (82s) succ 4/5 act 160.8ms ep 16.4s
+09:54:15    2258s OK  ksel_mw-drawer-open_k5_c0 (82s) succ 3/5 act 161.2ms ep 16.3s
+09:54:15    2258s OK  ksel_mw-drawer-open_k5_c1 (82s) succ 4/5 act 161.2ms ep 16.3s
+09:55:36    2340s OK  ksel_mw-door-open_k4_c0 (82s) succ 4/5 act 160.8ms ep 16.4s
+09:55:36    2340s OK  ksel_mw-door-open_k4_c1 (82s) succ 5/5 act 160.8ms ep 16.4s
+09:56:58    2422s OK  ksel_mw-door-open_k4_c2 (82s) succ 3/5 act 160.8ms ep 16.4s
+09:56:58    2422s OK  ksel_mw-door-open_k4_c3 (82s) succ 4/5 act 160.8ms ep 16.4s
+09:58:20    2504s OK  ksel_mw-door-open_k4_c4 (82s) succ 5/5 act 160.8ms ep 16.4s
+09:58:20    2504s OK  ksel_mw-door-open_k4_c5 (82s) succ 3/5 act 160.8ms ep 16.4s
+09:59:42    2585s OK  ksel_mw-drawer-open_k5_c2 (82s) succ 4/5 act 161.1ms ep 16.3s
+09:59:42    2585s OK  ksel_mw-drawer-open_k5_c3 (82s) succ 3/5 act 161.1ms ep 16.3s
+10:01:04    2667s OK  ksel_mw-door-open_k3_c0 (82s) succ 0/5 act 160.7ms ep 16.4s
+10:01:04    2667s OK  ksel_mw-door-open_k3_c1 (82s) succ 0/5 act 160.7ms ep 16.4s
+10:02:25    2749s OK  ksel_mw-door-open_k3_c3 (82s) succ 0/5 act 160.8ms ep 16.4s
+10:02:25    2749s OK  ksel_mw-door-open_k3_c2 (82s) succ 1/5 act 160.9ms ep 16.4s
+10:03:48    2832s OK  ksel_mw-door-open_k3_c4 (83s) succ 1/5 act 162.9ms ep 16.5s
+10:03:48    2832s OK  ksel_mw-door-open_k3_c5 (83s) succ 0/5 act 162.7ms ep 16.5s
+10:05:10    2913s OK  ksel_mw-drawer-open_k5_c4 (82s) succ 2/5 act 160.8ms ep 16.3s
+10:05:10    2913s OK  ksel_mw-drawer-open_k5_c5 (82s) succ 1/5 act 160.9ms ep 16.3s
+10:07:54    3077s OK  eval_mw-push_shiter_k5_c0 (164s) succ 10/10 act 160.8ms ep 16.4s
+10:07:54    3077s OK  eval_mw-push_det_k5_c0 (164s) succ 8/10 act 160.8ms ep 16.4s
+10:09:17    3160s OK  ksel_mw-drawer-open_k4_c1 (83s) succ 3/5 act 163.3ms ep 16.6s
+10:09:17    3160s OK  ksel_mw-drawer-open_k4_c0 (83s) succ 2/5 act 163.2ms ep 16.6s
+10:10:38    3242s OK  ksel_mw-drawer-open_k4_c2 (82s) succ 2/5 act 161.0ms ep 16.3s
+10:10:38    3242s OK  ksel_mw-drawer-open_k4_c3 (82s) succ 3/5 act 161.0ms ep 16.3s
+10:12:01    3325s OK  ksel_mw-drawer-open_k4_c5 (83s) succ 2/5 act 163.4ms ep 16.5s
+10:12:01    3325s OK  ksel_mw-drawer-open_k4_c4 (83s) succ 1/5 act 163.4ms ep 16.5s
+10:12:45    3369s OK  perr_mw-push_k5 (44s) err1h det 0.5828 shiter 1.06
+10:14:42    3485s OK  eval_mw-push_det_k5_c1 (161s) succ 10/10 act 160.6ms ep 16.1s
+10:15:27    3531s OK  eval_mw-push_shiter_k5_c1 (162s) succ 10/10 act 160.8ms ep 16.2s
+10:17:24    3648s OK  eval_mw-push_det_k5_c2 (162s) succ 8/10 act 160.8ms ep 16.2s
+10:18:10    3693s OK  eval_mw-push_shiter_k5_c2 (162s) succ 10/10 act 160.7ms ep 16.2s
+10:20:06    3810s OK  eval_mw-push_det_k5_c3 (162s) succ 8/10 act 160.8ms ep 16.2s
+=== 2026-10-31T10:20:08Z driver exit 0
+=== 2026-10-31T10:32:23Z run_e10.sh tasks=mw-push,mw-pick-place,mw-door-open,mw-drawer-open workers=1
+10:32:23       0s driver start: tasks ['mw-push', 'mw-pick-place', 'mw-door-open', 'mw-drawer-open'], workers 1, out /workspace/e10
+Episode length: 500
+Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500],
+       device='cuda:0')
+10:33:56      94s OK  eval_mw-push_det_k5_c5 (80s) succ 9/10 act 76.7ms ep 8.0s
+10:35:18     175s OK  eval_mw-push_shiter_k5_c5 (82s) succ 10/10 act 77.8ms ep 8.2s
+10:36:39     256s OK  eval_mw-push_det_k5_c6 (81s) succ 9/10 act 77.1ms ep 8.1s
+10:38:00     337s OK  eval_mw-push_shiter_k5_c6 (82s) succ 10/10 act 77.9ms ep 8.2s
+10:39:20     417s OK  eval_mw-push_det_k5_c7 (80s) succ 8/10 act 76.5ms ep 8.0s
+10:40:40     497s OK  eval_mw-push_shiter_k5_c7 (80s) succ 10/10 act 77.3ms ep 8.0s
+10:41:59     577s OK  eval_mw-push_det_k5_c8 (79s) succ 9/10 act 76.5ms ep 7.9s
+10:43:20     657s OK  eval_mw-push_shiter_k5_c8 (80s) succ 10/10 act 77.3ms ep 8.0s
+10:44:39     736s OK  eval_mw-pick-place_det_k3_c0 (79s) succ 0/10 act 76.5ms ep 7.9s
+10:45:59     816s OK  eval_mw-pick-place_shiter_k3_c0 (80s) succ 5/10 act 77.2ms ep 8.0s
+10:46:20     837s OK  perr_mw-pick-place_k3 (21s) err1h det 5.128 shiter 8.003
+10:47:39     916s OK  eval_mw-pick-place_det_k3_c1 (79s) succ 0/10 act 76.4ms ep 7.9s
+10:48:59     997s OK  eval_mw-pick-place_shiter_k3_c1 (80s) succ 7/10 act 77.2ms ep 8.0s
+10:50:19    1076s OK  eval_mw-pick-place_det_k3_c2 (80s) succ 0/10 act 76.5ms ep 8.0s
+10:51:39    1157s OK  eval_mw-pick-place_shiter_k3_c2 (81s) succ 9/10 act 77.2ms ep 8.1s
+10:52:59    1236s OK  eval_mw-pick-place_det_k3_c3 (79s) succ 0/10 act 76.4ms ep 7.9s
+10:54:19    1316s OK  eval_mw-pick-place_shiter_k3_c3 (80s) succ 5/10 act 77.3ms ep 8.0s
+10:55:38    1396s OK  eval_mw-pick-place_det_k3_c4 (79s) succ 0/10 act 76.7ms ep 7.9s
+10:56:59    1476s OK  eval_mw-pick-place_shiter_k3_c4 (81s) succ 7/10 act 77.4ms ep 8.1s
+10:58:19    1556s OK  eval_mw-pick-place_det_k3_c5 (80s) succ 0/10 act 76.6ms ep 8.0s
+10:59:39    1637s OK  eval_mw-pick-place_shiter_k3_c5 (81s) succ 9/10 act 77.6ms ep 8.1s
+11:01:00    1717s OK  eval_mw-pick-place_det_k3_c6 (80s) succ 0/10 act 76.7ms ep 8.0s
+11:02:24    1801s OK  eval_mw-pick-place_shiter_k3_c6 (84s) succ 9/10 act 81.6ms ep 8.4s
+11:03:44    1881s OK  eval_mw-pick-place_det_k3_c7 (80s) succ 0/10 act 76.8ms ep 8.0s
+11:05:05    1962s OK  eval_mw-pick-place_shiter_k3_c7 (81s) succ 6/10 act 77.5ms ep 8.1s
+11:06:27    2044s OK  eval_mw-pick-place_det_k3_c8 (82s) succ 0/10 act 78.5ms ep 8.2s
+11:07:47    2124s OK  eval_mw-pick-place_shiter_k3_c8 (81s) succ 9/10 act 77.5ms ep 8.1s
+11:09:07    2205s OK  eval_mw-door-open_det_k3_c0 (80s) succ 0/10 act 76.7ms ep 8.0s
+11:10:30    2288s OK  eval_mw-door-open_shiter_k3_c0 (83s) succ 9/10 act 79.7ms ep 8.3s
+11:10:51    2308s OK  perr_mw-door-open_k3 (21s) err1h det 4.398 shiter 6.36
+11:12:11    2388s OK  eval_mw-door-open_det_k3_c1 (80s) succ 0/10 act 76.8ms ep 8.0s
+11:13:32    2469s OK  eval_mw-door-open_shiter_k3_c1 (81s) succ 5/10 act 77.6ms ep 8.1s
+11:14:51    2548s OK  eval_mw-door-open_det_k3_c2 (80s) succ 0/10 act 76.8ms ep 8.0s
+11:16:12    2629s OK  eval_mw-door-open_shiter_k3_c2 (81s) succ 7/10 act 77.5ms ep 8.1s
+11:17:32    2709s OK  eval_mw-door-open_det_k3_c3 (80s) succ 1/10 act 76.9ms ep 8.0s
+11:18:53    2790s OK  eval_mw-door-open_shiter_k3_c3 (81s) succ 9/10 act 77.5ms ep 8.1s
+11:20:14    2871s OK  eval_mw-door-open_det_k3_c4 (81s) succ 0/10 act 76.9ms ep 8.1s
+11:21:35    2952s OK  eval_mw-door-open_shiter_k3_c4 (81s) succ 9/10 act 77.6ms ep 8.1s
+11:22:54    3032s OK  eval_mw-door-open_det_k3_c5 (80s) succ 0/10 act 76.8ms ep 8.0s
+11:24:15    3112s OK  eval_mw-door-open_shiter_k3_c5 (81s) succ 7/10 act 77.6ms ep 8.1s
+11:25:35    3192s OK  eval_mw-door-open_det_k3_c6 (80s) succ 3/10 act 76.8ms ep 8.0s
+11:26:56    3273s OK  eval_mw-door-open_shiter_k3_c6 (81s) succ 7/10 act 77.5ms ep 8.1s
+11:28:15    3353s OK  eval_mw-door-open_det_k3_c7 (80s) succ 0/10 act 76.9ms ep 8.0s
+11:29:36    3433s OK  eval_mw-door-open_shiter_k3_c7 (81s) succ 9/10 act 77.5ms ep 8.1s
+11:30:56    3513s OK  eval_mw-door-open_det_k3_c8 (80s) succ 0/10 act 76.8ms ep 8.0s
+11:32:17    3594s OK  eval_mw-door-open_shiter_k3_c8 (81s) succ 6/10 act 77.5ms ep 8.1s
+11:33:36    3674s OK  eval_mw-drawer-open_det_k4_c0 (79s) succ 6/10 act 76.8ms ep 7.9s
+11:34:57    3754s OK  eval_mw-drawer-open_shiter_k4_c0 (80s) succ 5/10 act 77.7ms ep 8.0s
+11:35:18    3775s OK  perr_mw-drawer-open_k4 (21s) err1h det 2.729 shiter 4.634
+11:36:37    3854s OK  eval_mw-drawer-open_det_k4_c1 (80s) succ 6/10 act 76.8ms ep 8.0s
+11:37:57    3935s OK  eval_mw-drawer-open_shiter_k4_c1 (80s) succ 9/10 act 77.6ms ep 8.0s
+11:39:17    4014s OK  eval_mw-drawer-open_det_k4_c2 (80s) succ 6/10 act 77.0ms ep 8.0s
+11:40:37    4094s OK  eval_mw-drawer-open_shiter_k4_c2 (80s) succ 10/10 act 77.4ms ep 8.0s
+11:41:57    4174s OK  eval_mw-drawer-open_det_k4_c3 (79s) succ 2/10 act 76.9ms ep 7.9s
+11:43:17    4254s OK  eval_mw-drawer-open_shiter_k4_c3 (80s) succ 9/10 act 77.6ms ep 8.0s
+11:44:36    4334s OK  eval_mw-drawer-open_det_k4_c4 (79s) succ 7/10 act 76.8ms ep 7.9s
+11:45:57    4414s OK  eval_mw-drawer-open_shiter_k4_c4 (80s) succ 8/10 act 77.6ms ep 8.0s
+11:47:16    4494s OK  eval_mw-drawer-open_det_k4_c5 (79s) succ 4/10 act 76.8ms ep 7.9s
+11:48:37    4574s OK  eval_mw-drawer-open_shiter_k4_c5 (80s) succ 8/10 act 77.5ms ep 8.0s
+11:49:56    4653s OK  eval_mw-drawer-open_det_k4_c6 (80s) succ 5/10 act 77.0ms ep 8.0s
+11:51:16    4734s OK  eval_mw-drawer-open_shiter_k4_c6 (80s) succ 7/10 act 77.5ms ep 8.0s
+11:52:36    4813s OK  eval_mw-drawer-open_det_k4_c7 (80s) succ 4/10 act 76.9ms ep 8.0s
+11:53:56    4894s OK  eval_mw-drawer-open_shiter_k4_c7 (80s) succ 9/10 act 77.7ms ep 8.0s
+11:55:16    4973s OK  eval_mw-drawer-open_det_k4_c8 (79s) succ 6/10 act 76.7ms ep 7.9s
+11:56:36    5053s OK  eval_mw-drawer-open_shiter_k4_c8 (80s) succ 7/10 act 77.6ms ep 8.0s
+11:57:53    5130s OK  eval_mw-push_none_k0_c0 (77s) succ 10/10 act 73.8ms ep 7.7s
+11:59:10    5207s OK  eval_mw-push_none_k0_c1 (77s) succ 10/10 act 73.7ms ep 7.7s
+12:00:26    5284s OK  eval_mw-push_none_k0_c2 (77s) succ 10/10 act 73.8ms ep 7.7s
+12:01:43    5360s OK  eval_mw-push_none_k0_c3 (77s) succ 10/10 act 73.7ms ep 7.7s
+12:03:00    5437s OK  eval_mw-push_none_k0_c4 (77s) succ 10/10 act 73.7ms ep 7.7s
+12:04:18    5515s OK  eval_mw-push_none_k0_c5 (77s) succ 10/10 act 73.9ms ep 7.7s
+12:05:35    5592s OK  eval_mw-push_none_k0_c6 (77s) succ 10/10 act 73.7ms ep 7.7s
+12:06:52    5669s OK  eval_mw-push_none_k0_c7 (77s) succ 10/10 act 73.8ms ep 7.7s
+12:08:09    5747s OK  eval_mw-push_none_k0_c8 (77s) succ 10/10 act 74.0ms ep 7.7s
+12:09:26    5824s OK  eval_mw-pick-place_none_k0_c0 (77s) succ 10/10 act 73.8ms ep 7.7s
+12:10:44    5901s OK  eval_mw-pick-place_none_k0_c1 (77s) succ 9/10 act 73.9ms ep 7.7s
+12:12:01    5978s OK  eval_mw-pick-place_none_k0_c2 (77s) succ 10/10 act 74.0ms ep 7.7s
+12:13:18    6056s OK  eval_mw-pick-place_none_k0_c3 (77s) succ 10/10 act 73.9ms ep 7.7s
+12:14:36    6133s OK  eval_mw-pick-place_none_k0_c4 (77s) succ 10/10 act 73.9ms ep 7.7s
+12:15:53    6210s OK  eval_mw-pick-place_none_k0_c5 (77s) succ 10/10 act 73.8ms ep 7.7s
+12:17:10    6287s OK  eval_mw-pick-place_none_k0_c6 (77s) succ 10/10 act 73.8ms ep 7.7s
+12:18:27    6365s OK  eval_mw-pick-place_none_k0_c7 (77s) succ 10/10 act 73.9ms ep 7.7s
+12:19:45    6442s OK  eval_mw-pick-place_none_k0_c8 (77s) succ 9/10 act 73.8ms ep 7.7s
+12:21:02    6519s OK  eval_mw-door-open_none_k0_c0 (77s) succ 8/10 act 73.8ms ep 7.7s
+12:22:20    6597s OK  eval_mw-door-open_none_k0_c1 (78s) succ 7/10 act 74.0ms ep 7.8s
+12:23:37    6675s OK  eval_mw-door-open_none_k0_c2 (77s) succ 9/10 act 74.0ms ep 7.7s
+12:24:55    6752s OK  eval_mw-door-open_none_k0_c3 (78s) succ 10/10 act 73.9ms ep 7.8s
+12:26:13    6830s OK  eval_mw-door-open_none_k0_c4 (78s) succ 7/10 act 73.9ms ep 7.8s
+12:27:30    6907s OK  eval_mw-door-open_none_k0_c5 (78s) succ 9/10 act 73.8ms ep 7.8s
+12:28:48    6985s OK  eval_mw-door-open_none_k0_c6 (78s) succ 8/10 act 73.9ms ep 7.8s
+12:30:05    7063s OK  eval_mw-door-open_none_k0_c7 (78s) succ 9/10 act 73.9ms ep 7.8s
+12:31:23    7140s OK  eval_mw-door-open_none_k0_c8 (77s) succ 8/10 act 73.8ms ep 7.7s
+12:32:40    7217s OK  eval_mw-drawer-open_none_k0_c0 (77s) succ 7/10 act 73.9ms ep 7.7s
+12:33:57    7294s OK  eval_mw-drawer-open_none_k0_c1 (77s) succ 8/10 act 73.9ms ep 7.7s
+12:35:14    7371s OK  eval_mw-drawer-open_none_k0_c2 (77s) succ 8/10 act 73.9ms ep 7.7s
+12:36:31    7448s OK  eval_mw-drawer-open_none_k0_c3 (77s) succ 9/10 act 74.0ms ep 7.7s
+12:37:48    7525s OK  eval_mw-drawer-open_none_k0_c4 (77s) succ 7/10 act 74.0ms ep 7.7s
+12:39:05    7602s OK  eval_mw-drawer-open_none_k0_c5 (77s) succ 7/10 act 73.9ms ep 7.7s
+12:40:22    7679s OK  eval_mw-drawer-open_none_k0_c6 (77s) succ 9/10 act 73.9ms ep 7.7s
+12:41:39    7756s OK  eval_mw-drawer-open_none_k0_c7 (77s) succ 7/10 act 73.8ms ep 7.7s
+12:42:56    7833s OK  eval_mw-drawer-open_none_k0_c8 (77s) succ 9/10 act 74.0ms ep 7.7s
+12:42:57    7834s DRIVER_DONE ok 101 failed 0 []
+12:42:57    7834s mw-push: {"task": "mw-push", "held_none_success": 1.0, "qualified": true, "ksel": {"5": {"det_success": 0.7666666666666667, "drop": 0.23333333333333328}}, "primary_k": 5, "eval_done": {"none": 9, "det": 9, "shiter": 9}, "perr_done": true, "phase": "done"}
+12:42:57    7834s mw-pick-place: {"task": "mw-pick-place", "held_none_success": 0.9666666666666667, "qualified": true, "ksel": {"5": {"det_success": 0.9, "drop": 0.06666666666666665}, "4": {"det_success": 0.8666666666666667, "drop": 0.09999999999999998}, "3": {"det_success": 0.0, "drop": 0.9666666666666667}}, "primary_k": 3, "eval_done": {"none": 9, "det": 9, "shiter": 9}, "perr_done": true, "phase": "done"}
+12:42:57    7834s mw-door-open: {"task": "mw-door-open", "held_none_success": 0.8666666666666667, "qualified": true, "ksel": {"5": {"det_success": 0.8333333333333334, "drop": 0.033333333333333326}, "4": {"det_success": 0.8, "drop": 0.06666666666666665}, "3": {"det_success": 0.06666666666666667, "drop": 0.8}}, "primary_k": 3, "eval_done": {"none": 9, "det": 9, "shiter": 9}, "perr_done": true, "phase": "done"}
+12:42:57    7834s mw-drawer-open: {"task": "mw-drawer-open", "held_none_success": 0.7, "qualified": true, "ksel": {"5": {"det_success": 0.5666666666666667, "drop": 0.1333333333333333}, "4": {"det_success": 0.43333333333333335, "drop": 0.2666666666666666}}, "primary_k": 4, "eval_done": {"none": 9, "det": 9, "shiter": 9}, "perr_done": true, "phase": "done"}
+=== 2026-10-31T12:42:57Z driver exit 0

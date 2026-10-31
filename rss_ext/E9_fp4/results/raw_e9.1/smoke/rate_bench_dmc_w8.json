@@ -1,0 +1,21 @@
+{
+ "prefix": "bench_",
+ "n": 85,
+ "workers": 8,
+ "eps_per_hour": 1162.630006814108,
+ "span_s": 242.9864411354065,
+ "per_variant": {
+  "none": 18,
+  "mxfp4_det": 17,
+  "nvfp4_shiter": 17,
+  "nvfp4_det": 17,
+  "mxfp4_shiter": 16
+ },
+ "mean_secs_per_episode": {
+  "none": 22.01093226008945,
+  "mxfp4_det": 23.99987884128795,
+  "nvfp4_shiter": 24.871001972871667,
+  "nvfp4_det": 24.02324694745681,
+  "mxfp4_shiter": 24.85490331053734
+ }
+}

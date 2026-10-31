@@ -1,0 +1,3 @@
+Episode length: 100
+Discount factor: 0.95
+E1PATHS {"qlib": "/root/e9/code/inputs/e1_reference/qlib.py", "none_k0": [1785.1835772544146, 1.0, 0], "det_k3": [1365.496686436236, 1.0, 0], "shiter_k3": [1774.0403598323464, 1.0, 0], "shstep_k3": [1740.486640572548, 1.0, 101]}

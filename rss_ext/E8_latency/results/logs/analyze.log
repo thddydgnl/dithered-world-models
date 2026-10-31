@@ -1,0 +1,90 @@
+{
+ "verdict": {
+  "n_graph_cells": 12,
+  "L1": {
+   "holds": true,
+   "cells": [
+    "graph|5|512",
+    "graph|5|2048",
+    "graph|5|8192",
+    "graph|19|512",
+    "graph|19|2048",
+    "graph|19|8192",
+    "graph|48|512",
+    "graph|48|2048",
+    "graph|48|8192",
+    "graph|317|512",
+    "graph|317|2048",
+    "graph|317|8192"
+   ],
+   "min_ratio": 0.30667390229083824
+  },
+  "L2": {
+   "holds": true,
+   "cells": [
+    "graph|5|512",
+    "graph|5|8192",
+    "graph|19|512",
+    "graph|19|2048",
+    "graph|19|8192",
+    "graph|48|512",
+    "graph|48|2048",
+    "graph|48|8192",
+    "graph|317|512",
+    "graph|317|2048"
+   ],
+   "min_ratio": 0.6774489573445085
+  },
+  "L3": {
+   "holds": true,
+   "cells_median_le_5pct": 12,
+   "cells_ci_upper_le_10pct": 12,
+   "max_median": 0.0207361023482686,
+   "max_ci_upper": 0.021281174139518747
+  }
+ },
+ "crossover": {
+  "graph|5": {
+   "vs_fp32": 512,
+   "vs_minfast": 512
+  },
+  "graph|19": {
+   "vs_fp32": 512,
+   "vs_minfast": 512
+  },
+  "graph|48": {
+   "vs_fp32": 512,
+   "vs_minfast": 512
+  },
+  "graph|317": {
+   "vs_fp32": 512,
+   "vs_minfast": 512
+  },
+  "eager|5": {
+   "vs_fp32": 2048,
+   "vs_minfast": 8192
+  },
+  "eager|19": {
+   "vs_fp32": 2048,
+   "vs_minfast": 2048
+  },
+  "eager|48": {
+   "vs_fp32": 512,
+   "vs_minfast": 2048
+  },
+  "eager|317": {
+   "vs_fp32": 512,
+   "vs_minfast": 512
+  }
+ },
+ "e7_reproduction": {
+  "reference": {
+   "label": "E7 (RTX A5000, eager-step, N 512, trained 5M checkpoints): int det / fp32 latency, median over 4 tasks x MPPI iterations {3, 6, 12} (reports/E7_tdmpc2.md 6)",
+   "ratio_int4_det": 1.177,
+   "ratio_int8_det": 1.182
+  },
+  "new_int_det_over_fp32": 1.2755825624956203,
+  "e7_det_over_fp32": 1.109052651878281,
+  "e7_det_over_new_int_det": 0.8694479561624527
+ }
+}

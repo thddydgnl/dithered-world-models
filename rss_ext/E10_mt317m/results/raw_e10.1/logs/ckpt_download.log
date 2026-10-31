@@ -1,0 +1,13 @@
++ F=/workspace/ckpt/mt80-317M.pt
++ for i in 1 2 3 4 5 6
++ '[' -s /workspace/ckpt/mt80-317M.pt ']'
++ curl -fsSL --retry 3 -o /workspace/ckpt/mt80-317M.pt.part https://huggingface.co/nicklashansen/tdmpc2/resolve/main/multitask/mt80-317M.pt
++ mv /workspace/ckpt/mt80-317M.pt.part /workspace/ckpt/mt80-317M.pt
++ break
++ ls -la /workspace/ckpt
+total 1966996
+drwxr-xr-x 2 root root         26 Oct 31 09:01 .
+drwxr-xr-x 6 root root         73 Oct 31 09:01 ..
+-rw-r--r-- 1 root root 2014203797 Oct 31 09:01 mt80-317M.pt
++ cd /workspace/ckpt
++ sha256sum mt80-317M.pt

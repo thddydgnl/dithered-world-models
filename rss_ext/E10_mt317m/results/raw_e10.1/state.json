@@ -1,0 +1,104 @@
+{
+ "time": "2026-10-31T12:42:56Z",
+ "tasks": {
+  "mw-push": {
+   "task": "mw-push",
+   "held_none_success": 1.0,
+   "qualified": true,
+   "ksel": {
+    "5": {
+     "det_success": 0.7666666666666667,
+     "drop": 0.23333333333333328
+    }
+   },
+   "primary_k": 5,
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9
+   },
+   "perr_done": true,
+   "phase": "done"
+  },
+  "mw-pick-place": {
+   "task": "mw-pick-place",
+   "held_none_success": 0.9666666666666667,
+   "qualified": true,
+   "ksel": {
+    "5": {
+     "det_success": 0.9,
+     "drop": 0.06666666666666665
+    },
+    "4": {
+     "det_success": 0.8666666666666667,
+     "drop": 0.09999999999999998
+    },
+    "3": {
+     "det_success": 0.0,
+     "drop": 0.9666666666666667
+    }
+   },
+   "primary_k": 3,
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9
+   },
+   "perr_done": true,
+   "phase": "done"
+  },
+  "mw-door-open": {
+   "task": "mw-door-open",
+   "held_none_success": 0.8666666666666667,
+   "qualified": true,
+   "ksel": {
+    "5": {
+     "det_success": 0.8333333333333334,
+     "drop": 0.033333333333333326
+    },
+    "4": {
+     "det_success": 0.8,
+     "drop": 0.06666666666666665
+    },
+    "3": {
+     "det_success": 0.06666666666666667,
+     "drop": 0.8
+    }
+   },
+   "primary_k": 3,
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9
+   },
+   "perr_done": true,
+   "phase": "done"
+  },
+  "mw-drawer-open": {
+   "task": "mw-drawer-open",
+   "held_none_success": 0.7,
+   "qualified": true,
+   "ksel": {
+    "5": {
+     "det_success": 0.5666666666666667,
+     "drop": 0.1333333333333333
+    },
+    "4": {
+     "det_success": 0.43333333333333335,
+     "drop": 0.2666666666666666
+    }
+   },
+   "primary_k": 4,
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9
+   },
+   "perr_done": true,
+   "phase": "done"
+  }
+ },
+ "inflight": [],
+ "failed": [],
+ "n_ok": 101
+}

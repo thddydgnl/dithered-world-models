@@ -1,0 +1,253 @@
+=== 2026-10-31T09:17:00Z run_e10.sh tasks=mw-button-press-topdown,mw-peg-insert-side,mw-window-open,mw-sweep-into workers=2
+09:17:00       0s driver start: tasks ['mw-button-press-topdown', 'mw-peg-insert-side', 'mw-window-open', 'mw-sweep-into'], workers 2, out /workspace/e10
+Episode length: 500
+Discount factor: Episode length: 500
+Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500],
+       device='cuda:0')
+tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500],
+       device='cuda:0')
+09:18:32      92s OK  held_mw-button-press-topdown_c1 (82s) succ 5/5 act 159.7ms ep 16.2s
+09:18:32      92s OK  held_mw-button-press-topdown_c0 (82s) succ 5/5 act 159.7ms ep 16.3s
+09:19:53     173s OK  held_mw-button-press-topdown_c2 (81s) succ 5/5 act 158.7ms ep 16.1s
+09:19:53     173s OK  held_mw-button-press-topdown_c3 (81s) succ 5/5 act 158.8ms ep 16.1s
+09:21:14     254s OK  held_mw-button-press-topdown_c4 (81s) succ 5/5 act 159.2ms ep 16.1s
+09:21:14     254s OK  held_mw-button-press-topdown_c5 (81s) succ 5/5 act 159.3ms ep 16.1s
+09:22:35     335s OK  held_mw-peg-insert-side_c0 (81s) succ 5/5 act 158.4ms ep 16.2s
+09:22:35     335s OK  held_mw-peg-insert-side_c1 (81s) succ 5/5 act 158.3ms ep 16.2s
+09:22:36     336s OK  ranges_mw-button-press-topdown (1s) dyn0:7.27 dyn1:1.79 rew0:28.1 rew1:6.4
+09:23:55     415s OK  held_mw-peg-insert-side_c2 (80s) succ 5/5 act 158.7ms ep 15.9s
+09:23:56     416s OK  held_mw-peg-insert-side_c3 (80s) succ 5/5 act 158.2ms ep 15.9s
+09:25:15     495s OK  held_mw-peg-insert-side_c4 (80s) succ 5/5 act 159.2ms ep 15.9s
+09:25:16     496s OK  held_mw-peg-insert-side_c5 (80s) succ 5/5 act 158.8ms ep 15.9s
+09:26:35     575s OK  held_mw-window-open_c0 (80s) succ 5/5 act 159.4ms ep 15.9s
+09:26:36     576s OK  held_mw-window-open_c1 (80s) succ 5/5 act 159.0ms ep 15.9s
+09:26:36     576s OK  ranges_mw-peg-insert-side (1s) dyn0:7.16 dyn1:1.85 rew0:28.1 rew1:3.2
+09:27:56     657s OK  held_mw-window-open_c2 (81s) succ 5/5 act 158.7ms ep 16.0s
+09:27:57     657s OK  held_mw-window-open_c3 (81s) succ 5/5 act 158.7ms ep 16.1s
+09:29:17     737s OK  held_mw-window-open_c5 (81s) succ 5/5 act 159.0ms ep 16.1s
+09:29:17     737s OK  held_mw-window-open_c4 (81s) succ 5/5 act 158.8ms ep 16.1s
+09:29:18     738s OK  ranges_mw-window-open (1s) dyn0:6.89 dyn1:1.72 rew0:26.4 rew1:3.62
+09:30:37     817s OK  held_mw-sweep-into_c0 (80s) succ 5/5 act 158.9ms ep 15.8s
+09:30:38     818s OK  held_mw-sweep-into_c1 (80s) succ 5/5 act 158.6ms ep 15.9s
+09:31:57     897s OK  held_mw-sweep-into_c2 (80s) succ 5/5 act 158.7ms ep 15.9s
+09:31:58     898s OK  held_mw-sweep-into_c3 (80s) succ 5/5 act 158.8ms ep 15.9s
+09:33:17     977s OK  held_mw-sweep-into_c4 (80s) succ 5/5 act 158.9ms ep 15.9s
+09:33:18     978s OK  held_mw-sweep-into_c5 (80s) succ 5/5 act 158.8ms ep 15.9s
+09:34:40    1061s OK  ksel_mw-button-press-topdown_k5_c1 (82s) succ 5/5 act 163.2ms ep 16.4s
+09:34:41    1061s OK  ksel_mw-button-press-topdown_k5_c0 (84s) succ 5/5 act 167.9ms ep 16.8s
+09:34:41    1061s OK  ranges_mw-sweep-into (1s) dyn0:7.46 dyn1:2.65 rew0:28.6 rew1:3.29
+09:36:03    1144s OK  ksel_mw-button-press-topdown_k5_c3 (82s) succ 5/5 act 163.2ms ep 16.4s
+09:36:06    1146s OK  ksel_mw-button-press-topdown_k5_c2 (84s) succ 5/5 act 168.0ms ep 16.9s
+09:37:25    1225s OK  ksel_mw-button-press-topdown_k5_c4 (82s) succ 5/5 act 163.0ms ep 16.4s
+09:37:30    1230s OK  ksel_mw-button-press-topdown_k5_c5 (84s) succ 5/5 act 167.8ms ep 16.8s
+09:38:47    1307s OK  ksel_mw-peg-insert-side_k5_c0 (82s) succ 5/5 act 162.7ms ep 16.4s
+09:38:54    1314s OK  ksel_mw-peg-insert-side_k5_c1 (85s) succ 5/5 act 167.3ms ep 16.9s
+09:40:09    1389s OK  ksel_mw-button-press-topdown_k4_c0 (82s) succ 5/5 act 163.5ms ep 16.4s
+09:40:19    1399s OK  ksel_mw-button-press-topdown_k4_c1 (85s) succ 5/5 act 168.1ms ep 16.9s
+09:41:31    1471s OK  ksel_mw-button-press-topdown_k4_c2 (82s) succ 5/5 act 163.1ms ep 16.4s
+09:41:43    1484s OK  ksel_mw-button-press-topdown_k4_c3 (85s) succ 5/5 act 168.2ms ep 16.9s
+09:42:53    1553s OK  ksel_mw-button-press-topdown_k4_c4 (82s) succ 5/5 act 163.4ms ep 16.4s
+09:43:08    1568s OK  ksel_mw-button-press-topdown_k4_c5 (84s) succ 5/5 act 168.0ms ep 16.9s
+09:44:15    1635s OK  ksel_mw-peg-insert-side_k5_c2 (82s) succ 4/5 act 162.7ms ep 16.4s
+09:44:32    1653s OK  ksel_mw-peg-insert-side_k5_c3 (85s) succ 4/5 act 167.6ms ep 16.9s
+09:45:37    1717s OK  ksel_mw-button-press-topdown_k3_c0 (82s) succ 3/5 act 163.4ms ep 16.4s
+09:45:57    1737s OK  ksel_mw-button-press-topdown_k3_c1 (84s) succ 2/5 act 168.1ms ep 16.9s
+09:46:59    1799s OK  ksel_mw-button-press-topdown_k3_c2 (82s) succ 2/5 act 163.3ms ep 16.4s
+09:47:21    1822s OK  ksel_mw-button-press-topdown_k3_c3 (84s) succ 3/5 act 168.1ms ep 16.9s
+09:48:21    1881s OK  ksel_mw-button-press-topdown_k3_c4 (82s) succ 4/5 act 163.6ms ep 16.4s
+09:48:45    1906s OK  ksel_mw-button-press-topdown_k3_c5 (84s) succ 5/5 act 168.1ms ep 16.8s
+09:49:43    1963s OK  ksel_mw-peg-insert-side_k5_c4 (82s) succ 5/5 act 162.6ms ep 16.4s
+09:50:10    1990s OK  ksel_mw-peg-insert-side_k5_c5 (85s) succ 5/5 act 167.6ms ep 17.0s
+09:51:05    2045s OK  ksel_mw-window-open_k5_c0 (82s) succ 5/5 act 163.2ms ep 16.4s
+09:51:34    2074s OK  ksel_mw-window-open_k5_c1 (84s) succ 5/5 act 167.9ms ep 16.8s
+09:52:27    2127s OK  ksel_mw-peg-insert-side_k4_c0 (82s) succ 5/5 act 162.9ms ep 16.4s
+09:52:59    2159s OK  ksel_mw-peg-insert-side_k4_c1 (84s) succ 5/5 act 167.6ms ep 16.9s
+09:53:49    2209s OK  ksel_mw-peg-insert-side_k4_c2 (82s) succ 5/5 act 162.8ms ep 16.5s
+09:54:23    2243s OK  ksel_mw-peg-insert-side_k4_c3 (84s) succ 5/5 act 167.3ms ep 16.9s
+09:55:12    2292s OK  ksel_mw-peg-insert-side_k4_c4 (82s) succ 5/5 act 162.8ms ep 16.5s
+09:55:48    2328s OK  ksel_mw-peg-insert-side_k4_c5 (85s) succ 5/5 act 167.5ms ep 17.0s
+09:56:33    2373s OK  ksel_mw-window-open_k5_c2 (81s) succ 4/5 act 162.6ms ep 16.3s
+09:57:12    2412s OK  ksel_mw-window-open_k5_c3 (84s) succ 4/5 act 167.6ms ep 16.7s
+09:57:55    2455s OK  ksel_mw-peg-insert-side_k3_c0 (82s) succ 0/5 act 162.9ms ep 16.4s
+09:58:36    2496s OK  ksel_mw-peg-insert-side_k3_c1 (84s) succ 0/5 act 167.6ms ep 16.9s
+09:59:17    2537s OK  ksel_mw-peg-insert-side_k3_c2 (82s) succ 0/5 act 162.8ms ep 16.4s
+10:00:00    2580s OK  ksel_mw-peg-insert-side_k3_c3 (84s) succ 0/5 act 167.7ms ep 16.8s
+10:00:39    2619s OK  ksel_mw-peg-insert-side_k3_c4 (82s) succ 0/5 act 163.1ms ep 16.4s
+10:01:25    2665s OK  ksel_mw-peg-insert-side_k3_c5 (85s) succ 0/5 act 167.8ms ep 17.0s
+10:02:00    2700s OK  ksel_mw-window-open_k5_c4 (81s) succ 5/5 act 162.8ms ep 16.3s
+10:02:50    2750s OK  ksel_mw-window-open_k5_c5 (84s) succ 5/5 act 167.6ms ep 16.9s
+10:03:22    2783s OK  ksel_mw-sweep-into_k5_c0 (82s) succ 5/5 act 162.8ms ep 16.4s
+10:04:14    2835s OK  ksel_mw-sweep-into_k5_c1 (85s) succ 5/5 act 167.5ms ep 16.9s
+10:04:44    2864s OK  ksel_mw-window-open_k4_c0 (82s) succ 4/5 act 162.9ms ep 16.4s
+10:05:39    2919s OK  ksel_mw-window-open_k4_c1 (85s) succ 4/5 act 167.8ms ep 16.9s
+10:06:06    2946s OK  ksel_mw-window-open_k4_c2 (82s) succ 3/5 act 162.9ms ep 16.4s
+10:07:03    3004s OK  ksel_mw-window-open_k4_c3 (84s) succ 5/5 act 167.7ms ep 16.9s
+10:07:28    3028s OK  ksel_mw-window-open_k4_c4 (82s) succ 5/5 act 163.0ms ep 16.4s
+10:08:28    3088s OK  ksel_mw-window-open_k4_c5 (84s) succ 4/5 act 167.8ms ep 16.9s
+10:08:50    3110s OK  ksel_mw-sweep-into_k5_c2 (82s) succ 5/5 act 162.8ms ep 16.4s
+10:09:53    3173s OK  ksel_mw-sweep-into_k5_c3 (85s) succ 5/5 act 167.7ms ep 16.9s
+10:10:12    3192s OK  ksel_mw-window-open_k3_c0 (82s) succ 2/5 act 163.2ms ep 16.4s
+10:11:17    3257s OK  ksel_mw-window-open_k3_c1 (84s) succ 1/5 act 168.0ms ep 16.9s
+10:11:34    3274s OK  ksel_mw-window-open_k3_c2 (82s) succ 4/5 act 163.1ms ep 16.4s
+10:12:41    3342s OK  ksel_mw-window-open_k3_c3 (84s) succ 1/5 act 167.9ms ep 16.9s
+10:12:56    3356s OK  ksel_mw-window-open_k3_c4 (82s) succ 1/5 act 163.4ms ep 16.4s
+10:14:06    3426s OK  ksel_mw-window-open_k3_c5 (84s) succ 3/5 act 167.9ms ep 16.9s
+10:14:18    3438s OK  ksel_mw-sweep-into_k5_c4 (82s) succ 5/5 act 162.9ms ep 16.4s
+10:15:30    3511s OK  ksel_mw-sweep-into_k5_c5 (85s) succ 5/5 act 167.6ms ep 16.9s
+10:17:02    3602s OK  eval_mw-button-press-topdown_det_k3_c0 (164s) succ 4/10 act 163.1ms ep 16.4s
+10:18:20    3680s OK  eval_mw-button-press-topdown_shiter_k3_c0 (169s) succ 10/10 act 167.5ms ep 16.9s
+10:18:24    3684s OK  ksel_mw-sweep-into_k4_c0 (82s) succ 5/5 act 162.4ms ep 16.4s
+10:19:44    3765s OK  ksel_mw-sweep-into_k4_c1 (84s) succ 5/5 act 167.8ms ep 16.9s
+10:19:46    3766s OK  ksel_mw-sweep-into_k4_c2 (82s) succ 5/5 act 163.0ms ep 16.4s
+=== 2026-10-31T10:20:39Z driver exit 0
+=== 2026-10-31T10:32:54Z run_e10.sh tasks=mw-button-press-topdown,mw-peg-insert-side,mw-window-open,mw-sweep-into workers=1
+10:32:54       0s driver start: tasks ['mw-button-press-topdown', 'mw-peg-insert-side', 'mw-window-open', 'mw-sweep-into'], workers 1, out /workspace/e10
+Episode length: 500
+Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500],
+       device='cuda:0')
+10:33:45      51s OK  ksel_mw-sweep-into_k3_c0 (38s) succ 4/5 act 73.9ms ep 7.7s
+10:34:23      89s OK  ksel_mw-sweep-into_k3_c1 (38s) succ 3/5 act 74.2ms ep 7.7s
+10:35:02     128s OK  ksel_mw-sweep-into_k3_c2 (39s) succ 4/5 act 74.3ms ep 7.7s
+10:35:40     166s OK  ksel_mw-sweep-into_k3_c3 (38s) succ 5/5 act 74.4ms ep 7.7s
+10:36:19     205s OK  ksel_mw-sweep-into_k3_c4 (38s) succ 4/5 act 74.5ms ep 7.7s
+10:36:57     243s OK  ksel_mw-sweep-into_k3_c5 (38s) succ 4/5 act 74.4ms ep 7.7s
+10:37:17     264s OK  perr_mw-button-press-topdown_k3 (20s) err1h det 4.8 shiter 8.353
+10:38:34     340s OK  eval_mw-button-press-topdown_det_k3_c1 (76s) succ 3/10 act 74.4ms ep 7.6s
+10:39:51     417s OK  eval_mw-button-press-topdown_shiter_k3_c1 (77s) succ 10/10 act 75.2ms ep 7.7s
+10:41:08     494s OK  eval_mw-button-press-topdown_det_k3_c2 (77s) succ 4/10 act 74.6ms ep 7.7s
+10:42:26     572s OK  eval_mw-button-press-topdown_shiter_k3_c2 (78s) succ 10/10 act 75.2ms ep 7.8s
+10:43:42     648s OK  eval_mw-button-press-topdown_det_k3_c3 (77s) succ 1/10 act 74.4ms ep 7.7s
+10:45:00     726s OK  eval_mw-button-press-topdown_shiter_k3_c3 (77s) succ 10/10 act 75.2ms ep 7.7s
+10:46:16     802s OK  eval_mw-button-press-topdown_det_k3_c4 (77s) succ 0/10 act 74.5ms ep 7.7s
+10:47:34     880s OK  eval_mw-button-press-topdown_shiter_k3_c4 (78s) succ 10/10 act 75.3ms ep 7.8s
+10:48:50     957s OK  eval_mw-button-press-topdown_det_k3_c5 (77s) succ 3/10 act 74.5ms ep 7.7s
+10:50:08    1034s OK  eval_mw-button-press-topdown_shiter_k3_c5 (77s) succ 10/10 act 75.2ms ep 7.7s
+10:51:24    1111s OK  eval_mw-button-press-topdown_det_k3_c6 (77s) succ 5/10 act 74.5ms ep 7.7s
+10:52:42    1188s OK  eval_mw-button-press-topdown_shiter_k3_c6 (77s) succ 10/10 act 75.2ms ep 7.7s
+10:53:59    1265s OK  eval_mw-button-press-topdown_det_k3_c7 (77s) succ 2/10 act 74.5ms ep 7.7s
+10:55:16    1342s OK  eval_mw-button-press-topdown_shiter_k3_c7 (77s) succ 10/10 act 75.3ms ep 7.7s
+10:56:33    1419s OK  eval_mw-button-press-topdown_det_k3_c8 (77s) succ 3/10 act 74.4ms ep 7.7s
+10:57:50    1496s OK  eval_mw-button-press-topdown_shiter_k3_c8 (77s) succ 10/10 act 75.2ms ep 7.7s
+10:59:09    1575s OK  eval_mw-peg-insert-side_det_k3_c0 (79s) succ 1/10 act 74.4ms ep 7.9s
+11:00:29    1655s OK  eval_mw-peg-insert-side_shiter_k3_c0 (80s) succ 9/10 act 75.1ms ep 8.0s
+11:00:50    1676s OK  perr_mw-peg-insert-side_k3 (21s) err1h det 6.3 shiter 9.529
+11:02:09    1755s OK  eval_mw-peg-insert-side_det_k3_c1 (79s) succ 0/10 act 74.6ms ep 7.9s
+11:03:29    1835s OK  eval_mw-peg-insert-side_shiter_k3_c1 (80s) succ 10/10 act 75.1ms ep 8.0s
+11:04:48    1914s OK  eval_mw-peg-insert-side_det_k3_c2 (79s) succ 0/10 act 74.6ms ep 7.9s
+11:06:08    1994s OK  eval_mw-peg-insert-side_shiter_k3_c2 (80s) succ 10/10 act 75.2ms ep 8.0s
+11:07:27    2073s OK  eval_mw-peg-insert-side_det_k3_c3 (79s) succ 0/10 act 74.6ms ep 7.9s
+11:08:47    2153s OK  eval_mw-peg-insert-side_shiter_k3_c3 (80s) succ 10/10 act 75.2ms ep 8.0s
+11:10:06    2233s OK  eval_mw-peg-insert-side_det_k3_c4 (79s) succ 0/10 act 74.6ms ep 7.9s
+11:11:26    2313s OK  eval_mw-peg-insert-side_shiter_k3_c4 (80s) succ 9/10 act 75.2ms ep 8.0s
+11:12:46    2392s OK  eval_mw-peg-insert-side_det_k3_c5 (79s) succ 0/10 act 74.5ms ep 7.9s
+11:14:06    2472s OK  eval_mw-peg-insert-side_shiter_k3_c5 (80s) succ 9/10 act 75.1ms ep 8.0s
+11:15:25    2551s OK  eval_mw-peg-insert-side_det_k3_c6 (79s) succ 0/10 act 74.5ms ep 7.9s
+11:16:45    2631s OK  eval_mw-peg-insert-side_shiter_k3_c6 (80s) succ 10/10 act 75.2ms ep 8.0s
+11:18:04    2710s OK  eval_mw-peg-insert-side_det_k3_c7 (79s) succ 0/10 act 74.6ms ep 7.9s
+11:19:24    2790s OK  eval_mw-peg-insert-side_shiter_k3_c7 (80s) succ 10/10 act 75.2ms ep 8.0s
+11:20:43    2870s OK  eval_mw-peg-insert-side_det_k3_c8 (79s) succ 0/10 act 74.6ms ep 7.9s
+11:22:03    2949s OK  eval_mw-peg-insert-side_shiter_k3_c8 (80s) succ 9/10 act 75.2ms ep 8.0s
+11:23:20    3026s OK  eval_mw-window-open_det_k3_c0 (77s) succ 4/10 act 74.6ms ep 7.7s
+11:24:38    3104s OK  eval_mw-window-open_shiter_k3_c0 (78s) succ 10/10 act 75.1ms ep 7.8s
+11:24:58    3124s OK  perr_mw-window-open_k3 (21s) err1h det 6.36 shiter 9.365
+11:26:15    3201s OK  eval_mw-window-open_det_k3_c1 (77s) succ 3/10 act 74.5ms ep 7.7s
+11:27:33    3279s OK  eval_mw-window-open_shiter_k3_c1 (78s) succ 8/10 act 75.1ms ep 7.8s
+11:28:50    3356s OK  eval_mw-window-open_det_k3_c2 (77s) succ 4/10 act 74.5ms ep 7.7s
+11:30:07    3433s OK  eval_mw-window-open_shiter_k3_c2 (77s) succ 10/10 act 75.0ms ep 7.7s
+11:31:24    3510s OK  eval_mw-window-open_det_k3_c3 (77s) succ 6/10 act 74.5ms ep 7.7s
+11:32:42    3588s OK  eval_mw-window-open_shiter_k3_c3 (78s) succ 9/10 act 75.1ms ep 7.8s
+11:33:59    3665s OK  eval_mw-window-open_det_k3_c4 (77s) succ 3/10 act 74.6ms ep 7.7s
+11:35:16    3742s OK  eval_mw-window-open_shiter_k3_c4 (78s) succ 8/10 act 75.1ms ep 7.8s
+11:36:33    3819s OK  eval_mw-window-open_det_k3_c5 (77s) succ 4/10 act 74.6ms ep 7.7s
+11:37:51    3897s OK  eval_mw-window-open_shiter_k3_c5 (78s) succ 10/10 act 75.2ms ep 7.8s
+11:39:08    3974s OK  eval_mw-window-open_det_k3_c6 (77s) succ 3/10 act 74.6ms ep 7.7s
+11:40:25    4051s OK  eval_mw-window-open_shiter_k3_c6 (78s) succ 10/10 act 75.2ms ep 7.8s
+11:41:42    4128s OK  eval_mw-window-open_det_k3_c7 (77s) succ 4/10 act 74.6ms ep 7.7s
+11:43:00    4206s OK  eval_mw-window-open_shiter_k3_c7 (78s) succ 9/10 act 75.3ms ep 7.8s
+11:44:17    4284s OK  eval_mw-window-open_det_k3_c8 (77s) succ 4/10 act 74.8ms ep 7.7s
+11:45:35    4361s OK  eval_mw-window-open_shiter_k3_c8 (78s) succ 10/10 act 75.4ms ep 7.8s
+11:46:53    4439s OK  eval_mw-sweep-into_det_k3_c0 (77s) succ 9/10 act 74.7ms ep 7.7s
+11:48:10    4516s OK  eval_mw-sweep-into_shiter_k3_c0 (78s) succ 10/10 act 75.3ms ep 7.8s
+11:48:31    4537s OK  perr_mw-sweep-into_k3 (21s) err1h det 4.427 shiter 7.019
+11:49:48    4614s OK  eval_mw-sweep-into_det_k3_c1 (77s) succ 9/10 act 74.7ms ep 7.7s
+11:51:06    4692s OK  eval_mw-sweep-into_shiter_k3_c1 (78s) succ 10/10 act 75.3ms ep 7.8s
+11:52:23    4769s OK  eval_mw-sweep-into_det_k3_c2 (77s) succ 8/10 act 74.7ms ep 7.7s
+11:53:41    4847s OK  eval_mw-sweep-into_shiter_k3_c2 (78s) succ 10/10 act 75.6ms ep 7.8s
+11:54:59    4925s OK  eval_mw-sweep-into_det_k3_c3 (77s) succ 9/10 act 74.9ms ep 7.7s
+11:56:17    5003s OK  eval_mw-sweep-into_shiter_k3_c3 (78s) succ 10/10 act 75.6ms ep 7.8s
+11:57:34    5080s OK  eval_mw-sweep-into_det_k3_c4 (78s) succ 9/10 act 74.9ms ep 7.8s
+11:58:52    5158s OK  eval_mw-sweep-into_shiter_k3_c4 (78s) succ 10/10 act 75.6ms ep 7.8s
+12:00:10    5236s OK  eval_mw-sweep-into_det_k3_c5 (78s) succ 9/10 act 75.0ms ep 7.8s
+12:01:28    5314s OK  eval_mw-sweep-into_shiter_k3_c5 (78s) succ 10/10 act 75.6ms ep 7.8s
+12:02:45    5392s OK  eval_mw-sweep-into_det_k3_c6 (78s) succ 9/10 act 74.9ms ep 7.8s
+12:04:04    5470s OK  eval_mw-sweep-into_shiter_k3_c6 (78s) succ 10/10 act 75.6ms ep 7.8s
+12:05:21    5547s OK  eval_mw-sweep-into_det_k3_c7 (78s) succ 8/10 act 75.1ms ep 7.8s
+12:06:39    5625s OK  eval_mw-sweep-into_shiter_k3_c7 (78s) succ 10/10 act 75.6ms ep 7.8s
+12:07:57    5703s OK  eval_mw-sweep-into_det_k3_c8 (78s) succ 9/10 act 75.0ms ep 7.8s
+12:09:15    5781s OK  eval_mw-sweep-into_shiter_k3_c8 (78s) succ 10/10 act 75.6ms ep 7.8s
+12:10:29    5855s OK  eval_mw-button-press-topdown_none_k0_c0 (74s) succ 10/10 act 72.0ms ep 7.4s
+12:11:43    5930s OK  eval_mw-button-press-topdown_none_k0_c1 (74s) succ 10/10 act 72.0ms ep 7.4s
+12:12:58    6004s OK  eval_mw-button-press-topdown_none_k0_c2 (74s) succ 10/10 act 72.0ms ep 7.4s
+12:14:12    6078s OK  eval_mw-button-press-topdown_none_k0_c3 (74s) succ 10/10 act 72.0ms ep 7.4s
+12:15:26    6152s OK  eval_mw-button-press-topdown_none_k0_c4 (74s) succ 10/10 act 72.1ms ep 7.4s
+12:16:40    6227s OK  eval_mw-button-press-topdown_none_k0_c5 (74s) succ 10/10 act 72.1ms ep 7.4s
+12:17:55    6301s OK  eval_mw-button-press-topdown_none_k0_c6 (74s) succ 10/10 act 72.1ms ep 7.4s
+12:19:09    6375s OK  eval_mw-button-press-topdown_none_k0_c7 (74s) succ 10/10 act 72.0ms ep 7.4s
+12:20:24    6450s OK  eval_mw-button-press-topdown_none_k0_c8 (74s) succ 10/10 act 72.0ms ep 7.4s
+12:21:41    6527s OK  eval_mw-peg-insert-side_none_k0_c0 (77s) succ 10/10 act 71.9ms ep 7.7s
+12:22:58    6604s OK  eval_mw-peg-insert-side_none_k0_c1 (77s) succ 10/10 act 72.0ms ep 7.7s
+12:24:15    6681s OK  eval_mw-peg-insert-side_none_k0_c2 (77s) succ 10/10 act 72.0ms ep 7.7s
+12:25:32    6758s OK  eval_mw-peg-insert-side_none_k0_c3 (77s) succ 10/10 act 72.0ms ep 7.7s
+12:26:49    6835s OK  eval_mw-peg-insert-side_none_k0_c4 (77s) succ 10/10 act 72.0ms ep 7.7s
+12:28:06    6912s OK  eval_mw-peg-insert-side_none_k0_c5 (77s) succ 10/10 act 72.0ms ep 7.7s
+12:29:22    6988s OK  eval_mw-peg-insert-side_none_k0_c6 (77s) succ 10/10 act 71.8ms ep 7.7s
+12:30:39    7065s OK  eval_mw-peg-insert-side_none_k0_c7 (77s) succ 10/10 act 71.6ms ep 7.7s
+12:31:55    7141s OK  eval_mw-peg-insert-side_none_k0_c8 (76s) succ 10/10 act 71.6ms ep 7.6s
+12:33:09    7216s OK  eval_mw-window-open_none_k0_c0 (74s) succ 10/10 act 71.6ms ep 7.4s
+12:34:23    7290s OK  eval_mw-window-open_none_k0_c1 (74s) succ 10/10 act 71.6ms ep 7.4s
+12:35:38    7364s OK  eval_mw-window-open_none_k0_c2 (74s) succ 10/10 act 71.6ms ep 7.4s
+12:36:52    7438s OK  eval_mw-window-open_none_k0_c3 (74s) succ 10/10 act 71.6ms ep 7.4s
+12:38:06    7512s OK  eval_mw-window-open_none_k0_c4 (74s) succ 10/10 act 71.7ms ep 7.4s
+12:39:20    7586s OK  eval_mw-window-open_none_k0_c5 (74s) succ 10/10 act 71.6ms ep 7.4s
+12:40:34    7660s OK  eval_mw-window-open_none_k0_c6 (74s) succ 10/10 act 71.6ms ep 7.4s
+12:41:48    7734s OK  eval_mw-window-open_none_k0_c7 (74s) succ 10/10 act 71.6ms ep 7.4s
+12:43:02    7808s OK  eval_mw-window-open_none_k0_c8 (74s) succ 10/10 act 71.6ms ep 7.4s
+12:44:16    7883s OK  eval_mw-sweep-into_none_k0_c0 (74s) succ 10/10 act 71.7ms ep 7.4s
+12:45:31    7957s OK  eval_mw-sweep-into_none_k0_c1 (74s) succ 10/10 act 71.7ms ep 7.4s
+12:46:45    8031s OK  eval_mw-sweep-into_none_k0_c2 (74s) succ 10/10 act 71.7ms ep 7.4s
+12:47:59    8105s OK  eval_mw-sweep-into_none_k0_c3 (74s) succ 10/10 act 71.6ms ep 7.4s
+12:49:13    8179s OK  eval_mw-sweep-into_none_k0_c4 (74s) succ 10/10 act 71.7ms ep 7.4s
+12:50:28    8254s OK  eval_mw-sweep-into_none_k0_c5 (74s) succ 10/10 act 71.7ms ep 7.4s
+12:51:42    8328s OK  eval_mw-sweep-into_none_k0_c6 (74s) succ 10/10 act 71.7ms ep 7.4s
+12:52:56    8402s OK  eval_mw-sweep-into_none_k0_c7 (74s) succ 10/10 act 71.7ms ep 7.4s
+12:54:10    8477s OK  eval_mw-sweep-into_none_k0_c8 (74s) succ 10/10 act 71.6ms ep 7.4s
+12:54:12    8478s DRIVER_DONE ok 116 failed 0 []
+12:54:12    8478s mw-button-press-topdown: {"task": "mw-button-press-topdown", "held_none_success": 1.0, "qualified": true, "ksel": {"5": {"det_success": 1.0, "drop": 0.0}, "4": {"det_success": 1.0, "drop": 0.0}, "3": {"det_success": 0.6333333333333333, "drop": 0.3666666666666667}}, "primary_k": 3, "eval_done": {"none": 9, "det": 9, "shiter": 9}, "perr_done": true, "phase": "done"}
+12:54:12    8478s mw-peg-insert-side: {"task": "mw-peg-insert-side", "held_none_success": 1.0, "qualified": true, "ksel": {"5": {"det_success": 0.9333333333333333, "drop": 0.06666666666666665}, "4": {"det_success": 1.0, "drop": 0.0}, "3": {"det_success": 0.0, "drop": 1.0}}, "primary_k": 3, "eval_done": {"none": 9, "det": 9, "shiter": 9}, "perr_done": true, "phase": "done"}
+12:54:12    8478s mw-window-open: {"task": "mw-window-open", "held_none_success": 1.0, "qualified": true, "ksel": {"5": {"det_success": 0.9333333333333333, "drop": 0.06666666666666665}, "4": {"det_success": 0.8333333333333334, "drop": 0.16666666666666663}, "3": {"det_success": 0.4, "drop": 0.6}}, "primary_k": 3, "eval_done": {"none": 9, "det": 9, "shiter": 9}, "perr_done": true, "phase": "done"}
+12:54:12    8478s mw-sweep-into: {"task": "mw-sweep-into", "held_none_success": 1.0, "qualified": true, "ksel": {"5": {"det_success": 1.0, "drop": 0.0}, "4": {"det_success": 1.0, "drop": 0.0}, "3": {"det_success": 0.8, "drop": 0.19999999999999996}}, "primary_k": 3, "eval_done": {"none": 9, "det": 9, "shiter": 9}, "perr_done": true, "phase": "done"}
+=== 2026-10-31T12:54:12Z driver exit 0

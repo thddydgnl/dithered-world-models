@@ -1,0 +1,148 @@
+{
+ "F1": {
+  "nvfp4": {
+   "n_cells": 12,
+   "n_complete_90": 12,
+   "n_damaged": 2,
+   "damaged": [
+    "cheetah-run",
+    "walker-walk"
+   ],
+   "holds": false
+  },
+  "mxfp4": {
+   "n_cells": 12,
+   "n_complete_90": 12,
+   "n_damaged": 4,
+   "damaged": [
+    "mw-window-open",
+    "cheetah-run",
+    "walker-walk",
+    "quadruped-walk"
+   ],
+   "holds": true
+  }
+ },
+ "F2": {
+  "mw": {
+   "n_cells": 16,
+   "n_damaged": 1,
+   "damaged": [
+    [
+     "mw-window-open",
+     "mxfp4"
+    ]
+   ],
+   "n_red_ge_half": 1,
+   "share_red_ge_half": 1.0,
+   "cells_red_lt_half": [],
+   "harmful_cells_all": [],
+   "harmful_cells_damaged": [],
+   "holds": true,
+   "holds_reading_damaged_only": true,
+   "evaluable": true
+  },
+  "dmc": {
+   "n_cells": 8,
+   "n_damaged": 5,
+   "damaged": [
+    [
+     "cheetah-run",
+     "nvfp4"
+    ],
+    [
+     "cheetah-run",
+     "mxfp4"
+    ],
+    [
+     "walker-walk",
+     "nvfp4"
+    ],
+    [
+     "walker-walk",
+     "mxfp4"
+    ],
+    [
+     "quadruped-walk",
+     "mxfp4"
+    ]
+   ],
+   "n_red_ge_half": 2,
+   "share_red_ge_half": 0.4,
+   "cells_red_lt_half": [
+    [
+     "walker-walk",
+     "nvfp4",
+     0.3642404071486022
+    ],
+    [
+     "walker-walk",
+     "mxfp4",
+     0.2961869626539225
+    ],
+    [
+     "quadruped-walk",
+     "mxfp4",
+     -0.7502086213378456
+    ]
+   ],
+   "harmful_cells_all": [],
+   "harmful_cells_damaged": [],
+   "holds": false,
+   "holds_reading_damaged_only": false,
+   "evaluable": true
+  }
+ },
+ "F3": {
+  "n_damaged": 6,
+  "n_meeting": 6,
+  "cells_meeting": [
+   [
+    "mw-window-open",
+    "mxfp4"
+   ],
+   [
+    "cheetah-run",
+    "nvfp4"
+   ],
+   [
+    "cheetah-run",
+    "mxfp4"
+   ],
+   [
+    "walker-walk",
+    "nvfp4"
+   ],
+   [
+    "walker-walk",
+    "mxfp4"
+   ],
+   [
+    "quadruped-walk",
+    "mxfp4"
+   ]
+  ],
+  "by_unit": {
+   "mw/nvfp4": {
+    "n_damaged": 0,
+    "n_meeting": 0
+   },
+   "mw/mxfp4": {
+    "n_damaged": 1,
+    "n_meeting": 1
+   },
+   "dmc/nvfp4": {
+    "n_damaged": 2,
+    "n_meeting": 2
+   },
+   "dmc/mxfp4": {
+    "n_damaged": 3,
+    "n_meeting": 3
+   }
+  },
+  "holds": true,
+  "evaluable": true,
+  "n_meeting_dataset_type": 6
+ }
+}
+episodes 5400 held 1080 cells 24 literal-p differences []

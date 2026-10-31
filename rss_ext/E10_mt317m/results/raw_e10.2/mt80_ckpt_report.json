@@ -1,0 +1,996 @@
+{
+ "env_build_secs": 8.691067218780518,
+ "obs_shape": {
+  "state": [
+   39
+  ]
+ },
+ "action_dim": 6,
+ "episode_length": 500,
+ "members": {
+  "walker-stand": {
+   "idx": 0,
+   "obs": 24,
+   "act": 6,
+   "ep_len": 500
+  },
+  "walker-walk": {
+   "idx": 1,
+   "obs": 24,
+   "act": 6,
+   "ep_len": 500
+  },
+  "walker-run": {
+   "idx": 2,
+   "obs": 24,
+   "act": 6,
+   "ep_len": 500
+  },
+  "cheetah-run": {
+   "idx": 3,
+   "obs": 17,
+   "act": 6,
+   "ep_len": 500
+  },
+  "reacher-easy": {
+   "idx": 4,
+   "obs": 6,
+   "act": 2,
+   "ep_len": 500
+  },
+  "reacher-hard": {
+   "idx": 5,
+   "obs": 6,
+   "act": 2,
+   "ep_len": 500
+  },
+  "acrobot-swingup": {
+   "idx": 6,
+   "obs": 6,
+   "act": 1,
+   "ep_len": 500
+  },
+  "pendulum-swingup": {
+   "idx": 7,
+   "obs": 3,
+   "act": 1,
+   "ep_len": 500
+  },
+  "cartpole-balance": {
+   "idx": 8,
+   "obs": 5,
+   "act": 1,
+   "ep_len": 500
+  },
+  "cartpole-balance-sparse": {
+   "idx": 9,
+   "obs": 5,
+   "act": 1,
+   "ep_len": 500
+  },
+  "cartpole-swingup": {
+   "idx": 10,
+   "obs": 5,
+   "act": 1,
+   "ep_len": 500
+  },
+  "cartpole-swingup-sparse": {
+   "idx": 11,
+   "obs": 5,
+   "act": 1,
+   "ep_len": 500
+  },
+  "cup-catch": {
+   "idx": 12,
+   "obs": 8,
+   "act": 2,
+   "ep_len": 500
+  },
+  "finger-spin": {
+   "idx": 13,
+   "obs": 9,
+   "act": 2,
+   "ep_len": 500
+  },
+  "finger-turn-easy": {
+   "idx": 14,
+   "obs": 12,
+   "act": 2,
+   "ep_len": 500
+  },
+  "finger-turn-hard": {
+   "idx": 15,
+   "obs": 12,
+   "act": 2,
+   "ep_len": 500
+  },
+  "fish-swim": {
+   "idx": 16,
+   "obs": 24,
+   "act": 5,
+   "ep_len": 500
+  },
+  "hopper-stand": {
+   "idx": 17,
+   "obs": 15,
+   "act": 4,
+   "ep_len": 500
+  },
+  "hopper-hop": {
+   "idx": 18,
+   "obs": 15,
+   "act": 4,
+   "ep_len": 500
+  },
+  "walker-walk-backwards": {
+   "idx": 19,
+   "obs": 24,
+   "act": 6,
+   "ep_len": 500
+  },
+  "walker-run-backwards": {
+   "idx": 20,
+   "obs": 24,
+   "act": 6,
+   "ep_len": 500
+  },
+  "cheetah-run-backwards": {
+   "idx": 21,
+   "obs": 17,
+   "act": 6,
+   "ep_len": 500
+  },
+  "cheetah-run-front": {
+   "idx": 22,
+   "obs": 17,
+   "act": 6,
+   "ep_len": 500
+  },
+  "cheetah-run-back": {
+   "idx": 23,
+   "obs": 17,
+   "act": 6,
+   "ep_len": 500
+  },
+  "cheetah-jump": {
+   "idx": 24,
+   "obs": 17,
+   "act": 6,
+   "ep_len": 500
+  },
+  "hopper-hop-backwards": {
+   "idx": 25,
+   "obs": 15,
+   "act": 4,
+   "ep_len": 500
+  },
+  "reacher-three-easy": {
+   "idx": 26,
+   "obs": 8,
+   "act": 3,
+   "ep_len": 500
+  },
+  "reacher-three-hard": {
+   "idx": 27,
+   "obs": 8,
+   "act": 3,
+   "ep_len": 500
+  },
+  "cup-spin": {
+   "idx": 28,
+   "obs": 8,
+   "act": 2,
+   "ep_len": 500
+  },
+  "pendulum-spin": {
+   "idx": 29,
+   "obs": 3,
+   "act": 1,
+   "ep_len": 500
+  },
+  "mw-assembly": {
+   "idx": 30,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-basketball": {
+   "idx": 31,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-button-press-topdown": {
+   "idx": 32,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-button-press-topdown-wall": {
+   "idx": 33,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-button-press": {
+   "idx": 34,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-button-press-wall": {
+   "idx": 35,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-coffee-button": {
+   "idx": 36,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-coffee-pull": {
+   "idx": 37,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-coffee-push": {
+   "idx": 38,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-dial-turn": {
+   "idx": 39,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-disassemble": {
+   "idx": 40,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-door-open": {
+   "idx": 41,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-door-close": {
+   "idx": 42,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-drawer-close": {
+   "idx": 43,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-drawer-open": {
+   "idx": 44,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-faucet-open": {
+   "idx": 45,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-faucet-close": {
+   "idx": 46,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-hammer": {
+   "idx": 47,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-handle-press-side": {
+   "idx": 48,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-handle-press": {
+   "idx": 49,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-handle-pull-side": {
+   "idx": 50,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-handle-pull": {
+   "idx": 51,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-lever-pull": {
+   "idx": 52,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-peg-insert-side": {
+   "idx": 53,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-peg-unplug-side": {
+   "idx": 54,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-pick-out-of-hole": {
+   "idx": 55,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-pick-place": {
+   "idx": 56,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-pick-place-wall": {
+   "idx": 57,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-plate-slide": {
+   "idx": 58,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-plate-slide-side": {
+   "idx": 59,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-plate-slide-back": {
+   "idx": 60,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-plate-slide-back-side": {
+   "idx": 61,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-push-back": {
+   "idx": 62,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-push": {
+   "idx": 63,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-push-wall": {
+   "idx": 64,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-reach": {
+   "idx": 65,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-reach-wall": {
+   "idx": 66,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-shelf-place": {
+   "idx": 67,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-soccer": {
+   "idx": 68,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-stick-push": {
+   "idx": 69,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-stick-pull": {
+   "idx": 70,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-sweep-into": {
+   "idx": 71,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-sweep": {
+   "idx": 72,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-window-open": {
+   "idx": 73,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-window-close": {
+   "idx": 74,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-bin-picking": {
+   "idx": 75,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-box-close": {
+   "idx": 76,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-door-lock": {
+   "idx": 77,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-door-unlock": {
+   "idx": 78,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-hand-insert": {
+   "idx": 79,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  }
+ },
+ "ckpt_top_keys": [
+  "metadata",
+  "model"
+ ],
+ "ckpt_n_keys": 73,
+ "ckpt_new_api": false,
+ "ckpt_has_action_masks": false,
+ "ckpt_shapes": {
+  "_task_emb.weight": [
+   80,
+   96
+  ],
+  "_encoder.state.0.weight": [
+   4096,
+   135
+  ],
+  "_encoder.state.0.bias": [
+   4096
+  ],
+  "_encoder.state.0.ln.weight": [
+   4096
+  ],
+  "_encoder.state.0.ln.bias": [
+   4096
+  ],
+  "_encoder.state.1.weight": [
+   4096,
+   4096
+  ],
+  "_encoder.state.1.bias": [
+   4096
+  ],
+  "_encoder.state.1.ln.weight": [
+   4096
+  ],
+  "_encoder.state.1.ln.bias": [
+   4096
+  ],
+  "_encoder.state.2.weight": [
+   4096,
+   4096
+  ],
+  "_encoder.state.2.bias": [
+   4096
+  ],
+  "_encoder.state.2.ln.weight": [
+   4096
+  ],
+  "_encoder.state.2.ln.bias": [
+   4096
+  ],
+  "_encoder.state.3.weight": [
+   4096,
+   4096
+  ],
+  "_encoder.state.3.bias": [
+   4096
+  ],
+  "_encoder.state.3.ln.weight": [
+   4096
+  ],
+  "_encoder.state.3.ln.bias": [
+   4096
+  ],
+  "_encoder.state.4.weight": [
+   1376,
+   4096
+  ],
+  "_encoder.state.4.bias": [
+   1376
+  ],
+  "_encoder.state.4.ln.weight": [
+   1376
+  ],
+  "_encoder.state.4.ln.bias": [
+   1376
+  ],
+  "_dynamics.0.weight": [
+   4096,
+   1478
+  ],
+  "_dynamics.0.bias": [
+   4096
+  ],
+  "_dynamics.0.ln.weight": [
+   4096
+  ],
+  "_dynamics.0.ln.bias": [
+   4096
+  ],
+  "_dynamics.1.weight": [
+   4096,
+   4096
+  ],
+  "_dynamics.1.bias": [
+   4096
+  ],
+  "_dynamics.1.ln.weight": [
+   4096
+  ],
+  "_dynamics.1.ln.bias": [
+   4096
+  ],
+  "_dynamics.2.weight": [
+   1376,
+   4096
+  ],
+  "_dynamics.2.bias": [
+   1376
+  ],
+  "_dynamics.2.ln.weight": [
+   1376
+  ],
+  "_dynamics.2.ln.bias": [
+   1376
+  ],
+  "_reward.0.weight": [
+   4096,
+   1478
+  ],
+  "_reward.0.bias": [
+   4096
+  ],
+  "_reward.0.ln.weight": [
+   4096
+  ],
+  "_reward.0.ln.bias": [
+   4096
+  ],
+  "_reward.1.weight": [
+   4096,
+   4096
+  ],
+  "_reward.1.bias": [
+   4096
+  ],
+  "_reward.1.ln.weight": [
+   4096
+  ],
+  "_reward.1.ln.bias": [
+   4096
+  ],
+  "_reward.2.weight": [
+   101,
+   4096
+  ],
+  "_reward.2.bias": [
+   101
+  ],
+  "_pi.0.weight": [
+   4096,
+   1472
+  ],
+  "_pi.0.bias": [
+   4096
+  ],
+  "_pi.0.ln.weight": [
+   4096
+  ],
+  "_pi.0.ln.bias": [
+   4096
+  ],
+  "_pi.1.weight": [
+   4096,
+   4096
+  ],
+  "_pi.1.bias": [
+   4096
+  ],
+  "_pi.1.ln.weight": [
+   4096
+  ],
+  "_pi.1.ln.bias": [
+   4096
+  ],
+  "_pi.2.weight": [
+   12,
+   4096
+  ],
+  "_pi.2.bias": [
+   12
+  ]
+ },
+ "ckpt_q_keys_sample": [
+  "_Qs.params.0",
+  "_Qs.params.1",
+  "_Qs.params.2",
+  "_Qs.params.3",
+  "_Qs.params.4",
+  "_Qs.params.5",
+  "_Qs.params.6",
+  "_Qs.params.7",
+  "_Qs.params.8",
+  "_Qs.params.9",
+  "_target_Qs.params.0",
+  "_target_Qs.params.1"
+ ],
+ "ckpt_numel_without_target_Qs": 317383129,
+ "agent_total_params": 317383129,
+ "agent_iterations": 6,
+ "agent_task_dim": 96,
+ "agent_latent_dim": 1376,
+ "agent_mlp_dim": 4096,
+ "dynamics": "Sequential(\n  (0): NormedLinear(in_features=1478, out_features=4096, bias=True, act=Mish)\n  (1): NormedLinear(in_features=4096, out_features=4096, bias=True, act=Mish)\n  (2): NormedLinear(in_features=4096, out_features=1376, bias=True, act=SimNorm)\n)",
+ "reward": "Sequential(\n  (0): NormedLinear(in_features=1478, out_features=4096, bias=True, act=Mish)\n  (1): NormedLinear(in_features=4096, out_features=4096, bias=True, act=Mish)\n  (2): Linear(in_features=4096, out_features=101, bias=True)\n)",
+ "encoder": "ModuleDict(\n  (state): Sequential(\n    (0): NormedLinear(in_features=135, out_features=4096, bias=True, act=Mish)\n    (1): NormedLinear(in_features=4096, out_features=4096, bias=True, act=Mish)\n    (2): NormedLinear(in_features=4096, out_features=4096, bias=True, act=Mish)\n    (3): NormedLinear(in_features=4096, out_features=4096, bias=True, act=Mish)\n    (4): NormedLinear(in_features=4096, out_features=1376, bias=True, act=SimNorm)\n  )\n)",
+ "quant_layers": {
+  "dyn0": "NormedLinear(in_features=1478, out_features=4096, bias=True, act=Mish)",
+  "dyn1": "NormedLinear(in_features=4096, out_features=4096, bias=True, act=Mish)",
+  "rew0": "NormedLinear(in_features=1478, out_features=4096, bias=True, act=Mish)",
+  "rew1": "NormedLinear(in_features=4096, out_features=4096, bias=True, act=Mish)"
+ },
+ "candidates": {
+  "mw-push": {
+   "idx": 63,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-pick-place": {
+   "idx": 56,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-door-open": {
+   "idx": 41,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-drawer-open": {
+   "idx": 44,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-button-press-topdown": {
+   "idx": 32,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-peg-insert-side": {
+   "idx": 53,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-window-open": {
+   "idx": 73,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-sweep-into": {
+   "idx": 71,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-reach": {
+   "idx": 65,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-button-press": {
+   "idx": 34,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-door-close": {
+   "idx": 42,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-drawer-close": {
+   "idx": 43,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-faucet-open": {
+   "idx": 45,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-faucet-close": {
+   "idx": 46,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-plate-slide": {
+   "idx": 58,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-coffee-button": {
+   "idx": 36,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-handle-press": {
+   "idx": 49,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  },
+  "mw-window-close": {
+   "idx": 74,
+   "mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "discount": 0.949999988079071,
+   "obs": 39,
+   "act": 4,
+   "ep_len": 100
+  }
+ },
+ "quantizer_mods": {
+  "dyn0": [
+   1478,
+   4096
+  ],
+  "dyn1": [
+   4096,
+   4096
+  ],
+  "rew0": [
+   1478,
+   4096
+  ],
+  "rew1": [
+   4096,
+   4096
+  ]
+ },
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "gpu_mem_alloc_gb": 2.01816064
+}

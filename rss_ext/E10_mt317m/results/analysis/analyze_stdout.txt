@@ -1,0 +1,84 @@
+{
+ "qualified": [
+  "mw-push",
+  "mw-pick-place",
+  "mw-door-open",
+  "mw-drawer-open",
+  "mw-button-press-topdown",
+  "mw-peg-insert-side",
+  "mw-window-open",
+  "mw-sweep-into"
+ ],
+ "fallback_used": [],
+ "ksel": {
+  "mw-push": 5,
+  "mw-pick-place": 3,
+  "mw-door-open": 3,
+  "mw-drawer-open": 4,
+  "mw-button-press-topdown": 3,
+  "mw-peg-insert-side": 3,
+  "mw-window-open": 3,
+  "mw-sweep-into": 3
+ },
+ "judgement": {
+  "eval_tasks": [
+   "mw-push",
+   "mw-pick-place",
+   "mw-door-open",
+   "mw-drawer-open",
+   "mw-button-press-topdown",
+   "mw-peg-insert-side",
+   "mw-window-open",
+   "mw-sweep-into"
+  ],
+  "holm_alpha": 0.05,
+  "damaged": [
+   "mw-push",
+   "mw-pick-place",
+   "mw-door-open",
+   "mw-drawer-open",
+   "mw-button-press-topdown",
+   "mw-peg-insert-side",
+   "mw-window-open",
+   "mw-sweep-into"
+  ],
+  "G1": {
+   "holds": true,
+   "n_damaged": 8,
+   "threshold": 3
+  },
+  "G2": {
+   "holds": true,
+   "defined": true,
+   "share_red_ge_half": 1.0,
+   "tasks_red_ge_half": [
+    "mw-push",
+    "mw-pick-place",
+    "mw-door-open",
+    "mw-drawer-open",
+    "mw-button-press-topdown",
+    "mw-peg-insert-side",
+    "mw-window-open",
+    "mw-sweep-into"
+   ],
+   "harmful_eval_tasks": [],
+   "harmful_damaged_tasks": [],
+   "holds_if_harm_only_among_damaged": true
+  },
+  "G3": {
+   "holds": true,
+   "tasks_det_le_sh": [
+    "mw-push",
+    "mw-pick-place",
+    "mw-door-open",
+    "mw-drawer-open",
+    "mw-button-press-topdown",
+    "mw-peg-insert-side",
+    "mw-window-open",
+    "mw-sweep-into"
+   ],
+   "n": 8,
+   "n_damaged": 8
+  }
+ }
+}

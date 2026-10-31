@@ -1,0 +1,267 @@
+09:26:55 env {'torch': '2.7.1+cu126', 'cuda': '12.6', 'triton': '3.3.1', 'gpu': 'NVIDIA A40', 'capability': [8, 6], 'sm_count': 84, 'nvidia_smi': 'NVIDIA A40, 595.91.07, 1740 MHz, 7251 MHz, 300.00 W, 46068 MiB', 'python': '3.11.10', 'nproc': 96, 'tdmpc2_dir': '/root/tdmpc2/tdmpc2', 'allow_tf32_default': False, 'time': '2026-10-31T09:26:55Z'}
+Episode length: 100
+Discount factor: 0.95
+09:26:56 model 5: dims {'enc_dim': 256, 'mlp_dim': 512, 'latent_dim': 512, 'num_enc_layers': 2, 'num_q': 5} ranges {'dyn0': (-0.3088434338569641, 3.5578062534332275), 'dyn1': (-0.3088434338569641, 3.802492141723633), 'rew0': (-0.3088434338569641, 3.8925795555114746), 'rew1': (-0.3088434338569641, 3.685372829437256)} mem 0.04 GiB
+Episode length: 100
+Discount factor: 0.95
+09:26:56 model 19: dims {'enc_dim': 1024, 'mlp_dim': 1024, 'latent_dim': 768, 'num_enc_layers': 3, 'num_q': 5} ranges {'dyn0': (-0.3088434338569641, 3.610473155975342), 'dyn1': (-0.3088434338569641, 3.7046408653259277), 'rew0': (-0.3088434338569641, 3.6276516914367676), 'rew1': (-0.3088434338569641, 3.612825870513916)} mem 0.14 GiB
+Episode length: 100
+Discount factor: 0.95
+09:26:57 model 48: dims {'enc_dim': 1792, 'mlp_dim': 1792, 'latent_dim': 768, 'num_enc_layers': 4, 'num_q': 5} ranges {'dyn0': (-0.3088434338569641, 3.6772027015686035), 'dyn1': (-0.3088434338569641, 3.6280131340026855), 'rew0': (-0.3088434338569641, 3.9781134128570557), 'rew1': (-0.3088434338569641, 3.5931570529937744)} mem 0.41 GiB
+Episode length: 100
+Discount factor: 0.95
+09:27:03 model 317: dims {'enc_dim': 4096, 'mlp_dim': 4096, 'latent_dim': 1376, 'num_enc_layers': 5, 'num_q': 8} ranges {'dyn0': (-0.3088434338569641, 3.6703617572784424), 'dyn1': (-0.3088434338569641, 3.7405149936676025), 'rew0': (-0.3088434338569641, 3.6174094676971436), 'rew1': (-0.3088434338569641, 3.7462809085845947)} mem 2.26 GiB
+09:27:10 tune 24,512,512: ([32, 32, 128, 4, 2], 0.007137542175331029)
+09:27:11 tune 24,768,1024: ([16, 64, 128, 4, 4], 0.008301333324717624)
+09:27:12 tune 24,768,1792: ([32, 32, 128, 4, 2], 0.010019047640352732)
+09:27:13 tune 24,1024,1024: ([32, 32, 128, 4, 2], 0.008920000023430302)
+09:27:13 tune 24,1376,4096: ([32, 32, 128, 4, 2], 0.01976078051346831)
+09:27:14 tune 24,1792,1792: ([16, 64, 128, 4, 4], 0.013479710837085563)
+09:27:15 tune 24,4096,4096: ([16, 64, 128, 4, 4], 0.04210551880017112)
+09:27:23 tune 512,101,512: ([16, 64, 128, 4, 4], 0.007567807280245316)
+09:27:23 tune 512,101,1024: ([32, 32, 128, 4, 2], 0.008760381046505202)
+09:27:24 tune 512,101,1792: ([32, 32, 128, 4, 2], 0.010966746978102678)
+09:27:25 tune 512,101,4096: ([16, 64, 128, 4, 4], 0.01635278041315515)
+09:27:32 tune 512,512,512: ([64, 64, 128, 4, 4], 0.008870554201484445)
+09:27:33 tune 512,768,1024: ([64, 64, 64, 5, 4], 0.014113951179130776)
+09:27:34 tune 512,768,1792: ([64, 128, 128, 4, 4], 0.018065170725671258)
+09:27:34 tune 512,1024,1024: ([64, 128, 128, 4, 4], 0.01410467464880771)
+09:27:35 tune 512,1376,4096: ([64, 64, 64, 5, 4], 0.05317361062610304)
+09:27:36 tune 512,1792,1792: ([64, 128, 64, 4, 4], 0.029581599961966278)
+09:27:37 tune 512,4096,4096: ([128, 128, 64, 3, 4], 0.09748101402336443)
+09:27:37 tune 2048,101,512: ([64, 64, 128, 4, 4], 0.01033368671918849)
+09:27:38 tune 2048,101,1024: ([64, 64, 128, 4, 4], 0.013082216875291014)
+09:27:39 tune 2048,101,1792: ([64, 64, 128, 4, 4], 0.015856963986284042)
+09:27:40 tune 2048,101,4096: ([64, 64, 128, 4, 4], 0.028788938313538646)
+09:27:40 tune 2048,512,512: ([128, 64, 64, 4, 4], 0.01672858535879996)
+09:27:41 tune 2048,768,1024: ([64, 64, 64, 5, 4], 0.032777199940755966)
+09:27:42 tune 2048,768,1792: ([64, 64, 64, 5, 4], 0.04548862339420752)
+09:27:43 tune 2048,1024,1024: ([128, 128, 64, 3, 4], 0.03776526597293117)
+09:27:44 tune 2048,1376,4096: ([128, 128, 64, 3, 4], 0.14414916886733128)
+09:27:44 tune 2048,1792,1792: ([128, 128, 64, 3, 4], 0.08294577772418658)
+09:27:45 tune 2048,4096,4096: ([128, 128, 64, 3, 4], 0.33991706188844173)
+09:27:46 tune 8192,101,512: ([64, 128, 64, 4, 4], 0.020200195063541575)
+09:27:47 tune 8192,101,1024: ([128, 128, 128, 3, 8], 0.030368000082671643)
+09:27:47 tune 8192,101,1792: ([128, 128, 128, 3, 8], 0.044206359017735876)
+09:27:48 tune 8192,101,4096: ([128, 128, 128, 3, 8], 0.08196622267779377)
+09:27:49 tune 8192,512,512: ([64, 64, 64, 5, 4], 0.047895272879244444)
+09:27:50 tune 8192,768,1024: ([64, 64, 64, 5, 4], 0.09764937130468232)
+09:27:51 tune 8192,768,1792: ([128, 128, 64, 3, 4], 0.1319932113542701)
+09:27:51 tune 8192,1024,1024: ([64, 64, 64, 5, 4], 0.12571940448746752)
+09:27:52 tune 8192,1376,4096: ([128, 128, 64, 3, 4], 0.4433272529480069)
+09:27:53 tune 8192,1792,1792: ([128, 128, 64, 3, 4], 0.2853366153744551)
+09:27:54 tune 8192,4096,4096: ([128, 128, 64, 3, 4], 1.2944806969684104)
+09:27:56 check 5 a|det|dyn: M512=True M24=True
+09:27:56 check 5 a|det|rew: M512=True
+09:27:57 check 5 a|shiter|dyn: M512=True M24=True M512_second=True new_u_share_changed0=0.29819488525390625 new_u_share_changed1=0.435546875 identical_rows_equal=True pass_dither=True
+09:27:57 check 5 a|shiter|rew: M512=True M512_second=True new_u_share_changed0=0.29666900634765625 new_u_share_changed1=0.43946075439453125 identical_rows_equal=True pass_dither=True
+09:27:57 check 5 b|det|dyn: M512=True M24=True
+09:27:57 check 5 b|det|rew: M512=True
+09:27:57 check 5 b|shiter|dyn: M512=True M24=True M512_second=True new_u_share_changed0=0.29819488525390625 new_u_share_changed1=0.435546875 identical_rows_equal=True pass_dither=True
+09:27:57 check 5 b|shiter|rew: M512=True M512_second=True new_u_share_changed0=0.29666900634765625 new_u_share_changed1=0.43946075439453125 identical_rows_equal=True pass_dither=True
+09:28:00 check 5 e7|det|dyn: M512=True M24=True
+09:28:02 check 5 e7|det|rew: M512=True
+09:28:06 check 5 e7|shiter|dyn: M512=True M24=True M512_second=True new_u_share_changed0=0.29819488525390625 new_u_share_changed1=0.435546875 identical_rows_equal=True pass_dither=True
+09:28:08 check 5 e7|shiter|rew: M512=True M512_second=True new_u_share_changed0=0.29666900634765625 new_u_share_changed1=0.43946075439453125 identical_rows_equal=True pass_dither=True
+09:28:09 rollout check 5 a int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'replay_maxabs_diff': 0.0, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+09:28:09 rollout check 5 a int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'replay_maxabs_diff': 0.44308313727378845, 'pass': True}
+09:28:09 rollout check 5 b int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'replay_maxabs_diff': 0.0, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+09:28:09 rollout check 5 b int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'replay_maxabs_diff': 0.44308313727378845, 'pass': True}
+09:28:09 rollout check 5 e7 int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'replay_maxabs_diff': 0.0, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+09:28:10 rollout check 5 e7 int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'replay_maxabs_diff': 0.4430832266807556, 'pass': True}
+09:28:12 check 19 a|det|dyn: M512=True M24=True
+09:28:12 check 19 a|det|rew: M512=True
+09:28:14 check 19 a|shiter|dyn: M512=True M24=True M512_second=True new_u_share_changed0=0.3051261901855469 new_u_share_changed1=0.4376716613769531 identical_rows_equal=True pass_dither=True
+09:28:15 check 19 a|shiter|rew: M512=True M512_second=True new_u_share_changed0=0.2851448059082031 new_u_share_changed1=0.4290752410888672 identical_rows_equal=True pass_dither=True
+09:28:16 check 19 b|det|dyn: M512=True M24=True
+09:28:16 check 19 b|det|rew: M512=True
+09:28:18 check 19 b|shiter|dyn: M512=True M24=True M512_second=True new_u_share_changed0=0.3051261901855469 new_u_share_changed1=0.4376716613769531 identical_rows_equal=True pass_dither=True
+09:28:18 check 19 b|shiter|rew: M512=True M512_second=True new_u_share_changed0=0.2851448059082031 new_u_share_changed1=0.4290752410888672 identical_rows_equal=True pass_dither=True
+09:28:18 rollout check 19 a int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'replay_maxabs_diff': 0.0, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+09:28:18 rollout check 19 a int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'replay_maxabs_diff': 0.3871329724788666, 'pass': True}
+09:28:19 rollout check 19 b int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'replay_maxabs_diff': 0.0, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+09:28:19 rollout check 19 b int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'replay_maxabs_diff': 0.3871329724788666, 'pass': True}
+09:28:21 check 48 a|det|dyn: M512=True M24=True
+09:28:21 check 48 a|det|rew: M512=True
+09:28:23 check 48 a|shiter|dyn: M512=True M24=True M512_second=True new_u_share_changed0=0.30381450057029724 new_u_share_changed1=0.4332035779953003 identical_rows_equal=True pass_dither=True
+09:28:24 check 48 a|shiter|rew: M512=True M512_second=True new_u_share_changed0=0.28954097628593445 new_u_share_changed1=0.444370836019516 identical_rows_equal=True pass_dither=True
+09:28:25 check 48 b|det|dyn: M512=True M24=True
+09:28:25 check 48 b|det|rew: M512=True
+09:28:26 check 48 b|shiter|dyn: M512=True M24=True M512_second=True new_u_share_changed0=0.30381450057029724 new_u_share_changed1=0.4332035779953003 identical_rows_equal=True pass_dither=True
+09:28:26 check 48 b|shiter|rew: M512=True M512_second=True new_u_share_changed0=0.28954097628593445 new_u_share_changed1=0.444370836019516 identical_rows_equal=True pass_dither=True
+09:28:26 rollout check 48 a int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'replay_maxabs_diff': 0.0, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+09:28:26 rollout check 48 a int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'replay_maxabs_diff': 0.4579943120479584, 'pass': True}
+09:28:26 rollout check 48 b int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'replay_maxabs_diff': 0.0, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+09:28:27 rollout check 48 b int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'replay_maxabs_diff': 0.4579943120479584, 'pass': True}
+09:28:27 check 317 a|det|dyn: M512=True M24=True
+09:28:27 check 317 a|det|rew: M512=True
+09:28:28 check 317 a|shiter|dyn: M512=True M24=True M512_second=True new_u_share_changed0=0.29891252517700195 new_u_share_changed1=0.431699275970459 identical_rows_equal=True pass_dither=True
+09:28:28 check 317 a|shiter|rew: M512=True M512_second=True new_u_share_changed0=0.2957582473754883 new_u_share_changed1=0.428164005279541 identical_rows_equal=True pass_dither=True
+09:28:28 check 317 b|det|dyn: M512=True M24=True
+09:28:28 check 317 b|det|rew: M512=True
+09:28:28 check 317 b|shiter|dyn: M512=True M24=True M512_second=True new_u_share_changed0=0.29891252517700195 new_u_share_changed1=0.431699275970459 identical_rows_equal=True pass_dither=True
+09:28:28 check 317 b|shiter|rew: M512=True M512_second=True new_u_share_changed0=0.2957582473754883 new_u_share_changed1=0.428164005279541 identical_rows_equal=True pass_dither=True
+09:28:28 rollout check 317 a int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'replay_maxabs_diff': 0.0, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+09:28:29 rollout check 317 a int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'replay_maxabs_diff': 0.44086745381355286, 'pass': True}
+09:28:29 rollout check 317 b int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'replay_maxabs_diff': 0.0, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+09:28:29 rollout check 317 b int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'replay_maxabs_diff': 0.44086745381355286, 'pass': True}
+09:28:59 select 5: T={'512|a': 2.231872081756592, '512|b': 2.3058879375457764, '2048|a': 5.865600109100342, '2048|b': 6.094592094421387, '8192|a': 20.554176330566406, '8192|b': 20.667232513427734} geo={'a': 6.455956711062267, 'b': 6.622496269093066} -> a
+09:29:38 select 19: T={'512|a': 3.896480083465576, '512|b': 4.024384021759033, '2048|a': 12.816448211669922, '2048|b': 13.289728164672852, '8192|a': 47.13225555419922, '8192|b': 47.86377716064453} geo={'a': 13.30207699121361, 'b': 13.679624002584532} -> a
+09:30:24 select 48: T={'512|a': 5.993024110794067, '512|b': 6.393903970718384, '2048|a': 21.59404754638672, '2048|b': 22.811904907226562, '8192|a': 77.49827194213867, '8192|b': 79.3012466430664} geo={'a': 21.565392436781213, 'b': 22.615310709128373} -> a
+09:32:19 select 317: T={'512|a': 22.611167907714844, '512|b': 24.582719802856445, '2048|a': 76.56158447265625, '2048|b': 79.35670471191406, '8192|a': 290.47021484375, '8192|b': 295.01182556152344} geo={'a': 79.52039059057697, 'b': 83.17975953076277} -> a
+09:32:20 calib graph|5|512|fp32|-: 4.126 ms (build 0.1s)
+09:32:20 calib graph|5|512|tf32|-: 2.756 ms (build 0.1s)
+09:32:21 calib graph|5|512|bf16|-: 2.818 ms (build 0.1s)
+09:32:21 calib graph|5|512|int-det|a: 2.231 ms (build 0.1s)
+09:32:22 calib graph|5|512|int-shiter|a: 2.261 ms (build 0.2s)
+09:32:22 calib graph|5|512|e7-det|e7: 2.940 ms (build 0.1s)
+09:32:23 calib graph|5|512|e7-shiter|e7: 3.073 ms (build 0.1s)
+09:32:23 calib graph|5|2048|fp32|-: 12.074 ms (build 0.1s)
+09:32:23 calib graph|5|2048|tf32|-: 5.574 ms (build 0.1s)
+09:32:24 calib graph|5|2048|bf16|-: 7.327 ms (build 0.2s)
+09:32:24 calib graph|5|2048|int-det|a: 5.904 ms (build 0.2s)
+09:32:25 calib graph|5|2048|int-shiter|a: 5.937 ms (build 0.6s)
+09:32:26 calib graph|5|2048|e7-det|e7: 7.118 ms (build 0.1s)
+09:32:26 calib graph|5|2048|e7-shiter|e7: 7.375 ms (build 0.1s)
+09:32:27 calib graph|5|8192|fp32|-: 42.334 ms (build 0.2s)
+09:32:28 calib graph|5|8192|tf32|-: 24.712 ms (build 0.2s)
+09:32:28 calib graph|5|8192|bf16|-: 29.933 ms (build 0.2s)
+09:32:29 calib graph|5|8192|int-det|a: 20.653 ms (build 0.2s)
+09:32:32 calib graph|5|8192|int-shiter|a: 21.129 ms (build 2.9s)
+09:32:33 calib graph|5|8192|e7-det|e7: 24.531 ms (build 0.2s)
+09:32:33 calib graph|5|8192|e7-shiter|e7: 25.354 ms (build 0.2s)
+09:32:34 calib graph|19|512|fp32|-: 9.200 ms (build 0.1s)
+09:32:34 calib graph|19|512|tf32|-: 4.968 ms (build 0.1s)
+09:32:35 calib graph|19|512|bf16|-: 5.069 ms (build 0.2s)
+09:32:35 calib graph|19|512|int-det|a: 3.865 ms (build 0.2s)
+09:32:36 calib graph|19|512|int-shiter|a: 3.947 ms (build 0.1s)
+09:32:36 calib graph|19|2048|fp32|-: 29.196 ms (build 0.2s)
+09:32:37 calib graph|19|2048|tf32|-: 15.403 ms (build 0.1s)
+09:32:37 calib graph|19|2048|bf16|-: 16.632 ms (build 0.2s)
+09:32:38 calib graph|19|2048|int-det|a: 12.841 ms (build 0.1s)
+09:32:40 calib graph|19|2048|int-shiter|a: 12.906 ms (build 2.3s)
+09:32:41 calib graph|19|8192|fp32|-: 105.305 ms (build 0.4s)
+09:32:42 calib graph|19|8192|tf32|-: 56.708 ms (build 0.3s)
+09:32:43 calib graph|19|8192|bf16|-: 62.392 ms (build 0.3s)
+09:32:44 calib graph|19|8192|int-det|a: 47.161 ms (build 0.3s)
+09:32:47 calib graph|19|8192|int-shiter|a: 48.335 ms (build 3.0s)
+09:32:48 calib graph|48|512|fp32|-: 14.839 ms (build 0.1s)
+09:32:48 calib graph|48|512|tf32|-: 8.735 ms (build 0.1s)
+09:32:49 calib graph|48|512|bf16|-: 9.726 ms (build 0.1s)
+09:32:49 calib graph|48|512|int-det|a: 5.953 ms (build 0.1s)
+09:32:50 calib graph|48|512|int-shiter|a: 6.078 ms (build 0.2s)
+09:32:51 calib graph|48|2048|fp32|-: 57.974 ms (build 0.3s)
+09:32:51 calib graph|48|2048|tf32|-: 28.504 ms (build 0.2s)
+09:32:52 calib graph|48|2048|bf16|-: 30.126 ms (build 0.2s)
+09:32:52 calib graph|48|2048|int-det|a: 21.483 ms (build 0.2s)
+09:32:55 calib graph|48|2048|int-shiter|a: 21.881 ms (build 2.5s)
+09:32:57 calib graph|48|8192|fp32|-: 219.177 ms (build 0.8s)
+09:32:58 calib graph|48|8192|tf32|-: 106.612 ms (build 0.4s)
+09:33:00 calib graph|48|8192|bf16|-: 105.559 ms (build 0.5s)
+09:33:00 calib graph|48|8192|int-det|a: 76.902 ms (build 0.4s)
+09:33:04 calib graph|48|8192|int-shiter|a: 78.888 ms (build 2.7s)
+09:33:05 calib graph|317|512|fp32|-: 62.705 ms (build 0.3s)
+09:33:05 calib graph|317|512|tf32|-: 28.817 ms (build 0.2s)
+09:33:06 calib graph|317|512|bf16|-: 30.477 ms (build 0.2s)
+09:33:06 calib graph|317|512|int-det|a: 21.959 ms (build 0.2s)
+09:33:07 calib graph|317|512|int-shiter|a: 22.351 ms (build 0.2s)
+09:33:09 calib graph|317|2048|fp32|-: 242.584 ms (build 0.8s)
+09:33:10 calib graph|317|2048|tf32|-: 104.641 ms (build 0.4s)
+09:33:11 calib graph|317|2048|bf16|-: 89.733 ms (build 0.4s)
+09:33:12 calib graph|317|2048|int-det|a: 75.545 ms (build 0.4s)
+09:33:16 calib graph|317|2048|int-shiter|a: 75.369 ms (build 3.0s)
+09:33:24 calib graph|317|8192|fp32|-: 895.522 ms (build 2.8s)
+09:33:28 calib graph|317|8192|tf32|-: 372.571 ms (build 1.3s)
+09:33:30 calib graph|317|8192|bf16|-: 304.416 ms (build 1.0s)
+09:33:33 calib graph|317|8192|int-det|a: 286.790 ms (build 1.0s)
+09:33:39 calib graph|317|8192|int-shiter|a: 289.340 ms (build 3.9s)
+09:33:39 calib eager|5|512|fp32|-: 6.271 ms (build 0.0s)
+09:33:39 calib eager|5|512|tf32|-: 6.458 ms (build 0.0s)
+09:33:40 calib eager|5|512|bf16|-: 11.708 ms (build 0.0s)
+09:33:40 calib eager|5|512|int-det|a: 11.359 ms (build 0.0s)
+09:33:41 calib eager|5|512|int-shiter|a: 11.558 ms (build 0.0s)
+09:33:41 calib eager|5|512|e7-det|e7: 8.584 ms (build 0.0s)
+09:33:41 calib eager|5|512|e7-shiter|e7: 8.557 ms (build 0.0s)
+09:33:42 calib eager|5|2048|fp32|-: 12.407 ms (build 0.0s)
+09:33:42 calib eager|5|2048|tf32|-: 6.521 ms (build 0.0s)
+09:33:42 calib eager|5|2048|bf16|-: 11.707 ms (build 0.0s)
+09:33:43 calib eager|5|2048|int-det|a: 11.581 ms (build 0.0s)
+09:33:43 calib eager|5|2048|int-shiter|a: 11.618 ms (build 0.0s)
+09:33:43 calib eager|5|2048|e7-det|e7: 8.701 ms (build 0.0s)
+09:33:44 calib eager|5|2048|e7-shiter|e7: 8.631 ms (build 0.0s)
+09:33:44 calib eager|5|8192|fp32|-: 42.731 ms (build 0.0s)
+09:33:44 calib eager|5|8192|tf32|-: 25.403 ms (build 0.0s)
+09:33:45 calib eager|5|8192|bf16|-: 31.587 ms (build 0.0s)
+09:33:45 calib eager|5|8192|int-det|a: 21.548 ms (build 0.0s)
+09:33:46 calib eager|5|8192|int-shiter|a: 22.028 ms (build 0.0s)
+09:33:46 calib eager|5|8192|e7-det|e7: 25.298 ms (build 0.0s)
+09:33:46 calib eager|5|8192|e7-shiter|e7: 26.095 ms (build 0.0s)
+09:33:47 calib eager|19|512|fp32|-: 9.701 ms (build 0.0s)
+09:33:47 calib eager|19|512|tf32|-: 8.500 ms (build 0.0s)
+09:33:47 calib eager|19|512|bf16|-: 14.785 ms (build 0.0s)
+09:33:48 calib eager|19|512|int-det|a: 14.850 ms (build 0.0s)
+09:33:48 calib eager|19|512|int-shiter|a: 15.136 ms (build 0.0s)
+09:33:49 calib eager|19|2048|fp32|-: 29.868 ms (build 0.0s)
+09:33:49 calib eager|19|2048|tf32|-: 16.194 ms (build 0.0s)
+09:33:49 calib eager|19|2048|bf16|-: 18.308 ms (build 0.0s)
+09:33:50 calib eager|19|2048|int-det|a: 13.638 ms (build 0.0s)
+09:33:50 calib eager|19|2048|int-shiter|a: 13.730 ms (build 0.0s)
+09:33:51 calib eager|19|8192|fp32|-: 105.890 ms (build 0.0s)
+09:33:51 calib eager|19|8192|tf32|-: 57.690 ms (build 0.0s)
+09:33:52 calib eager|19|8192|bf16|-: 64.103 ms (build 0.0s)
+09:33:52 calib eager|19|8192|int-det|a: 47.911 ms (build 0.0s)
+09:33:53 calib eager|19|8192|int-shiter|a: 49.397 ms (build 0.0s)
+09:33:53 calib eager|48|512|fp32|-: 15.332 ms (build 0.0s)
+09:33:53 calib eager|48|512|tf32|-: 9.292 ms (build 0.0s)
+09:33:54 calib eager|48|512|bf16|-: 12.282 ms (build 0.0s)
+09:33:54 calib eager|48|512|int-det|a: 12.258 ms (build 0.0s)
+09:33:54 calib eager|48|512|int-shiter|a: 12.517 ms (build 0.0s)
+09:33:55 calib eager|48|2048|fp32|-: 58.563 ms (build 0.0s)
+09:33:55 calib eager|48|2048|tf32|-: 29.369 ms (build 0.0s)
+09:33:56 calib eager|48|2048|bf16|-: 31.680 ms (build 0.0s)
+09:33:56 calib eager|48|2048|int-det|a: 22.212 ms (build 0.0s)
+09:33:57 calib eager|48|2048|int-shiter|a: 22.746 ms (build 0.0s)
+09:33:58 calib eager|48|8192|fp32|-: 219.683 ms (build 0.0s)
+09:33:59 calib eager|48|8192|tf32|-: 107.672 ms (build 0.0s)
+09:33:59 calib eager|48|8192|bf16|-: 107.535 ms (build 0.0s)
+09:34:00 calib eager|48|8192|int-det|a: 77.759 ms (build 0.0s)
+09:34:00 calib eager|48|8192|int-shiter|a: 80.687 ms (build 0.0s)
+09:34:01 calib eager|317|512|fp32|-: 63.993 ms (build 0.0s)
+09:34:01 calib eager|317|512|tf32|-: 29.375 ms (build 0.0s)
+09:34:02 calib eager|317|512|bf16|-: 31.792 ms (build 0.0s)
+09:34:02 calib eager|317|512|int-det|a: 23.152 ms (build 0.0s)
+09:34:02 calib eager|317|512|int-shiter|a: 23.467 ms (build 0.0s)
+09:34:04 calib eager|317|2048|fp32|-: 244.042 ms (build 0.0s)
+09:34:05 calib eager|317|2048|tf32|-: 105.732 ms (build 0.0s)
+09:34:05 calib eager|317|2048|bf16|-: 91.282 ms (build 0.0s)
+09:34:06 calib eager|317|2048|int-det|a: 77.025 ms (build 0.0s)
+09:34:06 calib eager|317|2048|int-shiter|a: 77.280 ms (build 0.0s)
+09:34:12 calib eager|317|8192|fp32|-: 899.786 ms (build 0.0s)
+09:34:14 calib eager|317|8192|tf32|-: 373.937 ms (build 0.0s)
+09:34:16 calib eager|317|8192|bf16|-: 306.189 ms (build 0.0s)
+09:34:18 calib eager|317|8192|int-det|a: 290.420 ms (build 0.0s)
+09:34:19 calib eager|317|8192|int-shiter|a: 291.793 ms (build 0.0s)
+09:34:20 calib step|5|512|fp32|-: 23.506 ms (build 0.0s)
+09:34:20 calib step|5|512|tf32|-: 23.950 ms (build 0.0s)
+09:34:21 calib step|5|512|bf16|-: 29.233 ms (build 0.0s)
+09:34:21 calib step|5|512|int-det|a: 29.894 ms (build 0.0s)
+09:34:21 calib step|5|512|int-shiter|a: 30.283 ms (build 0.0s)
+09:34:22 calib step|5|512|e7-det|e7: 26.653 ms (build 0.0s)
+09:34:22 calib step|5|512|e7-shiter|e7: 27.748 ms (build 0.0s)
+09:34:23 calib step|19|512|fp32|-: 23.689 ms (build 0.0s)
+09:34:23 calib step|19|512|tf32|-: 24.212 ms (build 0.0s)
+09:34:23 calib step|19|512|bf16|-: 30.319 ms (build 0.0s)
+09:34:24 calib step|19|512|int-det|a: 30.157 ms (build 0.0s)
+09:34:24 calib step|19|512|int-shiter|a: 30.591 ms (build 0.0s)
+09:34:25 calib step|48|512|fp32|-: 35.444 ms (build 0.0s)
+09:34:25 calib step|48|512|tf32|-: 30.125 ms (build 0.0s)
+09:34:25 calib step|48|512|bf16|-: 32.226 ms (build 0.0s)
+09:34:26 calib step|48|512|int-det|a: 31.616 ms (build 0.0s)
+09:34:26 calib step|48|512|int-shiter|a: 35.696 ms (build 0.0s)
+09:34:27 calib step|317|512|fp32|-: 156.667 ms (build 0.0s)
+09:34:28 calib step|317|512|tf32|-: 120.198 ms (build 0.0s)
+09:34:29 calib step|317|512|bf16|-: 122.839 ms (build 0.0s)
+09:34:29 calib step|317|512|int-det|a: 114.224 ms (build 0.0s)
+09:34:30 calib step|317|512|int-shiter|a: 114.551 ms (build 0.0s)
+09:34:30 calib: est round 646 s, main (10 rounds + graph builds) 108.3 min
+09:34:44 SMOKE_DONE 469s

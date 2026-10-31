@@ -1,0 +1,9 @@
+task,role,n,held_none_success,qualified,success_any_rate,act_ms_median
+mw-push,candidate,30,1,True,1,153.1
+mw-pick-place,candidate,30,0.9667,True,1,153
+mw-door-open,candidate,30,0.8667,True,1,153.1
+mw-drawer-open,candidate,30,0.7,True,1,153.3
+mw-button-press-topdown,candidate,30,1,True,1,159.4
+mw-peg-insert-side,candidate,30,1,True,1,158.5
+mw-window-open,candidate,30,1,True,1,158.9
+mw-sweep-into,candidate,30,1,True,1,158.8

@@ -1,0 +1,58 @@
+{
+ "tasks": [
+  "mw-push",
+  "mw-door-open"
+ ],
+ "seed": 99000,
+ "state_dict_same_keys": true,
+ "state_dict_diff": [],
+ "discount_equal": true,
+ "cfg_equal": {
+  "obs_shapes": true,
+  "action_dims": true,
+  "episode_lengths": true,
+  "obs_shape": true,
+  "action_dim": true,
+  "episode_length": true,
+  "task_dim": true,
+  "latent_dim": true,
+  "mlp_dim": true,
+  "num_q": true,
+  "iterations": true,
+  "horizon": true,
+  "num_samples": true
+ },
+ "episodes": {
+  "mw-push": {
+   "idx": 63,
+   "obs0_dim": 39,
+   "obs0_equal": true,
+   "steps_official": 100,
+   "steps_ours": 100,
+   "ret_official": 1799.529182434082,
+   "ret_ours": 1799.529182434082,
+   "success_official": 1.0,
+   "success_ours": 1.0,
+   "actions_bit_identical": true,
+   "max_abs_action_diff": 0.0,
+   "masked_dims_zero": true,
+   "act_ms_median_ours": 72.39731150912121
+  },
+  "mw-door-open": {
+   "idx": 41,
+   "obs0_dim": 39,
+   "obs0_equal": true,
+   "steps_official": 100,
+   "steps_ours": 100,
+   "ret_official": 1637.5607690811157,
+   "ret_ours": 1637.5607690811157,
+   "success_official": 1.0,
+   "success_ours": 1.0,
+   "actions_bit_identical": true,
+   "max_abs_action_diff": 0.0,
+   "masked_dims_zero": true,
+   "act_ms_median_ours": 72.60644400957972
+  }
+ },
+ "all_identical": true
+}
