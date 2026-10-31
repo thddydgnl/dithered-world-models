@@ -23,3 +23,5 @@
 - 2026-10-31T13:02Z **E10 끝**(작업자 보고, e10.1·e10.2 gone, 지출 $6.79). 조정자가 원 job 파일(`results/raw_e10.*/jobs/{held,ksel,eval,perr}`)에서 독립 재계산(`verify_e10.py`): 자격 8/8(drawer-open 0.700 = 문턱), 1차 k push 5·drawer-open 4·나머지 3(보고와 같음), G1 성립 8/8(Holm, p ≤ 0.0002, D_det 0.122~0.989), G2 성립 8/8(red 0.75~1.04, D_sh − D_det CI 상한 8과제 모두 < 0), G3 성립 8/8(det pt_err1h 0.58~6.36 < sh-iter 1.06~9.53). 모두 보고와 같다.
   - [사후] 1-step **보상** 오차(errr)는 det가 8/8에서 sh-iter보다 크다(det 4.9~10.1, sh-iter 0.005~1.36). 조정자가 E1(5M)도 확인: Meta-World 손상 19칸 중 19칸, DMC 12칸 중 7칸에서 det가 크다. 그래서 "1-step 오차로는 손상이 안 보인다"는 잠재(dynamics) 1-step 오차로 한정해야 한다(주장 문구 결정 사항).
 - 2026-10-31T13:02Z **세 실험 모두 끝**. 원장 추정 합 $10.78(E8 $1.64, E8b $0.32, E9 $2.03, E10 $6.79), 사용자 상한 $30의 36%. 모든 arx pod gone.
+- 2026-10-31T15:50Z 사용자가 ① 주장 재구성안([CLAIMS_rss.md](CLAIMS_rss.md) §5)을 "추천대로 승인"(D1~D5, 기록은 CLAIMS_rss.md §7).
+- 2026-10-31T16:00Z **E8c 설계 고정**(D3: 미리 바꾼 BF16, 계획 step 전체 CUDA graph): [DESIGN_E8c.md](DESIGN_E8c.md) sha256 `2e9174b32c265e381122185b464e157f8575b63a3e2e8c972bd12f514680385a`. E8c 자료가 생기기 전이다. `runpod_rss/caps.json`에 e8c $3 추가(합 $28 감시 한도 그대로).
