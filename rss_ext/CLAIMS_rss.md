@@ -101,3 +101,60 @@
 - D3: (i) 미리 바꾼 BF16 기준선과 (ii) 계획 step 전체의 CUDA graph 지연을 E8c로 잰다. 설계는 [DESIGN_E8c.md](DESIGN_E8c.md)(자료 전 고정)이다. C4의 최종 수치와 문구는 E8c 결과와 그 설계 §6의 규칙으로 정한다.
 - D4: 심사 기간에 공개 CV에서 "RSS 2027" 표기를 뺀다. 제목은 그대로 둔다. CV를 고치면 공개 홈페이지·GitHub 프로필·CV PDF에 바로 반영되고, 지원서용 PDF에서도 빠진다. 그래서 제출 직전에 하도록 원고 제출 점검표에 넣는다(`paper/rss2027/README.md`).
 - D5: Stage 2(Extension Charter)에 미리 적을 확장은 보상 오차 진단의 사전등록 검정, DINO-WM 실제 정수 kernel, 계획 step 전체 graph(E8c가 일부를 미리 함), 엣지 장비(Jetson) 측정이다.
+
+## 8. E8c 결과에 따른 C4 수정안 (사용자 승인용, 2026-10-31T22:10Z, 한국 시간 11-01 07:10)
+
+- 근거: [E8c_latency/REPORT.md](E8c_latency/REPORT.md). 판정은 조정자가 원 block 2,400개에서 다시 계산했다([LOG.md](LOG.md) 21:5xZ 항목).
+- 모든 수치는 NVIDIA A40 한 장, pod 하나에서 잰 것이다. 출처는 둘로 나뉜다.
+  - rollout과 FP32의 비교는 E8에서 왔다.
+  - 계획 step 전체와 미리 바꾼 BF16의 비교는 E8c에서 왔다(설계 §6).
+
+### 8.1 결과 요약
+
+| 가설 | 판정 | 수치 |
+|---|---|---|
+| L2c: 정수 rollout이 가장 빠른 부동소수점(미리 바꾼 BF16 포함)의 0.9배 이하인 칸이 있다 | 불성립 0/12 | 정수 rollout이 미리 바꾼 BF16보다 1.07~1.52배 오래 걸린다. 12칸 모두 미리 바꾼 BF16이 가장 빠르다 |
+| S1: 계획 step 전체(CUDA graph 하나)가 FP32의 0.8배 이하 | 성립 12/12 | FP32보다 1.28~1.49배 빠르다 |
+| S2: 계획 step 전체가 가장 빠른 부동소수점의 0.9배 이하 | 불성립 0/12 | 미리 바꾼 BF16보다 1.01~1.12배 오래 걸린다 |
+| S3: 계획 step 전체에서 dither 오버헤드 ≤ 5% | 성립 | 칸별 중앙값은 최대 0.66%, CI 상한은 최대 0.76%다 |
+
+- 기술 항목(판정 없음)
+  - 미리 바꾸면 BF16 rollout이 autocast보다 1.5~2.1배 빨라진다.
+  - FP32 계획 step에서 dynamics·reward의 몫은 40~52%다.
+  - 층 0(양자화하지 않는 FP32 GEMM)만 TF32로 바꾸면 정수 rollout이 미리 바꾼 BF16의 0.72~0.96배가 된다. 다만 이것은 결과를 본 뒤 계산한 값이고, 이 경로는 폐루프로 재지 않았다.
+  - 미리 바꾼 BF16도 폐루프 성공률은 재지 않았다. LayerNorm 등까지 bf16으로 계산하며, fp32 대비 출력 차는 0.5~0.9%다.
+
+### 8.2 결정이 필요한 것
+
+| # | 정할 것 | 추천 |
+|---|---|---|
+| E1 | C4 재정의 | 새 C4: "정수 경로에서 공유 dither는 지연을 거의 더하지 않는다(rollout ≤ 2.1%, 계획 step 전체 ≤ 0.7%). 정수 경로는 FP32보다 빠르다(rollout 1.9~3.3배, step 1.28~1.49배). 그러나 A40에서는 미리 바꾼 BF16보다 느리다(1.07~1.52배, 1.01~1.12배)." 원래 C4의 "정수 저비트 world model은 실제로 빠르다"는 이렇게 범위를 좁힌다 |
+| E2 | L2c 문구 | 설계 §6에 미리 적은 "미리 바꾼 BF16과 비슷하다"는 쓰지 않는다. 대신 수치를 그대로 쓴다. 층 0 관찰은 "폐루프로 재지 않음"을 밝히고 기술 문장 하나로만 쓴다 |
+| E3 | S1만 성립한 경우(§6에 분기 없음) | S1 수치와 S2 불성립을 한 문장에 같이 쓴다. "계획 step 전체의 이득은 rollout보다 작다"는 기존 취지는 유지한다(1.9~3.3배 → 1.28~1.49배) |
+| E4 | 서론 동기 문장 | "world model 연산이 step 비용을 지배한다"를 "망 평가가 지배한다"로 고친다. E8c에서 dynamics·reward는 FP32 step의 40~52%이기 때문이다. 속도 수치는 초록과 6절에만 둔다(쪽수도 줄어듦) |
+| E5 | Stage 2 charter(D5 변경) | "계획 step 전체 graph" 항목은 E8c로 끝났다. 이 항목을 "BF16과의 차 줄이기"로 바꾼다: 층 0을 FP32에서 옮긴 정수 경로와 미리 바꾼 BF16을 폐루프로 평가한다. Jetson 항목은 미리 바꾼 BF16을 기준선으로 쓴다 |
+
+- §3 "쓰지 않을 주장"에 다음 둘을 더한다.
+  - "정수 W8A4 world model이 BF16보다 빠르다"
+  - "world model 연산이 계획 step 비용을 지배한다"
+
+### 8.3 원고 문구 (영문 초안, 승인되면 넣음)
+
+- 초록
+  > Captured as CUDA graphs on an Ampere GPU, a W8A4 integer TD-MPC2 world model runs its planning rollouts 1.9–3.3× and the whole planning step 1.3–1.5× faster than FP32, though not faster than BF16 with pre-converted weights; shared dither adds at most 2.1% latency.
+- 서론
+  > Network evaluations therefore dominate the cost of each control step, and low-bit arithmetic is a direct way to cut it (Sec. VI).
+- 기여 목록
+  > Shared dither adds at most 2.1% to the planning rollouts of an integer TD-MPC2 world model and under 1% to the whole planning step, which the integer path makes 1.3–1.5× faster than FP32 but not faster than BF16 with pre-converted weights; in TD-MPC2, block-scaled FP4 formats mark the boundary of the failure.
+- 6절: "1.19–1.48× faster than the faster of TF32 and BF16"와 eager 계획 step 문장을 다음으로 바꾼다.
+  > BF16 is a stronger baseline when its weights are converted once in advance instead of at every call (autocast): it is then the fastest float format in all 12 cells, and our integer rollout takes 1.07–1.52× its time. Much of the gap is the first layer, which we keep in FP32; with TF32 there, the integer rollout takes 0.72–0.96× the time of pre-converted BF16, but we have not evaluated that path in closed loop. Because the dynamics and reward networks are only 40–52% of an FP32 planning step, the whole step (encoder, policy, Q-ensemble and MPPI captured as one CUDA graph) gains less: 1.28–1.49× over FP32, but 1.01–1.12× slower than with pre-converted BF16; shared dither adds at most 0.7% to it.
+- 표 1: 두 줄을 더한다.
+  - L2c: fails, 0/12 (1.07–1.52×)
+  - S1–S3: S1 holds 12/12; S2 fails 0/12 (1.01–1.12×); S3 holds (max 0.7%)
+- 한계: "the latency map from one GPU type" 뒤에 다음을 더한다.
+  > on which BF16 with pre-converted weights, not evaluated in closed loop, is faster than our integer path
+- 그림 3
+  - (a)는 그대로 둔다(E8 rollout, FP32 대비).
+  - (b)는 E8c 계획 step 전체로 바꾼다. 크기별로 FP32 대비 속도 향상을 보이고, 정수 W8A4와 미리 바꾼 BF16 두 계열을 그린다. 막대는 N 범위다.
+  - 캡션에 두 pod라는 것을 밝힌다.
+- 쪽수: 늘어나는 것은 약 8줄이다. 관련 연구와 FP4 문단의 표현을 줄여 6쪽을 지킨다. 주장은 빼지 않는다.
