@@ -56,6 +56,11 @@ check("reward error MW", "larger under \\dtm in all 19 affected Meta-World cells
 ch4 = by[("cheetah-run", 4, "dmc")]
 check("uniform 4-bit cheetah", "against 71.6\\% on cheetah-run with a uniform 4-bit grid", f(100 * float(ch4["det"]["D"]), 1), "E1_tdmpc2_cells.csv")
 
+means = {v: 100 * statistics.mean(float(x[v]["D"]) for x in mw.values()) for v in ("det", "ind", "shiter", "shstep", "shep", "detshift")}
+check("variant mean drops (MW)", "the mean drop is 50.1 points under \\shep, 34.9 under \\shstep, 29.2 under \\ind and 4.0 under \\shiter, against 44.6 under \\dtm",
+      ", ".join(f"{k} {v:.1f}" for k, v in means.items()), "E1_tdmpc2_cells.csv")
+check("det+shift mean drop (MW)", "also loses only 4.0", f"{means['detshift']:.1f}", "E1_tdmpc2_cells.csv")
+
 # ---- E1 DINO-WM ---------------------------------------------------------------------------------------------
 dw = {}
 for r in csv.DictReader(open(os.path.join(RES, "E1", "e1_dinowm_cells.csv"))):

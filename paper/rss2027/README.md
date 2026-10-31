@@ -18,7 +18,7 @@
 | 표 1 | 사전등록 가설 전체(E1~E10)의 판정 |
 | 수치 점검 | `build/verify_numbers.py`가 본문의 수치 44개를 결과 파일에서 다시 계산해 대조한다. 44/44 통과 |
 | E8c(D3) | A40에서 측정 중이다. 끝나면 6절 문단, 그림 3, 표 1에 넣는다(설계 `rss_ext/DESIGN_E8c.md` §6의 규칙) |
-| 참고문헌 | 2026년 arXiv 8편은 저자·제목을 arXiv 페이지에서 확인한 뒤 확정한다(`rss_ext/RELATED_recheck_2026-11-01.md`). 그 전까지 `refs.bib`에 TODO로 남아 있다 |
+| 참고문헌 | 40편 확정(11-01). 2025–2026년 23편은 경쟁 연구 재조사(`rss_ext/RELATED_recheck_2026-11-01.md`)와 항목별 확인(`rss_ext/related_2026.bib`)에서 왔다. 확인 기록은 [REFERENCES_CHECK.md](REFERENCES_CHECK.md)에 있다. 지금 PDF는 정확히 6쪽이다(본문은 5쪽 오른쪽 단 위에서 끝나고 6쪽은 참고문헌). E8c를 넣을 때 본문을 줄여 7쪽으로 넘치지 않게 한다 |
 | 공식 템플릿 | 11-01 사용자 허락을 받아 받았다(`paper-template-latex.tar.gz`, 115 KB). 내용은 예전 RSS 템플릿 그대로다(IEEEtran.cls V1.7a, `times`, `natbib`+`plainnat`, `hyperref`, `\pdfinfo`). 그 `IEEEtran.cls`를 이 폴더에 두었고, `main.tex`는 템플릿 구조를 따른다. 남은 일은 pdfLaTeX로 컴파일하는 것이다 |
 
 ## 빌드
@@ -47,7 +47,7 @@ cd "/Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world
 6. **LLM 사용 공개**: 의무는 아니지만 권장된다. 어디에(OpenReview 양식 또는 각주) 무엇을 쓸지 사용자가 정한다.
 7. **preprint**: arXiv에 올리면 허용되지만 심사자에게 신원이 드러날 수 있다. 올릴지 사용자가 정한다.
 8. **OpenReview**: 공저자(이건명 교수)를 포함한 모든 저자의 OpenReview 프로필이 필요하다.
-9. **인용**: 모든 항목을 원 출처(arXiv 페이지, 출판사)에서 확인했는지 `REFERENCES_CHECK.md`로 확인한다.
+9. **인용**: `REFERENCES_CHECK.md`의 남은 일을 끝낸다. OpenReview 7편을 브라우저로 확인하고, 위협이 큰 두 편(3VSa1Kx7HD, cVCKr4bBU2)은 본문을 읽는다. 12월 초에 새 버전이 나왔는지 다시 본다.
 
 ## 파일
 
