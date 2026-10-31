@@ -13,13 +13,13 @@
 
 | 항목 | 상태 |
 |---|---|
-| 본문 `main.tex` | 초안 v1. tectonic으로 5쪽(본문 약 4쪽 + 참고문헌)이다. 본문은 약 1쪽 남는다 |
+| 본문 `main.tex` | 초안 v1. tectonic으로 5쪽(본문 약 4.3쪽 + 참고문헌)이다. 본문은 약 0.7쪽 남는다. "사전등록"이라는 말은 쓰지 않는다. 대신 "분석 계획을 자료 전에 고정했다"고 한 번만 쓴다(10-31 사용자 결정) |
 | 그림 3개 | `build/make_figs.py`가 결과 파일에서 그린다. 글자를 path로 그려서 그림 PDF에는 글꼴이 없다 |
 | 표 1 | 사전등록 가설 전체(E1~E10)의 판정 |
 | 수치 점검 | `build/verify_numbers.py`가 본문의 수치 44개를 결과 파일에서 다시 계산해 대조한다. 44/44 통과 |
 | E8c(D3) | A40에서 측정 중이다. 끝나면 6절 문단, 그림 3, 표 1에 넣는다(설계 `rss_ext/DESIGN_E8c.md` §6의 규칙) |
 | 참고문헌 | 2026년 arXiv 8편은 저자·제목을 arXiv 페이지에서 확인한 뒤 확정한다(`rss_ext/RELATED_recheck_2026-11-01.md`). 그 전까지 `refs.bib`에 TODO로 남아 있다 |
-| 공식 템플릿 | 아직 받지 않았다. 이 초안은 RSS 템플릿의 바탕인 IEEEtran conference 형식이다. 제출본은 공식 템플릿(LaTeX, pdfLaTeX)으로 옮겨 컴파일한다 |
+| 공식 템플릿 | 11-01 사용자 허락을 받아 받았다(`paper-template-latex.tar.gz`, 115 KB). 내용은 예전 RSS 템플릿 그대로다(IEEEtran.cls V1.7a, `times`, `natbib`+`plainnat`, `hyperref`, `\pdfinfo`). 그 `IEEEtran.cls`를 이 폴더에 두었고, `main.tex`는 템플릿 구조를 따른다. 남은 일은 pdfLaTeX로 컴파일하는 것이다 |
 
 ## 빌드
 
@@ -33,8 +33,7 @@ cd "/Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world
 ## 제출 전 점검표
 
 1. **공식 템플릿**
-   - `paper-template-latex.tar.gz`(roboticsconference.org/docs/, 115 KB, 2026-10-15 수정)를 받아서, 이 원고의 본문을 그 안으로 옮긴다.
-   - 내려받기는 사용자 허락을 받고 한다. Overleaf의 RSS 템플릿을 써도 된다.
+   - 받아서 반영했다(11-01). Overleaf에 이 폴더를 올리고 pdfLaTeX로 컴파일한다(`main.tex`, `refs.bib`, `IEEEtran.cls`, `figures/*.pdf`).
    - 서식(글꼴, 여백, 간격)은 바꾸지 않는다. 바꾸면 desk reject다.
 2. **글꼴**: pdfLaTeX로 만든 PDF를 Acrobat의 문서 속성 → 글꼴에서 연다. 모두 Type 1(또는 Type 1C)인지 확인한다. 그림 PDF에는 글꼴이 없다.
 3. **분량**: 본문 5쪽 + 참고문헌 1쪽. 참고문헌이 5쪽 안에서 시작해도 된다.

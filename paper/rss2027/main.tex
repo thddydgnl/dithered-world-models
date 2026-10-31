@@ -1,4 +1,5 @@
 % RSS 2027 Stage 1 extended abstract (5 pages of content + 1 page of references), anonymous.
+% Based on the official RSS template (paper-template-latex.tar.gz, IEEEtran.cls V1.7a, fetched 2026-11-01).
 % Draft build: tectonic -X compile main.tex (XeTeX; TeX Gyre Termes stands in for Times with the same metrics).
 % Submission build: pdfLaTeX inside the official RSS template, so that the PDF holds only Type 1 fonts (see README).
 \documentclass[conference]{IEEEtran}
@@ -14,6 +15,14 @@
 \usepackage{multicol}
 \usepackage[bookmarks=true]{hyperref}
 \hypersetup{pdfauthor={}, pdftitle={}, pdfsubject={}, pdfkeywords={}, pdfcreator={}}
+\ifPDFTeX
+  \pdfinfo{
+     /Author ()
+     /Title  (Planners Exploit Deterministic Error: Dithered Low-Bit World Models)
+     /Subject (Robot learning)
+     /Keywords (World models; Model-predictive control; Quantization; Stochastic rounding)
+  }
+\fi
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -56,7 +65,7 @@ The ingredients are classical: the optimizer's curse~\cite{smith2006curse}, the 
 \item \textbf{Prescription} (Sec.~\ref{sec:fix}). \shiter removes at least half of the damage in all 19 affected Meta-World cells of TD-MPC2, in 4 of 5 DINO-WM cells and in all 8 affected tasks of a 317M multi-task TD-MPC2, and it is never harmful there.
 \item \textbf{Deployment} (Sec.~\ref{sec:deploy}). Integer low-bit world models are fast when executed as CUDA graphs, dither costs at most 2.1\% latency, and block-scaled FP4 formats mark the boundary of the failure.
 \end{enumerate}
-All hypotheses were internally pre-registered: hypotheses, thresholds, seeds and analysis code were frozen in timestamped, hashed documents before the data that test them. Hypotheses added after a stage are marked as such, and failed hypotheses are reported (Table~\ref{tab:hyp}). Sec.~\ref{sec:stage2} lists the extensions we propose for Stage 2.
+Hypotheses, thresholds, seeds and analysis code were fixed in timestamped, hashed documents before the data that test them; hypotheses added after a stage are marked as such, and the ones that failed are reported (Table~\ref{tab:hyp}). Sec.~\ref{sec:stage2} lists the extensions we propose for Stage 2.
 
 \section{Related Work}
 \label{sec:related}
@@ -71,7 +80,7 @@ All hypotheses were internally pre-registered: hypotheses, thresholds, seeds and
 
 \textbf{Models and planners.} TD-MPC2~\cite{hansen2024tdmpc2}: the official 5M single-task checkpoints (three seeds) on 8 Meta-World tasks~\cite{yu2019metaworld} (success rate) and 4 DMC tasks~\cite{tassa2018dmc} (return), planned with the default MPPI~\cite{williams2017mppi} (512 samples including 24 policy trajectories, 64 elites, 6 iterations, horizon 3); and the official 317M multi-task checkpoint (mt80) on the same 8 Meta-World tasks. DINO-WM~\cite{zhou2025dinowm}: the official PushT, Wall and PointMaze models with open-loop CEM~\cite{rubinstein1999cem} (300 samples, top 30, horizon 5, 30 iterations on PushT and 10 otherwise). All planner settings are the official defaults unless an experiment varies them.
 
-\textbf{Quantization.} We quantize hidden activations: the four hidden layers of the dynamics and reward MLPs in TD-MPC2 (after Mish) and the six MLP outputs of the DINO-WM predictor (after GELU), each to $k$ bits on a uniform grid $[\min, q_{99.99}]$ calibrated per layer on held-out data. Inputs, weights and all other modules stay in floating point except in the integer kernels of Sec.~\ref{sec:deploy}. Per task, a pre-registered rule picks the primary $k$ on held-out episodes as the largest $k$ at which \dtm loses at least 20 points of success (20\% of return on DMC), and we test $k-1$, $k$ and $k+1$: 36 cells for TD-MPC2 at 5M and 9 for DINO-WM. For each 317M task we test the primary $k$ (3--5 bits).
+\textbf{Quantization.} We quantize hidden activations: the four hidden layers of the dynamics and reward MLPs in TD-MPC2 (after Mish) and the six MLP outputs of the DINO-WM predictor (after GELU), each to $k$ bits on a uniform grid $[\min, q_{99.99}]$ calibrated per layer on held-out data. Inputs, weights and all other modules stay in floating point except in the integer kernels of Sec.~\ref{sec:deploy}. Per task, a rule fixed in advance picks the primary $k$ on held-out episodes as the largest $k$ at which \dtm loses at least 20 points of success (20\% of return on DMC), and we test $k-1$, $k$ and $k+1$: 36 cells for TD-MPC2 at 5M and 9 for DINO-WM. For each 317M task we test the primary $k$ (3--5 bits).
 
 \textbf{Rounding variants.} All stochastic variants use the same unbiased dither and therefore the same per-entry error distribution; they differ only in how $u$ is shared and how long it is kept. \ind draws $u$ independently per candidate at every forward call. \shiter shares one draw per layer across all candidates and redraws it at every forward call. \shstep and \shep share the same draw but hold it fixed within a control step or an episode (they coincide in open-loop CEM, where we call them sh-plan). \detshift keeps round-to-nearest but shifts the shared grid by a fresh offset at every call.
 
@@ -79,13 +88,13 @@ All hypotheses were internally pre-registered: hypotheses, thresholds, seeds and
 
 \textbf{Exploitation.} Let $e(a)$ be the error of the quantized model's predicted return for candidate $a$ relative to the unquantized model. The optimizer exploitation index $\mathrm{OEI}=e(a_{\mathrm{exec}})-\bar e_{\mathrm{first}}$ compares the executed plan with random first-iteration candidates and splits exactly into a \emph{selection} term (the last iteration's pick against its population) and a \emph{drift} term, the change in the population-mean error from the first to the last iteration. Negative drift means the planner moved its population toward candidates that the error favors.
 
-\textbf{Pre-registration and compute.} The study ran in stages: environment checks, the main benchmark, mechanism and structure ablations, post-training baselines, integer kernels, and the extensions marked in Table~\ref{tab:hyp}. Before each stage, its hypotheses, thresholds, seeds, sample sizes and analysis code were frozen in a design document whose hash was logged before any of the stage's data existed; operational choices made in smoke tests, such as kernel tiling, were recorded before the main runs. Analyses chosen after seeing data are labeled post hoc. The main study used about 147 GPU-hours on RTX A5000 GPUs, and the extensions used cloud A40, RTX 4090 and RTX 5090 GPUs. Code, design documents and their hashes will be released with the final paper.
+\textbf{Analysis plan and compute.} The study ran in stages: environment checks, the main benchmark, mechanism and structure ablations, post-training baselines, integer kernels, and the extensions marked in Table~\ref{tab:hyp}. Before each stage, its hypotheses, thresholds, seeds, sample sizes and analysis code were frozen in a design document whose hash was logged before any of the stage's data existed; operational choices made in smoke tests, such as kernel tiling, were recorded before the main runs. Analyses chosen after seeing data are labeled post hoc. The main study used about 147 GPU-hours on RTX A5000 GPUs, and the extensions used cloud A40, RTX 4090 and RTX 5090 GPUs. Code, design documents and their hashes will be released with the final paper.
 
 \begin{table*}[t]
 \centering
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\caption{Pre-registered hypotheses and outcomes. Rows marked $^\dagger$ were pre-registered after the first stage on new seeds; $^\ddagger$ marks the extension experiments run for this submission. Mechanism tasks: mw-push, mw-pick-place, cheetah-run, PushT.}
+\caption{Hypotheses and outcomes. Each test was fixed before its data; rows marked $^\dagger$ were added after the first stage and tested on new seeds; $^\ddagger$ marks the extension experiments run for this submission. Mechanism tasks: mw-push, mw-pick-place, cheetah-run, PushT.}
 \label{tab:hyp}
 \begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.43\textwidth}>{\raggedright\arraybackslash}p{0.40\textwidth}@{}}
 \toprule
@@ -121,7 +130,7 @@ H4b & Benefit of sharing grows with the density of near-ties & fails ($\rho=0.03
 
 \textbf{Prescription.} \shiter removes at least half of the damage in all 19 affected Meta-World cells (median 95\%) and in 4 of 5 DINO-WM cells, and it is not harmful in any of them (Fig.~\ref{fig:damage}a, Table~\ref{tab:hyp}). The weakest Meta-World cell keeps 47\% of the damage (window-open, 4 bits), and the DINO-WM exception is PushT at 5 bits, where \dtm's damage is only 5 points. On the 317M multi-task model, which needs no change to the method, \shiter removes 75--104\% of the damage in all 8 tasks (e.g.\ mw-peg-insert-side: 98.9 points lost under \dtm, 4.4 under \shiter), and the 95\% interval of $D_{\shiter}-D_{\dtm}$ lies below zero in every task. The primary bit widths at 317M (3--5) are close to those at 5M (3--4), so the larger model is not more robust to rounding.
 
-\textbf{Where it helps less.} On DMC, \shiter removes half of the damage in only 5 of 12 cells and is harmful on walker at 3 bits (78.9\% of return lost vs.\ 56.9\% under \dtm). A rule pre-registered after the first stage explains where it helps: the persistent share of \dtm's favorable error (drift over OEI) is 0.33--0.52 on DMC and 0.54--0.73 on Meta-World, and across the 12 TD-MPC2 tasks it predicts the damage removed (Spearman 0.83, new seeds). The two DMC tasks with the smallest persistent share are the two where \shiter fails.
+\textbf{Where it helps less.} On DMC, \shiter removes half of the damage in only 5 of 12 cells and is harmful on walker at 3 bits (78.9\% of return lost vs.\ 56.9\% under \dtm). A rule added after the first stage and tested on new seeds explains where it helps: the persistent share of \dtm's favorable error (drift over OEI) is 0.33--0.52 on DMC and 0.54--0.73 on Meta-World, and across the 12 TD-MPC2 tasks it predicts the damage removed (Spearman 0.83, new seeds). The two DMC tasks with the smallest persistent share are the two where \shiter fails.
 
 \section{Mechanism}
 \label{sec:mech}
@@ -137,7 +146,7 @@ H4b & Benefit of sharing grows with the density of near-ties & fails ($\rho=0.03
 
 \textbf{Iterations, candidates and table size.} The fix needs an iterating planner. With one MPPI iteration \shiter is no better than \dtm; at 12 iterations its damage is 0--11\% while \dtm's stays at 43--47\% and \shstep's at 18--47\% (Fig.~\ref{fig:mech}b). With the number of elites fixed, \dtm's exploitation $|\mathrm{OEI}|$ and damage grow with the number of candidates in three of four tasks, the dose-response expected from the optimizer's curse~\cite{smith2006curse}. A fixed dither drawn from a table of $N_{\mathrm{eff}}$ independent offsets hurts less as the table grows (five of six tasks, three of them exactly at the threshold), and in an exploratory Wall cell (3 bits) a single offset per layer collapsed planning (+37 points).
 
-\textbf{Theory.} For a planner that averages fresh unbiased noise, the expected drift is zero. A persistent error field instead pulls the population toward the minimizer of the smoothed model cost, the bias of sample-average approximation~\cite{kleywegt2002saa}. The selection and drift terms we derived matched 922k simulated MPPI and CEM runs (fitted slopes 0.92--1.05) and predicted, before the first stage was analyzed, that the OEI would be negative even under fresh noise, because the last iteration's pick benefits from the noise it was selected on (the winner's curse). This is why the pre-registered OEI tests H2a and H2b failed, and why our mechanism claim concerns the drift rather than the OEI.
+\textbf{Theory.} For a planner that averages fresh unbiased noise, the expected drift is zero. A persistent error field instead pulls the population toward the minimizer of the smoothed model cost, the bias of sample-average approximation~\cite{kleywegt2002saa}. The selection and drift terms we derived matched 922k simulated MPPI and CEM runs (fitted slopes 0.92--1.05) and predicted, before the first stage was analyzed, that the OEI would be negative even under fresh noise, because the last iteration's pick benefits from the noise it was selected on (the winner's curse). This is why our original OEI tests, H2a and H2b, failed, and why our mechanism claim concerns the drift rather than the OEI.
 
 \section{Deployment: Latency and Number Formats}
 \label{sec:deploy}
@@ -151,14 +160,14 @@ H4b & Benefit of sharing grows with the density of near-ties & fails ($\rho=0.03
 \label{fig:latency}
 \end{figure}
 
-\textbf{FP4 formats mark the boundary.} Recent accelerators execute 4-bit floating point natively; on an RTX 5090, an NVFP4 GEMM at the 317M layer width is up to 5.3$\times$ faster than BF16. We therefore repeated the 5M experiment with the activations in NVFP4~\cite{nvidia2025nvfp4} (blocks of 16 with an E4M3 scale) and MXFP4~\cite{rouhani2023mx} (blocks of 32 with a power-of-two scale), rounding each block to the E2M1 grid either to nearest (\dtm) or stochastically (\shiter). Block scaling greatly reduces the damage. \dtm damaged only 2 of 12 tasks under NVFP4 (cheetah-run 9.9\%, walker 1.7\%), short of the pre-registered three, and 4 of 12 under MXFP4 (cheetah-run 31.3\%, window-open 10.0 points), against 71.6\% on cheetah-run with a uniform 4-bit grid. Where damage remained, the signature was the same: \dtm's latent one-step error was 0.48--0.63 times that of \shiter in all six damaged cells, and \shiter removed most of the damage in the one damaged Meta-World cell but in only 2 of 5 DMC cells, as with uniform grids. Fine block scaling shrinks the error; dither removes its persistence. The two remedies act on different axes, and the failure we study belongs to coarse grids with a shared scale.
+\textbf{FP4 formats mark the boundary.} Recent accelerators execute 4-bit floating point natively; on an RTX 5090, an NVFP4 GEMM at the 317M layer width is up to 5.3$\times$ faster than BF16. We therefore repeated the 5M experiment with the activations in NVFP4~\cite{nvidia2025nvfp4} (blocks of 16 with an E4M3 scale) and MXFP4~\cite{rouhani2023mx} (blocks of 32 with a power-of-two scale), rounding each block to the E2M1 grid either to nearest (\dtm) or stochastically (\shiter). Block scaling greatly reduces the damage. \dtm damaged only 2 of 12 tasks under NVFP4 (cheetah-run 9.9\%, walker 1.7\%), short of the three our analysis plan required, and 4 of 12 under MXFP4 (cheetah-run 31.3\%, window-open 10.0 points), against 71.6\% on cheetah-run with a uniform 4-bit grid. Where damage remained, the signature was the same: \dtm's latent one-step error was 0.48--0.63 times that of \shiter in all six damaged cells, and \shiter removed most of the damage in the one damaged Meta-World cell but in only 2 of 5 DMC cells, as with uniform grids. Fine block scaling shrinks the error; dither removes its persistence. The two remedies act on different axes, and the failure we study belongs to coarse grids with a shared scale.
 
 \section{Limitations and Stage 2 Plan}
 \label{sec:stage2}
 
 \textbf{Limitations.} The prescription assumes an iterating planner, and on DMC it helps in fewer than half of the affected cells. On top of the best post-training quantization (mostly per-channel ranges), which already removes most of \dtm's damage, the extra gain of \shiter is borderline in TD-MPC2 (10 of 19 cells) and absent in DINO-WM (1 of 3). Our quantization-aware-training baseline was weak, so we draw no conclusion about training. The 317M results come from one checkpoint, the latency map from one GPU type with the first layer in FP32, and the FP4 results from fake quantization of the 5M models. We have no physical-robot experiments.
 
-\textbf{Proposed Extension Charter.} Each item below would be pre-registered in the same way as Table~\ref{tab:hyp}, with hypotheses, thresholds and analysis code frozen before its data.
+\textbf{Proposed Extension Charter.} As in Table~\ref{tab:hyp}, each item would have its hypotheses, thresholds and analysis code fixed before its data.
 \begin{enumerate}
 \item \emph{A diagnostic that sees the damage.} The latent one-step error misses \dtm's damage, while the one-step reward error separated \dtm in every affected Meta-World cell (an observation made after the fact). We will test on new tasks and seeds whether the correlation of rounding error across hidden units, which a scalar output such as the reward sums up, predicts \dtm's damage within a bit width, and whether a reward-error check run before deployment flags the damaging configurations.
 \item \emph{Integer kernels for DINO-WM.} We will port the integer path to the DINO-WM predictor and test whether closed-loop damage and repair match fake quantization in the affected cells, with the same latency budget for dither ($\le$5\%).
