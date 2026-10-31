@@ -1,0 +1,107 @@
+16:18:40 env {'torch': '2.7.1+cu126', 'cuda': '12.6', 'triton': '3.3.1', 'gpu': 'NVIDIA A40', 'capability': [8, 6], 'sm_count': 84, 'nvidia_smi': 'NVIDIA A40, 595.91.07, 1740 MHz, 7251 MHz, 300.00 W, 46068 MiB', 'python': '3.11.10', 'nproc': 96, 'tdmpc2_dir': '/root/tdmpc2/tdmpc2', 'allow_tf32_default': False, 'time': '2026-10-31T16:18:40Z'}
+Episode length: 100
+Discount factor: 0.95
+16:18:41 model 5: dims {'enc_dim': 256, 'mlp_dim': 512, 'latent_dim': 512, 'num_enc_layers': 2, 'num_q': 5} ranges {'dyn0': (-0.3088434338569641, 3.5578062534332275), 'dyn1': (-0.3088434338569641, 3.802492141723633), 'rew0': (-0.3088434338569641, 3.8925795555114746), 'rew1': (-0.3088434338569641, 3.685372829437256)} mem 0.04 GiB
+Episode length: 100
+Discount factor: 0.95
+16:18:41 model 19: dims {'enc_dim': 1024, 'mlp_dim': 1024, 'latent_dim': 768, 'num_enc_layers': 3, 'num_q': 5} ranges {'dyn0': (-0.3088434338569641, 3.610473155975342), 'dyn1': (-0.3088434338569641, 3.7046408653259277), 'rew0': (-0.3088434338569641, 3.6276516914367676), 'rew1': (-0.3088434338569641, 3.612825870513916)} mem 0.14 GiB
+Episode length: 100
+Discount factor: 0.95
+16:18:42 model 48: dims {'enc_dim': 1792, 'mlp_dim': 1792, 'latent_dim': 768, 'num_enc_layers': 4, 'num_q': 5} ranges {'dyn0': (-0.3088434338569641, 3.6772027015686035), 'dyn1': (-0.3088434338569641, 3.6280131340026855), 'rew0': (-0.3088434338569641, 3.9781134128570557), 'rew1': (-0.3088434338569641, 3.5931570529937744)} mem 0.41 GiB
+Episode length: 100
+Discount factor: 0.95
+16:18:47 model 317: dims {'enc_dim': 4096, 'mlp_dim': 4096, 'latent_dim': 1376, 'num_enc_layers': 5, 'num_q': 8} ranges {'dyn0': (-0.3088434338569641, 3.6703617572784424), 'dyn1': (-0.3088434338569641, 3.7405149936676025), 'rew0': (-0.3088434338569641, 3.6174094676971436), 'rew1': (-0.3088434338569641, 3.7462809085845947)} mem 2.26 GiB
+16:18:47 ranges equal to E8: {'5': True, '19': True, '48': True, '317': True}
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+16:18:53 randperm 5: {'num_q': 5, 'reps': 2000, 'captured': True, 'distinct_pairs': 20, 'expected_distinct': 20, 'chi2': 14.319999999999999, 'dof': 19, 'chi2_crit_p001': 43.82, 'share_consecutive_changed': 0.951975987993997, 'pass': True}
+16:18:53 randperm 8: {'num_q': 8, 'reps': 2000, 'captured': True, 'distinct_pairs': 56, 'expected_distinct': 56, 'chi2': 49.37599999999999, 'dof': 55, 'chi2_crit_p001': 93.17, 'share_consecutive_changed': 0.9859929964982491, 'pass': True}
+16:18:53 Q avg 5: {'captured': True, 'graph_vs_eager_maxabs': 0.0, 'replays_differ': True, 'q_std': 0.10817922651767731, 'pass': True}
+16:18:53 Q avg 317: {'captured': True, 'graph_vs_eager_maxabs': 0.0, 'replays_differ': True, 'q_std': 0.3236696422100067, 'pass': True}
+16:18:53 randperm / Q avg pass: True
+Episode length: 100
+Discount factor: 0.95
+16:18:53 bf16cast check 5: {"param_dtypes": ["torch.bfloat16"], "next": {"out_dtype": "torch.float32", "rel_bf16_vs_fp32": 0.004179666750133038, "rel_cast_vs_fp32": 0.005151957739144564, "rel_cast_vs_bf16": 0.004954661708325148, "maxabs_cast_vs_fp32": 0.008791983127593994, "finite": true, "pass": true}, "reward": {"out_dtype": "torch.float32", "rel_bf16_vs_fp32": 0.005648795049637556, "rel_cast_vs_fp32": 0.006220912095159292, "rel_cast_vs_bf16": 0.006025101523846388, "maxabs_cast_vs_fp32": 0.00759577751159668, "finite": true, "pass": true}, "rollout": {"rel_bf16_vs_fp32_z": 0.005628010258078575, "rel_cast_vs_fp32_z": 0.
+16:18:58 L0tf32 check 5: {"dyn": {"l0_gemm_rel_tf32_vs_fp32": 0.00028709752950817347, "q0_mismatch": 0.000438690185546875, "q0_maxdiff": 1.0, "q1_mismatch": 0.00605010986328125, "out_rel_l2": 0.024082133546471596, "int_det_global_tf32_on_vs_off_maxabs": 0.0, "pass": true}, "rew": {"l0_gemm_rel_tf32_vs_fp32": 0.00028618183569051325, "q0_mismatch": 0.000507354736328125, "q0_maxdiff": 1.0, "q1_mismatch": 0.007694244384765625, "out_rel_l2": 0.035508133471012115, "int_det_global_tf32_on_vs_off_maxabs": 0.0, "pass": true}, "graph_vs_eager_maxabs_z": 0.0, "graph_vs_eager_maxabs_r": 0.0, "pass": true}
+16:19:03 gstep check 5 N512 tf32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 3.47e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:03 gstep check 5 N512 tf32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 7.31e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:03 gstep check 5 N512 fp32|fp32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 7.75e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:03 gstep check 5 N512 fp32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 7.33e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:03 gstep check 5 N512 fp32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 7.80e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:03 gstep check 5 N512 fp32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 3.52e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:03 gstep check 5 N512 tf32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 7.76e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:03 gstep check 5 N512 tf32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 2.67e-01 new-rng 4.74e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:03 gstep check 5 N512 fp32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 3.00e-01 new-rng 6.37e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:03 gstep check 5 N512 fp32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 7.59e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:03 gstep check 5 N512 tf32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 7.39e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:07 gstep check 5 N2048 fp32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 4.11e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:07 gstep check 5 N2048 tf32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 7.78e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:07 gstep check 5 N2048 fp32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 3.34e-01 new-rng 5.14e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:07 gstep check 5 N2048 tf32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 6.46e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:07 gstep check 5 N2048 fp32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 6.42e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:07 gstep check 5 N2048 fp32|fp32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 8.35e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:07 gstep check 5 N2048 tf32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 4.48e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:07 gstep check 5 N2048 tf32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 2.97e-01 new-rng 6.39e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:07 gstep check 5 N2048 tf32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.02e+00 counters [0, 0] [0, 0] [0, 0]
+16:19:08 gstep check 5 N2048 fp32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.02e+00 counters [0, 0] [0, 0] [0, 0]
+16:19:08 gstep check 5 N2048 fp32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 7.62e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:12 gstep check 5 N8192 fp32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 4.55e-01 new-rng 4.26e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:13 gstep check 5 N8192 fp32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.91e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:13 gstep check 5 N8192 fp32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.92e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:13 gstep check 5 N8192 tf32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.63e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:13 gstep check 5 N8192 tf32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.77e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:14 gstep check 5 N8192 fp32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.92e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:14 gstep check 5 N8192 tf32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.16e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:14 gstep check 5 N8192 tf32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.90e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:14 gstep check 5 N8192 tf32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 4.27e-01 new-rng 3.41e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:15 gstep check 5 N8192 fp32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.86e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:15 gstep check 5 N8192 fp32|fp32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.83e-01 counters [0, 0] [0, 0] [0, 0]
+Episode length: 100
+Discount factor: 0.95
+16:19:15 bf16cast check 19: {"param_dtypes": ["torch.bfloat16"], "next": {"out_dtype": "torch.float32", "rel_bf16_vs_fp32": 0.004099726211279631, "rel_cast_vs_fp32": 0.005076625384390354, "rel_cast_vs_bf16": 0.004854549653828144, "maxabs_cast_vs_fp32": 0.008408427238464355, "finite": true, "pass": true}, "reward": {"out_dtype": "torch.float32", "rel_bf16_vs_fp32": 0.005319392774254084, "rel_cast_vs_fp32": 0.005880387499928474, "rel_cast_vs_bf16": 0.0058372444473207, "maxabs_cast_vs_fp32": 0.011840581893920898, "finite": true, "pass": true}, "rollout": {"rel_bf16_vs_fp32_z": 0.005660040304064751, "rel_cast_vs_fp32_z": 0.0
+16:19:19 L0tf32 check 19: {"dyn": {"l0_gemm_rel_tf32_vs_fp32": 0.0002952837385237217, "q0_mismatch": 0.0005130767822265625, "q0_maxdiff": 1.0, "q1_mismatch": 0.009225845336914062, "out_rel_l2": 0.02870173007249832, "int_det_global_tf32_on_vs_off_maxabs": 0.0, "pass": true}, "rew": {"l0_gemm_rel_tf32_vs_fp32": 0.0002922832209151238, "q0_mismatch": 0.0004825592041015625, "q0_maxdiff": 1.0, "q1_mismatch": 0.009281158447265625, "out_rel_l2": 0.0369042344391346, "int_det_global_tf32_on_vs_off_maxabs": 0.0, "pass": true}, "graph_vs_eager_maxabs_z": 0.0, "graph_vs_eager_maxabs_r": 0.0, "pass": true}
+16:19:24 gstep check 19 N512 fp32|fp32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.47e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:24 gstep check 19 N512 fp32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 3.20e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:24 gstep check 19 N512 tf32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.75e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:24 gstep check 19 N512 fp32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.59e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:24 gstep check 19 N512 fp32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.49e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:24 gstep check 19 N512 tf32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.63e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:24 gstep check 19 N512 tf32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 1.71e-01 new-rng 1.72e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:24 gstep check 19 N512 tf32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.57e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:24 gstep check 19 N512 fp32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.77e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:25 gstep check 19 N512 fp32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 2.18e-01 new-rng 2.07e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:25 gstep check 19 N512 tf32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.16e-01 counters [0, 0] [0, 0] [0, 0]
+Episode length: 100
+Discount factor: 0.95
+16:19:26 bf16cast check 48: {"param_dtypes": ["torch.bfloat16"], "next": {"out_dtype": "torch.float32", "rel_bf16_vs_fp32": 0.004041493404656649, "rel_cast_vs_fp32": 0.00503629632294178, "rel_cast_vs_bf16": 0.004879477899521589, "maxabs_cast_vs_fp32": 0.008511900901794434, "finite": true, "pass": true}, "reward": {"out_dtype": "torch.float32", "rel_bf16_vs_fp32": 0.006888814270496368, "rel_cast_vs_fp32": 0.007333158049732447, "rel_cast_vs_bf16": 0.007637872360646725, "maxabs_cast_vs_fp32": 0.020464658737182617, "finite": true, "pass": true}, "rollout": {"rel_bf16_vs_fp32_z": 0.005861899349838495, "rel_cast_vs_fp32_z": 0.
+16:19:28 L0tf32 check 48: {"dyn": {"l0_gemm_rel_tf32_vs_fp32": 0.0002979244163725525, "q0_mismatch": 0.0005318777984939516, "q0_maxdiff": 1.0, "q1_mismatch": 0.011932373978197575, "out_rel_l2": 0.031830042600631714, "int_det_global_tf32_on_vs_off_maxabs": 0.0, "pass": true}, "rew": {"l0_gemm_rel_tf32_vs_fp32": 0.0002988321357406676, "q0_mismatch": 0.0004664830048568547, "q0_maxdiff": 1.0, "q1_mismatch": 0.011941093020141125, "out_rel_l2": 0.04292374849319458, "int_det_global_tf32_on_vs_off_maxabs": 0.0, "pass": true}, "graph_vs_eager_maxabs_z": 0.0, "graph_vs_eager_maxabs_r": 0.0, "pass": true}
+16:19:33 gstep check 48 N512 fp32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 4.95e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:33 gstep check 48 N512 fp32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 4.33e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:33 gstep check 48 N512 fp32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 3.15e-01 new-rng 2.48e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:34 gstep check 48 N512 fp32|fp32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 4.29e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:34 gstep check 48 N512 tf32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 3.97e-01 new-rng 2.64e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:34 gstep check 48 N512 tf32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 4.32e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:34 gstep check 48 N512 tf32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 3.36e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:34 gstep check 48 N512 fp32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 4.16e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:34 gstep check 48 N512 tf32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 4.93e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:34 gstep check 48 N512 tf32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 4.16e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:34 gstep check 48 N512 fp32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 4.37e-01 counters [0, 0] [0, 0] [0, 0]
+Episode length: 100
+Discount factor: 0.95
+16:19:40 bf16cast check 317: {"param_dtypes": ["torch.bfloat16"], "next": {"out_dtype": "torch.float32", "rel_bf16_vs_fp32": 0.004028503317385912, "rel_cast_vs_fp32": 0.005028433166444302, "rel_cast_vs_bf16": 0.004843918140977621, "maxabs_cast_vs_fp32": 0.009447038173675537, "finite": true, "pass": true}, "reward": {"out_dtype": "torch.float32", "rel_bf16_vs_fp32": 0.006399002391844988, "rel_cast_vs_fp32": 0.0069135576486587524, "rel_cast_vs_bf16": 0.00708471005782485, "maxabs_cast_vs_fp32": 0.03383374214172363, "finite": true, "pass": true}, "rollout": {"rel_bf16_vs_fp32_z": 0.00555767584592104, "rel_cast_vs_fp32_z": 0.0
+16:19:42 L0tf32 check 317: {"dyn": {"l0_gemm_rel_tf32_vs_fp32": 0.0002927819441538304, "q0_mismatch": 0.0004940032958984375, "q0_maxdiff": 1.0, "q1_mismatch": 0.01302337646484375, "out_rel_l2": 0.0343220978975296, "int_det_global_tf32_on_vs_off_maxabs": 0.0, "pass": true}, "rew": {"l0_gemm_rel_tf32_vs_fp32": 0.0002907759335357696, "q0_mismatch": 0.0005173683166503906, "q0_maxdiff": 1.0, "q1_mismatch": 0.01353311538696289, "out_rel_l2": 0.04630498215556145, "int_det_global_tf32_on_vs_off_maxabs": 0.0, "pass": true}, "graph_vs_eager_maxabs_z": 0.0, "graph_vs_eager_maxabs_r": 0.0, "pass": true}
+16:19:51 gstep check 317 N512 fp32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.29e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:51 gstep check 317 N512 fp32|fp32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 3.25e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:52 gstep check 317 N512 tf32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.29e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:52 gstep check 317 N512 tf32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 3.56e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:52 gstep check 317 N512 fp32|bf16: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 3.12e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:53 gstep check 317 N512 tf32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 3.27e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:53 gstep check 317 N512 fp32|bf16cast: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 2.75e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:53 gstep check 317 N512 tf32|int-det: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 1.47e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:54 gstep check 317 N512 fp32|tf32: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 0.00e+00 new-rng 3.30e-01 counters [0, 0] [0, 0] [0, 0]
+16:19:54 gstep check 317 N512 fp32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 2.93e-01 new-rng 2.45e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:55 gstep check 317 N512 tf32|int-shiter: pass=True eager-graph 0.00e+00/0.00e+00 same-seed 2.90e-01 new-rng 3.24e-01 counters [20, 18] [40, 36] [60, 54]
+16:19:55 checks pass: {'5': True, '19': True, '48': True, '317': True}
+16:19:55 SMOKE_DONE 75s

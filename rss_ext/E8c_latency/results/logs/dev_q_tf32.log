@@ -1,0 +1,29 @@
+Episode length: 100
+Discount factor: 0.95
+N 512 Q_avg: fp32 12.85 ms, tf32 7.82 ms, ratio 0.609
+N 512 Q_all: fp32 12.89 ms, tf32 7.63 ms, ratio 0.592
+N 512 pi: fp32 1.48 ms, tf32 0.71 ms, ratio 0.481
+N 512 mm_8x4096: fp32 7.52 ms, tf32 2.65 ms, ratio 0.353
+N 8192 Q_avg: fp32 205.60 ms, tf32 174.55 ms, ratio 0.849
+N 8192 Q_all: fp32 201.06 ms, tf32 201.36 ms, ratio 1.001
+N 8192 pi: fp32 22.20 ms, tf32 9.35 ms, ratio 0.421
+N 8192 mm_8x4096: fp32 126.01 ms, tf32 38.28 ms, ratio 0.304
+----------------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                                  Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+----------------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_256x64_16x4_tn_...         0.00%       0.000us         0.00%       0.000us       0.000us     116.301ms        63.26%     116.301ms      58.151ms             2  
+void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_...         0.00%       0.000us         0.00%       0.000us       0.000us      15.282ms         8.31%      15.282ms       3.056ms             5  
+void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_128x256_16x3_tn...         0.00%       0.000us         0.00%       0.000us       0.000us      14.746ms         8.02%      14.746ms       4.915ms             3  
+void at::native::(anonymous namespace)::vectorized_layer_norm_kerne...         0.00%       0.000us         0.00%       0.000us       0.000us      14.320ms         7.79%      14.320ms       2.046ms             7  
+void at::native::vectorized_elementwise_kernel<4, at::native::(anon...         0.00%       0.000us         0.00%       0.000us       0.000us       9.646ms         5.25%       9.646ms       1.608ms             6  
+void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_...         0.00%       0.000us         0.00%       0.000us       0.000us       7.640ms         4.16%       7.640ms       2.547ms             3  
+void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_64x64_16x6_tn_a...         0.00%       0.000us         0.00%       0.000us       0.000us       3.522ms         1.92%       3.522ms       3.522ms             1  
+void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_128x128_16x5_tn...         0.00%       0.000us         0.00%       0.000us       0.000us       1.622ms         0.88%       1.622ms       1.622ms             1  
+                                                ampere_sgemm_128x64_tn         0.00%       0.000us         0.00%       0.000us       0.000us     297.474us         0.16%     297.474us     297.474us             1  
+void at::native::(anonymous namespace)::CatArrayBatchedCopy_aligned...         0.00%       0.000us         0.00%       0.000us       0.000us     182.529us         0.10%     182.529us     182.529us             1  
+void (anonymous namespace)::softmax_warp_forward<float, float, floa...         0.00%       0.000us         0.00%       0.000us       0.000us     160.833us         0.09%     160.833us     160.833us             1  
+void at::native::index_elementwise_kernel<128, 4, at::native::gpu_i...         0.00%       0.000us         0.00%       0.000us       0.000us      28.640us         0.02%      28.640us      28.640us             1  
+----------------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 183.441ms
+Self CUDA time total: 183.844ms
+

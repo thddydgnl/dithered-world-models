@@ -1,0 +1,7 @@
+16:29:42 selection {'5': 'a', '19': 'a', '48': 'a', '317': 'a'}; GPU NVIDIA A40; sizes (5,)
+Episode length: 100
+Discount factor: 0.95
+16:29:46 built 21 graph-WM graphs in 3s; allocated 0.4 GiB, reserved 1.7 GiB
+16:29:54 built 33 graph-step graphs in 8s (shared pool); allocated 0.4 GiB, reserved 2.3 GiB
+16:30:01 round 0 done in 7s (total 19s)
+16:30:01 E8C_MAIN_DONE

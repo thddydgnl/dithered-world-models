@@ -1,0 +1,9 @@
+{
+ "equal_to_e8_within_1e-6": {
+  "5": true,
+  "19": true,
+  "48": true,
+  "317": true
+ },
+ "pass": true
+}

@@ -1,0 +1,22 @@
+16:31:48 selection {'5': 'a', '19': 'a', '48': 'a', '317': 'a'}; GPU NVIDIA A40; sizes (5, 19, 48, 317)
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+16:32:20 built 84 graph-WM graphs in 24s; allocated 4.0 GiB, reserved 15.3 GiB
+16:34:12 built 132 graph-step graphs in 112s (shared pool); allocated 4.0 GiB, reserved 21.0 GiB
+17:04:49 round 0 done in 1837s (total 1981s)
+17:35:27 round 1 done in 1838s (total 3819s)
+18:06:08 round 2 done in 1841s (total 5660s)
+18:36:46 round 3 done in 1838s (total 7497s)
+19:07:25 round 4 done in 1839s (total 9336s)
+19:38:05 round 5 done in 1840s (total 11177s)
+20:08:43 round 6 done in 1838s (total 13015s)
+20:39:21 round 7 done in 1838s (total 14853s)
+21:09:59 round 8 done in 1838s (total 16691s)
+21:40:37 round 9 done in 1838s (total 18529s)
+21:40:37 E8C_MAIN_DONE

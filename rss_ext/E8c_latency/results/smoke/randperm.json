@@ -1,0 +1,41 @@
+{
+ "randperm_5": {
+  "num_q": 5,
+  "reps": 2000,
+  "captured": true,
+  "distinct_pairs": 20,
+  "expected_distinct": 20,
+  "chi2": 14.319999999999999,
+  "dof": 19,
+  "chi2_crit_p001": 43.82,
+  "share_consecutive_changed": 0.951975987993997,
+  "pass": true
+ },
+ "randperm_8": {
+  "num_q": 8,
+  "reps": 2000,
+  "captured": true,
+  "distinct_pairs": 56,
+  "expected_distinct": 56,
+  "chi2": 49.37599999999999,
+  "dof": 55,
+  "chi2_crit_p001": 93.17,
+  "share_consecutive_changed": 0.9859929964982491,
+  "pass": true
+ },
+ "Q_avg_5": {
+  "captured": true,
+  "graph_vs_eager_maxabs": 0.0,
+  "replays_differ": true,
+  "q_std": 0.10817922651767731,
+  "pass": true
+ },
+ "Q_avg_317": {
+  "captured": true,
+  "graph_vs_eager_maxabs": 0.0,
+  "replays_differ": true,
+  "q_std": 0.3236696422100067,
+  "pass": true
+ },
+ "pass": true
+}
