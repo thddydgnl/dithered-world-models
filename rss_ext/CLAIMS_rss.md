@@ -102,9 +102,9 @@
 - D4: 심사 기간에 공개 CV에서 "RSS 2027" 표기를 뺀다. 제목은 그대로 둔다. CV를 고치면 공개 홈페이지·GitHub 프로필·CV PDF에 바로 반영되고, 지원서용 PDF에서도 빠진다. 그래서 제출 직전에 하도록 원고 제출 점검표에 넣는다(`paper/rss2027/README.md`).
 - D5: Stage 2(Extension Charter)에 미리 적을 확장은 보상 오차 진단의 사전등록 검정, DINO-WM 실제 정수 kernel, 계획 step 전체 graph(E8c가 일부를 미리 함), 엣지 장비(Jetson) 측정이다.
 
-## 8. E8c 결과에 따른 C4 수정안 (사용자 승인용, 2026-10-31T22:10Z, 한국 시간 11-01 07:10)
+## 8. E8c 결과에 따른 C4 수정안 (사용자 승인용, 2026-10-31T21:52Z, 한국 시간 11-01 06:52)
 
-- 근거: [E8c_latency/REPORT.md](E8c_latency/REPORT.md). 판정은 조정자가 원 block 2,400개에서 다시 계산했다([LOG.md](LOG.md) 21:5xZ 항목).
+- 근거: [E8c_latency/REPORT.md](E8c_latency/REPORT.md). 판정은 조정자가 원 block 2,400개에서 다시 계산했다([LOG.md](LOG.md) 21:50Z 항목).
 - 모든 수치는 NVIDIA A40 한 장, pod 하나에서 잰 것이다. 출처는 둘로 나뉜다.
   - rollout과 FP32의 비교는 E8에서 왔다.
   - 계획 step 전체와 미리 바꾼 BF16의 비교는 E8c에서 왔다(설계 §6).
