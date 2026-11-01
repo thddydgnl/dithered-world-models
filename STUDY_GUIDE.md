@@ -1238,5 +1238,4 @@ v5.2(9절)는 E1 결과를 본 뒤 더한 사전등록이다. 가설은 TD-MPC2 
 - [pilots/R2_8b_crn_dither/REPORT.md](pilots/R2_8b_crn_dither/REPORT.md), [pilots/R2_13_crn_dither_dinowm/REPORT.md](pilots/R2_13_crn_dither_dinowm/REPORT.md): 핵심 파일럿 두 개.
 - [pilots/R2_14_iteration_dose_response/REPORT.md](pilots/R2_14_iteration_dose_response/REPORT.md), [pilots/R2_8_dithered_world_models/REPORT.md](pilots/R2_8_dithered_world_models/REPORT.md), [pilots/R2_3_weak_planning_bias/followup_3b/REPORT_3b.md](pilots/R2_3_weak_planning_bias/followup_3b/REPORT_3b.md): 반복 수, 첫 양자화 파일럿, 후보 일관 대조.
 - [../literature/NOVELTY_R2.md](workspace/literature/NOVELTY_R2.md) §1: 선행연구 표와 노벨티 판정.
-- [../archive/selection_process/FINAL_IDEAS.md](workspace/archive/selection_process/FINAL_IDEAS.md) §1~§2: 아이디어 A가 22개 파일럿 가운데 어떻게 골라졌는지.
 
