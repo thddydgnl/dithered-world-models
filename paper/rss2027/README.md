@@ -24,8 +24,13 @@
 ## 빌드
 
 ```bash
-cd "/Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world_models/paper/rss2027" && python3 build/make_figs.py && python3 build/verify_numbers.py && tectonic -X compile main.tex
+cd "/Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world_models/paper/rss2027" && python3 build/make_figs.py && python3 build/verify_numbers.py && tectonic -X compile main.tex && bash build/sync_papers_copy.sh "무엇을 고쳤는지 한 줄"
 ```
+
+- **원고를 고쳐 PDF를 다시 만들 때마다 보관 폴더 사본을 갱신한다**(사용자 지시 2026-11-01). 위 명령의 마지막 단계가 그 일을 한다.
+  - 사본: `~/Documents/research/papers/Dithered_Low-Bit_World_Models/RSS2027/Dithered_Low-Bit_World_Models_RSS2027_원고.pdf`
+  - 같은 폴더의 `원고_갱신기록.txt`에 시각, 커밋, 쪽수, 메모를 한 줄씩 덧붙인다. 원고 원본이 커밋과 다르면 커밋 뒤에 `+uncommitted`가 붙는다.
+  - 보관 폴더는 논문별 폴더 아래에 학회별 하위 폴더를 두고 PDF만 넣는 구조다(B의 TMLR 원고와 같은 방식).
 
 - tectonic(XeTeX)에서는 `times`가 매핑되지 않는다. 그래서 초안은 Times와 글자 폭이 같은 TeX Gyre Termes(OpenType)를 쓴다. 쪽수는 pdfLaTeX + Times와 거의 같다.
 - **제출본은 pdfLaTeX로 만든다**(Overleaf 또는 TeX Live). `\usepackage{times}` 분기가 자동으로 쓰인다. 맥북에는 pdflatex가 없다.
@@ -55,6 +60,7 @@ cd "/Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world
 - `figures/`: 그림 PDF(본문용), PNG(미리보기)
 - `build/make_figs.py`: 그림. 원자료는 `main/results/`(E1, E2, E3)와 `rss_ext/`(E8, E8c, E10)
 - `build/verify_numbers.py`: 본문 수치 대조
+- `build/sync_papers_copy.sh`: `main.pdf`를 보관 폴더(`~/Documents/research/papers/Dithered_Low-Bit_World_Models/RSS2027/`)로 복사하고 갱신 기록을 남긴다
 
 ## 쪽수 맞춤 기록 (11-01, E8c 반영 때)
 
