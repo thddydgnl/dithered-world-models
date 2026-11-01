@@ -9,16 +9,16 @@
   - LLM 사용: 허용된다. 공개는 의무가 아니지만 "highly encouraged"다. **환각 인용은 desk reject다**(자동 검사).
   - 동시 투고 금지. 예외는 proceedings가 없는 발표와 arXiv 같은 preprint다. preprint는 심사자에게 신원이 드러날 위험이 있다.
 
-## 지금 상태 (초안 v1, 2026-11-01)
+## 지금 상태 (초안 v2, 2026-11-01: E8c 반영)
 
 | 항목 | 상태 |
 |---|---|
-| 본문 `main.tex` | 초안 v1. tectonic으로 5쪽(본문 약 4.3쪽 + 참고문헌)이다. 본문은 약 0.7쪽 남는다. "사전등록"이라는 말은 쓰지 않는다. 대신 "분석 계획을 자료 전에 고정했다"고 한 번만 쓴다(10-31 사용자 결정) |
-| 그림 3개 | `build/make_figs.py`가 결과 파일에서 그린다. 글자를 path로 그려서 그림 PDF에는 글꼴이 없다 |
-| 표 1 | 사전등록 가설 전체(E1~E10)의 판정 |
-| 수치 점검 | `build/verify_numbers.py`가 본문의 수치 44개를 결과 파일에서 다시 계산해 대조한다. 44/44 통과 |
-| E8c(D3) | A40에서 측정 중이다. 끝나면 6절 문단, 그림 3, 표 1에 넣는다(설계 `rss_ext/DESIGN_E8c.md` §6의 규칙) |
-| 참고문헌 | 40편 확정(11-01). 2025–2026년 23편은 경쟁 연구 재조사(`rss_ext/RELATED_recheck_2026-11-01.md`)와 항목별 확인(`rss_ext/related_2026.bib`)에서 왔다. 확인 기록은 [REFERENCES_CHECK.md](REFERENCES_CHECK.md)에 있다. 지금 PDF는 정확히 6쪽이다(본문은 5쪽 오른쪽 단 위에서 끝나고 6쪽은 참고문헌). E8c를 넣을 때 본문을 줄여 7쪽으로 넘치지 않게 한다 |
+| 본문 `main.tex` | 초안 v2. tectonic으로 정확히 6쪽이다. 본문은 5쪽 오른쪽 단 위에서 끝나고, 참고문헌이 6쪽을 채운다(6쪽 오른쪽 단에 약 48pt, 참고문헌 약 5줄이 남음). "사전등록"이라는 말은 쓰지 않는다. 대신 "분석 계획을 자료 전에 고정했다"고 쓴다(10-31 사용자 결정) |
+| 그림 3개 | `build/make_figs.py`가 결과 파일에서 그린다. 글자를 path로 그려서 그림 PDF에는 글꼴이 없다. 그림 3은 (a) E8 world-model rollout, (b) E8c 계획 step 전체(정수 W8A4와 미리 바꾼 BF16; 점은 N의 중앙값, 막대는 N 범위)다 |
+| 표 1 | 자료 전에 고정한 가설 전체(E1~E10, E8c의 L2c·S1~S3 포함)의 판정 |
+| 수치 점검 | `build/verify_numbers.py`가 본문의 수치 문구 62개를 대조한다. 그중 18개(E8 일부, E8c 전부)는 결과 파일에서 다시 계산한 값이 본문 숫자와 글자 그대로 같은지 자동으로 본다. 62/62 통과 |
+| E8c(D3) | 끝났다(11-01). L2c·S2 불성립, S1·S3 성립. C4 수정안 E1~E5를 사용자가 승인했다(`rss_ext/CLAIMS_rss.md` §9). 초록, 서론, 기여, 표 1, 6절, 그림 3(b), 한계, Stage 2에 넣었다. rollout의 dither 상한은 두 측정을 모두 덮는 2.3%다(E8 2.07%, E8c 2.29%) |
+| 참고문헌 | 40편 확정(11-01). 2025–2026년 23편은 경쟁 연구 재조사(`rss_ext/RELATED_recheck_2026-11-01.md`)와 항목별 확인(`rss_ext/related_2026.bib`)에서 왔다. 확인 기록은 [REFERENCES_CHECK.md](REFERENCES_CHECK.md)에 있다. E8c를 넣었을 때 7쪽으로 넘쳐서 표현을 줄였다(아래 '쪽수 맞춤 기록') |
 | 공식 템플릿 | 11-01 사용자 허락을 받아 받았다(`paper-template-latex.tar.gz`, 115 KB). 내용은 예전 RSS 템플릿 그대로다(IEEEtran.cls V1.7a, `times`, `natbib`+`plainnat`, `hyperref`, `\pdfinfo`). 그 `IEEEtran.cls`를 이 폴더에 두었고, `main.tex`는 템플릿 구조를 따른다. 남은 일은 pdfLaTeX로 컴파일하는 것이다 |
 
 ## 빌드
@@ -53,5 +53,16 @@ cd "/Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world
 
 - `main.tex`, `refs.bib`: 원고
 - `figures/`: 그림 PDF(본문용), PNG(미리보기)
-- `build/make_figs.py`: 그림. 원자료는 `main/results/`(E1, E2, E3)와 `rss_ext/`(E8, E10)
+- `build/make_figs.py`: 그림. 원자료는 `main/results/`(E1, E2, E3)와 `rss_ext/`(E8, E8c, E10)
 - `build/verify_numbers.py`: 본문 수치 대조
+
+## 쪽수 맞춤 기록 (11-01, E8c 반영 때)
+
+E8c 문구를 넣으니 참고문헌이 7쪽으로 약 11줄 넘쳤다. 그래서 아래 표현을 줄였다. 주장과 수치는 빼지 않았다.
+
+- 서론 끝 문단: 분석 계획의 자세한 설명을 한 문장으로 줄였다. 자세한 내용은 3절 "Analysis plan"과 표 1 캡션에 있다.
+- 관련 연구 1문단: "후처리 양자화 위에서 dither 이득이 경계적"이라는 반복을 뺐다. 이 내용은 한계 문단과 표 1(H3b)에 있다.
+- 3절 "Analysis plan": 단계 목록과 "kernel tiling" 예를 줄였다.
+- 4·5절: det+shift의 정의 반복(3절에 정의 있음)을 뺐다.
+- 6절: rollout 측정 설명의 괄호(반복 수, horizon)는 그림 3 캡션으로 옮겼다. FP4 문단의 도입 문장과 결론 문장을 줄였다.
+- 그림 3 캡션, Stage 2 1·3번을 짧게 고쳤다.

@@ -39,6 +39,7 @@
 - 계획기는 반복 사이에 지속되는 오차를 이용한다. 근거는 H2a′ 4/4, sh-step·sh-ep 양성 대조(70~130% 회복), H2c 3/4, det+shift다(FINAL_A 4.1의 한정 그대로).
 
 **C4 배치와 속도 (새 주장)**
+- **11-01 E8c 뒤 §9(E1)에서 다시 정했다. 지금의 C4는 §9의 문장이다. 아래는 E8 기준의 원래 문구다.**
 - 주장: 정수 저비트 world model은 실제로 빠르고, 공유 dither는 지연을 거의 더하지 않는다.
 - 근거(E8, A40, CUDA graph로 재생한 world-model rollout, 5M~317M × 후보 512~8192)
   - W8A4 정수 경로가 12/12칸에서 fp32보다 1.9~3.3배 빠르다.
@@ -68,10 +69,12 @@
 
 ## 3. 쓰지 않을 주장 (FINAL_A 4.3에 더함)
 - "가속기의 FP4 형식에서도 같은 실패가 생긴다"(E9 NVFP4 F1 불성립)
-- "저비트로 계획 step 전체가 2~3배 빨라진다"(graph로 잰 것은 world-model rollout뿐이다. 계획 step 전체는 eager에서 0.74배다)
+- "저비트로 계획 step 전체가 2~3배 빨라진다"(2~3배는 world-model rollout의 값이다. 계획 step 전체는 CUDA graph 하나로 잡아도 FP32보다 1.28~1.49배 빠를 뿐이다(E8c). E8의 eager 측정에서는 FP32 시간의 0.74배였다)
 - "4-bit 활성이 8-bit보다 빠르다"(이 GPU에서 같은 int8 dot)
 - "큰 모델은 반올림에 더 강하다"(E10 1차 k가 5M과 비슷)
 - "어떤 1-step 오차로도 손상이 보이지 않는다"(보상 오차는 det를 가른다)
+- "정수 W8A4 world model이 BF16보다 빠르다"(A40에서 미리 바꾼 BF16이 rollout과 계획 step 전체 모두에서 더 빠르다, E8c. 11-01 §9에서 더함)
+- "world model 연산이 계획 step 비용을 지배한다"(dynamics·reward는 FP32 계획 step의 40~52%다, E8c. 11-01 §9에서 더함)
 
 ## 4. 동기 문단 (영문 초안)
 > Sampling-based planners such as MPPI and CEM query a learned world model thousands of times per control step, so the world model's arithmetic dominates planning cost. Low-bit integer arithmetic cuts that cost: replayed as a CUDA graph, the planning rollouts of a W8A4 TD-MPC2 world model run 1.9–3.3× faster than FP32 and up to 1.5× faster than TF32/BF16 on an Ampere GPU, from 5M to 317M parameters. Yet at aggressive bit widths planning collapses, by up to 100 points of success, while in most affected settings the world model's latent one-step error is no larger than that of a stochastic rounding scheme that plans well. We show that what matters is the structure of the rounding error, not its size.
@@ -158,3 +161,17 @@
   - (b)는 E8c 계획 step 전체로 바꾼다. 크기별로 FP32 대비 속도 향상을 보이고, 정수 W8A4와 미리 바꾼 BF16 두 계열을 그린다. 막대는 N 범위다.
   - 캡션에 두 pod라는 것을 밝힌다.
 - 쪽수: 늘어나는 것은 약 8줄이다. 관련 연구와 FP4 문단의 표현을 줄여 6쪽을 지킨다. 주장은 빼지 않는다.
+
+## 9. C4 수정 승인 기록 (2026-11-01T02:25Z, 한국 시간 11-01 11:25)
+- 사용자 답: "추천대로 승인". §8.2의 추천 E1~E5와 §3에 더할 두 항목을 모두 받아들였다.
+- E1: 지금의 C4는 다음 문장이다. "정수 경로에서 공유 dither는 지연을 거의 더하지 않는다(rollout ≤ 2.1%, 계획 step 전체 ≤ 0.7%). 정수 경로는 FP32보다 빠르다(rollout 1.9~3.3배, step 1.28~1.49배). 그러나 A40에서는 미리 바꾼 BF16보다 느리다(1.07~1.52배, 1.01~1.12배)." §2의 원래 C4 문구는 이 문장으로 대신한다.
+- E2: L2c는 수치로 쓰고 "비슷하다"는 쓰지 않는다. 층 0 관찰은 "폐루프로 재지 않음"을 밝힌 기술 문장 하나로만 쓴다.
+  - 조정자 메모: 층 0을 TF32로 바꾼 정수 rollout과 미리 바꾼 BF16의 비(0.72~0.96)는 결과를 본 뒤 고른 비교다. 설계 §5의 기술 항목은 T(int-det-L0tf32)/T(int-det)뿐이었다. 그래서 원고의 규칙("Analyses chosen after seeing data are labeled post hoc")대로 그 문장에 post hoc를 붙인다. 주장을 바꾸는 것은 아니다.
+- E3: S1의 수치와 S2 불성립을 한 문장에 쓴다.
+- E4: 서론의 동기 문장을 "망 평가가 step 비용을 지배한다"로 고친다. 속도 수치는 초록과 6절에만 둔다.
+- E5: Stage 2 charter의 "계획 step 전체" 항목을 "BF16과의 차 줄이기"로 바꾼다. Jetson 항목은 미리 바꾼 BF16을 기준선으로 쓴다. §7의 D5 목록은 이렇게 고쳐 읽는다.
+- 원고에는 §8.3의 문구를 넣는다(`paper/rss2027/main.tex`). 쪽수를 맞추려고 고친 표현은 커밋 메시지와 README에 적는다.
+- 조정자 메모(원고 반영 때, 2026-11-01T02:36Z): rollout의 dither 오버헤드 상한을 2.1%에서 2.3%로 고쳤다.
+  - E8c의 rollout 재현에서 오버헤드 최대가 2.29%였다(E8은 2.07%). §8.3 초안은 E8 값만 썼다.
+  - 설계 §6("E8과 E8c의 같은 조건 수치가 다르면 둘 다 보고한다")에 따라 6절과 표 1에는 두 값을 모두 적었다. 초록과 기여에는 두 측정을 모두 덮는 상한 2.3%를 썼다.
+  - 주장("공유 dither는 지연을 거의 더하지 않는다")은 그대로다. 위 E1 문장의 "rollout ≤ 2.1%"는 "≤ 2.3%(두 측정)"로 읽는다.

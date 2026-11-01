@@ -13,11 +13,12 @@ RES = os.path.join(A, "main", "results")
 EXT = os.path.join(A, "rss_ext")
 TEX = open(os.path.join(HERE, "..", "main.tex")).read()
 
-checks = []  # (label, text that must appear in main.tex, computed value as shown, source)
+checks = []  # (label, text that must appear in main.tex, computed value as shown, source, exact)
 
 
-def check(label, text, computed, source):
-    checks.append((label, text, computed, source))
+def check(label, text, computed, source, exact=False):
+    """exact=True: the recomputed value, formatted as the text quotes it, must also appear inside the quoted text."""
+    checks.append((label, text, computed, source, exact))
 
 
 def f(x, nd=0):
@@ -124,20 +125,75 @@ check("persistent share", "is 0.33--0.52 on DMC and 0.54--0.73 on Meta-World",
       f"DMC {min(s_dmc):.2f}-{max(s_dmc):.2f}, MW {min(s_mw):.2f}-{max(s_mw):.2f}", "e3_tdmpc2_final.json")
 check("DMC rule Spearman", "(Spearman 0.83, new seeds)", f"{dx['spearman_S_red']:.3f}", "e3_tdmpc2_final.json")
 
-# ---- E8 latency ------------------------------------------------------------------------------------------------
+# ---- E8 latency (graph-WM, first A40 run) ----------------------------------------------------------------------
 cells = [r for r in csv.DictReader(open(os.path.join(EXT, "E8_latency", "results", "analysis", "e8_cells.csv")))]
 g = [r for r in cells if r["mode"] == "graph"]
 sp = [float(r["T_fp32_ms"]) / float(r["T_int_det_ms"]) for r in g]
-check("graph speed-up vs FP32", "1.9--3.3$\\times$ faster than FP32", f"{min(sp):.2f}--{max(sp):.2f} ({sum(x >= 1.25 for x in sp)}/12 at ratio<=0.8)", "e8_cells.csv")
-fast = [1 / float(r["int_det_over_minfast"]) for r in g]
-passing = [x for x in fast if x >= 1 / 0.9 - 1e-9]
-check("graph speed-up vs fastest float", "1.19--1.48$\\times$ faster than the faster of TF32 and BF16 in 10 of 12",
-      f"{min(passing):.2f}--{max(passing):.2f} in {len(passing)}/12", "e8_cells.csv")
+check("graph speed-up vs FP32", "the integer rollout is 1.9--3.3$\\times$ faster than FP32 in all 12 cells",
+      f"{min(sp):.1f}--{max(sp):.1f}", "e8_cells.csv", exact=True)
+l1 = sum(float(r["int_det_over_fp32"]) <= 0.8 + 1e-9 for r in g)
+l2 = sum(float(r["int_det_over_minfast"]) <= 0.9 + 1e-9 for r in g)
 ov = [100 * float(r["overhead_median"]) for r in g]
+check("L1-L3 counts", "all hold: 12/12, 10/12, max overhead 2.1\\%", f"{l1}/12, {l2}/12, max overhead {max(ov):.1f}",
+      "e8_cells.csv", exact=True)
 check("dither overhead", "$-0.2$ to $+2.1\\%$", f"{min(ov):.2f} to {max(ov):.2f}", "e8_cells.csv")
-st = [r for r in cells if r["mode"] == "step" and r["size"] == "317"][0]
-check("eager full step 317M", "1.35$\\times$ over FP32 and 1.05$\\times$ over the fastest float format",
-      f"{1 / float(st['int_det_over_fp32']):.2f} / {1 / float(st['int_det_over_minfast']):.2f}", "e8_cells.csv (step)")
+
+# ---- E8c latency (second A40 run: pre-cast BF16, whole planning step as one CUDA graph) ------------------------
+c8 = [r for r in csv.DictReader(open(os.path.join(EXT, "E8c_latency", "results", "analysis", "e8c_cells.csv")))]
+gw = [r for r in c8 if r["mode"] == "graph"]
+gs = [r for r in c8 if r["mode"] == "gstep" and r["rest"] == "fp32"]
+assert len(gw) == 12 and len(gs) == 12
+rng = lambda xs, nd=2: f"{min(xs):.{nd}f}--{max(xs):.{nd}f}"
+# replication of E8 on the second pod
+sp_c = [float(r["T_fp32_ms"]) / float(r["T_int-det_ms"]) for r in gw]
+ov_c = [100 * float(r["overhead_median"]) for r in gw]
+check("E8c replication speed-up", "reproduced these speed-ups (1.9--3.3$\\times$; dither at most $+2.3\\%$)",
+      f"{rng(sp_c, 1)}$\\times$; dither at most $+{max(ov_c):.1f}", "e8c_cells.csv (graph)", exact=True)
+check("L1-L3 replicated", "replicated in a second run (2.3\\%)",
+      f"L1 {sum(float(r['int_det_over_fp32']) <= 0.8 + 1e-9 for r in gw)}/12, "
+      f"L2 {sum(float(r['int_det_over_minfast']) <= 0.9 + 1e-9 for r in gw)}/12, {max(ov_c):.1f}", "e8c_cells.csv (graph)")
+ov_all = max(ov + ov_c)
+for t in ("shared dither adds at most 2.3\\% latency", "Shared dither adds at most 2.3\\% to the planning rollouts"):
+    check("max rollout overhead, both runs", t, f"{ov_all:.1f}", "e8_cells.csv + e8c_cells.csv", exact=True)
+# L2c: pre-cast BF16 is the fastest float format; integer rollout vs it
+n_bc = sum(r["minfloat_is"] == "bf16cast" for r in gw)
+check("pre-cast BF16 fastest (rollout)", "it is then the fastest float format in all 12 cells",
+      "all 12 cells" if n_bc == 12 else f"{n_bc} cells", "e8c_cells.csv (graph)", exact=True)
+r_bc = [float(r["int_det_over_bf16cast"]) for r in gw]
+check("int rollout / pre-cast BF16", "our integer rollout takes 1.07--1.52$\\times$ its time", rng(r_bc),
+      "e8c_cells.csv (graph)", exact=True)
+l2c = sum(float(r["int_det_over_minfloat"]) <= 0.9 + 1e-9 for r in gw)
+check("L2c verdict", "fails: 0/12 (1.07--1.52$\\times$ its time)", f"{l2c}/12 ({rng(r_bc)}", "e8c_cells.csv (graph)",
+      exact=True)
+l0 = [float(r["T_int-det-L0tf32_ms"]) / float(r["T_bf16cast_ms"]) for r in gw]
+check("TF32 first layer / pre-cast BF16", "takes 0.72--0.96$\\times$ the time of pre-converted BF16 (post hoc)", rng(l0),
+      "e8c_cells.csv (graph) [post hoc]", exact=True)
+share = {(r["size"], r["N"]): float(r["T_fp32_ms"]) for r in gw}
+share = [share[(r["size"], r["N"])] / float(r["T_fp32_ms"]) for r in gs]
+check("WM share of FP32 step", "only 40--52\\% of an FP32 planning step", f"{100 * min(share):.0f}--{100 * max(share):.0f}",
+      "e8c_cells.csv (graph / gstep)", exact=True)
+# S1-S3: whole planning step, rest FP32
+st = [float(r["T_fp32_ms"]) / float(r["T_int-det_ms"]) for r in gs]
+check("step speed-up vs FP32", "1.28--1.49$\\times$ over FP32", rng(st), "e8c_cells.csv (gstep)", exact=True)
+for t in ("the whole planning step 1.3--1.5$\\times$ faster than FP32", "makes 1.3--1.5$\\times$ faster than FP32"):
+    check("step speed-up vs FP32 (rounded)", t, rng(st, 1), "e8c_cells.csv (gstep)", exact=True)
+s1 = sum(float(r["int_det_over_fp32"]) <= 0.8 + 1e-9 for r in gs)
+st_bc = [float(r["int_det_over_minfloat"]) for r in gs]
+assert all(r["minfloat_is"] == "bf16cast" for r in gs)
+check("step / pre-cast BF16", "taking 1.01--1.12$\\times$ the time of the step with pre-converted BF16", rng(st_bc),
+      "e8c_cells.csv (gstep)", exact=True)
+s2 = sum(x <= 0.9 + 1e-9 for x in st_bc)
+check("S2 verdict", "S2 fails (0/12, 1.01--1.12$\\times$)", f"{s2}/12, {rng(st_bc)}", "e8c_cells.csv (gstep)", exact=True)
+om = [100 * float(r["overhead_median"]) for r in gs]
+oh = [100 * float(r["overhead_ci_hi"]) for r in gs]
+s3 = all(x <= 5 + 1e-7 for x in om) and sum(x <= 10 + 1e-7 for x in oh) >= 10
+check("S1, S3 verdicts", "S1, S3 hold (12/12; max 0.7\\%)",
+      f"{'S1, S3 hold' if s1 == 12 and s3 else 'S1/S3 differ'} ({s1}/12; max {max(om):.1f}", "e8c_cells.csv (gstep)",
+      exact=True)
+check("step dither overhead", "shared dither adds at most 0.7\\% to it", f"{max(om):.1f}", "e8c_cells.csv (gstep)",
+      exact=True)
+check("step dither overhead < 1%", "under 1\\% to the whole planning step", "under 1" if max(om) < 1 else f"{max(om):.2f}",
+      "e8c_cells.csv (gstep)", exact=True)
 
 # ---- E8b, E9 ---------------------------------------------------------------------------------------------------
 e9 = json.load(open(os.path.join(EXT, "E9_fp4", "results", "e9_summary.json")))
@@ -155,9 +211,13 @@ check("H3b", "(10 of 19 cells)", "report", "FINAL_A §3 H3b")
 check("Wall exploratory", "(+37 points)", "report", "FINAL_A §4.1(4), E3D §6")
 
 bad = 0
-for label, text, computed, source in checks:
-    ok = text in TEX
-    bad += not ok
-    print(f"[{'OK ' if ok else 'MISSING'}] {label}: text \"{text[:60]}\" | computed {computed} | {source}")
-print(f"\n{len(checks) - bad}/{len(checks)} quoted strings found; compare 'computed' with the text by eye for report checks.")
+for label, text, computed, source, exact in checks:
+    status = "OK " if text in TEX else "MISSING"
+    if status == "OK " and exact and computed not in text:
+        status = "MISMATCH"
+    bad += status != "OK "
+    print(f"[{status}] {label}: text \"{text[:60]}\" | computed {computed} | {source}")
+n_exact = sum(c[4] for c in checks)
+print(f"\n{len(checks) - bad}/{len(checks)} checks pass ({n_exact} recomputed exactly); "
+      "compare 'computed' with the text by eye for the others.")
 sys.exit(1 if bad else 0)

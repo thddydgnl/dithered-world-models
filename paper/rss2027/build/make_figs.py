@@ -1,13 +1,14 @@
 # Figures of the RSS 2027 Stage 1 extended abstract of paper A, drawn straight from the result files.
 #  fig_damage:    (a) sh-iter vs det damage in every affected cell; (b) latent one-step error ratio vs damage gap.
 #  fig_mechanism: (a) drift kept by each variant relative to det; (b) damage vs MPPI iterations (TD-MPC2).
-#  fig_latency:   E8 graph-WM speed-ups of the W8A4 integer world model (E8c full-step panel added when present).
+#  fig_latency:   speed-ups over FP32: (a) E8 world-model rollouts (W8A4); (b) E8c whole planning step (W8A4, pre-cast BF16).
 # Text is drawn as paths (SVG, converted to PDF with PyMuPDF), so the figure PDFs embed no fonts.
 # Usage: python3 make_figs.py   (writes ../figures/*.pdf and *.png previews)
 import csv
 import json
 import math
 import os
+import statistics
 import tempfile
 
 import matplotlib
@@ -27,6 +28,8 @@ INK, INK2, MUTED, GRID = "#0b0b0b", "#52514e", "#898781", "#e1e0d9"
 C_SHITER, C_DET, C_SHSTEP, C_SHEP = "#2a78d6", "#eb6834", "#1baf7a", "#eda100"
 # Ordinal blue ramp for candidate count N (light -> dark), with markers and direct labels as the second channel.
 C_N = {512: "#6da7ec", 2048: "#2a78d6", 8192: "#104281"}
+# Whole-step panel: our integer path in blue, the BF16 baseline in neutral gray (marker shape and legend carry identity too).
+C_INT, C_BF16 = "#2a78d6", INK2
 COL_W, TEXT_W = 3.5, 7.16  # IEEEtran conference column and text widths (in)
 
 plt.rcParams.update({
@@ -252,45 +255,62 @@ def fig_mechanism(ratios, curves):
 
 
 def e8_graph():
-    """{(size, N): (fp32 / int-det, min(tf32, bf16) / int-det)} for the E8 graph-WM cells."""
+    """{(size, N): fp32 / int-det} for the E8 graph-WM cells."""
     out = {}
     for r in csv.DictReader(open(os.path.join(EXT, "E8_latency", "results", "analysis", "e8_cells.csv"))):
         if r["mode"] == "graph":
-            det = float(r["T_int_det_ms"])
-            fast = min(float(r["T_tf32_ms"]), float(r["T_bf16_ms"]))
-            out[(int(r["size"]), int(r["N"]))] = (float(r["T_fp32_ms"]) / det, fast / det)
+            out[(int(r["size"]), int(r["N"]))] = float(r["T_fp32_ms"]) / float(r["T_int_det_ms"])
     return out
 
 
-def fig_latency(e8):
+def e8c_step():
+    """{size: {"int": [fp32 / int-det per N], "bf16c": [fp32 / pre-cast bf16 per N]}} for the E8c whole step (rest FP32)."""
+    out = {}
+    for r in csv.DictReader(open(os.path.join(EXT, "E8c_latency", "results", "analysis", "e8c_cells.csv"))):
+        if r["mode"] == "gstep" and r["rest"] == "fp32":
+            fp32 = float(r["T_fp32_ms"])
+            d = out.setdefault(int(r["size"]), {"int": [], "bf16c": []})
+            d["int"].append(fp32 / float(r["T_int-det_ms"]))
+            d["bf16c"].append(fp32 / float(r["T_bf16cast_ms"]))
+    assert all(len(v) == 3 for d in out.values() for v in d.values())
+    return out
+
+
+def fig_latency(e8, step):
     sizes = [5, 19, 48, 317]
     fig = plt.figure(figsize=(COL_W, 1.55))
-    gs = fig.add_gridspec(1, 2, wspace=0.38, left=0.105, right=0.90, top=0.84, bottom=0.215)
-    panels = [("(a) vs FP32", 0, (0, 3.6), [0, 1, 2, 3]), ("(b) vs fastest of TF32, BF16", 1, (0, 1.65), [0, 0.5, 1, 1.5])]
-    for p, (title, idx, ylim, yt) in enumerate(panels):
-        ax = fig.add_subplot(gs[0, p])
-        ax.axhline(1.0, color=MUTED, lw=0.7, ls=(0, (1, 1.5)), zorder=1)
-        ends = []
-        for N, mk in ((512, "o"), (2048, "s"), (8192, "D")):
-            ys = [e8[(s, N)][idx] for s in sizes]
-            ax.plot(range(4), ys, color=C_N[N], lw=1.3, marker=mk, ms=3.2, mec="white", mew=0.4, zorder=3)
-            ends.append([ys[-1], N])
-        if p == 1:
-            ends.sort()
-            for i in range(1, len(ends)):  # spread direct labels that would touch
-                ends[i][0] = max(ends[i][0], ends[i - 1][0] + 0.11)
-            for y, N in ends:
-                ax.text(3.18, y, f"N={N}", color=INK2, fontsize=5.8, va="center", ha="left")
-        ax.set_xticks(range(4))
-        ax.set_xticklabels([f"{s}M" for s in sizes])
-        ax.set_xlim(-0.3, 3.3)
-        ax.set_ylim(*ylim)
-        ax.set_yticks(yt)
-        ax.set_xlabel("world-model size")
-        if p == 0:
-            ax.set_ylabel("speed-up of W8A4 (×)")
-        ax.set_title(title, loc="left", pad=3)
-        tidy(ax)
+    gs = fig.add_gridspec(1, 2, wspace=0.10, left=0.105, right=0.985, top=0.86, bottom=0.215)
+    # (a) world-model rollouts, one line per candidate count
+    ax = fig.add_subplot(gs[0, 0])
+    for N, mk in ((512, "o"), (2048, "s"), (8192, "D")):
+        ax.plot(range(4), [e8[(s, N)] for s in sizes], color=C_N[N], lw=1.3, marker=mk, ms=3.2, mec="white",
+                mew=0.4, zorder=3, label=f"N={N}")
+    ax.legend(loc="upper left", frameon=False, fontsize=5.8, handlelength=1.9, handletextpad=0.4,
+              labelspacing=0.25, borderaxespad=0.2)
+    ax.set_ylabel("speed-up over FP32 (\u00d7)")
+    ax.set_title("(a) world-model rollouts", loc="left", pad=3)
+    # (b) whole planning step: median over N, bar = range over N
+    bx = fig.add_subplot(gs[0, 1], sharey=ax)
+    for key, col, mk, dx, lab in (("int", C_INT, "o", -0.11, "W8A4 integer"),
+                                  ("bf16c", C_BF16, "s", 0.11, "BF16, pre-converted")):
+        xs = [i + dx for i in range(4)]
+        bx.vlines(xs, [min(step[s][key]) for s in sizes], [max(step[s][key]) for s in sizes], color=col, lw=0.8,
+                  zorder=2)
+        bx.plot(xs, [statistics.median(step[s][key]) for s in sizes], ls="none", color=col, marker=mk, ms=3.6,
+                mec="white", mew=0.4, zorder=3, label=lab)
+    bx.legend(loc="upper left", frameon=False, fontsize=5.8, handletextpad=0.3, labelspacing=0.25,
+              borderaxespad=0.2)
+    bx.tick_params(labelleft=False)
+    bx.set_title("(b) whole planning step", loc="left", pad=3)
+    for a in (ax, bx):
+        a.axhline(1.0, color=MUTED, lw=0.7, ls=(0, (1, 1.5)), zorder=1)
+        a.set_xticks(range(4))
+        a.set_xticklabels([f"{s}M" for s in sizes])
+        a.set_xlim(-0.35, 3.35)
+        a.set_ylim(0, 4.0)
+        a.set_yticks([0, 1, 2, 3])
+        a.set_xlabel("model size")
+        tidy(a)
     save(fig, "fig_latency")
 
 
@@ -298,7 +318,7 @@ def main():
     cells = affected_cells()
     fig_damage(cells)
     fig_mechanism(drift_ratios(), e2_curves())
-    fig_latency(e8_graph())
+    fig_latency(e8_graph(), e8c_step())
     fams = {f: sum(1 for c in cells if c[0] == f) for f in FAMILIES}
     below = {f: sum(1 for c in cells if c[0] == f and c[5] <= c[6]) for f in FAMILIES}
     print("affected cells:", fams, "| det latent error <= sh-iter:", below)
