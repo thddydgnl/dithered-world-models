@@ -3,7 +3,7 @@
 | 폴더 | 대상 | 양식 | 상태 (2026-10-24) |
 |---|---|---|---|
 | [`jkaia2026/`](jkaia2026/) | 2026 한국인공지능학회 추계학술대회(JKAIA 2026), **General (Poster) 트랙** | 학회 LaTeX 템플릿 `kaia.cls`, 2쪽 | 완성본 v1. 영문 제출본 `main.tex`/`main.pdf`, 한국어 검토본 `main_ko.tex`/`main_ko.pdf`, EasyChair 국문 초록 `abstract_ko.txt` |
-| [`rss2027/`](rss2027/) | RSS 2027 Stage 1 extended abstract (마감 2026-12-04 AoE) | 본문 5쪽 + 참고문헌 1쪽, 이중맹검 | 초안 v1(11-01). 주장 C1~C6 승인(11-01). 상태와 제출 점검표는 [`rss2027/README.md`](rss2027/README.md), 보강 실험 E8~E10·E8c는 [`../rss_ext/`](../rss_ext/) |
+| [`rss2027/`](rss2027/) | RSS 2027 Stage 1 extended abstract (마감 2026-12-04 AoE) | 본문 5쪽 + 참고문헌 1쪽, 이중맹검 | 초안 v2(11-01, E8c 반영, C4 수정안 승인). 주장 C1~C6 승인(11-01). 상태와 제출 점검표는 [`rss2027/README.md`](rss2027/README.md), 보강 실험 E8~E10·E8c는 [`../rss_ext/`](../rss_ext/) |
 | ~~(예정) `tmlr/`~~ | ~~TMLR~~ | — | 10-31에 RSS로 바꿈(아래 5절) |
 | (예정) ICLR 2027 워크숍 | 워크숍 목록 공개 11-29 | — | 아직 없음. non-archival이면 RSS와 함께 낼 수 있음 |
 
