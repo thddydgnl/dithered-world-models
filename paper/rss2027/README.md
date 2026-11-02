@@ -9,28 +9,31 @@
   - LLM 사용: 허용된다. 공개는 의무가 아니지만 "highly encouraged"다. **환각 인용은 desk reject다**(자동 검사).
   - 동시 투고 금지. 예외는 proceedings가 없는 발표와 arXiv 같은 preprint다. preprint는 심사자에게 신원이 드러날 위험이 있다.
 
-## 지금 상태 (초안 v2, 2026-11-01: E8c 반영)
+## 지금 상태 (초안 v2, 2026-11-01: E8c 반영; 11-02: arXiv 판 추가)
 
 | 항목 | 상태 |
 |---|---|
-| 본문 `main.tex` | 초안 v2. tectonic으로 정확히 6쪽이다. 본문은 5쪽 오른쪽 단 위에서 끝나고, 참고문헌이 6쪽을 채운다(6쪽 오른쪽 단에 약 48pt, 참고문헌 약 5줄이 남음). "사전등록"이라는 말은 쓰지 않는다. 대신 "분석 계획을 자료 전에 고정했다"고 쓴다(10-31 사용자 결정) |
+| 본문 `main.tex` | 초안 v2. 한 소스에서 두 판을 만든다. `main.pdf`는 익명 RSS 투고판, `arxiv.pdf`는 저자 블록이 있는 arXiv 판이다(아래 'arXiv 판'). RSS 판은 tectonic으로 정확히 6쪽이다. 본문은 5쪽 오른쪽 단 위에서 끝나고, 참고문헌이 6쪽을 채운다(6쪽 오른쪽 단에 약 48pt, 참고문헌 약 5줄이 남음). "사전등록"이라는 말은 쓰지 않는다. 대신 "분석 계획을 자료 전에 고정했다"고 쓴다(10-31 사용자 결정) |
 | 그림 3개 | `build/make_figs.py`가 결과 파일에서 그린다. 글자를 path로 그려서 그림 PDF에는 글꼴이 없다. 그림 3은 (a) E8 world-model rollout, (b) E8c 계획 step 전체(정수 W8A4와 미리 바꾼 BF16; 점은 N의 중앙값, 막대는 N 범위)다 |
 | 표 1 | 자료 전에 고정한 가설 전체(E1~E10, E8c의 L2c·S1~S3 포함)의 판정 |
 | 수치 점검 | `build/verify_numbers.py`가 본문의 수치 문구 62개를 대조한다. 그중 18개(E8 일부, E8c 전부)는 결과 파일에서 다시 계산한 값이 본문 숫자와 글자 그대로 같은지 자동으로 본다. 62/62 통과 |
 | E8c(D3) | 끝났다(11-01). L2c·S2 불성립, S1·S3 성립. C4 수정안 E1~E5를 사용자가 승인했다(`rss_ext/CLAIMS_rss.md` §9). 초록, 서론, 기여, 표 1, 6절, 그림 3(b), 한계, Stage 2에 넣었다. rollout의 dither 상한은 두 측정을 모두 덮는 2.3%다(E8 2.07%, E8c 2.29%) |
 | 참고문헌 | 40편 확정(11-01). 2025–2026년 23편은 경쟁 연구 재조사(`rss_ext/RELATED_recheck_2026-11-01.md`)와 항목별 확인(`rss_ext/related_2026.bib`)에서 왔다. 확인 기록은 [REFERENCES_CHECK.md](REFERENCES_CHECK.md)에 있다. E8c를 넣었을 때 7쪽으로 넘쳐서 표현을 줄였다(아래 '쪽수 맞춤 기록') |
+| arXiv 판 | `arxiv.tex`가 `\arxivversion`을 정의하고 `main.tex`를 읽는다. 이 스위치가 켜지면 저자 블록(Yong Hwi Song, Keon Myung Lee; 사용자 지정 11-02)과 투고처 중립 표현("Stage 2", "Extension Charter", "this submission" 대신 "planned extensions" 등)이 쓰인다. 꺼지면 익명이고 문구는 RSS 투고판 그대로다. `build/make_arxiv.py`가 스위치를 arXiv 쪽으로 풀고 주석을 지운 `main.tex`, `main.bbl`, `IEEEtran.cls`, 그림 PDF를 `arxiv_source.tar.gz`로 묶는다(arXiv는 pdfLaTeX로 직접 컴파일하고 BibTeX은 돌리지 않는다). 제출 양식에 넣을 제목·저자·초록은 `arxiv_metadata.txt`에 쓴다. 저자 블록 때문에 arXiv 판은 7쪽이고 마지막 참고문헌 한 편(5줄)이 7쪽에 걸린다 |
 | 공식 템플릿 | 11-01 사용자 허락을 받아 받았다(`paper-template-latex.tar.gz`, 115 KB). 내용은 예전 RSS 템플릿 그대로다(IEEEtran.cls V1.7a, `times`, `natbib`+`plainnat`, `hyperref`, `\pdfinfo`). 그 `IEEEtran.cls`를 이 폴더에 두었고, `main.tex`는 템플릿 구조를 따른다. 남은 일은 pdfLaTeX로 컴파일하는 것이다 |
 
 ## 빌드
 
 ```bash
-cd "/Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world_models/paper/rss2027" && python3 build/make_figs.py && python3 build/verify_numbers.py && tectonic -X compile main.tex && bash build/sync_papers_copy.sh "무엇을 고쳤는지 한 줄"
+cd "/Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world_models/paper/rss2027" && bash build/build.sh "무엇을 고쳤는지 한 줄"
 ```
 
-- **원고를 고쳐 PDF를 다시 만들 때마다 보관 폴더 사본을 갱신한다**(사용자 지시 2026-11-01). 위 명령의 마지막 단계가 그 일을 한다.
-  - 사본: `~/Documents/research/papers/Dithered_Low-Bit_World_Models/RSS2027/Dithered_Low-Bit_World_Models_RSS2027_원고.pdf`
-  - 같은 폴더의 `원고_갱신기록.txt`에 시각, 커밋, 쪽수, 메모를 한 줄씩 덧붙인다. 원고 원본이 커밋과 다르면 커밋 뒤에 `+uncommitted`가 붙는다.
-  - 보관 폴더는 논문별 폴더 아래에 학회별 하위 폴더를 두고 PDF만 넣는 구조다(B의 TMLR 원고와 같은 방식).
+- `build/build.sh`는 그림 → 수치 점검 → `main.pdf`(익명 RSS 판) → `arxiv.pdf` → arXiv 소스 묶음 → 보관 폴더 복사를 차례로 한다. 수치 점검이 실패하면 거기서 멈춘다.
+- **원고를 고쳐 PDF를 다시 만들 때마다 보관 폴더 사본을 갱신한다**(사용자 지시 2026-11-01). 위 명령의 마지막 단계(`build/sync_papers_copy.sh`)가 그 일을 한다.
+  - RSS 판: `~/Documents/research/papers/Dithered_Low-Bit_World_Models/RSS2027/Dithered_Low-Bit_World_Models_RSS2027_원고.pdf`
+  - arXiv 판: 같은 폴더의 `arXiv/`에 `Dithered_Low-Bit_World_Models_arXiv_원고.pdf`, 올릴 소스 묶음 `Dithered_Low-Bit_World_Models_arXiv_source.tar.gz`, 제출 양식 내용 `arXiv_제출정보.txt`
+  - 두 폴더의 `원고_갱신기록.txt`에 시각, 커밋, 쪽수, 메모를 한 줄씩 덧붙인다. 원고 원본이 커밋과 다르면 커밋 뒤에 `+uncommitted`가 붙는다.
+  - 보관 폴더는 논문별 폴더 아래에 학회별 하위 폴더를 두는 구조다(B의 TMLR 원고와 같은 방식).
 
 - tectonic(XeTeX)에서는 `times`가 매핑되지 않는다. 그래서 초안은 Times와 글자 폭이 같은 TeX Gyre Termes(OpenType)를 쓴다. 쪽수는 pdfLaTeX + Times와 거의 같다.
 - **제출본은 pdfLaTeX로 만든다**(Overleaf 또는 TeX Live). `\usepackage{times}` 분기가 자동으로 쓰인다. 맥북에는 pdflatex가 없다.
@@ -50,17 +53,19 @@ cd "/Users/song-yonghwi/Documents/physical ai - Neural Networks/A_dithered_world
    - 제출 직전에 `~/Documents/대학원 지원/CV/cv.yaml`의 A 항목 두 줄을 고친다. 바꿀 줄은 `note`의 "to be submitted to … RSS 2027"과 `venue_short`의 "RSS 2027 in prep."이다.
    - 이 저장소에 push하면 공개 홈페이지·GitHub 프로필·CV PDF가 바로 바뀐다. 지원서용 PDF에서도 빠진다. push는 사용자가 정한다.
 6. **LLM 사용 공개**: 의무는 아니지만 권장된다. 어디에(OpenReview 양식 또는 각주) 무엇을 쓸지 사용자가 정한다.
-7. **preprint**: arXiv에 올리면 허용되지만 심사자에게 신원이 드러날 수 있다. 올릴지 사용자가 정한다.
+7. **preprint**: 11-02 사용자 결정. 지금 원고를 먼저 arXiv에 올리고, 표현을 다듬어 arXiv 판을 갱신한 뒤 RSS에 낸다. RSS CFP는 preprint를 허용하지만 심사자가 제목으로 검색하면 저자를 알 수 있다. arXiv의 Comments 칸에 투고처를 쓰지 않는다. 올릴 파일과 양식 내용은 보관 폴더 `arXiv/`에 있다. 올린 뒤 arXiv ID를 `arXiv/원고_갱신기록.txt`에 적는다.
 8. **OpenReview**: 공저자(이건명 교수)를 포함한 모든 저자의 OpenReview 프로필이 필요하다.
 9. **인용**: `REFERENCES_CHECK.md`의 남은 일을 끝낸다. OpenReview 7편을 브라우저로 확인하고, 위협이 큰 두 편(3VSa1Kx7HD, cVCKr4bBU2)은 본문을 읽는다. 12월 초에 새 버전이 나왔는지 다시 본다.
 
 ## 파일
 
-- `main.tex`, `refs.bib`: 원고
+- `main.tex`, `refs.bib`: 원고. `arxiv.tex`: arXiv 판 wrapper(`\arxivversion` 정의 후 `main.tex` 읽기)
 - `figures/`: 그림 PDF(본문용), PNG(미리보기)
 - `build/make_figs.py`: 그림. 원자료는 `main/results/`(E1, E2, E3)와 `rss_ext/`(E8, E8c, E10)
 - `build/verify_numbers.py`: 본문 수치 대조
-- `build/sync_papers_copy.sh`: `main.pdf`를 보관 폴더(`~/Documents/research/papers/Dithered_Low-Bit_World_Models/RSS2027/`)로 복사하고 갱신 기록을 남긴다
+- `build/build.sh`: 전체 빌드(그림, 수치 점검, 두 PDF, arXiv 묶음, 보관 폴더 복사)
+- `build/make_arxiv.py`: arXiv 올릴 소스 묶음(`arxiv_source.tar.gz`)과 양식 내용(`arxiv_metadata.txt`). 둘 다 git에 넣지 않는다
+- `build/sync_papers_copy.sh`: `main.pdf`와 `arxiv.pdf`(와 묶음)를 보관 폴더(`~/Documents/research/papers/Dithered_Low-Bit_World_Models/{RSS2027,arXiv}/`)로 복사하고 갱신 기록을 남긴다
 
 ## 쪽수 맞춤 기록 (11-01, E8c 반영 때)
 

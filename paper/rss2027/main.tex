@@ -2,6 +2,8 @@
 % Based on the official RSS template (paper-template-latex.tar.gz, IEEEtran.cls V1.7a, fetched 2026-11-01).
 % Draft build: tectonic -X compile main.tex (XeTeX; TeX Gyre Termes stands in for Times with the same metrics).
 % Submission build: pdfLaTeX inside the official RSS template, so that the PDF holds only Type 1 fonts (see README).
+% arXiv build: tectonic -X compile arxiv.tex. That wrapper defines \arxivversion, which turns on the author block and the
+% venue-neutral wording below; build/make_arxiv.py then flattens the source into the upload bundle. Without it the build is anonymous.
 \documentclass[conference]{IEEEtran}
 \usepackage{iftex}
 \ifXeTeX
@@ -9,11 +11,15 @@
   \setmainfont{texgyretermes}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
     ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
 \else
+  \pdfminorversion=7 % the figure PDFs are PDF 1.7
   \usepackage{times}
 \fi
 \usepackage[numbers]{natbib}
 \usepackage{multicol}
 \usepackage[bookmarks=true]{hyperref}
+\ifdefined\arxivversion
+\hypersetup{pdfauthor={Yong Hwi Song, Keon Myung Lee}, pdftitle={Planners Exploit Deterministic Error: Dithered Low-Bit World Models}, pdfsubject={Robot learning}, pdfkeywords={World models; Model-predictive control; Quantization; Stochastic rounding}, pdfcreator={}}
+\else
 \hypersetup{pdfauthor={}, pdftitle={}, pdfsubject={}, pdfkeywords={}, pdfcreator={}}
 \ifPDFTeX
   \pdfinfo{
@@ -22,6 +28,7 @@
      /Subject (Robot learning)
      /Keywords (World models; Model-predictive control; Quantization; Stochastic rounding)
   }
+\fi
 \fi
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
@@ -35,13 +42,38 @@
 \newcommand{\shep}{\textsf{sh-ep}\xspace}
 \newcommand{\detshift}{\textsf{det+shift}\xspace}
 \newcommand{\ind}{\textsf{ind}\xspace}
+\ifdefined\arxivversion
+\newcommand{\extplan}{Sec.~\ref{sec:limits} lists the extensions we plan}
+\newcommand{\extrun}{run after the main study}
+\newcommand{\extsection}{Limitations and Planned Extensions}
+\newcommand{\extcharter}{Planned extensions}
+\newcommand{\extlistfor}{as a planned extension}
+\else
+\newcommand{\extplan}{Sec.~\ref{sec:limits} lists the extensions we propose for Stage 2}
+\newcommand{\extrun}{run for this submission}
+\newcommand{\extsection}{Limitations and Stage 2 Plan}
+\newcommand{\extcharter}{Proposed Extension Charter}
+\newcommand{\extlistfor}{for Stage 2}
+\fi
 
 \begin{document}
 
 \title{Planners Exploit Deterministic Error:\\Dithered Low-Bit World Models}
 
+\ifdefined\arxivversion
+\author{\IEEEauthorblockN{Yong Hwi Song}
+\IEEEauthorblockA{School of Information and Communication Engineering\\
+Chungbuk National University\\
+Email: thddydgnl1937@gmail.com}
+\and
+\IEEEauthorblockN{Keon Myung Lee}
+\IEEEauthorblockA{School of Software\\
+Chungbuk National University\\
+Email: kmlee@cbnu.ac.kr}}
+\else
 % You will get a Paper-ID when submitting a pdf file to the conference system
 \author{Author Names Omitted for Anonymous Review. Paper-ID [add your ID here]}
+\fi
 
 \maketitle
 
@@ -65,12 +97,12 @@ The ingredients are classical: the optimizer's curse~\cite{smith2006curse}, the 
 \item \textbf{Prescription} (Sec.~\ref{sec:fix}). \shiter removes at least half of the damage in all 19 affected Meta-World cells of TD-MPC2, in 4 of 5 DINO-WM cells and in all 8 affected tasks of a 317M multi-task TD-MPC2, and it is never harmful there.
 \item \textbf{Deployment} (Sec.~\ref{sec:deploy}). Shared dither adds at most 2.3\% to the planning rollouts of an integer TD-MPC2 world model and under 1\% to the whole planning step, which the integer path makes 1.3--1.5$\times$ faster than FP32 but not faster than BF16 with pre-converted weights; in TD-MPC2, block-scaled FP4 formats mark the boundary of the failure.
 \end{enumerate}
-Every test was fixed in a hashed document before its data, and the tests that failed are reported (Table~\ref{tab:hyp}); Sec.~\ref{sec:stage2} lists the extensions we propose for Stage 2.
+Every test was fixed in a hashed document before its data, and the tests that failed are reported (Table~\ref{tab:hyp}); \extplan.
 
 \section{Related Work}
 \label{sec:related}
 
-\textbf{Quantized world models and policies.} Post-training quantization of DINO-WM makes the planning objective and task success diverge at aggressive bit widths~\cite{fu2026wmquant}, and success depends on which modules keep their precision~\cite{ranganath2026bits}; offline action deviation predicts the closed-loop loss of quantized world action models~\cite{xu2026prede}. A concurrent submission recovers full-precision planning with 4-bit weights through a calibration objective~\cite{anon2026modulemse}. Quantized vision-language-action and world-action models are benchmarked in closed loop~\cite{vlaquantbench2026, qvla2026, park2026qcrl} and deployed with fused low-bit kernels and CUDA graphs at about 2$\times$ speed-ups~\cite{wang2026steerquant, anon2026wamptq, anon2026loopquant}, and quantization error is known to recur across their denoising loops~\cite{anon2026loopquant}. These works calibrate, allocate bits or train; none changes the rounding rule or separates how the error is shared from how long it persists. Calibration and dither act on different properties of the error (Sec.~\ref{sec:stage2}).
+\textbf{Quantized world models and policies.} Post-training quantization of DINO-WM makes the planning objective and task success diverge at aggressive bit widths~\cite{fu2026wmquant}, and success depends on which modules keep their precision~\cite{ranganath2026bits}; offline action deviation predicts the closed-loop loss of quantized world action models~\cite{xu2026prede}. A concurrent submission recovers full-precision planning with 4-bit weights through a calibration objective~\cite{anon2026modulemse}. Quantized vision-language-action and world-action models are benchmarked in closed loop~\cite{vlaquantbench2026, qvla2026, park2026qcrl} and deployed with fused low-bit kernels and CUDA graphs at about 2$\times$ speed-ups~\cite{wang2026steerquant, anon2026wamptq, anon2026loopquant}, and quantization error is known to recur across their denoising loops~\cite{anon2026loopquant}. These works calibrate, allocate bits or train; none changes the rounding rule or separates how the error is shared from how long it persists. Calibration and dither act on different properties of the error (Sec.~\ref{sec:limits}).
 
 \textbf{Prediction error versus decisions.} Data-averaged prediction error does not track planning quality, while decision-relevant error does~\cite{you2026predictability, wang2026drpe}, and the signed component of rollout error along the goal direction matters more than its magnitude~\cite{anon2026magnitude}. \citet{min2026lowerror} split end-point error across a candidate pool into a pool-common and an action-relative part and repair each with an oracle. Iterating planners drive candidates to where the model cannot resolve them: certified elite decisions become rarer as CEM iterates~\cite{anon2026elitecert}, predicted candidate quality falls to chance at the frame that CEM optimizes~\cite{anon2026resolution}, and replacing early CEM rounds with a deterministic approximation hurts while score noise of the same size does not~\cite{anon2026evaluations}. We isolate which property of rounding error the planner exploits, with variants that share one per-entry error distribution, and remove it without a second model.
 
@@ -95,7 +127,7 @@ Every test was fixed in a hashed document before its data, and the tests that fa
 \centering
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\caption{Hypotheses and outcomes. Each test was fixed before its data; rows marked $^\dagger$ were added after the first stage and tested on new seeds; $^\ddagger$ marks the extension experiments run for this submission. Mechanism tasks: mw-push, mw-pick-place, cheetah-run, PushT.}
+\caption{Hypotheses and outcomes. Each test was fixed before its data; rows marked $^\dagger$ were added after the first stage and tested on new seeds; $^\ddagger$ marks the extension experiments \extrun. Mechanism tasks: mw-push, mw-pick-place, cheetah-run, PushT.}
 \label{tab:hyp}
 \begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.43\textwidth}>{\raggedright\arraybackslash}p{0.40\textwidth}@{}}
 \toprule
@@ -122,7 +154,7 @@ H4b & Benefit of sharing grows with the density of near-ties & fails ($\rho=0.03
 \section{Phenomenon and Prescription}
 \label{sec:fix}
 
-\textbf{Damage that the latent error does not show.} \dtm costs up to 100 points (mw-button-press at 2 bits). In 29 of the 36 affected 5M cells its latent one-step error is no larger than that of \shiter (Fig.~\ref{fig:damage}b). On mw-pick-place at 3 bits, for example, the error is 0.22 for \dtm and 0.39 for \shiter, yet \dtm loses 37.8 points and \shiter 7.8. The 317M model shows the same pattern in all 8 affected tasks: \dtm's latent error is 0.55--0.69 times that of \shiter while \dtm loses 12--99 points. The comparison is within a bit width; across bit widths one-step error and damage do rank together. Two other error measures do separate \dtm: errors over three or five steps (PushT, 4 bits, five steps: 0.25 for \dtm vs.\ 0.04 for \shiter), and, observed after the fact, the one-step error of the predicted reward, which is larger under \dtm in all 19 affected Meta-World cells and all 8 tasks at 317M. A deterministic error is correlated across units and adds up in a scalar output, while independent dither errors partly cancel; we have not tested this explanation and list it for Stage 2 (Sec.~\ref{sec:stage2}).
+\textbf{Damage that the latent error does not show.} \dtm costs up to 100 points (mw-button-press at 2 bits). In 29 of the 36 affected 5M cells its latent one-step error is no larger than that of \shiter (Fig.~\ref{fig:damage}b). On mw-pick-place at 3 bits, for example, the error is 0.22 for \dtm and 0.39 for \shiter, yet \dtm loses 37.8 points and \shiter 7.8. The 317M model shows the same pattern in all 8 affected tasks: \dtm's latent error is 0.55--0.69 times that of \shiter while \dtm loses 12--99 points. The comparison is within a bit width; across bit widths one-step error and damage do rank together. Two other error measures do separate \dtm: errors over three or five steps (PushT, 4 bits, five steps: 0.25 for \dtm vs.\ 0.04 for \shiter), and, observed after the fact, the one-step error of the predicted reward, which is larger under \dtm in all 19 affected Meta-World cells and all 8 tasks at 317M. A deterministic error is correlated across units and adds up in a scalar output, while independent dither errors partly cancel; we have not tested this explanation and list it \extlistfor\ (Sec.~\ref{sec:limits}).
 
 \begin{figure}[t]
 \centering
@@ -165,12 +197,12 @@ H4b & Benefit of sharing grows with the density of near-ties & fails ($\rho=0.03
 
 \textbf{FP4 formats mark the boundary.} On an RTX 5090, an NVFP4 GEMM at the 317M layer width is up to 5.3$\times$ faster than BF16, so we repeated the 5M experiment with activations in NVFP4~\cite{nvidia2025nvfp4} (blocks of 16, E4M3 scale) and MXFP4~\cite{rouhani2023mx} (blocks of 32, power-of-two scale), rounding each block to the E2M1 grid to nearest (\dtm) or stochastically (\shiter). \dtm damaged only 2 of 12 tasks under NVFP4 (cheetah-run 9.9\%, walker 1.7\%), short of the three our analysis plan required, and 4 of 12 under MXFP4 (cheetah-run 31.3\%, window-open 10.0 points), against 71.6\% on cheetah-run with a uniform 4-bit grid. Where damage remained, the signature was the same: \dtm's latent one-step error was 0.48--0.63 times that of \shiter in all six damaged cells, and \shiter removed most of the damage in the one damaged Meta-World cell but in only 2 of 5 DMC cells, as with uniform grids. Block scaling shrinks the error and dither removes its persistence, two different axes; in TD-MPC2 the failure we study belongs to coarse grids with a shared scale, while quantized VLA policies can still lose success under NVFP4~\cite{park2026qcrl}.
 
-\section{Limitations and Stage 2 Plan}
-\label{sec:stage2}
+\section{\extsection}
+\label{sec:limits}
 
 \textbf{Limitations.} The prescription assumes an iterating planner, and on DMC it helps in fewer than half of the affected cells. On top of the best post-training quantization (mostly per-channel ranges), which already removes most of \dtm's damage, the extra gain of \shiter is borderline in TD-MPC2 (10 of 19 cells) and absent in DINO-WM (1 of 3). We did not combine dither with calibration objectives such as~\cite{anon2026modulemse}. Our quantization-aware-training baseline was weak, so we draw no conclusion about training. The 317M results come from one checkpoint and the FP4 results from fake quantization of the 5M models. The latency map comes from one GPU type, on which BF16 with pre-converted weights, not evaluated in closed loop, is faster than our integer path with its first layer in FP32. We have no physical-robot experiments.
 
-\textbf{Proposed Extension Charter.} As in Table~\ref{tab:hyp}, each item would have its hypotheses, thresholds and analysis code fixed before its data.
+\textbf{\extcharter.} As in Table~\ref{tab:hyp}, each item would have its hypotheses, thresholds and analysis code fixed before its data.
 \begin{enumerate}
 \item \emph{A diagnostic that sees the damage.} Unlike the latent one-step error, the one-step reward error separated \dtm in every affected Meta-World cell (post hoc). We will test on new tasks and seeds whether the correlation of rounding error across hidden units predicts \dtm's damage within a bit width, and whether a reward-error check before deployment flags the damaging configurations.
 \item \emph{Integer kernels for DINO-WM.} We will port the integer path to the DINO-WM predictor and test whether closed-loop damage and repair match fake quantization in the affected cells, with the same latency budget for dither ($\le$5\%).

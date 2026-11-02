@@ -13,3 +13,11 @@ __pycache__/
 /paper/**/*.fls
 /paper/**/*.fdb_latexmk
 /paper/**/*.xdv
+
+# arXiv bundle and the intermediates kept to pack it (rebuilt by paper/rss2027/build/build.sh)
+/paper/rss2027/arxiv_src/
+/paper/rss2027/arxiv_source.tar.gz
+/paper/rss2027/arxiv_metadata.txt
+/paper/**/*.bbl
+/paper/**/*.blg
+/paper/**/*.log
