@@ -40,13 +40,13 @@ cd "A_dithered_world_models/paper/jkaia2026" && python3 build/make_fig.py && tec
 |---|---|
 | Track | General (Poster) |
 | Title (영문) | Planners Exploit Deterministic Error: Dithered Low-Bit World Models |
-| Authors | YongHwi Song (충북대학교 정보통신공학부, thddydgnl1937@gmail.com), Keon Myung Lee (충북대학교 소프트웨어학부, kmlee@cbnu.ac.kr) |
+| Authors | Yong Hwi Song (충북대학교 정보통신공학부, thddydgnl1937@gmail.com), Keon Myung Lee (충북대학교 소프트웨어학부, kmlee@cbnu.ac.kr) |
 | Abstract (국문) | [`jkaia2026/abstract_ko.txt`](jkaia2026/abstract_ko.txt)를 그대로 붙여 넣는다 |
 | Keywords | World models; model-predictive control; quantization; stochastic rounding; robot planning |
 | Paper | [`jkaia2026/main.pdf`](jkaia2026/main.pdf) (2쪽) |
 | 저작권 양도 | 선택하지 않음 |
 
-- 저자 표기는 DriveWAM 포스터와 CV에 맞춰 "YongHwi Song"으로 했다. 이건명 교수님 소속과 이메일은 JEV 논문(KIIS 2026 추계)과 같다.
+- 저자 표기는 처음에 DriveWAM 포스터와 CV에 맞춰 "YongHwi Song"으로 했다가, 11-02 사용자 지시로 원고 전체에서 "Yong Hwi Song"으로 통일했다. 10-25에 제출한 포스터 PDF(보관 폴더 사본)는 옛 표기 그대로다. 이건명 교수님 소속과 이메일은 JEV 논문(KIIS 2026 추계)과 같다.
 
 **제출 전 확인**
 - [ ] `main_ko.pdf`를 읽고 고칠 부분을 정한 뒤 영문 `main.tex`에 반영한다(두 파일의 문단 순서는 1:1로 같다).

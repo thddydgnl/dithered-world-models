@@ -2,7 +2,7 @@
 
 **Planners Exploit Deterministic Error: Dithered Low-Bit World Models**
 
-YongHwi Song (School of Information and Communication Engineering) and Keon Myung Lee (School of Software), Chungbuk National University
+Yong Hwi Song (School of Information and Communication Engineering) and Keon Myung Lee (School of Software), Chungbuk National University
 
 Code, results and reports behind the paper. The two-page version for the JKAIA 2026 poster track is in [paper/jkaia2026/](paper/jkaia2026/); a full-length version is in preparation.
 
