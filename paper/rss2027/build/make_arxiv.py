@@ -102,7 +102,7 @@ def main():
             f.write(f"  {n} -- {a}, Chungbuk National University\n")
         f.write("\nAbstract:\n" + abstract + "\n\n")
         f.write(f"Comments (추천):\n{pages} pages, {len(figs)} figures, {n_tab} table\n\n")
-        f.write("Categories (추천):\nPrimary cs.RO (Robotics); cross-list cs.LG (Machine Learning)\n\n")
+        f.write("Categories (11-08 사용자 결정):\nPrimary cs.LG (Machine Learning); cross-list cs.RO (Robotics)\n\n")
         f.write("메모\n"
                 "- 올릴 파일: Dithered_Low-Bit_World_Models_arXiv_source.tar.gz (main.tex, main.bbl, IEEEtran.cls, figures/). arXiv가 pdfLaTeX로 직접 컴파일한다. 올린 뒤 arXiv의 컴파일 결과(미리보기 PDF)를 확인하고 공개(announce)한다.\n"
                 "- Comments 칸과 본문 어디에도 투고처(RSS 2027)를 쓰지 않는다. 이중맹검 심사 중 CV에서 RSS 표기를 빼기로 한 결정(D4)과 같은 이유다.\n"
