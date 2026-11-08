@@ -21,3 +21,5 @@ __pycache__/
 /paper/**/*.bbl
 /paper/**/*.blg
 /paper/**/*.log
+# Korean review copy of the manuscript (local only; built by paper/rss2027/ko/build.sh)
+/paper/rss2027/ko/
