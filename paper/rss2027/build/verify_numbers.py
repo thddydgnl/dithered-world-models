@@ -71,7 +71,7 @@ dw_aff = {key: v for key, v in dw.items() if v["det"]["drop_real_holm"] == "True
 dw_red = sum(float(v["shiter"]["red"]) >= 0.5 for v in dw_aff.values())
 check("DINO-WM red>=0.5", "in 4 of 5 DINO-WM cells", f"{dw_red}/{len(dw_aff)}", "e1_dinowm_cells.csv")
 h1_dw = sum(float(v["det"]["rel_err1"]) <= float(v["shiter"]["rel_err1"]) for v in dw_aff.values())
-check("H1 count 5M", "In 29 of the 36 affected 5M cells", f"{h1_td + h1_dw}/{len(aff) + len(dw_aff)}", "E1 cells (pt_err1h, rel_err1)")
+check("H1 count (5M, DINO-WM)", "In 29 of the 36 affected cells of DINO-WM and the 5M TD-MPC2", f"{h1_td + h1_dw}/{len(aff) + len(dw_aff)}", "E1 cells (pt_err1h, rel_err1)")
 p5 = dw[("pusht", 5)]
 check("PushT k=5 det damage", "PushT at 5 bits, where \\dtm's damage is only 5 points", f(100 * float(p5["det"]["D"])), "e1_dinowm_cells.csv")
 p4 = dw[("pusht", 4)]
@@ -129,7 +129,7 @@ check("DMC rule Spearman", "(Spearman 0.83, new seeds)", f"{dx['spearman_S_red']
 cells = [r for r in csv.DictReader(open(os.path.join(EXT, "E8_latency", "results", "analysis", "e8_cells.csv")))]
 g = [r for r in cells if r["mode"] == "graph"]
 sp = [float(r["T_fp32_ms"]) / float(r["T_int_det_ms"]) for r in g]
-check("graph speed-up vs FP32", "the integer rollout is 1.9--3.3$\\times$ faster than FP32 in all 12 cells",
+check("graph speed-up vs FP32", "the integer rollout is 1.9--3.3$\\times$ faster than FP32 in all 12 conditions",
       f"{min(sp):.1f}--{max(sp):.1f}", "e8_cells.csv", exact=True)
 l1 = sum(float(r["int_det_over_fp32"]) <= 0.8 + 1e-9 for r in g)
 l2 = sum(float(r["int_det_over_minfast"]) <= 0.9 + 1e-9 for r in g)
@@ -157,8 +157,8 @@ for t in ("shared dither adds at most 2.3\\% latency", "Shared dither adds at mo
     check("max rollout overhead, both runs", t, f"{ov_all:.1f}", "e8_cells.csv + e8c_cells.csv", exact=True)
 # L2c: pre-cast BF16 is the fastest float format; integer rollout vs it
 n_bc = sum(r["minfloat_is"] == "bf16cast" for r in gw)
-check("pre-cast BF16 fastest (rollout)", "it is then the fastest float format in all 12 cells",
-      "all 12 cells" if n_bc == 12 else f"{n_bc} cells", "e8c_cells.csv (graph)", exact=True)
+check("pre-cast BF16 fastest (rollout)", "it is then the fastest float format in all 12 conditions",
+      "all 12 conditions" if n_bc == 12 else f"{n_bc} conditions", "e8c_cells.csv (graph)", exact=True)
 r_bc = [float(r["int_det_over_bf16cast"]) for r in gw]
 check("int rollout / pre-cast BF16", "our integer rollout takes 1.07--1.52$\\times$ its time", rng(r_bc),
       "e8c_cells.csv (graph)", exact=True)
