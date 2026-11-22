@@ -417,3 +417,41 @@ det 손상은 (a) 단위별 평균 편향이 rollout을 따라 쌓여서, (b) �
 | D2 | 2026-11-21T19:01:09Z | §0.6 4단계, §0.7 점검 2 | b ← b + α·m을 모든 층 잔차 < 1% Δ까지(갱신 최대 60), α = 1 → ½ → ¼ 순서로 단계마다 b = 0에서. 못 미치면 최소 잔차 b + bc_unconverged 표시, 판정 두 가지 보고. 점검 2는 최종 b에서. 자세한 내용은 LOG.md | 판단 에이전트(Fable 5.2, max), 수렴한 b의 det+BC 결과 전 |
 | D3 | 2026-11-21T19:41:09Z | §0.7 점검 3 (Wall) | [사후] Wall eval8 none 49/100이 창 밖이지만 같은 pod의 E1 쌍 재실행 62/100(E1 61)로 파이프라인 정상 → §0.4 그대로 진행, 판정 규칙 불변, 기준선 셋을 함께 보고. 이후 DINO-WM 점검 3이 창 밖이면 E1 분할 none 재실행이 E1 ±10점 안일 때 진행 | 판단 에이전트(Fable 5.2, max), Wall 양자화 변형 결과 전 |
 | D4 | 2026-11-22T01:36Z | §1.2 DINO-WM 칸 | [사후] PushT 3-bit E11 칸(8변형 + none, eval8 100 episode, E13 없음)을 새 pod dw.6에서 보강으로 더 돈다. eval8에서 손상 칸이 Wall 하나뿐이었기 때문이다. 사전 지정 판정(B2·B3·Dg1)은 바꾸지 않고, 이 칸의 읽기와 두 칸을 합친 단위 읽기는 [사후] 기술로 따로 보고한다 | 사용자 결정(조정자 추천, eval8 결과를 본 뒤) |
+| D5 | 2026-11-22T02:06Z | 새 칸(X17) | [사후] PushT 4-bit을 E1의 평가 분할(eval6)로 RTX 4090(dw.6)에서 다시 돈다. 세부는 §11.1 | 판단 에이전트(Fable 5.2, max)의 제안, 사용자 승인("너의 추천대로 해줘"), eval8 결과를 본 뒤 |
+| D6 | 2026-11-22T02:06Z | 새 칸(X5) | [사후] MW det+noise의 비트 곡선(PT k1~5, PC k1~3)을 새 A40 pod(td.7)에서 돈다. 세부는 §11.1 | 같음 |
+
+### 11.1 D5·D6 세부 (자료를 보기 전에 고정)
+
+**D5 — X17: PushT 4-bit E1 분할 재실행**
+- 목적: eval8에서 PushT 4-bit det 손상이 재현되지 않은 이유를 가린다(eval8 +4점 [−7, 15], E1 +24점 [14, 34]). 원인 후보는 평가 분할의 차이와 GPU·수치의 차이다.
+- 칸
+  - PushT 4-bit, main(per-tensor) 범위
+  - E1과 같은 평가 분할: eval6, pair seed 6, 쌍 0~99, env seed 6001~6100, planner seed 4000~4099, salt `eval6`
+  - E1과 같은 계획기와 진단
+  - 변형: none, det, sh-iter × 100 episode
+- pod: dw.6(RTX 4090). D4가 끝난 뒤 같은 driver 대기열에 잇는다. none도 같은 pod에서 돈다(짝 규칙).
+- 판정(기술, 미리 적음). D_det는 이 pod의 none 대비 하락이고, 짝 bootstrap 10,000회 95% CI다.
+  - (i) D_det의 CI 하한이 0보다 크고 E1의 CI [0.14, 0.34]와 겹치면: 미재현은 분할 차이(eval8)로 본다.
+  - (ii) D_det의 CI가 0을 포함하고 상한이 0.14보다 작으면: 같은 쌍에서도 GPU 종류에 따라 4-bit PushT의 det 손상이 달라진다. 수치 민감성으로 한계에 쓴다.
+  - (iii) 그 밖이면 두 설명을 모두 열어 둔다.
+  - 함께 보고: none 성공률과 E1 none(83%)의 episode 일치율(D3의 Wall 재실행과 같은 방식), sh-iter의 D와 red.
+- 비용: 약 1.4 h, 약 $1.2.
+
+**D6 — X5: MW det+noise 비트 곡선**
+- 목적: C4("새 잡음이 아니라 dither여야 한다")의 직접 근거를 얻는다. det+noise는 E11에서 MW 1차 k 8/8칸을 고쳤다. 더 낮은 비트에서도 dither만큼 버티는지 본다.
+- 칸
+  - MW 8과제 × det+noise × {PT k1~5, PC k1~3} × 90짝(체크포인트 1~3 × seed 100000~100029)
+  - none(기본 계획기) 90짝을 같은 pod에서 돈다
+  - 범위 파일은 E12와 같은 것을 쓴다. PT는 E0 파일이고, PC는 td pod에서 다시 잰 파일을 그대로 복사해 md5를 대조한다.
+  - 확장 규칙은 E12와 같다: 가장 높은 k에서 D > τ면 k = 8까지 한 비트씩 올린다. τ = 0.10.
+- pod: td.7(A40 SECURE, TERM_H 8)
+  - 코드는 td와 같은 판(E11 det+noise 구현, md5 대조)이다.
+  - E11 1차 k의 det+noise 칸도 이 pod에서 다시 돌아 E11 값과 비교한다(같은 GPU 종류의 재현 점검).
+- 보고(기술, 판정 문턱 없음)
+  - 과제·범위별 k\*(det+noise)를 E12의 k\*(det), k\*(det+BC), k\*(sh-iter), k\*(det+shift)와 나란히 싣는다.
+  - 과제 수 셋을 센다
+    - k\*(det+noise) ≤ k\*(sh-iter)
+    - k\*(det+noise) ≤ min(k\*(sh-iter), k\*(det+shift))
+    - G_noise = min(k\*(det), k\*(det+BC)) − k\*(det+noise) ≥ 1
+  - E12의 k\*는 다른 pod(같은 A40)의 값이라 짝이 아니다. k\* 비교는 기술로만 쓴다.
+- 비용: 약 2 h, 약 $1.2.

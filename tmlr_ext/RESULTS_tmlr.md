@@ -47,14 +47,18 @@
 
 ### 1.2 예측과 다른 것: 새 잡음만 더해도 MW는 고쳐진다 (B3 불성립)
 
-- det 출력에 공유·매 forward 새 균일 잡음을 더한 det+noise는 det의 오차를 그대로 둔다. 그런데도 MW 8/8칸을 고친다(red 0.52~0.92). 사전 예측("어떤 잡음도 손상을 줄이지 못한다")은 틀렸다.
-- DMC는 1/4칸, DINO-WM Wall은 0/1칸(red 0.07)이다. 그래서 det+noise가 통하는지는 어느 성분이 지배하는지를 따른다.
-  - det+noise는 계획기가 보는 오차 가운데 반복마다 새로 뽑히는 몫을 늘려 지속 몫을 줄인다. 평균 편향은 그대로 남긴다.
-  - 그래서 지속이 지배하는 MW에서는 고치고, 편향이 지배하는 Wall에서는 못 고친다. Wall에서는 det의 편향을 되돌려 넣은 sh-iter+b도 sh-iter보다 24점 나쁘다.
-  - 기전 과제의 drift 비(변형 ÷ det)는 det+noise에서 0.58(push), 0.53(pick-place), 0.35(cheetah)로 준다.
-- 처방이 dither여야 하는 이유도 여기서 나온다. sh-iter와 det+shift는 무편향이면서 반복마다 새로 뽑히므로 두 성분을 함께 없앤다(MW 7/8·8/8칸, Wall red 1.00·1.36).
-  - det+noise의 전체 오차 분산은 sh-iter와 같은 Δ²/6이고, det+shift는 Δ²/12다.
-  - DMC에서 det+noise가 1/4칸만 고치는 동안 det+shift는 3/4, sh-iter는 2/4칸을 고친다.
+- det+noise는 det 출력을 그대로 두고, 공유하는 새 균일 잡음을 매 forward 더한다. 이것이 MW 8/8칸을 고쳤다(red 0.52~0.92). 사전 예측("어떤 잡음도 손상을 줄이지 못한다")과 반대다.
+- 다른 단위에서는 거의 고치지 못했다.
+  - DMC는 1/4칸이다. 고친 칸은 편향으로 분류된 finger 하나이고, 지속으로 분류된 cheetah·walker·quadruped는 고치지 못했다.
+  - DINO-WM Wall은 0/1칸이다(red 0.07).
+  - 그래서 "지속이 지배하면 새 잡음으로 고쳐진다"고 일반화할 수 없다. 이 절의 첫 판(01:32Z)에 그렇게 쓴 문장은 DMC 결과와 어긋나서 지웠다(LOG 02:05Z).
+- 기술 항목
+  - 지속 몫 ρ_p(E13 마지막 반복 집합): det+noise 0.05~0.23. 새로 뽑는 dither는 sh-iter −0.00~0.21, det+shift −0.00~0.24이고, 고정 변형(det, det+BC, sh-ep, det+shift-fixed)은 모두 1.00이다(`TD_tdmpc2/results/analysis/td_e13_cells.csv`).
+  - 기전 과제의 drift 비(변형 ÷ det): push 0.58, pick-place 0.53, cheetah 0.35.
+- 같은 칸에서 dither는 더 많이 고친다.
+  - DMC: det+shift 3/4칸, sh-iter 2/4칸
+  - Wall: red sh-iter 1.00, det+shift 1.36
+  - 전체 오차 분산은 det+noise가 sh-iter와 같은 Δ²/6이고, det+shift는 Δ²/12다.
 
 ### 1.3 처방과 비트 한계 (E12, E15)
 
