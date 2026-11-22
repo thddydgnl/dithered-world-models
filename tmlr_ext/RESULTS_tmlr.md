@@ -53,7 +53,7 @@
   - DINO-WM Wall은 0/1칸이다(red 0.07).
   - 그래서 "지속이 지배하면 새 잡음으로 고쳐진다"고 일반화할 수 없다. 이 절의 첫 판(01:32Z)에 그렇게 쓴 문장은 DMC 결과와 어긋나서 지웠다(LOG 02:05Z).
 - 기술 항목
-  - 지속 몫 ρ_p(E13 마지막 반복 집합, 같은 E11 12칸): det+noise 0.05~0.23, sh-iter 0.00~0.12, det+shift 0.00~0.11, sh-iter+b 0.02~0.16. 고정 변형(det, det+BC, sh-ep, det+shift-fixed)은 모두 1.00이다(`TD_tdmpc2/results/analysis/td_e13_cells.csv`). [정정 02:55Z: 첫 판은 dither의 범위를 E13 전체 72행에서 가져와 칸 집합이 달랐다]
+  - 지속 몫 ρ_p(E13 마지막 반복 집합, 같은 E11 12칸): det+noise 0.05~0.23, sh-iter 0.00~0.11, det+shift 0.00~0.10, sh-iter+b 0.02~0.16. 고정 변형(det, det+BC, sh-ep, det+shift-fixed)은 모두 1.00이다(`TD_tdmpc2/results/analysis/td_e13_cells.csv`). [정정 02:55Z: 첫 판은 dither의 범위를 E13 전체 72행에서 가져와 칸 집합이 달랐다]
   - 기전 과제의 drift 비(변형 ÷ det): push 0.58, pick-place 0.53, cheetah 0.35.
 - 같은 칸에서 dither는 더 많이 고친다.
   - DMC: det+shift 3/4칸, sh-iter 2/4칸
