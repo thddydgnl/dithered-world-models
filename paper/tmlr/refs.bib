@@ -457,6 +457,8 @@
 
 % verified Crossref record of doi:10.1109/TCS.1977.1084345 (IEEE Trans. Circuits Syst. 24(6):291-299, June 1977) 2026-11-22.
 % That record gives initials only and IEEE Xplore did not load, so the given names are left as initials. Abstract not read.
+% 2026-11-23: IEEE Xplore document 1084345 also gives initials only (R., V., K.; Bell Labs) and the same 24(6):291-299;
+% its abstract (random requantization of multiplier outputs reduces or eliminates limit cycles) supports the citing sentence.
 @article{kieburtz1977limit,
   author  = {Kieburtz, R. and Lawrence, V. and Mina, K.},
   title   = {Control of Limit Cycles in Recursive Digital Filters by Randomized Quantization},
@@ -530,9 +532,10 @@
   year      = {2020}
 }
 
-% verified proceedings.mlr.press/v202/xiao23c.html (PMLR 202:38087-38099, 2023) 2026-11-22
+% verified proceedings.mlr.press/v202/xiao23c.html (PMLR 202:38087-38099, 2023) 2026-11-22; DBLP 2026-11-23 spells "Mickael" as
+% "Micka\"el" Seznec, adopted here
 @inproceedings{xiao2023smoothquant,
-  author    = {Xiao, Guangxuan and Lin, Ji and Seznec, Mickael and Wu, Hao and Demouth, Julien and Han, Song},
+  author    = {Xiao, Guangxuan and Lin, Ji and Seznec, Micka{\"e}l and Wu, Hao and Demouth, Julien and Han, Song},
   title     = {{SmoothQuant}: Accurate and Efficient Post-Training Quantization for Large Language Models},
   booktitle = {Proceedings of the 40th International Conference on Machine Learning (ICML)},
   series    = {Proceedings of Machine Learning Research},
@@ -564,7 +567,7 @@
 
 % verified MathSciNet MR538597 via mathscinet.ams.org/mrlookup (Scand. J. Statist. 6(2):65-70, 1979) and zbMATH
 % Zbl 0402.62058 (6:65-70, 1979). JSTOR (stable/4615733) returned a bot check, so the journal's own page was not read
-% 2026-11-22
+% 2026-11-22. 2026-11-23: JSTOR stable/4615733 page metadata gives the same title and Vol. 6, No. 2, 1979.
 @article{holm1979,
   author  = {Holm, Sture},
   title   = {A Simple Sequentially Rejective Multiple Test Procedure},
@@ -597,7 +600,7 @@
 
 % verified Crossref record of doi:10.1145/3315508.3329973 (ACM, MAPL at PLDI '19, pp. 10-19, 22 June 2019) and the
 % authors' copy eecs.harvard.edu/~htk/publication/2019-mapl-tillet-kung-cox.pdf (title in title case, ACM reference
-% format). ACM DL returned a bot check 2026-11-22
+% format). ACM DL returned a bot check 2026-11-22. 2026-11-23: ACM DL page gives the same authors, MAPL 2019 and pages 10-19.
 @inproceedings{tillet2019triton,
   author    = {Tillet, Philippe and Kung, H. T. and Cox, David},
   title     = {{Triton}: An Intermediate Language and Compiler for Tiled Neural Network Computations},
@@ -605,4 +608,27 @@
   pages     = {10--19},
   publisher = {ACM},
   year      = {2019}
+}
+
+% ---------------------------------------------------------------------------------------------------------------------
+% third batch (2026-11-23): the two candidates left open in REFERENCES_CHECK.md 3.4, both prior to our v1 (2026-11-09)
+
+% verified arxiv.org/abs/2605.15960 (v3 Sat, 7 Nov 2026; v1 Fri, 15 May 2026 with the same title and authors, so prior
+% work; arXiv comment "NeurIPS 2026 (poster)"; the proceedings are not out yet, so no volume) 2026-11-23. Cited for its
+% abstract's claim that model exploitation is essentially unavoidable on large policy sets.
+@inproceedings{bhamidipaty2026exploitable,
+  author = {Logan Mondal Bhamidipaty and Esmeralda S. Whitammer and David Abel and Mykel J. Kochenderfer and Subramanian Ramamoorthy},
+  title = {{Imperfect World Models are Exploitable}},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year = {2026}
+}
+
+% verified arxiv.org/abs/2607.28405 (v1 Thu, 30 Jul 2026, only version, so prior work) 2026-11-23. PTQ of world action
+% models (Fast-WAM, LingBot-VA) whose calibration uses reachable closed-loop rollout states; deterministic rounding, no
+% planner. Not a source for "error accumulates over denoising steps" (that wording is WM-Quant's summary of it).
+@article{quantwams2026,
+  author = {Jiacheng Zhou and Jinfan Lv and Ruixuan Li and Longtai Zhang and Yan Wang and Wenqiang Zhang and Lizhe Qi},
+  title = {{QuantWAMs: Calibrating at the Right Granularity for World Action Models}},
+  journal = {arXiv preprint arXiv:2607.28405},
+  year = {2026}
 }

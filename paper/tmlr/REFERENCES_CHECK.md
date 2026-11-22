@@ -29,7 +29,7 @@
 - 위 12항목을 원 출처(arXiv abs 페이지, 출판 페이지)에서 확인하고 `note`를 지운다. 확인하지 못하면 인용을 뺀다. → 11-22 완료(3절).
 - 본문의 `\todo{verify}` 네 곳(2절 동시 연구 문장 셋, 7절 Orin 속도)을 원문과 대조한다. → 11-22 완료(3절).
 - ICLR 2027 익명 투고 7편(`anon2026*`)의 상태를 12-16 결정 뒤에 다시 본다(철회·공개·arXiv판에 따라 인용 형식이 바뀐다).
-- 11-19 이후 arXiv 제출분을 다시 검색한다(PLAN 4.8 마지막 줄).
+- 11-19 이후 arXiv 제출분을 다시 검색한다(PLAN 4.8 마지막 줄). → 11-23에 11-19 19:00 UTC 제출분까지 봤다(5.5절). 나머지는 11-24 10:00 KST 뒤에 다시 본다.
 
 ## 3. 원 출처 확인 (2026-11-22)
 
@@ -98,10 +98,10 @@
 
 ### 3.4 남은 일
 
-- `kieburtz1977limit`의 저자 이름 전체와 초록은 IEEE Xplore가 열리는 곳에서 확인한다.
-- 고전 6편을 DBLP로 한 번 더 대조한다.
-- `anon2026loopquant`의 "denoising step마다 오차가 다시 나타난다"는 11-01 기록에 기댄다. OpenReview가 열리면 다시 본다.
-- 확인하지 않은 후보: "Imperfect world models are exploitable"(arXiv 2605.15960, Goodhart 논문이 인용), QuantWAMs(arXiv 2607.28405, WM-Quant가 "오차가 denoising step을 따라 쌓인다"로 인용).
+- `kieburtz1977limit`의 저자 이름 전체와 초록은 IEEE Xplore가 열리는 곳에서 확인한다. → 11-23 확인(5.2절). 출판사 기록도 머리글자만 있다.
+- 고전 6편을 DBLP로 한 번 더 대조한다. → 11-23 완료(5.1절).
+- `anon2026loopquant`의 "denoising step마다 오차가 다시 나타난다"는 11-01 기록에 기댄다. OpenReview가 열리면 다시 본다. → 11-23에도 열지 못했다(5.4절). arXiv판도 없다.
+- 확인하지 않은 후보: "Imperfect world models are exploitable"(arXiv 2605.15960, Goodhart 논문이 인용), QuantWAMs(arXiv 2607.28405, WM-Quant가 "오차가 denoising step을 따라 쌓인다"로 인용). → 11-23 확인하고 둘 다 인용했다(5.3절).
 
 ## 4. 추가 항목 (2026-11-22)
 
@@ -145,6 +145,81 @@
 ### 4.3 남은 일
 
 - NeurIPS 2026 논문집이 나오면(학회 12월) `maes2026lewm`·`fastwam2026`을 논문집 기록과 대조한다.
-- `holm1979`의 호수(2)와 제목 표기는 JSTOR가 열리는 곳에서 한 번 더 본다. `tillet2019triton`은 ACM DL에서 한 번 더 본다.
+- `holm1979`의 호수(2)와 제목 표기는 JSTOR가 열리는 곳에서 한 번 더 본다. `tillet2019triton`은 ACM DL에서 한 번 더 본다. → 11-23 둘 다 확인(5.2절).
 - OpenReview가 열리면 DINOv2 TMLR판 PDF와 NeurIPS 2026 두 편의 camera-ready를 본다.
-- 3.4의 DBLP 대조에 이 절의 고전 9편도 넣는다.
+- 3.4의 DBLP 대조에 이 절의 고전 9편도 넣는다. → 11-23 완료(5.1절).
+
+## 5. 남은 확인 (2026-11-23)
+
+- 방법
+  - DBLP API, IEEE Xplore, JSTOR, ACM DL은 앱 안 브라우저(실제 브라우저)로 열렸다. 11-22에 막혔던 곳들이다.
+  - OpenReview는 사람이 직접 통과해야 하는 확인 화면이 떠서 열지 않았다. 봇 확인은 대신 통과하지 않는다.
+  - arXiv는 서브에이전트가 API와 abs 페이지로 봤다. 두 후보는 abs 페이지 메타데이터로 한 번 더 확인했다.
+- `refs.bib`는 이로써 65항목이다(4절의 63 + 5.3절의 2).
+
+### 5.1 DBLP 대조 (고전 15편: 3절의 6편 + 4절의 9편)
+
+| key | DBLP | 결과 |
+|---|---|---|
+| `ng2000pegasus` | conf/uai/NgJ00, 406–415 | 같음 |
+| `strens2002paired` | JMLR 3:921–950 | 같음 |
+| `goschin2013cem` | ICML 2013, 1193–1201 | 같음. DBLP는 "Michael L. Littman"이다. bib은 PMLR 표기 "Michael Littman"을 그대로 둔다 |
+| `aysal2008consensus` | IEEE TSP 56(10-1):4905–4918 | 같음. "10-1"은 10호 1부다 |
+| `kieburtz1977limit` | 없음 | IEEE Xplore로 확인(5.2절) |
+| `hansen2009uncertainty` | IEEE TEC 13(1):180–197 | 같음 |
+| `nagel2019dfq` | ICCV 2019, 1325–1334 | 같음 |
+| `nagel2020adaround` | ICML 2020, 7197–7206 | 같음 |
+| `xiao2023smoothquant` | ICML 2023, 38087–38099 | 고침: "Mickael" → "Mickaël" Seznec |
+| `lin2024awq` | MLSys 2024, 저자 10명 | 같음. DBLP에는 쪽이 없다 |
+| `bengio2013ste` | CoRR abs/1308.3432 | 같음 |
+| `holm1979` | 없음 | JSTOR로 확인(5.2절) |
+| `oquab2024dinov2` | TMLR 2024 | 같음 |
+| `fu2020d4rl` | CoRR abs/2004.07219 | 같음 |
+| `tillet2019triton` | MAPL@PLDI 2019, 10–19 | 같음 |
+
+### 5.2 출판사 페이지
+
+- `kieburtz1977limit`: IEEE Xplore 문서 1084345.
+  - 저자: 출판사 기록도 머리글자뿐이다(R. Kieburtz, V. Lawrence, K. Mina; Bell Labs). 그래서 bib의 머리글자를 그대로 둔다.
+  - 서지: 24(6):291–299, 1977년 6월.
+  - 초록: multiplier 출력을 무작위로 다시 양자화해 limit cycle을 줄이거나 없앤다. 본문 문장 "Randomized quantization controls limit cycles in recursive digital filters"와 맞는다. 3.2절의 "제목만 확인"은 이것으로 바뀐다.
+- `holm1979`: JSTOR stable/4615733의 메타데이터는 "Scandinavian Journal of Statistics, Vol. 6, No. 2, 1979"이고 제목도 같다. 호수 2를 확인했다.
+- `tillet2019triton`: ACM DL에서 저자 3명(Philippe Tillet, H. T. Kung, David Cox), MAPL 2019, 10–19쪽이 bib과 같다.
+
+### 5.3 후보 두 편 → 인용 추가
+
+- `bhamidipaty2026exploitable`
+  - 서지: "Imperfect World Models are Exploitable", 저자 5명, v1 2026-05-15(선행), NeurIPS 2026 poster.
+  - 반영: 2절 "Exploitation and rounding rules" 첫 문장에 "which is essentially unavoidable on large policy sets"로 넣었다. 초록의 표현이다.
+  - 한정: 존재 정리다. 계획기가 그 역전을 실제로 찾는다는 내용은 없다.
+- `quantwams2026`
+  - 서지: "QuantWAMs: Calibrating at the Right Granularity for World Action Models", 저자 7명, v1 2026-07-30(선행).
+  - 반영: 2절 1문단의 "calibrated and benchmarked in closed loop"에 넣었다.
+  - 한정: WM-Quant는 이 논문을 "denoising step을 따라 오차가 쌓인다"로 요약하지만, QuantWAMs 본문에는 그런 주장이 없다. 그 근거로는 쓰지 않는다.
+- 두 문장을 더해도 본문은 그대로 12쪽의 99%에서 끝난다. `build.sh --strict`도 통과했다.
+
+### 5.4 ICLR 2027 익명 투고 7편
+
+- arXiv판: 7편 모두 없다(arXiv API 제목·초록 검색, 웹 검색).
+  - 이름만 겹치는 다른 논문: LoopQuant for Looped Transformers(2610.16368), LoopQ 두 편(2605.16343, 2611.05093).
+- 일정(iclr.cc/Conferences/2027/Dates): 원고 마감 2026-09-25 AoE, 최종 결정 2026-12-16. 7편은 마감 뒤 공개되었으므로 우리 v1보다 앞선다.
+- OpenReview는 확인 화면 때문에 열지 못했다. `anon2026loopquant`의 "denoising 루프에서 오차가 되풀이된다"는 여전히 11-01 기록에 기댄다.
+
+### 5.5 11-19 이후 arXiv
+
+- 볼 수 있던 범위: 11-19 19:00 UTC 제출분까지(11-20 목록).
+- 꼭 인용할 새 논문은 없다. 본문 분량(12쪽의 99%) 때문에 동시 연구는 넣지 않았다.
+  - 중간
+    - 2611.24234: VLA의 flow step별 가중치 정밀도. 11-18, 동시.
+    - 2611.12127 "Lost in Rounding": 11-09 09:42 UTC로 우리 v1보다 약 7시간 뒤, 동시. bf16 RTN 재귀 상태와 SR을 다룬다.
+  - 낮음: 2611.25319, 2611.25415, 2611.26406, 2611.26339, 2611.24470, 2611.24229, 2611.10316(WMPA, 선행).
+- `obst2026cem`(본문 인용 없음)은 v2(11-14)에서 제목과 저자가 바뀌었다. 인용하게 되면 고친다.
+
+### 5.6 남은 일
+
+- 11-24 10:00 KST 뒤: 11-20~11-23 arXiv 제출분을 검색한다.
+- 12-16 뒤
+  - 익명 7편의 상태를 본다. 채택이면 실명으로 바꾸고, 철회 여부도 본다.
+  - `anon2026loopquant` 문장을 OpenReview에서 확인한다. 사람이 확인 화면을 한 번 통과해야 한다.
+- 12월 NeurIPS 2026 논문집이 나오면 `maes2026lewm`, `fastwam2026`, `bhamidipaty2026exploitable`를 대조한다. papers.nips.cc의 2026 쪽은 11-23 기준 404다.
+- DINOv2 TMLR판 PDF의 저자 표기는 더 볼 필요가 없다. DBLP TMLR 기록으로 앞 3명을 확인했고 bib에는 그 3명만 있다.
