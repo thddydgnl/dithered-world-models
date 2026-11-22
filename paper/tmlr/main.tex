@@ -1,0 +1,410 @@
+% TMLR submission -- Transactions on Machine Learning Research -- paper A (skeleton v0, 2026-11-22)
+% Title kept (CLAIMS_tmlr.md v2 sec. 1, decision T2): Planners Exploit Deterministic Error: Dithered Low-Bit World Models
+% Style: tmlr.sty / tmlr.bst / fancyhdr.sty / math_commands.tex, byte-identical copies of B_near_miss_blindness/paper/tmlr/
+%   (github.com/JmlrOrg/tmlr-style-file, commit 7bf90ef, 2023-06-30). Never edit them (TMLR desk-rejects modified styles).
+% Submission mode: \usepackage{tmlr} prints "Anonymous authors". Do NOT use [preprint]/[accepted] for OpenReview.
+%   Main text up to 12 pages (before references) = Regular submission (two-week review).
+% Content authority: A/tmlr_ext/CLAIMS_tmlr.md v2 (approved 2026-11-22); write nothing broader, nothing from its sec. 3.
+% Plan: A/tmlr_ext/PLAN_tmlr.md sec. 4 (structure, wording fixes) and sec. 5 (format rules, checklist).
+% Numbers: every result number is \nv{key}, defined in numbers.tex (written by build/make_numbers.py from the result
+%   files). build/verify_numbers.py checks numbers.tex is current and lists every literal number left in this file.
+% Build: bash build/build.sh   (numbers -> tables -> figures -> number check -> tectonic -> page and anonymity report)
+% Anonymity: the PDF is anonymous; this source file is NOT (commented author block). Never put it in the supplement.
+% Per-section comments name the CLAIMS v2 items (C1-C7) that the section supports and the planned figures/tables.
+
+\documentclass[10pt]{article}
+\usepackage{tmlr}
+% \usepackage[accepted]{tmlr}   % camera-ready
+% arXiv version: do not switch here; build/make_arxiv.sh writes a copy with [preprint], \arxivtrue and the author block.
+\newif\ifarxiv\arxivfalse
+
+\input{math_commands.tex}
+\usepackage{hyperref}
+\hypersetup{pdfauthor={}, pdftitle={Planners Exploit Deterministic Error: Dithered Low-Bit World Models}, pdfsubject={}, pdfkeywords={}, pdfcreator={}}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{etoolbox}
+\usepackage{placeins}
+\graphicspath{{figures/}}
+% Table captions sit above their tables; the article class leaves no gap below a caption, so move the gap there.
+\AtBeginEnvironment{table}{\setlength{\abovecaptionskip}{0pt}\setlength{\belowcaptionskip}{6pt}}
+
+% ---- rounding variants (Table 1)
+\newcommand{\dtm}{\textsf{det}\xspace}
+\newcommand{\detbc}{\textsf{det+BC}\xspace}
+\newcommand{\shiter}{\textsf{sh-iter}\xspace}
+\newcommand{\shiterb}{\textsf{sh-iter+b}\xspace}
+\newcommand{\shstep}{\textsf{sh-step}\xspace}
+\newcommand{\shep}{\textsf{sh-ep}\xspace}
+\newcommand{\shplan}{\textsf{sh-plan}\xspace}
+\newcommand{\detshift}{\textsf{det+shift}\xspace}
+\newcommand{\detshiftfix}{\textsf{det+shift-fixed}\xspace}
+\newcommand{\detnoise}{\textsf{det+noise}\xspace}
+\newcommand{\ind}{\textsf{ind}\xspace}
+\newcommand{\red}{\mathrm{red}}
+\newcommand{\dpers}{\Delta_{\mathrm{pers}}}
+\newcommand{\dbias}{\Delta_{\mathrm{bias}}}
+
+% ---- numbers from numbers.tex; an undefined key is printed in red and warned about
+\makeatletter
+\newcommand{\defnv}[2]{\expandafter\def\csname nv@#1\endcsname{#2}}
+\newcommand{\nv}[1]{\ifcsname nv@#1\endcsname\csname nv@#1\endcsname\else\textcolor{red}{\textbf{?#1?}}\PackageWarning{numbers}{undefined number key #1}\fi}
+% \input is not expandable at the start of a tabular row (it breaks a following \bottomrule); the TeX primitive is.
+\newcommand{\inputrows}[1]{\@@input #1 }
+\makeatother
+\input{numbers.tex}
+
+% ---- visible markers for unfinished text (build/build.sh lists them; none may remain at submission)
+\newcommand{\todo}[1]{{\color{red}[\textbf{TODO:} #1]}}
+
+\title{Planners Exploit Deterministic Error:\\Dithered Low-Bit World Models}
+
+% BEGIN-AUTHOR-BLOCK (camera-ready and arXiv only; commented out in the anonymous submission source)
+% \author{\name Yong Hwi Song \email thddydgnl1937@gmail.com \\
+%       \addr School of Information and Communication Engineering, Chungbuk National University, Korea
+%       \AND
+%       \name Keon Myung Lee \email kmlee@cbnu.ac.kr \\
+%       \addr School of Software, Chungbuk National University, Korea}
+% END-AUTHOR-BLOCK
+
+\def\month{MM}
+\def\year{YYYY}
+\def\openreview{\url{https://openreview.net/forum?id=XXXX}}
+
+\begin{document}
+
+\maketitle
+
+% CLAIMS v2: one-line claim (sec. 1) + C1, C2, C3, C4, C7 headline numbers; boundaries (DMC iterations, FP4).
+% PLAN 4.6: no "fixed before the data" sentence here (D7: one sentence in Sec. 3.4 + App. A/B); one speed sentence only.
+\begin{abstract}
+Sampling-based planners such as MPPI and CEM query a learned world model thousands of times per control step, so running them on low-bit hardware requires quantizing that model. We find that the rounding rule alone changes whether planning succeeds. With round-to-nearest activation quantization, planning loses up to \nv{e1.maxdet} points of success, and in most damaged settings the world model's latent one-step error is no larger than under stochastic rounding (dither). At a fixed bit width, deterministic rounding error damages sampling-based planning through two error components that controlled variants separate: a systematic error that any unbiased randomized rounding removes, whether fixed or redrawn, and an input-determined error field that persists across planner iterations and that the planner exploits. The persistent part dominates in TD-MPC2 at 5M and 317M parameters but not in DINO-WM, and this pattern followed the model family when we swapped the planners' update rules. Dither shared by all candidates and redrawn at every planner iteration repairs most damaged settings and lowers the smallest usable bit width by at least one bit in most Meta-World tasks, even on per-channel grids. On Meta-World the policy alone, without planning, nearly matches the unquantized planner, so there the gain means that the low-bit planner does not fall below the policy; on DMC the low-bit dithered planners still beat the policy. The simplest form of this dither adds at most about \nv{e17.shiter.overhead.max0}\% to rollout latency in an integer kernel. Dither helps less where the planner iterates little, as on DMC at the default number of iterations, where it can also hurt. With block-scaled NVFP4 activations, round-to-nearest damages only \nv{e9.nvfp4.ndam} of 12 TD-MPC2 tasks.
+\end{abstract}
+
+% =====================================================================================================
+% CLAIMS v2: frames C1-C7; contributions follow C1 (phenomenon), C2+C3 (mechanism), C4 (fix and bit limit), C7 (cost).
+% Figure 1 (PLAN 4.3): (a) the two axes of the rounding variants, (b) one representative result (build/make_figs.py).
+% PLAN 4.5: motivation is "hardware with low-bit arithmetic", not "low-bit is fast"; speed is not a contribution.
+% PLAN 4.9: novelty = (3) direct measurement that planners exploit deterministic rounding error, (4) the controls that
+%   separate sharing from persistence at a fixed per-entry error distribution; "to our knowledge", never "first".
+\section{Introduction}
+\label{sec:intro}
+
+A sampling-based planner calls its world model (candidates $\times$ iterations $\times$ horizon) times per control step: $512\times6\times3$ forward calls for the model predictive path integral (MPPI) planner of TD-MPC2~\citep{hansen2024tdmpc2} and $300\times30\times5$ for the cross-entropy method (CEM) planner of DINO-WM on PushT~\citep{zhou2025dinowm}. Moving such planners onto hardware whose fast arithmetic is low-bit, such as integer accelerators or FP4 tensor cores, or onto memory-bound embedded devices, requires quantizing the world model. Quantized world models can break planning in ways that bit width and offline prediction error do not explain~\citep{fu2026wmquant, ranganath2026bits}, unless a calibration objective preserves what planning needs~\citep{anon2026modulemse}. We ask a narrower question: at a fixed bit width and grid, does the rounding rule matter, and if so, what does the planner exploit?
+{\renewcommand{\thefootnote}{}\footnotetext{Large language models (Anthropic's Claude) were used to assist with experiment code development, analysis scripting, result analysis, and drafting and editing portions of the manuscript. LLM agents also drafted the detailed experiment designs and ran the cloud experiments under the authors' direction, and some protocol deviations were decided by LLM agents under a procedure the authors set in advance (Appendix~\ref{app:plan}). The authors designed the study, directed and managed the experiments, approved every design and claim, critically reviewed and interpreted the results, and verified all reported numbers against the original result files. The authors take full responsibility for the scientific content and conclusions.}}
+
+The rounding rule matters. Round-to-nearest (\dtm) is a fixed function of its input, so the error it adds to the predicted return of an action sequence is the same in every planner iteration. Dither, e.g.\ stochastic rounding $\lfloor x+u\rfloor$ of an input $x$ in grid units with $u\sim U[0,1)$, is unbiased and can be redrawn. With \dtm activation quantization on per-tensor percentile ranges, planning loses up to \nv{e1.maxdet} points of success. In \nv{e1.h1.n} of \nv{e1.h1.of} damaged cells (task $\times$ bit width), the latent one-step error of the world model is no larger than under shared dither, and in \nv{e1.h1.fix} of these \nv{e1.h1.n} cells that dither removes at least half of the damage (Section~\ref{sec:break}). Iterating planners have been reported to concentrate their candidates in regions where the model cannot rank them~\citep{anon2026elitecert, anon2026resolution}; we isolate which property of rounding error they exploit.
+
+We build rounding variants that keep the per-entry error distribution and change only how the random draw is shared across candidates and how long it is kept, together with variants that remove the mean bias of \dtm, add it back to redrawn dither, or add fresh noise to \dtm (Table~\ref{tab:variants}, Figure~\ref{fig:schematic}). They separate a systematic error, which any unbiased randomized rounding removes, whether its draw is fixed or redrawn, from an input-determined error field that persists across planner iterations and that the planner exploits. The first accounts for most of the damage in DINO-WM and the second in TD-MPC2 at 5M and 317M parameters; the pattern held when we swapped the planners' update rules, and we did not identify its cause.
+
+The fix, \shiter, shares one dither draw across all candidates and redraws it at every forward call, hence at every planner iteration. Sharing keeps the comparison between candidates fair within an iteration, as with common random numbers~\citep{kleinman1999crn}; redrawing leaves no error that stays the same across iterations, and unbiasedness removes the systematic part. These ideas draw on classical work: the optimizer's curse~\citep{smith2006curse}, the bias of sample-average approximation~\citep{kleywegt2002saa}, scenario-fixed policy search~\citep{ng2000pegasus, strens2002paired}, common random numbers, and unbiased stochastic rounding for iterative computation~\citep{gupta2015limited, croci2022sr}, which language-model inference also uses to keep error from accumulating in recurrent state caches~\citep{nvidia2026nemotron, khilar2026dither}. To our knowledge, such dither has not been used to protect sampling-based planning, where redrawing has a second effect in TD-MPC2: the planner finds no error that persists across its iterations. Our contributions are:
+\begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \textbf{Phenomenon} (Section~\ref{sec:break}). At the same bit width, \dtm causes planning damage that, in most cells, the latent one-step error does not reveal. The damage reappears on new seeds in all \nv{e11.td.ndam} TD-MPC2 cells we re-ran and in all \nv{e14.ndam} tasks of a 317M multi-task TD-MPC2, and on a new DINO-WM split for Wall and (post hoc) PushT at 3 bits; PushT at 4 bits was reproduced only on the original evaluation pairs.
+\item \textbf{Two components} (Section~\ref{sec:mech}). In TD-MPC2, holding an unbiased error fixed across iterations costs success in all \nv{e11.pers.npos} damaged cells at 5M and in \nv{e14.p2.n} of \nv{e14.ndam} tasks at 317M, so the planner exploits persistence; on both damaged DINO-WM cells (Wall, and PushT at 3 bits post hoc), a fixed unbiased error repairs the damage. The pattern held when we swapped the planners' update rules.
+\item \textbf{The fix and its bit limit} (Section~\ref{sec:fix}). Without training, \shiter removes most of the damage, and dither lowers the smallest usable bit width by at least one bit in most Meta-World tasks, on per-tensor and per-channel grids. It helps less on DeepMind Control (DMC) at the default number of planner iterations and gains no bit on PointMaze.
+\item \textbf{Cost} (Section~\ref{sec:cost}). In a fused integer kernel, \shiter adds at most \nv{e17.shiter.overhead.max}\% to rollout latency, and the kernel reproduces the fake-quantization difference between \dtm and \detshift in all \nv{e17.k2.n} tasks.
+\end{enumerate}
+Our scope is two model families, simulated tasks and hidden-layer activations. Appendix~\ref{app:plan} records the analysis plan of every stage, Appendix~\ref{app:tests} lists every planned test, and Appendix~\ref{app:neg} what did not hold.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_schematic.pdf}
+\caption{(a) Rounding variants (Table~\ref{tab:variants}) by whether they keep the systematic error of round-to-nearest (rows) and whether their error stays the same in every planner iteration or its random part is redrawn at every call (columns). (b) Success on push with per-tensor ranges against bit width $k$ (Section~\ref{sec:bits}; 90 paired episodes per point): within 10 points of the unquantized planner (shaded) from $k^*=\nv{e12.push.pt.kstar.det}$ under \dtm and from $k^*=\nv{e12.push.pt.kstar.shiter}$ under \shiter.}
+\label{fig:schematic}
+\end{figure}
+
+% =====================================================================================================
+% CLAIMS v2: positions C1-C4 against prior and concurrent work (PLAN 4.8, 4.9). No figure or table.
+% Concurrent work after our arXiv v1 (2026-11-09), cited as concurrent without dates (double-blind): WM-Quant
+%   (2611.21882), Search or Scoring? (2611.25347), LAQ (2611.25614), planner/hardware co-design (2611.22483).
+% Their details were checked against the papers on 2026-11-22 (REFERENCES_CHECK.md sec. 3). Goodhart in the Planner
+%   (2611.09670) and LoopQ (2611.05093) predate our v1 and are cited as prior work.
+\section{Related Work}
+\label{sec:related}
+
+\textbf{Quantized world models and policies.} Post-training quantization of DINO-WM makes the planning objective and task success diverge at aggressive bit widths~\citep{fu2026wmquant}, and success depends on which modules keep their precision~\citep{ranganath2026bits}; for quantized world action models, offline action deviation predicts the closed-loop loss~\citep{xu2026prede}. A calibration objective recovers full-precision planning with 4-bit weights~\citep{anon2026modulemse}. Quantized vision-language-action and world action models are benchmarked in closed loop~\citep{vlaquantbench2026, qvla2026, park2026qcrl, loopq2026} and deployed with fused low-bit kernels~\citep{wang2026steerquant, anon2026wamptq, anon2026loopquant}, and quantization error has been reported to recur across their denoising loops~\citep{anon2026loopquant}.
+
+\textbf{Concurrent work.} \citet{wmquant2026} quantize JEPA-style world models after training and find that quantization error compounds over predictor steps until action rankings become near-random. Higher precision for early encoder activations, a floating-point action-conditioning path and activation ranges learned per rollout step bring planning with 4-bit weights and activations (W4A4) close to full precision on LeWM~\citep{maes2026lewm} and, with rotation-based quantizers, on DINO-WM Wall, though not on PushT. That compounding error corresponds most closely to our systematic component, and our rollout-chosen ranges (Section~\ref{sec:bits}) are a simplified form of their range calibration, with one range per layer for all rollout steps. Another study~\citep{laq2026} quantizes world action models to 4-bit weights, activations and key-value cache (W4A4KV4) and weights each rounding error by the number of denoising steps that read it. In its Fast-WAM setting~\citep{fastwam2026}, an injected error of fixed energy damages the predicted future two to three times more when fixed across the denoising steps than when redrawn at every step, an analogue of our persistence axis without a planner. The works above calibrate, allocate bits or train; none changes the rounding rule or separates how the error is shared from how long it persists.
+
+\textbf{Prediction error versus decisions.} Decision-relevant prediction error tracks planning quality where data-averaged error does not~\citep{you2026predictability, wang2026drpe}, and the signed rollout error along the goal direction matters more than its magnitude~\citep{anon2026magnitude}. \citet{min2026lowerror} split end-point error across a candidate pool into a pool-common and an action-relative part. Iterating planners have been found to concentrate their candidates in regions where the model cannot rank them: certified elite decisions become rarer as CEM iterates~\citep{anon2026elitecert}, predicted candidate quality falls to chance at the frame that CEM optimizes~\citep{anon2026resolution}, and replacing early CEM rounds with a deterministic approximation hurts while score noise of the same size does not~\citep{anon2026evaluations}. Harder MPPI search against a reward model learned from human preferences lowers the true return while held-out label accuracy stays high, a Goodhart effect in the planner~\citep{goodhart2026planner}. Concurrent diagnostics split the failures of visual world-model planners into search and scoring failures; with the predictor's weights rounded to nearest at low bit widths, most PushT failures become scoring failures~\citep{searchscoring2026}. An 8-bit planner--hardware co-design, also concurrent, reports no loss in planning success with 8-bit weights and activations (W8A8) and static per-tensor activation scales~\citep{codesign2026}.
+
+\textbf{Exploitation and rounding rules.} Planners exploit model error~\citep{boney2019dae}; \citet{ha2018worldmodels} injected temperature noise into imagined rollouts so that the controller could not exploit them, and under noisy evaluations CEM optimizes a quantile rather than the mean~\citep{goschin2013cem}. Policy search on fixed random scenarios~\citep{ng2000pegasus} overfits to them, and changing the scenarios as the search proceeds reduces the overfitting~\citep{strens2002paired}. Re-evaluating candidates under redrawn noise is standard in noisy evolution strategies~\citep{hansen2009uncertainty}. Dither decorrelates quantization error from the signal~\citep{roberts1962picture, schuchman1964dither}. Randomized quantization controls limit cycles in recursive digital filters~\citep{kieburtz1977limit} and lets quantized average consensus, which fails under deterministic quantization, reach a consensus whose expected value is the average~\citep{aysal2008consensus}, and unbiased stochastic rounding keeps bias from accumulating~\citep{gupta2015limited, croci2022sr}. In language models, the best rounding rule differs between layers~\citep{chatelain2026sr}, a deterministic low-discrepancy dither can beat stochastic rounding in recurrent caches~\citep{khilar2026dither}, and a single fixed stochastic draw of 3-bit weights can be worse than round-to-nearest~\citep{wu2026decisions}, in line with our fixed-dither controls. These results concern error that accumulates within one computation; we study the selection bias a planner adds when it chooses among candidates across iterations.
+
+% =====================================================================================================
+% CLAIMS v2: definitions behind every claim (variants: C2, C4; metrics: all; k* and G: C4; rho_p, sigma_e/sigma_J: C5).
+% Table 1 (variants: shared, redrawn, unbiased, error variance). The stage table (tab:setup) is in Appendix C (page budget).
+% PLAN 4.6: "no calibration" -> "per-tensor percentile ranges, no error-minimizing calibration"; ranges set on held-out data.
+\section{Setup}
+\label{sec:setup}
+
+\subsection{Sampling-based planning}
+For $I$ iterations per control step, a planner samples $N$ candidate action sequences of horizon $H$ from a Gaussian, predicts the return of each with the world model and refits the Gaussian to the best ones; it then executes the first action of the final plan. CEM refits to the mean and standard deviation of the top $K$ candidates~\citep{rubinstein1999cem}; MPPI weights the top candidates (elites) by $\exp(\beta(J-J_{\max}))$~\citep{williams2017mppi}. Every iteration thus compares candidates through the same quantized network ($N\times I\times H$ calls per control step).
+
+\subsection{Quantization and rounding variants}
+\label{sec:variants}
+We quantize hidden activations: the four hidden layers of the dynamics and reward MLPs of TD-MPC2 (after Mish) and the six MLP outputs of the DINO-WM predictor (after GELU). Each layer uses a uniform $k$-bit grid on $[\mathrm{lo},\mathrm{hi}]$ with step $\Delta=(\mathrm{hi}-\mathrm{lo})/(2^k-1)$. The default range is per tensor, from the minimum to the 99.99th percentile of held-out activations, with no error-minimizing calibration; Section~\ref{sec:bits} adds per-channel ranges and ranges chosen by rollout error. Inputs, weights and all other modules stay in floating point except in the integer kernels of Section~\ref{sec:cost}. Table~\ref{tab:variants} defines the rounding variants. The dither variants \ind, \shiter, \shstep and \shep use the same kind of unbiased draw and hence the same per-entry error distribution; they differ in how $u$ is shared and how long it is kept. The variants \detshift and \detshiftfix (subtractive dither: round-to-nearest on a randomly shifted grid) share another distribution, with the error variance of \dtm. In open-loop CEM, \shstep and \shep coincide and we call them \shplan. The variant \detbc subtracts a per-unit bias vector $b$, estimated on held-out rollouts by a damped fixed-point iteration until the residual mean error of every layer is below 1\% of $\Delta$ (Appendix~\ref{app:details}); it is the standard bias correction of post-training quantization~\citep{nagel2019dfq} and costs nothing at deployment, since $b$ folds into the next layer's bias.
+
+\begin{table}[t]
+\caption{Rounding variants at bit width $k$ ($x$ is the input in grid units, $u\sim U[0,1)$, $o\sim U[-\tfrac12,\tfrac12)$; draws have one entry per unit of a layer, per token and unit in DINO-WM). ``Shared'': one draw serves every candidate. ``Fixed'': the draw (or the rounding error) is the same in every planner iteration. ``Unbiased'': zero mean error over the draw. Error variances assume a uniformly distributed fractional part of $x$; the bias $b$ shifts the mean error, not the variance.}
+\label{tab:variants}
+\centering\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}ll>{\raggedright}p{5.0cm}cccc@{}}
+\toprule
+Variant & Output & Draw & Shared & Fixed & Unbiased & Error variance \\
+\midrule
+\dtm & $\mathrm{round}(x)$ & none (a fixed function of $x$) & -- & yes & no & $\Delta^2/12$ \\
+\detbc & $\mathrm{round}(x)-b$ & none; $b$ per unit, from held-out data & -- & yes & mean removed & $\Delta^2/12$ \\
+\ind & $\lfloor x+u\rfloor$ & $u$ per entry and candidate, every call & no & no & yes & $\Delta^2/6$ \\
+\shiter & $\lfloor x+u\rfloor$ & $u$ per layer, every call & yes & no & yes & $\Delta^2/6$ \\
+\shstep / \shep & $\lfloor x+u\rfloor$ & $u$ per layer and horizon step, once per control step / episode & yes & yes & yes & $\Delta^2/6$ \\
+\detshift & $\mathrm{round}(x-o)+o$ & $o$ per layer, every call & yes & no & yes & $\Delta^2/12$ \\
+\detshiftfix & $\mathrm{round}(x-o)+o$ & $o$ per layer and horizon step, once per episode & yes & yes & yes & $\Delta^2/12$ \\
+\shiterb & $\lfloor x+u\rfloor+b$ & as \shiter; $b$ as \detbc & yes & bias only & no & $\Delta^2/6$ \\
+\detnoise & $\mathrm{round}(x)+u-\tfrac12$ & as \shiter & yes & \dtm part & no & $\Delta^2/6$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Models, tasks and planners}
+TD-MPC2~\citep{hansen2024tdmpc2}: the official 5M single-task checkpoints (three seeds) on 8 Meta-World tasks~\citep{yu2019metaworld}, scored by success, and 4 DMC tasks~\citep{tassa2018dmc}, scored by return, planned with the default MPPI (512 candidates including 24 policy trajectories, 64 elites, 6 iterations, horizon 3); and the official 317M multi-task checkpoint (mt80; prior work distilled and quantized it to FP16, \citealt{kuzmenko2025tdmpcopt}) on the same 8 Meta-World tasks. The Meta-World tasks are push, pick-place, door-open, drawer-open, button-press-topdown, peg-insert-side, window-open and sweep-into, and the DMC tasks cheetah-run, walker-walk, quadruped-walk and finger-turn-hard; we write button-press, peg-insert, cheetah, walker, quadruped and finger. DINO-WM~\citep{zhou2025dinowm}: the official PushT, Wall and PointMaze models with open-loop CEM (300 candidates, top 30, horizon 5, 30 iterations on PushT and 10 otherwise). Per task, a rule picks the primary bit width $k$ on held-out episodes as the largest $k$ at which \dtm loses at least 20 points of success (20\% of return on DMC). The main benchmark (E1) tests $k-1$, $k$ and $k+1$: 36 cells for TD-MPC2 at 5M and 9 for DINO-WM. Stages are numbered E1 (main benchmark), E2--E3 (mechanism sweeps), E5 (post-training baselines), E10 and E14 (317M), E11 (component controls on new seeds), E12 (bit sweep), E13 (offline errors on common states), E15 (DMC iterations), E16 (planner swap) and E17 (integer kernel); we call push, pick-place, cheetah-run and PushT at their primary bit widths the mechanism tasks. Later stages use new seed ranges and, for DINO-WM, a new evaluation split, so cells shared with E1 are replications on independent episodes with the same checkpoints (Appendix~\ref{app:details}, Table~\ref{tab:setup}).
+
+\subsection{Metrics and statistics}
+\label{sec:stats}
+Every variant is paired with the unquantized model on the same episode seeds and planner noise (90 pairs per cell for TD-MPC2: three checkpoints $\times$ 30 seeds, or one 317M checkpoint $\times$ 90 seeds; 100 for DINO-WM). The damage $D$ is the drop from that baseline in percentage points of success (points; \% of return on DMC). A cell is \emph{damaged} if \dtm's drop is significantly greater than zero in a one-sided paired bootstrap test ($10^4$ resamples; $\alpha=0.025$ in the main study, E1--E7, and $0.05$ later), with Holm correction~\citep{holm1979} over the bit widths of a task in E1 and over the cells of a benchmark later. A variant $v$ removes the fraction $\red=(D_{\dtm}-D_v)/D_{\dtm}$ of the damage, \emph{repairs} a cell if $\red\ge0.5$, and is \emph{harmful} if the lower bound of the 95\% interval of $D_v-D_{\dtm}$ exceeds 5 points. Intervals are 95\% paired-bootstrap percentile intervals; the bootstrap resamples pairs, so intervals are conditional on the checkpoints. The smallest usable bit width $k^*$ of a configuration is the smallest $k$ such that $D\le\tau$ ($\tau=10$ points; 10\% on DMC) at $k$ and at every larger tested $k$, and the bits gained by dither are $G=\min(k^*_{\dtm},k^*_{\detbc})-\min(k^*_{\shiter},k^*_{\detshift})$; the DINO-WM sweep has no \detshift arm, so there the second minimum is $k^*_{\shiter}$. Each stage's hypotheses, thresholds, seeds and analysis code were fixed in a design document before its data existed; later analyses are labeled post hoc (Appendix~\ref{app:plan}).
+
+\subsection{Measuring exploitation}
+\label{sec:oei}
+Let $e(a)$ be the cost error of candidate $a$: the return that the unquantized model predicts for $a$ minus the return that the quantized model predicts (for DINO-WM, the quantized minus the unquantized planning cost), so that $e(a)<0$ when quantization makes $a$ look better. The optimizer exploitation index $\mathrm{OEI}=e(a_{\mathrm{exec}})-\bar e_{\mathrm{first}}$ compares the executed plan with random first-iteration candidates and splits exactly into a \emph{selection} term (the last iteration's pick against its population) and a \emph{drift} term, the change in the population-mean error from the first to the last iteration. Negative drift means the planner moved its population toward candidates that the error favors; for \dtm we also report the drift share $S=\mathrm{drift}/\mathrm{OEI}$. The cost of persistence, the extra damage from keeping a draw for an episode at an equal per-entry error distribution, is $\dpers=D_{\detshiftfix}-D_{\detshift}$ (E11) or, where \detshiftfix was not run, $D_{\shep}-D_{\shiter}$ ($D_{\shplan}-D_{\shiter}$ in DINO-WM). The latent $n$-step error of a variant is its squared error against the unquantized model's $n$-step latent prediction on the first-iteration candidates, relative to the variance of that prediction and averaged over episodes and, for randomized variants, three draws (Appendix~\ref{app:details}). On common held-out states (E13) we also record the persistent share $\rho_p$ (the correlation of $e(a)$ between two evaluations of one candidate set under the random states of consecutive iterations) and the relative spread $\sigma_e/\sigma_J$ (the spread of $e(a)$ across candidates relative to that of the predicted returns).
+
+% =====================================================================================================
+% CLAIMS v2: C1 (phenomenon and replication) in 4.1; C5 (offline errors, summary statistic) in 4.2.
+% Figure 2 = fig_damage (build/make_figs.py). tab:overview (tables/tab_overview.tex, generated) is in Appendix I.
+% PLAN 4.6: "37 of 44" split by measurement condition (5M+DINO-WM 29/36; 317M 8/8); E13 common-state values added.
+\section{Deterministic Rounding Breaks Planning}
+\label{sec:break}
+
+\subsection{Damage and repair at a glance}
+\label{sec:glance}
+Round-to-nearest costs up to \nv{e1.maxdet} points (button-press at \nv{e1.maxdet.k} bits). In E1, \shiter removes at least half of the damage in all \nv{e1.mw.naff} damaged Meta-World cells (a median of \nv{e1.mw.redmed}\%) and in \nv{e1.dw.nfix} of \nv{e1.dw.naff} DINO-WM cells (the exception, PushT at 5 bits, loses only \nv{e1.pusht5.D.det} points under \dtm), and it is not harmful in any of them (Figure~\ref{fig:damage}a). The dither variants share one per-entry error distribution, yet across the damaged Meta-World cells the mean drop is \nv{e1.mw.mean.shep} points under \shep, \nv{e1.mw.mean.shstep} under \shstep, \nv{e1.mw.mean.ind} under \ind and \nv{e1.mw.mean.shiter} under \shiter, against \nv{e1.mw.mean.det} under \dtm; \detshift loses \nv{e1.mw.mean.detshift} (Table~\ref{tab:overview} in Appendix~\ref{app:new}). On the 317M multi-task model, \shiter removes \nv{e10.red}\% of the damage in all \nv{e10.naff} damaged tasks; the model's primary bit widths (3--5) are close to those at 5M (3--4), so we see no sign that the larger model is more robust to rounding.
+
+\textbf{Replication on new seeds and splits.} The damage reappears on new seeds (Figure~\ref{fig:damage}b). In E11, \dtm damages all \nv{e11.td.ndam} TD-MPC2 cells at their primary bit widths, by \nv{e11.mw.ddet} points on Meta-World and \nv{e11.dmc.ddet}\% of return on DMC, and \shiter repairs \nv{e11.b4.n} of the \nv{e11.b4.of} Meta-World cells (all but window-open) without harming any. In E14, \dtm damages all \nv{e14.ndam} tasks of the 317M model (\nv{e14.ddet} points), and \shiter repairs all of them. On the new DINO-WM split, \dtm's damage is \nv{dw.wall3.D.det} points on Wall at 3 bits, replicating the exploratory E1 cell (\nv{e1.wall3.D.det}), and \nv{d4.D.det} points on PushT at 3 bits, a cell we added post hoc, against \nv{d4.e1.D.det} in E1. PushT at 4 bits did not replicate (\nv{dw.pusht4.D.det} points against \nv{e1.pusht4.D.det} in E1), weak evidence from only \nv{dw.pusht4.nclusters} trajectories; re-running the E1 pairs on the new GPU type, post hoc, reproduced the E1 damage, so the split, not the hardware, explains the difference (Appendix~\ref{app:new}). PointMaze at 3 bits has a similar point estimate (\nv{dw.pm3.D.det} against \nv{e1.pm3.D.det}) but is not significant after Holm correction over the three cells. Appendix~\ref{app:new} pools the two splits for PointMaze and Wall but not for PushT.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_damage.pdf}
+\caption{Damage under \shiter against damage under \dtm (success points on Meta-World and DINO-WM, \% of return on DMC) in every damaged cell of (a) the main stages E1 and E10 and (b) the replications on new seeds and splits (E11, E14, DINO-WM Wall at 3 bits and, post hoc, PushT at 3 bits, open square). Below the dashed line \shiter removes at least half of the damage. (c) \dtm's extra damage, $D_{\dtm}-D_{\shiter}$, against the ratio of \dtm's to \shiter's latent one-step error for the cells of (a), on each variant's own planning states in E1 and on held-out states of the unquantized planner in E10 (gray diamonds); in the shaded region \dtm's error is the smaller one.}
+\label{fig:damage}
+\end{figure}
+
+\subsection{Offline errors and planning damage}
+\label{sec:offline}
+Although one-step error and damage rank together across bit widths, within a bit width the latent one-step error does not reveal \dtm's damage in most cells. In \nv{e1.h1.n} of the \nv{e1.h1.of} damaged cells of DINO-WM and the 5M TD-MPC2, \dtm's latent one-step error, measured on each variant's own planning states, is no larger than that of \shiter (Figure~\ref{fig:damage}c). Re-measured on held-out states common to all variants (E13), \dtm's error is no larger than \shiter's in \nv{e13.h1common.n} of the \nv{e13.h1common.of} E1 cells of TD-MPC2, undamaged ones included. At 317M, on held-out states of the unquantized planner, \dtm's latent error is \nv{e10.errratio} times that of \shiter in all \nv{e10.naff} tasks. Errors over more steps distinguish \dtm in more cells: on the common held-out states of the E11 cells of TD-MPC2, \dtm's error is no larger than \shiter's in \nv{e.e13.err1.n} of \nv{e.e13.ncells} cells over one step, \nv{e.e13.err3.n} over three steps and \nv{e.e13.err5.n} over five steps. In DINO-WM, five-step errors distinguish \dtm too (PushT, 4 bits: \nv{e1.pusht4.err5.det} for \dtm vs.\ \nv{e1.pusht4.err5.shiter} for \shiter). A redefined one-step reward error (Appendix~\ref{app:mech}) is larger for \dtm in \nv{e.e13.rew.n} of \nv{e.e13.ncells} cells.
+
+\textbf{A summary statistic consistent with the mechanism.} On the E11 cells, the ranking of the variants' damage within a bit width agrees better with $\rho_p\cdot\sigma_e/\sigma_J$ of the last-iteration candidates than with the latent one-step error: the mean within-cell difference of Spearman correlations is \nv{dg1.mw} on Meta-World (positive in all cells) and \nv{dg1.dmc} on DMC, above the planned threshold of 0.3, but only \nv{dg1.dw} in DINO-WM. Since $\rho_p$ is \nv{e13.rho.fixed} for every fixed variant and \nv{e13.rho.fresh} for every redrawn dither, the statistic nearly restates the manipulated variable, so we report it only as a summary consistent with the mechanism.
+
+% =====================================================================================================
+% CLAIMS v2: C2 (two components, double dissociation) in 5.1-5.2; C3 (planner swap) in 5.3; C6 (317M) in 5.1.
+% Figure 3 = fig_mechanism; Figure 4 = fig_components, damage removed by each control per family (build/make_figs.py).
+% tab:components (tables/tab_components.tex, generated) is in Appendix I. Theory summary 5.4 = E4 (appendix F).
+% PLAN 4.6: the general sentence "what decides the outcome is persistence and sharing" is replaced by the two-component
+%   statement; no causal "the model decides" (CLAIMS sec. 3).
+\section{What the Planner Exploits}
+\label{sec:mech}
+
+\subsection{Persistence controls}
+\label{sec:persist}
+Under \dtm the population-mean error drifts in the favorable direction in all four mechanism tasks at their primary bit widths (E2). We formulated this drift test after E1, when the original OEI tests had failed (see below). Of that drift, \shiter keeps at most \nv{e2.drift.shiter.max}\% and \detshift at most \nv{e2.drift.detshift.max}\%. Positive controls isolate persistence: holding the \emph{same} shared dither fixed for a control step (\shstep) or an episode (\shep) restores \nv{e2.drift.posctrl}\% of \dtm's drift in the three TD-MPC2 mechanism tasks (Figure~\ref{fig:mech}a). Error size and sharing are equal across these variants; only persistence differs. On PushT the fixed dither with one offset per token and unit did not reproduce the drift (ratio \nv{e2.drift.pusht.shplan}). At 317M, the cost of persistence $D_{\shep}-D_{\shiter}$ has a lower bound above zero in \nv{e14.p2.n} of \nv{e14.ndam} tasks (\nv{e14.p2.range} points; the exception, push, is \nv{e14.push.p2}), and on sweep-into \shep loses \nv{e14.sweep.r} times as many points as \dtm.
+
+In TD-MPC2 the fix needs an iterating planner. With one MPPI iteration \shiter is no better than \dtm; at 12 iterations its damage is \nv{e2.it12.shiter} points or \% while \dtm's stays at \nv{e2.it12.det} and \shstep's at \nv{e2.it12.shstep} (Figure~\ref{fig:mech}b). With the number of elites fixed, \dtm's $|\mathrm{OEI}|$ and its damage grow with the number of candidates in \nv{e2.h2c.n} of 4 tasks, the dose-response expected from the optimizer's curse~\citep{smith2006curse}. A fixed dither drawn from a table of $N_{\mathrm{eff}}$ offsets hurts less as the table grows (\nv{e3.h4a.n} of \nv{e3.h4a.of} tasks, \nv{e3.h4a.exact} of them exactly at the planned Spearman cut-off of $-0.8$), and at 317M the full-size fixed dither is as harmful as \dtm. Sharing matters in TD-MPC2: $D_{\ind}-D_{\shiter}$ has a lower bound above zero in \nv{e.e3.crn.n} of \nv{e.e3.ntasks} tasks on new seeds, while in DINO-WM no contrast of sharing or persistence had an interval excluding zero (Appendix~\ref{app:mech}).
+
+\textbf{Theory in brief.}\label{sec:theory} A derivation under a Gaussian sampling model with a locally quadratic cost (Appendix~\ref{app:theory}) shows that redrawn unbiased noise produces no expected drift, whereas a persistent error field moves the population to the minimizer of the smoothed model cost, the bias of sample-average approximation~\citep{kleywegt2002saa}. The derivation's selection and drift terms matched \nv{e4.nruns} simulated MPPI and CEM runs. It also predicted, before the first stage was analyzed, that the OEI would be negative even under redrawn noise, because the last iteration's pick benefits from the noise it was selected on; this is why our original OEI tests failed (Appendix~\ref{app:neg}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_mechanism.pdf}
+\caption{Mechanism (E2). (a) Favorable drift of the population-mean error kept by each variant, relative to \dtm's own drift (dashed line at 1; TD-MPC2 at its primary bit width; PushT at 4 bits, where \shstep and \shep coincide as \shplan); error bars show 95\% bootstrap intervals. (b) Damage against MPPI iterations (TD-MPC2, 90 paired episodes per point, 95\% intervals).}
+\label{fig:mech}
+\end{figure}
+
+\subsection{Separating bias, resolution and persistence}
+\label{sec:components}
+Round-to-nearest error has a per-unit mean, a resolution limit (changes below the grid step vanish) and an input-determined pattern that is the same in every planner iteration. We call the first two together the systematic error. E11 distinguishes the three with the variants of Table~\ref{tab:variants}. If the mean bias causes the damage, \detbc and every unbiased variant repair it, and putting the bias back into redrawn dither (\shiterb) undoes the repair. If the resolution loss causes it, every unbiased randomized rounding repairs it, fixed (\shep, \detshiftfix) or redrawn, and \detbc does not. If the persistent pattern causes it, only the redrawn variants (\shiter, \detshift, \shiterb) repair it. The variant \detnoise keeps \dtm's rounding and adds fresh shared noise; we predicted that it would repair at most half of the damaged cells in every benchmark. Figure~\ref{fig:components} shows the fraction of the damage each variant removes in every damaged cell (counts in Table~\ref{tab:components}).
+
+\textbf{TD-MPC2: persistence dominates.} The cost of persistence $\dpers$ has a lower bound above zero in all \nv{e11.pers.npos} damaged cells (\nv{e11.mw.pers} points on Meta-World, \nv{e11.dmc.pers}\% on DMC). Unbiased random errors held fixed across iterations (\shep, with twice the error variance of \dtm, and \detshiftfix, with the same variance) repair only \nv{e11.mw.nfix.shep} and \nv{e11.mw.nfix.detshiftfix} of the \nv{e11.mw.ndam} Meta-World cells, respectively. Fixed randomized rounding therefore does not repair these cells, which rules out a resolution explanation there. $D_{\shep}-D_{\shiter}$ is positive in all \nv{e11.td.ndam} cells (\nv{e11.shepminusshiter} points or \%), and keeping the draw only within a control step already costs most of this (in E1, \nv{e1.mw.mean.shstep} points for \shstep against \nv{e1.mw.mean.shep} for \shep and \nv{e1.mw.mean.shiter} for \shiter). The mean bias accounts for part of the damage: \detbc repairs \nv{e11.mw.nfix.detbc} of \nv{e11.mw.ndam} Meta-World cells, \nv{e11.dmc.nfix.detbc} of \nv{e11.dmc.ndam} DMC cells and \nv{e14.nfix.detbc} of \nv{e14.ndam} tasks at 317M. A per-cell classification (persistence \nv{e11.mw.class.persistence}, bias \nv{e11.mw.class.bias} on Meta-World) hinges on cells near the threshold, such as pick-place, where \detbc removes \nv{e11.pickplace.red.detbc} of the damage, so we rely on $\dpers$ and the fixed-versus-redrawn contrast, not on the class counts.
+
+\textbf{DINO-WM: persistence does not dominate.} The new split has two damaged DINO-WM cells: Wall at 3 bits, planned, and PushT at 3 bits, added post hoc. Neither cell is dominated by persistence; on PushT we cannot tell whether the mean bias or the resolution loss is at work. In both cells fixed unbiased errors repair the damage (\shplan $\red=\nv{dw.wall3.red.shstep}$ on Wall and \nv{d4.red.shstep} on PushT, \detshiftfix \nv{dw.wall3.red.detshiftfix} and \nv{d4.red.detshiftfix}), as does \shiter (\nv{dw.wall3.red.shiter}, \nv{d4.red.shiter}), and in E1 \shplan repaired PushT at 3 and 4 bits too. Putting \dtm's mean bias back into redrawn dither (\shiterb) or adding fresh noise to \dtm (\detnoise) repairs neither cell ($\red$ \nv{dw.wall3.red.shiterb} and \nv{dw.wall3.red.detnoise} on Wall, \nv{d4.red.shiterb} and \nv{d4.red.detnoise} on PushT). Bias correction (\detbc) repairs Wall ($\red=\nv{dw.wall3.red.detbc.ci}$) but is worse than \dtm on PushT ($\red=\nv{d4.red.detbc}$ in the post hoc cell, and also at 3 bits in E12 and at 4 bits in E11), so the planned per-cell rule labels Wall bias-dominated and PushT resolution-dominated ($\dpers=\nv{d4.dpers}$ points). Our bias vector $b$, however, does not seem to fit PushT's planning states: subtracting it or adding it (\shiterb) is as harmful as \dtm, and it raises the planning-time latent error (Appendix~\ref{app:baselines}), so \detbc's failure there is not evidence against a mean bias. The DINO-WM evidence rests on two cells, one of them post hoc, and Wall's baseline is unstable: the unquantized model succeeds in \nv{dw.wall3.none}\% of the new pairs against \nv{e1.wall.none}\% in E1 (\nv{dw.wall.rerun.none}\% when the E1 pairs are re-run on the same machine). Wall's $\dpers=\nv{dw.wall3.dpers}$ points arises because \detshift succeeds \nv{dw.wall3.detshift.better} points more often than the unquantized model. Round-to-nearest at 4 bits also beats the unquantized planner there (by \nv{dw.wall4.det.above} points on the new split and \nv{e1.wall4.det.above} in E1), so the unquantized planner is not an upper bound on Wall and $\red$ can exceed 1.
+
+\textbf{A double dissociation.} Fixed unbiased error and fresh noise thus have opposite effects on Meta-World and DINO-WM, and DMC fits neither pattern: fixed unbiased error repairs both DINO-WM cells but at most \nv{e11.mw.nfix.shep} of \nv{e11.mw.ndam} Meta-World cells, whereas fresh noise added to \dtm repairs all \nv{e11.mw.ndam} Meta-World cells but \nv{d4.comb.detnoise} of the \nv{d4.comb.ndam} DINO-WM cells (Section~\ref{sec:noise}). The three Meta-World cells classified as bias-dominated fall on the persistence side (\detshiftfix removes \nv{e11.mwbias.red.detshiftfix} of their damage, \detnoise \nv{e11.mwbias.red.detnoise}); we leave \detbc out because its effect differs between DINO-WM tasks.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_components.pdf}
+\caption{Fraction of the damage removed ($\red$), with 95\% intervals, by each control except \shiterb (Table~\ref{tab:components}) in every damaged cell: TD-MPC2 5M on new seeds (E11: \nv{e11.mw.ndam} Meta-World and \nv{e11.dmc.ndam} DMC cells), the 317M model (E14: \nv{e14.ndam} tasks; \detshiftfix and \detnoise not run) and the two damaged DINO-WM cells of the new split (Wall at 3 bits; PushT at 3 bits, post hoc, open black markers); intervals leaving the axis end in an arrowhead. The line above each column names the causes of \dtm's damage that the control would repair (Section~\ref{sec:components}). The dashed line is $\red=0.5$, and $n/N$ counts the cells at or above it.}
+\label{fig:components}
+\end{figure}
+
+\subsection{Planner swap}
+\label{sec:swap}
+To test whether the family difference comes from the planners, we swapped their update rules (E16; Table~\ref{tab:e16}). TD-MPC2 with a CEM-like update (uniform elite weights, no policy trajectories, a lower standard-deviation floor) keeps the cost of persistence in all three TD-MPC2 mechanism tasks: $D_{\shep}-D_{\shiter}$ is \nv{e16.td.cem.push}, \nv{e16.td.cem.pickplace} and \nv{e16.td.cem.cheetah} (push, pick-place, cheetah-run), against \nv{e16.td.mppi.push}, \nv{e16.td.mppi.pickplace} and \nv{e16.td.mppi.cheetah} with the default MPPI. Without the policy trajectories \shiter still repairs push and pick-place but not cheetah-run ($\red=\nv{e16.td.cheetah.red.shiter}$). DINO-WM with an MPPI-like update (softmax weights and a standard-deviation floor) shows no cost of persistence that we can distinguish from zero, although \dtm damages PointMaze and Wall under it: $D_{\shplan}-D_{\shiter}$ has upper bounds of \nv{e16.dw.ciupper} points on both tasks with either planner, and the post hoc PushT cell at 3 bits gives \nv{d4.shplan.minus.shiter} with CEM. Only the PushT cell at 4 bits, which stayed out of the planned readings because \dtm did not damage it on the new split, gives an interval that excludes zero once its trajectories are resampled (\nv{r5.pusht4.shplan.cluster}). With every swapped planner keeping at least 60\% of the default planner's unquantized success, the pattern followed the model family rather than the update rule. The families differ in whether the interval excludes zero, but cell by cell the sizes overlap: DINO-WM's upper bounds (\nv{r5.dw.ciupper} points, PushT included) exceed TD-MPC2's smallest lower bounds (\nv{r5.td5m.minlower} points on \nv{r5.td5m.minlower.task} at 5M, \nv{r5.td317m.minlower} on push at 317M). The families also differ in architecture, closed versus open loop, horizon and objective, and the swapped planner was not run on PushT, so we do not claim that the model causes the pattern. One hypothesis is table size: DINO-WM's fixed dither has one offset per token and unit, and only coarser tables hurt planning there (Appendix~\ref{app:mech}).
+
+% =====================================================================================================
+% CLAIMS v2: C4 (fix, bit limit, noise vs dither, DMC boundary). Figure 5 (new): bit-success curves and k*.
+% Figure 6 (new): DMC x iterations and persistent share. FP4 (E9) and QAT/weights stay short (PLAN 4.3: 6.3, 6.4).
+% CLAIMS 5.1 item 4: "7/8" is the better of sh-iter and det+shift (sh-iter alone 6/8 PT, 5/8 PC); never pair it with
+%   the 2% latency of sh-iter. Item 5: Wall G is 0-2 (borderline). Item 6: det+noise is described by numbers only.
+\section{The Fix and Its Limits}
+\label{sec:fix}
+At the same bit width, \shiter repairs most damaged cells (Section~\ref{sec:glance}). The best post-training quantizer of E5, mostly per-channel ranges, already removes most of \dtm's damage at 3--4 bits (Meta-World $D$ of \nv{e5.pc.mw.range} points), and the extra gain of \shiter on top of it was borderline in TD-MPC2 (\nv{e5.h3b.td} of \nv{e5.h3b.td.of} cells) and found in only \nv{e5.h3b.dw} of \nv{e5.h3b.dw.of} DINO-WM cells. This section asks how far dither lowers the smallest usable bit width $k^*$ on top of better ranges and where the repair stops.\label{sec:bits}
+
+\textbf{Meta-World.} Dither gains at least one bit in \nv{e12.pt.nG} of \nv{e12.mw.n} tasks with per-tensor ranges and in \nv{e12.pc.nG} of \nv{e12.mw.n} with per-channel ranges, counting the better of \shiter and \detshift; \shiter alone gains a bit in \nv{e12.pt.nG.shiter} and \nv{e12.pc.nG.shiter} tasks and \detshift alone in \nv{e12.pt.nG.detshift} and \nv{e12.pc.nG.detshift}. In \nv{e12.mw.n1bit} tasks some rounding rule of E12 loses at most 10 points at 1 bit, and in all of them that rule is a dither (Figure~\ref{fig:bits}); of the post hoc \detnoise curves only drawer-open per tensor does so (\nv{x5.pt.draweropen1} points), a borderline case whose damage at 2 bits equals the threshold (\nv{x5.pt.draweropen2}). Post hoc, TD-MPC2's FP32 policy without any planning has $D\le\nv{x6.mw.dpol.max7}$ points on 7 of the 8 tasks and $D=\nv{x6.mw.dpol.pickplace}$ points on pick-place (Table~\ref{tab:x6}): the policy alone nearly matches the unquantized planner, so on Meta-World the low-bit results mainly mean that the low-bit planner does not fall below the policy.
+
+\textbf{Robustness of the counts.} In a paired bootstrap over episodes, the task counts stay at or above the planned thresholds in at least \nv{r1.fr.pmin}\% of resamples whichever dither form is counted, and they do so for damage thresholds $\tau$ of \nv{r2.tau} points. Which tasks gain a bit is less stable, in particular pick-place and window-open (Tables~\ref{tab:r1} and~\ref{tab:r2}).
+
+\textbf{DINO-WM and DMC.} On PushT, dither gains \nv{dw.pusht.G} bits with per-tensor ranges and \nv{r1.pusht.pcrc.G} bits with per-channel and rollout-chosen ranges; the bootstrap supports at least one bit with all three ranges but two bits only per tensor (Table~\ref{tab:r1}). Ranges chosen to minimize the multi-step latent error of planner rollouts (Section~\ref{sec:related}) do not change \dtm's $k^*$ (Figure~\ref{fig:bits}), and dither still gains \nv{r1.pusht.pcrc.G} bits on top of them. On Wall the gain is \nv{dw.wall.G.range} bits, borderline because \detbc's damage at 3 bits ($D=\nv{dw.wall3.D.detbc}$ points) lies just above the 10-point threshold. PointMaze gains \nv{dw.pm.G} bits. On DMC the gain is mostly zero (per tensor \nv{e12.dmc.G.pt}; per channel \nv{e12.dmc.G.pc} for cheetah, walker, quadruped and finger), but the policy alone loses \nv{x6.dmc.dpol}\% of return, and the lowest-bit dither planner (per channel, \nv{x6.dmc.k} bits) beats the policy in \nv{x6.dmc.better} of 4 tasks (post hoc).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_bitlimit.pdf}
+\caption{Damage (success points) against bit width $k$ (E12) on Meta-World with per-tensor ranges (per-channel ranges in Figure~\ref{fig:bitspc}) and on DINO-WM with per-tensor, per-channel and, for PushT, rollout-chosen ranges; \detnoise only on Meta-World, post hoc. Dotted line: $\tau=10$ points; missing markers: not run. The strip under each panel marks the smaller $k^*$ of \dtm and \detbc (square; \dtm only with rollout-chosen ranges), of \shiter and \detshift (circle; \shiter only on DINO-WM) and $k^*$ of \detnoise (cross); the gap from square to circle is the point estimate of $G$, which the bootstrap supports less on DINO-WM (Section~\ref{sec:bits}).}
+\label{fig:bits}
+\end{figure}
+
+\textbf{Fresh noise versus dither.}\label{sec:noise} Contrary to our prediction (Section~\ref{sec:components}), adding fresh shared noise to \dtm (\detnoise) repairs all \nv{e11.mw.ndam} damaged Meta-World cells ($\red$ \nv{e11.mw.red.detnoise}). It repairs \nv{e11.dmc.nfix.detnoise} of \nv{e11.dmc.ndam} DMC cells (finger, the one cell classified as bias-dominated) and \nv{d4.comb.detnoise} of the \nv{d4.comb.ndam} damaged DINO-WM cells ($\red$ \nv{dw.wall3.red.detnoise} on Wall, \nv{d4.red.detnoise} on PushT); dither repairs more in both (\detshift \nv{e11.dmc.nfix.detshift} and \shiter \nv{e11.dmc.nfix.shiter} of the DMC cells; on Wall $\red$ \nv{dw.wall3.red.shiter} for \shiter and \nv{dw.wall3.red.detshift} for \detshift). Its persistent share $\rho_p$ on the last-iteration candidates of the E11 cells, \nv{e13.rho.detnoise}, lies between that of the fixed variants (\nv{e13.rho.fixed}) and that of redrawn dither (\shiter \nv{e13.rho.e11.shiter}, \detshift \nv{e13.rho.e11.detshift}); we did not test whether this difference relates to which cells are repaired, nor did we identify why dither repairs more. On the bit axis (post hoc), \detnoise gains fewer bits than dither. It gains at least one bit over \dtm and \detbc in \nv{x5.pt.nG} of \nv{e12.mw.n} Meta-World tasks per tensor and \nv{x5.pc.nG} per channel, against \nv{e12.pt.nG} and \nv{e12.pc.nG} for dither, and its $k^*$ is no larger than that of \shiter in only \nv{x5.pt.le.shiter} and \nv{x5.pc.le.shiter} tasks. Its damage is also often not monotone in the bit width (per tensor, door-open loses \nv{x5.pt.dooropen3} points at 3 bits but \nv{x5.pt.dooropen2} at 2).
+
+\textbf{Where it helps less: DMC and planner iterations.}\label{sec:dmc} At the default six MPPI iterations, \shiter repairs \nv{e11.dmc.nfix.shiter} of \nv{e11.dmc.ndam} DMC cells in E11 (and \nv{e1.dmc.nfix} of \nv{e1.dmc.naff} in E1), and it is harmful on walker at 3 bits (E1: \nv{e1.walker.D.shiter}\% of return lost vs.\ \nv{e1.walker.D.det}\% under \dtm). The drift share $S$ of \dtm is lower on DMC (\nv{e3.share.dmc}) than on Meta-World (\nv{e3.share.mw}), and across the 12 TD-MPC2 tasks it is rank-correlated with the damage that \shiter removes (Spearman \nv{e3.spearman}, new seeds; Figure~\ref{fig:iters}a). With 12 iterations, the better of \shiter and \detshift repairs \nv{e15.it1.n} of the 4 DMC tasks, and its $\red$ grows monotonically from 6 to 12 to 24 iterations in \nv{e15.it2.n} tasks (E15; Figure~\ref{fig:iters}b--e), at the cost of planning time (cheetah-run: \nv{e15.cheetah.detk1.ms}~ms per control step with 6 iterations, \nv{e15.cheetah.ds24.ms}~ms with 24). On \nv{e15.it1.n} of the 4 DMC tasks the fix is thus limited by the number of planner iterations; walker-walk is not repaired at any iteration count we tested ($\red$ \nv{e15.walker.red24} at 24 iterations).
+
+\textbf{Number formats, training and weights.}\label{sec:fp4} Block-scaled FP4 activations reduce the failure in TD-MPC2. With NVFP4~\citep{nvidia2025nvfp4}, \dtm damaged \nv{e9.nvfp4.ndam} of 12 tasks and with MXFP4~\citep{rouhani2023mx} \nv{e9.mxfp4.ndam}; on cheetah-run \dtm lost \nv{e9.nvfp4.cheetah}\% and \nv{e9.mxfp4.cheetah}\% of return, against \nv{e1.cheetah4.D.det}\% with a uniform 4-bit grid; where damage remained, \dtm's latent one-step error was again the smaller one (Appendix~\ref{app:cells}). Our quantization-aware-training baseline was weak and weight quantization exploratory (Appendix~\ref{app:baselines}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_iterations.pdf}
+\caption{(a) Drift share $S=\mathrm{drift}/\mathrm{OEI}$ of \dtm (E3) against the fraction of the damage that \shiter removes with the default planner, over the 12 TD-MPC2 tasks (circles Meta-World, triangles DMC; Spearman \nv{e3.spearman}). (b--e) DMC: fraction of the damage removed by \shiter and \detshift against MPPI iterations (E15; 90 paired episodes at 6 and 12 iterations, 60 at 24; 95\% intervals).}
+\label{fig:iters}
+\end{figure}
+
+% =====================================================================================================
+% CLAIMS v2: C7 (cost and integer path). Figure 7 = fig_latency (build/make_figs.py). PLAN 4.5: speed is the cost of the fix,
+%   not a contribution; A40 pre-converted BF16 is faster and is said so. det+shift is a mechanism control and one form of
+%   the fix, not a co-equal prescription (T3, K1 failed). CLAIMS sec. 3: never "W8A4 faster than BF16".
+\section{Cost of the Fix}
+\label{sec:cost}
+\textbf{Overhead and the integer path.} We timed the world-model rollouts of one control step in the fused Triton~\citep{tillet2019triton} kernel of our integer path (int8 weights, 4- or 8-bit activation codes, shared dither drawn on the GPU) as one CUDA graph on an NVIDIA A40 at 5M and 317M parameters and $N\in\{512, 2048, 8192\}$ candidates. In all six conditions, \shiter adds at most \nv{e17.shiter.overhead.max}\% to their latency, because one draw per layer and call serves every candidate (Figure~\ref{fig:latency}c, Appendix~\ref{app:latency}). The variant \detshift adds \nv{e17.detshift.big}\% at $N\ge2048$ but \nv{e17.detshift.5m512}\% (5M) and \nv{e17.detshift.317m512}\% (317M) at $N=512$, because its offset correction reads the next layer's weights once more per call. For this reason we use \detshift as a mechanism control and as one form of the fix, and we recommend \shiter. The integer kernel reproduces the fake-quantization results: $D_{\dtm}-D_{\detshift}$ has the same sign and overlapping intervals in \nv{e17.k2.n} of 4 tasks, including walker, where \detshift is worse than \dtm in both implementations. Per-channel ranges, folded into the next layer's weights because standard integer stacks take activation scales per tensor, match fake quantization in \nv{e17.pc.n} of \nv{e17.pc.of} cells.
+
+\textbf{Latency against floating point.} Replayed as CUDA graphs, the integer rollout with 8-bit weights and 4-bit activations (W8A4) is \nv{e8.speedup}$\times$ faster than FP32 in all 12 conditions of each of two runs on separate A40 instances. BF16 with the weights converted once in advance, however, is the fastest float format in all \nv{e8c.bf16fastest} conditions of the second run, and our integer rollout takes \nv{e8c.int.over.bf16}$\times$ its time (Figure~\ref{fig:latency}a; much of the gap is the first layer, which we keep in FP32, Appendix~\ref{app:latency}). The whole planning step gains less (\nv{e8c.step.speedup}$\times$ over FP32, \nv{e8c.step.over.bf16}$\times$ the time of pre-converted BF16; Figure~\ref{fig:latency}b), since the dynamics and reward networks take only \nv{e8c.wmshare}\% of an FP32 step; shared dither adds at most \nv{e8c.step.overhead.max}\% to it.
+
+Pre-converted BF16 is nearly lossless in closed loop: no damage in \nv{e17.k3.n} of \nv{e17.k3.of} tasks, small damage on door-open (\nv{e17.bf16.dooropen} points) and cheetah-run (\nv{e17.bf16.cheetah}\%), and a small gain on finger. On other hardware low-bit arithmetic can be much faster than 16-bit floating point. An NVFP4 GEMM at the 317M layer width is up to \nv{e8b.nvfp4.gemm}$\times$ faster than BF16 on an RTX 5090, and concurrent work reports custom W4A4 integer kernels on a Jetson AGX Orin that evaluate 300 CEM candidates 1.36--2.13$\times$ faster than FP16~\citep{wmquant2026}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_latency.pdf}
+\caption{Latency on an NVIDIA A40 as CUDA graphs (second run): speed-up over FP32 of (a) the world-model rollouts of one MPPI step and (b) the whole planning step, for W8A4 and for BF16 with pre-converted weights (medians over $N$; bars: range); (c) overhead of \shiter and \detshift over \dtm in the fused integer kernel (E17; medians and 95\% intervals over paired blocks).}
+\label{fig:latency}
+\end{figure}
+
+% =====================================================================================================
+% CLAIMS v2: limits of C1-C7 (sec. 2 "한정" items); FINAL_A sec. 6. PLAN 4.6: the RSS "Planned Extensions" list is gone.
+\section{Limitations}
+\label{sec:limits}
+We study two model families, which differ in more than the planner (Section~\ref{sec:swap}), so the family difference is descriptive. The 317M results come from one checkpoint, on Meta-World only, replicated over seeds but on the same GPU type. Each DINO-WM task has one checkpoint, the new split has two damaged cells, one of them post hoc, and the Wall baseline moves between splits. The prescription needs an iterating planner: it does not help with one iteration, needs more than the default iterations on DMC, and on walker-walk at 3 bits is worse than round-to-nearest at the default six. On top of per-channel ranges the bit gain is smaller and absent on PointMaze, and on Meta-World the policy alone nearly matches the unquantized planner (post hoc); we did not test learned rounding~\citep{nagel2020adaround} or outlier-aware scaling~\citep{xiao2023smoothquant, lin2024awq}, or combine dither with calibration objectives~\citep{anon2026modulemse, wmquant2026}. Our quantization-aware-training baseline was weak, and weights stay in floating point except in the integer kernel. Latency comes from one GPU type and TD-MPC2 only, the FP4 results are fake quantization of the 5M models, and we have no physical-robot experiments. The bit-limit counts rest on a damage threshold; they survive resampling and thresholds of \nv{r2.tau} points, but the per-task results do not.
+
+% =====================================================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+At a fixed bit width and grid, changing only the rounding rule changed whether our low-bit world models planned well. Deterministic rounding error carries a systematic part, which any unbiased randomized rounding removes, and a persistent error field, which an iterating planner exploits and redrawing removes; the second dominates in TD-MPC2 but not in DINO-WM, where a fixed unbiased error repaired both damaged cells. Dither shared by all candidates and redrawn at every iteration removes most of the damage without training and lowers the smallest usable bit width by at least one bit in most Meta-World tasks, even on per-channel grids; since the policy alone nearly matches the unquantized planner there, this means that the low-bit planner does not fall below the policy. The simplest form of this dither adds at most about \nv{e17.shiter.overhead.max0}\% to rollout latency in our integer kernel. Because in most damaged cells the latent one-step error did not distinguish the rounding rules that plan well from those that do not, we recommend validating quantized planners in closed loop.
+
+\section*{Broader Impact Statement}
+A low-bit world model can predict well offline and still plan badly, so deploying it on robots without closed-loop validation could cause unsafe behavior. We see no other direct negative societal impact.
+
+% end of the main text (build/build.sh reports where it ends); the references start on a new page, so the last
+% page of the main text is not stretched to the full text height
+\clearpage
+\bibliography{refs}
+\bibliographystyle{tmlr}
+
+% =====================================================================================================
+\clearpage
+\appendix
+
+% PLAN 4.4 A: design document versions (freeze times, SHA-256), what was decided before and after results,
+%   deviations (E1-E10: 28 + tolerance fix; E11-E17: D1-D6). Source: FINAL_A 2.4, 8.1; main/LOG.md; tmlr_ext/LOG.md.
+\FloatBarrier
+\section{Analysis Plan Record}
+\label{app:plan}
+\input{appendix/app_A}
+
+% PLAN 4.4 B: every planned test with its outcome (holds / fails / borderline). Source: FINAL_A 3, CLAIMS_rss, RESULTS_tmlr 0.
+\FloatBarrier
+\section{All Planned Tests}
+\label{app:tests}
+\input{appendix/app_B}
+
+% PLAN 4.4 C: checkpoints, quantization sites and ranges, planner settings, seed splits, hardware. Source: DESIGN_main,
+%   DESIGN_ext, DESIGN_tmlr 0.2-0.6.
+\FloatBarrier
+\section{Experimental Details}
+\label{app:details}
+\input{appendix/app_C}
+
+% PLAN 4.4 D: per-cell tables of E1 (TD-MPC2 36 cells x 7 variants), DINO-WM, 317M (E10), FP4 (E9, 24 cells).
+\FloatBarrier
+\section{Per-Cell Results of the Main Stages}
+\label{app:cells}
+\input{appendix/app_D}
+
+% PLAN 4.4 E: OEI decomposition, region effect, two-axis control, table-size sweep, near-tie density. Source: E2, E3.
+\FloatBarrier
+\section{Mechanism Details}
+\label{app:mech}
+\input{appendix/app_E}
+
+% PLAN 4.4 F: theory (E4): assumptions, derivation, comparison with simulation, failed predictions. W13: "derivation under a model".
+\FloatBarrier
+\section{Theory}
+\label{app:theory}
+\input{appendix/app_F}
+
+% PLAN 4.4 G: strong baselines: PTQ selection, bias correction, QAT (a weak baseline, said so), weight quantization.
+\FloatBarrier
+\section{Strong Baselines}
+\label{app:baselines}
+\input{appendix/app_G}
+
+% PLAN 4.4 H: latency protocol, all conditions, two measurement modes, eager vs CUDA graph. Source: E7, E8, E8c, E17.
+\FloatBarrier
+\section{Latency}
+\label{app:latency}
+\input{appendix/app_H}
+
+% PLAN 4.4 I: full tables of E11-E17.
+\FloatBarrier
+\section{Full Results of E11--E17}
+\label{app:new}
+\input{appendix/app_I}
+
+% PLAN 4.4 J: what did not hold, and claims we do not make. Source: FINAL_A 4.2-4.3, CLAIMS_tmlr 3, CLAIMS_rss 3.
+\FloatBarrier
+\section{What Did Not Hold}
+\label{app:neg}
+\input{appendix/app_J}
+
+% PLAN 4.4 K: compute and reproducibility. The repository URL appears only in the arXiv build (\ifarxiv);
+%   the submission points to the anonymous supplement (PLAN 5.3).
+\FloatBarrier
+\section{Compute and Reproducibility}
+\label{app:repro}
+\ifarxiv
+Code, design documents, run logs and result files are available at \url{https://github.com/thddydgnl/dithered-world-models}.
+\else
+Code, design documents, run logs and result files are provided as anonymized supplementary material.
+\fi
+
+\input{appendix/app_K}
+
+\end{document}

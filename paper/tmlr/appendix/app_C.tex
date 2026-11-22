@@ -1,0 +1,61 @@
+% Appendix C -- Experimental Details (body). Sources: main/DESIGN_main.md (0, 4, 7), rss_ext/DESIGN_ext.md (0-3),
+%   tmlr_ext/DESIGN_tmlr.md (0.2-0.6, 1-7, 11); bias-vector counts: td_summary.json, e14_bias.csv, calib_summary_dw.json.
+Table~\ref{tab:setup} lists the stages of the study and their cells.
+
+\begin{table}[h]
+\caption{Stages, models and cells. Seeds of each stage are disjoint from all earlier ones; the seeds, planners and GPUs of each stage are given below.}
+\label{tab:setup}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l>{\raggedright}p{4.5cm}>{\raggedright\arraybackslash}p{9.6cm}@{}}
+\toprule
+Stage & Question & Models and cells \\
+\midrule
+E1 & damage, repair, offline errors & TD-MPC2 5M: 12 tasks $\times$ 3 bit widths, 7 variants, 90 pairs; DINO-WM: 9 cells (+1 exploratory), 6 variants, 100 pairs \\
+E2, E3 & iterations, candidates, table size, sharing vs.\ persistence & TD-MPC2 mechanism tasks (push, pick-place, cheetah-run) and 12 tasks; DINO-WM PushT \\
+E5, E7--E10 & strong post-training baselines, integer kernels, latency, FP4, 317M & TD-MPC2 5M and 317M; DINO-WM \\
+E11 & bias vs.\ resolution vs.\ persistence & TD-MPC2 5M: 12 tasks at the primary $k$, 8 variants, 90 pairs; DINO-WM: PushT 4-bit, PointMaze 3-bit, Wall 3-bit, new split, 100 pairs \\
+E12 & smallest usable bit width & TD-MPC2 5M 12 tasks and DINO-WM 3 tasks; per-tensor, per-channel and (PushT) rollout-chosen ranges \\
+E13 & offline errors on common held-out states & all E1 and E11 cells \\
+E14 & persistence at 317M & 8 Meta-World tasks, primary $k$, 6 variants, 90 pairs \\
+E15, E16 & DMC $\times$ iterations; planner swap & DMC 4 tasks $\times$ \{6, 12, 24\} iterations; CEM-like TD-MPC2, MPPI-like DINO-WM \\
+E17 & integer kernel, pre-converted BF16 & TD-MPC2 5M, 4 tasks (kernel) and 12 tasks (BF16) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Models and code.} TD-MPC2: the official single-task 5M checkpoints of seeds 1, 2 and 3 for the 12 tasks, and the official multi-task checkpoint mt80 of 317M parameters. The official code does not evaluate a multi-task checkpoint on one task, so a wrapper reproduces the training-time observation padding, action mask and task embedding; it matched the official multi-task path bit for bit. DINO-WM: the official PushT, Wall and PointMaze models with their DINOv2 ViT-S/14 encoder~\citep{oquab2024dinov2}. Upstream code is pinned to TD-MPC2 commit \texttt{332f19e}, DINO-WM commit \texttt{0a9492f}, Meta-World \texttt{04be337} and D4RL~\citep{fu2020d4rl} \texttt{89141a6} (for PointMaze), with PyTorch 2.7.1 (CUDA 12.6) for TD-MPC2 and 2.4.1 (CUDA 12.4) for DINO-WM; the FP4 GEMM timings of E8b used the PyTorch of a CUDA 12.8 image. Checkpoint and data files were checked against recorded SHA-256 hashes whenever they were copied to a new machine.
+
+\textbf{Quantization sites and grid.} TD-MPC2 quantizes the Mish outputs of the two hidden layers of the dynamics MLP and the two of the reward MLP; the encoder, the Q-ensemble and the policy stay in FP32. DINO-WM quantizes the six GELU outputs of the predictor's MLP blocks; the encoder and all other modules stay in floating point. With range $[\mathrm{lo},\mathrm{hi}]$, $n=2^k-1$ and $\Delta=(\mathrm{hi}-\mathrm{lo})/n$, an activation $a$ maps to $x=(\mathrm{clip}(a,\mathrm{lo},\mathrm{hi})-\mathrm{lo})/\Delta$ and back to $\mathrm{lo}+\Delta\cdot\mathrm{clamp}(r(x),0,n)$, where $r$ is the rounding rule of Table~\ref{tab:variants}; the offset variants add $\Delta o$ back after clamping, and the bias vector $b$ is subtracted or added after the map. Random draws come from per-episode CUDA generators, so the planner's own random stream is identical across variants; this was checked before the E11--E17 runs and, at 317M, by comparing the planner's random state at the end of every episode across variants.
+
+\textbf{Ranges.} Per-tensor ranges are $[\min, \text{99.99th percentile}]$ of each layer's activations on held-out calibration episodes of the unquantized planner (E0 for the 5M models and DINO-WM, held-out episodes of E10 for 317M); every stage reuses these ranges. Per-channel ranges take the same statistics per unit, recomputed on the cloud machines from held-out data: five calibration episodes (12{,}000 planning inputs, three horizon steps) for TD-MPC2 and 256 calibration windows for DINO-WM. Rollout-chosen ranges (PushT, E12) choose each layer's upper bound from the percentiles $\{99, 99.9, 99.99, 99.999, \max\}$ by two rounds of coordinate descent, minimizing the five-step latent relative error of \dtm on the held-out pairs; this re-implements the range calibration of concurrent work~\citep{wmquant2026} without its other components.
+
+\textbf{Bias vector.} The variants \detbc and \shiterb use one vector $b$ per (task, checkpoint, range, bit width). Starting from $b=0$, the quantized and the unquantized model roll out the same start states and action sequences on held-out data (three steps for TD-MPC2, five for DINO-WM), and $b$ moves by $\eta$ times the per-unit mean of (quantized $-$ unquantized) output of each layer, which also corrects the mean shift that earlier layers and steps produce. The iteration stops when the mean residual of every layer is below 1\% of $\Delta$, with at most 60 updates and $\eta=1$, then $\tfrac12$, then $\tfrac14$, each from $b=0$ (deviation D2). All \nv{c.bias.td.n} TD-MPC2 vectors converged (\nv{c.bias.td.a1} with $\eta=1$, \nv{c.bias.td.a2} with $\tfrac12$, \nv{c.bias.td.a4} with $\tfrac14$; at most \nv{c.bias.td.maxupd} updates), as did the eight 317M vectors (\nv{c.bias.mt.a2} with $\tfrac12$, \nv{c.bias.mt.a4} with $\tfrac14$; at most \nv{c.bias.mt.maxupd} updates, from ten held-out episodes per task) and the \nv{c.bias.dw.n} DINO-WM vectors (all with $\eta=1$; at most \nv{c.bias.dw.maxupd} updates). Because no vector failed to converge, the two readings that D2 prescribes for that case coincide. Appendix~\ref{app:baselines} reports how well $b$ fits outside its data.
+
+\textbf{Latent errors.} The planning-time errors of E1 are measured on the first-iteration candidates of up to eight planning states per TD-MPC2 episode and of every DINO-WM episode, against the unquantized model on the same candidates; randomized variants average three dither draws, and a cell averages its episodes. For TD-MPC2, the $n$-step error is $\sum_i\|z^{q}_{i,n}-z^{0}_{i,n}\|^2$ over the candidates $i$, divided by their number and by the variance of the unquantized latents $z^{0}_{i,n}$ across them, where $z_{i,n}$ is the open-loop latent prediction after $n$ steps; the one-step error instead feeds the unquantized latent of every horizon position to one quantized step and averages the squared error over the positions, normalized by the variance of all unquantized next latents. For DINO-WM, the error at horizon step $n$ of the first-iteration rollout is the planning cost's distance between the quantized and the unquantized prediction of the same candidate (visual MSE plus $\alpha$ times the proprioceptive MSE), averaged over the candidates and divided by the variance of the unquantized predictions across the candidates. E9 and E10 measure the TD-MPC2 errors on held-out states of the unquantized planner, and E13 on states common to all variants.
+
+\textbf{Planners.} Table~\ref{tab:planners} gives the planner settings. The CEM-like TD-MPC2 planner of E16 sets the MPPI temperature to 0, which weights every elite equally, lowers the standard-deviation floor and drops the policy trajectories. The MPPI-like DINO-WM planner replaces the top-30 mean by a softmax-weighted mean and standard deviation, $w\propto\exp(-J/\lambda)$, with a floor of 5\% of the initial standard deviation; $\lambda$ is $c$ times the standard deviation of the first iteration's elite costs, with $c\in\{0.25, 0.5, 1, 2\}$ chosen by unquantized success on the 20 held-out pairs ($c=\nv{c.e16.c.pm}$ on PointMaze, $\nv{c.e16.c.wall}$ on Wall). Every swapped planner kept at least 60\% of the default planner's unquantized success.
+
+\begin{table}[h]
+\caption{Planner settings. MPPI weights the elites by $\exp(\beta(J-J_{\max}))$; CEM refits to the top $K$ candidates. $N$ counts all candidates.}
+\label{tab:planners}
+\centering\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}l>{\raggedright}p{2.4cm}cccc>{\raggedright\arraybackslash}p{4.2cm}@{}}
+\toprule
+Model & Planner & $N$ & Elites & Iterations & Horizon & Other \\
+\midrule
+TD-MPC2 (default) & MPPI, warm start & 512 & 64 & 6 & 3 & 24 policy trajectories; $\beta=0.5$; std in $[0.05, 2]$ \\
+TD-MPC2, E2 & MPPI & 64--1024 & 64 & 1--12 & 3 & elite count, temperature and warm start also varied \\
+TD-MPC2, E15 & MPPI & 512 & 64 & 6, 12, 24 & 3 & default otherwise \\
+TD-MPC2, E16 & CEM-like & 512 & 64 & 6 & 3 & $\beta=0$; std floor 0.01; no policy trajectories \\
+DINO-WM (default) & open-loop CEM & 300 & 30 & 30 (PushT), 10 & 5 & first sample at the mean \\
+DINO-WM, E2 & open-loop CEM & 64--1024 & 6--75 & 5--30 & 5 & PushT at 4 bits \\
+DINO-WM, E16 & MPPI-like & 300 & -- & 10 & 5 & softmax weights; std floor 5\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Seeds and splits.} Every TD-MPC2 cell pairs three checkpoints with 30 episode seeds (one 317M checkpoint with 90 seeds), and the seed range of each stage is new: E0 held-out runs 12000--12019, E1 20000--20029, E2 40000--40029, E3 50000--50029, E5 60000--60029 (QAT data 65000--65019), E7 70000--70029, E9 80000--80029, E10 90000--90089, E11, E12, E15, E16 and X5 100000--100029, E14 102000--102089. Offline errors use held-out states from separate seeds (E9 81000--81029, E10 91000--91029, E13 101000--101029; the 317M bias vectors 103000--103009). DINO-WM pairs a start--goal pair with a planner seed: E1 used 100 evaluation pairs per task (PushT pairs redrawn so that no frame overlaps the 20 held-out pairs), and E11--E16 a new split of 100 pairs with new planner seeds and dither salt (deviation D1 for PushT). DMC cells of E12 and PushT cells start with 45 pairs or 50 episodes and add the rest when the interval contains the threshold; their intervals are not corrected for this interim look.
+
+\textbf{Hardware.} E1--E7 ran on two RTX A5000 GPUs of a local server: TD-MPC2 on one GPU with 16 processes under NVIDIA's Multi-Process Service (MPS), which does not change any episode, and each DINO-WM cell on a single GPU. Later stages ran on rented cloud GPUs: A40 for E8, E8c, E9, E17 and the TD-MPC2 parts of E11--E16 and X5; RTX 5090 for E8b; RTX 4090 for E10, E14, the DINO-WM parts of E11--E16, D4 and X17 (RTX A5000 was unavailable). A variant and its unquantized baseline always ran on the same machine, because the same seeds give bit-identical episodes only on one device and software stack.

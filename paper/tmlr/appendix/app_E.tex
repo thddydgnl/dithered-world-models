@@ -1,0 +1,63 @@
+% Appendix E -- Mechanism Details (body). Sources: main/reports/E1_tdmpc2.md 10, E1_dinowm.md 8, E2_tdmpc2.md 6, E3_tdmpc2.md 4-7,
+%   E3_dinowm.md 3-4; tmlr_ext/TD_tdmpc2/REPORT.md 2, 6; DW_dinowm/REPORT.md 1.2, 9.2. Tables: tables/tabE_*.tex.
+\textbf{Selection and drift.} With $e(a)$ the cost error of candidate $a$ (Section~\ref{sec:oei}; negative when quantization makes $a$ look better), $\bar e_{\mathrm{first}}$ the mean error of the first iteration's random candidates and $\bar e_{\mathrm{last}}$ that of the last iteration's population, $\mathrm{OEI}=e(a_{\mathrm{exec}})-\bar e_{\mathrm{first}}$ splits exactly into the selection term $e(a_{\mathrm{exec}})-\bar e_{\mathrm{last}}$ and the drift $\bar e_{\mathrm{last}}-\bar e_{\mathrm{first}}$. Table~\ref{tab:decomp} gives both terms for the TD-MPC2 mechanism tasks (post hoc in E1, a planned descriptive item from E2 on). Drift comes mainly from the variants that keep their error across iterations: \dtm's drift is \nv{e.dec.push.det.drift}, \nv{e.dec.pickplace.det.drift} and \nv{e.dec.cheetah.det.drift} (push, pick-place, cheetah-run), \shstep and \shep come close, and the redrawn variants drift much less. The OEI of \shiter is nevertheless negative, mostly through selection (\nv{e.dec.push.shiter.sel}, \nv{e.dec.pickplace.shiter.sel}, \nv{e.dec.cheetah.shiter.sel}): TD-MPC2's OEI scores the executed plan with the draw that selected it, so the last pick benefits from the noise it was selected on, a winner's curse that redrawn noise also produces (Appendix~\ref{app:theory}). Re-scored under an independent draw, the selection term of the redrawn variants vanishes; that version of the test still failed in 2 of the 3 tasks because a small drift remains (below). DINO-WM's OEI re-scores the plan after planning, and on PushT at 4 bits \dtm's OEI of \nv{e.dec.pusht4.oei} is mostly drift (\nv{e.region.pusht4.det}).
+
+\begin{table}[h]
+\caption{E1, TD-MPC2 at the primary bit width: selection term and drift of the OEI (value units of each task; 90 pairs).}
+\label{tab:decomp}
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+ & \multicolumn{2}{c}{push, 3 bits} & \multicolumn{2}{c}{pick-place, 3 bits} & \multicolumn{2}{c}{cheetah-run, 5 bits} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(l){6-7}
+Variant & selection & drift & selection & drift & selection & drift \\
+\midrule
+\inputrows{tables/tabE_decomp.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Region effect.} Part of a drift can come from where the population moves rather than from the planner exploiting the error. Scoring the unquantized planner's first and last populations with the quantized model gives a reference drift; a variant's drift minus this reference is the planner's own part (descriptive, added in version 5.2 of the main design). In TD-MPC2 (E2 seeds) \dtm's reference drift is positive in all three tasks (\nv{e.region.td.ref}), so its own part (\nv{e.region.td.own}) exceeds its drift. The small drift of \shiter in Meta-World is mostly a region effect on push, but on pick-place an own part of \nv{e.region.pp.shiter.own} remains, for reasons we did not identify. In DINO-WM (E1 populations, offline), the reference drift on PushT at 4 bits is \nv{e.region.pusht4.ref}, about two thirds of \dtm's drift (\nv{e.region.pusht4.det}), which leaves \nv{e.region.pusht4.own}; at 3 bits a reference drift of \nv{e.region.pusht3.ref} turns \dtm's drift positive (\nv{e.region.pusht3.det}) although its own part is \nv{e.region.pusht3.own}. The own part is at most zero in all \nv{e.region.dw.ncells} E1 cells of DINO-WM, so the sign of the whole OEI does not follow the damage across DINO-WM cells, which is one reason the OEI tests failed there.
+
+\textbf{Drift of the E11 variants.} Table~\ref{tab:drift11} extends the drift to the controls of E11. In the TD-MPC2 mechanism tasks, the fixed unbiased variants keep \nv{e.dr.fixed}\% of \dtm's drift and the redrawn dither at most \nv{e.dr.fresh}\%; fresh noise added to \dtm keeps \nv{e.dr.noise}\% and removing \dtm's mean bias keeps \nv{e.dr.bc}\%. In the two damaged DINO-WM cells, the fixed unbiased variants keep at most \nv{e.dr.dw.fixed}\% of \dtm's drift, while \detnoise keeps all of it (\nv{e.dr.dw.noise}\%), in line with the double dissociation of Section~\ref{sec:components}.
+
+\begin{table}[h]
+\caption{E11: drift of each variant relative to \dtm's (TD-MPC2 mechanism tasks at the primary bit width, 90 pairs; DINO-WM damaged cells of the new split at 3 bits, 100 episodes). $^\dagger$ post hoc cell.}
+\label{tab:drift11}
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+ & \multicolumn{3}{c}{TD-MPC2 5M} & \multicolumn{2}{c}{DINO-WM} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-6}
+Variant & push & pick-place & cheetah-run & Wall & PushT$^\dagger$ \\
+\midrule
+\inputrows{tables/tabE_drift11.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Sharing and persistence (E3).} E3 crossed sharing (one draw for all candidates or one per candidate) with persistence (redrawn at every call, kept for a control step, kept for an episode) at the primary bit width of all 12 TD-MPC2 tasks, on new seeds. The paired difference has a lower bound above zero in \nv{e.e3.crn.n} of \nv{e.e3.ntasks} tasks for $D_{\ind}-D_{\shiter}$, the benefit of sharing a redrawn dither; in \nv{e.e3.shstep.n} for $D_{\shstep}-D_{\shiter}$ and \nv{e.e3.shep.n} for $D_{\shep}-D_{\shiter}$, the cost of keeping a shared dither; and in \nv{e.e3.shepstep.n} for $D_{\shep}-D_{\shstep}$, so keeping it longer costs more. Tables kept per candidate drift little, as expected, but they were more harmful than the redrawn per-candidate dither in \nv{e.e3.indstep.n} (per control step) and \nv{e.e3.indep.n} (per episode) tasks, which we did not predict and did not explain. In DINO-WM, with the full-size fixed table, all \nv{e.e3.dw.ncon} contrasts of the same design across \nv{e.e3.dw.ncells} cells have intervals that contain zero: with that table neither sharing nor persistence separates the damage.
+
+\textbf{Table size (H4a).} A fixed dither drawn from a table with fewer independent offsets gives the planner a coarser, more exploitable error field. Table~\ref{tab:sweep} shows the damage per table size. Damage falls as the table grows in the TD-MPC2 tasks other than walker and in PushT and PointMaze, but in Meta-World most of the decrease is the step from the coarsest table, \nv{e3.h4a.exact} of the \nv{e3.h4a.n} passing tasks sit exactly at the threshold, and walker, where dither was harmful in E1, goes the other way. The exploratory Wall cell collapses only with a single offset per layer (\nv{e3.wall.singleoffset} points). The variance of the fixed-table error across candidates, which the theory names as the direct predictor of the damage, followed the table size in DINO-WM but not in TD-MPC2. At 317M the full-size table is as harmful as \dtm (Section~\ref{sec:persist}), so table size does not explain the cost of persistence there.
+
+\begin{table}[h]
+\caption{Table-size sweep of a fixed shared dither (E3): damage from the coarsest to the full table, and the Spearman correlation of table size and damage (H4a passes at $\le-0.8$). TD-MPC2 tables hold 4, 128, 2048 and 6144 independent offsets in all (one per layer, 32 groups per layer, one per unit, one per unit and horizon step); DINO-WM tables hold one offset per layer, one per group of units, one per unit, or the full token-by-unit table. $^\circ$ exploratory cell; Wall at 5 bits does not qualify because \dtm's E1 drop was not significant.}
+\label{tab:sweep}
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+ & & & \multicolumn{4}{c}{$D$ (points, \% on DMC), coarse $\rightarrow$ full} & \\
+\cmidrule(lr){4-7}
+Family & Task & $k$ & 1 & 2 & 3 & 4 & Spearman \\
+\midrule
+\inputrows{tables/tabE_sweep.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Near-tie density (H4b).} Sharing a draw should matter most where candidates are nearly tied. The median gap between the two best candidates, in units of the candidates' standard deviation, is \nv{e.nt.td.last} in the last iteration's candidate set of TD-MPC2 (\nv{e.nt.td.first} in the first) and \nv{e.nt.dw.last} in DINO-WM. The benefit of sharing ($D_{\ind}-D_{\shiter}$, E3 seeds) has a lower bound above zero in \nv{e.crn.n} of \nv{e.crn.of} TD-MPC2 tasks, but its Spearman correlation with the near-tie density is \nv{b.h4b.rho} (first set \nv{b.h4b.rho.first}; with the three DINO-WM tasks added, \nv{e.h4b.pool.last} and \nv{e.h4b.pool.first}). The theory predicts a positive correlation (Appendix~\ref{app:theory}), which the data do not show.
+
+\textbf{Offline errors on common states (E13).} E13 recomputed the offline errors on held-out states shared by all variants: the first iteration's candidates and the last iteration's candidates of the unquantized planner (Table~\ref{tab:e13}). On the E11 cells of TD-MPC2, \dtm's latent error is no larger than \shiter's in \nv{e.e13.err1.n} of \nv{e.e13.ncells} cells at one step, \nv{e.e13.err3.n} at three steps and \nv{e.e13.err5.n} at five steps, so errors over five steps do begin to separate \dtm on these cells. E1's reward error, a mean squared error divided by the variance of the candidates' rewards, diverged on states where that variance is small; E13 redefines it as the median absolute reward error divided by the standard deviation of the candidates' rewards. With this definition, \dtm's reward error exceeds \shiter's in \nv{e.e13.rew.n} of \nv{e.e13.ncells} cells. Neither error was a planned test.

@@ -1,0 +1,32 @@
+% Appendix B -- All Planned Tests (body). Table rows: tables/tabB_tests_e1e10.tex, tabB_tests_e11e17.tex
+%   (build/make_tables.py; values from the numbers.tex keys b.*, e1.*, e9.*, e10.*, e11.* ..., computed from the result
+%   files). Labels H1, B1, ... appear only in the appendices (PLAN 4.2).
+Tables~\ref{tab:tests} and~\ref{tab:tests2} list every planned test with its outcome. Threshold conditions are judged on point estimates, with a tolerance of $10^{-9}$ (Appendix~\ref{app:plan}); a drop counts when it is significantly greater than zero under the test and Holm correction of Section~\ref{sec:stats}, and intervals are 95\% paired-bootstrap intervals. The tests of E1--E7 were fixed in the main design, those of E8--E10 in the extension design, L2c and S1--S3 in the E8c design, and B1--K3 in the E11--E17 design, each before the data of its stage. Rows marked $^\dagger$ were added after the first results and tested on data collected afterwards (for PushT, on E1 episodes not yet analyzed for that quantity); ``borderline'' marks an outcome decided by one cell, one rank or a value exactly at a threshold. The four mechanism tasks are push, pick-place, cheetah-run and PushT at their primary bit widths. Results that no planned test covers, such as the post hoc cells of D4--D6, are reported as descriptive findings in the main text and Appendix~\ref{app:new}.
+
+\begin{table}[t]
+\caption{Planned tests of E1--E10 and their outcomes. A benchmark is TD-MPC2 Meta-World, TD-MPC2 DMC or DINO-WM. OEI and drift are defined in Section~\ref{sec:oei}; percentages of DMC are of return. $^\dagger$ added after the first results.}
+\label{tab:tests}
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l>{\raggedright}p{6.3cm}>{\raggedright\arraybackslash}p{7.6cm}@{}}
+\toprule
+Test & Hypothesis & Outcome \\
+\midrule
+\inputrows{tables/tabB_tests_e1e10.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\caption{Planned tests of E11--E17 and their outcomes. $k^*$ and $G$ are defined in Section~\ref{sec:stats}, $\rho_p$ and $\sigma_e/\sigma_J$ in Section~\ref{sec:oei}; percentages of DMC are of return.}
+\label{tab:tests2}
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l>{\raggedright}p{6.3cm}>{\raggedright\arraybackslash}p{7.6cm}@{}}
+\toprule
+Test & Hypothesis & Outcome \\
+\midrule
+\inputrows{tables/tabB_tests_e11e17.tex}
+\bottomrule
+\end{tabular}
+\end{table}

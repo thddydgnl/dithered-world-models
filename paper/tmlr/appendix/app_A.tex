@@ -1,0 +1,100 @@
+% Appendix A -- Analysis Plan Record (body; \section and \label stay in main.tex).
+% Sources: main/reports/FINAL_A.md 2.4, 2.5, 8.1; main/LOG.md, rss_ext/LOG.md, tmlr_ext/LOG.md (hashes, times);
+%   tmlr_ext/DESIGN_tmlr.md sec. 11 (D1-D6). Hashes of v5.1 and of the D5/D6 version: build/make_numbers.py (plan.*).
+Each stage's hypotheses, thresholds, seeds, sample sizes and analysis code were frozen in a design document whose SHA-256 hash and time (UTC) were logged before any of the stage's data existed. After freezing, a design document only received additions (rows of its change table and appended sections), so each earlier version can be recovered from the current document; the README of the supplementary material states, version by version, how its logged hash is reproduced. In the supplement, the copies of the main design for v2--v5.3 no longer reproduce their logged hashes because one line naming a server was removed; the copies of the extension, E8c and E11--E17 designs reproduce theirs. The hash of v1 was logged at its freeze, and that of v5.1 only by its first eight hexadecimal digits, in two worker logs. Here a worker is an LLM agent that implemented and ran one group of experiments under the authors' direction, and the coordinator is the LLM agent that assigned work to the workers and kept the main logs; the authors approved every design document and every claim. Operational choices made in short trial runs (smoke tests), such as process counts, block lengths of the latency runs and kernel tile sizes, were recorded before the main runs. Table~\ref{tab:versions} lists the versions and Appendix~\ref{app:tests} the tests they fixed\ifarxiv\else; the hashes are listed in the supplementary material\fi.
+
+\begin{table}[h]
+\caption{Versions of the design documents\ifarxiv. Hash = first 12 hexadecimal digits of the SHA-256 of the whole document at that time\fi.}
+\label{tab:versions}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\ifarxiv
+\begin{tabular}{@{}>{\raggedright}p{2.6cm}>{\raggedright}p{2.4cm}>{\raggedright}p{2.2cm}>{\raggedright\arraybackslash}p{7.2cm}@{}}
+\toprule
+Document & Time (UTC) & SHA-256 & What it fixed, and what was known \\
+\midrule
+Main design v1 & 2026-10-21 18:14 & 9f84ab7f597f & hypotheses, metrics, thresholds and decision rules; TD-MPC2 details; before any E1 data \\
+v2 & 2026-10-21 20:01 & 05bf60148145 & DINO-WM details \\
+v3 & 2026-10-21 22:54 & 9b86506e744a & DINO-WM OEI reference; PushT evaluation pairs redrawn \\
+v4 & 2026-10-22 06:55 & b814a4092a4b & common verdict computation for both families, before the TD-MPC2 E1 results \\
+v5, v5.1 & 2026-10-22 09:00, 09:30 & a7895d735cf4, \nv{plan.v51.sha} & E2, E3, E5, E7 details, before their data \\
+v5.2 & 2026-10-22 09:50 & 41e1f39d6bd8 & claims narrowed after E1 (OEI diagnostic dropped); H2a$'$, DMC rule \\
+v5.3 & 2026-10-24 02:38 & eee46e0aa4f0 & QAT reporting; two post hoc checks \\
+Extension design & 2026-10-31 08:46 & c660a10dc72b & E8--E10, before their data \\
+E8c design & 2026-10-31 15:51 & 2e9174b32c26 & pre-converted BF16, whole-step graph \\
+E11--E17 design v1.0 & 2026-11-21 17:59 & 36d69ea82ef9 & E11--E17, before their data; later D1--D7 appended (its Section 11) \\
+E11--E17 design, D5 and D6 & \nv{plan.tmlr.time} & \nv{plan.tmlr.sha} & the post hoc runs X17 and X5 (its Section 11.1), before their data \\
+E11--E17 design, D7 & \nv{plan.tmlr.d7.time} & \nv{plan.tmlr.d7.sha} & the post hoc run X6 (its Section 11.1), before its data \\
+\bottomrule
+\end{tabular}
+\else
+\begin{tabular}{@{}>{\raggedright}p{3.2cm}>{\raggedright}p{2.6cm}>{\raggedright\arraybackslash}p{9.4cm}@{}}
+\toprule
+Document & Time (UTC) & What it fixed, and what was known \\
+\midrule
+Main design v1 & 2026-10-21 18:14 & hypotheses, metrics, thresholds and decision rules; TD-MPC2 details; before any E1 data \\
+v2 & 2026-10-21 20:01 & DINO-WM details \\
+v3 & 2026-10-21 22:54 & DINO-WM OEI reference; PushT evaluation pairs redrawn \\
+v4 & 2026-10-22 06:55 & common verdict computation for both families, before the TD-MPC2 E1 results \\
+v5, v5.1 & 2026-10-22 09:00, 09:30 & E2, E3, E5, E7 details, before their data \\
+v5.2 & 2026-10-22 09:50 & claims narrowed after E1 (OEI diagnostic dropped); H2a$'$, DMC rule \\
+v5.3 & 2026-10-24 02:38 & QAT reporting; two post hoc checks \\
+Extension design & 2026-10-31 08:46 & E8--E10, before their data \\
+E8c design & 2026-10-31 15:51 & pre-converted BF16, whole-step graph \\
+E11--E17 design v1.0 & 2026-11-21 17:59 & E11--E17, before their data; later D1--D7 appended (its Section 11) \\
+E11--E17 design, D5 and D6 & \nv{plan.tmlr.time} & the post hoc runs X17 and X5 (its Section 11.1), before their data \\
+E11--E17 design, D7 & \nv{plan.tmlr.d7.time} & the post hoc run X6 (its Section 11.1), before its data \\
+\bottomrule
+\end{tabular}
+\fi
+\end{table}
+
+\textbf{What was decided after results.} Three groups of rules were fixed after some results of the same study existed, each before the data it governs. After the TD-MPC2 E1 results, v5 and v5.2 fixed the DMC rule, narrowed the mechanism claim from the OEI to drift, and added H2a$'$ and the independently redrawn H2a; these were tested on the new seeds of E2 and E3 and, for PushT, on the 4-bit cell of E1, whose drift had not been computed when the rule was fixed (marked $^\dagger$ in Table~\ref{tab:tests}). After the TD-MPC2 E5 and E7 results, v5.3 fixed how the QAT baseline is reported and added two descriptive checks (QAT without quantization; a paired re-measurement of latency). After E8--E10, the E8c design added pre-converted BF16 and the whole-step graph. Within E11--E17, D3 was decided after the unquantized Wall results on the new split, D4--D6 after the E11 readings, and D7 after a review of the manuscript; the cells they added are labeled post hoc throughout. Analyses chosen after seeing the data they analyze are labeled post hoc.
+
+\textbf{Deviations in E1--E7.} The following deviations from the main design were recorded during the main study. None of them changed a verdict; the tolerance fix described after the list did.
+\begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item The rule's ``20 held-out episodes'' was read as the sum over the three checkpoints, which is the E1 condition and gives more episodes (before any E1 data).
+\item For tasks whose primary bit width is 3, the cell at 2 bits was included as the rule requires, although 2 lies outside the design's candidate range.
+\item No tested bit width gave the 20-point drop on drawer-open or PointMaze, so the pilot's fallback rule (the smallest tested width) was used. On sweep-into, the drop at 3 bits lay exactly at the threshold.
+\item Wall: the rule, read literally, chose 5 bits, where the held-out drop lay exactly at the threshold; on the evaluation pairs no Wall cell was damaged, so Wall contributes no tested cell, and the 3-bit cell was added as exploratory.
+\item Open-loop CEM makes \shstep and \shep identical, so DINO-WM ran one of them (\shplan).
+\item The PushT evaluation pairs were redrawn so that no frame overlaps the held-out frames (v3, before the PushT E1 runs).
+\item The DINO-WM OEI was defined against the cost of the unquantized model, correcting the design's ``true cost'' wording (v3, before the OEI analysis).
+\item The variant \detshift was defined operationally as one offset per unit, shared by all candidates and redrawn at every forward call.
+\item The two families' OEI code differed: TD-MPC2 scored the executed plan with the draw that selected it, DINO-WM with an independent draw. From E2 on both versions were recorded, and the three TD-MPC2 H2a cells were re-measured with independent draws as a post hoc correction; the frozen verdict stands.
+\item The H2c sweep was corrected to a fixed number of elites, which the design's extreme-value argument requires (v5.1, before the E2 data); the fixed-ratio sweep ran as an auxiliary for TD-MPC2 only.
+\item The clipping grid of the MSE baseline of E5 was widened before the E5 results, because at 3 bits most selected values lay at its lower end; this keeps the baseline from being weak.
+\item An auxiliary measure, the variance of the fixed-table error across candidates, was added to E3 (v5.1).
+\item The sixth E3 slot of TD-MPC2 was filled with an independent table kept for the episode; walker, where dither had been harmful in E1, was added to the table-size sweep, a choice made after E1 and stated in v5.
+\item All settings ran with the protocol's episode counts, which exceeded the design's compute estimate for E2 (cost only).
+\item E7: no torchao baseline and no CUDA graphs; success was measured with 4-bit codes held in int8 containers, and packed int4 was used for latency only.
+\item The E7 worker saw latency summaries before finishing the code review (disclosed); code changes followed the design text only.
+\item Bootstrap Spearman values with ties use average ranks, and the final E3 analysis was run exactly once (before results).
+\item H3b, which the design had placed in no family of tests for multiplicity correction, was judged per cell with uncorrected 95\% intervals, as its rule states.
+\item DINO-WM H4a eligibility: Wall at 5 bits was excluded because its E1 drop was not significant, and ``majority'' was read as more than half; the other reading gives the same verdict.
+\item The weak-baseline caveat attached to the TD-MPC2 QAT (v5.3) was not attached to the DINO-WM QAT, whose result does not show the same signs.
+\item The DINO-WM QAT stopped at its time budget, as the design allows.
+\item Run order: a second DINO-WM chain used the TD-MPC2 GPU once it was free, and the QAT stages moved to the other GPU (allowed by v5).
+\item E2 DINO-WM: the same-draw selection term of \shiter needs a second GPU pass and was reported in its elite form.
+\item The E1 DINO-WM worker deleted its own test files outside its working directory, against the run rules (no data affected).
+\item The theory worker briefly exceeded its CPU-process limit (no data affected).
+\item The optional E6 (other deterministic error sources: activation sparsification, and an offline test on a larger world model) was not run, so H6 has no evidence.
+\item Two post hoc checks (QAT without quantization; paired latency re-measurement) were added in v5.3 as descriptive results.
+\item Routine monitoring was paused twice, which delayed the detection of one stalled run queue; no result changed.
+\end{enumerate}
+
+\textbf{Tolerance of threshold comparisons.} SciPy returns Spearman correlations whose exact value is $\pm0.8$ as $\pm0.7999999999999999$. Before any H2c or H4a result was computed, every threshold comparison of both families was changed to use a tolerance of $10^{-9}$, and later stages kept it. The fix decides H4a: without it, H4a would fail in both families, because \nv{e3.h4a.exact} of the \nv{e3.h4a.n} passing tasks sit exactly at $-0.8$.
+
+\textbf{E8--E10 and E8c.} These ran as designed. Implementation choices that the design delegated to the workers were made by timing \dtm only, as prescribed, and recorded before the main measurements; the E10 bit width of sweep-into was chosen at a held-out drop exactly at the threshold, under the tolerance rule. The comparison with pre-converted BF16 of an integer rollout whose first layer runs in TF32 was chosen after the E8c results and is labeled post hoc.
+
+\textbf{Deviations in E11--E17.} The E11--E17 design records seven changes after its freeze (Section 11 of the E11--E17 design document). D1 and D2 were decided before any data they affect; D3--D7 were decided after some results and are labeled post hoc. D1--D3 were decided by an LLM agent under a procedure the authors had set in advance for the unattended runs: questions that would change the design went to a separate LLM agent, which decided from information available before the affected results, and claims could change only with the authors' approval. D4--D7 were decided by the authors, D5--D7 on the proposal of LLM agents.
+\begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item[D1.] PushT split: the design required new evaluation pairs sharing no frame with any earlier split, but earlier splits had used almost every frame of the validation trajectories. Pairs were drawn excluding all frames of the held-out split, the trial-run (smoke) split and the E1 split, and sharing as few frames as possible with the split used in E0 to reproduce the published DINO-WM results; the new pairs come from \nv{dw.pusht4.nclusters} trajectories, so a bootstrap over trajectories is reported alongside (before any planning on the new split).
+\item[D2.] Bias vector: the design's three undamped sweeps $b\leftarrow b+m$ failed the convergence check in all three model groups (diverging or oscillating in TD-MPC2, converging too slowly in DINO-WM). The rule became $b\leftarrow b+\eta m$ from $b=0$ until the per-unit mean residual of every layer is below 1\% of $\Delta$, with at most 60 updates, trying $\eta=1$, then $\tfrac12$, then $\tfrac14$; a cell that never converges would use the smallest-residual $b$ and be reported both ways (no cell needed this; Appendix~\ref{app:details}). This rule was fixed before any \detbc result with a converged $b$, and episodes run with an old $b$ were discarded.
+\item[D3.] Wall baseline: the unquantized model succeeded in \nv{dw.wall3.none}\% of the new Wall pairs, outside the planned window of $\pm10$ points around E1's \nv{e1.wall.none}\%. Re-running the E1 pairs on the same machine gave \nv{dw.wall.rerun.none}\%, so the pipeline was not at fault; the new split was kept and all three baselines are reported (post hoc, before any quantized Wall result).
+\item[D4.] PushT at 3 bits was added on the new split after the new split had shown a single damaged DINO-WM cell (post hoc). The planned readings B2, B3 and Dg1 were left unchanged; the cell and the combined DINO-WM reading are reported separately.
+\item[D5.] X17: PushT at 4 bits re-run on the E1 pairs on the GPU type of the new split, with a reading rule (i)--(iii) fixed before its data (post hoc).
+\item[D6.] X5: the bit curve of \detnoise on Meta-World, per tensor at 1--5 bits and per channel at 1--3 bits, descriptive, fixed before its data (post hoc).
+\item[D7.] X6: TD-MPC2's policy without planning (FP32, mean action, no world-model calls) on the 12 tasks of E11, paired with the unquantized planner on the same 90 episodes, descriptive, fixed before its data (post hoc).
+\end{enumerate}
+Run incidents (out-of-memory failures, a stalled GPU-sharing daemon, an unreachable cloud API) are listed in the coordinator and worker logs; none lost or changed data, and the affected jobs were re-run.

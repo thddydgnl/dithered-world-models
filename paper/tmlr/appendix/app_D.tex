@@ -1,0 +1,70 @@
+% Appendix D -- Per-Cell Results of the Main Stages (body). Tables: tables/tabD_e1_td.tex, tabD_e1_dw.tex, tabD_e10.tex,
+%   tabD_e9.tex (build/make_tables.py from e1_tdmpc2_cells.csv, e1_dinowm_cells.csv, e10_eval.csv, e9_cells.csv).
+Tables~\ref{tab:e1td}--\ref{tab:e9} give every cell of E1, E10 and E9. $D$ is the drop from the unquantized model on the same pairs, in success points (Meta-World, DINO-WM) or \% of return (DMC); a cell is damaged ($^\ast$) when \dtm's drop is significantly greater than zero (Section~\ref{sec:stats}; Holm correction over the bit widths of a task, and over the tasks of E10 and of each format in E9). In E1 the latent one-step error is measured on each variant's own planning states, as in Section~\ref{sec:offline}, and in E9 and E10 on held-out states of the unquantized planner. Appendix~\ref{app:new} repeats the E1 measurement on common held-out states. In E1 the dither variants share one per-entry error distribution at each bit width, yet their damage ranges from \shep, often worse than \dtm, through \shstep and \ind to \shiter, which, like \detshift, stays near the unquantized model in most Meta-World cells.
+
+\begin{table}[t]
+\caption{E1, TD-MPC2 5M: damage $D$ of every variant (90 pairs) and the latent one-step error of \dtm and \shiter. none = unquantized success (\%) or return; $^\ast$ damaged cell.}
+\label{tab:e1td}
+\centering\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lrrlrrrrrrr@{}}
+\toprule
+ & & & \multicolumn{6}{c}{$D$} & \multicolumn{2}{c}{latent error} \\
+\cmidrule(lr){4-9}\cmidrule(l){10-11}
+Task & $k$ & none & \dtm & \ind & \shiter & \shstep & \shep & \detshift & \dtm & \shiter \\
+\midrule
+\inputrows{tables/tabD_e1_td.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{E1, DINO-WM: damage of every variant (100 pairs) and the latent one- and five-step errors of \dtm / \shiter. In open-loop CEM \shstep and \shep coincide (\shplan). $^\ast$ damaged cell; $^\circ$ exploratory cell, not part of the tests.}
+\label{tab:e1dw}
+\centering\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lrrlrrrrcc@{}}
+\toprule
+ & & & \multicolumn{5}{c}{$D$ (points)} & \multicolumn{2}{c}{latent error, \dtm / \shiter} \\
+\cmidrule(lr){4-8}\cmidrule(l){9-10}
+Task & $k$ & none & \dtm & \ind & \shiter & \shplan & \detshift & 1 step & 5 steps \\
+\midrule
+\inputrows{tables/tabD_e1_dw.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{E10, TD-MPC2 317M (one checkpoint, 90 seeds): damage of \dtm and \shiter (points), $\red$ of \shiter, and the latent one-step errors on held-out states of the unquantized planner. Every task is damaged.}
+\label{tab:e10}
+\centering\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lrrlllrr@{}}
+\toprule
+ & & & & & & \multicolumn{2}{c}{latent error} \\
+\cmidrule(l){7-8}
+Task & $k$ & none & $D_{\dtm}$ & $D_{\shiter}$ & $\red$ \shiter & \dtm & \shiter \\
+\midrule
+\inputrows{tables/tabD_e10.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{FP4 formats (E9).} We repeated the 5M experiment with activations in NVFP4~\citep{nvidia2025nvfp4} (blocks of 16, E4M3 scale) and MXFP4~\citep{rouhani2023mx} (blocks of 32, power-of-two scale), rounding each block to the E2M1 grid to nearest (\dtm) or stochastically (\shiter); weights stay in FP32 and the block scales are deterministic in both variants. The variant \dtm damaged \nv{e9.nvfp4.ndam} of 12 tasks under NVFP4 (cheetah-run \nv{e9.nvfp4.cheetah}\%, walker \nv{e9.nvfp4.walker}\%) and \nv{e9.mxfp4.ndam} of 12 under MXFP4 (e.g.\ cheetah-run \nv{e9.mxfp4.cheetah}\%, window-open \nv{e9.mxfp4.windowopen} points), against \nv{e1.cheetah4.D.det}\% on cheetah-run with a uniform 4-bit grid (Table~\ref{tab:e9}). Where damage remained, the pattern matched the uniform grid: \dtm's latent one-step error was \nv{e9.errratio} times that of \shiter in all \nv{e9.ndam} damaged cells. Block scaling reduces the size of the error, and dither changes whether it persists; quantized vision-language-action policies can still lose success under NVFP4~\citep{park2026qcrl}.
+
+\begin{table}[h]
+\caption{E9, TD-MPC2 5M with FP4 activations (90 pairs): damage of \dtm and \shiter per format, against \dtm on the uniform 4-bit grid of E1. $^\ast$ damaged cell (Holm over the 12 tasks of a format).}
+\label{tab:e9}
+\centering\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llrlrl@{}}
+\toprule
+ & \multicolumn{2}{c}{NVFP4} & \multicolumn{2}{c}{MXFP4} & E1, 4 bits \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(l){6-6}
+Task & $D_{\dtm}$ & $D_{\shiter}$ & $D_{\dtm}$ & $D_{\shiter}$ & $D_{\dtm}$ \\
+\midrule
+\inputrows{tables/tabD_e9.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+\clearpage
