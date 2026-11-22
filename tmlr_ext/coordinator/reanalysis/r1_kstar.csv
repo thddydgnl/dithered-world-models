@@ -1,0 +1,117 @@
+family,task,range,rounding,measured_k,kstar_point,kstar_dist,P_censored_up,P_censored_down
+TD-MPC2,mw-push,PT,det,2 3 4 5,5,4:0.2156;5:0.7844,0.0,0.0
+TD-MPC2,mw-push,PT,detbc,2 3 4 5,5,3:0.0037;4:0.0272;5:0.9691,0.0,0.0
+TD-MPC2,mw-push,PT,shiter,2 3 4 5,3,2:0.0003;3:0.9992;4:0.0005,0.0,0.0003
+TD-MPC2,mw-push,PT,detshift,2 3 4 5,3,2:0.0905;3:0.9093;4:0.0001;5:0.0001,0.0,0.0905
+TD-MPC2,mw-push,PC,det,1 2 3,2,2:0.9207;3:0.0792;4:0.0001,0.0001,0.0
+TD-MPC2,mw-push,PC,detbc,1 2 3,2,2:1.0000,0.0,0.0
+TD-MPC2,mw-push,PC,shiter,1 2 3,2,1:0.0004;2:0.9996,0.0,0.0
+TD-MPC2,mw-push,PC,detshift,1 2 3,2,1:0.0002;2:0.9988;3:0.0010,0.0,0.0
+TD-MPC2,mw-pick-place,PT,det,2 3 4 5,5,4:0.4555;5:0.5445,0.0,0.0
+TD-MPC2,mw-pick-place,PT,detbc,2 3 4 5,4,3:0.0037;4:0.8363;5:0.1599;6:0.0001,0.0001,0.0
+TD-MPC2,mw-pick-place,PT,shiter,2 3 4 5,4,3:0.0483;4:0.8999;5:0.0235;6:0.0283,0.0283,0.0
+TD-MPC2,mw-pick-place,PT,detshift,2 3 4 5,4,2:0.0034;3:0.3045;4:0.6145;5:0.0776,0.0,0.0034
+TD-MPC2,mw-pick-place,PC,det,1 2 3 4,4,2:0.0002;3:0.4081;4:0.5111;5:0.0806,0.0806,0.0
+TD-MPC2,mw-pick-place,PC,detbc,1 2 3,3,2:0.0020;3:0.9231;4:0.0749,0.0749,0.0
+TD-MPC2,mw-pick-place,PC,shiter,1 2 3,3,2:0.2165;3:0.7554;4:0.0281,0.0281,0.0
+TD-MPC2,mw-pick-place,PC,detshift,1 2 3,2,2:0.5785;3:0.3949;4:0.0266,0.0266,0.0
+TD-MPC2,mw-door-open,PT,det,2 3 4 5,5,5:1.0000,0.0,0.0
+TD-MPC2,mw-door-open,PT,detbc,2 3 4 5,5,4:0.0001;5:0.9260;6:0.0739,0.0739,0.0
+TD-MPC2,mw-door-open,PT,shiter,1 2 3 4 5,2,1:0.0307;2:0.9630;3:0.0063,0.0,0.0
+TD-MPC2,mw-door-open,PT,detshift,2 3 4 5,3,2:0.0659;3:0.6547;4:0.2783;5:0.0007;6:0.0004,0.0004,0.0659
+TD-MPC2,mw-door-open,PC,det,1 2 3,2,2:0.4795;3:0.3553;4:0.1652,0.1652,0.0
+TD-MPC2,mw-door-open,PC,detbc,1 2 3 4,4,3:0.1422;4:0.8578,0.0,0.0
+TD-MPC2,mw-door-open,PC,shiter,1 2 3,1,1:0.9182;2:0.0751;4:0.0067,0.0067,0.0
+TD-MPC2,mw-door-open,PC,detshift,1 2 3,1,1:0.9877;2:0.0063;4:0.0060,0.006,0.0
+TD-MPC2,mw-drawer-open,PT,det,2 3 4 5,4,3:0.1437;4:0.8562;5:0.0001,0.0,0.0
+TD-MPC2,mw-drawer-open,PT,detbc,2 3 4 5,3,3:0.9999;4:0.0001,0.0,0.0
+TD-MPC2,mw-drawer-open,PT,shiter,1 2 3 4 5,1,1:0.9932;2:0.0068,0.0,0.0
+TD-MPC2,mw-drawer-open,PT,detshift,1 2 3 4 5,1,1:0.9994;2:0.0006,0.0,0.0
+TD-MPC2,mw-drawer-open,PC,det,1 2 3,2,2:1.0000,0.0,0.0
+TD-MPC2,mw-drawer-open,PC,detbc,1 2 3,2,2:1.0000,0.0,0.0
+TD-MPC2,mw-drawer-open,PC,shiter,1 2 3,1,1:1.0000,0.0,0.0
+TD-MPC2,mw-drawer-open,PC,detshift,1 2 3,1,1:1.0000,0.0,0.0
+TD-MPC2,mw-button-press-topdown,PT,det,2 3 4 5,4,4:1.0000,0.0,0.0
+TD-MPC2,mw-button-press-topdown,PT,detbc,2 3 4 5,3,3:1.0000,0.0,0.0
+TD-MPC2,mw-button-press-topdown,PT,shiter,1 2 3 4 5,1,1:1.0000,0.0,0.0
+TD-MPC2,mw-button-press-topdown,PT,detshift,1 2 3 4 5,1,1:0.9993;2:0.0006;3:0.0001,0.0,0.0
+TD-MPC2,mw-button-press-topdown,PC,det,1 2 3,2,2:1.0000,0.0,0.0
+TD-MPC2,mw-button-press-topdown,PC,detbc,1 2 3,2,2:1.0000,0.0,0.0
+TD-MPC2,mw-button-press-topdown,PC,shiter,1 2 3,1,1:1.0000,0.0,0.0
+TD-MPC2,mw-button-press-topdown,PC,detshift,1 2 3,1,1:1.0000,0.0,0.0
+TD-MPC2,mw-peg-insert-side,PT,det,2 3 4 5,5,4:0.0002;5:0.7233;6:0.2765,0.2765,0.0
+TD-MPC2,mw-peg-insert-side,PT,detbc,2 3 4 5 6,6,5:0.4440;6:0.5559;7:0.0001,0.0001,0.0
+TD-MPC2,mw-peg-insert-side,PT,shiter,2 3 4 5,3,2:0.0886;3:0.9114,0.0,0.0886
+TD-MPC2,mw-peg-insert-side,PT,detshift,2 3 4 5,3,2:0.1456;3:0.8467;4:0.0077,0.0,0.1456
+TD-MPC2,mw-peg-insert-side,PC,det,1 2 3,3,2:0.4356;3:0.5362;4:0.0282,0.0282,0.0
+TD-MPC2,mw-peg-insert-side,PC,detbc,1 2 3 4,4,3:0.2191;4:0.7809,0.0,0.0
+TD-MPC2,mw-peg-insert-side,PC,shiter,1 2 3,1,1:0.9990;2:0.0010,0.0,0.0
+TD-MPC2,mw-peg-insert-side,PC,detshift,1 2 3,1,1:0.9724;2:0.0276,0.0,0.0
+TD-MPC2,mw-window-open,PT,det,2 3 4 5,5,4:0.0122;5:0.5746;6:0.4132,0.4132,0.0
+TD-MPC2,mw-window-open,PT,detbc,2 3 4 5,5,4:0.2175;5:0.7823;6:0.0002,0.0002,0.0
+TD-MPC2,mw-window-open,PT,shiter,1 2 3 4 5,5,1:0.0082;2:0.1150;3:0.0942;4:0.0082;5:0.7743;6:0.0001,0.0001,0.0
+TD-MPC2,mw-window-open,PT,detshift,2 3 4 5,3,2:0.2986;3:0.3600;4:0.0617;5:0.2797,0.0,0.2986
+TD-MPC2,mw-window-open,PC,det,1 2 3 4,4,3:0.0243;4:0.6895;5:0.2862,0.2862,0.0
+TD-MPC2,mw-window-open,PC,detbc,1 2 3,3,2:0.0002;3:0.9207;4:0.0791,0.0791,0.0
+TD-MPC2,mw-window-open,PC,shiter,1 2 3,3,1:0.3000;2:0.0018;3:0.6224;4:0.0758,0.0758,0.0
+TD-MPC2,mw-window-open,PC,detshift,1 2 3,1,1:0.7179;2:0.1197;3:0.1624,0.0,0.0
+TD-MPC2,mw-sweep-into,PT,det,2 3 4 5,4,3:0.2719;4:0.7281,0.0,0.0
+TD-MPC2,mw-sweep-into,PT,detbc,2 3 4 5,4,3:0.2536;4:0.7457;5:0.0007,0.0,0.0
+TD-MPC2,mw-sweep-into,PT,shiter,1 2 3 4 5,2,1:0.4507;2:0.5430;3:0.0063,0.0,0.0
+TD-MPC2,mw-sweep-into,PT,detshift,1 2 3 4 5,2,1:0.3542;2:0.6443;3:0.0015,0.0,0.0
+TD-MPC2,mw-sweep-into,PC,det,1 2 3,2,2:1.0000,0.0,0.0
+TD-MPC2,mw-sweep-into,PC,detbc,1 2 3,2,2:0.9858;3:0.0142,0.0,0.0
+TD-MPC2,mw-sweep-into,PC,shiter,1 2 3,1,1:0.7673;2:0.2325;3:0.0002,0.0,0.0
+TD-MPC2,mw-sweep-into,PC,detshift,1 2 3,1,1:0.9580;2:0.0420,0.0,0.0
+TD-MPC2,cheetah-run,PT,det,3 4 5 6,6,6:0.9218;7:0.0782,0.0782,0.0
+TD-MPC2,cheetah-run,PT,detbc,3 4 5 6,6,6:0.9344;7:0.0656,0.0656,0.0
+TD-MPC2,cheetah-run,PT,shiter,3 4 5 6,6,6:1.0000,0.0,0.0
+TD-MPC2,cheetah-run,PT,detshift,3 4 5 6,6,5:0.3735;6:0.6265,0.0,0.0
+TD-MPC2,cheetah-run,PC,det,2 3 4 5,5,5:0.8211;6:0.1789,0.1789,0.0
+TD-MPC2,cheetah-run,PC,detbc,2 3 4 5,5,4:0.1285;5:0.8676;6:0.0039,0.0039,0.0
+TD-MPC2,cheetah-run,PC,shiter,2 3 4 5,5,4:0.2689;5:0.7311,0.0,0.0
+TD-MPC2,cheetah-run,PC,detshift,2 3 4,4,4:1.0000,0.0,0.0
+TD-MPC2,walker-walk,PT,det,3 4 5,5,5:1.0000,0.0,0.0
+TD-MPC2,walker-walk,PT,detbc,3 4 5,4,4:0.9986;5:0.0014,0.0,0.0
+TD-MPC2,walker-walk,PT,shiter,3 4 5,5,4:0.0064;5:0.9936,0.0,0.0
+TD-MPC2,walker-walk,PT,detshift,3 4 5,4,4:0.5440;5:0.4560,0.0,0.0
+TD-MPC2,walker-walk,PC,det,2 3 4,3,3:1.0000,0.0,0.0
+TD-MPC2,walker-walk,PC,detbc,2 3 4,3,3:1.0000,0.0,0.0
+TD-MPC2,walker-walk,PC,shiter,2 3 4,3,3:1.0000,0.0,0.0
+TD-MPC2,walker-walk,PC,detshift,2 3 4,3,3:1.0000,0.0,0.0
+TD-MPC2,quadruped-walk,PT,det,3 4 5,4,4:0.9782;5:0.0218,0.0,0.0
+TD-MPC2,quadruped-walk,PT,detbc,3 4 5,4,4:1.0000,0.0,0.0
+TD-MPC2,quadruped-walk,PT,shiter,3 4 5,4,4:1.0000,0.0,0.0
+TD-MPC2,quadruped-walk,PT,detshift,3 4 5,4,4:1.0000,0.0,0.0
+TD-MPC2,quadruped-walk,PC,det,2 3 4,3,3:1.0000,0.0,0.0
+TD-MPC2,quadruped-walk,PC,detbc,2 3 4,3,2:0.0008;3:0.9992,0.0,0.0008
+TD-MPC2,quadruped-walk,PC,shiter,2 3 4,3,3:1.0000,0.0,0.0
+TD-MPC2,quadruped-walk,PC,detshift,2 3 4,3,3:1.0000,0.0,0.0
+TD-MPC2,finger-turn-hard,PT,det,3 4 5,5,5:1.0000,0.0,0.0
+TD-MPC2,finger-turn-hard,PT,detbc,3 4 5,5,3:0.0005;4:0.3429;5:0.6444;6:0.0122,0.0122,0.0005
+TD-MPC2,finger-turn-hard,PT,shiter,3 4 5,4,3:0.0022;4:0.9978,0.0,0.0022
+TD-MPC2,finger-turn-hard,PT,detshift,3 4 5,4,3:0.0872;4:0.9128,0.0,0.0872
+TD-MPC2,finger-turn-hard,PC,det,2 3 4,4,4:1.0000,0.0,0.0
+TD-MPC2,finger-turn-hard,PC,detbc,2 3 4,4,2:0.0006;3:0.0026;4:0.9968,0.0,0.0006
+TD-MPC2,finger-turn-hard,PC,shiter,2 3 4,3,2:0.0009;3:0.9988;4:0.0003,0.0,0.0009
+TD-MPC2,finger-turn-hard,PC,detshift,2 3 4,3,2:0.0254;3:0.9716;4:0.0030,0.0,0.0254
+DINO-WM,pusht,PT,det,2 3 4,4,3:0.0017;4:0.8753;5:0.1230,0.123,0.0
+DINO-WM,pusht,PT,detbc,2 3 4 5,5,4:0.1487;5:0.7347;6:0.1166,0.1166,0.0
+DINO-WM,pusht,PT,shiter,1 2 3 4,2,2:0.9748;3:0.0233;4:0.0017;5:0.0002,0.0002,0.0
+DINO-WM,pusht,PC,det,2 3 4,4,3:0.0087;4:0.8322;5:0.1591,0.1591,0.0
+DINO-WM,pusht,PC,detbc,2 3 4,4,3:0.3710;4:0.6288;5:0.0002,0.0002,0.0
+DINO-WM,pusht,PC,shiter,1 2 3 4,2,2:0.9654;3:0.0346,0.0,0.0
+DINO-WM,pusht,RC,det,3 4,4,3:0.1781;4:0.8219,0.0,0.1781
+DINO-WM,pusht,RC,shiter,1 2 3 4,2,1:0.0237;2:0.9403;3:0.0133;4:0.0015;5:0.0212,0.0212,0.0
+DINO-WM,pointmaze,PT,det,1 2 3,2,2:0.4521;3:0.1825;4:0.3654,0.3654,0.0
+DINO-WM,pointmaze,PT,detbc,1 2 3,2,2:0.9986;4:0.0014,0.0014,0.0
+DINO-WM,pointmaze,PT,shiter,1 2 3,2,2:1.0000,0.0,0.0
+DINO-WM,pointmaze,PC,det,1 2 3,2,1:0.0226;2:0.6105;3:0.3651;4:0.0018,0.0018,0.0
+DINO-WM,pointmaze,PC,detbc,1 2 3,2,2:0.8599;3:0.1333;4:0.0068,0.0068,0.0
+DINO-WM,pointmaze,PC,shiter,1 2 3,2,1:0.0827;2:0.8954;3:0.0219,0.0,0.0
+DINO-WM,wall,PT,det,2 3 4,4,4:1.0000,0.0,0.0
+DINO-WM,wall,PT,detbc,1 2 3 4,4,2:0.3630;3:0.0378;4:0.5992,0.0,0.0
+DINO-WM,wall,PT,shiter,1 2 3,2,2:0.9291;3:0.0457;4:0.0252,0.0252,0.0
+DINO-WM,wall,PC,det,2 3 4,4,4:1.0000,0.0,0.0
+DINO-WM,wall,PC,detbc,1 2 3 4,4,1:0.0558;2:0.1066;3:0.0039;4:0.8337,0.0,0.0
+DINO-WM,wall,PC,shiter,1 2 3,2,2:0.8259;3:0.1734;4:0.0007,0.0007,0.0

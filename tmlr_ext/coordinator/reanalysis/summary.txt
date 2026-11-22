@@ -1,0 +1,198 @@
+A TMLR 재분석 R1~R5 요약 (조정자, 2026-11-22, pod 없음, 이 Mac의 결과 파일만 사용)
+폴더: A/tmlr_ext/coordinator/reanalysis/  (common.py, r1~r5 스크립트, summary.py; 출력 r*.json, r*.csv)
+실행: python3 r1_kstar_G_bootstrap.py; r2_tau_sensitivity.py; r3_G_per_method.py; r4_dw_pooled_e1_eval8.py; r5_persistence_cost.py; summary.py (각 2초 안팎)
+
+== 0. 재현 (먼저 확인, 실패 시 멈추도록 r1이 검사) ==
+- TD-MPC2 E12 칸 340개의 n, D, k*가 td_e12_cells.csv와 모두 같다. G(12과제 x PT/PC), Fr1 7/8, Fr2 7/8 재현.
+- DINO-WM G 재현: PushT 2/2/2(PT/PC/RC), Wall 2/2, PointMaze 0/0 (dw.1~dw.5; dw.6은 [사후] D4/D5 pod라 제외).
+- R5 대비값 46개 대조: 불일치 0. TD 5M은 td_e11_contrasts.csv와 5e-7 안, 317M은 verify_mt_e14.txt의 소수 셋째 자리 반올림 안, DINO-WM은 analysis_dw.json과 정확히 같다. R4의 분할별 값도 E1 csv·analysis_dw와 같다.
+- 재표본 장치 점검: R1의 첫 과제(push) 가중 행렬이 발표된 칸별 CI를 그대로 재현한다.
+
+== 1. R1: k*와 G의 bootstrap 분포 ==
+- 방법: 과제마다 count 가중 행렬 하나(10,000 x 짝)를 모든 범위·반올림·k가 함께 쓴다(같은 짝). 과제끼리는 독립.
+  RandomState(0), TD는 MW8+DMC4 순서, DW는 PushT, PointMaze, Wall 순서로 뽑았다.
+  두 단계 칸: DMC는 단계별 층화(1단계 45짝 = 각 체크포인트 episode 0~14, 2단계 45짝)로, 45짝 칸은 1단계 45개 draw를
+  그대로 쓰고 90짝 칸과 공유한다. PushT도 같은 방식(쌍 0~49 / 50~99). 점검: 층화하지 않은 bootstrap(반쪽 칸은 제 반에
+  떨어진 draw만 사용)과 PushT 덩어리(10개) bootstrap.
+  검열: 가장 낮은 잰 k가 이미 통과하면 그 k, 아무 k도 통과하지 못하면 '가장 높은 k + 1'(경계 규약). 열린 쪽을 1~9로 둔
+  구간으로 P(G>=1)의 하한·상한도 셌다(아래 [하한, 상한]).
+- 나은 dither(발표 기준): Fr1 점 7/8, P(성립) 0.999 [0.999, 0.999], 과제 수 분포 5:0.1% 6:15.7% 7:53.8% 8:30.4%
+                    Fr2 점 7/8, P(성립) 1.000 [1.000, 1.000], 과제 수 분포 4:0.1% 5:5.1% 6:38.7% 7:56.0% 8:0.0%
+- sh-iter 단독: Fr1 점 6/8, P(성립) 0.997 [0.997, 0.997], 과제 수 분포 5:0.3% 6:66.8% 7:29.7% 8:3.2%
+              Fr2 점 5/8, P(성립) 0.995 [0.995, 0.995], 과제 수 분포 3:0.5% 4:13.2% 5:47.2% 6:33.1% 7:5.9%
+- det+shift 단독: Fr1 점 7/8, P(성립) 0.999 [0.999, 0.999], 과제 수 분포 5:0.1% 6:19.1% 7:54.7% 8:26.1%
+                Fr2 점 7/8, P(성립) 1.000 [1.000, 1.000], 과제 수 분포 3:0.0% 4:0.5% 5:8.7% 6:43.8% 7:47.0% 8:0.0%
+- MW 과제별 G (점) P(G>=1) [하한, 상한], PT | PC:
+  push          PT G 2 P 0.997 [0.997,0.997] 분포 0:0.3% 1:20.7% 2:72.8% 3:6.2%
+                PC G 0 P 0.001 [0.001,0.001] 분포 0:99.9% 1:0.1%
+  pick-place    PT G 0 P 0.407 [0.407,0.407] 분포 -1:1.0% 0:58.3% 1:36.8% 2:3.8% 3:0.1%
+                PC G 1 P 0.657 [0.657,0.657] 분포 -1:0.1% 0:34.1% 1:63.1% 2:2.6%
+  door-open     PT G 3 P 1.000 [1.000,1.000] 분포 2:0.6% 3:96.4% 4:3.1%
+                PC G 1 P 0.998 [0.998,0.998] 분포 0:0.2% 1:47.8% 2:38.4% 3:13.6%
+  drawer-open   PT G 2 P 1.000 [1.000,1.000] 분포 2:100.0% 3:0.0%
+                PC G 1 P 1.000 [1.000,1.000] 분포 1:100.0%
+  button-press  PT G 2 P 1.000 [1.000,1.000] 분포 2:100.0%
+                PC G 1 P 1.000 [1.000,1.000] 분포 1:100.0%
+  peg-insert    PT G 2 P 1.000 [1.000,1.000] 분포 1:0.0% 2:64.5% 3:31.9% 4:3.6%
+                PC G 2 P 1.000 [1.000,1.000] 분포 1:43.6% 2:54.5% 3:2.0%
+  window-open   PT G 2 P 0.741 [0.741,0.741] 분포 -1:6.6% 0:19.3% 1:9.1% 2:36.1% 3:28.4% 4:0.6%
+                PC G 2 P 0.865 [0.865,0.865] 분포 -1:0.0% 0:13.5% 1:9.7% 2:70.5% 3:6.4%
+  sweep-into    PT G 2 P 1.000 [1.000,1.000] 분포 1:14.1% 2:56.6% 3:29.3%
+                PC G 1 P 0.986 [0.986,0.986] 분포 0:1.4% 1:98.6%
+- DMC 과제별 (층화 / 비층화 점검):
+  cheetah    PT G 0 P(G>=1) 0.380 / 0.375 분포 0:62.1% 1:37.9% 2:0.1%
+  cheetah    PC G 1 P(G>=1) 0.872 / 0.868 분포 0:12.8% 1:87.1% 2:0.0%
+  walker     PT G 0 P(G>=1) 0.001 / 0.000 분포 -1:45.4% 0:54.5% 1:0.1%
+  walker     PC G 0 P(G>=1) 0.000 / 0.000 분포 0:100.0%
+  quadruped  PT G 0 P(G>=1) 0.000 / 0.000 분포 0:100.0%
+  quadruped  PC G 0 P(G>=1) 0.000 / 0.000 분포 -1:0.1% 0:99.9%
+  finger     PT G 1 P(G>=1) 0.711 / 0.704 분포 -1:0.0% 0:28.9% 1:67.8% 2:3.4%
+  finger     PC G 1 P(G>=1) 0.997 / 0.996 분포 -1:0.0% 0:0.3% 1:97.3% 2:2.4%
+- DINO-WM E12 (짝 bootstrap; PushT는 비층화·덩어리 점검 병기):
+  PushT     PT G 2 P(G>=1) 0.999 [0.999,0.999] P(G>=2) 0.985 분포 0:0.1% 1:1.3% 2:87.5% 3:11.0% | 비층화 P(G>=1) 0.998, 덩어리 P(G>=1) 0.994 P(G>=2) 0.892
+  PushT     PC G 2 P(G>=1) 0.999 [0.999,0.999] P(G>=2) 0.593 분포 0:0.1% 1:40.5% 2:59.3% 3:0.0% | 비층화 P(G>=1) 0.998, 덩어리 P(G>=1) 0.953 P(G>=2) 0.462
+  PushT     RC G 2 P(G>=1) 0.977 [0.800,0.977] P(G>=2) 0.805 분포 -2:0.1% -1:2.1% 0:0.2% 1:17.2% 2:79.9% 3:0.6% | 비층화 P(G>=1) 0.975, 덩어리 P(G>=1) 0.908 P(G>=2) 0.696
+  PointMaze PT G 0 P(G>=1) 0.001 [0.001,0.001] P(G>=2) 0.001 분포 0:99.9% 1:0.0% 2:0.1%
+  PointMaze PC G 0 P(G>=1) 0.144 [0.144,0.144] P(G>=2) 0.000 분포 -1:2.8% 0:82.8% 1:14.4%
+  Wall      PT G 2 P(G>=1) 0.610 [0.610,0.610] P(G>=2) 0.531 분포 -2:0.0% -1:0.1% 0:38.9% 1:7.9% 2:53.1%
+  Wall      PC G 2 P(G>=1) 0.837 [0.837,0.837] P(G>=2) 0.667 분포 -2:0.1% -1:6.2% 0:10.1% 1:16.9% 2:66.7%
+- 읽기: Fr1·Fr2는 재표본에서도 거의 항상 성립한다. 어느 과제가 G<1인지는 바뀐다. P(G>=1)이 0.02~0.98인 MW 칸: pick-place PT 0.41, pick-place PC 0.66, window-open PT 0.74, window-open PC 0.87.
+  PushT의 G>=1은 세 범위 모두 튼튼하지만 G=2는 PT만 튼튼하다(P(G>=2) PT 0.99, PC 0.59, RC 0.80). RC의 하한 0.80는 RC det k2를 재지 않아 생긴 검열이다
+  (재표본의 18%에서 RC det k3가 문턱을 통과). Wall은 0~2가 맞다. PointMaze는 0.
+
+== 2. R2: tau 민감도 (점 추정; 괄호는 검열 구간) ==
+  tau      | Fr1: 나은/sh-iter/det+shift | Fr2: 나은/sh-iter/det+shift | DW G: PushT PT,PC,RC; Wall PT,PC; PointMaze PT,PC
+  0.05       | 6/6/6                       | 6[6,7]/4[4,6]/6[6,7]        | 2,2,2; 2,2; 0,1
+  0.075      | 7/7/7                       | 5/4/5                       | 2,2,2; 2,2; 0,0
+  0.1        | 7/6/7                       | 7/5/7                       | 2,2,2; 2,2; 0,0
+  0.10_strict| 7/6/7                       | 6/5/6                       | 2,2,2; 2,2; 0,0
+  0.125      | 8/6/8                       | 7/6/7                       | 2,1,2; 0,2; 0,0
+  0.15       | 8/7/8                       | 7/7/7                       | 2,1,2; 0,0; 0,0
+  0.2        | 8/7/8                       | 7/7/7                       | 2,1,1[-1,1]; 0,-1; 0,1
+  (Fr1 문턱 6/8, Fr2 문턱 4/8. 0.10_strict = 'D < 0.10'.)
+- 모든 tau에서 Fr1·Fr2가 세 기준 모두 성립한다. sh-iter 단독은 tau 0.05, 0.10, 0.125에서 Fr1이 문턱과 같은 6/8,
+  tau <= 0.075에서 Fr2가 문턱과 같은 4/8이다. 나은 dither의 개수는 모든 tau에서 det+shift 단독과 같다.
+- tau 0.10에서 |D - tau| <= 0.01인 칸 9개(전체 목록은 r2_near_tau.csv):
+  TD-MPC2 cheetah PT detshift k5 n90 D 0.1022
+  TD-MPC2 door-open PC det k2 n90 D 0.1000
+  TD-MPC2 pick-place PC detshift k2 n90 D 0.1000
+  TD-MPC2 window-open PT det k5 n90 D 0.1000
+  TD-MPC2 window-open PT shiter k2 n90 D 0.1000
+  TD-MPC2 walker PT detshift k4 n90 D 0.0991
+  DINO-WM PointMaze PC det k2 n100 D 0.0900
+  DINO-WM PointMaze PT det k2 n100 D 0.0900
+  DINO-WM PointMaze PT det k3 n100 D 0.0900
+- 정확히 0.100인 MW 칸 4개 중 G를 바꾸는 것은 pick-place PC det+shift k2 하나다. 'D < 0.10'이면 pick-place PC G가
+  1 -> 0이 되어 Fr2가 6/8(여전히 성립)이고, door-open PC det k2 때문에 door-open PC G는 1 -> 2가 된다.
+- DINO-WM: PushT PT G=2는 모든 tau에서 같다. PushT PC는 tau >= 0.125에서 1, PushT RC는 tau 0.20에서 1,
+  Wall PT는 tau >= 0.125에서 0, Wall PC는 tau >= 0.15에서 0 이하, PointMaze는 0(tau 0.05·0.20의 PC만 1).
+
+== 3. R3: 방법별 G (tau 0.10, 점; P는 R1과 같은 재표본의 P(G>=1)) ==
+- MW PT: 나은 7/8 | sh-iter 6/8 | det+shift 7/8
+    sh-iter  : push 2(1.00), pick-place 0(0.14), door-open 3(1.00), drawer-open 2(1.00), button-press 2(1.00), peg-insert 2(1.00), window-open 0(0.22), sweep-into 2(1.00)
+    det+shift: push 2(1.00), pick-place 0(0.37), door-open 2(1.00), drawer-open 2(1.00), button-press 2(1.00), peg-insert 2(1.00), window-open 2(0.71), sweep-into 2(1.00)
+- MW PC: 나은 7/8 | sh-iter 5/8 | det+shift 7/8
+    sh-iter  : push 0(0.00), pick-place 0(0.24), door-open 1(0.95), drawer-open 1(1.00), button-press 1(1.00), peg-insert 2(1.00), window-open 0(0.35), sweep-into 1(0.77)
+    det+shift: push 0(0.00), pick-place 1(0.59), door-open 1(0.99), drawer-open 1(1.00), button-press 1(1.00), peg-insert 2(0.99), window-open 2(0.85), sweep-into 1(0.96)
+- DMC PT: 나은 1/4 | sh-iter 1/4 | det+shift 1/4
+    sh-iter  : cheetah 0(0.01), walker -1(0.00), quadruped 0(0.00), finger 1(0.66)
+    det+shift: cheetah 0(0.38), walker 0(0.00), quadruped 0(0.00), finger 1(0.71)
+- DMC PC: 나은 2/4 | sh-iter 1/4 | det+shift 2/4
+    sh-iter  : cheetah 0(0.23), walker 0(0.00), quadruped 0(0.00), finger 1(1.00)
+    det+shift: cheetah 1(0.87), walker 0(0.00), quadruped 0(0.00), finger 1(0.99)
+- sh-iter 단독: P(Fr1 성립) 0.997, P(Fr2 성립) 0.995
+- det+shift 단독: P(Fr1 성립) 0.999, P(Fr2 성립) 1.000
+- DINO-WM은 sh-iter뿐이라 발표된 G가 곧 sh-iter 단독 값이다(PushT 2/2/2, Wall 2/2, PointMaze 0/0).
+
+== 4. R4 [사후]: DINO-WM E1 + eval8 합산 (짝 아님: E1 RTX A5000, eval8 RTX 4090; 역분산 고정효과) ==
+- PushT 4-bit: none E1 83%, eval8 73%
+    D_det        E1 +24.0 [+14.0, +34.0] (se 5.1) | eval8 +4.0 [-7.0, +15.0] (se 5.6) | 합산 +15.0 [+7.6, +22.4], Q 6.94 (p 0.008), I2 86%, 가중 E1 0.55
+    red(sh-iter) E1 1.00 [0.85, 1.22] (se 0.10) | eval8 1.50 [0.00, 5.00] (se 1.27, D_det*<=0 재표본 2738개 제외) | 합산 1.00 [0.82, 1.19], Q 0.16 (p 0.694), I2 0%, 가중 E1 0.99
+    점검(eval8 덩어리 분산): D_det 합산 +20.9 [+11.7, +30.1], Q 2.35 (p 0.125), I2 58%
+    점검(red = 합산 (D_det - D_sh) / 합산 D_det): 1.06
+- PointMaze 3-bit: none E1 85%, eval8 79%
+    D_det        E1 +11.0 [+2.0, +20.0] (se 4.4) | eval8 +9.0 [+0.0, +18.0] (se 4.8) | 합산 +10.1 [+3.7, +16.5], Q 0.09 (p 0.760), I2 0%, 가중 E1 0.55
+    red(sh-iter) E1 1.09 [0.55, 2.50] (se 0.69) | eval8 1.44 [0.79, 5.50] (se 1.38, D_det*<=0 재표본 381개 제외) | 합산 1.16 [-0.04, 2.36], Q 0.05 (p 0.818), I2 0%, 가중 E1 0.80
+    점검(red = 합산 (D_det - D_sh) / 합산 D_det): 1.24
+- Wall 3-bit(E1 탐색 칸): none E1 61%, eval8 49%
+    D_det        E1 +50.0 [+39.0, +61.0] (se 5.8) | eval8 +42.0 [+31.0, +53.0] (se 5.5) | 합산 +45.8 [+38.0, +53.6], Q 1.01 (p 0.316), I2 1%, 가중 E1 0.48
+    red(sh-iter) E1 0.92 [0.74, 1.12] (se 0.10) | eval8 1.00 [0.78, 1.30] (se 0.13) | 합산 0.95 [0.80, 1.10], Q 0.24 (p 0.622), I2 0%, 가중 E1 0.64
+    점검(red = 합산 (D_det - D_sh) / 합산 D_det): 0.96
+- 읽기: PushT 4-bit는 두 분할이 이질적이라(I2 86%) 합산값 하나로 쓰면 안 된다. PointMaze 3-bit는 이질성이 없고
+  합산 D_det의 CI가 0을 넘는다([사후], 짝 아닌 두 분할). Wall은 두 분할이 같은 크기다. red의 합산은 비율 추정의
+  꼬리가 길어 정규 근사가 거칠다(특히 PointMaze; PushT eval8은 D_det가 0 근처라 가중이 0.01).
+
+== 5. R5: 지속 비용 표 (MW·DINO-WM은 성공률 점, DMC는 상대 return %) ==
+- TD-MPC2 5M E11 (90짝): D(sh-ep)-D(sh-iter) [95% CI] | Delta_pers [95% CI]
+  push          k3: +48.9 [+38.9, +60.0] | +40.0 [+28.9, +51.1]
+  pick-place    k3: +28.9 [+15.6, +42.2] | +23.3 [+11.1, +35.6]
+  door-open     k4: +10.0 [+3.3, +16.7] | +11.1 [+3.3, +20.0]
+  drawer-open   k3: +17.8 [+10.0, +25.6] | +10.0 [+4.4, +16.7]
+  button-press  k3: +61.1 [+51.1, +71.1] | +31.1 [+22.2, +41.1]
+  peg-insert    k4: +45.6 [+35.6, +55.6] | +18.9 [+11.1, +27.8]
+  window-open   k4: +16.7 [+4.4, +28.9] | +13.3 [+4.4, +22.2]
+  sweep-into    k3: +42.2 [+32.2, +52.2] | +30.0 [+21.1, +40.0]
+  cheetah       k5: +36.6 [+32.5, +40.7] | +32.6 [+29.0, +36.4]
+  walker        k3: +11.8 [+9.5, +14.2] | +14.7 [+12.3, +17.2]
+  quadruped     k3: +29.1 [+24.0, +34.4] | +46.7 [+40.8, +52.4]
+  finger        k4: +34.3 [+25.3, +43.5] | +23.2 [+15.3, +31.7]
+- TD-MPC2 5M E16 CEM식(참고): push +47.8 [+36.7, +58.9], pick-place +42.2 [+28.9, +55.6], cheetah +18.7 [+16.5, +20.9]
+- 317M E14 (90 seed): D(sh-ep)-D(sh-iter)
+  button-press  +78.9 [+70.0, +86.7]
+  door-open     +70.0 [+58.9, +80.0]
+  drawer-open   +24.4 [+12.2, +36.7]
+  peg-insert    +82.2 [+74.4, +90.0]
+  pick-place    +62.2 [+52.2, +72.2]
+  push          +3.3 [+0.0, +7.8]
+  sweep-into    +52.2 [+42.2, +62.2]
+  window-open   +63.3 [+53.3, +73.3]
+- DINO-WM (eval8, 100쌍): D(sh-plan)-D(sh-iter) | Delta_pers
+  PushT     CEM(E11)   : +6.0 [-1.0, +13.0] | +0.0 [-6.0, +6.0]  (D1 덩어리 CI: [+1.7, +10.4] | [-5.8, +5.7])
+  PointMaze CEM(E11)   : +0.0 [-7.0, +7.0] | +0.0 [-6.0, +6.0]
+  Wall      CEM(E11)   : -4.0 [-12.0, +4.0] | +17.0 [+7.0, +27.0]
+  PointMaze MPPI식(E16) : +4.0 [-1.0, +10.0]
+  Wall      MPPI식(E16) : -7.0 [-18.0, +4.0]
+- 나란히: TD-MPC2 CI 하한 (작은 순)
+  5M MW sh-ep-sh-iter: door-open +3.3, window-open +4.4, drawer-open +10.0, pick-place +15.6, sweep-into +32.2, peg-insert +35.6, push +38.9, button-press +51.1
+  5M MW Delta_pers:    door-open +3.3, drawer-open +4.4, window-open +4.4, peg-insert +11.1, pick-place +11.1, sweep-into +21.1, button-press +22.2, push +28.9
+  5M DMC sh-ep-sh-iter: walker +9.4%, quadruped +24.0%, finger +25.3%, cheetah +32.5% / Delta_pers: walker +12.3%, finger +15.3%, cheetah +29.0%, quadruped +40.8%
+  317M sh-ep-sh-iter:  push +0.0, drawer-open +12.2, sweep-into +42.2, pick-place +52.2, window-open +53.3, door-open +58.9, button-press +70.0, peg-insert +74.4
+  DINO-WM CI 상한과 비교 (그 상한보다 하한이 큰 TD 칸 수):
+  PushT     cem    D(sh-plan)-D(sh-iter)  상한 +13.0 -> 5M MW 5/8, 317M 6/8
+  PushT     cem    Delta_pers             상한 +6.0 -> 5M MW 5/8
+  PointMaze cem    D(sh-plan)-D(sh-iter)  상한 +7.0 -> 5M MW 6/8, 317M 7/8
+  PointMaze cem    Delta_pers             상한 +6.0 -> 5M MW 5/8
+  Wall      cem    D(sh-plan)-D(sh-iter)  상한 +4.0 -> 5M MW 7/8, 317M 7/8
+  Wall      cem    Delta_pers             상한 +27.0 -> 5M MW 1/8
+  PointMaze mppi2  D(sh-plan)-D(sh-iter)  상한 +10.0 -> 5M MW 5/8, 317M 7/8
+  Wall      mppi1  D(sh-plan)-D(sh-iter)  상한 +4.0 -> 5M MW 7/8, 317M 7/8
+- 읽기: TD-MPC2는 대비 35개 중 34개가 CI 하한 > 0 (예외: 317M push sh-ep).
+  DINO-WM은 대비 8개 중 하한 > 0이 Wall CEM Delta_pers뿐이다(짝 bootstrap; PushT 덩어리 CI는 위).
+  다만 DINO-WM D(sh-plan)-D(sh-iter)의 상한(+4~+13점)이 TD-MPC2의 가장 작은 하한(5M door-open +3.3, window-open +4.4; 317M push +0.0)보다 크다.
+  두 계열의 구간은 큰 TD 칸과만 갈리고, 작은 TD 칸과는 겹친다.
+
+== 6. CLAIMS v2와 비교 (판정 변경 없음; 문구 후보) ==
+- 사전 지정 판정(Fr1, Fr2, P2, B2 등)을 바꾸는 결과는 없다. P(Fr1) 0.999, P(Fr2) 1.000, sh-iter 단독도 0.997, 0.995.
+- C4 'PushT 2(PT·PC·RC 모두)': G>=1은 셋 모두 튼튼하지만 P(G>=2)는 PT 0.985, PC 0.593, RC 0.805이고,
+  PC는 tau >= 0.125에서 1이다. 'PushT PT 2 bit, PC·RC 1~2 bit' 또는 'PushT 세 범위 모두 1 bit 이상(PT 2)'이 정확하다.
+- C4 '7/8(나은 쪽 기준)': det+shift 단독도 PT·PC 7/8로 같다. 즉 7/8은 det+shift 단독 값과 같고(K1 불성립으로
+  공동 처방이 아님), sh-iter 단독 6/8·5/8도 Fr1·Fr2 문턱을 넘는다(P 0.997, 0.995). 함께 적을 수 있다.
+  Fr2의 pick-place PC G=1은 D = 0.100(문턱과 정확히 같음)인 det+shift k2 칸 하나에 걸려 있다.
+- C2/C3 DINO-WM 지속 비용: C3의 'CI 상한 +4~+10점'(PointMaze·Wall 4칸: +4~+10)은 재현된다. 그러나
+  PushT 4-bit E11(CEM)의 D(sh-plan)-D(sh-iter)는 +6.0 [-1.0, +13.0]이고 D1 덩어리 CI는 [+1.7, +10.4]로 0을 넘는다.
+  DINO-WM 전체를 두고 '지속 비용이 0과 구별되지 않는다'고 쓰려면 PushT 칸을 밝히거나 범위를 PointMaze·Wall로 한정해야
+  한다(이 칸은 eval8에서 det 손상이 없다).
+- '두 계열이 다르다'는 'TD-MPC2는 CI 하한 > 0, DINO-WM은 CI가 0 포함(Wall Delta_pers 제외)'로 쓰는 것이 맞다. DINO-WM
+  상한이 TD-MPC2의 작은 칸 하한보다 크므로 'DINO-WM의 지속 비용이 TD-MPC2보다 작다'를 칸마다 주장할 수는 없다.
+- C1 PointMaze 3-bit: [사후] 합산 +10.1 [+3.7, +16.5], I2 0%. 원고에 [사후] 기술로 덧붙일 수 있다.
+  PushT 4-bit는 두 분할이 이질적(Q 6.9, p 0.008, I2 86%)이므로 합산하지 말고 나란히 싣는 지금
+  방침이 맞다.
+- Wall 'G 0~2', PointMaze 0, DMC 'G 대부분 0'은 R1·R2와 맞는다. sh-iter 단독이면 walker PT G = -1이다.
+
+== 7. 재현하지 못한 것과 한계 ==
+- 재현 못 한 발표값은 없다.
+- E1 PushT(eval6)의 덩어리 구조 파일이 없어 R4의 E1 쪽은 짝 bootstrap만 썼다.
+- 검열: 확장 규칙이 tau 0.10의 점 추정으로 잰 k를 정했으므로, 재표본·다른 tau에서는 잰 범위 밖의 k*가 필요할 수 있다.
+  TD에서는 P(G>=1)의 하한·상한이 거의 같았고, PushT RC(하한 0.80)와 tau 0.05의 몇 칸만 크게 열린다.
+- 두 단계 칸의 중간 확인(1단계 CI가 tau를 포함하면 2단계 실행)은 bootstrap이 다시 흉내 내지 않는다(설계대로 미보정).
+- 덩어리 bootstrap은 덩어리 10개라 분산을 과소 추정할 수 있다(PushT sh-plan 대비에서 짝 CI보다 좁아짐).

@@ -1,0 +1,994 @@
+{
+ "meta": {
+  "B": 10000,
+  "seed": "RandomState(0), one index matrix per cell"
+ },
+ "td5m": {
+  "mw-push": {
+   "k": 3,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.48888888888888893,
+    "ci": [
+     0.38888888888888884,
+     0.6
+    ]
+   },
+   "delta_pers": {
+    "est": 0.4,
+    "ci": [
+     0.28888888888888886,
+     0.5111111111111111
+    ]
+   },
+   "D_det": 0.45555555555555555
+  },
+  "mw-pick-place": {
+   "k": 3,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.28888888888888886,
+    "ci": [
+     0.15555555555555556,
+     0.42222222222222217
+    ]
+   },
+   "delta_pers": {
+    "est": 0.23333333333333334,
+    "ci": [
+     0.1111111111111111,
+     0.3555555555555555
+    ]
+   },
+   "D_det": 0.3888888888888889
+  },
+  "mw-door-open": {
+   "k": 4,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.09999999999999999,
+    "ci": [
+     0.03333333333333333,
+     0.16666666666666669
+    ]
+   },
+   "delta_pers": {
+    "est": 0.1111111111111111,
+    "ci": [
+     0.03333333333333333,
+     0.2
+    ]
+   },
+   "D_det": 0.2777777777777778
+  },
+  "mw-drawer-open": {
+   "k": 3,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.17777777777777778,
+    "ci": [
+     0.1,
+     0.25555555555555554
+    ]
+   },
+   "delta_pers": {
+    "est": 0.1,
+    "ci": [
+     0.044444444444444446,
+     0.16666666666666666
+    ]
+   },
+   "D_det": 0.14444444444444443
+  },
+  "mw-button-press-topdown": {
+   "k": 3,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.6111111111111112,
+    "ci": [
+     0.5111111111111111,
+     0.7111111111111111
+    ]
+   },
+   "delta_pers": {
+    "est": 0.3111111111111111,
+    "ci": [
+     0.2222222222222222,
+     0.4111111111111111
+    ]
+   },
+   "D_det": 0.4
+  },
+  "mw-peg-insert-side": {
+   "k": 4,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.45555555555555555,
+    "ci": [
+     0.35555555555555557,
+     0.5555555555555556
+    ]
+   },
+   "delta_pers": {
+    "est": 0.18888888888888888,
+    "ci": [
+     0.1111111111111111,
+     0.2777777777777778
+    ]
+   },
+   "D_det": 0.25555555555555554
+  },
+  "mw-window-open": {
+   "k": 4,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.16666666666666666,
+    "ci": [
+     0.044444444444444425,
+     0.28888888888888886
+    ]
+   },
+   "delta_pers": {
+    "est": 0.1333333333333333,
+    "ci": [
+     0.04444444444444444,
+     0.22222222222222224
+    ]
+   },
+   "D_det": 0.18888888888888888
+  },
+  "mw-sweep-into": {
+   "k": 3,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.4222222222222222,
+    "ci": [
+     0.3222222222222222,
+     0.5222222222222223
+    ]
+   },
+   "delta_pers": {
+    "est": 0.3,
+    "ci": [
+     0.2111111111111111,
+     0.39999999999999997
+    ]
+   },
+   "D_det": 0.13333333333333333
+  },
+  "cheetah-run": {
+   "k": 5,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.3661859887919179,
+    "ci": [
+     0.32529000923732787,
+     0.4074137748226711
+    ]
+   },
+   "delta_pers": {
+    "est": 0.32622179876879964,
+    "ci": [
+     0.2897197321287221,
+     0.36371494899188805
+    ]
+   },
+   "D_det": 0.4003907851650771
+  },
+  "walker-walk": {
+   "k": 3,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.11817398389828604,
+    "ci": [
+     0.09453558722592276,
+     0.14217211234555277
+    ]
+   },
+   "delta_pers": {
+    "est": 0.1473185488147859,
+    "ci": [
+     0.12259183025908045,
+     0.1720219635220637
+    ]
+   },
+   "D_det": 0.5932787220422389
+  },
+  "quadruped-walk": {
+   "k": 3,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.29096355408021557,
+    "ci": [
+     0.23956880438374414,
+     0.34354953822788636
+    ]
+   },
+   "delta_pers": {
+    "est": 0.46702300517404727,
+    "ci": [
+     0.4075125423976378,
+     0.5238852672117147
+    ]
+   },
+   "D_det": 0.838453536327893
+  },
+  "finger-turn-hard": {
+   "k": 4,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.3429485342168924,
+    "ci": [
+     0.25274898068243346,
+     0.43531818835894137
+    ]
+   },
+   "delta_pers": {
+    "est": 0.23242722676358296,
+    "ci": [
+     0.15318135304227548,
+     0.3168785930596599
+    ]
+   },
+   "D_det": 0.4951446292835605
+  }
+ },
+ "td5m_cem": {
+  "mw-push": {
+   "k": 3,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.4777777777777778,
+    "ci": [
+     0.3666666666666667,
+     0.5888888888888888
+    ]
+   }
+  },
+  "mw-pick-place": {
+   "k": 3,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.42222222222222217,
+    "ci": [
+     0.28888888888888886,
+     0.5555555555555555
+    ]
+   }
+  },
+  "cheetah-run": {
+   "k": 5,
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.1873485382714164,
+    "ci": [
+     0.16519721034086216,
+     0.20873019179665167
+    ]
+   }
+  }
+ },
+ "mt": {
+  "mw-button-press-topdown": {
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.7888888888888889,
+    "ci": [
+     0.7,
+     0.8666666666666667
+    ]
+   },
+   "D_det": 0.6222222222222222
+  },
+  "mw-door-open": {
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.7,
+    "ci": [
+     0.5888888888888889,
+     0.8
+    ]
+   },
+   "D_det": 0.7888888888888889
+  },
+  "mw-drawer-open": {
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.24444444444444446,
+    "ci": [
+     0.12222222222222223,
+     0.36666666666666664
+    ]
+   },
+   "D_det": 0.28888888888888886
+  },
+  "mw-peg-insert-side": {
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.8222222222222223,
+    "ci": [
+     0.7444444444444445,
+     0.9
+    ]
+   },
+   "D_det": 0.9444444444444444
+  },
+  "mw-pick-place": {
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.6222222222222222,
+    "ci": [
+     0.5222222222222223,
+     0.7222222222222222
+    ]
+   },
+   "D_det": 0.9777777777777777
+  },
+  "mw-push": {
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.03333333333333333,
+    "ci": [
+     0.0,
+     0.07777777777777778
+    ]
+   },
+   "D_det": 0.12222222222222222
+  },
+  "mw-sweep-into": {
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.5222222222222223,
+    "ci": [
+     0.4222222222222222,
+     0.6222222222222222
+    ]
+   },
+   "D_det": 0.2
+  },
+  "mw-window-open": {
+   "n": 90,
+   "shep_minus_shiter": {
+    "est": 0.6333333333333333,
+    "ci": [
+     0.5333333333333333,
+     0.7333333333333334
+    ]
+   },
+   "D_det": 0.6888888888888889
+  }
+ },
+ "dw": {
+  "pusht|cem": {
+   "k": 4,
+   "pod": "dw.1",
+   "planner": "cem",
+   "n": 100,
+   "none": 0.73,
+   "shplan_minus_shiter": {
+    "est": 0.06,
+    "ci": [
+     -0.01,
+     0.13
+    ]
+   },
+   "delta_pers": {
+    "est": 0.0,
+    "ci": [
+     -0.06,
+     0.06
+    ]
+   },
+   "cluster_ci": {
+    "shplan_minus_shiter": [
+     0.016949152542372885,
+     0.10416666666666667
+    ],
+    "delta_pers": [
+     -0.05769230769230769,
+     0.05661725067385425
+    ]
+   }
+  },
+  "pointmaze|cem": {
+   "k": 3,
+   "pod": "dw.3",
+   "planner": "cem",
+   "n": 100,
+   "none": 0.79,
+   "shplan_minus_shiter": {
+    "est": 0.0,
+    "ci": [
+     -0.07,
+     0.07
+    ]
+   },
+   "delta_pers": {
+    "est": 0.0,
+    "ci": [
+     -0.06,
+     0.06
+    ]
+   }
+  },
+  "wall|cem": {
+   "k": 3,
+   "pod": "dw.4",
+   "planner": "cem",
+   "n": 100,
+   "none": 0.49,
+   "shplan_minus_shiter": {
+    "est": -0.04,
+    "ci": [
+     -0.12000000000000001,
+     0.04000000000000001
+    ]
+   },
+   "delta_pers": {
+    "est": 0.16999999999999998,
+    "ci": [
+     0.07,
+     0.27
+    ]
+   }
+  },
+  "pointmaze|mppi2": {
+   "k": 3,
+   "pod": "dw.3",
+   "planner": "mppi2",
+   "n": 100,
+   "none": 0.81,
+   "shplan_minus_shiter": {
+    "est": 0.04,
+    "ci": [
+     -0.010000000000000002,
+     0.1
+    ]
+   }
+  },
+  "wall|mppi1": {
+   "k": 3,
+   "pod": "dw.4",
+   "planner": "mppi1",
+   "n": 100,
+   "none": 0.63,
+   "shplan_minus_shiter": {
+    "est": -0.07,
+    "ci": [
+     -0.18,
+     0.039999999999999994
+    ]
+   }
+  }
+ },
+ "side_by_side": [
+  {
+   "dw_cell": "pusht|cem",
+   "contrast": "D(sh-plan)-D(sh-iter)",
+   "est": 0.06,
+   "ci_hi": 0.13,
+   "n_mw5m_lower_above": 5,
+   "n_mt317m_lower_above": 6
+  },
+  {
+   "dw_cell": "pusht|cem",
+   "contrast": "Delta_pers",
+   "est": 0.0,
+   "ci_hi": 0.06,
+   "n_mw5m_lower_above": 5,
+   "n_mt317m_lower_above": null
+  },
+  {
+   "dw_cell": "pointmaze|cem",
+   "contrast": "D(sh-plan)-D(sh-iter)",
+   "est": 0.0,
+   "ci_hi": 0.07,
+   "n_mw5m_lower_above": 6,
+   "n_mt317m_lower_above": 7
+  },
+  {
+   "dw_cell": "pointmaze|cem",
+   "contrast": "Delta_pers",
+   "est": 0.0,
+   "ci_hi": 0.06,
+   "n_mw5m_lower_above": 5,
+   "n_mt317m_lower_above": null
+  },
+  {
+   "dw_cell": "wall|cem",
+   "contrast": "D(sh-plan)-D(sh-iter)",
+   "est": -0.04,
+   "ci_hi": 0.04000000000000001,
+   "n_mw5m_lower_above": 7,
+   "n_mt317m_lower_above": 7
+  },
+  {
+   "dw_cell": "wall|cem",
+   "contrast": "Delta_pers",
+   "est": 0.16999999999999998,
+   "ci_hi": 0.27,
+   "n_mw5m_lower_above": 1,
+   "n_mt317m_lower_above": null
+  },
+  {
+   "dw_cell": "pointmaze|mppi2",
+   "contrast": "D(sh-plan)-D(sh-iter)",
+   "est": 0.04,
+   "ci_hi": 0.1,
+   "n_mw5m_lower_above": 5,
+   "n_mt317m_lower_above": 7
+  },
+  {
+   "dw_cell": "wall|mppi1",
+   "contrast": "D(sh-plan)-D(sh-iter)",
+   "est": -0.07,
+   "ci_hi": 0.039999999999999994,
+   "n_mw5m_lower_above": 7,
+   "n_mt317m_lower_above": 7
+  }
+ ],
+ "td_lower_bounds": {
+  "mw5m_shep": [
+   [
+    0.0333,
+    "door-open"
+   ],
+   [
+    0.0444,
+    "window-open"
+   ],
+   [
+    0.1,
+    "drawer-open"
+   ],
+   [
+    0.1556,
+    "pick-place"
+   ],
+   [
+    0.3222,
+    "sweep-into"
+   ],
+   [
+    0.3556,
+    "peg-insert"
+   ],
+   [
+    0.3889,
+    "push"
+   ],
+   [
+    0.5111,
+    "button-press"
+   ]
+  ],
+  "mw5m_pers": [
+   [
+    0.0333,
+    "door-open"
+   ],
+   [
+    0.0444,
+    "drawer-open"
+   ],
+   [
+    0.0444,
+    "window-open"
+   ],
+   [
+    0.1111,
+    "peg-insert"
+   ],
+   [
+    0.1111,
+    "pick-place"
+   ],
+   [
+    0.2111,
+    "sweep-into"
+   ],
+   [
+    0.2222,
+    "button-press"
+   ],
+   [
+    0.2889,
+    "push"
+   ]
+  ],
+  "dmc5m_shep": [
+   [
+    0.0945,
+    "walker"
+   ],
+   [
+    0.2396,
+    "quadruped"
+   ],
+   [
+    0.2527,
+    "finger"
+   ],
+   [
+    0.3253,
+    "cheetah"
+   ]
+  ],
+  "dmc5m_pers": [
+   [
+    0.1226,
+    "walker"
+   ],
+   [
+    0.1532,
+    "finger"
+   ],
+   [
+    0.2897,
+    "cheetah"
+   ],
+   [
+    0.4075,
+    "quadruped"
+   ]
+  ],
+  "mt317m_shep": [
+   [
+    0.0,
+    "push"
+   ],
+   [
+    0.1222,
+    "drawer-open"
+   ],
+   [
+    0.4222,
+    "sweep-into"
+   ],
+   [
+    0.5222,
+    "pick-place"
+   ],
+   [
+    0.5333,
+    "window-open"
+   ],
+   [
+    0.5889,
+    "door-open"
+   ],
+   [
+    0.7,
+    "button-press"
+   ],
+   [
+    0.7444,
+    "peg-insert"
+   ]
+  ]
+ },
+ "checks": [
+  [
+   "TD-MPC2 5M E11",
+   "mw-push",
+   "D(sh-ep)-D(sh-iter)",
+   1e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-push",
+   "Delta_pers",
+   1e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-pick-place",
+   "D(sh-ep)-D(sh-iter)",
+   4e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-pick-place",
+   "Delta_pers",
+   4e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-door-open",
+   "D(sh-ep)-D(sh-iter)",
+   3e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-door-open",
+   "Delta_pers",
+   1e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-drawer-open",
+   "D(sh-ep)-D(sh-iter)",
+   4e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-drawer-open",
+   "Delta_pers",
+   3e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-button-press-topdown",
+   "D(sh-ep)-D(sh-iter)",
+   1e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-button-press-topdown",
+   "Delta_pers",
+   2e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-peg-insert-side",
+   "D(sh-ep)-D(sh-iter)",
+   4e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-peg-insert-side",
+   "Delta_pers",
+   2e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-window-open",
+   "D(sh-ep)-D(sh-iter)",
+   3e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-window-open",
+   "Delta_pers",
+   3e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-sweep-into",
+   "D(sh-ep)-D(sh-iter)",
+   2e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "mw-sweep-into",
+   "Delta_pers",
+   1e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "cheetah-run",
+   "D(sh-ep)-D(sh-iter)",
+   2e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "cheetah-run",
+   "Delta_pers",
+   3e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "walker-walk",
+   "D(sh-ep)-D(sh-iter)",
+   1e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "walker-walk",
+   "Delta_pers",
+   5e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "quadruped-walk",
+   "D(sh-ep)-D(sh-iter)",
+   5e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "quadruped-walk",
+   "Delta_pers",
+   5e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "finger-turn-hard",
+   "D(sh-ep)-D(sh-iter)",
+   5e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E11",
+   "finger-turn-hard",
+   "Delta_pers",
+   4e-07,
+   true
+  ],
+  [
+   "TD-MPC2 5M E16 CEM",
+   "mw-push",
+   "D(sh-ep)-D(sh-iter)",
+   0.0,
+   true
+  ],
+  [
+   "TD-MPC2 5M E16 CEM",
+   "mw-pick-place",
+   "D(sh-ep)-D(sh-iter)",
+   0.0,
+   true
+  ],
+  [
+   "TD-MPC2 5M E16 CEM",
+   "cheetah-run",
+   "D(sh-ep)-D(sh-iter)",
+   0.0,
+   true
+  ],
+  [
+   "TD-MPC2 317M E14",
+   "mw-button-press-topdown",
+   "D(sh-ep)-D(sh-iter)",
+   0.0003333,
+   true
+  ],
+  [
+   "TD-MPC2 317M E14",
+   "mw-door-open",
+   "D(sh-ep)-D(sh-iter)",
+   0.0001111,
+   true
+  ],
+  [
+   "TD-MPC2 317M E14",
+   "mw-drawer-open",
+   "D(sh-ep)-D(sh-iter)",
+   0.0004444,
+   true
+  ],
+  [
+   "TD-MPC2 317M E14",
+   "mw-peg-insert-side",
+   "D(sh-ep)-D(sh-iter)",
+   0.0004444,
+   true
+  ],
+  [
+   "TD-MPC2 317M E14",
+   "mw-pick-place",
+   "D(sh-ep)-D(sh-iter)",
+   0.0002222,
+   true
+  ],
+  [
+   "TD-MPC2 317M E14",
+   "mw-push",
+   "D(sh-ep)-D(sh-iter)",
+   0.0003333,
+   true
+  ],
+  [
+   "TD-MPC2 317M E14",
+   "mw-sweep-into",
+   "D(sh-ep)-D(sh-iter)",
+   0.0002222,
+   true
+  ],
+  [
+   "TD-MPC2 317M E14",
+   "mw-window-open",
+   "D(sh-ep)-D(sh-iter)",
+   0.0003333,
+   true
+  ],
+  [
+   "DINO-WM E11",
+   "pusht",
+   "Delta_pers",
+   0.0,
+   true
+  ],
+  [
+   "DINO-WM E11",
+   "pusht",
+   "D(sh-plan)-D(sh-iter)",
+   0.0,
+   true
+  ],
+  [
+   "DINO-WM E11 cluster",
+   "pusht",
+   "Delta_pers cluster CI",
+   0.0,
+   true
+  ],
+  [
+   "DINO-WM E11",
+   "pointmaze",
+   "Delta_pers",
+   0.0,
+   true
+  ],
+  [
+   "DINO-WM E11",
+   "pointmaze",
+   "D(sh-plan)-D(sh-iter)",
+   0.0,
+   true
+  ],
+  [
+   "DINO-WM E11",
+   "wall",
+   "Delta_pers",
+   0.0,
+   true
+  ],
+  [
+   "DINO-WM E11",
+   "wall",
+   "D(sh-plan)-D(sh-iter)",
+   0.0,
+   true
+  ],
+  [
+   "DINO-WM E16",
+   "pointmaze",
+   "D(sh-plan)-D(sh-iter) MPPI",
+   0.0,
+   true
+  ],
+  [
+   "DINO-WM E11 (via E16 file)",
+   "pointmaze",
+   "D(sh-plan)-D(sh-iter) CEM",
+   0.0,
+   true
+  ],
+  [
+   "DINO-WM E16",
+   "wall",
+   "D(sh-plan)-D(sh-iter) MPPI",
+   0.0,
+   true
+  ],
+  [
+   "DINO-WM E11 (via E16 file)",
+   "wall",
+   "D(sh-plan)-D(sh-iter) CEM",
+   0.0,
+   true
+  ]
+ ]
+}

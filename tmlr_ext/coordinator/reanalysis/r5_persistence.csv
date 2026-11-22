@@ -1,0 +1,46 @@
+family,unit,setting,task,k,n,contrast,estimate,ci_lo,ci_hi,ci_lo_gt_0
+TD-MPC2 5M,MW,E11 default MPPI,mw-push,3,90,D(sh-ep)-D(sh-iter),0.4889,0.3889,0.6,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-push,3,90,Delta_pers,0.4,0.2889,0.5111,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-pick-place,3,90,D(sh-ep)-D(sh-iter),0.2889,0.1556,0.4222,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-pick-place,3,90,Delta_pers,0.2333,0.1111,0.3556,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-door-open,4,90,D(sh-ep)-D(sh-iter),0.1,0.0333,0.1667,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-door-open,4,90,Delta_pers,0.1111,0.0333,0.2,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-drawer-open,3,90,D(sh-ep)-D(sh-iter),0.1778,0.1,0.2556,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-drawer-open,3,90,Delta_pers,0.1,0.0444,0.1667,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-button-press-topdown,3,90,D(sh-ep)-D(sh-iter),0.6111,0.5111,0.7111,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-button-press-topdown,3,90,Delta_pers,0.3111,0.2222,0.4111,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-peg-insert-side,4,90,D(sh-ep)-D(sh-iter),0.4556,0.3556,0.5556,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-peg-insert-side,4,90,Delta_pers,0.1889,0.1111,0.2778,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-window-open,4,90,D(sh-ep)-D(sh-iter),0.1667,0.0444,0.2889,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-window-open,4,90,Delta_pers,0.1333,0.0444,0.2222,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-sweep-into,3,90,D(sh-ep)-D(sh-iter),0.4222,0.3222,0.5222,True
+TD-MPC2 5M,MW,E11 default MPPI,mw-sweep-into,3,90,Delta_pers,0.3,0.2111,0.4,True
+TD-MPC2 5M,DMC,E11 default MPPI,cheetah-run,5,90,D(sh-ep)-D(sh-iter),0.3662,0.3253,0.4074,True
+TD-MPC2 5M,DMC,E11 default MPPI,cheetah-run,5,90,Delta_pers,0.3262,0.2897,0.3637,True
+TD-MPC2 5M,DMC,E11 default MPPI,walker-walk,3,90,D(sh-ep)-D(sh-iter),0.1182,0.0945,0.1422,True
+TD-MPC2 5M,DMC,E11 default MPPI,walker-walk,3,90,Delta_pers,0.1473,0.1226,0.172,True
+TD-MPC2 5M,DMC,E11 default MPPI,quadruped-walk,3,90,D(sh-ep)-D(sh-iter),0.291,0.2396,0.3435,True
+TD-MPC2 5M,DMC,E11 default MPPI,quadruped-walk,3,90,Delta_pers,0.467,0.4075,0.5239,True
+TD-MPC2 5M,DMC,E11 default MPPI,finger-turn-hard,4,90,D(sh-ep)-D(sh-iter),0.3429,0.2527,0.4353,True
+TD-MPC2 5M,DMC,E11 default MPPI,finger-turn-hard,4,90,Delta_pers,0.2324,0.1532,0.3169,True
+TD-MPC2 5M,MW,E16 CEM-style,mw-push,3,90,D(sh-ep)-D(sh-iter),0.4778,0.3667,0.5889,True
+TD-MPC2 5M,MW,E16 CEM-style,mw-pick-place,3,90,D(sh-ep)-D(sh-iter),0.4222,0.2889,0.5556,True
+TD-MPC2 5M,DMC,E16 CEM-style,cheetah-run,5,90,D(sh-ep)-D(sh-iter),0.1873,0.1652,0.2087,True
+TD-MPC2 317M,MW,E14 default MPPI,mw-button-press-topdown,,90,D(sh-ep)-D(sh-iter),0.7889,0.7,0.8667,True
+TD-MPC2 317M,MW,E14 default MPPI,mw-door-open,,90,D(sh-ep)-D(sh-iter),0.7,0.5889,0.8,True
+TD-MPC2 317M,MW,E14 default MPPI,mw-drawer-open,,90,D(sh-ep)-D(sh-iter),0.2444,0.1222,0.3667,True
+TD-MPC2 317M,MW,E14 default MPPI,mw-peg-insert-side,,90,D(sh-ep)-D(sh-iter),0.8222,0.7444,0.9,True
+TD-MPC2 317M,MW,E14 default MPPI,mw-pick-place,,90,D(sh-ep)-D(sh-iter),0.6222,0.5222,0.7222,True
+TD-MPC2 317M,MW,E14 default MPPI,mw-push,,90,D(sh-ep)-D(sh-iter),0.0333,0.0,0.0778,False
+TD-MPC2 317M,MW,E14 default MPPI,mw-sweep-into,,90,D(sh-ep)-D(sh-iter),0.5222,0.4222,0.6222,True
+TD-MPC2 317M,MW,E14 default MPPI,mw-window-open,,90,D(sh-ep)-D(sh-iter),0.6333,0.5333,0.7333,True
+DINO-WM,DW,E11 CEM,pusht,4,100,D(sh-plan)-D(sh-iter),0.06,-0.01,0.13,False
+DINO-WM,DW,E11 CEM,pusht,4,100,Delta_pers,0.0,-0.06,0.06,False
+DINO-WM,DW,E11 CEM (D1 cluster CI),pusht,4,100,D(sh-plan)-D(sh-iter),0.06,0.0169,0.1042,True
+DINO-WM,DW,E11 CEM (D1 cluster CI),pusht,4,100,Delta_pers,0.0,-0.0577,0.0566,False
+DINO-WM,DW,E11 CEM,pointmaze,3,100,D(sh-plan)-D(sh-iter),0.0,-0.07,0.07,False
+DINO-WM,DW,E11 CEM,pointmaze,3,100,Delta_pers,0.0,-0.06,0.06,False
+DINO-WM,DW,E11 CEM,wall,3,100,D(sh-plan)-D(sh-iter),-0.04,-0.12,0.04,False
+DINO-WM,DW,E11 CEM,wall,3,100,Delta_pers,0.17,0.07,0.27,True
+DINO-WM,DW,E16 MPPI-style,pointmaze,3,100,D(sh-plan)-D(sh-iter),0.04,-0.01,0.1,False
+DINO-WM,DW,E16 MPPI-style,wall,3,100,D(sh-plan)-D(sh-iter),-0.07,-0.18,0.04,False

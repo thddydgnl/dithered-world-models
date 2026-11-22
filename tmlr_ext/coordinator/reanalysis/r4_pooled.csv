@@ -1,0 +1,23 @@
+task,k,E1_role,statistic,split,variance_from,estimate,se,ci_lo,ci_hi,n_boot_valid,n_boot_dropped,Q,p_Q,I2,weights_E1_eval8
+pusht,4,confirmatory,D_det,E1,pair,0.24,0.051,0.14,0.34,10000,0,,,,
+pusht,4,confirmatory,D_det,eval8,pair,0.04,0.0562,-0.07,0.15,10000,0,,,,
+pusht,4,confirmatory,D_det,pooled,pair,0.1497,0.0378,0.0757,0.2237,,,6.9448,0.0084,0.856,0.549;0.451
+pusht,4,confirmatory,red_shiter,E1,pair,1.0,0.0961,0.8462,1.2222,10000,0,,,,
+pusht,4,confirmatory,red_shiter,eval8,pair,1.5,1.2664,0.0,5.0,7262,2738,,,,
+pusht,4,confirmatory,red_shiter,pooled,pair,1.0029,0.0958,0.8151,1.1906,,,0.155,0.6938,0.0,0.994;0.006
+pusht,4,confirmatory,D_det,eval8,cluster,0.04,0.1199,-0.1856,0.2923,10000,0,,,,
+pusht,4,confirmatory,D_det,pooled,E1 pair + eval8 cluster,0.2094,0.0469,0.1174,0.3014,,,2.3548,0.1249,0.5753,0.847;0.153
+pusht,4,confirmatory,red_shiter,eval8,cluster,1.5,0.8238,0.7917,4.0,6192,3808,,,,
+pusht,4,confirmatory,red_shiter,pooled,E1 pair + eval8 cluster,1.0067,0.0954,0.8197,1.1938,,,0.3634,0.5466,0.0,0.987;0.013
+pointmaze,3,confirmatory,D_det,E1,pair,0.11,0.0441,0.02,0.2,10000,0,,,,
+pointmaze,3,confirmatory,D_det,eval8,pair,0.09,0.0484,0.0,0.18,10000,0,,,,
+pointmaze,3,confirmatory,D_det,pooled,pair,0.1009,0.0326,0.037,0.1648,,,0.0933,0.76,0.0,0.546;0.454
+pointmaze,3,confirmatory,red_shiter,E1,pair,1.0909,0.6853,0.5455,2.5,9913,87,,,,
+pointmaze,3,confirmatory,red_shiter,eval8,pair,1.4444,1.3794,0.7857,5.5,9619,381,,,,
+pointmaze,3,confirmatory,red_shiter,pooled,pair,1.1609,0.6138,-0.0421,2.3639,,,0.0527,0.8185,0.0,0.802;0.198
+wall,3,exploratory,D_det,E1,pair,0.5,0.0576,0.39,0.61,10000,0,,,,
+wall,3,exploratory,D_det,eval8,pair,0.42,0.0551,0.31,0.53,10000,0,,,,
+wall,3,exploratory,D_det,pooled,pair,0.4582,0.0398,0.3801,0.5363,,,1.0064,0.3158,0.0063,0.478;0.522
+wall,3,exploratory,red_shiter,E1,pair,0.92,0.0966,0.7407,1.125,10000,0,,,,
+wall,3,exploratory,red_shiter,eval8,pair,1.0,0.1301,0.7805,1.2973,10000,0,,,,
+wall,3,exploratory,red_shiter,pooled,pair,0.9484,0.0776,0.7964,1.1005,,,0.2437,0.6216,0.0,0.645;0.355

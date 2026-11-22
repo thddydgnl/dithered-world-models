@@ -1,0 +1,9 @@
+dw_cell,contrast,dw_estimate,dw_ci_hi,n_of_8_MW5M_cells_with_ci_lo_above,n_of_8_317M_tasks_with_ci_lo_above
+pusht|cem,D(sh-plan)-D(sh-iter),0.06,0.13,5,6
+pusht|cem,Delta_pers,0.0,0.06,5,
+pointmaze|cem,D(sh-plan)-D(sh-iter),0.0,0.07,6,7
+pointmaze|cem,Delta_pers,0.0,0.06,5,
+wall|cem,D(sh-plan)-D(sh-iter),-0.04,0.04,7,7
+wall|cem,Delta_pers,0.17,0.27,1,
+pointmaze|mppi2,D(sh-plan)-D(sh-iter),0.04,0.1,5,7
+wall|mppi1,D(sh-plan)-D(sh-iter),-0.07,0.04,7,7

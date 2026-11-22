@@ -1,0 +1,5458 @@
+{
+ "meta": {
+  "taus": [
+   "0.05",
+   "0.075",
+   "0.1",
+   "0.10_strict",
+   "0.125",
+   "0.15",
+   "0.2"
+  ],
+  "tol": 1e-09,
+  "near_window": 0.01
+ },
+ "tau": {
+  "0.05": {
+   "td": {
+    "mw-push": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "2",
+      "shiter": "2",
+      "detshift": "2"
+     }
+    },
+    "mw-pick-place": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": -1,
+      "G_lo": -4,
+      "G_hi": -1
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": ">=6",
+      "detshift": "5"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": -5,
+      "G_hi": 5
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": -5,
+      "G_hi": 5
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": -5,
+      "G_hi": 5
+     },
+     "PC|kstar": {
+      "det": ">=5",
+      "detbc": ">=4",
+      "shiter": ">=4",
+      "detshift": ">=4"
+     }
+    },
+    "mw-door-open": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": ">=6",
+      "shiter": "2",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PC|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|detshift": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PC|kstar": {
+      "det": ">=4",
+      "detbc": "4",
+      "shiter": "2",
+      "detshift": "1"
+     }
+    },
+    "mw-drawer-open": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-button-press-topdown": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-peg-insert-side": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|kstar": {
+      "det": ">=6",
+      "detbc": "6",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PC|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|kstar": {
+      "det": ">=4",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "2"
+     }
+    },
+    "mw-window-open": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": ">=6",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": "5"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 6
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": -5,
+      "G_hi": 5
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 6
+     },
+     "PC|kstar": {
+      "det": ">=5",
+      "detbc": ">=4",
+      "shiter": ">=4",
+      "detshift": "3"
+     }
+    },
+    "mw-sweep-into": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "2",
+      "detshift": "2"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "2",
+      "detshift": "1"
+     }
+    },
+    "cheetah-run": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 3
+     },
+     "PT|kstar": {
+      "det": ">=7",
+      "detbc": ">=7",
+      "shiter": "6",
+      "detshift": "6"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": -4,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": ">=6",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": ">=5"
+     }
+    },
+    "walker-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": "5"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "3"
+     }
+    },
+    "quadruped-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": -1,
+      "G_lo": -1,
+      "G_hi": -1
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "5",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "finger-turn-hard": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    }
+   },
+   "dw": {
+    "pusht": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": ">=6",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": ">=5",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     },
+     "RC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "shiter": "2"
+      }
+     }
+    },
+    "pointmaze": {
+     "PT": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": ">=4",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1,
+      "kstar": {
+       "det": "3",
+       "detbc": "3",
+       "shiter": "2"
+      }
+     }
+    },
+    "wall": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     }
+    }
+   },
+   "fr": {
+    "Fr1|best": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 6,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|best": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|shiter": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 6,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|shiter": {
+     "count": 4,
+     "count_lo": 4,
+     "count_hi": 6,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|detshift": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 6,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|detshift": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    }
+   },
+   "near": [
+    [
+     "TD-MPC2",
+     "cheetah-run",
+     "PC",
+     "detbc",
+     5,
+     45,
+     0.045461
+    ],
+    [
+     "TD-MPC2",
+     "cheetah-run",
+     "PC",
+     "detshift",
+     4,
+     45,
+     0.057099
+    ],
+    [
+     "TD-MPC2",
+     "mw-door-open",
+     "PC",
+     "detshift",
+     1,
+     90,
+     0.044444
+    ],
+    [
+     "TD-MPC2",
+     "mw-door-open",
+     "PC",
+     "detshift",
+     3,
+     90,
+     0.044444
+    ],
+    [
+     "TD-MPC2",
+     "mw-door-open",
+     "PC",
+     "shiter",
+     3,
+     90,
+     0.044444
+    ],
+    [
+     "TD-MPC2",
+     "mw-door-open",
+     "PT",
+     "shiter",
+     2,
+     90,
+     0.044444
+    ],
+    [
+     "TD-MPC2",
+     "mw-drawer-open",
+     "PT",
+     "shiter",
+     1,
+     90,
+     0.044444
+    ],
+    [
+     "TD-MPC2",
+     "mw-peg-insert-side",
+     "PC",
+     "det",
+     3,
+     90,
+     0.055556
+    ],
+    [
+     "TD-MPC2",
+     "mw-peg-insert-side",
+     "PC",
+     "detshift",
+     1,
+     90,
+     0.055556
+    ],
+    [
+     "TD-MPC2",
+     "mw-peg-insert-side",
+     "PT",
+     "detshift",
+     3,
+     90,
+     0.044444
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PC",
+     "detshift",
+     3,
+     90,
+     0.055556
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PC",
+     "shiter",
+     3,
+     90,
+     0.055556
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PT",
+     "shiter",
+     4,
+     90,
+     0.055556
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PT",
+     "shiter",
+     5,
+     90,
+     0.055556
+    ],
+    [
+     "TD-MPC2",
+     "mw-sweep-into",
+     "PC",
+     "detshift",
+     1,
+     90,
+     0.044444
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PC",
+     "shiter",
+     1,
+     90,
+     0.044444
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PT",
+     "shiter",
+     3,
+     90,
+     0.055556
+    ],
+    [
+     "TD-MPC2",
+     "quadruped-walk",
+     "PT",
+     "shiter",
+     4,
+     45,
+     0.052529
+    ],
+    [
+     "TD-MPC2",
+     "walker-walk",
+     "PC",
+     "detbc",
+     3,
+     45,
+     0.056522
+    ],
+    [
+     "TD-MPC2",
+     "walker-walk",
+     "PC",
+     "detshift",
+     3,
+     45,
+     0.041918
+    ],
+    [
+     "TD-MPC2",
+     "walker-walk",
+     "PC",
+     "shiter",
+     3,
+     45,
+     0.053095
+    ],
+    [
+     "TD-MPC2",
+     "walker-walk",
+     "PT",
+     "det",
+     5,
+     45,
+     0.041119
+    ],
+    [
+     "DINO-WM",
+     "pointmaze",
+     "PC",
+     "detbc",
+     2,
+     100,
+     0.06
+    ],
+    [
+     "DINO-WM",
+     "pointmaze",
+     "PC",
+     "shiter",
+     2,
+     100,
+     0.04
+    ],
+    [
+     "DINO-WM",
+     "pusht",
+     "PT",
+     "det",
+     4,
+     100,
+     0.04
+    ],
+    [
+     "DINO-WM",
+     "pusht",
+     "RC",
+     "shiter",
+     4,
+     100,
+     0.04
+    ],
+    [
+     "DINO-WM",
+     "wall",
+     "PC",
+     "detbc",
+     2,
+     100,
+     0.05
+    ],
+    [
+     "DINO-WM",
+     "wall",
+     "PC",
+     "shiter",
+     2,
+     100,
+     0.05
+    ],
+    [
+     "DINO-WM",
+     "wall",
+     "PT",
+     "detbc",
+     2,
+     100,
+     0.06
+    ]
+   ]
+  },
+  "0.075": {
+   "td": {
+    "mw-push": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "2",
+      "detshift": "2"
+     }
+    },
+    "mw-pick-place": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "mw-door-open": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "2",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PC|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PC|detshift": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PC|kstar": {
+      "det": ">=4",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-drawer-open": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-button-press-topdown": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-peg-insert-side": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|kstar": {
+      "det": ">=6",
+      "detbc": "6",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-window-open": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": ">=6",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": "5"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": ">=5",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "mw-sweep-into": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "2",
+      "detshift": "2"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "2",
+      "detshift": "1"
+     }
+    },
+    "cheetah-run": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 3
+     },
+     "PT|kstar": {
+      "det": ">=7",
+      "detbc": ">=7",
+      "shiter": "6",
+      "detshift": "6"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": ">=6",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": "4"
+     }
+    },
+    "walker-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": "5"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "quadruped-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "finger-turn-hard": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    }
+   },
+   "dw": {
+    "pusht": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "5",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     },
+     "RC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "shiter": "2"
+      }
+     }
+    },
+    "pointmaze": {
+     "PT": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": ">=4",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "3",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     }
+    },
+    "wall": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     }
+    }
+   },
+   "fr": {
+    "Fr1|best": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|best": {
+     "count": 5,
+     "count_lo": 5,
+     "count_hi": 5,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|shiter": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|shiter": {
+     "count": 4,
+     "count_lo": 4,
+     "count_hi": 4,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|detshift": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|detshift": {
+     "count": 5,
+     "count_lo": 5,
+     "count_hi": 5,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    }
+   },
+   "near": [
+    [
+     "TD-MPC2",
+     "cheetah-run",
+     "PC",
+     "det",
+     5,
+     90,
+     0.084079
+    ],
+    [
+     "TD-MPC2",
+     "cheetah-run",
+     "PT",
+     "det",
+     6,
+     90,
+     0.08218
+    ],
+    [
+     "TD-MPC2",
+     "cheetah-run",
+     "PT",
+     "detbc",
+     6,
+     90,
+     0.078527
+    ],
+    [
+     "TD-MPC2",
+     "mw-door-open",
+     "PC",
+     "det",
+     3,
+     90,
+     0.077778
+    ],
+    [
+     "TD-MPC2",
+     "mw-door-open",
+     "PC",
+     "shiter",
+     1,
+     90,
+     0.066667
+    ],
+    [
+     "TD-MPC2",
+     "mw-door-open",
+     "PT",
+     "detbc",
+     5,
+     90,
+     0.066667
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PC",
+     "det",
+     4,
+     90,
+     0.066667
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PC",
+     "detbc",
+     3,
+     90,
+     0.066667
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PT",
+     "detbc",
+     4,
+     90,
+     0.077778
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PT",
+     "detshift",
+     4,
+     90,
+     0.066667
+    ],
+    [
+     "TD-MPC2",
+     "mw-push",
+     "PC",
+     "det",
+     2,
+     90,
+     0.066667
+    ],
+    [
+     "TD-MPC2",
+     "mw-sweep-into",
+     "PC",
+     "shiter",
+     1,
+     90,
+     0.077778
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PC",
+     "detbc",
+     3,
+     90,
+     0.066667
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PC",
+     "detshift",
+     1,
+     90,
+     0.077778
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PC",
+     "detshift",
+     2,
+     90,
+     0.077778
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PC",
+     "shiter",
+     3,
+     90,
+     0.066667
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PT",
+     "detshift",
+     3,
+     90,
+     0.066667
+    ],
+    [
+     "TD-MPC2",
+     "quadruped-walk",
+     "PT",
+     "det",
+     4,
+     45,
+     0.076585
+    ],
+    [
+     "TD-MPC2",
+     "walker-walk",
+     "PT",
+     "detbc",
+     4,
+     90,
+     0.077714
+    ],
+    [
+     "DINO-WM",
+     "pusht",
+     "PC",
+     "det",
+     4,
+     100,
+     0.07
+    ],
+    [
+     "DINO-WM",
+     "pusht",
+     "PT",
+     "detbc",
+     5,
+     100,
+     0.07
+    ]
+   ]
+  },
+  "0.1": {
+   "td": {
+    "mw-push": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "2",
+      "detshift": "2"
+     }
+    },
+    "mw-pick-place": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "2"
+     }
+    },
+    "mw-door-open": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "2",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-drawer-open": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-button-press-topdown": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-peg-insert-side": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "6",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-window-open": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "1"
+     }
+    },
+    "mw-sweep-into": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "2",
+      "detshift": "2"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "cheetah-run": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "6",
+      "detbc": "6",
+      "shiter": "6",
+      "detshift": "6"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": "4"
+     }
+    },
+    "walker-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": -1,
+      "G_lo": -1,
+      "G_hi": -1
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "5",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "quadruped-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "finger-turn-hard": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    }
+   },
+   "dw": {
+    "pusht": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "5",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     },
+     "RC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "shiter": "2"
+      }
+     }
+    },
+    "pointmaze": {
+     "PT": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "2",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "2",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     }
+    },
+    "wall": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     }
+    }
+   },
+   "fr": {
+    "Fr1|best": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|best": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|shiter": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 6,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|shiter": {
+     "count": 5,
+     "count_lo": 5,
+     "count_hi": 5,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|detshift": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|detshift": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    }
+   },
+   "near": [
+    [
+     "TD-MPC2",
+     "cheetah-run",
+     "PT",
+     "detshift",
+     5,
+     90,
+     0.102227
+    ],
+    [
+     "TD-MPC2",
+     "mw-door-open",
+     "PC",
+     "det",
+     2,
+     90,
+     0.1
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PC",
+     "detshift",
+     2,
+     90,
+     0.1
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PT",
+     "det",
+     5,
+     90,
+     0.1
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PT",
+     "shiter",
+     2,
+     90,
+     0.1
+    ],
+    [
+     "TD-MPC2",
+     "walker-walk",
+     "PT",
+     "detshift",
+     4,
+     90,
+     0.099108
+    ],
+    [
+     "DINO-WM",
+     "pointmaze",
+     "PC",
+     "det",
+     2,
+     100,
+     0.09
+    ],
+    [
+     "DINO-WM",
+     "pointmaze",
+     "PT",
+     "det",
+     2,
+     100,
+     0.09
+    ],
+    [
+     "DINO-WM",
+     "pointmaze",
+     "PT",
+     "det",
+     3,
+     100,
+     0.09
+    ]
+   ]
+  },
+  "0.10_strict": {
+   "td": {
+    "mw-push": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "2",
+      "detshift": "2"
+     }
+    },
+    "mw-pick-place": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "mw-door-open": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "2",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-drawer-open": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-button-press-topdown": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-peg-insert-side": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "6",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-window-open": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": ">=6",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "1"
+     }
+    },
+    "mw-sweep-into": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "2",
+      "detshift": "2"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "cheetah-run": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "6",
+      "detbc": "6",
+      "shiter": "6",
+      "detshift": "6"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": "4"
+     }
+    },
+    "walker-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": -1,
+      "G_lo": -1,
+      "G_hi": -1
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "5",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "quadruped-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "finger-turn-hard": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    }
+   },
+   "dw": {
+    "pusht": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "5",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     },
+     "RC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "shiter": "2"
+      }
+     }
+    },
+    "pointmaze": {
+     "PT": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "2",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "2",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     }
+    },
+    "wall": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     }
+    }
+   },
+   "fr": {
+    "Fr1|best": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|best": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 6,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|shiter": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 6,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|shiter": {
+     "count": 5,
+     "count_lo": 5,
+     "count_hi": 5,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|detshift": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|detshift": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 6,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    }
+   },
+   "near": []
+  },
+  "0.125": {
+   "td": {
+    "mw-push": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "2",
+      "detshift": "2"
+     }
+    },
+    "mw-pick-place": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "2"
+     }
+    },
+    "mw-door-open": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "2",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-drawer-open": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-button-press-topdown": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-peg-insert-side": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-window-open": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 4
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 4
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "5",
+      "detshift": "<=2"
+     },
+     "PC|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-sweep-into": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "cheetah-run": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "6",
+      "detbc": "6",
+      "shiter": "5",
+      "detshift": "5"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     }
+    },
+    "walker-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": -1,
+      "G_lo": -1,
+      "G_hi": -1
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "5",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "quadruped-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "finger-turn-hard": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    }
+   },
+   "dw": {
+    "pusht": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "5",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1,
+      "kstar": {
+       "det": "4",
+       "detbc": "3",
+       "shiter": "2"
+      }
+     },
+     "RC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "shiter": "2"
+      }
+     }
+    },
+    "pointmaze": {
+     "PT": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "2",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "2",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     }
+    },
+    "wall": {
+     "PT": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "4",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     }
+    }
+   },
+   "fr": {
+    "Fr1|best": {
+     "count": 8,
+     "count_lo": 8,
+     "count_hi": 8,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|best": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|shiter": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 6,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|shiter": {
+     "count": 6,
+     "count_lo": 6,
+     "count_hi": 6,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|detshift": {
+     "count": 8,
+     "count_lo": 8,
+     "count_hi": 8,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|detshift": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    }
+   },
+   "near": [
+    [
+     "TD-MPC2",
+     "cheetah-run",
+     "PC",
+     "detbc",
+     4,
+     90,
+     0.121771
+    ],
+    [
+     "TD-MPC2",
+     "cheetah-run",
+     "PT",
+     "shiter",
+     5,
+     90,
+     0.123601
+    ],
+    [
+     "TD-MPC2",
+     "mw-peg-insert-side",
+     "PC",
+     "detbc",
+     3,
+     90,
+     0.133333
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PC",
+     "shiter",
+     2,
+     90,
+     0.133333
+    ],
+    [
+     "TD-MPC2",
+     "mw-pick-place",
+     "PT",
+     "detshift",
+     3,
+     90,
+     0.122222
+    ],
+    [
+     "TD-MPC2",
+     "mw-push",
+     "PT",
+     "det",
+     4,
+     90,
+     0.133333
+    ],
+    [
+     "TD-MPC2",
+     "mw-sweep-into",
+     "PT",
+     "det",
+     3,
+     90,
+     0.133333
+    ],
+    [
+     "TD-MPC2",
+     "mw-sweep-into",
+     "PT",
+     "detbc",
+     3,
+     90,
+     0.133333
+    ],
+    [
+     "TD-MPC2",
+     "mw-sweep-into",
+     "PT",
+     "detshift",
+     1,
+     90,
+     0.122222
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PC",
+     "shiter",
+     2,
+     90,
+     0.122222
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PT",
+     "detbc",
+     4,
+     90,
+     0.133333
+    ],
+    [
+     "TD-MPC2",
+     "mw-window-open",
+     "PT",
+     "shiter",
+     4,
+     90,
+     0.133333
+    ],
+    [
+     "TD-MPC2",
+     "walker-walk",
+     "PT",
+     "shiter",
+     4,
+     45,
+     0.129958
+    ],
+    [
+     "DINO-WM",
+     "pusht",
+     "PC",
+     "detbc",
+     3,
+     100,
+     0.12
+    ],
+    [
+     "DINO-WM",
+     "wall",
+     "PT",
+     "detbc",
+     3,
+     100,
+     0.12
+    ]
+   ]
+  },
+  "0.15": {
+   "td": {
+    "mw-push": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "5",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "2",
+      "detshift": "2"
+     }
+    },
+    "mw-pick-place": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "2",
+      "detshift": "2"
+     }
+    },
+    "mw-door-open": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "2",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-drawer-open": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-button-press-topdown": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-peg-insert-side": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 4
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 4
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "3",
+      "detshift": "<=2"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-window-open": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 3
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "2",
+      "detshift": "<=2"
+     },
+     "PC|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-sweep-into": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "cheetah-run": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "6",
+      "detbc": "6",
+      "shiter": "5",
+      "detshift": "5"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     }
+    },
+    "walker-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "quadruped-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "finger-turn-hard": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 3
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "<=3"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    }
+   },
+   "dw": {
+    "pusht": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "5",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1,
+      "kstar": {
+       "det": "4",
+       "detbc": "3",
+       "shiter": "2"
+      }
+     },
+     "RC": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "shiter": "2"
+      }
+     }
+    },
+    "pointmaze": {
+     "PT": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "2",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "2",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     }
+    },
+    "wall": {
+     "PT": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "4",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "4",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     }
+    }
+   },
+   "fr": {
+    "Fr1|best": {
+     "count": 8,
+     "count_lo": 8,
+     "count_hi": 8,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|best": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|shiter": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|shiter": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|detshift": {
+     "count": 8,
+     "count_lo": 8,
+     "count_hi": 8,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|detshift": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    }
+   },
+   "near": [
+    [
+     "TD-MPC2",
+     "finger-turn-hard",
+     "PT",
+     "detshift",
+     3,
+     90,
+     0.142176
+    ],
+    [
+     "TD-MPC2",
+     "mw-door-open",
+     "PC",
+     "detbc",
+     3,
+     90,
+     0.144444
+    ],
+    [
+     "TD-MPC2",
+     "mw-door-open",
+     "PT",
+     "detshift",
+     2,
+     90,
+     0.155556
+    ],
+    [
+     "TD-MPC2",
+     "mw-drawer-open",
+     "PT",
+     "det",
+     3,
+     90,
+     0.144444
+    ],
+    [
+     "TD-MPC2",
+     "mw-peg-insert-side",
+     "PT",
+     "detshift",
+     2,
+     90,
+     0.144444
+    ],
+    [
+     "TD-MPC2",
+     "mw-peg-insert-side",
+     "PT",
+     "shiter",
+     2,
+     90,
+     0.155556
+    ],
+    [
+     "TD-MPC2",
+     "mw-push",
+     "PT",
+     "detshift",
+     2,
+     90,
+     0.155556
+    ],
+    [
+     "TD-MPC2",
+     "quadruped-walk",
+     "PC",
+     "detbc",
+     2,
+     45,
+     0.156329
+    ],
+    [
+     "TD-MPC2",
+     "walker-walk",
+     "PT",
+     "det",
+     4,
+     45,
+     0.157324
+    ],
+    [
+     "DINO-WM",
+     "pusht",
+     "PT",
+     "detbc",
+     4,
+     100,
+     0.16
+    ],
+    [
+     "DINO-WM",
+     "pusht",
+     "RC",
+     "det",
+     3,
+     100,
+     0.16
+    ],
+    [
+     "DINO-WM",
+     "wall",
+     "PC",
+     "detbc",
+     3,
+     100,
+     0.15
+    ]
+   ]
+  },
+  "0.2": {
+   "td": {
+    "mw-push": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "<=2"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "2",
+      "detshift": "2"
+     }
+    },
+    "mw-pick-place": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "3",
+      "detshift": "3"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "2",
+      "detshift": "2"
+     }
+    },
+    "mw-door-open": {
+     "PT|best": {
+      "G": 4,
+      "G_lo": 4,
+      "G_hi": 4
+     },
+     "PT|shiter": {
+      "G": 4,
+      "G_lo": 4,
+      "G_hi": 4
+     },
+     "PT|detshift": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 4
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "1",
+      "detshift": "<=2"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-drawer-open": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-button-press-topdown": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-peg-insert-side": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 4
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 4
+     },
+     "PT|detshift": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 4
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "5",
+      "shiter": "<=2",
+      "detshift": "<=2"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-window-open": {
+     "PT|best": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 3,
+      "G_lo": 3,
+      "G_hi": 3
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 3
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "1",
+      "detshift": "<=2"
+     },
+     "PC|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "mw-sweep-into": {
+     "PT|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|shiter": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2
+     },
+     "PT|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "1",
+      "detshift": "1"
+     },
+     "PC|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|kstar": {
+      "det": "2",
+      "detbc": "2",
+      "shiter": "1",
+      "detshift": "1"
+     }
+    },
+    "cheetah-run": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PT|kstar": {
+      "det": "6",
+      "detbc": "6",
+      "shiter": "5",
+      "detshift": "5"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     }
+    },
+    "walker-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "3",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "quadruped-walk": {
+     "PT|best": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "4"
+     },
+     "PC|best": {
+      "G": -1,
+      "G_lo": -2,
+      "G_hi": -1
+     },
+     "PC|shiter": {
+      "G": -1,
+      "G_lo": -2,
+      "G_hi": -1
+     },
+     "PC|detshift": {
+      "G": -1,
+      "G_lo": -2,
+      "G_hi": -1
+     },
+     "PC|kstar": {
+      "det": "3",
+      "detbc": "<=2",
+      "shiter": "3",
+      "detshift": "3"
+     }
+    },
+    "finger-turn-hard": {
+     "PT|best": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 3
+     },
+     "PT|shiter": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0
+     },
+     "PT|detshift": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 3
+     },
+     "PT|kstar": {
+      "det": "5",
+      "detbc": "4",
+      "shiter": "4",
+      "detshift": "<=3"
+     },
+     "PC|best": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 3
+     },
+     "PC|shiter": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1
+     },
+     "PC|detshift": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 3
+     },
+     "PC|kstar": {
+      "det": "4",
+      "detbc": "4",
+      "shiter": "3",
+      "detshift": "<=2"
+     }
+    }
+   },
+   "dw": {
+    "pusht": {
+     "PT": {
+      "G": 2,
+      "G_lo": 2,
+      "G_hi": 2,
+      "kstar": {
+       "det": "4",
+       "detbc": "4",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1,
+      "kstar": {
+       "det": "4",
+       "detbc": "3",
+       "shiter": "2"
+      }
+     },
+     "RC": {
+      "G": 1,
+      "G_lo": -1,
+      "G_hi": 1,
+      "kstar": {
+       "det": "<=3",
+       "shiter": "2"
+      }
+     }
+    },
+    "pointmaze": {
+     "PT": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "2",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": 1,
+      "G_lo": 1,
+      "G_hi": 1,
+      "kstar": {
+       "det": "2",
+       "detbc": "2",
+       "shiter": "1"
+      }
+     }
+    },
+    "wall": {
+     "PT": {
+      "G": 0,
+      "G_lo": 0,
+      "G_hi": 0,
+      "kstar": {
+       "det": "4",
+       "detbc": "2",
+       "shiter": "2"
+      }
+     },
+     "PC": {
+      "G": -1,
+      "G_lo": -1,
+      "G_hi": -1,
+      "kstar": {
+       "det": "4",
+       "detbc": "1",
+       "shiter": "2"
+      }
+     }
+    }
+   },
+   "fr": {
+    "Fr1|best": {
+     "count": 8,
+     "count_lo": 8,
+     "count_hi": 8,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|best": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|shiter": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|shiter": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr1|detshift": {
+     "count": 8,
+     "count_lo": 8,
+     "count_hi": 8,
+     "threshold": 6,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    },
+    "Fr2|detshift": {
+     "count": 7,
+     "count_lo": 7,
+     "count_hi": 7,
+     "threshold": 4,
+     "holds": true,
+     "holds_lo": true,
+     "holds_hi": true
+    }
+   },
+   "near": []
+  }
+ }
+}
