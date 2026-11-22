@@ -1,0 +1,12 @@
+{"id": "pcstats_cheetah-run_s1", "type": "pcstats", "task": "cheetah-run", "ckpt": 1, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_cheetah-run_s2", "type": "pcstats", "task": "cheetah-run", "ckpt": 2, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_cheetah-run_s3", "type": "pcstats", "task": "cheetah-run", "ckpt": 3, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_walker-walk_s1", "type": "pcstats", "task": "walker-walk", "ckpt": 1, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_walker-walk_s2", "type": "pcstats", "task": "walker-walk", "ckpt": 2, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_walker-walk_s3", "type": "pcstats", "task": "walker-walk", "ckpt": 3, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_mw-push_s1", "type": "pcstats", "task": "mw-push", "ckpt": 1, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_mw-push_s2", "type": "pcstats", "task": "mw-push", "ckpt": 2, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_mw-push_s3", "type": "pcstats", "task": "mw-push", "ckpt": 3, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_mw-pick-place_s1", "type": "pcstats", "task": "mw-pick-place", "ckpt": 1, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_mw-pick-place_s2", "type": "pcstats", "task": "mw-pick-place", "ckpt": 2, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}
+{"id": "pcstats_mw-pick-place_s3", "type": "pcstats", "task": "mw-pick-place", "ckpt": 3, "cal_eps": [0, 1, 2, 3, 4], "scales": "e1"}

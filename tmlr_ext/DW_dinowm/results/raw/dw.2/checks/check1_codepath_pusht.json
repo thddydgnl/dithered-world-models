@@ -1,0 +1,73 @@
+{
+ "task": "pusht",
+ "split": "smoke",
+ "eps": [
+  0,
+  1
+ ],
+ "E": 1,
+ "k": 4,
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "time": "2026-11-21T19:21:22Z",
+ "e1ref_md5": "f667047f23fe0c457fa60c2f124c0ff7",
+ "variants": {
+  "none": {
+   "identical": true,
+   "diffs": [],
+   "success_inputs_checked": 2,
+   "n_arrays": 28
+  },
+  "det": {
+   "identical": true,
+   "diffs": [],
+   "success_inputs_checked": 2,
+   "n_arrays": 40
+  },
+  "shiter": {
+   "identical": true,
+   "diffs": [],
+   "success_inputs_checked": 2,
+   "n_arrays": 40
+  },
+  "shstep": {
+   "identical": true,
+   "diffs": [],
+   "success_inputs_checked": 2,
+   "n_arrays": 40
+  },
+  "detshift": {
+   "identical": true,
+   "diffs": [],
+   "success_inputs_checked": 2,
+   "n_arrays": 40
+  },
+  "ind": {
+   "identical": true,
+   "diffs": [],
+   "success_inputs_checked": 2,
+   "n_arrays": 40
+  },
+  "shep": {
+   "identical": true,
+   "diffs": [],
+   "success_inputs_checked": 2,
+   "n_arrays": 40
+  }
+ },
+ "rerun": {
+  "none": {
+   "identical": true,
+   "diffs": []
+  },
+  "det": {
+   "identical": true,
+   "diffs": []
+  },
+  "shiter": {
+   "identical": true,
+   "diffs": []
+  }
+ },
+ "passed": true,
+ "secs": 605.6187272071838
+}

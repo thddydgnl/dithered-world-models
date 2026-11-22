@@ -1,0 +1,2 @@
+{"damaged": [["wall", 3]], "reading": "bias", "B2": true, "B3_dinowm": true, "Dg1": false, "G": {"pusht": {"main": 2, "pc": 2, "rc": 2}, "pointmaze": {"main": 0, "pc": 0}, "wall": {"main": 2, "pc": 2}}, "E16": {"pointmaze": true, "wall": true}, "png": "/workspace/atm/out/analysis/e12_bits_success.png"}
+wrote /workspace/atm/out/analysis

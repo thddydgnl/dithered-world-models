@@ -1,0 +1,329 @@
+{
+ "time": "2026-11-21T23:49:30Z",
+ "tag": "dw.4",
+ "cells": {
+  "wall|main|det|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.43,
+    "ci": [
+     0.33,
+     0.53
+    ]
+   }
+  },
+  "wall|main|detbc|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.06,
+    "ci": [
+     -0.05,
+     0.18
+    ]
+   }
+  },
+  "wall|main|shiter|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.01,
+    "ci": [
+     -0.1,
+     0.13
+    ]
+   }
+  },
+  "wall|pc|det|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.42,
+    "ci": [
+     0.31,
+     0.53
+    ]
+   }
+  },
+  "wall|pc|detbc|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.05,
+    "ci": [
+     -0.050249999999999774,
+     0.15
+    ]
+   }
+  },
+  "wall|pc|shiter|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.05,
+    "ci": [
+     -0.06,
+     0.16
+    ]
+   }
+  },
+  "wall|pc|det|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.38,
+    "ci": [
+     0.28,
+     0.48
+    ]
+   }
+  },
+  "wall|pc|detbc|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.15,
+    "ci": [
+     0.06,
+     0.24
+    ]
+   }
+  },
+  "wall|pc|shiter|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.07,
+    "ci": [
+     -0.1702499999999998,
+     0.03
+    ]
+   }
+  },
+  "pointmaze|main|det|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.09,
+    "ci": [
+     -0.01,
+     0.19
+    ]
+   }
+  },
+  "pointmaze|main|detbc|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.02,
+    "ci": [
+     -0.09,
+     0.05
+    ]
+   }
+  },
+  "pointmaze|main|shiter|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.05,
+    "ci": [
+     -0.13,
+     0.02
+    ]
+   }
+  },
+  "pointmaze|pc|det|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.09,
+    "ci": [
+     0.0,
+     0.18
+    ]
+   }
+  },
+  "pointmaze|pc|detbc|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.06,
+    "ci": [
+     -0.02,
+     0.14
+    ]
+   }
+  },
+  "pointmaze|pc|shiter|k2|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.04,
+    "ci": [
+     -0.02,
+     0.1
+    ]
+   }
+  },
+  "wall|main|det|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.42,
+    "ci": [
+     0.31,
+     0.53
+    ]
+   },
+   "source": "E11"
+  },
+  "wall|main|det|k4|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.22,
+    "ci": [
+     -0.33,
+     -0.12
+    ]
+   }
+  },
+  "wall|main|detbc|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.12,
+    "ci": [
+     0.01,
+     0.23
+    ]
+   },
+   "source": "E11"
+  },
+  "wall|main|detbc|k4|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.22,
+    "ci": [
+     -0.31,
+     -0.13
+    ]
+   }
+  },
+  "wall|main|detbc|k1|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.34,
+    "ci": [
+     0.23,
+     0.45
+    ]
+   }
+  },
+  "wall|main|shiter|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.0,
+    "ci": [
+     -0.1,
+     0.1
+    ]
+   },
+   "source": "E11"
+  },
+  "wall|main|shiter|k1|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.49,
+    "ci": [
+     0.39,
+     0.59
+    ]
+   }
+  },
+  "wall|pc|det|k4|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.1,
+    "ci": [
+     -0.2,
+     0.0
+    ]
+   }
+  },
+  "wall|pc|detbc|k4|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.18,
+    "ci": [
+     -0.28,
+     -0.07
+    ]
+   }
+  },
+  "wall|pc|detbc|k1|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.18,
+    "ci": [
+     0.05,
+     0.31
+    ]
+   }
+  },
+  "wall|pc|shiter|k1|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.45,
+    "ci": [
+     0.35,
+     0.55
+    ]
+   }
+  },
+  "pointmaze|main|det|k1|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.71,
+    "ci": [
+     0.62,
+     0.8
+    ]
+   }
+  },
+  "pointmaze|main|detbc|k1|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.67,
+    "ci": [
+     0.58,
+     0.76
+    ]
+   }
+  },
+  "pointmaze|main|shiter|k1|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.77,
+    "ci": [
+     0.6897500000000002,
+     0.85
+    ]
+   }
+  },
+  "pointmaze|pc|det|k1|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.22,
+    "ci": [
+     0.11,
+     0.33
+    ]
+   }
+  },
+  "pointmaze|pc|detbc|k1|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.65,
+    "ci": [
+     0.55,
+     0.74
+    ]
+   }
+  },
+  "pointmaze|pc|shiter|k1|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.17,
+    "ci": [
+     0.08,
+     0.26
+    ]
+   }
+  }
+ }
+}

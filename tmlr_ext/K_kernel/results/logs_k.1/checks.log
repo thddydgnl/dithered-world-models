@@ -1,0 +1,53 @@
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+18:35:29 paths mw-push int8 det: ref 1793.8138 new 1793.8138 identical=True
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+18:35:47 paths mw-push int8 shiter: ref 1796.3145 new 1796.3145 identical=True
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+18:35:53 paths mw-push int4 det: ref 1773.3420 new 1773.3420 identical=True
+18:36:01 paths mw-push int4 shiter: ref 1787.1777 new 1787.1777 identical=True
+18:36:08 paths mw-push intk3 det: ref 1744.8678 new 1744.8678 identical=True
+18:36:16 paths mw-push intk3 shiter: ref 1765.6379 new 1765.6379 identical=True
+Episode length: 500
+Discount factor: 0.99
+18:36:48 paths cheetah-run intk5 det: ref 86.2208 new 86.2208 identical=True
+18:37:23 paths cheetah-run intk5 shiter: ref 740.4875 new 740.4875 identical=True
+18:37:30 PATHS PASS
+18:37:30 offsets: {'n': 1024000, 'mean': -0.00036791624734178185, 'var': 0.08316206187009811, 'var_rel_diff': -0.0020552873611450195, 'min': -0.4999992549419403, 'max': 0.4999987483024597, 'chi2_20bins': 26.181640625, 'chi2_df': 19, 'mean_abs_corr_between_calls': 0.035132620483636856, 'corr_ref_1_over_sqrt_units': 0.044194173824159216, 'pass': True}
+18:37:32 shift mw-push dyn: {'mismatch0': 0.0, 'maxdiff0': 0.0, 'mismatch1': 0.0, 'maxdiff1': 0.0, 'head_maxabs': 7.450580596923828e-07, 'head_scale': 1.0, 'c1eff_relmax': 4.059500227703438e-08, 'c2eff_relmax': 5.245688568592763e-08, 'global_rng_unchanged': True, 'new_offsets_differ': True, 'codes_changed_share0': 0.2942466735839844, 'identical_rows_equal': True, 'det_vs_detshift_share_diff0': 0.2239227294921875, 'err_mean_over_delta': 6.000131179462187e-05, 'err_var_over_delta2': 0.08265477418899536, 'err_var_rel_diff_vs_1_12': -0.008142709732055664, 'err_n': 510080, 'pass': True}
+18:37:32 shift mw-push rew: {'mismatch0': 0.0, 'maxdiff0': 0.0, 'mismatch1': 0.0, 'maxdiff1': 0.0, 'head_maxabs': 1.1444091796875e-05, 'head_scale': 66.68721771240234, 'c1eff_relmax': 3.001804185234897e-08, 'c2eff_relmax': 2.584538393770486e-08, 'global_rng_unchanged': True, 'new_offsets_differ': True, 'codes_changed_share0': 0.2629280090332031, 'identical_rows_equal': True, 'det_vs_detshift_share_diff0': 0.1775970458984375, 'err_mean_over_delta': -0.0005225907079875469, 'err_var_over_delta2': 0.08354656398296356, 'err_var_rel_diff_vs_1_12': 0.0025587081909179688, 'err_n': 537400, 'pass': True}
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+18:37:51 shift mw-push closed loop: {'fp32_before': {'ret': 1800.3592610359192, 'success': 1.0, 'steps': 100, 'ms_per_step': 48.04966449737549}, 'detshift': {'ret': 1769.6617341712117, 'success': 1.0, 'steps': 100, 'ms_per_step': 56.04488134384155}, 'detshift_repeat': {'ret': 1769.6617341712117, 'success': 1.0, 'steps': 100, 'ms_per_step': 38.4639835357666}, 'fp32_after': {'ret': 1800.3592610359192, 'success': 1.0, 'steps': 100, 'ms_per_step': 46.66134595870972}, 'detshift_repeat_identical': True, 'restore_identical': True}
+18:38:08 shift cheetah-run dyn: {'mismatch0': 0.0, 'maxdiff0': 0.0, 'mismatch1': 0.0, 'maxdiff1': 0.0, 'head_maxabs': 9.5367431640625e-07, 'head_scale': 1.0, 'c1eff_relmax': 2.818488056485481e-08, 'c2eff_relmax': 6.505006006196992e-08, 'global_rng_unchanged': True, 'new_offsets_differ': True, 'codes_changed_share0': 0.3008270263671875, 'identical_rows_equal': True, 'det_vs_detshift_share_diff0': 0.202301025390625, 'err_mean_over_delta': -6.492522516055033e-05, 'err_var_over_delta2': 0.08323737978935242, 'err_var_rel_diff_vs_1_12': -0.001151442527770996, 'err_n': 2564160, 'pass': True}
+18:38:08 shift cheetah-run rew: {'mismatch0': 0.0, 'maxdiff0': 0.0, 'mismatch1': 0.0, 'maxdiff1': 0.0, 'head_maxabs': 1.9073486328125e-05, 'head_scale': 67.57328796386719, 'c1eff_relmax': 2.3803610045479268e-08, 'c2eff_relmax': 3.478348553979155e-08, 'global_rng_unchanged': True, 'new_offsets_differ': True, 'codes_changed_share0': 0.3074989318847656, 'identical_rows_equal': True, 'det_vs_detshift_share_diff0': 0.21797943115234375, 'err_mean_over_delta': -0.0006239679059945047, 'err_var_over_delta2': 0.08310189098119736, 'err_var_rel_diff_vs_1_12': -0.0027773380279541016, 'err_n': 4181000, 'pass': True}
+18:39:20 shift cheetah-run closed loop: {'fp32_before': {'ret': 870.8589524105191, 'success': 0.0, 'steps': 500, 'ms_per_step': 30.46768045425415}, 'detshift': {'ret': 760.2284953724593, 'success': 0.0, 'steps': 500, 'ms_per_step': 42.281235694885254}, 'detshift_repeat': {'ret': 760.2284953724593, 'success': 0.0, 'steps': 500, 'ms_per_step': 42.45461845397949}, 'fp32_after': {'ret': 870.8589524105191, 'success': 0.0, 'steps': 500, 'ms_per_step': 30.141942977905273}, 'detshift_repeat_identical': True, 'restore_identical': True}
+18:39:20 SHIFT PASS
+18:39:32 bf16p mw-push: {'dyn_rel_l2_vs_fp32': 0.00954597257077694, 'rew_rel_l2_vs_fp32': 0.0062559242360293865, 'reward_value_maxabs': 0.1923046112060547, 'methods_restored': True, 'fp32_after_restore_equal': True, 'dtype_out': 'torch.float32', 'closed_loop': {'fp32_before': {'ret': 1800.0457267984748, 'success': 1.0, 'steps': 100, 'ms_per_step': 35.63875675201416}, 'bf16p': {'ret': 1799.0947775319219, 'success': 1.0, 'steps': 100, 'ms_per_step': 45.310120582580566}, 'fp32_after': {'ret': 1800.0457267984748, 'success': 1.0, 'steps': 100, 'ms_per_step': 32.11757183074951}, 'restore_identical': True}, 'pass': True}
+18:40:18 bf16p cheetah-run: {'dyn_rel_l2_vs_fp32': 0.005970349535346031, 'rew_rel_l2_vs_fp32': 0.0038101081736385822, 'reward_value_maxabs': 0.021935701370239258, 'methods_restored': True, 'fp32_after_restore_equal': True, 'dtype_out': 'torch.float32', 'closed_loop': {'fp32_before': {'ret': 875.0102592892945, 'success': 0.0, 'steps': 500, 'ms_per_step': 30.86882448196411}, 'bf16p': {'ret': 580.9275243796292, 'success': 0.0, 'steps': 500, 'ms_per_step': 30.8840069770813}, 'fp32_after': {'ret': 875.0102592892945, 'success': 0.0, 'steps': 500, 'ms_per_step': 30.624247550964355}, 'restore_identical': True}, 'pass': True}
+18:40:18 BF16P PASS
+18:40:18 E17_CHECKS {"paths": true, "shift": true, "bf16p": true}

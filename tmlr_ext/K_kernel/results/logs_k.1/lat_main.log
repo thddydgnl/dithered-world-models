@@ -1,0 +1,19 @@
+MPS stopped
+=== 2026-11-21T19:18:46Z latency main start; mps: 4770 bash -c pgrep -af "runner.py" | grep -v pgrep | head -3; cat /workspace/atm/out/DRIVER_STATE; setsid nohup bash /workspace/atm/code/run_lat.sh main > /workspace/atm/logs/lat_main.log 2>&1 < /dev/null & sleep 15; head -5 /workspace/atm/logs/lat_main.log; pgrep -af nvidia-cuda-mps | head -2; bash /workspace/atm/code/status.sh
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+19:19:02 built 18 graphs in 6s; allocated 2.4 GiB
+19:20:44 round 0 done in 102s (total 109s)
+19:22:27 round 1 done in 103s (total 212s)
+19:24:10 round 2 done in 103s (total 315s)
+19:25:53 round 3 done in 103s (total 418s)
+19:27:36 round 4 done in 103s (total 521s)
+19:29:19 round 5 done in 103s (total 624s)
+19:31:02 round 6 done in 104s (total 727s)
+19:32:45 round 7 done in 103s (total 830s)
+19:34:28 round 8 done in 103s (total 933s)
+19:36:11 round 9 done in 103s (total 1036s)
+19:36:11 E17_LAT_MAIN_DONE
+=== 2026-11-21T19:36:12Z latency main end rc 0

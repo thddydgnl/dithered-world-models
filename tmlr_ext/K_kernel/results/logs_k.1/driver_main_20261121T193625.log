@@ -1,0 +1,2162 @@
+MPS started
+pre.jsonl: 336 jobs, 1200 episodes
+pcstats.jsonl: 12 jobs, 12 episodes
+calib.jsonl: 60 jobs, 60 episodes
+main.jsonl: 936 jobs, 4680 episodes
+=== 2026-11-21T19:36:25Z calib.jsonl pass 1 workers 8
+60 jobs in manifest, 60 done, 0 given up after 3 attempts, running 0 with 8 workers
+RUNNER_DONE
+=== 2026-11-21T19:36:25Z calib.jsonl pass 1 done; runnable jobs left: 0
+=== 2026-11-21T19:36:25Z pcstats.jsonl pass 1 workers 8
+12 jobs in manifest, 12 done, 0 given up after 3 attempts, running 0 with 8 workers
+RUNNER_DONE
+=== 2026-11-21T19:36:25Z pcstats.jsonl pass 1 done; runnable jobs left: 0
+=== 2026-11-21T19:36:25Z main.jsonl pass 1 workers 8
+936 jobs in manifest, 216 done, 0 given up after 3 attempts, running 720 with 8 workers
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+      96s [1/720] OK  eval_cheetah-run_s1_intk5_det_c00 (94s) ret    568.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+      96s [2/720] OK  eval_cheetah-run_s1_intk5_shiter_c00 (94s) ret    738.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+      96s [3/720] OK  eval_cheetah-run_s1_intpc3_det_c00 (93s) ret    473.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+      98s [4/720] OK  eval_cheetah-run_s1_intpc2_shiter_c00 (95s) ret    124.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+      99s [5/720] OK  eval_cheetah-run_s1_intpc2_det_c00 (96s) ret    141.3 succ 0/5
+      99s [6/720] OK  eval_cheetah-run_s1_intpc3_shiter_c00 (94s) ret    523.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     100s [7/720] OK  eval_cheetah-run_s1_bf16p_none_c00 (97s) ret    837.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     108s [8/720] OK  eval_cheetah-run_s1_intk5_detshift_c00 (106s) ret    753.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     187s [9/720] OK  eval_cheetah-run_s2_intk5_det_c00 (91s) ret    497.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     188s [10/720] OK  eval_cheetah-run_s2_intpc2_det_c00 (89s) ret     82.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     188s [11/720] OK  eval_cheetah-run_s2_intk5_shiter_c00 (93s) ret    822.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     190s [12/720] OK  eval_cheetah-run_s2_intpc3_det_c00 (91s) ret     91.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     191s [13/720] OK  eval_cheetah-run_s2_bf16p_none_c00 (93s) ret    771.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     192s [14/720] OK  eval_cheetah-run_s2_intpc2_shiter_c00 (93s) ret    187.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     200s [15/720] OK  eval_cheetah-run_s2_intpc3_shiter_c00 (92s) ret    517.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     202s [16/720] OK  eval_cheetah-run_s2_intk5_detshift_c00 (106s) ret    844.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     275s [17/720] OK  eval_cheetah-run_s3_intk5_det_c00 (88s) ret    496.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     278s [18/720] OK  eval_cheetah-run_s3_intk5_shiter_c00 (90s) ret    846.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     282s [19/720] OK  eval_cheetah-run_s3_intpc2_det_c00 (91s) ret    132.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     283s [20/720] OK  eval_cheetah-run_s3_intpc2_shiter_c00 (91s) ret    271.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     284s [21/720] OK  eval_cheetah-run_s3_bf16p_none_c00 (94s) ret    856.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     291s [22/720] OK  eval_cheetah-run_s3_intpc3_det_c00 (91s) ret    319.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     292s [23/720] OK  eval_cheetah-run_s3_intk5_detshift_c00 (104s) ret    837.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     293s [24/720] OK  eval_cheetah-run_s3_intpc3_shiter_c00 (91s) ret    608.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     366s [25/720] OK  eval_walker-walk_s1_intk3_det_c00 (91s) ret    443.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     370s [26/720] OK  eval_walker-walk_s1_intk3_shiter_c00 (92s) ret    190.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     375s [27/720] OK  eval_walker-walk_s1_intpc2_det_c00 (91s) ret    586.7 succ 0/5
+     375s [28/720] OK  eval_walker-walk_s1_bf16p_none_c00 (92s) ret    978.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     382s [29/720] OK  eval_walker-walk_s1_intpc2_shiter_c00 (91s) ret    163.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     384s [30/720] OK  eval_walker-walk_s1_intpc3_det_c00 (92s) ret    869.6 succ 0/5
+     384s [31/720] OK  eval_walker-walk_s1_intk3_detshift_c00 (102s) ret    238.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     385s [32/720] OK  eval_walker-walk_s1_intpc3_shiter_c00 (92s) ret    956.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     458s [33/720] OK  eval_walker-walk_s2_intk3_det_c00 (92s) ret    450.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     462s [34/720] OK  eval_walker-walk_s2_intk3_shiter_c00 (92s) ret    206.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     468s [35/720] OK  eval_walker-walk_s2_bf16p_none_c00 (93s) ret    979.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     472s [36/720] OK  eval_walker-walk_s2_intpc2_det_c00 (90s) ret    731.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     476s [37/720] OK  eval_walker-walk_s2_intpc3_shiter_c00 (91s) ret    948.1 succ 0/5
+     476s [38/720] OK  eval_walker-walk_s2_intpc2_shiter_c00 (92s) ret    340.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     477s [39/720] OK  eval_walker-walk_s2_intk3_detshift_c00 (102s) ret    343.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     478s [40/720] OK  eval_walker-walk_s2_intpc3_det_c00 (94s) ret    956.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     551s [41/720] OK  eval_walker-walk_s3_intk3_det_c00 (93s) ret    356.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     553s [42/720] OK  eval_walker-walk_s3_intk3_shiter_c00 (91s) ret    222.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     564s [43/720] OK  eval_walker-walk_s3_bf16p_none_c00 (91s) ret    982.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     566s [44/720] OK  eval_walker-walk_s3_intpc2_det_c00 (90s) ret    453.4 succ 0/5
+     566s [45/720] OK  eval_walker-walk_s3_intpc3_det_c00 (89s) ret    922.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     570s [46/720] OK  eval_walker-walk_s3_intk3_detshift_c00 (102s) ret    275.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     570s [47/720] OK  eval_walker-walk_s3_intpc2_shiter_c00 (94s) ret    405.0 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     572s [48/720] OK  eval_walker-walk_s3_intpc3_shiter_c00 (94s) ret    891.4 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     589s [49/720] OK  eval_mw-push_s1_intk3_det_c00 (19s) ret    414.3 succ 0/5
+     592s [50/720] OK  eval_mw-push_s1_intk3_shiter_c00 (20s) ret   1745.7 succ 4/5
+     610s [51/720] OK  eval_mw-push_s1_intk3_detshift_c00 (20s) ret   1447.8 succ 4/5
+     611s [52/720] OK  eval_mw-push_s1_bf16p_none_c00 (19s) ret   1794.2 succ 5/5
+     628s [53/720] OK  eval_mw-push_s1_intpc2_det_c00 (18s) ret   1326.6 succ 3/5
+     631s [54/720] OK  eval_mw-push_s1_intpc2_shiter_c00 (20s) ret   1782.4 succ 5/5
+     642s [55/720] OK  eval_quadruped-walk_s1_bf16p_none_c00 (91s) ret    971.5 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+     642s [56/720] OK  eval_quadruped-walk_s2_bf16p_none_c00 (89s) ret    959.9 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     647s [57/720] OK  eval_mw-push_s1_intpc3_det_c00 (19s) ret   1779.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     651s [58/720] OK  eval_mw-push_s1_intpc3_shiter_c00 (19s) ret   1788.2 succ 5/5
+     651s [59/720] OK  eval_quadruped-walk_s3_bf16p_none_c00 (87s) ret    966.5 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+     651s [60/720] OK  eval_finger-turn-hard_s2_bf16p_none_c00 (85s) ret    980.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     653s [61/720] OK  eval_finger-turn-hard_s1_bf16p_none_c00 (87s) ret    981.4 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     655s [62/720] OK  eval_finger-turn-hard_s3_bf16p_none_c00 (86s) ret    983.2 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+     661s [63/720] OK  eval_mw-push_s2_intk3_det_c00 (19s) ret   1236.8 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+     661s [64/720] OK  eval_mw-push_s2_intk3_shiter_c00 (19s) ret   1770.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     668s [65/720] OK  eval_mw-push_s2_intk3_detshift_c00 (21s) ret   1780.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     670s [66/720] OK  eval_mw-push_s2_intpc2_shiter_c00 (19s) ret   1494.0 succ 4/5
+     670s [67/720] OK  eval_mw-push_s2_bf16p_none_c00 (19s) ret   1795.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     670s [68/720] OK  eval_mw-push_s2_intpc2_det_c00 (20s) ret   1767.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     672s [69/720] OK  eval_mw-push_s2_intpc3_det_c00 (19s) ret   1778.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     674s [70/720] OK  eval_mw-push_s2_intpc3_shiter_c00 (19s) ret   1786.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     679s [71/720] OK  eval_mw-push_s3_intk3_det_c00 (18s) ret   1437.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+     680s [72/720] OK  eval_mw-push_s3_intk3_shiter_c00 (19s) ret   1759.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     689s [73/720] OK  eval_mw-push_s3_intk3_detshift_c00 (20s) ret   1776.4 succ 5/5
+     689s [74/720] OK  eval_mw-push_s3_intpc2_det_c00 (19s) ret   1741.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     689s [75/720] OK  eval_mw-push_s3_bf16p_none_c00 (19s) ret   1757.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     690s [76/720] OK  eval_mw-push_s3_intpc2_shiter_c00 (20s) ret   1495.3 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+     691s [77/720] OK  eval_mw-push_s3_intpc3_det_c00 (19s) ret   1751.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     693s [78/720] OK  eval_mw-push_s3_intpc3_shiter_c00 (19s) ret   1785.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     697s [79/720] OK  eval_mw-pick-place_s1_intk3_det_c00 (18s) ret   1212.3 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+     699s [80/720] OK  eval_mw-pick-place_s1_intk3_shiter_c00 (19s) ret   1128.0 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+     708s [81/720] OK  eval_mw-pick-place_s1_intpc2_det_c00 (19s) ret   1207.6 succ 4/5
+     708s [82/720] OK  eval_mw-pick-place_s1_bf16p_none_c00 (19s) ret   1682.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     709s [83/720] OK  eval_mw-pick-place_s1_intpc3_det_c00 (18s) ret   1659.4 succ 5/5
+     709s [84/720] OK  eval_mw-pick-place_s1_intpc2_shiter_c00 (19s) ret   1387.8 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     710s [85/720] OK  eval_mw-pick-place_s1_intk3_detshift_c00 (22s) ret   1351.3 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+     712s [86/720] OK  eval_mw-pick-place_s1_intpc3_shiter_c00 (19s) ret   1665.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     716s [87/720] OK  eval_mw-pick-place_s2_intk3_det_c00 (19s) ret   1011.4 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+     718s [88/720] OK  eval_mw-pick-place_s2_intk3_shiter_c00 (19s) ret   1649.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     727s [89/720] OK  eval_mw-pick-place_s2_bf16p_none_c00 (19s) ret   1680.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     727s [90/720] OK  eval_mw-pick-place_s2_intpc2_det_c00 (18s) ret   1114.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+     728s [91/720] OK  eval_mw-pick-place_s2_intpc2_shiter_c00 (19s) ret   1629.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     728s [92/720] OK  eval_mw-pick-place_s2_intk3_detshift_c00 (20s) ret   1661.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     729s [93/720] OK  eval_mw-pick-place_s2_intpc3_det_c00 (19s) ret   1657.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     730s [94/720] OK  eval_mw-pick-place_s2_intpc3_shiter_c00 (19s) ret   1668.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     735s [95/720] OK  eval_mw-pick-place_s3_intk3_det_c00 (20s) ret   1594.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     737s [96/720] OK  eval_mw-pick-place_s3_intk3_shiter_c00 (19s) ret   1651.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     746s [97/720] OK  eval_mw-pick-place_s3_bf16p_none_c00 (19s) ret   1675.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     747s [98/720] OK  eval_mw-pick-place_s3_intpc2_det_c00 (19s) ret   1622.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     747s [99/720] OK  eval_mw-pick-place_s3_intpc2_shiter_c00 (19s) ret   1502.8 succ 4/5
+     747s [100/720] OK  eval_mw-pick-place_s3_intk3_detshift_c00 (20s) ret   1654.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     748s [101/720] OK  eval_mw-pick-place_s3_intpc3_det_c00 (19s) ret   1079.3 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+     749s [102/720] OK  eval_mw-pick-place_s3_intpc3_shiter_c00 (19s) ret   1659.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     754s [103/720] OK  eval_mw-door-open_s1_bf16p_none_c00 (19s) ret   1614.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     756s [104/720] OK  eval_mw-door-open_s2_bf16p_none_c00 (19s) ret   1615.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     764s [105/720] OK  eval_mw-door-open_s3_bf16p_none_c00 (18s) ret   1590.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     765s [106/720] OK  eval_mw-drawer-open_s2_bf16p_none_c00 (17s) ret   1821.8 succ 5/5
+     765s [107/720] OK  eval_mw-drawer-open_s3_bf16p_none_c00 (18s) ret   1822.6 succ 5/5
+     765s [108/720] OK  eval_mw-drawer-open_s1_bf16p_none_c00 (18s) ret   1821.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+     766s [109/720] OK  eval_mw-button-press-topdown_s1_bf16p_none_c00 (18s) ret   1324.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     767s [110/720] OK  eval_mw-button-press-topdown_s2_bf16p_none_c00 (18s) ret   1337.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     772s [111/720] OK  eval_mw-button-press-topdown_s3_bf16p_none_c00 (18s) ret   1336.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     776s [112/720] OK  eval_mw-peg-insert-side_s1_bf16p_none_c00 (20s) ret   1620.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+     783s [113/720] OK  eval_mw-window-open_s1_bf16p_none_c00 (18s) ret   1574.4 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+     783s [114/720] OK  eval_mw-peg-insert-side_s2_bf16p_none_c00 (19s) ret   1685.2 succ 5/5
+     783s [115/720] OK  eval_mw-window-open_s2_bf16p_none_c00 (18s) ret   1567.5 succ 5/5
+     783s [116/720] OK  eval_mw-window-open_s3_bf16p_none_c00 (18s) ret   1599.2 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     784s [117/720] OK  eval_mw-sweep-into_s1_bf16p_none_c00 (17s) ret   1822.8 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+     785s [118/720] OK  eval_mw-peg-insert-side_s3_bf16p_none_c00 (20s) ret   1683.7 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+     791s [119/720] OK  eval_mw-sweep-into_s2_bf16p_none_c00 (19s) ret   1552.4 succ 4/5
+Episode length: 500
+Discount factor: 0.99
+     795s [120/720] OK  eval_mw-sweep-into_s3_bf16p_none_c00 (19s) ret   1822.0 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+     872s [121/720] OK  eval_cheetah-run_s1_intk5_det_c01 (89s) ret    564.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     875s [122/720] OK  eval_cheetah-run_s1_intk5_shiter_c01 (92s) ret    742.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     876s [123/720] OK  eval_cheetah-run_s1_bf16p_none_c01 (93s) ret    858.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     878s [124/720] OK  eval_cheetah-run_s1_intpc2_det_c01 (94s) ret    248.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     879s [125/720] OK  eval_cheetah-run_s1_intpc2_shiter_c01 (94s) ret    142.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     882s [126/720] OK  eval_cheetah-run_s1_intpc3_det_c01 (92s) ret    586.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     887s [127/720] OK  eval_cheetah-run_s1_intpc3_shiter_c01 (92s) ret    408.7 succ 0/5
+     887s [128/720] OK  eval_cheetah-run_s1_intk5_detshift_c01 (103s) ret    752.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+     961s [129/720] OK  eval_cheetah-run_s2_intk5_det_c01 (89s) ret    513.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     968s [130/720] OK  eval_cheetah-run_s2_intk5_shiter_c01 (93s) ret    835.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     970s [131/720] OK  eval_cheetah-run_s2_intpc2_det_c01 (92s) ret     89.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     972s [132/720] OK  eval_cheetah-run_s2_bf16p_none_c01 (94s) ret    914.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     974s [133/720] OK  eval_cheetah-run_s2_intpc2_shiter_c01 (91s) ret    142.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     978s [134/720] OK  eval_cheetah-run_s2_intk5_detshift_c01 (102s) ret    808.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     979s [135/720] OK  eval_cheetah-run_s2_intpc3_det_c01 (93s) ret    108.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+     980s [136/720] OK  eval_cheetah-run_s2_intpc3_shiter_c01 (93s) ret    535.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1051s [137/720] OK  eval_cheetah-run_s3_intk5_det_c01 (89s) ret    462.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1058s [138/720] OK  eval_cheetah-run_s3_intk5_shiter_c01 (90s) ret    834.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1064s [139/720] OK  eval_cheetah-run_s3_intpc2_det_c01 (90s) ret    131.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1065s [140/720] OK  eval_cheetah-run_s3_bf16p_none_c01 (93s) ret    925.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1071s [141/720] OK  eval_cheetah-run_s3_intpc3_det_c01 (92s) ret    322.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1072s [142/720] OK  eval_cheetah-run_s3_intpc2_shiter_c01 (93s) ret    190.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1073s [143/720] OK  eval_cheetah-run_s3_intpc3_shiter_c01 (93s) ret    735.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1075s [144/720] OK  eval_cheetah-run_s3_intk5_detshift_c01 (104s) ret    841.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1141s [145/720] OK  eval_walker-walk_s1_intk3_det_c01 (91s) ret    488.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1149s [146/720] OK  eval_walker-walk_s1_intk3_shiter_c01 (91s) ret    253.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1158s [147/720] OK  eval_walker-walk_s1_bf16p_none_c01 (94s) ret    986.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1164s [148/720] OK  eval_walker-walk_s1_intpc2_shiter_c01 (92s) ret    268.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1165s [149/720] OK  eval_walker-walk_s1_intpc2_det_c01 (94s) ret    896.4 succ 0/5
+    1165s [150/720] OK  eval_walker-walk_s1_intk3_detshift_c01 (101s) ret    242.0 succ 0/5
+    1165s [151/720] OK  eval_walker-walk_s1_intpc3_det_c01 (92s) ret    830.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1166s [152/720] OK  eval_walker-walk_s1_intpc3_shiter_c01 (92s) ret    939.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1231s [153/720] OK  eval_walker-walk_s2_intk3_det_c01 (90s) ret    531.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1241s [154/720] OK  eval_walker-walk_s2_intk3_shiter_c01 (92s) ret    258.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1257s [155/720] OK  eval_walker-walk_s2_intpc2_shiter_c01 (92s) ret    331.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1258s [156/720] OK  eval_walker-walk_s2_intpc2_det_c01 (94s) ret    685.5 succ 0/5
+    1258s [157/720] OK  eval_walker-walk_s2_bf16p_none_c01 (94s) ret    982.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1259s [158/720] OK  eval_walker-walk_s2_intpc3_det_c01 (94s) ret    953.7 succ 0/5
+    1259s [159/720] OK  eval_walker-walk_s2_intpc3_shiter_c01 (92s) ret    960.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1260s [160/720] OK  eval_walker-walk_s2_intk3_detshift_c01 (101s) ret    354.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1320s [161/720] OK  eval_walker-walk_s3_intk3_det_c01 (89s) ret    315.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1332s [162/720] OK  eval_walker-walk_s3_intk3_shiter_c01 (91s) ret    177.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1348s [163/720] OK  eval_walker-walk_s3_intpc2_det_c01 (90s) ret    405.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1349s [164/720] OK  eval_walker-walk_s3_intpc3_det_c01 (90s) ret    925.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1351s [165/720] OK  eval_walker-walk_s3_intpc3_shiter_c01 (91s) ret    881.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1352s [166/720] OK  eval_walker-walk_s3_intpc2_shiter_c01 (93s) ret    356.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1353s [167/720] OK  eval_walker-walk_s3_bf16p_none_c01 (95s) ret    985.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    1358s [168/720] OK  eval_walker-walk_s3_intk3_detshift_c01 (101s) ret    303.5 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    1373s [169/720] OK  eval_mw-push_s1_intk3_det_c01 (20s) ret   1114.8 succ 3/5
+    1377s [170/720] OK  eval_mw-push_s1_intk3_shiter_c01 (19s) ret   1762.7 succ 5/5
+    1396s [171/720] OK  eval_mw-push_s1_bf16p_none_c01 (19s) ret   1791.2 succ 5/5
+    1398s [172/720] OK  eval_mw-push_s1_intk3_detshift_c01 (25s) ret   1772.1 succ 5/5
+    1411s [173/720] OK  eval_quadruped-walk_s1_bf16p_none_c01 (91s) ret    980.6 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    1416s [174/720] OK  eval_mw-push_s1_intpc2_det_c01 (20s) ret   1668.2 succ 5/5
+    1418s [175/720] OK  eval_mw-push_s1_intpc2_shiter_c01 (20s) ret   1776.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1422s [176/720] OK  eval_quadruped-walk_s2_bf16p_none_c01 (90s) ret    976.2 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    1432s [177/720] OK  eval_mw-push_s1_intpc3_det_c01 (21s) ret   1777.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1437s [178/720] OK  eval_mw-push_s1_intpc3_shiter_c01 (21s) ret   1778.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1437s [179/720] OK  eval_mw-push_s2_intk3_det_c01 (20s) ret   1035.3 succ 2/5
+    1438s [180/720] OK  eval_finger-turn-hard_s1_bf16p_none_c01 (89s) ret    968.8 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    1439s [181/720] OK  eval_quadruped-walk_s3_bf16p_none_c01 (91s) ret    976.2 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    1440s [182/720] OK  eval_finger-turn-hard_s2_bf16p_none_c01 (89s) ret    982.8 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    1442s [183/720] OK  eval_finger-turn-hard_s3_bf16p_none_c01 (90s) ret    981.8 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    1443s [184/720] OK  eval_mw-push_s2_intk3_shiter_c01 (21s) ret   1773.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1455s [185/720] OK  eval_mw-push_s2_bf16p_none_c01 (18s) ret   1789.6 succ 5/5
+    1455s [186/720] OK  eval_mw-push_s2_intk3_detshift_c01 (23s) ret   1774.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    1457s [187/720] OK  eval_mw-push_s2_intpc2_shiter_c01 (19s) ret   1775.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1458s [188/720] OK  eval_mw-push_s2_intpc2_det_c01 (21s) ret   1747.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1460s [189/720] OK  eval_mw-push_s2_intpc3_det_c01 (21s) ret   1781.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1461s [190/720] OK  eval_mw-push_s2_intpc3_shiter_c01 (21s) ret   1781.4 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    1462s [191/720] OK  eval_mw-push_s3_intk3_det_c01 (20s) ret   1483.8 succ 4/5
+    1462s [192/720] OK  eval_mw-push_s3_intk3_shiter_c01 (20s) ret   1772.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    1475s [193/720] OK  eval_mw-push_s3_bf16p_none_c01 (20s) ret   1788.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1477s [194/720] OK  eval_mw-push_s3_intk3_detshift_c01 (22s) ret   1772.6 succ 5/5
+    1477s [195/720] OK  eval_mw-push_s3_intpc2_det_c01 (20s) ret   1552.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    1479s [196/720] OK  eval_mw-push_s3_intpc2_shiter_c01 (21s) ret   1773.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1480s [197/720] OK  eval_mw-push_s3_intpc3_det_c01 (20s) ret   1720.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1481s [198/720] OK  eval_mw-push_s3_intpc3_shiter_c01 (20s) ret   1782.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1482s [199/720] OK  eval_mw-pick-place_s1_intk3_shiter_c01 (20s) ret   1524.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1483s [200/720] OK  eval_mw-pick-place_s1_intk3_det_c01 (20s) ret    494.3 succ 1/5
+Episode length: 100
+Discount factor: 0.95
+    1496s [201/720] OK  eval_mw-pick-place_s1_intk3_detshift_c01 (21s) ret   1327.3 succ 5/5
+    1496s [202/720] OK  eval_mw-pick-place_s1_bf16p_none_c01 (19s) ret   1675.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    1496s [203/720] OK  eval_mw-pick-place_s1_intpc2_det_c01 (19s) ret    978.3 succ 1/5
+Episode length: 100
+Discount factor: 0.95
+    1498s [204/720] OK  eval_mw-pick-place_s1_intpc2_shiter_c01 (20s) ret   1321.2 succ 3/5
+    1499s [205/720] OK  eval_mw-pick-place_s1_intpc3_det_c01 (19s) ret   1585.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    1500s [206/720] OK  eval_mw-pick-place_s1_intpc3_shiter_c01 (19s) ret   1662.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1501s [207/720] OK  eval_mw-pick-place_s2_intk3_det_c01 (19s) ret    996.2 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    1503s [208/720] OK  eval_mw-pick-place_s2_intk3_shiter_c01 (20s) ret   1487.8 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    1515s [209/720] OK  eval_mw-pick-place_s2_bf16p_none_c01 (19s) ret   1679.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1515s [210/720] OK  eval_mw-pick-place_s2_intpc2_det_c01 (19s) ret    953.1 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    1517s [211/720] OK  eval_mw-pick-place_s2_intk3_detshift_c01 (21s) ret   1649.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1518s [212/720] OK  eval_mw-pick-place_s2_intpc3_det_c01 (19s) ret   1661.5 succ 5/5
+    1518s [213/720] OK  eval_mw-pick-place_s2_intpc2_shiter_c01 (19s) ret   1651.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    1519s [214/720] OK  eval_mw-pick-place_s2_intpc3_shiter_c01 (19s) ret   1664.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1520s [215/720] OK  eval_mw-pick-place_s3_intk3_det_c01 (19s) ret   1558.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1522s [216/720] OK  eval_mw-pick-place_s3_intk3_shiter_c01 (19s) ret   1647.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1535s [217/720] OK  eval_mw-pick-place_s3_bf16p_none_c01 (20s) ret   1666.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1535s [218/720] OK  eval_mw-pick-place_s3_intpc2_det_c01 (18s) ret   1221.7 succ 3/5
+    1535s [219/720] OK  eval_mw-pick-place_s3_intk3_detshift_c01 (21s) ret   1647.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    1536s [220/720] OK  eval_mw-pick-place_s3_intpc2_shiter_c01 (19s) ret   1654.4 succ 5/5
+    1537s [221/720] OK  eval_mw-pick-place_s3_intpc3_det_c01 (19s) ret   1521.0 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    1538s [222/720] OK  eval_mw-pick-place_s3_intpc3_shiter_c01 (19s) ret   1656.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1539s [223/720] OK  eval_mw-door-open_s1_bf16p_none_c01 (19s) ret   1560.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1541s [224/720] OK  eval_mw-door-open_s2_bf16p_none_c01 (19s) ret   1602.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1553s [225/720] OK  eval_mw-drawer-open_s2_bf16p_none_c01 (18s) ret   1819.5 succ 5/5
+    1553s [226/720] OK  eval_mw-drawer-open_s1_bf16p_none_c01 (18s) ret   1823.1 succ 5/5
+    1554s [227/720] OK  eval_mw-door-open_s3_bf16p_none_c01 (19s) ret   1596.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    1554s [228/720] OK  eval_mw-button-press-topdown_s1_bf16p_none_c01 (18s) ret   1335.7 succ 5/5
+    1554s [229/720] OK  eval_mw-drawer-open_s3_bf16p_none_c01 (18s) ret   1823.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    1556s [230/720] OK  eval_mw-button-press-topdown_s2_bf16p_none_c01 (17s) ret   1341.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1557s [231/720] OK  eval_mw-button-press-topdown_s3_bf16p_none_c01 (18s) ret   1341.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1560s [232/720] OK  eval_mw-peg-insert-side_s1_bf16p_none_c01 (20s) ret   1612.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    1571s [233/720] OK  eval_mw-window-open_s1_bf16p_none_c01 (17s) ret   1555.4 succ 4/5
+Episode length: 500
+Discount factor: 0.99
+    1572s [234/720] OK  eval_mw-window-open_s2_bf16p_none_c01 (18s) ret   1579.2 succ 5/5
+    1572s [235/720] OK  eval_mw-peg-insert-side_s2_bf16p_none_c01 (19s) ret   1622.2 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1573s [236/720] OK  eval_mw-window-open_s3_bf16p_none_c01 (19s) ret   1609.7 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    1574s [237/720] OK  eval_mw-peg-insert-side_s3_bf16p_none_c01 (21s) ret   1657.9 succ 5/5
+    1574s [238/720] OK  eval_mw-sweep-into_s2_bf16p_none_c01 (18s) ret   1814.2 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    1575s [239/720] OK  eval_mw-sweep-into_s1_bf16p_none_c01 (19s) ret   1818.7 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1578s [240/720] OK  eval_mw-sweep-into_s3_bf16p_none_c01 (18s) ret   1785.4 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    1662s [241/720] OK  eval_cheetah-run_s1_intk5_det_c02 (91s) ret    574.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1663s [242/720] OK  eval_cheetah-run_s1_intk5_shiter_c02 (90s) ret    696.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1665s [243/720] OK  eval_cheetah-run_s1_intpc2_det_c02 (91s) ret    210.9 succ 0/5
+    1666s [244/720] OK  eval_cheetah-run_s1_intpc3_det_c02 (91s) ret    466.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1668s [245/720] OK  eval_cheetah-run_s1_bf16p_none_c02 (94s) ret    841.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1669s [246/720] OK  eval_cheetah-run_s1_intpc2_shiter_c02 (94s) ret    165.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1670s [247/720] OK  eval_cheetah-run_s1_intpc3_shiter_c02 (91s) ret    463.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1676s [248/720] OK  eval_cheetah-run_s1_intk5_detshift_c02 (103s) ret    748.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1752s [249/720] OK  eval_cheetah-run_s2_intk5_det_c02 (90s) ret    526.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1755s [250/720] OK  eval_cheetah-run_s2_intk5_shiter_c02 (92s) ret    844.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1759s [251/720] OK  eval_cheetah-run_s2_bf16p_none_c02 (93s) ret    912.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1762s [252/720] OK  eval_cheetah-run_s2_intpc2_det_c02 (94s) ret     92.5 succ 0/5
+    1762s [253/720] OK  eval_cheetah-run_s2_intpc2_shiter_c02 (94s) ret    194.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1762s [254/720] OK  eval_cheetah-run_s2_intpc3_det_c02 (93s) ret    124.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1767s [255/720] OK  eval_cheetah-run_s2_intpc3_shiter_c02 (91s) ret    593.9 succ 0/5
+    1767s [256/720] OK  eval_cheetah-run_s2_intk5_detshift_c02 (102s) ret    834.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1843s [257/720] OK  eval_cheetah-run_s3_intk5_det_c02 (91s) ret    519.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1848s [258/720] OK  eval_cheetah-run_s3_intk5_shiter_c02 (93s) ret    844.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1853s [259/720] OK  eval_cheetah-run_s3_intpc2_det_c02 (91s) ret    126.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1857s [260/720] OK  eval_cheetah-run_s3_intpc3_det_c02 (90s) ret    272.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1858s [261/720] OK  eval_cheetah-run_s3_intpc2_shiter_c02 (95s) ret    195.0 succ 0/5
+    1858s [262/720] OK  eval_cheetah-run_s3_bf16p_none_c02 (96s) ret    926.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    1859s [263/720] OK  eval_cheetah-run_s3_intpc3_shiter_c02 (91s) ret    653.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1862s [264/720] OK  eval_cheetah-run_s3_intk5_detshift_c02 (104s) ret    850.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1933s [265/720] OK  eval_walker-walk_s1_intk3_det_c02 (90s) ret    533.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1941s [266/720] OK  eval_walker-walk_s1_intk3_shiter_c02 (93s) ret    142.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1951s [267/720] OK  eval_walker-walk_s1_intpc2_det_c02 (94s) ret    601.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1952s [268/720] OK  eval_walker-walk_s1_bf16p_none_c02 (95s) ret    983.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1953s [269/720] OK  eval_walker-walk_s1_intpc3_det_c02 (94s) ret    791.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1954s [270/720] OK  eval_walker-walk_s1_intpc2_shiter_c02 (96s) ret    230.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1960s [271/720] OK  eval_walker-walk_s1_intk3_detshift_c02 (107s) ret    191.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    1961s [272/720] OK  eval_walker-walk_s1_intpc3_shiter_c02 (98s) ret    936.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2025s [273/720] OK  eval_walker-walk_s2_intk3_det_c02 (93s) ret    411.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2035s [274/720] OK  eval_walker-walk_s2_intk3_shiter_c02 (94s) ret    251.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2046s [275/720] OK  eval_walker-walk_s2_intpc2_det_c02 (94s) ret    628.0 succ 0/5
+    2047s [276/720] OK  eval_walker-walk_s2_bf16p_none_c02 (94s) ret    982.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2049s [277/720] OK  eval_walker-walk_s2_intpc2_shiter_c02 (94s) ret    460.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2053s [278/720] OK  eval_walker-walk_s2_intpc3_det_c02 (93s) ret    971.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2053s [279/720] OK  eval_walker-walk_s2_intpc3_shiter_c02 (92s) ret    963.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2056s [280/720] OK  eval_walker-walk_s2_intk3_detshift_c02 (105s) ret    347.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2116s [281/720] OK  eval_walker-walk_s3_intk3_det_c02 (91s) ret    366.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2128s [282/720] OK  eval_walker-walk_s3_intk3_shiter_c02 (93s) ret    172.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2140s [283/720] OK  eval_walker-walk_s3_bf16p_none_c02 (94s) ret    984.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2141s [284/720] OK  eval_walker-walk_s3_intpc2_det_c02 (92s) ret    386.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2145s [285/720] OK  eval_walker-walk_s3_intpc2_shiter_c02 (92s) ret    370.3 succ 0/5
+    2145s [286/720] OK  eval_walker-walk_s3_intpc3_det_c02 (91s) ret    944.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2148s [287/720] OK  eval_walker-walk_s3_intk3_detshift_c02 (102s) ret    312.5 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2149s [288/720] OK  eval_walker-walk_s3_intpc3_shiter_c02 (93s) ret    910.1 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    2167s [289/720] OK  eval_mw-push_s1_intk3_det_c02 (19s) ret   1037.7 succ 2/5
+    2168s [290/720] OK  eval_mw-push_s1_intk3_shiter_c02 (19s) ret   1598.2 succ 4/5
+    2186s [291/720] OK  eval_mw-push_s1_bf16p_none_c02 (19s) ret   1797.9 succ 5/5
+    2188s [292/720] OK  eval_mw-push_s1_intk3_detshift_c02 (20s) ret   1786.1 succ 5/5
+    2205s [293/720] OK  eval_mw-push_s1_intpc2_det_c02 (19s) ret   1772.0 succ 5/5
+    2207s [294/720] OK  eval_quadruped-walk_s1_bf16p_none_c02 (91s) ret    978.9 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2207s [295/720] OK  eval_mw-push_s1_intpc2_shiter_c02 (20s) ret   1774.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2217s [296/720] OK  eval_quadruped-walk_s2_bf16p_none_c02 (89s) ret    976.0 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2224s [297/720] OK  eval_mw-push_s1_intpc3_det_c02 (19s) ret   1789.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2226s [298/720] OK  eval_mw-push_s1_intpc3_shiter_c02 (19s) ret   1791.3 succ 5/5
+    2226s [299/720] OK  eval_mw-push_s2_intk3_det_c02 (19s) ret   1213.8 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2227s [300/720] OK  eval_finger-turn-hard_s1_bf16p_none_c02 (86s) ret    980.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    2229s [301/720] OK  eval_quadruped-walk_s3_bf16p_none_c02 (89s) ret    968.4 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2230s [302/720] OK  eval_finger-turn-hard_s3_bf16p_none_c02 (85s) ret    987.6 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    2231s [303/720] OK  eval_finger-turn-hard_s2_bf16p_none_c02 (87s) ret    986.2 succ 0/5
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+    2236s [304/720] OK  eval_mw-push_s2_intk3_shiter_c02 (19s) ret   1786.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2244s [305/720] OK  eval_mw-push_s2_intpc2_det_c02 (18s) ret   1445.4 succ 3/5
+    2244s [306/720] OK  eval_mw-push_s2_intk3_detshift_c02 (21s) ret   1765.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2245s [307/720] OK  eval_mw-push_s2_bf16p_none_c02 (19s) ret   1796.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2247s [308/720] OK  eval_mw-push_s2_intpc2_shiter_c02 (20s) ret   1778.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2248s [309/720] OK  eval_mw-push_s2_intpc3_det_c02 (19s) ret   1786.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2250s [310/720] OK  eval_mw-push_s2_intpc3_shiter_c02 (20s) ret   1790.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2250s [311/720] OK  eval_mw-push_s3_intk3_det_c02 (19s) ret   1572.3 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2255s [312/720] OK  eval_mw-push_s3_intk3_shiter_c02 (19s) ret   1635.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2263s [313/720] OK  eval_mw-push_s3_intpc2_det_c02 (19s) ret   1759.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2264s [314/720] OK  eval_mw-push_s3_bf16p_none_c02 (20s) ret   1731.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2265s [315/720] OK  eval_mw-push_s3_intk3_detshift_c02 (21s) ret   1781.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2265s [316/720] OK  eval_mw-push_s3_intpc2_shiter_c02 (19s) ret   1480.0 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2267s [317/720] OK  eval_mw-push_s3_intpc3_det_c02 (19s) ret   1586.5 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2269s [318/720] OK  eval_mw-pick-place_s1_intk3_det_c02 (19s) ret    846.2 succ 2/5
+    2269s [319/720] OK  eval_mw-push_s3_intpc3_shiter_c02 (20s) ret   1782.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2273s [320/720] OK  eval_mw-pick-place_s1_intk3_shiter_c02 (19s) ret    877.6 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    2283s [321/720] OK  eval_mw-pick-place_s1_bf16p_none_c02 (19s) ret   1703.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2284s [322/720] OK  eval_mw-pick-place_s1_intpc2_det_c02 (19s) ret    870.5 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    2284s [323/720] OK  eval_mw-pick-place_s1_intpc2_shiter_c02 (19s) ret   1463.1 succ 4/5
+    2285s [324/720] OK  eval_mw-pick-place_s1_intk3_detshift_c02 (21s) ret   1470.3 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2286s [325/720] OK  eval_mw-pick-place_s1_intpc3_det_c02 (18s) ret   1583.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2288s [326/720] OK  eval_mw-pick-place_s1_intpc3_shiter_c02 (19s) ret   1691.3 succ 5/5
+    2288s [327/720] OK  eval_mw-pick-place_s2_intk3_det_c02 (19s) ret    699.6 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2292s [328/720] OK  eval_mw-pick-place_s2_intk3_shiter_c02 (19s) ret   1671.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2303s [329/720] OK  eval_mw-pick-place_s2_bf16p_none_c02 (19s) ret   1704.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2304s [330/720] OK  eval_mw-pick-place_s2_intpc2_shiter_c02 (19s) ret   1112.3 succ 3/5
+    2304s [331/720] OK  eval_mw-pick-place_s2_intpc2_det_c02 (19s) ret   1294.9 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2304s [332/720] OK  eval_mw-pick-place_s2_intpc3_det_c02 (19s) ret   1388.2 succ 4/5
+    2304s [333/720] OK  eval_mw-pick-place_s2_intk3_detshift_c02 (21s) ret   1297.0 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2307s [334/720] OK  eval_mw-pick-place_s2_intpc3_shiter_c02 (19s) ret   1637.7 succ 5/5
+    2307s [335/720] OK  eval_mw-pick-place_s3_intk3_det_c02 (19s) ret    991.0 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2311s [336/720] OK  eval_mw-pick-place_s3_intk3_shiter_c02 (19s) ret   1684.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2323s [337/720] OK  eval_mw-pick-place_s3_bf16p_none_c02 (19s) ret   1698.7 succ 5/5
+    2323s [338/720] OK  eval_mw-pick-place_s3_intpc2_shiter_c02 (18s) ret   1290.2 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2323s [339/720] OK  eval_mw-pick-place_s3_intpc2_det_c02 (19s) ret   1602.3 succ 4/5
+    2323s [340/720] OK  eval_mw-pick-place_s3_intk3_detshift_c02 (20s) ret   1546.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2324s [341/720] OK  eval_mw-pick-place_s3_intpc3_det_c02 (20s) ret   1259.0 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    2325s [342/720] OK  eval_mw-pick-place_s3_intpc3_shiter_c02 (19s) ret   1693.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2325s [343/720] OK  eval_mw-door-open_s1_bf16p_none_c02 (19s) ret   1554.7 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    2330s [344/720] OK  eval_mw-door-open_s2_bf16p_none_c02 (19s) ret   1615.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2341s [345/720] OK  eval_mw-door-open_s3_bf16p_none_c02 (18s) ret   1599.3 succ 5/5
+    2341s [346/720] OK  eval_mw-drawer-open_s3_bf16p_none_c02 (18s) ret   1822.0 succ 5/5
+    2341s [347/720] OK  eval_mw-drawer-open_s1_bf16p_none_c02 (18s) ret   1821.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2342s [348/720] OK  eval_mw-drawer-open_s2_bf16p_none_c02 (19s) ret   1822.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2342s [349/720] OK  eval_mw-button-press-topdown_s1_bf16p_none_c02 (18s) ret   1329.8 succ 5/5
+    2342s [350/720] OK  eval_mw-button-press-topdown_s2_bf16p_none_c02 (17s) ret   1338.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2344s [351/720] OK  eval_mw-button-press-topdown_s3_bf16p_none_c02 (18s) ret   1339.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2350s [352/720] OK  eval_mw-peg-insert-side_s1_bf16p_none_c02 (20s) ret   1708.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    2359s [353/720] OK  eval_mw-window-open_s1_bf16p_none_c02 (18s) ret   1563.2 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    2360s [354/720] OK  eval_mw-window-open_s2_bf16p_none_c02 (19s) ret   1585.5 succ 5/5
+    2361s [355/720] OK  eval_mw-peg-insert-side_s2_bf16p_none_c02 (20s) ret   1691.4 succ 5/5
+    2361s [356/720] OK  eval_mw-peg-insert-side_s3_bf16p_none_c02 (20s) ret   1709.8 succ 5/5
+    2361s [357/720] OK  eval_mw-window-open_s3_bf16p_none_c02 (18s) ret   1599.9 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    2361s [358/720] OK  eval_mw-sweep-into_s1_bf16p_none_c02 (18s) ret   1819.4 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2361s [359/720] OK  eval_mw-sweep-into_s2_bf16p_none_c02 (17s) ret   1794.7 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2368s [360/720] OK  eval_mw-sweep-into_s3_bf16p_none_c02 (19s) ret   1816.4 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    2450s [361/720] OK  eval_cheetah-run_s1_intk5_det_c03 (91s) ret    515.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2452s [362/720] OK  eval_cheetah-run_s1_intk5_shiter_c03 (91s) ret    751.6 succ 0/5
+    2452s [363/720] OK  eval_cheetah-run_s1_intpc3_det_c03 (91s) ret    483.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2452s [364/720] OK  eval_cheetah-run_s1_intpc2_det_c03 (92s) ret    238.3 succ 0/5
+    2452s [365/720] OK  eval_cheetah-run_s1_intpc2_shiter_c03 (92s) ret    130.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2456s [366/720] OK  eval_cheetah-run_s1_bf16p_none_c03 (96s) ret    856.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2461s [367/720] OK  eval_cheetah-run_s1_intpc3_shiter_c03 (92s) ret    420.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2463s [368/720] OK  eval_cheetah-run_s1_intk5_detshift_c03 (102s) ret    743.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2541s [369/720] OK  eval_cheetah-run_s2_intk5_det_c03 (91s) ret    474.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2543s [370/720] OK  eval_cheetah-run_s2_intk5_shiter_c03 (91s) ret    842.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2543s [371/720] OK  eval_cheetah-run_s2_intpc2_det_c03 (91s) ret     94.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2545s [372/720] OK  eval_cheetah-run_s2_bf16p_none_c03 (93s) ret    914.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2549s [373/720] OK  eval_cheetah-run_s2_intpc2_shiter_c03 (93s) ret    181.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2552s [374/720] OK  eval_cheetah-run_s2_intpc3_det_c03 (92s) ret    109.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2554s [375/720] OK  eval_cheetah-run_s2_intk5_detshift_c03 (102s) ret    832.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2556s [376/720] OK  eval_cheetah-run_s2_intpc3_shiter_c03 (93s) ret    420.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2632s [377/720] OK  eval_cheetah-run_s3_intk5_det_c03 (91s) ret    498.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2634s [378/720] OK  eval_cheetah-run_s3_intk5_shiter_c03 (91s) ret    830.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2639s [379/720] OK  eval_cheetah-run_s3_bf16p_none_c03 (93s) ret    925.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2640s [380/720] OK  eval_cheetah-run_s3_intpc2_det_c03 (91s) ret    124.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2645s [381/720] OK  eval_cheetah-run_s3_intpc2_shiter_c03 (93s) ret    206.9 succ 0/5
+    2645s [382/720] OK  eval_cheetah-run_s3_intk5_detshift_c03 (102s) ret    790.4 succ 0/5
+    2645s [383/720] OK  eval_cheetah-run_s3_intpc3_det_c03 (91s) ret    225.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    2648s [384/720] OK  eval_cheetah-run_s3_intpc3_shiter_c03 (92s) ret    677.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2722s [385/720] OK  eval_walker-walk_s1_intk3_det_c03 (90s) ret    426.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2726s [386/720] OK  eval_walker-walk_s1_intk3_shiter_c03 (92s) ret    201.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2734s [387/720] OK  eval_walker-walk_s1_bf16p_none_c03 (94s) ret    987.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2736s [388/720] OK  eval_walker-walk_s1_intpc2_det_c03 (91s) ret    765.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2736s [389/720] OK  eval_walker-walk_s1_intpc3_det_c03 (91s) ret    818.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2737s [390/720] OK  eval_walker-walk_s1_intpc2_shiter_c03 (92s) ret    288.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2741s [391/720] OK  eval_walker-walk_s1_intk3_detshift_c03 (102s) ret    271.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2742s [392/720] OK  eval_walker-walk_s1_intpc3_shiter_c03 (94s) ret    970.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2813s [393/720] OK  eval_walker-walk_s2_intk3_det_c03 (91s) ret    508.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2819s [394/720] OK  eval_walker-walk_s2_intk3_shiter_c03 (93s) ret    200.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2827s [395/720] OK  eval_walker-walk_s2_intpc2_det_c03 (91s) ret    577.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2829s [396/720] OK  eval_walker-walk_s2_intpc2_shiter_c03 (92s) ret    386.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2829s [397/720] OK  eval_walker-walk_s2_bf16p_none_c03 (94s) ret    985.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2832s [398/720] OK  eval_walker-walk_s2_intpc3_det_c03 (91s) ret    945.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2835s [399/720] OK  eval_walker-walk_s2_intpc3_shiter_c03 (93s) ret    943.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2836s [400/720] OK  eval_walker-walk_s2_intk3_detshift_c03 (102s) ret    300.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2904s [401/720] OK  eval_walker-walk_s3_intk3_det_c03 (91s) ret    431.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2912s [402/720] OK  eval_walker-walk_s3_intk3_shiter_c03 (93s) ret    189.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2920s [403/720] OK  eval_walker-walk_s3_intpc2_det_c03 (91s) ret    500.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2923s [404/720] OK  eval_walker-walk_s3_bf16p_none_c03 (94s) ret    986.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2924s [405/720] OK  eval_walker-walk_s3_intpc2_shiter_c03 (92s) ret    280.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2927s [406/720] OK  eval_walker-walk_s3_intpc3_det_c03 (93s) ret    936.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    2928s [407/720] OK  eval_walker-walk_s3_intk3_detshift_c03 (100s) ret    223.8 succ 0/5
+    2928s [408/720] OK  eval_walker-walk_s3_intpc3_shiter_c03 (91s) ret    845.2 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    2946s [409/720] OK  eval_mw-push_s1_intk3_det_c03 (18s) ret    401.6 succ 0/5
+    2947s [410/720] OK  eval_mw-push_s1_intk3_shiter_c03 (19s) ret   1743.2 succ 5/5
+    2965s [411/720] OK  eval_mw-push_s1_bf16p_none_c03 (18s) ret   1793.9 succ 5/5
+    2966s [412/720] OK  eval_mw-push_s1_intk3_detshift_c03 (20s) ret   1778.3 succ 5/5
+    2984s [413/720] OK  eval_mw-push_s1_intpc2_det_c03 (19s) ret   1446.4 succ 3/5
+    2985s [414/720] OK  eval_mw-push_s1_intpc2_shiter_c03 (18s) ret   1769.8 succ 5/5
+    2994s [415/720] OK  eval_quadruped-walk_s1_bf16p_none_c03 (90s) ret    974.3 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3000s [416/720] OK  eval_quadruped-walk_s2_bf16p_none_c03 (89s) ret    974.1 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3002s [417/720] OK  eval_mw-push_s1_intpc3_det_c03 (19s) ret   1524.5 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3004s [418/720] OK  eval_mw-push_s1_intpc3_shiter_c03 (19s) ret   1780.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3009s [419/720] OK  eval_finger-turn-hard_s1_bf16p_none_c03 (87s) ret    979.2 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3011s [420/720] OK  eval_finger-turn-hard_s2_bf16p_none_c03 (87s) ret    977.2 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3011s [421/720] OK  eval_quadruped-walk_s3_bf16p_none_c03 (91s) ret    953.9 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3012s [422/720] OK  eval_mw-push_s2_intk3_det_c03 (18s) ret   1252.6 succ 3/5
+    3013s [423/720] OK  eval_finger-turn-hard_s3_bf16p_none_c03 (86s) ret    980.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3019s [424/720] OK  eval_mw-push_s2_intk3_shiter_c03 (19s) ret   1775.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3022s [425/720] OK  eval_mw-push_s2_bf16p_none_c03 (19s) ret   1795.8 succ 5/5
+    3023s [426/720] OK  eval_mw-push_s2_intk3_detshift_c03 (21s) ret   1773.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3028s [427/720] OK  eval_mw-push_s2_intpc2_det_c03 (19s) ret   1617.4 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    3030s [428/720] OK  eval_mw-push_s2_intpc3_det_c03 (19s) ret   1787.7 succ 5/5
+    3030s [429/720] OK  eval_mw-push_s2_intpc2_shiter_c03 (19s) ret   1770.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3032s [430/720] OK  eval_mw-push_s3_intk3_det_c03 (18s) ret   1761.6 succ 5/5
+    3032s [431/720] OK  eval_mw-push_s2_intpc3_shiter_c03 (20s) ret   1784.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3040s [432/720] OK  eval_mw-push_s3_intk3_shiter_c03 (20s) ret   1692.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3042s [433/720] OK  eval_mw-push_s3_bf16p_none_c03 (19s) ret   1776.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3043s [434/720] OK  eval_mw-push_s3_intk3_detshift_c03 (20s) ret   1771.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3048s [435/720] OK  eval_mw-push_s3_intpc2_det_c03 (19s) ret   1761.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3049s [436/720] OK  eval_mw-push_s3_intpc3_det_c03 (19s) ret   1785.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3049s [437/720] OK  eval_mw-push_s3_intpc2_shiter_c03 (19s) ret   1770.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3050s [438/720] OK  eval_mw-push_s3_intpc3_shiter_c03 (19s) ret   1787.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3051s [439/720] OK  eval_mw-pick-place_s1_intk3_det_c03 (19s) ret   1180.8 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    3058s [440/720] OK  eval_mw-pick-place_s1_intk3_shiter_c03 (19s) ret   1593.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3062s [441/720] OK  eval_mw-pick-place_s1_bf16p_none_c03 (19s) ret   1694.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3063s [442/720] OK  eval_mw-pick-place_s1_intk3_detshift_c03 (21s) ret   1665.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3067s [443/720] OK  eval_mw-pick-place_s1_intpc2_det_c03 (19s) ret   1128.1 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    3068s [444/720] OK  eval_mw-pick-place_s1_intpc2_shiter_c03 (19s) ret   1209.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3068s [445/720] OK  eval_mw-pick-place_s1_intpc3_det_c03 (19s) ret   1357.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3070s [446/720] OK  eval_mw-pick-place_s1_intpc3_shiter_c03 (19s) ret   1665.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3070s [447/720] OK  eval_mw-pick-place_s2_intk3_det_c03 (19s) ret   1163.9 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3078s [448/720] OK  eval_mw-pick-place_s2_intk3_shiter_c03 (19s) ret   1338.8 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3082s [449/720] OK  eval_mw-pick-place_s2_bf16p_none_c03 (19s) ret   1567.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3084s [450/720] OK  eval_mw-pick-place_s2_intk3_detshift_c03 (21s) ret   1378.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3085s [451/720] OK  eval_mw-pick-place_s2_intpc2_det_c03 (19s) ret   1127.9 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3087s [452/720] OK  eval_mw-pick-place_s2_intpc3_det_c03 (19s) ret   1678.8 succ 5/5
+    3087s [453/720] OK  eval_mw-pick-place_s2_intpc2_shiter_c03 (19s) ret   1336.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3089s [454/720] OK  eval_mw-pick-place_s2_intpc3_shiter_c03 (19s) ret   1423.7 succ 4/5
+    3089s [455/720] OK  eval_mw-pick-place_s3_intk3_det_c03 (19s) ret   1068.7 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3097s [456/720] OK  eval_mw-pick-place_s3_intk3_shiter_c03 (19s) ret   1663.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3103s [457/720] OK  eval_mw-pick-place_s3_intk3_detshift_c03 (21s) ret   1671.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3103s [458/720] OK  eval_mw-pick-place_s3_bf16p_none_c03 (19s) ret   1687.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3105s [459/720] OK  eval_mw-pick-place_s3_intpc2_det_c03 (19s) ret   1224.8 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3105s [460/720] OK  eval_mw-pick-place_s3_intpc2_shiter_c03 (19s) ret   1661.9 succ 5/5
+    3105s [461/720] OK  eval_mw-pick-place_s3_intpc3_det_c03 (19s) ret   1570.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3108s [462/720] OK  eval_mw-pick-place_s3_intpc3_shiter_c03 (19s) ret   1648.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3108s [463/720] OK  eval_mw-door-open_s1_bf16p_none_c03 (19s) ret   1582.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3116s [464/720] OK  eval_mw-door-open_s2_bf16p_none_c03 (19s) ret   1633.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3121s [465/720] OK  eval_mw-drawer-open_s1_bf16p_none_c03 (18s) ret   1822.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3121s [466/720] OK  eval_mw-door-open_s3_bf16p_none_c03 (19s) ret   1563.4 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    3123s [467/720] OK  eval_mw-drawer-open_s2_bf16p_none_c03 (18s) ret   1821.9 succ 5/5
+    3123s [468/720] OK  eval_mw-drawer-open_s3_bf16p_none_c03 (18s) ret   1822.0 succ 5/5
+    3123s [469/720] OK  eval_mw-button-press-topdown_s1_bf16p_none_c03 (18s) ret   1371.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3125s [470/720] OK  eval_mw-button-press-topdown_s2_bf16p_none_c03 (17s) ret   1376.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3126s [471/720] OK  eval_mw-button-press-topdown_s3_bf16p_none_c03 (18s) ret   1374.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3135s [472/720] OK  eval_mw-peg-insert-side_s1_bf16p_none_c03 (20s) ret   1695.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3140s [473/720] OK  eval_mw-peg-insert-side_s2_bf16p_none_c03 (19s) ret   1602.6 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3141s [474/720] OK  eval_mw-window-open_s2_bf16p_none_c03 (18s) ret   1624.7 succ 5/5
+    3141s [475/720] OK  eval_mw-window-open_s3_bf16p_none_c03 (18s) ret   1664.6 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3141s [476/720] OK  eval_mw-window-open_s1_bf16p_none_c03 (18s) ret   1641.3 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    3142s [477/720] OK  eval_mw-peg-insert-side_s3_bf16p_none_c03 (20s) ret   1507.7 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3143s [478/720] OK  eval_mw-sweep-into_s1_bf16p_none_c03 (18s) ret   1810.0 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3144s [479/720] OK  eval_mw-sweep-into_s2_bf16p_none_c03 (18s) ret   1779.0 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3155s [480/720] OK  eval_mw-sweep-into_s3_bf16p_none_c03 (19s) ret   1803.2 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3229s [481/720] OK  eval_cheetah-run_s1_intk5_det_c04 (89s) ret    545.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3233s [482/720] OK  eval_cheetah-run_s1_intpc2_det_c04 (91s) ret    377.2 succ 0/5
+    3233s [483/720] OK  eval_cheetah-run_s1_intk5_shiter_c04 (92s) ret    736.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    3235s [484/720] OK  eval_cheetah-run_s1_bf16p_none_c04 (93s) ret    839.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3235s [485/720] OK  eval_cheetah-run_s1_intpc2_shiter_c04 (92s) ret    114.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3236s [486/720] OK  eval_cheetah-run_s1_intpc3_det_c04 (92s) ret    317.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3243s [487/720] OK  eval_cheetah-run_s1_intk5_detshift_c04 (102s) ret    624.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3247s [488/720] OK  eval_cheetah-run_s1_intpc3_shiter_c04 (92s) ret    438.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3318s [489/720] OK  eval_cheetah-run_s2_intk5_det_c04 (89s) ret    580.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3324s [490/720] OK  eval_cheetah-run_s2_intk5_shiter_c04 (92s) ret    819.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3326s [491/720] OK  eval_cheetah-run_s2_intpc2_det_c04 (91s) ret     82.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3328s [492/720] OK  eval_cheetah-run_s2_bf16p_none_c04 (94s) ret    922.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3329s [493/720] OK  eval_cheetah-run_s2_intpc2_shiter_c04 (93s) ret    156.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3333s [494/720] OK  eval_cheetah-run_s2_intpc3_det_c04 (90s) ret    102.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3335s [495/720] OK  eval_cheetah-run_s2_intk5_detshift_c04 (102s) ret    850.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3339s [496/720] OK  eval_cheetah-run_s2_intpc3_shiter_c04 (92s) ret    509.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3409s [497/720] OK  eval_cheetah-run_s3_intk5_det_c04 (90s) ret    543.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3416s [498/720] OK  eval_cheetah-run_s3_intk5_shiter_c04 (92s) ret    776.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3420s [499/720] OK  eval_cheetah-run_s3_intpc2_det_c04 (91s) ret    110.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3422s [500/720] OK  eval_cheetah-run_s3_bf16p_none_c04 (94s) ret    924.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3425s [501/720] OK  eval_cheetah-run_s3_intpc2_shiter_c04 (91s) ret    242.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3426s [502/720] OK  eval_cheetah-run_s3_intpc3_det_c04 (91s) ret    284.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3428s [503/720] OK  eval_cheetah-run_s3_intk5_detshift_c04 (102s) ret    771.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3431s [504/720] OK  eval_cheetah-run_s3_intpc3_shiter_c04 (92s) ret    708.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3500s [505/720] OK  eval_walker-walk_s1_intk3_det_c04 (91s) ret    444.7 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3507s [506/720] OK  eval_walker-walk_s1_intk3_shiter_c04 (91s) ret    219.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3516s [507/720] OK  eval_walker-walk_s1_bf16p_none_c04 (94s) ret    985.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3517s [508/720] OK  eval_walker-walk_s1_intpc2_det_c04 (92s) ret    730.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3518s [509/720] OK  eval_walker-walk_s1_intpc2_shiter_c04 (92s) ret    262.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3520s [510/720] OK  eval_walker-walk_s1_intpc3_det_c04 (92s) ret    873.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3522s [511/720] OK  eval_walker-walk_s1_intk3_detshift_c04 (102s) ret    311.9 succ 0/5
+    3522s [512/720] OK  eval_walker-walk_s1_intpc3_shiter_c04 (92s) ret    967.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    3592s [513/720] OK  eval_walker-walk_s2_intk3_det_c04 (92s) ret    483.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3599s [514/720] OK  eval_walker-walk_s2_intk3_shiter_c04 (92s) ret    301.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3610s [515/720] OK  eval_walker-walk_s2_intpc2_det_c04 (92s) ret    834.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3610s [516/720] OK  eval_walker-walk_s2_bf16p_none_c04 (94s) ret    984.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3612s [517/720] OK  eval_walker-walk_s2_intpc2_shiter_c04 (92s) ret    308.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3613s [518/720] OK  eval_walker-walk_s2_intpc3_det_c04 (91s) ret    953.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3615s [519/720] OK  eval_walker-walk_s2_intpc3_shiter_c04 (93s) ret    961.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3617s [520/720] OK  eval_walker-walk_s2_intk3_detshift_c04 (101s) ret    318.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3683s [521/720] OK  eval_walker-walk_s3_intk3_det_c04 (91s) ret    284.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3691s [522/720] OK  eval_walker-walk_s3_intk3_shiter_c04 (91s) ret    248.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3703s [523/720] OK  eval_walker-walk_s3_intpc2_det_c04 (91s) ret    341.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3703s [524/720] OK  eval_walker-walk_s3_bf16p_none_c04 (93s) ret    984.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3706s [525/720] OK  eval_walker-walk_s3_intpc2_shiter_c04 (92s) ret    415.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3707s [526/720] OK  eval_walker-walk_s3_intpc3_det_c04 (92s) ret    941.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    3709s [527/720] OK  eval_walker-walk_s3_intpc3_shiter_c04 (92s) ret    859.9 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3711s [528/720] OK  eval_walker-walk_s3_intk3_detshift_c04 (101s) ret    214.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3727s [529/720] OK  eval_mw-push_s1_intk3_det_c04 (18s) ret    484.3 succ 1/5
+    3730s [530/720] OK  eval_mw-push_s1_intk3_shiter_c04 (19s) ret   1789.2 succ 5/5
+    3748s [531/720] OK  eval_mw-push_s1_bf16p_none_c04 (18s) ret   1805.1 succ 5/5
+    3748s [532/720] OK  eval_mw-push_s1_intk3_detshift_c04 (21s) ret   1789.8 succ 5/5
+    3767s [533/720] OK  eval_mw-push_s1_intpc2_det_c04 (19s) ret   1776.2 succ 4/5
+    3767s [534/720] OK  eval_mw-push_s1_intpc2_shiter_c04 (19s) ret   1789.7 succ 5/5
+    3772s [535/720] OK  eval_quadruped-walk_s1_bf16p_none_c04 (89s) ret    972.4 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3779s [536/720] OK  eval_quadruped-walk_s2_bf16p_none_c04 (89s) ret    965.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3785s [537/720] OK  eval_mw-push_s1_intpc3_det_c04 (18s) ret   1779.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3786s [538/720] OK  eval_mw-push_s1_intpc3_shiter_c04 (19s) ret   1793.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3789s [539/720] OK  eval_finger-turn-hard_s1_bf16p_none_c04 (86s) ret    982.0 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3791s [540/720] OK  eval_mw-push_s2_intk3_det_c04 (19s) ret   1313.5 succ 0/5
+    3791s [541/720] OK  eval_quadruped-walk_s3_bf16p_none_c04 (88s) ret    965.5 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3792s [542/720] OK  eval_finger-turn-hard_s2_bf16p_none_c04 (87s) ret    988.2 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3794s [543/720] OK  eval_finger-turn-hard_s3_bf16p_none_c04 (87s) ret    984.8 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    3798s [544/720] OK  eval_mw-push_s2_intk3_shiter_c04 (18s) ret   1499.6 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3805s [545/720] OK  eval_mw-push_s2_bf16p_none_c04 (19s) ret   1804.6 succ 5/5
+    3805s [546/720] OK  eval_mw-push_s2_intk3_detshift_c04 (20s) ret   1788.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3807s [547/720] OK  eval_mw-push_s2_intpc2_det_c04 (18s) ret   1757.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3810s [548/720] OK  eval_mw-push_s2_intpc3_det_c04 (19s) ret   1796.8 succ 5/5
+    3810s [549/720] OK  eval_mw-push_s2_intpc2_shiter_c04 (19s) ret   1785.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3811s [550/720] OK  eval_mw-push_s2_intpc3_shiter_c04 (18s) ret   1796.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3812s [551/720] OK  eval_mw-push_s3_intk3_det_c04 (18s) ret   1669.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3816s [552/720] OK  eval_mw-push_s3_intk3_shiter_c04 (19s) ret   1792.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3825s [553/720] OK  eval_mw-push_s3_bf16p_none_c04 (19s) ret   1734.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3826s [554/720] OK  eval_mw-push_s3_intk3_detshift_c04 (21s) ret   1771.1 succ 5/5
+    3826s [555/720] OK  eval_mw-push_s3_intpc2_det_c04 (19s) ret   1786.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3828s [556/720] OK  eval_mw-push_s3_intpc2_shiter_c04 (18s) ret   1788.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3829s [557/720] OK  eval_mw-push_s3_intpc3_det_c04 (19s) ret   1758.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3830s [558/720] OK  eval_mw-push_s3_intpc3_shiter_c04 (19s) ret   1746.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3830s [559/720] OK  eval_mw-pick-place_s1_intk3_det_c04 (18s) ret    720.0 succ 1/5
+Episode length: 100
+Discount factor: 0.95
+    3835s [560/720] OK  eval_mw-pick-place_s1_intk3_shiter_c04 (18s) ret   1685.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3845s [561/720] OK  eval_mw-pick-place_s1_intpc2_det_c04 (19s) ret    907.6 succ 2/5
+    3845s [562/720] OK  eval_mw-pick-place_s1_bf16p_none_c04 (19s) ret   1712.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3845s [563/720] OK  eval_mw-pick-place_s1_intk3_detshift_c04 (21s) ret   1301.4 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3847s [564/720] OK  eval_mw-pick-place_s1_intpc2_shiter_c04 (18s) ret   1531.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3848s [565/720] OK  eval_mw-pick-place_s1_intpc3_det_c04 (19s) ret   1661.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3849s [566/720] OK  eval_mw-pick-place_s1_intpc3_shiter_c04 (19s) ret   1420.9 succ 4/5
+    3849s [567/720] OK  eval_mw-pick-place_s2_intk3_det_c04 (18s) ret   1380.2 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3853s [568/720] OK  eval_mw-pick-place_s2_intk3_shiter_c04 (18s) ret   1412.8 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3864s [569/720] OK  eval_mw-pick-place_s2_intpc2_det_c04 (18s) ret   1454.8 succ 5/5
+    3864s [570/720] OK  eval_mw-pick-place_s2_bf16p_none_c04 (19s) ret   1716.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3865s [571/720] OK  eval_mw-pick-place_s2_intk3_detshift_c04 (20s) ret   1544.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3865s [572/720] OK  eval_mw-pick-place_s2_intpc2_shiter_c04 (19s) ret   1373.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3866s [573/720] OK  eval_mw-pick-place_s2_intpc3_det_c04 (18s) ret   1627.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3867s [574/720] OK  eval_mw-pick-place_s3_intk3_det_c04 (18s) ret   1274.8 succ 4/5
+    3867s [575/720] OK  eval_mw-pick-place_s2_intpc3_shiter_c04 (19s) ret   1691.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3872s [576/720] OK  eval_mw-pick-place_s3_intk3_shiter_c04 (19s) ret   1689.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3883s [577/720] OK  eval_mw-pick-place_s3_bf16p_none_c04 (19s) ret   1709.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3883s [578/720] OK  eval_mw-pick-place_s3_intpc2_det_c04 (18s) ret   1662.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3884s [579/720] OK  eval_mw-pick-place_s3_intpc2_shiter_c04 (18s) ret   1487.6 succ 4/5
+    3884s [580/720] OK  eval_mw-pick-place_s3_intk3_detshift_c04 (20s) ret   1695.6 succ 5/5
+    3884s [581/720] OK  eval_mw-pick-place_s3_intpc3_det_c04 (18s) ret   1702.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3885s [582/720] OK  eval_mw-pick-place_s3_intpc3_shiter_c04 (18s) ret   1403.7 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3886s [583/720] OK  eval_mw-door-open_s1_bf16p_none_c04 (19s) ret   1560.0 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    3890s [584/720] OK  eval_mw-door-open_s2_bf16p_none_c04 (18s) ret   1606.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3900s [585/720] OK  eval_mw-drawer-open_s1_bf16p_none_c04 (17s) ret   1822.7 succ 5/5
+    3900s [586/720] OK  eval_mw-door-open_s3_bf16p_none_c04 (18s) ret   1599.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3901s [587/720] OK  eval_mw-drawer-open_s2_bf16p_none_c04 (17s) ret   1822.9 succ 5/5
+    3901s [588/720] OK  eval_mw-drawer-open_s3_bf16p_none_c04 (17s) ret   1822.8 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3902s [589/720] OK  eval_mw-button-press-topdown_s1_bf16p_none_c04 (17s) ret   1336.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    3902s [590/720] OK  eval_mw-button-press-topdown_s2_bf16p_none_c04 (17s) ret   1346.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3903s [591/720] OK  eval_mw-button-press-topdown_s3_bf16p_none_c04 (17s) ret   1346.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3910s [592/720] OK  eval_mw-peg-insert-side_s1_bf16p_none_c04 (20s) ret   1669.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    3918s [593/720] OK  eval_mw-window-open_s1_bf16p_none_c04 (17s) ret   1574.7 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3919s [594/720] OK  eval_mw-window-open_s2_bf16p_none_c04 (17s) ret   1597.8 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3919s [595/720] OK  eval_mw-window-open_s3_bf16p_none_c04 (18s) ret   1618.3 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3920s [596/720] OK  eval_mw-sweep-into_s1_bf16p_none_c04 (17s) ret   1820.1 succ 5/5
+    3920s [597/720] OK  eval_mw-peg-insert-side_s2_bf16p_none_c04 (19s) ret   1668.2 succ 5/5
+    3920s [598/720] OK  eval_mw-peg-insert-side_s3_bf16p_none_c04 (19s) ret   1668.2 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    3921s [599/720] OK  eval_mw-sweep-into_s2_bf16p_none_c04 (17s) ret   1818.6 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    3928s [600/720] OK  eval_mw-sweep-into_s3_bf16p_none_c04 (19s) ret   1816.8 succ 5/5
+Episode length: 500
+Discount factor: 0.99
+    4008s [601/720] OK  eval_cheetah-run_s1_intk5_det_c05 (90s) ret    445.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4009s [602/720] OK  eval_cheetah-run_s1_intk5_shiter_c05 (90s) ret    741.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4010s [603/720] OK  eval_cheetah-run_s1_intpc2_det_c05 (90s) ret    221.4 succ 0/5
+    4010s [604/720] OK  eval_cheetah-run_s1_intpc3_det_c05 (89s) ret    514.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    4011s [605/720] OK  eval_cheetah-run_s1_intpc2_shiter_c05 (91s) ret    157.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4014s [606/720] OK  eval_cheetah-run_s1_bf16p_none_c05 (95s) ret    813.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4019s [607/720] OK  eval_cheetah-run_s1_intpc3_shiter_c05 (91s) ret    440.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4020s [608/720] OK  eval_cheetah-run_s1_intk5_detshift_c05 (100s) ret    723.6 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4098s [609/720] OK  eval_cheetah-run_s2_intk5_det_c05 (89s) ret    555.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4100s [610/720] OK  eval_cheetah-run_s2_intpc2_det_c05 (89s) ret     95.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4100s [611/720] OK  eval_cheetah-run_s2_intk5_shiter_c05 (91s) ret    829.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4103s [612/720] OK  eval_cheetah-run_s2_bf16p_none_c05 (93s) ret    913.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4106s [613/720] OK  eval_cheetah-run_s2_intpc2_shiter_c05 (92s) ret    173.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4109s [614/720] OK  eval_cheetah-run_s2_intpc3_det_c05 (90s) ret     59.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4110s [615/720] OK  eval_cheetah-run_s2_intpc3_shiter_c05 (91s) ret    596.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4111s [616/720] OK  eval_cheetah-run_s2_intk5_detshift_c05 (102s) ret    856.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4187s [617/720] OK  eval_cheetah-run_s3_intk5_det_c05 (89s) ret    504.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4190s [618/720] OK  eval_cheetah-run_s3_intk5_shiter_c05 (90s) ret    841.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4196s [619/720] OK  eval_cheetah-run_s3_intpc2_det_c05 (90s) ret    122.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4197s [620/720] OK  eval_cheetah-run_s3_bf16p_none_c05 (94s) ret    925.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4200s [621/720] OK  eval_cheetah-run_s3_intpc3_det_c05 (90s) ret    263.3 succ 0/5
+    4200s [622/720] OK  eval_cheetah-run_s3_intpc2_shiter_c05 (91s) ret    218.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    4201s [623/720] OK  eval_cheetah-run_s3_intk5_detshift_c05 (101s) ret    840.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4204s [624/720] OK  eval_cheetah-run_s3_intpc3_shiter_c05 (93s) ret    663.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4277s [625/720] OK  eval_walker-walk_s1_intk3_det_c05 (90s) ret    500.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4281s [626/720] OK  eval_walker-walk_s1_intk3_shiter_c05 (91s) ret    161.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4290s [627/720] OK  eval_walker-walk_s1_intpc2_det_c05 (90s) ret    768.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4290s [628/720] OK  eval_walker-walk_s1_bf16p_none_c05 (94s) ret    989.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4291s [629/720] OK  eval_walker-walk_s1_intpc3_det_c05 (90s) ret    840.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4292s [630/720] OK  eval_walker-walk_s1_intpc2_shiter_c05 (91s) ret    186.1 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4296s [631/720] OK  eval_walker-walk_s1_intk3_detshift_c05 (100s) ret    263.1 succ 0/5
+    4296s [632/720] OK  eval_walker-walk_s1_intpc3_shiter_c05 (92s) ret    977.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+    4367s [633/720] OK  eval_walker-walk_s2_intk3_det_c05 (90s) ret    291.4 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4371s [634/720] OK  eval_walker-walk_s2_intk3_shiter_c05 (90s) ret    240.8 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4381s [635/720] OK  eval_walker-walk_s2_intpc2_det_c05 (90s) ret    644.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4383s [636/720] OK  eval_walker-walk_s2_intpc2_shiter_c05 (91s) ret    279.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4384s [637/720] OK  eval_walker-walk_s2_bf16p_none_c05 (94s) ret    988.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4387s [638/720] OK  eval_walker-walk_s2_intpc3_det_c05 (90s) ret    954.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4388s [639/720] OK  eval_walker-walk_s2_intpc3_shiter_c05 (92s) ret    974.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4390s [640/720] OK  eval_walker-walk_s2_intk3_detshift_c05 (100s) ret    308.2 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4457s [641/720] OK  eval_walker-walk_s3_intk3_det_c05 (89s) ret    336.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4462s [642/720] OK  eval_walker-walk_s3_intk3_shiter_c05 (90s) ret    177.5 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4474s [643/720] OK  eval_walker-walk_s3_intpc2_det_c05 (90s) ret    543.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4477s [644/720] OK  eval_walker-walk_s3_intpc2_shiter_c05 (90s) ret    331.0 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4478s [645/720] OK  eval_walker-walk_s3_bf16p_none_c05 (95s) ret    989.3 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4479s [646/720] OK  eval_walker-walk_s3_intpc3_det_c05 (91s) ret    974.9 succ 0/5
+Episode length: 500
+Discount factor: 0.99
+    4480s [647/720] OK  eval_walker-walk_s3_intk3_detshift_c05 (99s) ret    298.5 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    4481s [648/720] OK  eval_walker-walk_s3_intpc3_shiter_c05 (91s) ret    892.0 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    4498s [649/720] OK  eval_mw-push_s1_intk3_det_c05 (18s) ret   1085.8 succ 3/5
+    4500s [650/720] OK  eval_mw-push_s1_intk3_shiter_c05 (19s) ret   1772.5 succ 5/5
+    4518s [651/720] OK  eval_mw-push_s1_intk3_detshift_c05 (20s) ret   1764.3 succ 5/5
+    4519s [652/720] OK  eval_mw-push_s1_bf16p_none_c05 (18s) ret   1793.4 succ 5/5
+    4537s [653/720] OK  eval_mw-push_s1_intpc2_det_c05 (18s) ret   1483.9 succ 2/5
+    4537s [654/720] OK  eval_mw-push_s1_intpc2_shiter_c05 (18s) ret   1778.0 succ 5/5
+    4545s [655/720] OK  eval_quadruped-walk_s1_bf16p_none_c05 (89s) ret    983.5 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    4549s [656/720] OK  eval_quadruped-walk_s2_bf16p_none_c05 (87s) ret    975.4 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    4555s [657/720] OK  eval_mw-push_s1_intpc3_det_c05 (18s) ret   1781.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4556s [658/720] OK  eval_mw-push_s1_intpc3_shiter_c05 (19s) ret   1783.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4562s [659/720] OK  eval_quadruped-walk_s3_bf16p_none_c05 (88s) ret    983.1 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    4563s [660/720] OK  eval_finger-turn-hard_s1_bf16p_none_c05 (86s) ret    983.6 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    4563s [661/720] OK  eval_mw-push_s2_intk3_det_c05 (18s) ret    989.2 succ 2/5
+    4564s [662/720] OK  eval_finger-turn-hard_s2_bf16p_none_c05 (86s) ret    991.4 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    4566s [663/720] OK  eval_finger-turn-hard_s3_bf16p_none_c05 (87s) ret    991.0 succ 0/5
+Episode length: 100
+Discount factor: 0.95
+    4567s [664/720] OK  eval_mw-push_s2_intk3_shiter_c05 (18s) ret   1773.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4574s [665/720] OK  eval_mw-push_s2_bf16p_none_c05 (19s) ret   1794.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4575s [666/720] OK  eval_mw-push_s2_intk3_detshift_c05 (20s) ret   1746.0 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    4582s [667/720] OK  eval_mw-push_s2_intpc2_det_c05 (19s) ret   1721.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4582s [668/720] OK  eval_mw-push_s2_intpc3_det_c05 (18s) ret   1784.8 succ 4/5
+    4582s [669/720] OK  eval_mw-push_s2_intpc2_shiter_c05 (19s) ret   1772.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4582s [670/720] OK  eval_mw-push_s2_intpc3_shiter_c05 (19s) ret   1784.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    4585s [671/720] OK  eval_mw-push_s3_intk3_det_c05 (19s) ret   1761.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4586s [672/720] OK  eval_mw-push_s3_intk3_shiter_c05 (19s) ret   1746.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4594s [673/720] OK  eval_mw-push_s3_bf16p_none_c05 (19s) ret   1790.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4595s [674/720] OK  eval_mw-push_s3_intk3_detshift_c05 (21s) ret   1777.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4600s [675/720] OK  eval_mw-push_s3_intpc2_det_c05 (19s) ret   1122.3 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    4601s [676/720] OK  eval_mw-push_s3_intpc3_shiter_c05 (19s) ret   1767.7 succ 5/5
+    4601s [677/720] OK  eval_mw-push_s3_intpc3_det_c05 (19s) ret   1751.0 succ 5/5
+    4601s [678/720] OK  eval_mw-push_s3_intpc2_shiter_c05 (19s) ret   1744.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    4603s [679/720] OK  eval_mw-pick-place_s1_intk3_det_c05 (18s) ret    883.4 succ 2/5
+Episode length: 100
+Discount factor: 0.95
+    4604s [680/720] OK  eval_mw-pick-place_s1_intk3_shiter_c05 (19s) ret   1295.0 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    4614s [681/720] OK  eval_mw-pick-place_s1_bf16p_none_c05 (19s) ret   1688.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4614s [682/720] OK  eval_mw-pick-place_s1_intk3_detshift_c05 (21s) ret   1656.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4619s [683/720] OK  eval_mw-pick-place_s1_intpc3_det_c05 (18s) ret   1370.6 succ 4/5
+    4619s [684/720] OK  eval_mw-pick-place_s1_intpc2_det_c05 (19s) ret   1058.7 succ 3/5
+    4619s [685/720] OK  eval_mw-pick-place_s1_intpc2_shiter_c05 (19s) ret   1224.3 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    4620s [686/720] OK  eval_mw-pick-place_s1_intpc3_shiter_c05 (19s) ret   1648.2 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4622s [687/720] OK  eval_mw-pick-place_s2_intk3_det_c05 (19s) ret    593.2 succ 3/5
+Episode length: 100
+Discount factor: 0.95
+    4623s [688/720] OK  eval_mw-pick-place_s2_intk3_shiter_c05 (19s) ret   1404.0 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    4633s [689/720] OK  eval_mw-pick-place_s2_bf16p_none_c05 (19s) ret   1687.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4634s [690/720] OK  eval_mw-pick-place_s2_intk3_detshift_c05 (21s) ret   1339.4 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    4638s [691/720] OK  eval_mw-pick-place_s2_intpc2_det_c05 (18s) ret   1218.4 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    4638s [692/720] OK  eval_mw-pick-place_s2_intpc2_shiter_c05 (19s) ret   1321.2 succ 4/5
+    4638s [693/720] OK  eval_mw-pick-place_s2_intpc3_det_c05 (19s) ret   1600.3 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    4639s [694/720] OK  eval_mw-pick-place_s2_intpc3_shiter_c05 (19s) ret   1339.1 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    4640s [695/720] OK  eval_mw-pick-place_s3_intk3_det_c05 (18s) ret   1355.1 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4641s [696/720] OK  eval_mw-pick-place_s3_intk3_shiter_c05 (18s) ret   1666.5 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4653s [697/720] OK  eval_mw-pick-place_s3_bf16p_none_c05 (19s) ret   1676.2 succ 5/5
+    4653s [698/720] OK  eval_mw-pick-place_s3_intk3_detshift_c05 (20s) ret   1666.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    4656s [699/720] OK  eval_mw-pick-place_s3_intpc3_det_c05 (18s) ret   1301.9 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    4657s [700/720] OK  eval_mw-pick-place_s3_intpc2_det_c05 (19s) ret   1169.4 succ 3/5
+    4657s [701/720] OK  eval_mw-pick-place_s3_intpc2_shiter_c05 (19s) ret   1653.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    4657s [702/720] OK  eval_mw-pick-place_s3_intpc3_shiter_c05 (19s) ret   1677.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4659s [703/720] OK  eval_mw-door-open_s1_bf16p_none_c05 (19s) ret   1572.9 succ 4/5
+Episode length: 100
+Discount factor: 0.95
+    4660s [704/720] OK  eval_mw-door-open_s2_bf16p_none_c05 (18s) ret   1574.9 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4671s [705/720] OK  eval_mw-drawer-open_s1_bf16p_none_c05 (17s) ret   1822.6 succ 5/5
+    4671s [706/720] OK  eval_mw-door-open_s3_bf16p_none_c05 (18s) ret   1581.0 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    4674s [707/720] OK  eval_mw-drawer-open_s2_bf16p_none_c05 (17s) ret   1822.6 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4674s [708/720] OK  eval_mw-drawer-open_s3_bf16p_none_c05 (17s) ret   1822.7 succ 5/5
+    4674s [709/720] OK  eval_mw-button-press-topdown_s1_bf16p_none_c05 (17s) ret   1333.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+    4675s [710/720] OK  eval_mw-button-press-topdown_s2_bf16p_none_c05 (18s) ret   1335.4 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4676s [711/720] OK  eval_mw-button-press-topdown_s3_bf16p_none_c05 (17s) ret   1339.3 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4680s [712/720] OK  eval_mw-peg-insert-side_s1_bf16p_none_c05 (20s) ret   1654.7 succ 5/5
+Episode length: 100
+Discount factor: 0.95
+    4690s [713/720] OK  eval_mw-peg-insert-side_s2_bf16p_none_c05 (19s) ret   1664.5 succ 5/5
+    4691s [714/720] OK  eval_mw-window-open_s1_bf16p_none_c05 (17s) ret   1572.1 succ 4/5
+    4691s [715/720] OK  eval_mw-peg-insert-side_s3_bf16p_none_c05 (20s) ret   1667.6 succ 5/5
+    4691s [716/720] OK  eval_mw-window-open_s2_bf16p_none_c05 (17s) ret   1498.5 succ 4/5
+    4692s [717/720] OK  eval_mw-window-open_s3_bf16p_none_c05 (17s) ret   1604.3 succ 5/5
+    4693s [718/720] OK  eval_mw-sweep-into_s1_bf16p_none_c05 (18s) ret   1823.5 succ 5/5
+    4694s [719/720] OK  eval_mw-sweep-into_s2_bf16p_none_c05 (18s) ret   1799.9 succ 5/5
+    4696s [720/720] OK  eval_mw-sweep-into_s3_bf16p_none_c05 (16s) ret   1821.8 succ 5/5
+RUNNER_DONE ok 720 failed 0 in 4697s
+=== 2026-11-21T20:54:43Z main.jsonl pass 1 done; runnable jobs left: 0
+=== 2026-11-21T20:54:43Z DRIVER_FINISHED main

@@ -1,0 +1,7 @@
+cython==0.29.37
+patchelf==0.19.1.0
+h5py==3.16.0
+termcolor==3.3.0
+click==8.5.0
+glfw==2.11.0
+fasteners==0.20

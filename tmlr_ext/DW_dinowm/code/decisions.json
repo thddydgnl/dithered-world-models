@@ -1,0 +1,114 @@
+{
+ "eval8_pusht": {
+  "hard": [
+   [
+    "held",
+    20
+   ],
+   [
+    "smoke",
+    4
+   ],
+   [
+    "eval6",
+    100
+   ]
+  ],
+  "soft": [
+   [
+    "repro",
+    50
+   ]
+  ],
+  "source": "coordinator decision D1 (judge Fable 5.2 max), DESIGN_tmlr.md section 11, 2026-11-21T18:41:18Z",
+  "expected_free_offsets": {
+   "held+smoke": 1294,
+   "held+smoke+repro": 485
+  },
+  "max_repro_shared_per_pair": 20,
+  "check3_exception": {
+   "split": "eval6",
+   "eps": [
+    0,
+    50
+   ],
+   "e1_success": 41,
+   "accept": [
+    36,
+    46
+   ]
+  }
+ },
+ "bias_rule": {
+  "name": "D2",
+  "stages": [
+   {
+    "eta": 1.0,
+    "until_below": 0.01,
+    "max_sweeps": 60
+   },
+   {
+    "eta": 0.5,
+    "until_below": 0.01,
+    "max_sweeps": 60
+   },
+   {
+    "eta": 0.25,
+    "until_below": 0.01,
+    "max_sweeps": 60
+   }
+  ],
+  "each_stage_starts_from": "b = 0",
+  "use": "first stage that stops below until_below",
+  "if_none": "final b of the stage with the smallest worst-layer residual; flag bc_unconverged",
+  "source": "coordinator decision D2 (judge Fable 5.2 max), runpod_tmlr/bias_rule_D2.json"
+ },
+ "check3_override": {
+  "wall": {
+   "decision": "D3 (coordinator, judge Fable 5.2 max, DESIGN_tmlr.md section 11, [post hoc]): keep Wall eval8 (pair seed 8, 100 pairs) as in section 0.4; verdict rules unchanged",
+   "evidence": "out/diag/wall/summary_eval.json on dw.4: Wall none on the E1 eval pairs (pair seed 5, planner seed 3000+e) 62/100 vs E1 61/100 (episode agreement 85%): pipeline normal; eval8 vs E1 difference ~1.7 SE",
+   "eval8_none": 0.49,
+   "e1_none": 0.61,
+   "rerun_e1_split": 0.62
+  }
+ },
+ "check3_rule_D3": {
+  "note": "D3: if check 3 fails on another DINO-WM pod or task, rerun the E1 split none on that pod; proceed if within 10 points of the E1 record (log it), else stop and report. PushT keeps D1 (eval6 0-49, 36-46 of 41/50).",
+  "pusht": {
+   "split": "eval6",
+   "eps": [
+    0,
+    50
+   ],
+   "e1_success": 41,
+   "accept": [
+    36,
+    46
+   ]
+  },
+  "wall": {
+   "split": "eval",
+   "eps": [
+    0,
+    100
+   ],
+   "e1_success": 61,
+   "accept": [
+    51,
+    71
+   ]
+  },
+  "pointmaze": {
+   "split": "eval",
+   "eps": [
+    0,
+    100
+   ],
+   "e1_success": 85,
+   "accept": [
+    75,
+    95
+   ]
+  }
+ }
+}

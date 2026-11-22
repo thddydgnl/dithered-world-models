@@ -1,0 +1,69 @@
+{
+ "time": "2026-11-21T23:12:26Z",
+ "tag": "dw.3",
+ "cells": {
+  "pointmaze|pc|det|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.01,
+    "ci": [
+     -0.05,
+     0.08
+    ]
+   }
+  },
+  "pointmaze|pc|detbc|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.02,
+    "ci": [
+     -0.05,
+     0.09
+    ]
+   }
+  },
+  "pointmaze|pc|shiter|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.04,
+    "ci": [
+     -0.1,
+     0.01
+    ]
+   }
+  },
+  "pointmaze|main|det|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.09,
+    "ci": [
+     0.0,
+     0.18
+    ]
+   },
+   "source": "E11"
+  },
+  "pointmaze|main|detbc|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.01,
+    "ci": [
+     -0.08,
+     0.07
+    ]
+   },
+   "source": "E11"
+  },
+  "pointmaze|main|shiter|k3|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.04,
+    "ci": [
+     -0.11,
+     0.03
+    ]
+   },
+   "source": "E11"
+  }
+ }
+}

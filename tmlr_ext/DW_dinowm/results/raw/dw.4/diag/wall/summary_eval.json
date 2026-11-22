@@ -1,0 +1,14 @@
+{
+ "task": "wall",
+ "split": "eval",
+ "eps": [
+  0,
+  100
+ ],
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "successes": 62,
+ "n": 100,
+ "e1_successes": 61,
+ "episode_agreement": 0.85,
+ "time": "2026-11-21T19:36:26Z"
+}

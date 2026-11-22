@@ -1,0 +1,286 @@
+MPS started
+=== 18:32:53 check 1: E1 code paths (untouched E1 qlib vs td qlib, same pod, same episodes)
+=== 18:32:53 smoke manifest
+smoke: 68 jobs -> /workspace/atm/smoke_out/smoke.jsonl
+=== 18:32:53 smoke jobs: calib
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+      14s [1/20] OK  calib_mw-push_s1_ep2 (12s) 
+Episode length: 100
+Discount factor: 0.95
+      15s [2/20] OK  calib_mw-push_s1_ep3 (13s) 
+      15s [3/20] OK  calib_mw-push_s1_ep4 (13s) 
+      15s [4/20] OK  calib_mw-pick-place_s1_ep2 (13s) 
+Episode length: 100
+Discount factor: 0.95
+      16s [5/20] OK  calib_mw-pick-place_s1_ep1 (14s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+      16s [6/20] OK  calib_mw-push_s1_ep0 (14s) 
+      16s [7/20] OK  calib_mw-push_s1_ep1 (14s) 
+      16s [8/20] OK  calib_mw-pick-place_s1_ep0 (14s) 
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+      21s [9/20] OK  calib_mw-pick-place_s1_ep3 (7s) 
+Episode length: 500
+Discount factor: 0.99
+      23s [10/20] OK  calib_mw-pick-place_s1_ep4 (8s) 
+Episode length: 500
+Discount factor: 0.99
+      50s [11/20] OK  calib_cheetah-run_s1_ep0 (34s) 
+      50s [12/20] OK  calib_cheetah-run_s1_ep1 (34s) 
+Episode length: 500
+Discount factor: 0.99
+      50s [13/20] OK  calib_cheetah-run_s1_ep2 (34s) 
+Episode length: 500
+Discount factor: 0.99
+      50s [14/20] OK  calib_cheetah-run_s1_ep3 (34s) 
+      50s [15/20] OK  calib_cheetah-run_s1_ep4 (34s) 
+      51s [16/20] OK  calib_walker-walk_s1_ep0 (34s) 
+      54s [17/20] OK  calib_walker-walk_s1_ep1 (32s) 
+      54s [18/20] OK  calib_walker-walk_s1_ep2 (32s) 
+      65s [19/20] OK  calib_walker-walk_s1_ep3 (15s) 
+      65s [20/20] OK  calib_walker-walk_s1_ep4 (15s) 
+RUNNER_DONE ok 20 failed 0 in 66s
+=== 18:33:59 smoke jobs: prep
+4 jobs in manifest, 0 done, running 4 with 8 workers
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 500
+Discount factor: 0.99
+Episode length: 100
+Discount factor: 0.95
+       9s [1/4] OK  prep_mw-push_s1 (8s) rows 12000 worst resid/delta 1.16e+00
+      10s [2/4] OK  prep_walker-walk_s1 (9s) rows 12000 worst resid/delta 2.94e-01
+      10s [3/4] OK  prep_cheetah-run_s1 (9s) rows 12000 worst resid/delta 1.90e+00
+      10s [4/4] OK  prep_mw-pick-place_s1 (9s) rows 12000 worst resid/delta 9.61e-01
+RUNNER_DONE ok 4 failed 0 in 11s
+=== 18:34:10 smoke jobs: episodes,e13,timing
+      16s [2/44] OK  smoke_mw-push_s1_PTk3_shep_base_c00 (14s) ret     22.1 succ 0/1
+      16s [3/44] OK  smoke_mw-push_s1_PTk3_detshiftfix_base_c00 (14s) ret     48.2 succ 0/1
+      16s [4/44] OK  smoke_mw-push_s1_PTk3_shiter_base_c00 (15s) ret   1778.6 succ 1/1
+      17s [5/44] OK  smoke_mw-push_s1_PTk3_detbc_base_c00 (15s) ret     25.8 succ 0/1
+      17s [6/44] OK  smoke_mw-push_s1_PTk3_det_base_c00 (15s) ret   1573.9 succ 0/1
+      17s [7/44] OK  smoke_mw-push_s1_PTk3_detshift_base_c00 (15s) ret   1781.0 succ 1/1
+      18s [8/44] OK  smoke_mw-push_s1_PTk3_shiterb_base_c00 (16s) ret   1737.8 succ 1/1
+      22s [9/44] OK  smoke_mw-push_s1_PTk3_detnoise_base_c00 (10s) ret   1769.2 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+      23s [10/44] OK  smoke_mw-push_s1_none_cem_c00 (6s) ret   1793.9 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+      25s [11/44] OK  smoke_mw-push_s1_PTk3_det_cem_c00 (7s) ret   1490.2 succ 0/1
+      25s [12/44] OK  smoke_mw-push_s1_PCk2_det_base_c00 (9s) ret   1660.7 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+      25s [13/44] OK  smoke_mw-push_s1_PTk3_shep_cem_c00 (7s) ret      3.7 succ 0/1
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+      25s [14/44] OK  smoke_mw-push_s1_PCk2_detbc_base_c00 (9s) ret      7.2 succ 0/1
+      26s [15/44] OK  smoke_mw-push_s1_PCk2_shiter_base_c00 (9s) ret   1780.2 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+Episode length: 500
+Discount factor: 0.99
+      27s [16/44] OK  smoke_mw-push_s1_PCk2_detshift_base_c00 (10s) ret   1778.4 succ 1/1
+Episode length: 500
+Discount factor: 0.99
+      53s [17/44] OK  smoke_cheetah-run_s1_none_base_c00 (30s) ret    866.1 succ 0/1
+      63s [18/44] OK  smoke_cheetah-run_s1_PTk5_det_base_c00 (40s) ret    422.4 succ 0/1
+      65s [19/44] OK  smoke_cheetah-run_s1_PTk5_detbc_base_c00 (41s) ret     37.8 succ 0/1
+      66s [20/44] OK  smoke_cheetah-run_s1_PTk5_shep_base_c00 (41s) ret    624.6 succ 0/1
+      69s [21/44] OK  smoke_cheetah-run_s1_PTk5_shiter_base_c00 (43s) ret    704.5 succ 0/1
+      71s [22/44] OK  smoke_cheetah-run_s1_PTk5_shiterb_base_c00 (45s) ret    118.7 succ 0/1
+      71s [23/44] OK  smoke_cheetah-run_s1_PTk5_detshiftfix_base_c00 (46s) ret    619.4 succ 0/1
+      75s [24/44] OK  smoke_cheetah-run_s1_PTk5_detshift_base_c00 (48s) ret    655.2 succ 0/1
+      96s [25/44] OK  smoke_cheetah-run_s1_none_cem_c00 (25s) ret    787.0 succ 0/1
+      97s [26/44] OK  smoke_cheetah-run_s1_PTk5_detnoise_base_c00 (45s) ret    562.3 succ 0/1
+     105s [27/44] OK  smoke_cheetah-run_s1_PTk5_det_cem_c00 (34s) ret    342.1 succ 0/1
+     110s [28/44] OK  smoke_cheetah-run_s1_PTk5_shep_cem_c00 (35s) ret    509.6 succ 0/1
+     111s [29/44] OK  smoke_cheetah-run_s1_PCk4_det_base_c00 (48s) ret    799.3 succ 0/1
+     114s [30/44] OK  smoke_cheetah-run_s1_PCk4_detbc_base_c00 (49s) ret    163.2 succ 0/1
+     115s [31/44] OK  smoke_cheetah-run_s1_PCk4_shiter_base_c00 (49s) ret    730.4 succ 0/1
+     117s [32/44] OK  repro_mw-push_s1_none (6s) ret   1785.2 succ 1/1
+     118s [33/44] OK  smoke_cheetah-run_s1_PCk4_detshift_base_c00 (50s) ret    807.0 succ 0/1
+     122s [34/44] OK  repro_mw-push_s1_PTk3_det (8s) ret   1365.5 succ 1/1
+     124s [35/44] OK  repro_mw-push_s1_PTk3_shiter (9s) ret   1774.0 succ 1/1
+     125s [36/44] OK  repro_mw-push_s1_PTk3_shep (8s) ret     21.9 succ 0/1
+     128s [37/44] OK  repro_mw-push_s1_PTk3_detshift (10s) ret   1767.5 succ 1/1
+     136s [38/44] OK  timingsmoke_cheetah-run (11s) it6|none=56.5ms it6|det=70.7ms it12|none=99.5ms it12|det=114.6ms it24|none=169.5ms it24|det=201.6ms
+     143s [39/44] OK  smoke_cheetah-run_s1_none_it12_c00 (47s) ret    783.9 succ 0/1
+     159s [40/44] OK  smoke_cheetah-run_s1_PTk5_det_it12_c00 (54s) ret    567.6 succ 0/1
+     163s [41/44] OK  e13smoke_mw-push_s1 (41s) 1 held eps, 36 cells, ret 1803.4 succ 1
+     171s [42/44] OK  smoke_cheetah-run_s1_none_it24_c00 (74s) ret    824.3 succ 0/1
+     179s [43/44] OK  e13smoke_cheetah-run_s1 (55s) 1 held eps, 36 cells, ret 858.7 succ 0
+     191s [44/44] OK  smoke_cheetah-run_s1_PTk5_det_it24_c00 (81s) ret    585.2 succ 0/1
+RUNNER_DONE ok 44 failed 0 in 192s
+E1PATHS {"qlib": "/workspace/atm/code/inputs/e1_reference/qlib.py", "mw-push|none_k0": [1785.1835772544146, 1.0, 0, "c614a7c46942b420", "08919f8eb3381282"], "mw-push|det_k3": [1365.496686436236, 1.0, 0, "bdde35dc3386fb6e", "a90ae20cc8ce2749"], "mw-push|shiter_k3": [1774.0403598323464, 1.0, 0, "39c9c4d79b4aa03e", "4c90b3518ecc2fae"], "mw-push|shep_k3": [21.891735922341468, 0.0, 1, "22742923b514cee0", "835602a90b983170"], "mw-push|detshift_k3": [1767.4525940194726, 1.0, 0, "8167871d4b79543d", "1bb245229ee773bf"], "cheetah-run|none_k0": [871.443908020854, 0.0, 0, "3e1eb8e68e6d0455", "884dfb37021097da"], "cheetah-run|det_k5": [549.1103477551369, 0.0, 0, "0c582e7600f36d9e", "02a0f00071e2ce4e"], "cheetah-run|shiter_k5": [732.7256340757012, 0.0, 0, "870506f0130e4347", "c225bdbbd729968e"], "cheetah-run|shep_k5": [250.7793076701928, 0.0, 1, "771cd8daac541655", "13565a4d57d24b67"], "cheetah-run|detshift_k5": [741.9790586038725, 0.0, 0, "658b981402a51ad6", "5a69c7f610bbc564"]}
+E1PATHS {"qlib": "/workspace/atm/code/qlib.py", "mw-push|none_k0": [1785.1835772544146, 1.0, 0, "c614a7c46942b420", "08919f8eb3381282"], "mw-push|det_k3": [1365.496686436236, 1.0, 0, "bdde35dc3386fb6e", "a90ae20cc8ce2749"], "mw-push|shiter_k3": [1774.0403598323464, 1.0, 0, "39c9c4d79b4aa03e", "4c90b3518ecc2fae"], "mw-push|shep_k3": [21.891735922341468, 0.0, 1, "22742923b514cee0", "835602a90b983170"], "mw-push|detshift_k3": [1767.4525940194726, 1.0, 0, "8167871d4b79543d", "1bb245229ee773bf"], "cheetah-run|none_k0": [871.443908020854, 0.0, 0, "3e1eb8e68e6d0455", "884dfb37021097da"], "cheetah-run|det_k5": [549.1103477551369, 0.0, 0, "0c582e7600f36d9e", "02a0f00071e2ce4e"], "cheetah-run|shiter_k5": [732.7256340757012, 0.0, 0, "870506f0130e4347", "c225bdbbd729968e"], "cheetah-run|shep_k5": [250.7793076701928, 0.0, 1, "771cd8daac541655", "13565a4d57d24b67"], "cheetah-run|detshift_k5": [741.9790586038725, 0.0, 0, "658b981402a51ad6", "5a69c7f610bbc564"]}
+=== 18:37:22 check 2: test_variants
+FAIL detbc_residual_lt_1pct_delta {"worst_max": 1.9042606353759766, "n": 64, "worst_cells": [["cheetah-run|PC|k6", 1.9042606353759766], ["cheetah-run|PC|k8", 1.7606408596038818], ["mw-push|PC|k4", 1.1625645160675049], ["mw-push|PC|k3", 1.0979989767074585]]}
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float64[0m
+  logger.warn(
+/root/venv/lib/python3.11/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+Episode length: 100
+Discount factor: 0.95
+PASS detshiftfix_table_mw-push|PTk3 {"constant_in_episode": true, "reproducible": true, "changes_across_episodes": true, "table_shape": [3, 512]}
+PASS detshiftfix_error_moments_mw-push|PTk3 {"layers": {"dyn0": {"mean_fixed": 6.77135987341189e-05, "mean_shift": -0.00024217916967995046, "var_fixed": 0.13298547016719525, "var_shift": 0.13317546601839578, "mean_diff_over_sd": 0.0008491791633623728, "var_rel_diff": 0.0014266580540763796, "var_over_delta2_12": 0.999125222081144}, "dyn1": {"mean_fixed": 0.0010427303075366899, "mean_shift": -0.0006634591561195946, "var_fixed": 0.092408246784
+PASS shiterb_mean_b_var_mw-push|PTk3 {"layers": {"dyn0": {"max_abs(out_b - out - b)": 3.5762786865234375e-07, "max_abs(mean_err_b - mean_err - b)": 7.850094696504328e-08, "mean_abs_b": 0.2741411328315735, "mean_err_shiter": -0.0009171607242486376, "var_centered_shiter": 0.22628383126597576, "var_centered_shiterb": 0.22628383132269403, "var_rel_diff": 2.5065105546673294e-10, "raw_var_shiter": 0.2315590128913449, "raw_var_shiterb": 0.3
+PASS detnoise_var_detpart_mw-push|PTk3 {"layers": {"dyn0": {"added_var_over_1_12": 1.0000474165166968, "det_code_identical": true, "max_abs(out - delta n - det_out)": 9.5367431640625e-07}, "dyn1": {"added_var_over_1_12": 1.000047369738368, "det_code_identical": true, "max_abs(out - delta n - det_out)": 7.152557373046875e-07}, "rew0": {"added_var_over_1_12": 1.0000474006120668, "det_code_identical": true, "max_abs(out - delta n - det_ou
+PASS global_rng_hook_mw-push|PTk3 {"per_variant": {"detbc": true, "detshiftfix": true, "shiterb": true, "detnoise": true}}
+PASS global_rng_planner_mw-push|PTk3 {"per_variant": {"detbc": true, "detshiftfix": true, "shiterb": true, "detnoise": true}}
+Episode length: 100
+Discount factor: 0.95
+PASS detshiftfix_table_mw-push|PCk2 {"constant_in_episode": true, "reproducible": true, "changes_across_episodes": true, "table_shape": [3, 512]}
+PASS detshiftfix_error_moments_mw-push|PCk2 {"layers": {"dyn0": {"mean_fixed": -0.0004089765905512288, "mean_shift": -0.00013279999778445243, "var_fixed": 0.08338627481908714, "var_shift": 0.08428817101629486, "mean_diff_over_sd": 0.0009512694558858892, "var_rel_diff": 0.010700151472421537, "var_over_delta2_12": 1.4323236833907276}, "dyn1": {"mean_fixed": 0.00013740405271949388, "mean_shift": 0.0003409511008228036, "var_fixed": 0.0891611930
+PASS shiterb_mean_b_var_mw-push|PCk2 {"layers": {"dyn0": {"max_abs(out_b - out - b)": 3.5762786865234375e-07, "max_abs(mean_err_b - mean_err - b)": 5.0544195495660915e-08, "mean_abs_b": 0.12717986106872559, "mean_err_shiter": -0.0010992595242205168, "var_centered_shiter": 0.12439386230343201, "var_centered_shiterb": 0.12439386211691397, "var_rel_diff": 1.4994151475988815e-09, "raw_var_shiter": 0.1270842916892109, "raw_var_shiterb": 0
+PASS detnoise_var_detpart_mw-push|PCk2 {"layers": {"dyn0": {"added_var_over_1_12": 1.000047379341816, "det_code_identical": true, "max_abs(out - delta n - det_out)": 1.430511474609375e-06}, "dyn1": {"added_var_over_1_12": 1.000047382060221, "det_code_identical": true, "max_abs(out - delta n - det_out)": 1.430511474609375e-06}, "rew0": {"added_var_over_1_12": 1.0000473852287344, "det_code_identical": true, "max_abs(out - delta n - det_o
+PASS global_rng_hook_mw-push|PCk2 {"per_variant": {"detbc": true, "detshiftfix": true, "shiterb": true, "detnoise": true}}
+PASS global_rng_planner_mw-push|PCk2 {"per_variant": {"detbc": true, "detshiftfix": true, "shiterb": true, "detnoise": true}}
+Episode length: 500
+Discount factor: 0.99
+PASS detshiftfix_table_cheetah-run|PTk5 {"constant_in_episode": true, "reproducible": true, "changes_across_episodes": true, "table_shape": [3, 512]}
+PASS detshiftfix_error_moments_cheetah-run|PTk5 {"layers": {"dyn0": {"mean_fixed": -8.008147405739885e-05, "mean_shift": 0.00022091632251581764, "var_fixed": 0.012617376380207388, "var_shift": 0.012636200163078598, "mean_diff_over_sd": 0.00267765776235738, "var_rel_diff": 0.0014896711533749496, "var_over_delta2_12": 1.0089417056058858}, "dyn1": {"mean_fixed": -5.476475363621354e-06, "mean_shift": -5.904921757320607e-05, "var_fixed": 0.008539823
+PASS shiterb_mean_b_var_cheetah-run|PTk5 {"layers": {"dyn0": {"max_abs(out_b - out - b)": 4.470348358154297e-07, "max_abs(mean_err_b - mean_err - b)": 3.918323393872769e-08, "mean_abs_b": 0.04401141777634621, "mean_err_shiter": 0.0005655379604378747, "var_centered_shiter": 0.02222565370789125, "var_centered_shiterb": 0.022225653681217587, "var_rel_diff": 1.2001295512931165e-09, "raw_var_shiter": 0.022577489159220508, "raw_var_shiterb": 0
+PASS detnoise_var_detpart_cheetah-run|PTk5 {"layers": {"dyn0": {"added_var_over_1_12": 1.0000474083942645, "det_code_identical": true, "max_abs(out - delta n - det_out)": 9.5367431640625e-07}, "dyn1": {"added_var_over_1_12": 1.0000474271588429, "det_code_identical": true, "max_abs(out - delta n - det_out)": 9.5367431640625e-07}, "rew0": {"added_var_over_1_12": 1.0000474088485998, "det_code_identical": true, "max_abs(out - delta n - det_out
+PASS global_rng_hook_cheetah-run|PTk5 {"per_variant": {"detbc": true, "detshiftfix": true, "shiterb": true, "detnoise": true}}
+PASS global_rng_planner_cheetah-run|PTk5 {"per_variant": {"detbc": true, "detshiftfix": true, "shiterb": true, "detnoise": true}}
+TDMPC2._plan lines:
+  if self.cfg.num_pi_trajs > 0:
+  pi_actions = torch.empty(self.cfg.horizon, self.cfg.num_pi_trajs, self.cfg.action_dim, device=self.device)
+  _z = z.repeat(self.cfg.num_pi_trajs, 1)
+  if self.cfg.num_pi_trajs > 0:
+  actions[:, :self.cfg.num_pi_trajs] = pi_actions
+  r = torch.randn(self.cfg.horizon, self.cfg.num_samples-self.cfg.num_pi_trajs, self.cfg.action_dim, device=std.device)
+  actions[:, self.cfg.num_pi_trajs:] = actions_sample
+  # Compute elite actions
+  elite_idxs = torch.topk(value.squeeze(1), self.cfg.num_elites, dim=0).indices
+  elite_value, elite_actions = value[elite_idxs], actions[:, elite_idxs]
+  max_value = elite_value.max(0).values
+  score = torch.exp(self.cfg.temperature*(elite_value - max_value))
+  score = score / score.sum(0)
+  mean = (score.unsqueeze(0) * elite_actions).sum(dim=1) / (score.sum(0) + 1e-9)
+  std = ((score.unsqueeze(0) * (elite_actions - mean.unsqueeze(1)) ** 2).sum(dim=1) / (score.sum(0) + 1e-9)).sqrt()
+  std = std.clamp(self.cfg.min_std, self.cfg.max_std)
+  rand_idx = math.gumbel_softmax_sample(score.squeeze(1))
+  actions = torch.index_select(elite_actions, 1, rand_idx).squeeze(1)
+Episode length: 100
+Discount factor: 0.95
+PASS cem_equal_elite_weights {"n_draws": 3, "num_elites": 64, "weight": 0.015625, "min_std": 0.01, "dyn0_rows_calls": {"512": 54}}
+PASS cem_no_policy_prior_calls {"dyn0_rows_calls": {"512": 54}}
+PASS planner_reset_default {"default_planner": {"iterations": 6, "num_samples": 512, "num_elites": 64, "num_pi_trajs": 24, "horizon": 3, "temperature": 0.5, "min_std": 0.05, "max_std": 2}}
+TEST_VARIANTS_DONE all_pass=False n=22
+=== 18:37:34 smoke report
+CHECK1 untouched E1 qlib vs td qlib: IDENTICAL {'mw-push|none_k0': True, 'mw-push|det_k3': True, 'mw-push|shiter_k3': True, 'mw-push|shep_k3': True, 'mw-push|detshift_k3': True, 'cheetah-run|none_k0': True, 'cheetah-run|det_k5': True, 'cheetah-run|shiter_k5': True, 'cheetah-run|shep_k5': True, 'cheetah-run|detshift_k5': True}
+JOBPATH SAME repro_mw-push_s1_PTk3_det ret 1365.4967 direct 1365.496686436236
+JOBPATH SAME repro_mw-push_s1_PTk3_detshift ret 1767.4526 direct 1767.4525940194726
+JOBPATH SAME repro_mw-push_s1_PTk3_shep ret 21.8917 direct 21.891735922341468
+JOBPATH SAME repro_mw-push_s1_PTk3_shiter ret 1774.0404 direct 1774.0403598323464
+JOBPATH SAME repro_mw-push_s1_none ret 1785.1836 direct 1785.1835772544146
+EP smoke_cheetah-run_s1_PCk4_det_base_c00: ret 799.26 succ 0.0 47.6s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei []
+EP smoke_cheetah-run_s1_PCk4_detbc_base_c00: ret 163.21 succ 0.0 49.2s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei []
+EP smoke_cheetah-run_s1_PCk4_detshift_base_c00: ret 807.03 succ 0.0 49.9s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei []
+EP smoke_cheetah-run_s1_PCk4_shiter_base_c00: ret 730.44 succ 0.0 49.3s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei []
+EP smoke_cheetah-run_s1_PTk5_det_base_c00: ret 422.43 succ 0.0 39.7s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_cheetah-run_s1_PTk5_det_cem_c00: ret 342.06 succ 0.0 33.5s refresh 0 calls ["[('dyn0x512', 18), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei []
+EP smoke_cheetah-run_s1_PTk5_det_it12_c00: ret 567.61 succ 0.0 54.2s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 36), ('dyn1x24', 2), ('dyn1x512', 36), ('rew0x512', 36), ('rew1x512', 36)]"] sig  oei []
+EP smoke_cheetah-run_s1_PTk5_det_it24_c00: ret 585.24 succ 0.0 80.9s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 72), ('dyn1x24', 2), ('dyn1x512', 72), ('rew0x512', 72), ('rew1x512', 72)]"] sig  oei []
+EP smoke_cheetah-run_s1_PTk5_detbc_base_c00: ret 37.81 succ 0.0 40.3s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_cheetah-run_s1_PTk5_detnoise_base_c00: ret 562.31 succ 0.0 44.5s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_cheetah-run_s1_PTk5_detshift_base_c00: ret 655.16 succ 0.0 47.9s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_cheetah-run_s1_PTk5_detshiftfix_base_c00: ret 619.42 succ 0.0 45.8s refresh 1 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig [[783.4927, 766.5287], [783.4927, 766.5287]] oei ['drift', 'e_fresh', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_cheetah-run_s1_PTk5_shep_base_c00: ret 624.60 succ 0.0 40.5s refresh 1 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig [[783.4927, 766.5287], [783.4927, 766.5287]] oei ['drift', 'e_fresh', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_cheetah-run_s1_PTk5_shep_cem_c00: ret 509.60 succ 0.0 35.4s refresh 1 calls ["[('dyn0x512', 18), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig [[783.4927, 766.5287], [783.4927, 766.5287]] oei []
+EP smoke_cheetah-run_s1_PTk5_shiter_base_c00: ret 704.54 succ 0.0 42.5s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_cheetah-run_s1_PTk5_shiterb_base_c00: ret 118.70 succ 0.0 44.7s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_cheetah-run_s1_none_base_c00: ret 866.09 succ 0.0 30.1s refresh 0 calls [] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_cheetah-run_s1_none_cem_c00: ret 787.05 succ 0.0 25.3s refresh 0 calls [] sig  oei []
+EP smoke_cheetah-run_s1_none_it12_c00: ret 783.86 succ 0.0 47.3s refresh 0 calls [] sig  oei []
+EP smoke_cheetah-run_s1_none_it24_c00: ret 824.27 succ 0.0 74.2s refresh 0 calls [] sig  oei []
+EP smoke_mw-push_s1_PCk2_det_base_c00: ret 1660.71 succ 1.0 8.8s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei []
+EP smoke_mw-push_s1_PCk2_detbc_base_c00: ret 7.17 succ 0.0 9.1s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei []
+EP smoke_mw-push_s1_PCk2_detshift_base_c00: ret 1778.44 succ 1.0 9.9s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei []
+EP smoke_mw-push_s1_PCk2_shiter_base_c00: ret 1780.22 succ 1.0 9.2s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei []
+EP smoke_mw-push_s1_PTk3_det_base_c00: ret 1573.85 succ 0.0 9.9s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_mw-push_s1_PTk3_det_cem_c00: ret 1490.17 succ 0.0 7.0s refresh 0 calls ["[('dyn0x512', 18), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei []
+EP smoke_mw-push_s1_PTk3_detbc_base_c00: ret 25.84 succ 0.0 10.1s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_mw-push_s1_PTk3_detnoise_base_c00: ret 1769.17 succ 1.0 9.6s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_mw-push_s1_PTk3_detshift_base_c00: ret 1780.95 succ 1.0 10.7s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_mw-push_s1_PTk3_detshiftfix_base_c00: ret 48.24 succ 0.0 10.2s refresh 1 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig [[783.4927, 766.5287], [783.4927, 766.5287]] oei ['drift', 'e_fresh', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_mw-push_s1_PTk3_shep_base_c00: ret 22.13 succ 0.0 9.9s refresh 1 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig [[783.4927, 766.5287], [783.4927, 766.5287]] oei ['drift', 'e_fresh', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_mw-push_s1_PTk3_shep_cem_c00: ret 3.69 succ 0.0 7.2s refresh 1 calls ["[('dyn0x512', 18), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig [[783.4927, 766.5287], [783.4927, 766.5287]] oei []
+EP smoke_mw-push_s1_PTk3_shiter_base_c00: ret 1778.56 succ 1.0 10.1s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_mw-push_s1_PTk3_shiterb_base_c00: ret 1737.79 succ 1.0 10.5s refresh 0 calls ["[('dyn0x24', 2), ('dyn0x512', 18), ('dyn1x24', 2), ('dyn1x512', 18), ('rew0x512', 18), ('rew1x512', 18)]"] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_mw-push_s1_none_base_c00: ret 1793.75 succ 1.0 6.8s refresh 0 calls [] sig  oei ['drift', 'oei', 'oei_indep', 'sel_indep', 'sel_last']
+EP smoke_mw-push_s1_none_cem_c00: ret 1793.89 succ 1.0 5.5s refresh 0 calls [] sig  oei []
+PREP prep_cheetah-run_s1: worst resid/delta 1.90e+00, range diff {'dyn0': -0.2098, 'dyn1': -0.0911, 'rew0': 0.0031, 'rew1': -0.0068}, 8.8s
+PROBLEM prep_cheetah-run_s1: bias residual >= 1% of delta
+PREP prep_mw-pick-place_s1: worst resid/delta 9.61e-01, range diff {'dyn0': -0.0008, 'dyn1': -0.0023, 'rew0': -0.0001, 'rew1': -0.002}, 8.9s
+PROBLEM prep_mw-pick-place_s1: bias residual >= 1% of delta
+PREP prep_mw-push_s1: worst resid/delta 1.16e+00, range diff {'dyn0': 0.0059, 'dyn1': 0.0135, 'rew0': 0.017, 'rew1': 0.0158}, 7.8s
+PROBLEM prep_mw-push_s1: bias residual >= 1% of delta
+PREP prep_walker-walk_s1: worst resid/delta 2.94e-01, range diff {'dyn0': 0.0059, 'dyn1': 0.0029, 'rew0': -0.0175, 'rew1': 0.0068}, 8.8s
+PROBLEM prep_walker-walk_s1: bias residual >= 1% of delta
+E13 e13smoke_cheetah-run_s1: 36 cells, states [0, 70, 140, 210, 280, 350, 420, 490], 54.7s (loop 22.7s)
+   PTk5_det               first err1h 0.0370 rew_med 1.3669 ratio 0.7822 rho_p 1.000 | last ratio 5.0231 rho_p 1.000 spear 0.145 overlap 0.180
+   PTk5_detbc             first err1h 0.1501 rew_med 2.2704 ratio 1.2735 rho_p 1.000 | last ratio 29.3352 rho_p 1.000 spear 0.103 overlap 0.154
+   PTk5_shep              first err1h 0.0732 rew_med 1.3221 ratio 1.1296 rho_p 1.000 | last ratio 12.2053 rho_p 1.000 spear 0.147 overlap 0.156
+   PTk5_detshiftfix       first err1h 0.0468 rew_med 1.1461 ratio 0.9595 rho_p 1.000 | last ratio 14.5862 rho_p 1.000 spear 0.183 overlap 0.165
+   PTk5_shiterb           first err1h 0.1863 rew_med 6.1438 ratio 1.1138 rho_p 0.680 | last ratio 10.8400 rho_p 0.091 spear 0.036 overlap 0.116
+   PTk5_shiter            first err1h 0.0714 rew_med 1.4033 ratio 0.9530 rho_p 0.159 | last ratio 10.0357 rho_p 0.030 spear 0.129 overlap 0.139
+   PTk5_detshift          first err1h 0.0460 rew_med 1.1367 ratio 0.9255 rho_p 0.163 | last ratio 11.7641 rho_p 0.017 spear 0.167 overlap 0.154
+   PTk5_detnoise          first err1h 0.0757 rew_med 1.6014 ratio 0.9537 rho_p 0.345 | last ratio 7.8566 rho_p 0.133 spear 0.154 overlap 0.155
+   PTk4_det               first err1h 0.1497 rew_med 4.2511 ratio 1.7685 rho_p 1.000 | last ratio 89.5835 rho_p 1.000 spear 0.001 overlap 0.092
+   PTk4_ind               first err1h 0.2983 rew_med 2.9196 ratio 2.2010 rho_p 0.125 | last ratio 124.3126 rho_p 0.008 spear 0.029 overlap 0.140
+   PTk4_shiter            first err1h 0.2773 rew_med 2.6033 ratio 1.7464 rho_p 0.147 | last ratio 53.3235 rho_p 0.007 spear 0.041 overlap 0.135
+   PTk4_shstep            first err1h 0.2876 rew_med 2.7338 ratio 1.7781 rho_p 1.000 | last ratio 50.3111 rho_p 1.000 spear 0.050 overlap 0.139
+E13 e13smoke_mw-push_s1: 36 cells, states [0, 12, 28, 40, 56, 68, 84, 96], 41.2s (loop 6.0s)
+   PTk3_det               first err1h 0.7968 rew_med 6.7931 ratio 52.4943 rho_p 1.000 | last ratio 1171.4709 rho_p 1.000 spear 0.058 overlap 0.135
+   PTk3_detbc             first err1h 1.3341 rew_med 20.3650 ratio 0.9958 rho_p 1.000 | last ratio 5.2364 rho_p 1.000 spear 0.015 overlap 0.111
+   PTk3_shep              first err1h 0.4970 rew_med 42.5475 ratio 15.7257 rho_p 1.000 | last ratio 92.9717 rho_p 1.000 spear 0.091 overlap 0.134
+   PTk3_detshiftfix       first err1h 0.3349 rew_med 12.2253 ratio 8.2575 rho_p 1.000 | last ratio 55.8959 rho_p 1.000 spear 0.107 overlap 0.159
+   PTk3_shiterb           first err1h 5.1656 rew_med 629.8406 ratio 13.7763 rho_p 0.282 | last ratio 308.4740 rho_p 0.041 spear -0.035 overlap 0.100
+   PTk3_shiter            first err1h 0.5136 rew_med 32.5607 ratio 9.1694 rho_p 0.038 | last ratio 112.4280 rho_p 0.006 spear 0.024 overlap 0.125
+   PTk3_detshift          first err1h 0.3677 rew_med 10.8672 ratio 14.1311 rho_p 0.211 | last ratio 65.4240 rho_p -0.020 spear 0.088 overlap 0.139
+   PTk3_detnoise          first err1h 1.2116 rew_med 21.7833 ratio 50.6696 rho_p 0.201 | last ratio 905.7787 rho_p 0.048 spear 0.021 overlap 0.129
+   PTk2_det               first err1h 3.5865 rew_med 61.1828 ratio 14.4197 rho_p 1.000 | last ratio 456.1910 rho_p 1.000 spear 0.027 overlap 0.148
+   PTk2_ind               first err1h 1.7258 rew_med 64.3608 ratio 55.4099 rho_p 0.010 | last ratio 1719.3953 rho_p 0.002 spear 0.024 overlap 0.127
+   PTk2_shiter            first err1h 1.6619 rew_med 70.2086 ratio 29.5815 rho_p 0.033 | last ratio 821.7622 rho_p -0.009 spear 0.009 overlap 0.117
+   PTk2_shstep            first err1h 1.5463 rew_med 78.8996 ratio 32.2045 rho_p 1.000 | last ratio 552.7066 rho_p 1.000 spear 0.021 overlap 0.128
+TIMING timingsmoke_cheetah-run {'it6|none': 56.47, 'it6|det': 70.67, 'it12|none': 99.45, 'it12|det': 114.57, 'it24|none': 169.53, 'it24|det': 201.55}
+CHECK_SMOKE_DONE episodes 36 prep 4 e13 2 problems 4
+=== 18:37:35 SMOKE_ALL_DONE

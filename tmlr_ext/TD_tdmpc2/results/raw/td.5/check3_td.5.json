@@ -1,0 +1,34 @@
+{
+ "mw-push": {
+  "n": 90,
+  "none_new": 1.0,
+  "none_e1": 0.9888888888888889,
+  "diff": 0.011111111111111072,
+  "limit": 0.1,
+  "pass": true
+ },
+ "mw-pick-place": {
+  "n": 90,
+  "none_new": 1.0,
+  "none_e1": 0.9888888888888889,
+  "diff": 0.011111111111111072,
+  "limit": 0.1,
+  "pass": true
+ },
+ "mw-door-open": {
+  "n": 90,
+  "none_new": 1.0,
+  "none_e1": 0.9666666666666667,
+  "diff": 0.033333333333333326,
+  "limit": 0.1,
+  "pass": true
+ },
+ "mw-drawer-open": {
+  "n": 90,
+  "none_new": 1.0,
+  "none_e1": 1.0,
+  "diff": 0.0,
+  "limit": 0.1,
+  "pass": true
+ }
+}

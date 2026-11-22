@@ -1,0 +1,85 @@
+{
+ "time": "2026-11-21T23:28:42Z",
+ "tag": "dw.5",
+ "cells": {
+  "pusht|pc|det|k4|cem": {
+   "stage1": {
+    "n": 50,
+    "D": 0.08,
+    "ci": [
+     -0.02,
+     0.2
+    ]
+   },
+   "stage2": true,
+   "final": {
+    "n": 100,
+    "D": 0.07,
+    "ci": [
+     0.0,
+     0.14
+    ]
+   }
+  },
+  "pusht|pc|detbc|k4|cem": {
+   "stage1": {
+    "n": 50,
+    "D": 0.0,
+    "ci": [
+     -0.06,
+     0.06
+    ]
+   },
+   "stage2": false
+  },
+  "pusht|pc|shiter|k4|cem": {
+   "stage1": {
+    "n": 50,
+    "D": -0.06,
+    "ci": [
+     -0.14,
+     0.0
+    ]
+   },
+   "stage2": false
+  },
+  "pusht|rc_k4|det|k4|cem": {
+   "stage1": {
+    "n": 50,
+    "D": 0.02,
+    "ci": [
+     -0.06,
+     0.12
+    ]
+   },
+   "stage2": true,
+   "final": {
+    "n": 100,
+    "D": -0.02,
+    "ci": [
+     -0.08,
+     0.04
+    ]
+   }
+  },
+  "pusht|rc_k4|shiter|k4|cem": {
+   "stage1": {
+    "n": 50,
+    "D": 0.04,
+    "ci": [
+     -0.06,
+     0.14
+    ]
+   },
+   "stage2": true,
+   "final": {
+    "n": 100,
+    "D": 0.04,
+    "ci": [
+     -0.02,
+     0.1
+    ]
+   }
+  }
+ }
+}

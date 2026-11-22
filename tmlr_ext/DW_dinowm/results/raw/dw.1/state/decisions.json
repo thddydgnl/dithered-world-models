@@ -1,0 +1,58 @@
+{
+ "time": "2026-11-22T00:46:22Z",
+ "tag": "dw.1",
+ "cells": {
+  "pusht|main|det|k4|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.04,
+    "ci": [
+     -0.07,
+     0.15
+    ]
+   },
+   "source": "E11"
+  },
+  "pusht|main|detbc|k4|cem": {
+   "final": {
+    "n": 100,
+    "D": 0.16,
+    "ci": [
+     0.05,
+     0.27
+    ]
+   },
+   "source": "E11"
+  },
+  "pusht|main|detbc|k5|cem": {
+   "stage1": {
+    "n": 50,
+    "D": 0.08,
+    "ci": [
+     0.02,
+     0.16
+    ]
+   },
+   "stage2": true,
+   "final": {
+    "n": 100,
+    "D": 0.07,
+    "ci": [
+     0.02,
+     0.13
+    ]
+   }
+  },
+  "pusht|main|shiter|k4|cem": {
+   "final": {
+    "n": 100,
+    "D": -0.02,
+    "ci": [
+     -0.08,
+     0.04
+    ]
+   },
+   "source": "E11"
+  }
+ }
+}

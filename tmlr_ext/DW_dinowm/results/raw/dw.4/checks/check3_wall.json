@@ -1,0 +1,36 @@
+{
+ "task": "wall",
+ "split": "eval8",
+ "n": 100,
+ "none_success": 0.49,
+ "e1_none_success": 0.61,
+ "diff": -0.12,
+ "tolerance": 0.1,
+ "within_window": false,
+ "passed": true,
+ "tag": "dw.4",
+ "exception": {
+  "decision": "D3 (coordinator, judge Fable 5.2 max, DESIGN_tmlr.md section 11, [post hoc]): keep Wall eval8 (pair seed 8, 100 pairs) as in section 0.4; verdict rules unchanged",
+  "evidence": "out/diag/wall/summary_eval.json on dw.4: Wall none on the E1 eval pairs (pair seed 5, planner seed 3000+e) 62/100 vs E1 61/100 (episode agreement 85%): pipeline normal; eval8 vs E1 difference ~1.7 SE",
+  "eval8_none": 0.49,
+  "e1_none": 0.61,
+  "rerun_e1_split": 0.62
+ },
+ "deviation": "eval8 none outside the window; exception decided by the coordinator: proceed",
+ "history": [
+  {
+   "task": "wall",
+   "split": "eval8",
+   "n": 100,
+   "none_success": 0.49,
+   "e1_none_success": 0.61,
+   "diff": -0.12,
+   "tolerance": 0.1,
+   "within_window": false,
+   "passed": false,
+   "tag": "dw.4",
+   "time": "2026-11-21T19:27:51Z"
+  }
+ ],
+ "time": "2026-11-21T19:43:24Z"
+}

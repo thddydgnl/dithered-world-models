@@ -1,0 +1,1422 @@
+{
+ "n_items": 233,
+ "mismatches": 0,
+ "rows": [
+  {
+   "item": "E11 pusht none success",
+   "recount": 0.73,
+   "analysis": 0.73,
+   "match": true
+  },
+  {
+   "item": "E11 pusht det n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pusht det successes",
+   "recount": 69,
+   "analysis": 69,
+   "match": true
+  },
+  {
+   "item": "E11 pusht det D",
+   "recount": 0.04,
+   "analysis": 0.04,
+   "match": true
+  },
+  {
+   "item": "E11 pusht det D CI",
+   "recount": [
+    -0.07,
+    0.15
+   ],
+   "analysis": [
+    -0.07,
+    0.15
+   ],
+   "match": true
+  },
+  {
+   "item": "E11 pusht detbc n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detbc successes",
+   "recount": 57,
+   "analysis": 57,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detbc D",
+   "recount": 0.16,
+   "analysis": 0.16,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detbc D_v-D_det",
+   "recount": 0.12,
+   "analysis": 0.12,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shstep n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shstep successes",
+   "recount": 69,
+   "analysis": 69,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shstep D",
+   "recount": 0.04,
+   "analysis": 0.04,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shstep D_v-D_det",
+   "recount": 0.0,
+   "analysis": 0.0,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detshiftfix n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detshiftfix successes",
+   "recount": 71,
+   "analysis": 71,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detshiftfix D",
+   "recount": 0.02,
+   "analysis": 0.02,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detshiftfix D_v-D_det",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shiterb n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shiterb successes",
+   "recount": 69,
+   "analysis": 69,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shiterb D",
+   "recount": 0.04,
+   "analysis": 0.04,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shiterb D_v-D_det",
+   "recount": 0.0,
+   "analysis": 0.0,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shiter n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shiter successes",
+   "recount": 75,
+   "analysis": 75,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shiter D",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "E11 pusht shiter D_v-D_det",
+   "recount": -0.06,
+   "analysis": -0.06,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detshift n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detshift successes",
+   "recount": 71,
+   "analysis": 71,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detshift D",
+   "recount": 0.02,
+   "analysis": 0.02,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detshift D_v-D_det",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detnoise n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detnoise successes",
+   "recount": 67,
+   "analysis": 67,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detnoise D",
+   "recount": 0.06,
+   "analysis": 0.06,
+   "match": true
+  },
+  {
+   "item": "E11 pusht detnoise D_v-D_det",
+   "recount": 0.02,
+   "analysis": 0.02,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze none success",
+   "recount": 0.79,
+   "analysis": 0.79,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze det n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze det successes",
+   "recount": 70,
+   "analysis": 70,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze det D",
+   "recount": 0.09,
+   "analysis": 0.09,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze det D CI",
+   "recount": [
+    0.0,
+    0.18
+   ],
+   "analysis": [
+    0.0,
+    0.18
+   ],
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detbc n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detbc successes",
+   "recount": 80,
+   "analysis": 80,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detbc D",
+   "recount": -0.01,
+   "analysis": -0.01,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detbc D_v-D_det",
+   "recount": -0.1,
+   "analysis": -0.1,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shstep n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shstep successes",
+   "recount": 83,
+   "analysis": 83,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shstep D",
+   "recount": -0.04,
+   "analysis": -0.04,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shstep D_v-D_det",
+   "recount": -0.13,
+   "analysis": -0.13,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detshiftfix n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detshiftfix successes",
+   "recount": 85,
+   "analysis": 85,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detshiftfix D",
+   "recount": -0.06,
+   "analysis": -0.06,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detshiftfix D_v-D_det",
+   "recount": -0.15,
+   "analysis": -0.15,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shiterb n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shiterb successes",
+   "recount": 79,
+   "analysis": 79,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shiterb D",
+   "recount": 0.0,
+   "analysis": 0.0,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shiterb D_v-D_det",
+   "recount": -0.09,
+   "analysis": -0.09,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shiter n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shiter successes",
+   "recount": 83,
+   "analysis": 83,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shiter D",
+   "recount": -0.04,
+   "analysis": -0.04,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze shiter D_v-D_det",
+   "recount": -0.13,
+   "analysis": -0.13,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detshift n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detshift successes",
+   "recount": 85,
+   "analysis": 85,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detshift D",
+   "recount": -0.06,
+   "analysis": -0.06,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detshift D_v-D_det",
+   "recount": -0.15,
+   "analysis": -0.15,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detnoise n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detnoise successes",
+   "recount": 66,
+   "analysis": 66,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detnoise D",
+   "recount": 0.13,
+   "analysis": 0.13,
+   "match": true
+  },
+  {
+   "item": "E11 pointmaze detnoise D_v-D_det",
+   "recount": 0.04,
+   "analysis": 0.04,
+   "match": true
+  },
+  {
+   "item": "E11 wall none success",
+   "recount": 0.49,
+   "analysis": 0.49,
+   "match": true
+  },
+  {
+   "item": "E11 wall det n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 wall det successes",
+   "recount": 7,
+   "analysis": 7,
+   "match": true
+  },
+  {
+   "item": "E11 wall det D",
+   "recount": 0.42,
+   "analysis": 0.42,
+   "match": true
+  },
+  {
+   "item": "E11 wall det D CI",
+   "recount": [
+    0.31,
+    0.53
+   ],
+   "analysis": [
+    0.31,
+    0.53
+   ],
+   "match": true
+  },
+  {
+   "item": "E11 wall detbc n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 wall detbc successes",
+   "recount": 37,
+   "analysis": 37,
+   "match": true
+  },
+  {
+   "item": "E11 wall detbc D",
+   "recount": 0.12,
+   "analysis": 0.12,
+   "match": true
+  },
+  {
+   "item": "E11 wall detbc D_v-D_det",
+   "recount": -0.3,
+   "analysis": -0.3,
+   "match": true
+  },
+  {
+   "item": "E11 wall shstep n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 wall shstep successes",
+   "recount": 53,
+   "analysis": 53,
+   "match": true
+  },
+  {
+   "item": "E11 wall shstep D",
+   "recount": -0.04,
+   "analysis": -0.04,
+   "match": true
+  },
+  {
+   "item": "E11 wall shstep D_v-D_det",
+   "recount": -0.46,
+   "analysis": -0.46,
+   "match": true
+  },
+  {
+   "item": "E11 wall detshiftfix n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 wall detshiftfix successes",
+   "recount": 47,
+   "analysis": 47,
+   "match": true
+  },
+  {
+   "item": "E11 wall detshiftfix D",
+   "recount": 0.02,
+   "analysis": 0.02,
+   "match": true
+  },
+  {
+   "item": "E11 wall detshiftfix D_v-D_det",
+   "recount": -0.4,
+   "analysis": -0.4,
+   "match": true
+  },
+  {
+   "item": "E11 wall shiterb n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 wall shiterb successes",
+   "recount": 25,
+   "analysis": 25,
+   "match": true
+  },
+  {
+   "item": "E11 wall shiterb D",
+   "recount": 0.24,
+   "analysis": 0.24,
+   "match": true
+  },
+  {
+   "item": "E11 wall shiterb D_v-D_det",
+   "recount": -0.18,
+   "analysis": -0.18,
+   "match": true
+  },
+  {
+   "item": "E11 wall shiter n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 wall shiter successes",
+   "recount": 49,
+   "analysis": 49,
+   "match": true
+  },
+  {
+   "item": "E11 wall shiter D",
+   "recount": 0.0,
+   "analysis": 0.0,
+   "match": true
+  },
+  {
+   "item": "E11 wall shiter D_v-D_det",
+   "recount": -0.42,
+   "analysis": -0.42,
+   "match": true
+  },
+  {
+   "item": "E11 wall detshift n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 wall detshift successes",
+   "recount": 64,
+   "analysis": 64,
+   "match": true
+  },
+  {
+   "item": "E11 wall detshift D",
+   "recount": -0.15,
+   "analysis": -0.15,
+   "match": true
+  },
+  {
+   "item": "E11 wall detshift D_v-D_det",
+   "recount": -0.57,
+   "analysis": -0.57,
+   "match": true
+  },
+  {
+   "item": "E11 wall detnoise n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E11 wall detnoise successes",
+   "recount": 10,
+   "analysis": 10,
+   "match": true
+  },
+  {
+   "item": "E11 wall detnoise D",
+   "recount": 0.39,
+   "analysis": 0.39,
+   "match": true
+  },
+  {
+   "item": "E11 wall detnoise D_v-D_det",
+   "recount": -0.03,
+   "analysis": -0.03,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main det k4 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main det k4 D",
+   "recount": 0.04,
+   "analysis": 0.04,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main det k2 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main det k2 D",
+   "recount": 0.76,
+   "analysis": 0.76,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main det k3 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main det k3 D",
+   "recount": 0.32,
+   "analysis": 0.32,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main detbc k4 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main detbc k4 D",
+   "recount": 0.16,
+   "analysis": 0.16,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main detbc k5 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main detbc k5 D",
+   "recount": 0.07,
+   "analysis": 0.07,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main detbc k2 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main detbc k2 D",
+   "recount": 0.62,
+   "analysis": 0.62,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main detbc k3 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main detbc k3 D",
+   "recount": 0.46,
+   "analysis": 0.46,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main shiter k4 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main shiter k4 D",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main shiter k1 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main shiter k1 D",
+   "recount": 0.76,
+   "analysis": 0.76,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main shiter k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main shiter k2 D",
+   "recount": 0.0,
+   "analysis": 0.0,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main shiter k3 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht main shiter k3 D",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc det k4 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc det k4 D",
+   "recount": 0.07,
+   "analysis": 0.07,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc det k2 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc det k2 D",
+   "recount": 0.76,
+   "analysis": 0.76,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc det k3 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc det k3 D",
+   "recount": 0.28,
+   "analysis": 0.28,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc detbc k4 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc detbc k4 D",
+   "recount": 0.0,
+   "analysis": 0.0,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc detbc k2 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc detbc k2 D",
+   "recount": 0.76,
+   "analysis": 0.76,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc detbc k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc detbc k3 D",
+   "recount": 0.12,
+   "analysis": 0.12,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc shiter k4 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc shiter k4 D",
+   "recount": -0.06,
+   "analysis": -0.06,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc shiter k1 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc shiter k1 D",
+   "recount": 0.72,
+   "analysis": 0.72,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc shiter k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc shiter k2 D",
+   "recount": 0.01,
+   "analysis": 0.01,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc shiter k3 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht pc shiter k3 D",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k4 det k4 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k4 det k4 D",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k3 det k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k3 det k3 D",
+   "recount": 0.16,
+   "analysis": 0.16,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k4 shiter k4 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k4 shiter k4 D",
+   "recount": 0.04,
+   "analysis": 0.04,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k1 shiter k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k1 shiter k1 D",
+   "recount": 0.22,
+   "analysis": 0.22,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k2 shiter k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k2 shiter k2 D",
+   "recount": 0.02,
+   "analysis": 0.02,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k3 shiter k3 n",
+   "recount": 50,
+   "analysis": 50,
+   "match": true
+  },
+  {
+   "item": "E12 pusht rc_k3 shiter k3 D",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main det k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main det k3 D",
+   "recount": 0.09,
+   "analysis": 0.09,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main det k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main det k1 D",
+   "recount": 0.71,
+   "analysis": 0.71,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main det k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main det k2 D",
+   "recount": 0.09,
+   "analysis": 0.09,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main detbc k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main detbc k3 D",
+   "recount": -0.01,
+   "analysis": -0.01,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main detbc k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main detbc k1 D",
+   "recount": 0.67,
+   "analysis": 0.67,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main detbc k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main detbc k2 D",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main shiter k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main shiter k3 D",
+   "recount": -0.04,
+   "analysis": -0.04,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main shiter k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main shiter k1 D",
+   "recount": 0.77,
+   "analysis": 0.77,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main shiter k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze main shiter k2 D",
+   "recount": -0.05,
+   "analysis": -0.05,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc det k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc det k3 D",
+   "recount": 0.01,
+   "analysis": 0.01,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc det k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc det k1 D",
+   "recount": 0.22,
+   "analysis": 0.22,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc det k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc det k2 D",
+   "recount": 0.09,
+   "analysis": 0.09,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc detbc k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc detbc k3 D",
+   "recount": 0.02,
+   "analysis": 0.02,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc detbc k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc detbc k1 D",
+   "recount": 0.65,
+   "analysis": 0.65,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc detbc k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc detbc k2 D",
+   "recount": 0.06,
+   "analysis": 0.06,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc shiter k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc shiter k3 D",
+   "recount": -0.04,
+   "analysis": -0.04,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc shiter k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc shiter k1 D",
+   "recount": 0.17,
+   "analysis": 0.17,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc shiter k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 pointmaze pc shiter k2 D",
+   "recount": 0.04,
+   "analysis": 0.04,
+   "match": true
+  },
+  {
+   "item": "E12 wall main det k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall main det k2 D",
+   "recount": 0.43,
+   "analysis": 0.43,
+   "match": true
+  },
+  {
+   "item": "E12 wall main det k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall main det k3 D",
+   "recount": 0.42,
+   "analysis": 0.42,
+   "match": true
+  },
+  {
+   "item": "E12 wall main det k4 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall main det k4 D",
+   "recount": -0.22,
+   "analysis": -0.22,
+   "match": true
+  },
+  {
+   "item": "E12 wall main detbc k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall main detbc k1 D",
+   "recount": 0.34,
+   "analysis": 0.34,
+   "match": true
+  },
+  {
+   "item": "E12 wall main detbc k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall main detbc k2 D",
+   "recount": 0.06,
+   "analysis": 0.06,
+   "match": true
+  },
+  {
+   "item": "E12 wall main detbc k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall main detbc k3 D",
+   "recount": 0.12,
+   "analysis": 0.12,
+   "match": true
+  },
+  {
+   "item": "E12 wall main detbc k4 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall main detbc k4 D",
+   "recount": -0.22,
+   "analysis": -0.22,
+   "match": true
+  },
+  {
+   "item": "E12 wall main shiter k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall main shiter k1 D",
+   "recount": 0.49,
+   "analysis": 0.49,
+   "match": true
+  },
+  {
+   "item": "E12 wall main shiter k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall main shiter k2 D",
+   "recount": 0.01,
+   "analysis": 0.01,
+   "match": true
+  },
+  {
+   "item": "E12 wall main shiter k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall main shiter k3 D",
+   "recount": 0.0,
+   "analysis": 0.0,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc det k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc det k2 D",
+   "recount": 0.42,
+   "analysis": 0.42,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc det k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc det k3 D",
+   "recount": 0.38,
+   "analysis": 0.38,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc det k4 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc det k4 D",
+   "recount": -0.1,
+   "analysis": -0.1,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc detbc k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc detbc k1 D",
+   "recount": 0.18,
+   "analysis": 0.18,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc detbc k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc detbc k2 D",
+   "recount": 0.05,
+   "analysis": 0.05,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc detbc k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc detbc k3 D",
+   "recount": 0.15,
+   "analysis": 0.15,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc detbc k4 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc detbc k4 D",
+   "recount": -0.18,
+   "analysis": -0.18,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc shiter k1 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc shiter k1 D",
+   "recount": 0.45,
+   "analysis": 0.45,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc shiter k2 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc shiter k2 D",
+   "recount": 0.05,
+   "analysis": 0.05,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc shiter k3 n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "E12 wall pc shiter k3 D",
+   "recount": -0.07,
+   "analysis": -0.07,
+   "match": true
+  },
+  {
+   "item": "E16 pointmaze chosen c",
+   "recount": 2.0,
+   "analysis": 2.0,
+   "match": true
+  },
+  {
+   "item": "E16 pointmaze none MPPI success",
+   "recount": 0.81,
+   "analysis": 0.81,
+   "match": true
+  },
+  {
+   "item": "E16 wall chosen c",
+   "recount": 1.0,
+   "analysis": 1.0,
+   "match": true
+  },
+  {
+   "item": "E16 wall none MPPI success",
+   "recount": 0.63,
+   "analysis": 0.63,
+   "match": true
+  }
+ ]
+}

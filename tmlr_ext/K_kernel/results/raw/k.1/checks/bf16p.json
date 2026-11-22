@@ -1,0 +1,63 @@
+{
+ "mw-push": {
+  "dyn_rel_l2_vs_fp32": 0.00954597257077694,
+  "rew_rel_l2_vs_fp32": 0.0062559242360293865,
+  "reward_value_maxabs": 0.1923046112060547,
+  "methods_restored": true,
+  "fp32_after_restore_equal": true,
+  "dtype_out": "torch.float32",
+  "closed_loop": {
+   "fp32_before": {
+    "ret": 1800.0457267984748,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 35.63875675201416
+   },
+   "bf16p": {
+    "ret": 1799.0947775319219,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 45.310120582580566
+   },
+   "fp32_after": {
+    "ret": 1800.0457267984748,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 32.11757183074951
+   },
+   "restore_identical": true
+  },
+  "pass": true
+ },
+ "cheetah-run": {
+  "dyn_rel_l2_vs_fp32": 0.005970349535346031,
+  "rew_rel_l2_vs_fp32": 0.0038101081736385822,
+  "reward_value_maxabs": 0.021935701370239258,
+  "methods_restored": true,
+  "fp32_after_restore_equal": true,
+  "dtype_out": "torch.float32",
+  "closed_loop": {
+   "fp32_before": {
+    "ret": 875.0102592892945,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 30.86882448196411
+   },
+   "bf16p": {
+    "ret": 580.9275243796292,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 30.8840069770813
+   },
+   "fp32_after": {
+    "ret": 875.0102592892945,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 30.624247550964355
+   },
+   "restore_identical": true
+  },
+  "pass": true
+ },
+ "PASS": true
+}

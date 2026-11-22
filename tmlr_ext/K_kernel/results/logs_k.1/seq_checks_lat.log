@@ -1,0 +1,10 @@
+=== 18:35:04Z e17_checks paths,shift,bf16p
+18:40:18 E17_CHECKS {"paths": true, "shift": true, "bf16p": true}
+=== 18:40:19Z latency smoke
+18:40:55 checks ALL_PASS=True
+18:41:26 calib: est round 103 s, 10 rounds 17.1 min
+18:41:26 E17_LAT_SMOKE_DONE
+=== 18:41:26Z latency quick
+18:41:52 E17_LAT_MAIN_DONE
+=== 2026-11-21T18:41:53Z latency quick end rc 0
+=== 18:41:53Z SEQ_CHECKS_LAT_DONE

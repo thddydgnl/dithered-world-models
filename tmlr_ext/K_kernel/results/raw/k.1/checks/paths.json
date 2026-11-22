@@ -1,0 +1,135 @@
+{
+ "episodes": {
+  "mw-push|int8|det": {
+   "ref": {
+    "ret": 1793.8137873262167,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 113.78411531448364
+   },
+   "new": {
+    "ret": 1793.8137873262167,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 97.89953470230103
+   },
+   "identical": true
+  },
+  "mw-push|int8|shiter": {
+   "ref": {
+    "ret": 1796.3145196661353,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 72.69485473632812
+   },
+   "new": {
+    "ret": 1796.3145196661353,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 100.30855417251587
+   },
+   "identical": true
+  },
+  "mw-push|int4|det": {
+   "ref": {
+    "ret": 1773.342004030943,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 27.682855129241943
+   },
+   "new": {
+    "ret": 1773.342004030943,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 36.28450870513916
+   },
+   "identical": true
+  },
+  "mw-push|int4|shiter": {
+   "ref": {
+    "ret": 1787.1776700541377,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 50.08849382400513
+   },
+   "new": {
+    "ret": 1787.1776700541377,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 31.879968643188477
+   },
+   "identical": true
+  },
+  "mw-push|intk3|det": {
+   "ref": {
+    "ret": 1744.867829106748,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 27.590937614440918
+   },
+   "new": {
+    "ret": 1744.867829106748,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 40.73586463928223
+   },
+   "identical": true
+  },
+  "mw-push|intk3|shiter": {
+   "ref": {
+    "ret": 1765.6379195153713,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 48.825130462646484
+   },
+   "new": {
+    "ret": 1765.6379195153713,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 29.38326120376587
+   },
+   "identical": true
+  },
+  "cheetah-run|intk5|det": {
+   "ref": {
+    "ret": 86.2207751579117,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 31.757636070251465
+   },
+   "new": {
+    "ret": 86.2207751579117,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 31.896644592285153
+   },
+   "identical": true
+  },
+  "cheetah-run|intk5|shiter": {
+   "ref": {
+    "ret": 740.4874777738005,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 34.64728879928589
+   },
+   "new": {
+    "ret": 740.4874777738005,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 35.71907043457031
+   },
+   "identical": true
+  }
+ },
+ "v2_codes": {
+  "det": {
+   "layer0_equal": true,
+   "layer1_equal": true
+  },
+  "shiter": {
+   "layer0_equal": true,
+   "layer1_equal": true
+  }
+ },
+ "PASS": true
+}

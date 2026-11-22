@@ -1,0 +1,5 @@
+Episode length: 100
+Discount factor: 0.95
+Episode length: 500
+Discount factor: 0.99
+E1PATHS {"qlib": "/workspace/atm/code/inputs/e1_reference/qlib.py", "mw-push|none_k0": [1785.1835772544146, 1.0, 0, "c614a7c46942b420", "08919f8eb3381282"], "mw-push|det_k3": [1365.496686436236, 1.0, 0, "bdde35dc3386fb6e", "a90ae20cc8ce2749"], "mw-push|shiter_k3": [1774.0403598323464, 1.0, 0, "39c9c4d79b4aa03e", "4c90b3518ecc2fae"], "mw-push|shep_k3": [21.891735922341468, 0.0, 1, "22742923b514cee0", "835602a90b983170"], "mw-push|detshift_k3": [1767.4525940194726, 1.0, 0, "8167871d4b79543d", "1bb245229ee773bf"], "cheetah-run|none_k0": [871.443908020854, 0.0, 0, "3e1eb8e68e6d0455", "884dfb37021097da"], "cheetah-run|det_k5": [549.1103477551369, 0.0, 0, "0c582e7600f36d9e", "02a0f00071e2ce4e"], "cheetah-run|shiter_k5": [732.7256340757012, 0.0, 0, "870506f0130e4347", "c225bdbbd729968e"], "cheetah-run|shep_k5": [250.7793076701928, 0.0, 1, "771cd8daac541655", "13565a4d57d24b67"], "cheetah-run|detshift_k5": [741.9790586038725, 0.0, 0, "658b981402a51ad6", "5a69c7f610bbc564"]}

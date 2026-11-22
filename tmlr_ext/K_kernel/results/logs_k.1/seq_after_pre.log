@@ -1,0 +1,6 @@
+=== 19:15:35Z pre driver finished; pc check
+19:17:03 E17_CHECKS {"pc": true}
+=== 19:17:04Z check 3 (FP32 none vs E1) and throughput
+{"K2": null, "K3": false, "check3": true, "episodes": 1080, "complete": false, "problems": 0}
+ANALYZE_E17_DONE
+=== 19:17:07Z SEQ_AFTER_PRE_DONE

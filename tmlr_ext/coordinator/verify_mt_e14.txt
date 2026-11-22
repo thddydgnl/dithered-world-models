@@ -1,0 +1,12 @@
+rng_sha1 mismatches vs none: 0
+mw-button-press-topdown k3 mt.2 none=1.000 D_det=+0.622 [+0.522,+0.722] p=0.0000 red_shiter=1.0 red_detshift=1.0 red_detbc=0.946 r_shep/det=1.268 shep-shiter=+0.789 [+0.700,+0.867] harm=[]
+mw-door-open      k3 mt.1 none=0.856 D_det=+0.789 [+0.689,+0.878] p=0.0000 red_shiter=0.901 red_detshift=0.775 red_detbc=0.338 r_shep/det=0.986 shep-shiter=+0.700 [+0.589,+0.800] harm=[]
+mw-drawer-open    k4 mt.1 none=0.811 D_det=+0.289 [+0.156,+0.422] p=0.0000 red_shiter=1.308 red_detshift=1.231 red_detbc=1.115 r_shep/det=0.538 shep-shiter=+0.244 [+0.122,+0.367] harm=[]
+mw-peg-insert-side k3 mt.2 none=1.000 D_det=+0.944 [+0.889,+0.989] p=0.0000 red_shiter=0.894 red_detshift=0.953 red_detbc=0.188 r_shep/det=0.976 shep-shiter=+0.822 [+0.744,+0.900] harm=[]
+mw-pick-place     k3 mt.1 none=0.978 D_det=+0.978 [+0.944,+1.000] p=0.0000 red_shiter=0.693 red_detshift=0.841 red_detbc=0.148 r_shep/det=0.943 shep-shiter=+0.622 [+0.522,+0.722] harm=[]
+mw-push           k5 mt.1 none=1.000 D_det=+0.122 [+0.056,+0.189] p=0.0000 red_shiter=1.0 red_detshift=1.0 red_detbc=0.636 r_shep/det=0.273 shep-shiter=+0.033 [+0.000,+0.078] harm=[]
+mw-sweep-into     k3 mt.2 none=1.000 D_det=+0.200 [+0.122,+0.289] p=0.0000 red_shiter=1.0 red_detshift=0.944 red_detbc=0.444 r_shep/det=2.611 shep-shiter=+0.522 [+0.422,+0.622] harm=['shep']
+mw-window-open    k3 mt.2 none=1.000 D_det=+0.689 [+0.589,+0.778] p=0.0000 red_shiter=0.919 red_detshift=0.984 red_detbc=0.823 r_shep/det=1.0 shep-shiter=+0.633 [+0.533,+0.733] harm=[]
+damaged 8/8: ['mw-button-press-topdown', 'mw-door-open', 'mw-drawer-open', 'mw-peg-insert-side', 'mw-pick-place', 'mw-push', 'mw-sweep-into', 'mw-window-open']
+P1: damaged>=6 True, sh-iter red>=0.5 in 8/8 -> True
+P2: CI low of D(sh-ep)-D(sh-iter) > 0 in 7/8 -> True

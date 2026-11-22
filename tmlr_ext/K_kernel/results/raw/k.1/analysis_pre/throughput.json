@@ -1,0 +1,52 @@
+{
+ "mean_secs_per_episode": {
+  "dmc|bf16p_none": 22.1536203622818,
+  "dmc|fp32_none": 23.025817362816777,
+  "dmc|intk_det": 23.251311421394348,
+  "dmc|intk_detshift": 26.137868106365204,
+  "dmc|intk_shiter": 23.20318841934204,
+  "mw|bf16p_none": 4.6875796020030975,
+  "mw|fp32_none": 4.694168030560672,
+  "mw|intk_det": 5.006607294082642,
+  "mw|intk_detshift": 5.509475201368332,
+  "mw|intk_shiter": 4.801037132740021
+ },
+ "ratio_to_fp32_none": {
+  "dmc|bf16p_none": 0.9621209103333094,
+  "dmc|fp32_none": 1.0,
+  "dmc|intk_det": 1.0097930968106135,
+  "dmc|intk_detshift": 1.1351548435615544,
+  "dmc|intk_shiter": 1.007703138339475,
+  "mw|bf16p_none": 0.9985964651212565,
+  "mw|fp32_none": 1.0,
+  "mw|intk_det": 1.0665590284557096,
+  "mw|intk_detshift": 1.173685127055471,
+  "mw|intk_shiter": 1.022766356356141
+ },
+ "n_episodes": {
+  "dmc|bf16p_none": 4,
+  "dmc|fp32_none": 364,
+  "dmc|intk_det": 4,
+  "dmc|intk_detshift": 4,
+  "dmc|intk_shiter": 4,
+  "mw|bf16p_none": 8,
+  "mw|fp32_none": 728,
+  "mw|intk_det": 8,
+  "mw|intk_detshift": 8,
+  "mw|intk_shiter": 8
+ },
+ "calib_secs_mean": {
+  "dmc": 26.564626232783,
+  "mw": 5.738435753186544
+ },
+ "wall_span_s": 1681.7420861721039,
+ "episodes_total": 1140,
+ "episodes_per_hour_wall": 2440.3266313809845,
+ "workers": 8,
+ "main_estimate": {
+  "jobs_left": 720,
+  "episodes_left": 3600,
+  "worker_seconds": 47428.4403437376,
+  "wall_hours_at_workers": 1.6468208452686668
+ }
+}

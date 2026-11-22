@@ -1,0 +1,97 @@
+{
+ "qlib": "/workspace/atm/code/qlib.py",
+ "mtlib": "/workspace/atm/code/mtlib.py",
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "episodes": {
+  "mw-door-open__none__k0__s108000": {
+   "ret": 1620.4317492246628,
+   "success": 1.0,
+   "steps": 100,
+   "nq": 0,
+   "n_refresh": 0,
+   "act_ms_median": 150.9800144995097,
+   "rng": "a7ee61210039db0f32d55693200d8f82300d7aa4"
+  },
+  "mw-door-open__det__k3__s108000": {
+   "ret": 273.7461388707161,
+   "success": 0.0,
+   "steps": 100,
+   "nq": 7600,
+   "n_refresh": 0,
+   "act_ms_median": 158.2211219938472,
+   "rng": "a7ee61210039db0f32d55693200d8f82300d7aa4"
+  },
+  "mw-door-open__shiter__k3__s108000": {
+   "ret": 1528.1600300073624,
+   "success": 1.0,
+   "steps": 100,
+   "nq": 7600,
+   "n_refresh": 0,
+   "act_ms_median": 159.21592901577242,
+   "rng": "a7ee61210039db0f32d55693200d8f82300d7aa4"
+  },
+  "mw-door-open__shep__k3__s108000": {
+   "ret": 97.99105805158615,
+   "success": 0.0,
+   "steps": 100,
+   "nq": 7600,
+   "n_refresh": 1,
+   "act_ms_median": 158.6766584950965,
+   "rng": "a7ee61210039db0f32d55693200d8f82300d7aa4"
+  },
+  "mw-door-open__detshift__k3__s108000": {
+   "ret": 1384.037881076336,
+   "success": 0.0,
+   "steps": 100,
+   "nq": 7600,
+   "n_refresh": 0,
+   "act_ms_median": 161.90154451760463,
+   "rng": "a7ee61210039db0f32d55693200d8f82300d7aa4"
+  },
+  "mw-drawer-open__none__k0__s108000": {
+   "ret": 1761.6559908390045,
+   "success": 1.0,
+   "steps": 100,
+   "nq": 0,
+   "n_refresh": 0,
+   "act_ms_median": 152.93942647986114,
+   "rng": "a7ee61210039db0f32d55693200d8f82300d7aa4"
+  },
+  "mw-drawer-open__det__k4__s108000": {
+   "ret": 1455.6473851203918,
+   "success": 0.0,
+   "steps": 100,
+   "nq": 7600,
+   "n_refresh": 0,
+   "act_ms_median": 158.74004550278187,
+   "rng": "a7ee61210039db0f32d55693200d8f82300d7aa4"
+  },
+  "mw-drawer-open__shiter__k4__s108000": {
+   "ret": 1704.1536464691162,
+   "success": 0.0,
+   "steps": 100,
+   "nq": 7600,
+   "n_refresh": 0,
+   "act_ms_median": 160.4272105032578,
+   "rng": "a7ee61210039db0f32d55693200d8f82300d7aa4"
+  },
+  "mw-drawer-open__shep__k4__s108000": {
+   "ret": 1554.9061415195465,
+   "success": 1.0,
+   "steps": 100,
+   "nq": 7600,
+   "n_refresh": 1,
+   "act_ms_median": 159.89699150668457,
+   "rng": "a7ee61210039db0f32d55693200d8f82300d7aa4"
+  },
+  "mw-drawer-open__detshift__k4__s108000": {
+   "ret": 1730.632607460022,
+   "success": 1.0,
+   "steps": 100,
+   "nq": 7600,
+   "n_refresh": 0,
+   "act_ms_median": 162.84583450760692,
+   "rng": "a7ee61210039db0f32d55693200d8f82300d7aa4"
+  }
+ }
+}

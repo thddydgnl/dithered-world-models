@@ -1,0 +1,13 @@
+{
+ "tag": "mt.1",
+ "phase": "done",
+ "done": 228,
+ "total": 228,
+ "failed": 0,
+ "eta": "-",
+ "updated": "2026-11-21T23:40:12Z",
+ "note": "all jobs finished",
+ "workers": 1,
+ "hold": [],
+ "failed_ids": []
+}

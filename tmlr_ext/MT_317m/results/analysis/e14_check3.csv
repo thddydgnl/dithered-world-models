@@ -1,0 +1,9 @@
+task,none_new,none_e10,diff,pass
+mw-push,1,1,0,True
+mw-pick-place,0.9778,0.9778,0,True
+mw-door-open,0.8556,0.8333,0.02222,True
+mw-drawer-open,0.8111,0.7889,0.02222,True
+mw-button-press-topdown,1,1,0,True
+mw-peg-insert-side,1,1,0,True
+mw-window-open,1,1,0,True
+mw-sweep-into,1,1,0,True

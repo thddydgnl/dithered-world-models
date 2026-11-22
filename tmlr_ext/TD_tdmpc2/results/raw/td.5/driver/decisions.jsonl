@@ -1,0 +1,5 @@
+{"rule": "extend_up", "task": "mw-pick-place", "rk": "PC", "variant": "det", "from_k": 3, "D": 0.11111111111111116, "ci": [0.05555555555555558, 0.1777777777777778], "n_pairs": 90, "add_k": 4, "jobs": 18, "time": "2026-11-21T20:22:39Z"}
+{"rule": "extend_down", "task": "mw-door-open", "rk": "PT", "variant": "shiter", "from_k": 2, "D": 0.0444444444444444, "ci": [0.011111111111111072, 0.0888888888888889], "n_pairs": 90, "add_k": 1, "jobs": 18, "time": "2026-11-21T20:30:43Z"}
+{"rule": "extend_up", "task": "mw-door-open", "rk": "PC", "variant": "detbc", "from_k": 3, "D": 0.1444444444444445, "ci": [0.07777777777777772, 0.2222222222222222], "n_pairs": 90, "add_k": 4, "jobs": 18, "time": "2026-11-21T20:44:21Z"}
+{"rule": "extend_down", "task": "mw-drawer-open", "rk": "PT", "variant": "shiter", "from_k": 2, "D": 0.011111111111111072, "ci": [0.0, 0.033333333333333326], "n_pairs": 90, "add_k": 1, "jobs": 18, "time": "2026-11-21T20:51:16Z"}
+{"rule": "extend_down", "task": "mw-drawer-open", "rk": "PT", "variant": "detshift", "from_k": 2, "D": 0.0, "ci": [0.0, 0.0], "n_pairs": 90, "add_k": 1, "jobs": 18, "time": "2026-11-21T20:53:23Z"}

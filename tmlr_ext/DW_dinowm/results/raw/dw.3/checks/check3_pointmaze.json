@@ -1,0 +1,13 @@
+{
+ "task": "pointmaze",
+ "split": "eval8",
+ "n": 100,
+ "none_success": 0.79,
+ "e1_none_success": 0.85,
+ "diff": -0.05999999999999994,
+ "tolerance": 0.1,
+ "within_window": true,
+ "passed": true,
+ "tag": "dw.3",
+ "time": "2026-11-21T19:20:24Z"
+}

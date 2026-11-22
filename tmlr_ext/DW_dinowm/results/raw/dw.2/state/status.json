@@ -1,0 +1,15 @@
+{
+ "tag": "dw.2",
+ "phase": "done",
+ "done": 1300,
+ "total": 1300,
+ "failed": 0,
+ "eta": "2026-11-22T01:16Z",
+ "updated": "2026-11-22T01:16:18Z",
+ "note": "all items done",
+ "current": "-",
+ "pid": 3721,
+ "host": "db6fe3045c5f",
+ "remaining_items": 0,
+ "e13_left": 0
+}

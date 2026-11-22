@@ -1,0 +1,29 @@
+{
+ "task": "pointmaze",
+ "split": "held",
+ "rows": {
+  "0.25": {
+   "success": 0.8,
+   "n": 20,
+   "lam_mean": 0.005409996543312446
+  },
+  "0.5": {
+   "success": 0.65,
+   "n": 20,
+   "lam_mean": 0.010819993086624891
+  },
+  "1.0": {
+   "success": 0.8,
+   "n": 20,
+   "lam_mean": 0.021639986173249783
+  },
+  "2.0": {
+   "success": 0.85,
+   "n": 20,
+   "lam_mean": 0.043279972346499565
+  }
+ },
+ "chosen_c": 2.0,
+ "rule": "highest none success on the 20 held pairs; ties to the larger c",
+ "time": "2026-11-21T21:32:58Z"
+}

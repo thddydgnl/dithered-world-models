@@ -1,0 +1,29 @@
+{
+ "task": "wall",
+ "split": "held",
+ "rows": {
+  "0.25": {
+   "success": 0.25,
+   "n": 20,
+   "lam_mean": 0.01820257504004985
+  },
+  "0.5": {
+   "success": 0.55,
+   "n": 20,
+   "lam_mean": 0.0364051500800997
+  },
+  "1.0": {
+   "success": 0.7,
+   "n": 20,
+   "lam_mean": 0.0728103001601994
+  },
+  "2.0": {
+   "success": 0.65,
+   "n": 20,
+   "lam_mean": 0.1456206003203988
+  }
+ },
+ "chosen_c": 1.0,
+ "rule": "highest none success on the 20 held pairs; ties to the larger c",
+ "time": "2026-11-21T23:07:13Z"
+}

@@ -1,0 +1,6 @@
+{"stages": [{"eta": 1.0,  "until_below": 0.01, "max_sweeps": 60},
+            {"eta": 0.5,  "until_below": 0.01, "max_sweeps": 60},
+            {"eta": 0.25, "until_below": 0.01, "max_sweeps": 60}],
+ "each_stage_starts_from": "b = 0", "use": "first stage that stops below until_below",
+ "if_none": "final b of the stage with the smallest worst-layer residual; flag bc_unconverged",
+ "decided": "D2, 2026-11-21, judge agent (Fable 5.2 max), before any det+BC evaluation with a converged b"}

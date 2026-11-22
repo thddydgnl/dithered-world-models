@@ -1,0 +1,126 @@
+{
+ "eval_tasks": [
+  "mw-push",
+  "mw-pick-place",
+  "mw-door-open",
+  "mw-drawer-open",
+  "mw-button-press-topdown",
+  "mw-peg-insert-side",
+  "mw-window-open",
+  "mw-sweep-into"
+ ],
+ "incomplete_tasks": [],
+ "complete": true,
+ "holm_alpha": 0.05,
+ "holm_m": 8,
+ "damaged": [
+  "mw-push",
+  "mw-pick-place",
+  "mw-door-open",
+  "mw-drawer-open",
+  "mw-button-press-topdown",
+  "mw-peg-insert-side",
+  "mw-window-open",
+  "mw-sweep-into"
+ ],
+ "P1": {
+  "holds": true,
+  "n_damaged": 8,
+  "min_damaged": 6,
+  "share_red_shiter_ge_half": 1.0,
+  "tasks_red_shiter_ge_half": [
+   "mw-push",
+   "mw-pick-place",
+   "mw-door-open",
+   "mw-drawer-open",
+   "mw-button-press-topdown",
+   "mw-peg-insert-side",
+   "mw-window-open",
+   "mw-sweep-into"
+  ],
+  "share_threshold": 0.75,
+  "harmful_shiter_tasks": []
+ },
+ "P2": {
+  "holds": true,
+  "defined": true,
+  "n_damaged": 8,
+  "tasks_ci_lower_gt0": [
+   "mw-pick-place",
+   "mw-door-open",
+   "mw-drawer-open",
+   "mw-button-press-topdown",
+   "mw-peg-insert-side",
+   "mw-window-open",
+   "mw-sweep-into"
+  ],
+  "n": 7,
+  "rule": "more than half of the damaged tasks with CI lower bound of D(sh-ep) - D(sh-iter) > 0"
+ },
+ "descriptive": {
+  "fixes_red_ge_half_among_damaged": {
+   "shiter": [
+    "mw-push",
+    "mw-pick-place",
+    "mw-door-open",
+    "mw-drawer-open",
+    "mw-button-press-topdown",
+    "mw-peg-insert-side",
+    "mw-window-open",
+    "mw-sweep-into"
+   ],
+   "shep": [
+    "mw-push"
+   ],
+   "detshift": [
+    "mw-push",
+    "mw-pick-place",
+    "mw-door-open",
+    "mw-drawer-open",
+    "mw-button-press-topdown",
+    "mw-peg-insert-side",
+    "mw-window-open",
+    "mw-sweep-into"
+   ],
+   "detbc": [
+    "mw-push",
+    "mw-drawer-open",
+    "mw-button-press-topdown",
+    "mw-window-open"
+   ]
+  },
+  "harmful_eval_tasks": {
+   "shiter": [],
+   "shep": [
+    "mw-sweep-into"
+   ],
+   "detshift": [],
+   "detbc": []
+  },
+  "detbc_two_ways": {
+   "bc_unconverged_tasks": [],
+   "a_all_tasks": {
+    "fixes_among_damaged": [
+     "mw-push",
+     "mw-drawer-open",
+     "mw-button-press-topdown",
+     "mw-window-open"
+    ],
+    "n_damaged": 8,
+    "harmful_eval_tasks": [],
+    "n_eval": 8
+   },
+   "b_without_flagged": {
+    "fixes_among_damaged": [
+     "mw-push",
+     "mw-drawer-open",
+     "mw-button-press-topdown",
+     "mw-window-open"
+    ],
+    "n_damaged": 8,
+    "harmful_eval_tasks": [],
+    "n_eval": 8
+   }
+  }
+ }
+}

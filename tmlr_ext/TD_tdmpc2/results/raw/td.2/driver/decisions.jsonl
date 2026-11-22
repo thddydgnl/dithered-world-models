@@ -1,0 +1,2 @@
+{"rule": "stage2", "task": "walker-walk", "rk": "PT", "variant": "detbc", "k": 4, "n_pairs_stage1": 45, "D_stage1": 0.08297885152614776, "ci_stage1": [0.06206539310368842, 0.10462392564490693], "jobs": 9, "time": "2026-11-21T20:20:47Z"}
+{"rule": "stage2", "task": "walker-walk", "rk": "PT", "variant": "detshift", "k": 4, "n_pairs_stage1": 45, "D_stage1": 0.10142146016491883, "ci_stage1": [0.07735329934633069, 0.12803887896330435], "jobs": 9, "time": "2026-11-21T20:29:23Z"}

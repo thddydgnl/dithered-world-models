@@ -1,0 +1,277 @@
+=== 2026-11-21T18:44:13Z restart.sh tag=mt.2 tasks=mw-button-press-topdown,mw-peg-insert-side,mw-window-open,mw-sweep-into workers=1
+18:44:13       0s driver start: tag mt.2, tasks ['mw-button-press-topdown', 'mw-peg-insert-side', 'mw-window-open', 'mw-sweep-into'], workers 1, out /workspace/atm/out, jobs 228
+Episode length: 500
+Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500],
+       device='cuda:0')
+18:45:06      53s OK  held_mw-button-press-topdown_c0 (39s) succ 5/5 act 74.5ms ep 7.8s
+18:45:45      92s OK  held_mw-button-press-topdown_c1 (39s) succ 5/5 act 74.8ms ep 7.8s
+18:46:26     134s OK  held_mw-peg-insert-side_c0 (41s) succ 5/5 act 74.9ms ep 8.2s
+18:47:07     175s OK  held_mw-peg-insert-side_c1 (41s) succ 5/5 act 75.0ms ep 8.1s
+18:47:47     214s OK  held_mw-window-open_c0 (40s) succ 5/5 act 75.1ms ep 7.8s
+18:48:26     254s OK  held_mw-window-open_c1 (40s) succ 5/5 act 75.1ms ep 7.8s
+18:49:06     293s OK  held_mw-sweep-into_c0 (40s) succ 5/5 act 75.1ms ep 7.8s
+18:49:46     333s OK  held_mw-sweep-into_c1 (40s) succ 5/5 act 75.2ms ep 7.9s
+18:49:55     342s OK  bias_mw-button-press-topdown_k3 (9s) resid/delta dyn0:2.11e-01 dyn1:1.31e+00 rew0:3.86e-02 rew1:4.94e-02 | sweep1 dyn0:0.241 dyn1:0.748 rew0:0.069 rew1:0.590 ok=False
+18:50:04     351s OK  bias_mw-peg-insert-side_k3 (9s) resid/delta dyn0:2.04e-01 dyn1:1.28e+00 rew0:4.39e-02 rew1:2.48e-01 | sweep1 dyn0:0.243 dyn1:0.709 rew0:0.072 rew1:0.755 ok=False
+18:50:13     360s OK  bias_mw-window-open_k3 (9s) resid/delta dyn0:2.26e-01 dyn1:1.39e+00 rew0:4.13e-02 rew1:1.48e-01 | sweep1 dyn0:0.241 dyn1:0.707 rew0:0.074 rew1:0.819 ok=False
+18:50:22     369s OK  bias_mw-sweep-into_k3 (9s) resid/delta dyn0:1.96e-01 dyn1:9.91e-01 rew0:3.53e-02 rew1:1.79e-01 | sweep1 dyn0:0.228 dyn1:0.567 rew0:0.070 rew1:0.792 ok=False
+18:51:39     446s OK  eval_mw-button-press-topdown_none_k0_c0 (77s) succ 10/10 act 73.8ms ep 7.7s
+18:52:55     522s OK  eval_mw-button-press-topdown_none_k0_c1 (77s) succ 10/10 act 73.8ms ep 7.7s
+=== 2026-11-21T18:53:40Z restart.sh tag=mt.2 tasks=mw-button-press-topdown,mw-peg-insert-side,mw-window-open,mw-sweep-into workers=1
+18:53:40       0s driver start: tag mt.2, tasks ['mw-button-press-topdown', 'mw-peg-insert-side', 'mw-window-open', 'mw-sweep-into'], workers 1, out /workspace/atm/out, jobs 228
+Episode length: 500
+Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500],
+       device='cuda:0')
+18:55:10      90s OK  eval_mw-button-press-topdown_none_k0_c2 (77s) succ 10/10 act 73.7ms ep 7.7s
+18:56:27     167s OK  eval_mw-button-press-topdown_none_k0_c3 (77s) succ 10/10 act 73.8ms ep 7.7s
+18:57:43     243s OK  eval_mw-button-press-topdown_none_k0_c4 (77s) succ 10/10 act 73.7ms ep 7.7s
+18:59:00     320s OK  eval_mw-button-press-topdown_none_k0_c5 (77s) succ 10/10 act 73.7ms ep 7.7s
+19:00:18     397s OK  eval_mw-button-press-topdown_none_k0_c6 (78s) succ 10/10 act 74.2ms ep 7.8s
+19:01:35     475s OK  eval_mw-button-press-topdown_none_k0_c7 (78s) succ 10/10 act 74.2ms ep 7.8s
+19:02:53     553s OK  eval_mw-button-press-topdown_none_k0_c8 (77s) succ 10/10 act 74.1ms ep 7.7s
+19:04:14     634s OK  eval_mw-peg-insert-side_none_k0_c0 (81s) succ 10/10 act 74.0ms ep 8.1s
+19:05:35     715s OK  eval_mw-peg-insert-side_none_k0_c1 (82s) succ 10/10 act 74.1ms ep 8.2s
+2026-11-21T19:06:20Z D2 applied
+=== 2026-11-21T19:06:20Z restart.sh tag=mt.2 tasks=mw-button-press-topdown,mw-peg-insert-side,mw-window-open,mw-sweep-into workers=1
+19:06:20       0s driver start: tag mt.2, tasks ['mw-button-press-topdown', 'mw-peg-insert-side', 'mw-window-open', 'mw-sweep-into'], workers 1, out /workspace/atm/out, jobs 228
+Episode length: 500
+Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500,
+        0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500],
+       device='cuda:0')
+19:09:26     186s OK  bias_mw-button-press-topdown_k3 (172s) D2 eta1.0:no@60 eta0.5:conv@13 | final eta 0.5 resid/delta dyn0:1.11e-03 dyn1:7.12e-03 rew0:3.93e-04 rew1:6.95e-04 ok=True unconverged=False
+19:12:18     358s OK  bias_mw-peg-insert-side_k3 (172s) D2 eta1.0:no@60 eta0.5:conv@13 | final eta 0.5 resid/delta dyn0:1.44e-03 dyn1:9.02e-03 rew0:3.60e-04 rew1:2.12e-03 ok=True unconverged=False
+19:17:47     687s OK  bias_mw-window-open_k3 (329s) D2 eta1.0:no@60 eta0.5:no@60 eta0.25:conv@21 | final eta 0.25 resid/delta dyn0:1.90e-03 dyn1:9.87e-03 rew0:4.48e-04 rew1:7.51e-03 ok=True unconverged=False
+19:20:32     852s OK  bias_mw-sweep-into_k3 (165s) D2 eta1.0:no@60 eta0.5:conv@10 | final eta 0.5 resid/delta dyn0:1.21e-03 dyn1:9.22e-03 rew0:5.20e-04 rew1:4.65e-03 ok=True unconverged=False
+19:22:36     976s OK  eval_mw-peg-insert-side_none_k0_c2 (124s) succ 10/10 act 115.3ms ep 12.4s
+19:25:00    1120s OK  eval_mw-peg-insert-side_none_k0_c3 (144s) succ 10/10 act 153.3ms ep 14.4s
+19:27:40    1280s OK  eval_mw-peg-insert-side_none_k0_c4 (160s) succ 10/10 act 153.3ms ep 16.0s
+19:30:05    1425s OK  eval_mw-peg-insert-side_none_k0_c5 (145s) succ 10/10 act 153.0ms ep 14.5s
+19:32:45    1585s OK  eval_mw-peg-insert-side_none_k0_c6 (161s) succ 10/10 act 153.5ms ep 16.1s
+19:35:10    1730s OK  eval_mw-peg-insert-side_none_k0_c7 (145s) succ 10/10 act 153.6ms ep 14.5s
+19:37:50    1890s OK  eval_mw-peg-insert-side_none_k0_c8 (160s) succ 10/10 act 153.5ms ep 16.0s
+19:39:11    1971s OK  eval_mw-window-open_none_k0_c0 (80s) succ 10/10 act 74.0ms ep 8.0s
+19:40:29    2049s OK  eval_mw-window-open_none_k0_c1 (78s) succ 10/10 act 74.2ms ep 7.8s
+19:41:47    2127s OK  eval_mw-window-open_none_k0_c2 (78s) succ 10/10 act 74.0ms ep 7.8s
+19:43:05    2205s OK  eval_mw-window-open_none_k0_c3 (78s) succ 10/10 act 74.0ms ep 7.8s
+19:44:24    2284s OK  eval_mw-window-open_none_k0_c4 (78s) succ 10/10 act 74.2ms ep 7.8s
+19:45:42    2362s OK  eval_mw-window-open_none_k0_c5 (78s) succ 10/10 act 74.1ms ep 7.8s
+19:47:00    2440s OK  eval_mw-window-open_none_k0_c6 (79s) succ 10/10 act 74.1ms ep 7.9s
+19:48:19    2519s OK  eval_mw-window-open_none_k0_c7 (78s) succ 10/10 act 74.1ms ep 7.8s
+19:49:37    2597s OK  eval_mw-window-open_none_k0_c8 (78s) succ 10/10 act 74.0ms ep 7.8s
+19:50:55    2675s OK  eval_mw-sweep-into_none_k0_c0 (78s) succ 10/10 act 74.2ms ep 7.8s
+19:52:13    2753s OK  eval_mw-sweep-into_none_k0_c1 (78s) succ 10/10 act 74.2ms ep 7.8s
+19:53:32    2832s OK  eval_mw-sweep-into_none_k0_c2 (79s) succ 10/10 act 74.3ms ep 7.9s
+19:54:51    2911s OK  eval_mw-sweep-into_none_k0_c3 (79s) succ 10/10 act 74.3ms ep 7.9s
+19:56:10    2990s OK  eval_mw-sweep-into_none_k0_c4 (78s) succ 10/10 act 74.3ms ep 7.8s
+19:57:28    3068s OK  eval_mw-sweep-into_none_k0_c5 (79s) succ 10/10 act 74.3ms ep 7.9s
+19:58:47    3147s OK  eval_mw-sweep-into_none_k0_c6 (78s) succ 10/10 act 74.3ms ep 7.8s
+20:00:05    3225s OK  eval_mw-sweep-into_none_k0_c7 (79s) succ 10/10 act 74.2ms ep 7.9s
+20:01:24    3304s OK  eval_mw-sweep-into_none_k0_c8 (79s) succ 10/10 act 74.3ms ep 7.9s
+20:02:46    3386s OK  eval_mw-button-press-topdown_det_k3_c0 (82s) succ 3/10 act 77.7ms ep 8.2s
+20:04:07    3467s OK  eval_mw-button-press-topdown_det_k3_c1 (81s) succ 5/10 act 77.5ms ep 8.1s
+20:05:28    3548s OK  eval_mw-button-press-topdown_det_k3_c2 (81s) succ 3/10 act 77.5ms ep 8.1s
+20:06:49    3629s OK  eval_mw-button-press-topdown_det_k3_c3 (81s) succ 5/10 act 77.3ms ep 8.1s
+20:08:11    3711s OK  eval_mw-button-press-topdown_det_k3_c4 (82s) succ 3/10 act 77.5ms ep 8.2s
+20:09:32    3792s OK  eval_mw-button-press-topdown_det_k3_c5 (81s) succ 1/10 act 77.4ms ep 8.1s
+20:10:53    3873s OK  eval_mw-button-press-topdown_det_k3_c6 (81s) succ 4/10 act 77.4ms ep 8.1s
+20:12:14    3954s OK  eval_mw-button-press-topdown_det_k3_c7 (81s) succ 5/10 act 77.5ms ep 8.1s
+20:13:35    4035s OK  eval_mw-button-press-topdown_det_k3_c8 (81s) succ 5/10 act 77.5ms ep 8.1s
+20:15:00    4120s OK  eval_mw-peg-insert-side_det_k3_c0 (85s) succ 1/10 act 77.4ms ep 8.5s
+20:16:24    4204s OK  eval_mw-peg-insert-side_det_k3_c1 (84s) succ 1/10 act 77.4ms ep 8.4s
+20:17:49    4289s OK  eval_mw-peg-insert-side_det_k3_c2 (84s) succ 0/10 act 77.4ms ep 8.4s
+20:19:13    4373s OK  eval_mw-peg-insert-side_det_k3_c3 (84s) succ 0/10 act 77.4ms ep 8.4s
+20:20:37    4458s OK  eval_mw-peg-insert-side_det_k3_c4 (84s) succ 0/10 act 77.3ms ep 8.4s
+20:22:03    4543s OK  eval_mw-peg-insert-side_det_k3_c5 (85s) succ 0/10 act 77.6ms ep 8.5s
+20:23:27    4627s OK  eval_mw-peg-insert-side_det_k3_c6 (85s) succ 1/10 act 77.4ms ep 8.5s
+20:24:52    4712s OK  eval_mw-peg-insert-side_det_k3_c7 (85s) succ 1/10 act 77.4ms ep 8.5s
+20:26:16    4797s OK  eval_mw-peg-insert-side_det_k3_c8 (84s) succ 1/10 act 77.3ms ep 8.4s
+20:27:38    4878s OK  eval_mw-window-open_det_k3_c0 (82s) succ 5/10 act 77.5ms ep 8.2s
+20:29:00    4960s OK  eval_mw-window-open_det_k3_c1 (82s) succ 2/10 act 77.5ms ep 8.2s
+20:30:21    5041s OK  eval_mw-window-open_det_k3_c2 (81s) succ 5/10 act 77.2ms ep 8.1s
+20:31:43    5123s OK  eval_mw-window-open_det_k3_c3 (82s) succ 3/10 act 77.7ms ep 8.2s
+20:33:04    5205s OK  eval_mw-window-open_det_k3_c4 (82s) succ 5/10 act 77.5ms ep 8.2s
+20:34:26    5286s OK  eval_mw-window-open_det_k3_c5 (82s) succ 2/10 act 77.6ms ep 8.2s
+20:35:48    5368s OK  eval_mw-window-open_det_k3_c6 (82s) succ 2/10 act 77.6ms ep 8.2s
+20:37:09    5449s OK  eval_mw-window-open_det_k3_c7 (81s) succ 3/10 act 77.3ms ep 8.1s
+20:38:30    5530s OK  eval_mw-window-open_det_k3_c8 (81s) succ 1/10 act 77.3ms ep 8.1s
+20:39:50    5611s OK  eval_mw-sweep-into_det_k3_c0 (81s) succ 8/10 act 77.3ms ep 8.1s
+20:41:11    5691s OK  eval_mw-sweep-into_det_k3_c1 (80s) succ 9/10 act 77.1ms ep 8.0s
+20:42:31    5771s OK  eval_mw-sweep-into_det_k3_c2 (80s) succ 6/10 act 77.1ms ep 8.0s
+20:43:51    5851s OK  eval_mw-sweep-into_det_k3_c3 (80s) succ 7/10 act 76.9ms ep 8.0s
+20:45:11    5931s OK  eval_mw-sweep-into_det_k3_c4 (80s) succ 7/10 act 76.9ms ep 8.0s
+20:46:31    6011s OK  eval_mw-sweep-into_det_k3_c5 (80s) succ 10/10 act 76.9ms ep 8.0s
+20:47:51    6091s OK  eval_mw-sweep-into_det_k3_c6 (80s) succ 7/10 act 77.0ms ep 8.0s
+20:49:11    6172s OK  eval_mw-sweep-into_det_k3_c7 (80s) succ 8/10 act 76.9ms ep 8.0s
+20:50:31    6252s OK  eval_mw-sweep-into_det_k3_c8 (80s) succ 10/10 act 76.9ms ep 8.0s
+20:51:52    6332s OK  eval_mw-button-press-topdown_shiter_k3_c0 (80s) succ 10/10 act 77.7ms ep 8.0s
+20:53:12    6412s OK  eval_mw-button-press-topdown_shiter_k3_c1 (80s) succ 10/10 act 77.7ms ep 8.0s
+20:54:33    6493s OK  eval_mw-button-press-topdown_shiter_k3_c2 (80s) succ 10/10 act 77.6ms ep 8.0s
+20:55:53    6573s OK  eval_mw-button-press-topdown_shiter_k3_c3 (80s) succ 10/10 act 77.6ms ep 8.0s
+20:57:14    6654s OK  eval_mw-button-press-topdown_shiter_k3_c4 (80s) succ 10/10 act 77.6ms ep 8.0s
+20:58:34    6734s OK  eval_mw-button-press-topdown_shiter_k3_c5 (80s) succ 10/10 act 77.7ms ep 8.0s
+20:59:55    6815s OK  eval_mw-button-press-topdown_shiter_k3_c6 (81s) succ 10/10 act 77.7ms ep 8.1s
+21:01:16    6896s OK  eval_mw-button-press-topdown_shiter_k3_c7 (81s) succ 10/10 act 77.8ms ep 8.1s
+21:02:36    6976s OK  eval_mw-button-press-topdown_shiter_k3_c8 (80s) succ 10/10 act 77.7ms ep 8.0s
+21:04:00    7060s OK  eval_mw-peg-insert-side_shiter_k3_c0 (84s) succ 9/10 act 77.6ms ep 8.4s
+21:05:23    7143s OK  eval_mw-peg-insert-side_shiter_k3_c1 (84s) succ 9/10 act 77.6ms ep 8.4s
+21:06:47    7227s OK  eval_mw-peg-insert-side_shiter_k3_c2 (84s) succ 10/10 act 77.6ms ep 8.4s
+21:08:11    7311s OK  eval_mw-peg-insert-side_shiter_k3_c3 (84s) succ 8/10 act 77.7ms ep 8.4s
+21:09:35    7395s OK  eval_mw-peg-insert-side_shiter_k3_c4 (84s) succ 9/10 act 77.8ms ep 8.4s
+21:11:00    7480s OK  eval_mw-peg-insert-side_shiter_k3_c5 (85s) succ 8/10 act 78.0ms ep 8.5s
+21:12:24    7564s OK  eval_mw-peg-insert-side_shiter_k3_c6 (84s) succ 9/10 act 77.7ms ep 8.4s
+21:13:48    7648s OK  eval_mw-peg-insert-side_shiter_k3_c7 (84s) succ 10/10 act 77.6ms ep 8.4s
+21:15:12    7732s OK  eval_mw-peg-insert-side_shiter_k3_c8 (84s) succ 9/10 act 77.6ms ep 8.4s
+21:16:33    7813s OK  eval_mw-window-open_shiter_k3_c0 (81s) succ 9/10 act 77.6ms ep 8.1s
+21:17:53    7893s OK  eval_mw-window-open_shiter_k3_c1 (81s) succ 10/10 act 77.6ms ep 8.1s
+21:19:14    7974s OK  eval_mw-window-open_shiter_k3_c2 (81s) succ 8/10 act 77.6ms ep 8.1s
+21:20:35    8055s OK  eval_mw-window-open_shiter_k3_c3 (81s) succ 9/10 act 77.6ms ep 8.1s
+21:21:56    8136s OK  eval_mw-window-open_shiter_k3_c4 (81s) succ 10/10 act 77.6ms ep 8.1s
+21:23:17    8217s OK  eval_mw-window-open_shiter_k3_c5 (81s) succ 10/10 act 77.7ms ep 8.1s
+21:24:38    8298s OK  eval_mw-window-open_shiter_k3_c6 (81s) succ 10/10 act 77.6ms ep 8.1s
+21:25:59    8379s OK  eval_mw-window-open_shiter_k3_c7 (81s) succ 10/10 act 77.6ms ep 8.1s
+21:27:20    8460s OK  eval_mw-window-open_shiter_k3_c8 (81s) succ 9/10 act 77.7ms ep 8.1s
+21:28:40    8540s OK  eval_mw-sweep-into_shiter_k3_c0 (81s) succ 10/10 act 77.7ms ep 8.1s
+21:30:01    8621s OK  eval_mw-sweep-into_shiter_k3_c1 (81s) succ 10/10 act 77.7ms ep 8.1s
+21:31:22    8702s OK  eval_mw-sweep-into_shiter_k3_c2 (81s) succ 10/10 act 77.7ms ep 8.1s
+21:32:43    8783s OK  eval_mw-sweep-into_shiter_k3_c3 (81s) succ 10/10 act 77.7ms ep 8.1s
+21:34:04    8864s OK  eval_mw-sweep-into_shiter_k3_c4 (81s) succ 10/10 act 77.7ms ep 8.1s
+21:35:25    8945s OK  eval_mw-sweep-into_shiter_k3_c5 (81s) succ 10/10 act 77.7ms ep 8.1s
+21:36:46    9026s OK  eval_mw-sweep-into_shiter_k3_c6 (81s) succ 10/10 act 77.7ms ep 8.1s
+21:38:07    9107s OK  eval_mw-sweep-into_shiter_k3_c7 (81s) succ 10/10 act 77.7ms ep 8.1s
+21:39:28    9188s OK  eval_mw-sweep-into_shiter_k3_c8 (81s) succ 10/10 act 77.8ms ep 8.1s
+21:40:48    9268s OK  eval_mw-button-press-topdown_shep_k3_c0 (80s) succ 2/10 act 77.6ms ep 8.0s
+21:42:09    9349s OK  eval_mw-button-press-topdown_shep_k3_c1 (80s) succ 4/10 act 77.6ms ep 8.0s
+21:43:29    9429s OK  eval_mw-button-press-topdown_shep_k3_c2 (80s) succ 0/10 act 77.6ms ep 8.0s
+21:44:50    9510s OK  eval_mw-button-press-topdown_shep_k3_c3 (81s) succ 1/10 act 77.9ms ep 8.1s
+21:46:12    9592s OK  eval_mw-button-press-topdown_shep_k3_c4 (81s) succ 2/10 act 78.0ms ep 8.1s
+21:47:33    9673s OK  eval_mw-button-press-topdown_shep_k3_c5 (81s) succ 4/10 act 78.0ms ep 8.1s
+21:48:54    9754s OK  eval_mw-button-press-topdown_shep_k3_c6 (81s) succ 1/10 act 77.7ms ep 8.1s
+21:50:15    9836s OK  eval_mw-button-press-topdown_shep_k3_c7 (82s) succ 2/10 act 78.0ms ep 8.2s
+21:51:37    9917s OK  eval_mw-button-press-topdown_shep_k3_c8 (81s) succ 3/10 act 77.9ms ep 8.1s
+21:53:02   10002s OK  eval_mw-peg-insert-side_shep_k3_c0 (85s) succ 3/10 act 77.8ms ep 8.5s
+21:54:27   10087s OK  eval_mw-peg-insert-side_shep_k3_c1 (85s) succ 1/10 act 77.8ms ep 8.5s
+21:55:51   10172s OK  eval_mw-peg-insert-side_shep_k3_c2 (85s) succ 0/10 act 77.8ms ep 8.5s
+21:57:17   10257s OK  eval_mw-peg-insert-side_shep_k3_c3 (85s) succ 1/10 act 77.9ms ep 8.5s
+21:58:44   10345s OK  eval_mw-peg-insert-side_shep_k3_c4 (88s) succ 0/10 act 79.3ms ep 8.8s
+22:00:13   10433s OK  eval_mw-peg-insert-side_shep_k3_c5 (88s) succ 1/10 act 79.3ms ep 8.8s
+22:01:39   10519s OK  eval_mw-peg-insert-side_shep_k3_c6 (86s) succ 0/10 act 78.2ms ep 8.6s
+22:03:04   10604s OK  eval_mw-peg-insert-side_shep_k3_c7 (85s) succ 1/10 act 77.9ms ep 8.5s
+22:04:29   10689s OK  eval_mw-peg-insert-side_shep_k3_c8 (85s) succ 0/10 act 77.7ms ep 8.5s
+22:05:51   10771s OK  eval_mw-window-open_shep_k3_c0 (82s) succ 3/10 act 77.9ms ep 8.2s
+22:07:13   10853s OK  eval_mw-window-open_shep_k3_c1 (82s) succ 6/10 act 77.7ms ep 8.2s
+22:08:35   10935s OK  eval_mw-window-open_shep_k3_c2 (82s) succ 2/10 act 77.9ms ep 8.2s
+22:09:56   11017s OK  eval_mw-window-open_shep_k3_c3 (82s) succ 3/10 act 77.8ms ep 8.2s
+22:11:18   11099s OK  eval_mw-window-open_shep_k3_c4 (82s) succ 2/10 act 77.9ms ep 8.2s
+22:12:41   11181s OK  eval_mw-window-open_shep_k3_c5 (82s) succ 2/10 act 77.9ms ep 8.2s
+22:14:02   11263s OK  eval_mw-window-open_shep_k3_c6 (82s) succ 4/10 act 77.9ms ep 8.2s
+22:15:25   11345s OK  eval_mw-window-open_shep_k3_c7 (82s) succ 5/10 act 77.9ms ep 8.2s
+22:16:47   11427s OK  eval_mw-window-open_shep_k3_c8 (82s) succ 1/10 act 77.9ms ep 8.2s
+22:18:09   11509s OK  eval_mw-sweep-into_shep_k3_c0 (82s) succ 6/10 act 77.9ms ep 8.2s
+22:19:31   11592s OK  eval_mw-sweep-into_shep_k3_c1 (83s) succ 6/10 act 77.9ms ep 8.3s
+22:20:54   11674s OK  eval_mw-sweep-into_shep_k3_c2 (82s) succ 3/10 act 78.0ms ep 8.2s
+22:22:15   11755s OK  eval_mw-sweep-into_shep_k3_c3 (82s) succ 2/10 act 77.8ms ep 8.2s
+22:23:37   11837s OK  eval_mw-sweep-into_shep_k3_c4 (81s) succ 6/10 act 77.7ms ep 8.1s
+22:24:57   11917s OK  eval_mw-sweep-into_shep_k3_c5 (81s) succ 5/10 act 77.5ms ep 8.1s
+22:26:18   11998s OK  eval_mw-sweep-into_shep_k3_c6 (81s) succ 4/10 act 77.5ms ep 8.1s
+22:27:39   12079s OK  eval_mw-sweep-into_shep_k3_c7 (81s) succ 8/10 act 77.5ms ep 8.1s
+22:28:59   12160s OK  eval_mw-sweep-into_shep_k3_c8 (81s) succ 3/10 act 77.4ms ep 8.1s
+22:30:21   12241s OK  eval_mw-button-press-topdown_detshift_k3_c0 (81s) succ 10/10 act 78.4ms ep 8.1s
+22:31:42   12322s OK  eval_mw-button-press-topdown_detshift_k3_c1 (81s) succ 10/10 act 78.4ms ep 8.1s
+22:33:03   12404s OK  eval_mw-button-press-topdown_detshift_k3_c2 (81s) succ 10/10 act 78.4ms ep 8.1s
+22:34:25   12485s OK  eval_mw-button-press-topdown_detshift_k3_c3 (81s) succ 10/10 act 78.4ms ep 8.1s
+22:35:46   12566s OK  eval_mw-button-press-topdown_detshift_k3_c4 (81s) succ 10/10 act 78.4ms ep 8.1s
+22:37:08   12648s OK  eval_mw-button-press-topdown_detshift_k3_c5 (82s) succ 10/10 act 78.5ms ep 8.2s
+22:38:29   12729s OK  eval_mw-button-press-topdown_detshift_k3_c6 (82s) succ 10/10 act 78.4ms ep 8.2s
+22:39:51   12811s OK  eval_mw-button-press-topdown_detshift_k3_c7 (81s) succ 10/10 act 78.4ms ep 8.1s
+22:41:12   12892s OK  eval_mw-button-press-topdown_detshift_k3_c8 (81s) succ 10/10 act 78.4ms ep 8.1s
+22:42:37   12977s OK  eval_mw-peg-insert-side_detshift_k3_c0 (85s) succ 10/10 act 78.4ms ep 8.5s
+22:44:01   13062s OK  eval_mw-peg-insert-side_detshift_k3_c1 (85s) succ 9/10 act 78.4ms ep 8.5s
+22:45:26   13146s OK  eval_mw-peg-insert-side_detshift_k3_c2 (85s) succ 10/10 act 78.4ms ep 8.5s
+22:46:51   13231s OK  eval_mw-peg-insert-side_detshift_k3_c3 (85s) succ 9/10 act 78.4ms ep 8.5s
+22:48:16   13316s OK  eval_mw-peg-insert-side_detshift_k3_c4 (85s) succ 9/10 act 78.4ms ep 8.5s
+22:49:40   13400s OK  eval_mw-peg-insert-side_detshift_k3_c5 (85s) succ 10/10 act 78.4ms ep 8.5s
+22:51:05   13485s OK  eval_mw-peg-insert-side_detshift_k3_c6 (85s) succ 10/10 act 78.5ms ep 8.5s
+22:52:30   13570s OK  eval_mw-peg-insert-side_detshift_k3_c7 (85s) succ 10/10 act 78.4ms ep 8.5s
+22:53:55   13655s OK  eval_mw-peg-insert-side_detshift_k3_c8 (85s) succ 9/10 act 78.5ms ep 8.5s
+22:55:17   13737s OK  eval_mw-window-open_detshift_k3_c0 (82s) succ 10/10 act 78.4ms ep 8.2s
+22:56:39   13819s OK  eval_mw-window-open_detshift_k3_c1 (82s) succ 10/10 act 78.4ms ep 8.2s
+22:58:00   13901s OK  eval_mw-window-open_detshift_k3_c2 (82s) succ 10/10 act 78.4ms ep 8.2s
+22:59:22   13982s OK  eval_mw-window-open_detshift_k3_c3 (82s) succ 9/10 act 78.4ms ep 8.2s
+23:00:44   14064s OK  eval_mw-window-open_detshift_k3_c4 (82s) succ 10/10 act 78.5ms ep 8.2s
+23:02:06   14146s OK  eval_mw-window-open_detshift_k3_c5 (82s) succ 10/10 act 78.5ms ep 8.2s
+23:03:28   14228s OK  eval_mw-window-open_detshift_k3_c6 (82s) succ 10/10 act 78.4ms ep 8.2s
+23:04:50   14310s OK  eval_mw-window-open_detshift_k3_c7 (82s) succ 10/10 act 78.4ms ep 8.2s
+23:06:12   14392s OK  eval_mw-window-open_detshift_k3_c8 (82s) succ 10/10 act 78.4ms ep 8.2s
+23:07:33   14473s OK  eval_mw-sweep-into_detshift_k3_c0 (82s) succ 10/10 act 78.4ms ep 8.2s
+23:08:55   14555s OK  eval_mw-sweep-into_detshift_k3_c1 (82s) succ 10/10 act 78.5ms ep 8.2s
+23:10:17   14637s OK  eval_mw-sweep-into_detshift_k3_c2 (82s) succ 10/10 act 78.5ms ep 8.2s
+23:11:39   14719s OK  eval_mw-sweep-into_detshift_k3_c3 (82s) succ 9/10 act 78.4ms ep 8.2s
+23:13:00   14801s OK  eval_mw-sweep-into_detshift_k3_c4 (82s) succ 10/10 act 78.5ms ep 8.2s
+23:14:23   14883s OK  eval_mw-sweep-into_detshift_k3_c5 (83s) succ 10/10 act 78.8ms ep 8.3s
+23:15:46   14966s OK  eval_mw-sweep-into_detshift_k3_c6 (83s) succ 10/10 act 79.0ms ep 8.3s
+23:17:09   15049s OK  eval_mw-sweep-into_detshift_k3_c7 (83s) succ 10/10 act 79.2ms ep 8.3s
+23:18:31   15131s OK  eval_mw-sweep-into_detshift_k3_c8 (82s) succ 10/10 act 78.9ms ep 8.2s
+23:19:52   15212s OK  eval_mw-button-press-topdown_detbc_k3_c0 (81s) succ 9/10 act 77.8ms ep 8.1s
+23:21:13   15293s OK  eval_mw-button-press-topdown_detbc_k3_c1 (80s) succ 10/10 act 77.4ms ep 8.0s
+23:22:33   15373s OK  eval_mw-button-press-topdown_detbc_k3_c2 (80s) succ 10/10 act 77.4ms ep 8.0s
+23:23:54   15454s OK  eval_mw-button-press-topdown_detbc_k3_c3 (80s) succ 10/10 act 77.4ms ep 8.0s
+23:25:14   15534s OK  eval_mw-button-press-topdown_detbc_k3_c4 (80s) succ 9/10 act 77.4ms ep 8.0s
+23:26:34   15614s OK  eval_mw-button-press-topdown_detbc_k3_c5 (80s) succ 10/10 act 77.4ms ep 8.0s
+23:27:55   15695s OK  eval_mw-button-press-topdown_detbc_k3_c6 (80s) succ 10/10 act 77.3ms ep 8.0s
+23:29:15   15775s OK  eval_mw-button-press-topdown_detbc_k3_c7 (80s) succ 10/10 act 77.3ms ep 8.0s
+23:30:35   15855s OK  eval_mw-button-press-topdown_detbc_k3_c8 (80s) succ 9/10 act 77.3ms ep 8.0s
+23:31:58   15938s OK  eval_mw-peg-insert-side_detbc_k3_c0 (83s) succ 2/10 act 77.4ms ep 8.3s
+23:33:22   16022s OK  eval_mw-peg-insert-side_detbc_k3_c1 (83s) succ 4/10 act 77.3ms ep 8.3s
+23:34:45   16105s OK  eval_mw-peg-insert-side_detbc_k3_c2 (83s) succ 0/10 act 77.3ms ep 8.3s
+23:36:08   16188s OK  eval_mw-peg-insert-side_detbc_k3_c3 (83s) succ 2/10 act 77.3ms ep 8.3s
+23:37:31   16272s OK  eval_mw-peg-insert-side_detbc_k3_c4 (83s) succ 3/10 act 77.3ms ep 8.3s
+23:38:55   16355s OK  eval_mw-peg-insert-side_detbc_k3_c5 (83s) succ 3/10 act 77.4ms ep 8.3s
+23:40:19   16439s OK  eval_mw-peg-insert-side_detbc_k3_c6 (84s) succ 3/10 act 77.7ms ep 8.4s
+23:41:44   16524s OK  eval_mw-peg-insert-side_detbc_k3_c7 (85s) succ 2/10 act 77.7ms ep 8.5s
+23:43:09   16609s OK  eval_mw-peg-insert-side_detbc_k3_c8 (85s) succ 2/10 act 77.9ms ep 8.5s
+23:44:31   16691s OK  eval_mw-window-open_detbc_k3_c0 (82s) succ 10/10 act 77.9ms ep 8.2s
+23:45:52   16773s OK  eval_mw-window-open_detbc_k3_c1 (82s) succ 9/10 act 78.0ms ep 8.2s
+23:47:14   16854s OK  eval_mw-window-open_detbc_k3_c2 (82s) succ 9/10 act 77.8ms ep 8.2s
+23:48:36   16936s OK  eval_mw-window-open_detbc_k3_c3 (82s) succ 5/10 act 77.9ms ep 8.2s
+23:49:57   17018s OK  eval_mw-window-open_detbc_k3_c4 (82s) succ 9/10 act 77.9ms ep 8.2s
+23:51:19   17099s OK  eval_mw-window-open_detbc_k3_c5 (81s) succ 8/10 act 77.8ms ep 8.1s
+23:52:41   17181s OK  eval_mw-window-open_detbc_k3_c6 (82s) succ 10/10 act 78.0ms ep 8.2s
+23:54:02   17262s OK  eval_mw-window-open_detbc_k3_c7 (81s) succ 10/10 act 77.8ms ep 8.1s
+23:55:23   17343s OK  eval_mw-window-open_detbc_k3_c8 (81s) succ 9/10 act 77.6ms ep 8.1s
+23:56:44   17424s OK  eval_mw-sweep-into_detbc_k3_c0 (81s) succ 8/10 act 77.4ms ep 8.1s
+23:58:06   17506s OK  eval_mw-sweep-into_detbc_k3_c1 (82s) succ 9/10 act 77.8ms ep 8.2s
+23:59:27   17587s OK  eval_mw-sweep-into_detbc_k3_c2 (81s) succ 9/10 act 77.8ms ep 8.1s
+00:00:48   17668s OK  eval_mw-sweep-into_detbc_k3_c3 (81s) succ 8/10 act 77.6ms ep 8.1s
+00:02:09   17749s OK  eval_mw-sweep-into_detbc_k3_c4 (80s) succ 9/10 act 77.3ms ep 8.0s
+00:03:29   17829s OK  eval_mw-sweep-into_detbc_k3_c5 (80s) succ 10/10 act 77.3ms ep 8.0s
+00:04:50   17910s OK  eval_mw-sweep-into_detbc_k3_c6 (80s) succ 10/10 act 77.4ms ep 8.0s
+00:06:11   17991s OK  eval_mw-sweep-into_detbc_k3_c7 (81s) succ 7/10 act 77.6ms ep 8.1s
+00:07:33   18073s OK  eval_mw-sweep-into_detbc_k3_c8 (81s) succ 10/10 act 77.7ms ep 8.1s
+00:07:34   18074s DRIVER_DONE ok 209 done 228/228 failed 0 []
+00:07:34   18074s mw-button-press-topdown: {"task": "mw-button-press-topdown", "k": 3, "held_done": 2, "bias": {"rule": "D2", "residual_ok": true, "bc_unconverged": false, "final_eta": 0.5, "n_updates": 13, "resid_over_delta": {"dyn0": 0.001111921868827872, "dyn1": 0.007115059058098493, "rew0": 0.0003928557199366716, "rew1": 0.0006946099069736457}}, "check3": {"task": "mw-button-press-topdown", "none_new": 1.0, "n": 90, "none_e10": 1.0, "diff": 0.0, "max_abs_diff": 0.1, "pass": true, "released": false}, "eval_done": {"none": 9, "det": 9, "shiter": 9, "shep": 9, "detshift": 9, "detbc": 9}, "jobs_done": 57, "jobs_total": 57}
+00:07:34   18074s mw-peg-insert-side: {"task": "mw-peg-insert-side", "k": 3, "held_done": 2, "bias": {"rule": "D2", "residual_ok": true, "bc_unconverged": false, "final_eta": 0.5, "n_updates": 13, "resid_over_delta": {"dyn0": 0.0014437006635030535, "dyn1": 0.009017380934833561, "rew0": 0.0003595144229134306, "rew1": 0.0021172457428447356}}, "check3": {"task": "mw-peg-insert-side", "none_new": 1.0, "n": 90, "none_e10": 1.0, "diff": 0.0, "max_abs_diff": 0.1, "pass": true, "released": false}, "eval_done": {"none": 9, "det": 9, "shiter": 9, "shep": 9, "detshift": 9, "detbc": 9}, "jobs_done": 57, "jobs_total": 57}
+00:07:34   18074s mw-window-open: {"task": "mw-window-open", "k": 3, "held_done": 2, "bias": {"rule": "D2", "residual_ok": true, "bc_unconverged": false, "final_eta": 0.25, "n_updates": 21, "resid_over_delta": {"dyn0": 0.0018985190288387673, "dyn1": 0.00987055551301269, "rew0": 0.0004483219672676745, "rew1": 0.00750554778960559}}, "check3": {"task": "mw-window-open", "none_new": 1.0, "n": 90, "none_e10": 1.0, "diff": 0.0, "max_abs_diff": 0.1, "pass": true, "released": false}, "eval_done": {"none": 9, "det": 9, "shiter": 9, "shep": 9, "detshift": 9, "detbc": 9}, "jobs_done": 57, "jobs_total": 57}
+00:07:34   18074s mw-sweep-into: {"task": "mw-sweep-into", "k": 3, "held_done": 2, "bias": {"rule": "D2", "residual_ok": true, "bc_unconverged": false, "final_eta": 0.5, "n_updates": 10, "resid_over_delta": {"dyn0": 0.0012065477481047998, "dyn1": 0.009216715146627147, "rew0": 0.0005201350855362648, "rew1": 0.004650543098520175}}, "check3": {"task": "mw-sweep-into", "none_new": 1.0, "n": 90, "none_e10": 1.0, "diff": 0.0, "max_abs_diff": 0.1, "pass": true, "released": false}, "eval_done": {"none": 9, "det": 9, "shiter": 9, "shep": 9, "detshift": 9, "detbc": 9}, "jobs_done": 57, "jobs_total": 57}

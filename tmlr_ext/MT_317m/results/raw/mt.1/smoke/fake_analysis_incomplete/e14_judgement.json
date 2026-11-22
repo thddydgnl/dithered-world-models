@@ -1,0 +1,89 @@
+{
+ "eval_tasks": [
+  "mw-pick-place",
+  "mw-door-open",
+  "mw-drawer-open",
+  "mw-button-press-topdown",
+  "mw-peg-insert-side",
+  "mw-window-open",
+  "mw-sweep-into"
+ ],
+ "incomplete_tasks": [
+  "mw-push"
+ ],
+ "complete": false,
+ "holm_alpha": 0.05,
+ "holm_m": 7,
+ "damaged": [
+  "mw-pick-place",
+  "mw-door-open",
+  "mw-drawer-open",
+  "mw-button-press-topdown",
+  "mw-peg-insert-side",
+  "mw-window-open",
+  "mw-sweep-into"
+ ],
+ "P1": {
+  "holds": null,
+  "n_damaged": 7,
+  "min_damaged": 6,
+  "share_red_shiter_ge_half": 1.0,
+  "tasks_red_shiter_ge_half": [
+   "mw-pick-place",
+   "mw-door-open",
+   "mw-drawer-open",
+   "mw-button-press-topdown",
+   "mw-peg-insert-side",
+   "mw-window-open",
+   "mw-sweep-into"
+  ],
+  "share_threshold": 0.75,
+  "harmful_shiter_tasks": []
+ },
+ "P2": {
+  "holds": null,
+  "defined": true,
+  "n_damaged": 7,
+  "tasks_ci_lower_gt0": [
+   "mw-pick-place",
+   "mw-door-open",
+   "mw-drawer-open",
+   "mw-button-press-topdown",
+   "mw-peg-insert-side",
+   "mw-window-open",
+   "mw-sweep-into"
+  ],
+  "n": 7,
+  "rule": "more than half of the damaged tasks with CI lower bound of D(sh-ep) - D(sh-iter) > 0"
+ },
+ "descriptive": {
+  "fixes_red_ge_half_among_damaged": {
+   "shiter": [
+    "mw-pick-place",
+    "mw-door-open",
+    "mw-drawer-open",
+    "mw-button-press-topdown",
+    "mw-peg-insert-side",
+    "mw-window-open",
+    "mw-sweep-into"
+   ],
+   "shep": [],
+   "detshift": [
+    "mw-pick-place",
+    "mw-door-open",
+    "mw-drawer-open",
+    "mw-button-press-topdown",
+    "mw-peg-insert-side",
+    "mw-window-open",
+    "mw-sweep-into"
+   ],
+   "detbc": []
+  },
+  "harmful_eval_tasks": {
+   "shiter": [],
+   "shep": [],
+   "detshift": [],
+   "detbc": []
+  }
+ }
+}

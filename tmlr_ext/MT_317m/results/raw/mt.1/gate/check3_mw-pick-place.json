@@ -1,0 +1,10 @@
+{
+ "task": "mw-pick-place",
+ "none_new": 0.9777777777777777,
+ "n": 90,
+ "none_e10": 0.9777777777777777,
+ "diff": 0.0,
+ "max_abs_diff": 0.1,
+ "pass": true,
+ "released": false
+}

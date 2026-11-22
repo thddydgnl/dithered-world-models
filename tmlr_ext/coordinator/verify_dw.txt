@@ -1,0 +1,44 @@
+E11 pusht     N=100 none=0.73 D_det=+0.040 p=0.2738 damaged=False reading=resolution
+    D: det=+0.040 detbc=+0.160 shstep=+0.040 detshiftfix=+0.020 shiterb=+0.040 shiter=-0.020 detshift=+0.020 detnoise=+0.060
+    red: det=0.00 detbc=-3.00 shstep=0.00 detshiftfix=0.50 shiterb=0.00 shiter=1.50 detshift=0.50 detnoise=-0.50  harm=[]
+    d_bias=-0.120 [-0.200,-0.050]  d_pers=+0.000 [-0.060,+0.060]  shplan-shiter=+0.060 [-0.010,+0.130]
+E11 pointmaze N=100 none=0.79 D_det=+0.090 p=0.0381 damaged=False reading=bias
+    D: det=+0.090 detbc=-0.010 shstep=-0.040 detshiftfix=-0.060 shiterb=+0.000 shiter=-0.040 detshift=-0.060 detnoise=+0.130
+    red: det=0.00 detbc=1.11 shstep=1.44 detshiftfix=1.67 shiterb=1.00 shiter=1.44 detshift=1.67 detnoise=-0.44  harm=[]
+    d_bias=+0.100 [+0.010,+0.190]  d_pers=+0.000 [-0.060,+0.060]  shplan-shiter=+0.000 [-0.070,+0.070]
+E11 wall      N=100 none=0.49 D_det=+0.420 p=0.0000 damaged=True reading=bias
+    D: det=+0.420 detbc=+0.120 shstep=-0.040 detshiftfix=+0.020 shiterb=+0.240 shiter=+0.000 detshift=-0.150 detnoise=+0.390
+    red: det=0.00 detbc=0.71 shstep=1.10 detshiftfix=0.95 shiterb=0.43 shiter=1.00 detshift=1.36 detnoise=0.07  harm=[]
+    d_bias=+0.300 [+0.200,+0.400]  d_pers=+0.170 [+0.070,+0.270]  shplan-shiter=-0.040 [-0.120,+0.040]
+DW unit: damaged ['wall'], readings {'bias': 1}, unit reading = bias; B2 (not persistence; bias or resolution) -> True
+B3 DW unit: det+noise fixes 0/1 damaged cells -> unit part holds
+E16 pointmaze mppi2: none mppi 0.81 vs cem 0.79 (ratio 1.03, qualifies True); D det +0.100, shiter -0.020, shplan +0.020, detshift +0.020; shplan-shiter +0.040 [-0.010,+0.100]
+E16 wall mppi1: none mppi 0.63 vs cem 0.49 (ratio 1.29, qualifies True); D det +0.540, shiter +0.070, shplan +0.000, detshift +0.030; shplan-shiter -0.070 [-0.180,+0.040]
+E12 cells (pod, task, rng, var, k): N, D
+  pointmaze main   det      k1:+0.710(n100,dw.4) k2:+0.090(n100,dw.4) k3:+0.090(n100,dw.3)  k*=2
+  pointmaze main   detbc    k1:+0.670(n100,dw.4) k2:-0.020(n100,dw.4) k3:-0.010(n100,dw.3)  k*=2
+  pointmaze main   detshift k3:-0.060(n100,dw.3)  k*=3
+  pointmaze main   shiter   k1:+0.770(n100,dw.4) k2:-0.050(n100,dw.4) k3:-0.040(n100,dw.3)  k*=2
+  pointmaze pc     det      k1:+0.220(n100,dw.4) k2:+0.090(n100,dw.4) k3:+0.010(n100,dw.3)  k*=2
+  pointmaze pc     detbc    k1:+0.650(n100,dw.4) k2:+0.060(n100,dw.4) k3:+0.020(n100,dw.3)  k*=2
+  pointmaze pc     shiter   k1:+0.170(n100,dw.4) k2:+0.040(n100,dw.4) k3:-0.040(n100,dw.3)  k*=2
+  pusht     main   det      k2:+0.760(n50,dw.2) k3:+0.320(n50,dw.2) k4:+0.040(n100,dw.1)  k*=4
+  pusht     main   detbc    k2:+0.620(n50,dw.2) k3:+0.460(n50,dw.2) k4:+0.160(n100,dw.1) k5:+0.070(n100,dw.1)  k*=5
+  pusht     main   detshift k4:+0.020(n100,dw.1)  k*=4
+  pusht     main   shiter   k1:+0.760(n50,dw.2) k2:+0.000(n100,dw.2) k3:-0.020(n50,dw.2) k4:-0.020(n100,dw.1)  k*=2
+  pusht     pc     det      k2:+0.760(n50,dw.2) k3:+0.280(n50,dw.2) k4:+0.070(n100,dw.5)  k*=4
+  pusht     pc     detbc    k2:+0.760(n50,dw.2) k3:+0.120(n100,dw.2) k4:+0.000(n50,dw.5)  k*=4
+  pusht     pc     shiter   k1:+0.720(n50,dw.2) k2:+0.010(n100,dw.2) k3:-0.020(n50,dw.2) k4:-0.060(n50,dw.5)  k*=2
+  pusht     rc_k1  shiter   k1:+0.220(n100,dw.2)  k*=None
+  pusht     rc_k2  shiter   k2:+0.020(n100,dw.2)  k*=2
+  pusht     rc_k3  det      k3:+0.160(n100,dw.2)  k*=None
+  pusht     rc_k3  shiter   k3:-0.020(n50,dw.2)  k*=3
+  pusht     rc_k4  det      k4:-0.020(n100,dw.5)  k*=4
+  pusht     rc_k4  shiter   k4:+0.040(n100,dw.5)  k*=4
+  wall      main   det      k2:+0.430(n100,dw.4) k3:+0.420(n100,dw.4) k4:-0.220(n100,dw.4)  k*=4
+  wall      main   detbc    k1:+0.340(n100,dw.4) k2:+0.060(n100,dw.4) k3:+0.120(n100,dw.4) k4:-0.220(n100,dw.4)  k*=4
+  wall      main   detshift k3:-0.150(n100,dw.4)  k*=3
+  wall      main   shiter   k1:+0.490(n100,dw.4) k2:+0.010(n100,dw.4) k3:+0.000(n100,dw.4)  k*=2
+  wall      pc     det      k2:+0.420(n100,dw.4) k3:+0.380(n100,dw.4) k4:-0.100(n100,dw.4)  k*=4
+  wall      pc     detbc    k1:+0.180(n100,dw.4) k2:+0.050(n100,dw.4) k3:+0.150(n100,dw.4) k4:-0.180(n100,dw.4)  k*=4
+  wall      pc     shiter   k1:+0.450(n100,dw.4) k2:+0.050(n100,dw.4) k3:-0.070(n100,dw.4)  k*=2

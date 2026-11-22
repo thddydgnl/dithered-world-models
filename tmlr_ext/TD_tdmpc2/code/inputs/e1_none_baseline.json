@@ -1,0 +1,113 @@
+{
+ "source": "main/results/E1_tdmpc2/e1_tdmpc2_cells.csv: the CSV has no none rows; none's mean per task = mean_v + D_v (Meta-World, success-rate difference) or mean_v / (1 - D_v) (DMC, relative drop), identical in every variant row of the task up to the CSV's 5 significant digits; cross-checked with e1_tdmpc2_summary.json 'baseline' (90 pairs, seeds 20000-20029)",
+ "tasks": {
+  "cheetah-run": {
+   "none_mean_derived": 900.7712364232899,
+   "min": 900.7659535895576,
+   "max": 900.791278354141,
+   "n_rows": 18,
+   "summary_baseline": 900.7711513179283,
+   "n_pairs": 90,
+   "metric": "ret"
+  },
+  "finger-turn-hard": {
+   "none_mean_derived": 977.8600543204248,
+   "min": 977.8387391748694,
+   "max": 977.9147828469653,
+   "n_rows": 18,
+   "summary_baseline": 977.8555555555556,
+   "n_pairs": 90,
+   "metric": "ret"
+  },
+  "mw-button-press-topdown": {
+   "none_mean_derived": 1.0000003333333334,
+   "min": 1.0,
+   "max": 1.000002,
+   "n_rows": 18,
+   "summary_baseline": 1.0,
+   "n_pairs": 90,
+   "metric": "success"
+  },
+  "mw-door-open": {
+   "none_mean_derived": 0.9666677777777779,
+   "min": 0.96666,
+   "max": 0.966671,
+   "n_rows": 18,
+   "summary_baseline": 0.9666666666666667,
+   "n_pairs": 90,
+   "metric": "success"
+  },
+  "mw-drawer-open": {
+   "none_mean_derived": 0.999999888888889,
+   "min": 0.999996,
+   "max": 1.000002,
+   "n_rows": 18,
+   "summary_baseline": 1.0,
+   "n_pairs": 90,
+   "metric": "success"
+  },
+  "mw-peg-insert-side": {
+   "none_mean_derived": 1.0000002222222222,
+   "min": 0.999996,
+   "max": 1.000003,
+   "n_rows": 18,
+   "summary_baseline": 1.0,
+   "n_pairs": 90,
+   "metric": "success"
+  },
+  "mw-pick-place": {
+   "none_mean_derived": 0.9888886666666666,
+   "min": 0.988884,
+   "max": 0.988893,
+   "n_rows": 18,
+   "summary_baseline": 0.9888888888888889,
+   "n_pairs": 90,
+   "metric": "success"
+  },
+  "mw-push": {
+   "none_mean_derived": 0.9888890555555556,
+   "min": 0.98888,
+   "max": 0.988893,
+   "n_rows": 18,
+   "summary_baseline": 0.9888888888888889,
+   "n_pairs": 90,
+   "metric": "success"
+  },
+  "mw-sweep-into": {
+   "none_mean_derived": 1.0000003333333334,
+   "min": 0.999996,
+   "max": 1.000004,
+   "n_rows": 18,
+   "summary_baseline": 1.0,
+   "n_pairs": 90,
+   "metric": "success"
+  },
+  "mw-window-open": {
+   "none_mean_derived": 1.0000003333333334,
+   "min": 0.999996,
+   "max": 1.000004,
+   "n_rows": 18,
+   "summary_baseline": 1.0,
+   "n_pairs": 90,
+   "metric": "success"
+  },
+  "quadruped-walk": {
+   "none_mean_derived": 975.5466116835073,
+   "min": 975.5075022065314,
+   "max": 975.579112681586,
+   "n_rows": 18,
+   "summary_baseline": 975.5442696247819,
+   "n_pairs": 90,
+   "metric": "ret"
+  },
+  "walker-walk": {
+   "none_mean_derived": 983.4787160472855,
+   "min": 983.4152334152335,
+   "max": 983.5342927524954,
+   "n_rows": 18,
+   "summary_baseline": 983.4796408338162,
+   "n_pairs": 90,
+   "metric": "ret"
+  }
+ }
+}

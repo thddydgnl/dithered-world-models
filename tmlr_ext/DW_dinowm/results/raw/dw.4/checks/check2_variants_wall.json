@@ -1,0 +1,217 @@
+{
+ "task": "wall",
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "time": "2026-11-21T19:20:09Z",
+ "A_kernel": {
+  "detbc_max_abs_diff_from_det_minus_b": 1.1920928955078125e-07,
+  "detbc_exact": true,
+  "detshiftfix": {
+   "constant_within_plan": true,
+   "differs_by_step": true,
+   "differs_by_plan": true,
+   "differs_by_episode": true,
+   "shared_by_rows": true,
+   "mean": 2.7161080652149394e-05,
+   "var": 0.08333548903465271,
+   "detshift_mean": 2.9969152819830924e-05,
+   "detshift_var": 0.08335540443658829,
+   "var_rel_diff": 0.00023892154408211574,
+   "mean_diff_over_std": 9.726159414348326e-06,
+   "passed": true
+  },
+  "shiterb": {
+   "max_z_mean_minus_b": 2.740382671356201,
+   "var_minus_b": 0.01600819081068039,
+   "shiter_var": 0.016024259850382805,
+   "var_rel_diff": 0.00100279450361207,
+   "fresh": true,
+   "passed": true
+  },
+  "detnoise": {
+   "det_code_bitwise": true,
+   "noise_var": 0.08329150080680847,
+   "target": 0.08333333333333333,
+   "var_rel_diff": 0.0005019903182983398,
+   "noise_mean": 0.00045207873336039484,
+   "fresh": true,
+   "passed": true
+  },
+  "global_rng_untouched": true,
+  "detbc_passed": true
+ },
+ "B_planner_rng": {
+  "none": {
+   "it0_population_identical_to_preview": true,
+   "gen_end_equal_none": true,
+   "default_cpu_unchanged": true,
+   "default_cuda_unchanged": true,
+   "numpy_unchanged": true,
+   "random_unchanged": true,
+   "best_last": 0.2507161498069763
+  },
+  "detbc": {
+   "it0_population_identical_to_preview": true,
+   "gen_end_equal_none": true,
+   "default_cpu_unchanged": true,
+   "default_cuda_unchanged": true,
+   "numpy_unchanged": true,
+   "random_unchanged": true,
+   "best_last": 0.22781725227832794,
+   "it0_population_identical_to_none": true
+  },
+  "detshiftfix": {
+   "it0_population_identical_to_preview": true,
+   "gen_end_equal_none": true,
+   "default_cpu_unchanged": true,
+   "default_cuda_unchanged": true,
+   "numpy_unchanged": true,
+   "random_unchanged": true,
+   "best_last": 0.18733489513397217,
+   "it0_population_identical_to_none": true
+  },
+  "shiterb": {
+   "it0_population_identical_to_preview": true,
+   "gen_end_equal_none": true,
+   "default_cpu_unchanged": true,
+   "default_cuda_unchanged": true,
+   "numpy_unchanged": true,
+   "random_unchanged": true,
+   "best_last": 0.29258519411087036,
+   "it0_population_identical_to_none": true
+  },
+  "detnoise": {
+   "it0_population_identical_to_preview": true,
+   "gen_end_equal_none": true,
+   "default_cpu_unchanged": true,
+   "default_cuda_unchanged": true,
+   "numpy_unchanged": true,
+   "random_unchanged": true,
+   "best_last": 0.2294045388698578,
+   "it0_population_identical_to_none": true
+  },
+  "passed": true
+ },
+ "C_detbc_resid": {
+  "rows": [
+   {
+    "file": "bias_main_k2_wall.json",
+    "ranges": "main",
+    "k": 2,
+    "rule": "D2",
+    "final": [
+     0.003678412875160575,
+     0.006683654617518187,
+     0.0045662568882107735,
+     0.003439781954512,
+     0.0028471555560827255,
+     0.0028714060317724943
+    ],
+    "passed": true,
+    "converged": true,
+    "stage_eta": 1.0,
+    "updates": 6
+   },
+   {
+    "file": "bias_main_k3_wall.json",
+    "ranges": "main",
+    "k": 3,
+    "rule": "D2",
+    "final": [
+     0.0007641351548954844,
+     0.0010014588478952646,
+     0.0011036449577659369,
+     0.0014152592048048973,
+     0.0021060025319457054,
+     0.0031902797054499388
+    ],
+    "passed": true,
+    "converged": true,
+    "stage_eta": 1.0,
+    "updates": 12
+   },
+   {
+    "file": "bias_pc_k2_wall.json",
+    "ranges": "pc",
+    "k": 2,
+    "rule": "D2",
+    "final": [
+     0.0003521750622894615,
+     0.0007611166220158339,
+     0.0009410404600203037,
+     0.0008318879990838468,
+     0.0013130769366398454,
+     0.001951047102920711
+    ],
+    "passed": true,
+    "converged": true,
+    "stage_eta": 1.0,
+    "updates": 12
+   },
+   {
+    "file": "bias_pc_k3_wall.json",
+    "ranges": "pc",
+    "k": 3,
+    "rule": "D2",
+    "final": [
+     0.0009482702007517219,
+     0.0016269050538539886,
+     0.0012702608946710825,
+     0.0010462721111252904,
+     0.0012214853195473552,
+     0.0014672979013994336
+    ],
+    "passed": true,
+    "converged": true,
+    "stage_eta": 1.0,
+    "updates": 12
+   }
+  ],
+  "passed": true
+ },
+ "D_real_activations": {
+  "det": {
+   "mean": -0.09535419434700963,
+   "var": 0.06996604187832826,
+   "n": 10838016000
+  },
+  "detbc": {
+   "mean": 0.01240279922326879,
+   "var": 0.06071756069139942,
+   "n": 10838016000
+  },
+  "shiter": {
+   "mean": -0.00035636206913122786,
+   "var": 0.16192106446307297,
+   "n": 10838016000
+  },
+  "shiterb": {
+   "mean": -0.11067230534859886,
+   "var": 0.17112388352066235,
+   "n": 10838016000
+  },
+  "detshift": {
+   "mean": -7.637127172215951e-05,
+   "var": 0.08361232711194563,
+   "n": 10838016000
+  },
+  "detshiftfix": {
+   "mean": -0.00019190118454667042,
+   "var": 0.08360153934110472,
+   "n": 10838016000
+  },
+  "shstep": {
+   "mean": -0.0003087488290285713,
+   "var": 0.16196892614912425,
+   "n": 10838016000
+  },
+  "detnoise": {
+   "mean": -0.09701639746033776,
+   "var": 0.1505856628325733,
+   "n": 10838016000
+  },
+  "detshiftfix_vs_detshift_var_rel_diff": 0.00012902129642289317,
+  "detshiftfix_vs_detshift_mean_diff_over_std": 0.00039953910291730616
+ },
+ "passed": true,
+ "secs": 55.35315823554993
+}

@@ -1,0 +1,163 @@
+{
+ "time": "2026-11-22T00:07:33Z",
+ "tag": "mt.2",
+ "tasks": {
+  "mw-button-press-topdown": {
+   "task": "mw-button-press-topdown",
+   "k": 3,
+   "held_done": 2,
+   "bias": {
+    "rule": "D2",
+    "residual_ok": true,
+    "bc_unconverged": false,
+    "final_eta": 0.5,
+    "n_updates": 13,
+    "resid_over_delta": {
+     "dyn0": 0.001111921868827872,
+     "dyn1": 0.007115059058098493,
+     "rew0": 0.0003928557199366716,
+     "rew1": 0.0006946099069736457
+    }
+   },
+   "check3": {
+    "task": "mw-button-press-topdown",
+    "none_new": 1.0,
+    "n": 90,
+    "none_e10": 1.0,
+    "diff": 0.0,
+    "max_abs_diff": 0.1,
+    "pass": true,
+    "released": false
+   },
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9,
+    "shep": 9,
+    "detshift": 9,
+    "detbc": 9
+   },
+   "jobs_done": 57,
+   "jobs_total": 57
+  },
+  "mw-peg-insert-side": {
+   "task": "mw-peg-insert-side",
+   "k": 3,
+   "held_done": 2,
+   "bias": {
+    "rule": "D2",
+    "residual_ok": true,
+    "bc_unconverged": false,
+    "final_eta": 0.5,
+    "n_updates": 13,
+    "resid_over_delta": {
+     "dyn0": 0.0014437006635030535,
+     "dyn1": 0.009017380934833561,
+     "rew0": 0.0003595144229134306,
+     "rew1": 0.0021172457428447356
+    }
+   },
+   "check3": {
+    "task": "mw-peg-insert-side",
+    "none_new": 1.0,
+    "n": 90,
+    "none_e10": 1.0,
+    "diff": 0.0,
+    "max_abs_diff": 0.1,
+    "pass": true,
+    "released": false
+   },
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9,
+    "shep": 9,
+    "detshift": 9,
+    "detbc": 9
+   },
+   "jobs_done": 57,
+   "jobs_total": 57
+  },
+  "mw-window-open": {
+   "task": "mw-window-open",
+   "k": 3,
+   "held_done": 2,
+   "bias": {
+    "rule": "D2",
+    "residual_ok": true,
+    "bc_unconverged": false,
+    "final_eta": 0.25,
+    "n_updates": 21,
+    "resid_over_delta": {
+     "dyn0": 0.0018985190288387673,
+     "dyn1": 0.00987055551301269,
+     "rew0": 0.0004483219672676745,
+     "rew1": 0.00750554778960559
+    }
+   },
+   "check3": {
+    "task": "mw-window-open",
+    "none_new": 1.0,
+    "n": 90,
+    "none_e10": 1.0,
+    "diff": 0.0,
+    "max_abs_diff": 0.1,
+    "pass": true,
+    "released": false
+   },
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9,
+    "shep": 9,
+    "detshift": 9,
+    "detbc": 9
+   },
+   "jobs_done": 57,
+   "jobs_total": 57
+  },
+  "mw-sweep-into": {
+   "task": "mw-sweep-into",
+   "k": 3,
+   "held_done": 2,
+   "bias": {
+    "rule": "D2",
+    "residual_ok": true,
+    "bc_unconverged": false,
+    "final_eta": 0.5,
+    "n_updates": 10,
+    "resid_over_delta": {
+     "dyn0": 0.0012065477481047998,
+     "dyn1": 0.009216715146627147,
+     "rew0": 0.0005201350855362648,
+     "rew1": 0.004650543098520175
+    }
+   },
+   "check3": {
+    "task": "mw-sweep-into",
+    "none_new": 1.0,
+    "n": 90,
+    "none_e10": 1.0,
+    "diff": 0.0,
+    "max_abs_diff": 0.1,
+    "pass": true,
+    "released": false
+   },
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9,
+    "shep": 9,
+    "detshift": 9,
+    "detbc": 9
+   },
+   "jobs_done": 57,
+   "jobs_total": 57
+  }
+ },
+ "inflight": [],
+ "failed": [],
+ "hold": [],
+ "n_ok_this_run": 209,
+ "pool_restarts": 0
+}

@@ -1,0 +1,42 @@
+{
+ "t_rep_ms": {
+  "graph|317|8192|int-det|a": 283.04779052734375,
+  "graph|317|8192|int-shiter|a": 289.3516845703125,
+  "graph|317|8192|int-detshift|a": 292.57794189453125,
+  "graph|317|2048|int-det|a": 74.57469177246094,
+  "graph|317|2048|int-shiter|a": 76.81260681152344,
+  "graph|317|2048|int-detshift|a": 76.96281814575195,
+  "graph|317|512|int-det|a": 22.278143882751465,
+  "graph|317|512|int-shiter|a": 22.619200706481934,
+  "graph|317|512|int-detshift|a": 23.778688430786133,
+  "graph|5|8192|int-det|a": 20.784032821655273,
+  "graph|5|8192|int-shiter|a": 20.75382423400879,
+  "graph|5|8192|int-detshift|a": 20.853408813476562,
+  "graph|5|2048|int-det|a": 5.951519966125488,
+  "graph|5|2048|int-shiter|a": 5.983136177062988,
+  "graph|5|2048|int-detshift|a": 6.021343946456909,
+  "graph|5|512|int-det|a": 2.2718080282211304,
+  "graph|5|512|int-shiter|a": 2.2847681045532227,
+  "graph|5|512|int-detshift|a": 2.37555193901062
+ },
+ "n_reps": {
+  "graph|5|512|int-det|a|pair_int-detshift": 881,
+  "graph|5|512|int-det|a|pair_int-shiter": 881,
+  "graph|5|2048|int-det|a|pair_int-detshift": 337,
+  "graph|5|2048|int-det|a|pair_int-shiter": 337,
+  "graph|5|8192|int-det|a|pair_int-detshift": 97,
+  "graph|5|8192|int-det|a|pair_int-shiter": 97,
+  "graph|317|512|int-det|a|pair_int-detshift": 90,
+  "graph|317|512|int-det|a|pair_int-shiter": 90,
+  "graph|317|2048|int-det|a|pair_int-detshift": 27,
+  "graph|317|2048|int-det|a|pair_int-shiter": 27,
+  "graph|317|8192|int-det|a|pair_int-detshift": 10,
+  "graph|317|8192|int-det|a|pair_int-shiter": 10
+ },
+ "est_round_s": 103.02433219504357,
+ "est_main_s_10_rounds": 1030.2433219504358,
+ "rule": "n = max(10, ceil(2000 ms / t_rep(det))); both blocks of a pair use the det n",
+ "gpu_compute_procs": [
+  "3003, /root/venv/bin/python, 5886 MiB"
+ ]
+}

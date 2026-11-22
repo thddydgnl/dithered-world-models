@@ -1,0 +1,163 @@
+{
+ "time": "2026-11-21T23:40:11Z",
+ "tag": "mt.1",
+ "tasks": {
+  "mw-door-open": {
+   "task": "mw-door-open",
+   "k": 3,
+   "held_done": 2,
+   "bias": {
+    "rule": "D2",
+    "residual_ok": true,
+    "bc_unconverged": false,
+    "final_eta": 0.5,
+    "n_updates": 12,
+    "resid_over_delta": {
+     "dyn0": 0.001698623845054777,
+     "dyn1": 0.00741418495756267,
+     "rew0": 0.0004210426003278333,
+     "rew1": 0.0016005757688729897
+    }
+   },
+   "check3": {
+    "task": "mw-door-open",
+    "none_new": 0.8555555555555555,
+    "n": 90,
+    "none_e10": 0.8333333333333334,
+    "diff": 0.022222222222222143,
+    "max_abs_diff": 0.1,
+    "pass": true,
+    "released": false
+   },
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9,
+    "shep": 9,
+    "detshift": 9,
+    "detbc": 9
+   },
+   "jobs_done": 57,
+   "jobs_total": 57
+  },
+  "mw-drawer-open": {
+   "task": "mw-drawer-open",
+   "k": 4,
+   "held_done": 2,
+   "bias": {
+    "rule": "D2",
+    "residual_ok": true,
+    "bc_unconverged": false,
+    "final_eta": 0.25,
+    "n_updates": 21,
+    "resid_over_delta": {
+     "dyn0": 0.0019460891545277318,
+     "dyn1": 0.008061192769344363,
+     "rew0": 0.001064368031516926,
+     "rew1": 0.008539477771854008
+    }
+   },
+   "check3": {
+    "task": "mw-drawer-open",
+    "none_new": 0.8111111111111111,
+    "n": 90,
+    "none_e10": 0.7888888888888889,
+    "diff": 0.022222222222222254,
+    "max_abs_diff": 0.1,
+    "pass": true,
+    "released": false
+   },
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9,
+    "shep": 9,
+    "detshift": 9,
+    "detbc": 9
+   },
+   "jobs_done": 57,
+   "jobs_total": 57
+  },
+  "mw-push": {
+   "task": "mw-push",
+   "k": 5,
+   "held_done": 2,
+   "bias": {
+    "rule": "D2",
+    "residual_ok": true,
+    "bc_unconverged": false,
+    "final_eta": 0.5,
+    "n_updates": 11,
+    "resid_over_delta": {
+     "dyn0": 0.00024565399939247793,
+     "dyn1": 0.0019226343944159082,
+     "rew0": 0.0001876053923795012,
+     "rew1": 0.006306554689651099
+    }
+   },
+   "check3": {
+    "task": "mw-push",
+    "none_new": 1.0,
+    "n": 90,
+    "none_e10": 1.0,
+    "diff": 0.0,
+    "max_abs_diff": 0.1,
+    "pass": true,
+    "released": false
+   },
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9,
+    "shep": 9,
+    "detshift": 9,
+    "detbc": 9
+   },
+   "jobs_done": 57,
+   "jobs_total": 57
+  },
+  "mw-pick-place": {
+   "task": "mw-pick-place",
+   "k": 3,
+   "held_done": 2,
+   "bias": {
+    "rule": "D2",
+    "residual_ok": true,
+    "bc_unconverged": false,
+    "final_eta": 0.5,
+    "n_updates": 11,
+    "resid_over_delta": {
+     "dyn0": 0.0016071607903096893,
+     "dyn1": 0.009143575921615812,
+     "rew0": 0.0006843855773689807,
+     "rew1": 0.004579237832445877
+    }
+   },
+   "check3": {
+    "task": "mw-pick-place",
+    "none_new": 0.9777777777777777,
+    "n": 90,
+    "none_e10": 0.9777777777777777,
+    "diff": 0.0,
+    "max_abs_diff": 0.1,
+    "pass": true,
+    "released": false
+   },
+   "eval_done": {
+    "none": 9,
+    "det": 9,
+    "shiter": 9,
+    "shep": 9,
+    "detshift": 9,
+    "detbc": 9
+   },
+   "jobs_done": 57,
+   "jobs_total": 57
+  }
+ },
+ "inflight": [],
+ "failed": [],
+ "hold": [],
+ "n_ok_this_run": 201,
+ "pool_restarts": 0
+}

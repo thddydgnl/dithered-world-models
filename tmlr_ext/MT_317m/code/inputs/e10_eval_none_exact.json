@@ -1,0 +1,43 @@
+{
+ "mw-push": {
+  "none": 1.0,
+  "n": 90,
+  "k": 5
+ },
+ "mw-pick-place": {
+  "none": 0.9777777777777777,
+  "n": 90,
+  "k": 3
+ },
+ "mw-door-open": {
+  "none": 0.8333333333333334,
+  "n": 90,
+  "k": 3
+ },
+ "mw-drawer-open": {
+  "none": 0.7888888888888889,
+  "n": 90,
+  "k": 4
+ },
+ "mw-button-press-topdown": {
+  "none": 1.0,
+  "n": 90,
+  "k": 3
+ },
+ "mw-peg-insert-side": {
+  "none": 1.0,
+  "n": 90,
+  "k": 3
+ },
+ "mw-window-open": {
+  "none": 1.0,
+  "n": 90,
+  "k": 3
+ },
+ "mw-sweep-into": {
+  "none": 1.0,
+  "n": 90,
+  "k": 3
+ },
+ "_source": "rss_ext/E10_mt317m/results/analysis/e10_summary.json (eval.<task>.none, full precision)"
+}

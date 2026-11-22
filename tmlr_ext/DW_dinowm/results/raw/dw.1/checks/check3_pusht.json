@@ -1,0 +1,13 @@
+{
+ "task": "pusht",
+ "split": "eval8",
+ "n": 100,
+ "none_success": 0.73,
+ "e1_none_success": 0.83,
+ "diff": -0.09999999999999998,
+ "tolerance": 0.1,
+ "within_window": true,
+ "passed": true,
+ "tag": "dw.1",
+ "time": "2026-11-21T20:17:33Z"
+}

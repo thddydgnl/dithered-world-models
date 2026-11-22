@@ -1,0 +1,10 @@
+MPS not running
+=== 2026-11-21T18:44:23Z latency quick start; mps: 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+18:44:41 built 18 graphs in 6s; allocated 2.4 GiB
+18:44:50 round 0 done in 8s (total 15s)
+18:44:50 E17_LAT_MAIN_DONE
+=== 2026-11-21T18:44:50Z latency quick end rc 0

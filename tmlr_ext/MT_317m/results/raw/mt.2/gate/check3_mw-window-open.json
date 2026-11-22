@@ -1,0 +1,10 @@
+{
+ "task": "mw-window-open",
+ "none_new": 1.0,
+ "n": 90,
+ "none_e10": 1.0,
+ "diff": 0.0,
+ "max_abs_diff": 0.1,
+ "pass": true,
+ "released": false
+}

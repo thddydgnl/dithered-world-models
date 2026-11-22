@@ -1,0 +1,53 @@
+{
+ "source": "main/results/E1_tdmpc2/e1_tdmpc2_summary.json baseline (E1 none, seeds 20000-20029, 90 pairs, RTX A5000)",
+ "baseline": {
+  "mw-button-press-topdown": {
+   "n": 90,
+   "mean": 1.0
+  },
+  "mw-door-open": {
+   "n": 90,
+   "mean": 0.9666666666666667
+  },
+  "mw-drawer-open": {
+   "n": 90,
+   "mean": 1.0
+  },
+  "mw-peg-insert-side": {
+   "n": 90,
+   "mean": 1.0
+  },
+  "mw-pick-place": {
+   "n": 90,
+   "mean": 0.9888888888888889
+  },
+  "mw-push": {
+   "n": 90,
+   "mean": 0.9888888888888889
+  },
+  "mw-sweep-into": {
+   "n": 90,
+   "mean": 1.0
+  },
+  "mw-window-open": {
+   "n": 90,
+   "mean": 1.0
+  },
+  "cheetah-run": {
+   "n": 90,
+   "mean": 900.7711513179283
+  },
+  "finger-turn-hard": {
+   "n": 90,
+   "mean": 977.8555555555556
+  },
+  "quadruped-walk": {
+   "n": 90,
+   "mean": 975.5442696247819
+  },
+  "walker-walk": {
+   "n": 90,
+   "mean": 983.4796408338162
+  }
+ }
+}

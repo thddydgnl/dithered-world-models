@@ -1,0 +1,151 @@
+{
+ "judgement": {
+  "eval_tasks": [
+   "mw-pick-place",
+   "mw-door-open",
+   "mw-drawer-open",
+   "mw-button-press-topdown",
+   "mw-peg-insert-side",
+   "mw-window-open",
+   "mw-sweep-into"
+  ],
+  "incomplete_tasks": [
+   "mw-push"
+  ],
+  "complete": false,
+  "holm_alpha": 0.05,
+  "holm_m": 7,
+  "damaged": [
+   "mw-pick-place",
+   "mw-door-open",
+   "mw-drawer-open",
+   "mw-button-press-topdown",
+   "mw-peg-insert-side",
+   "mw-window-open",
+   "mw-sweep-into"
+  ],
+  "P1": {
+   "holds": null,
+   "n_damaged": 7,
+   "min_damaged": 6,
+   "share_red_shiter_ge_half": 1.0,
+   "tasks_red_shiter_ge_half": [
+    "mw-pick-place",
+    "mw-door-open",
+    "mw-drawer-open",
+    "mw-button-press-topdown",
+    "mw-peg-insert-side",
+    "mw-window-open",
+    "mw-sweep-into"
+   ],
+   "share_threshold": 0.75,
+   "harmful_shiter_tasks": []
+  },
+  "P2": {
+   "holds": null,
+   "defined": true,
+   "n_damaged": 7,
+   "tasks_ci_lower_gt0": [
+    "mw-pick-place",
+    "mw-door-open",
+    "mw-drawer-open",
+    "mw-button-press-topdown",
+    "mw-peg-insert-side",
+    "mw-window-open",
+    "mw-sweep-into"
+   ],
+   "n": 7,
+   "rule": "more than half of the damaged tasks with CI lower bound of D(sh-ep) - D(sh-iter) > 0"
+  },
+  "descriptive": {
+   "fixes_red_ge_half_among_damaged": {
+    "shiter": [
+     "mw-pick-place",
+     "mw-door-open",
+     "mw-drawer-open",
+     "mw-button-press-topdown",
+     "mw-peg-insert-side",
+     "mw-window-open",
+     "mw-sweep-into"
+    ],
+    "shep": [],
+    "detshift": [
+     "mw-pick-place",
+     "mw-door-open",
+     "mw-drawer-open",
+     "mw-button-press-topdown",
+     "mw-peg-insert-side",
+     "mw-window-open",
+     "mw-sweep-into"
+    ],
+    "detbc": []
+   },
+   "harmful_eval_tasks": {
+    "shiter": [],
+    "shep": [],
+    "detshift": [],
+    "detbc": []
+   }
+  }
+ },
+ "check3": {
+  "mw-push": {
+   "none_new": 0.9888888888888889,
+   "none_e10": 1.0,
+   "diff": -0.011111111111111072,
+   "pass": true
+  },
+  "mw-pick-place": {
+   "none_new": 0.9333333333333333,
+   "none_e10": 0.9778,
+   "diff": -0.044466666666666654,
+   "pass": true
+  },
+  "mw-door-open": {
+   "none_new": 0.9444444444444444,
+   "none_e10": 0.8333,
+   "diff": 0.11114444444444438,
+   "pass": false
+  },
+  "mw-drawer-open": {
+   "none_new": 0.9555555555555556,
+   "none_e10": 0.7889,
+   "diff": 0.16665555555555556,
+   "pass": false
+  },
+  "mw-button-press-topdown": {
+   "none_new": 0.9444444444444444,
+   "none_e10": 1.0,
+   "diff": -0.05555555555555558,
+   "pass": true
+  },
+  "mw-peg-insert-side": {
+   "none_new": 0.9444444444444444,
+   "none_e10": 1.0,
+   "diff": -0.05555555555555558,
+   "pass": true
+  },
+  "mw-window-open": {
+   "none_new": 0.9666666666666667,
+   "none_e10": 1.0,
+   "diff": -0.033333333333333326,
+   "pass": true
+  },
+  "mw-sweep-into": {
+   "none_new": 0.9777777777777777,
+   "none_e10": 1.0,
+   "diff": -0.022222222222222254,
+   "pass": true
+  }
+ },
+ "bias_ok": {
+  "mw-door-open": true,
+  "mw-drawer-open": true,
+  "mw-pick-place": true,
+  "mw-push": true,
+  "mw-button-press-topdown": true,
+  "mw-peg-insert-side": true,
+  "mw-sweep-into": true,
+  "mw-window-open": true
+ }
+}

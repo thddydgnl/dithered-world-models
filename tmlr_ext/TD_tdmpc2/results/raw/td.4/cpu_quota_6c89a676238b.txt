@@ -1,0 +1,1 @@
+cgroup cpu quota: 7.65 cores

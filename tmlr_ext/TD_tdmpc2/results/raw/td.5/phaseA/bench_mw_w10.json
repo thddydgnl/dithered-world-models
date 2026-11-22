@@ -1,0 +1,20 @@
+{
+ "n": 332,
+ "workers": 10,
+ "eps_per_hour": 4169.738052292984,
+ "span_s": 281.70078110694885,
+ "mean_secs_per_episode": {
+  "mw-pick-place|base|plain": [
+   8.0,
+   165
+  ],
+  "mw-push|base|instr": [
+   9.12,
+   137
+  ],
+  "mw-push|base|plain": [
+   9.36,
+   30
+  ]
+ }
+}

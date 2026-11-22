@@ -1,0 +1,31 @@
+MPS not running
+=== 2026-11-21T18:40:19Z latency smoke start; mps: 
+Episode length: 100
+Discount factor: 0.95
+Episode length: 100
+Discount factor: 0.95
+18:40:31 ranges vs E8 pod: max abs diff 0
+18:40:38 check 5 dyn: pass=True {"M512": true, "M24": true, "M512_second": true, "new_o_share_changed0": 0.29505157470703125, "new_o_share_changed1": 0.40169525146484375, "identical_rows_equal": true, "det_vs_detshift_share_diff0": 0.21948623657226562, "pass_shift": true, "graph_mlp": true, "pass": true}
+18:40:40 check 5 rew: pass=True {"M512": true, "M512_second": true, "new_o_share_changed0": 0.3032722473144531, "new_o_share_changed1": 0.3969573974609375, "identical_rows_equal": true, "det_vs_detshift_share_diff0": 0.20985031127929688, "pass_shift": true, "graph_mlp": true, "pass": true}
+18:40:41 rollout check 5 int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'finite': True, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+18:40:43 rollout check 5 int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'finite': True, 'pass': True}
+18:40:43 rollout check 5 int-detshift: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'finite': True, 'pass': True}
+18:40:48 check 317 dyn: pass=True {"M512": true, "M24": true, "M512_second": true, "new_o_share_changed0": 0.2969021797180176, "new_o_share_changed1": 0.3949108123779297, "identical_rows_equal": true, "det_vs_detshift_share_diff0": 0.2190999984741211, "pass_shift": true, "graph_mlp": true, "pass": true}
+18:40:50 check 317 rew: pass=True {"M512": true, "M512_second": true, "new_o_share_changed0": 0.2951359748840332, "new_o_share_changed1": 0.3893771171569824, "identical_rows_equal": true, "det_vs_detshift_share_diff0": 0.2217569351196289, "pass_shift": true, "graph_mlp": true, "pass": true}
+18:40:52 rollout check 317 int-det: {'counter_steps_dyn_rew_rep1_rep2': [0, 0, 0, 0], 'replays_differ': False, 'finite': True, 'graph_vs_eager_maxabs': 0.0, 'pass': True}
+18:40:54 rollout check 317 int-shiter: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'finite': True, 'pass': True}
+18:40:55 rollout check 317 int-detshift: {'counter_steps_dyn_rew_rep1_rep2': [20, 18, 20, 18], 'replays_differ': True, 'finite': True, 'pass': True}
+18:40:55 checks ALL_PASS=True
+18:40:55 rowbench M24 W512 GN512: det=8.8us shiter_gen=8.9us detshift_gen_nogemv=9.0us detshift_gen_gemv=22.9us
+18:40:56 rowbench M512 W512 GN512: det=11.9us shiter_gen=12.6us detshift_gen_nogemv=12.1us detshift_gen_gemv=13.1us
+18:40:57 rowbench M2048 W512 GN512: det=26.1us shiter_gen=24.2us detshift_gen_nogemv=23.7us detshift_gen_gemv=25.1us
+18:40:57 rowbench M8192 W512 GN512: det=53.5us shiter_gen=56.0us detshift_gen_nogemv=55.3us detshift_gen_gemv=58.7us
+18:40:58 rowbench M24 W4096 GN4096: det=10.2us shiter_gen=10.4us detshift_gen_nogemv=10.5us detshift_gen_gemv=83.9us
+18:40:58 rowbench M512 W4096 GN4096: det=35.8us shiter_gen=40.9us detshift_gen_nogemv=40.6us detshift_gen_gemv=79.5us
+18:40:59 rowbench M2048 W4096 GN4096: det=89.4us shiter_gen=92.6us detshift_gen_nogemv=93.4us detshift_gen_gemv=135.8us
+18:41:00 rowbench M8192 W4096 GN4096: det=292.4us shiter_gen=298.9us detshift_gen_nogemv=299.2us detshift_gen_gemv=387.6us
+18:41:00 rowbench M512 W4096 GN1376: det=36.4us shiter_gen=39.7us detshift_gen_nogemv=39.4us detshift_gen_gemv=55.5us
+18:41:01 rowbench M512 W4096 GN101: det=37.2us shiter_gen=39.4us detshift_gen_nogemv=40.0us detshift_gen_gemv=39.5us
+18:41:26 calib: est round 103 s, 10 rounds 17.1 min
+18:41:26 E17_LAT_SMOKE_DONE
+=== 2026-11-21T18:41:26Z latency smoke end rc 0

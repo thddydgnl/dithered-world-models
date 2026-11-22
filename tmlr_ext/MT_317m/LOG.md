@@ -1,0 +1,110 @@
+# E14 mt80-317M 기전 대조 — 작업 기록 (mt 작업자, 시간순, UTC)
+
+- 2026-11-21T18:01Z 작업 시작. WORKER_RULES.md, DESIGN_tmlr.md v1.0(§0 전부, §4 E14, §8), runpod_tmlr/README.md를 읽었다. DESIGN_tmlr.md sha256 `36d69ea8…0cc4`가 tmlr_ext/LOG.md의 고정값과 같음을 확인했다.
+- 18:05Z 기준 코드와 기록을 읽음: `rss_ext/E10_mt317m/`의 PLAN·LOG·REPORT와 code/ 전부(qlib.py, mtlib.py, e10_driver.py, e10_jobs.py, analyze_e10.py, run_e10.sh, setup_pod_e10.sh, mt_dims.py, test_wrapper.py, smoke_e10.py, env_e10.sh). E10 qlib.py sha256 `1edda3b2…ca59`(= main/code/tdmpc2/qlib.py), mtlib.py `ebef91c0…c39`.
+  - E10 1차 k(`results/analysis/e10_ksel.csv`): push 5, pick-place 3, door-open 3, drawer-open 4, button-press-topdown 3, peg-insert-side 3, window-open 3, sweep-into 3. 지시문의 값과 같다.
+  - E10 범위: `results/raw_e10.{1,2}/jobs/ranges/ranges_<task>.json.gz`의 `quant`가 `scales/<task>.json`과 8과제 모두 같다(모두 RTX 4090에서 계산).
+  - E10 eval none(점검 3의 기준, `e10_eval.csv`): push 1.000, pick-place 0.978, door-open 0.833, drawer-open 0.789, button-press-topdown 1.000, peg-insert-side 1.000, window-open 1.000, sweep-into 1.000.
+- 18:08Z GPU 재고(`runpodctl gpu list --include-unavailable`): **RTX A5000 secure 재고 없음(모든 DC none)**, RTX 4090 secure Low(EU-CZ-1, EU-RO-1, EUR-IS-1/2, US-IL-1), RTX 3090 없음. 코드를 쓰는 동안 A5000을 다시 확인한다.
+- 18:09Z `MT_317m/code/` 생성. E10의 qlib.py·mtlib.py를 `code/e10_ref/`에 손대지 않고 복사(점검 1의 기준), 같은 파일을 `code/`에 복사해 확장 시작. 입력: E10 범위 8개(`code/inputs/ranges/`), `e10_eval.csv`, `e10_ksel.csv`, E10 dims JSON(`inputs/mt80_dims_e10.json`, e10.1·e10.2 사본이 같음).
+- 18:10~18:20Z 코드 작성(`code/`): qlib.py(E10 판 + det+BC 변형 `detbc` 하나; 다른 변형의 코드 경로는 그대로), mtlib.py·mt_dims.py(E10 판 그대로, md5 같음), bclib.py(§0.6 b 절차), mt14_jobs.py·mt14_driver.py(E10 job/driver를 고친 대기열: 점검 3·2의 관문, 재시도 2회, status.json), analyze_e14.py(본 실행 전 작성), make_fake_e14.py(가짜 자료), check_paths.py(점검 1), check_new.py(점검 2), run_jobs.py, run_checks.sh, setup_pod_mt.sh, env_mt.sh, status.sh, restart.sh.
+- 18:20:20Z `pod_up.sh mt.1 "NVIDIA RTX A5000"` 실패: "no longer any instances available"(18:15Z 무렵 잠시 Low로 보였다가 다시 none). 18:21:23Z A5000 → RTX 4090 순서로 다시 시도: A5000 실패, **RTX 4090 pod `szbhcy4ayks6ty`(이름 atm-mt.1) 생성**, ssh 41초 뒤 준비.
+  - **사고(운영)**: 맥북에서 `rest.runpod.io`의 DNS 조회가 실패해(`api.runpod.io`는 정상) runpodctl이 생성 직후 pod를 다시 읽지 못했고, pod_up.sh가 실패로 처리했다. stray 처리도 같은 DNS 오류로 건너뛰어, **살아 있는 pod가 ledger 밖에 남았다.**
+  - 조치(18:23Z): GraphQL(`budget.account()`)로 `atm-mt.1` = `szbhcy4ayks6ty`, RUNNING, $0.89/h를 확인하고 ledger에 up 사건(시각 18:21:23Z = pod_up 시작, 보수적)을 직접 적고 `pods/mt.1.env`를 만들었다(ssh 213.173.99.50:39619, 생성 오류 메시지의 값; 종료 시각 2026-11-22T03:21:23Z). 감시 스크립트가 이 pod를 센다.
+- 18:23Z mt.1: RTX 4090 24GB, 드라이버 595.112.07(E10은 595.91.07), vCPU 48, RAM 251GB, /workspace는 네트워크 저장소(MooseFS). **A5000이 없어 설계 §8.1의 대체(RTX 4090 pod 2개, pod당 4과제)로 간다**: mt.1 = door-open, drawer-open, push, pick-place / mt.2 = button-press-topdown, peg-insert-side, window-open, sweep-into(E10의 pod 분할과 같은 묶음).
+- 18:23:28Z 코드를 tar로 올림(맥북과 pod의 md5 18개 일치), `setup_pod_mt.sh` 시작.
+- 18:25Z 설치 끝(약 2분): torch 2.7.1+cu126, tensordict 0.8.3, mujoco 3.1.2, numpy 1.24.4, gym 0.21.0, mujoco_py ok, tdmpc2 `332f19e4…903a`. 체크포인트 2,014,203,797 B, sha256 `38efd60b…99cc` 일치(`out/env/ckpt_SHA256SUMS`).
+- 18:25:39Z `run_checks.sh mw-door-open mw-drawer-open` 시작(dims → 점검 1 → door-open의 held·bias 본 실행 job → 점검 2 → 가짜 자료 분석).
+- 18:26Z 조정자에게 알림(SendMessage): rest.runpod.io가 전 세계 DNS에서 NXDOMAIN(1.1.1.1, 8.8.8.8도). `runpodctl pod list`·`pod get` 실패, `ssh info` 정상, `pod delete`도 실패할 수 있음(pod_down.sh, 감시 스크립트 집행). 다른 묶음도 ledger 밖 pod가 생길 수 있다.
+- 18:27Z 조정자 답(메시지): runpod_tmlr를 고침(rp_gql.py 추가; pod_up.sh는 REST 확인 실패 시 GraphQL로 같은 이름의 pod를 찾아 장부·env에 기록, pod_down.sh·budget.py 삭제는 REST 실패 시 GraphQL podTerminate, budget.py는 장부 밖 atm-* pod를 `<tag>-stray`로 셈), 감시 스크립트 재시작. **mt.1 기록은 그대로 두고, RTX 4090 두 대(4과제씩) 대체를 승인**, mt.2는 새 pod_up.sh로 띄우라는 지시.
+- 18:25:39~18:28:53Z **점검 1 통과**: dims JSON이 E10 사본과 같다(`DIMS_SAME_AS_E10 True`). E10의 손대지 않은 qlib.py·mtlib.py(`code/e10_ref/`)와 E14 qlib.py·mtlib.py를 같은 pod에서 두 프로세스로 동시에 돌림(seed 108000, door-open k=3·drawer-open k=4 × none·det·sh-iter·sh-ep·det+shift = 10 episode씩): **10쌍 모두 행동열 float32 바이트 단위로 같고**, return 같음, nq 같음(양자화 7,600 / none 0), sh-ep n_refresh 1 = 1, episode 끝의 전역 torch CPU·CUDA 난수 상태 같음(`out/smoke/check1.txt`, `paths_{e10,new}.{npz,json}`). 두 프로세스가 GPU를 나눠 결정당 약 151 ms.
+- 18:28:53~18:30:30Z door-open의 held 2 job(10 episode, 성공 9/10, 결정당 71.4 ms, episode 7.4초, 단일 프로세스·기록기 포함)과 bias job(9.2초) — 본 실행 job으로 `out/jobs/{held,bias}/`에 기록.
+- 18:30:30~18:31:42Z **점검 2**(`out/smoke/check2.json`, seed 108001)
+  - 통과: (a) det+BC(b = 0)가 det와 행동열 비트 단위로 같다. (b) none, det, det+BC(b = 0, 실제 b), sh-iter, sh-ep, det+shift의 episode 끝 전역 torch CPU·CUDA 난수 상태가 모두 같다(계획기 난수 불변). (c) sh-ep: 100 step 내내 표 바이트가 같고 n_refresh 1, 다른 seed에서는 새 표(층마다 (3, 4096)). 제어 step마다 호출 패턴 512행 × 18, 24행 × 2(dyn)로 det·det+BC·sh-ep 모두 E10과 같다. (d) det+BC(실제 b) nq 7,600, det와 다른 episode.
+  - **실패: det+BC 잔차.** door-open k=3, 96,000행 × 3 step. 단위별 남은 평균의 절댓값 평균 ÷ Δ:
+    - sweep 1(b = 0): dyn0 0.237, dyn1 0.671, rew0 0.072, rew1 0.813
+    - sweep 2: 0.171, 1.020, 0.037, 0.495
+    - sweep 3: 0.208, 1.150, 0.041, 0.145
+    - **세 번째 sweep 뒤: 0.220, 1.264, 0.043, 0.166**(문턱 0.01). dyn1은 sweep마다 커지고, 오차 MSE/Δ²도 1.75 → 3.36으로 커진다. 고정점 반복이 수렴하지 않는다(dynamics 층에서 진동·발산).
+  - 판단: 구현 오류의 흔적은 없다(b = 0 → det 비트 일치, 부호·누적·hook 순서 확인). 절차 자체가 k=3의 큰 전파 오차(dyn1 오차 MSE가 Δ²의 1.7배)에서 수렴하지 않는 것으로 보인다. 설계 절차(3 sweep)를 바꿔야 고칠 수 있어 **조정자에게 보고한다**(WORKER_RULES §9). det+BC eval은 driver의 관문이 막고 있고, 다른 변형은 영향이 없다.
+- 18:31:42~18:31:57Z 분석 코드 시험: 가짜 자료(8과제 전부, `make_fake_e14.py`)와 det+BC 하나를 뺀 불완전 자료 둘 다 analyze_e14.py가 끝까지 돌았다(`out/smoke/fake_analysis*.txt`; 불완전이면 P1·P2 판정이 None).
+- 18:33:31Z **본 실행 driver 시작**(`restart.sh`, 작업자 1, mt.1 = door-open, drawer-open, push, pick-place; 228 job). status 첫 줄: `tag=mt.1 phase=main done=3/228 failed=0 driver=alive … note=HOLD detbc:mw-door-open:bias_residual;run held_mw-drawer-open_c0`.
+- 18:33:31Z 진단(본 실행에 쓰지 않음) `diag_bias.py` 시작: door-open k=3에서 설계 규칙을 10 sweep까지, 감쇠 0.5·0.25, 국소(층 자신의 반올림 편향만) 규칙. door-open k=4·5에서 설계 규칙. driver와 GPU를 나눠 쓴다(몇 분).
+- 18:34~18:37Z 진단 결과(door-open k=3, `out/smoke/diag_bias_door_k3.json`; 본 실행 b에는 쓰지 않음)
+  - 설계 규칙(α = 1)을 10 sweep까지: 수렴하지 않는다. 남은 평균 ÷ Δ = dyn0 0.276, dyn1 1.426, rew0 0.047, rew1 0.177, dyn1 오차 MSE/Δ² 1.75 → 4.17(overshoot·진동).
+  - **감쇠 α = ½(b ← b + ½·m)**: 단조 감소(sweep마다 약 0.65~0.7배). 12 sweep 뒤 dyn0 0.0017, dyn1 0.0074, rew0 0.0004, rew1 0.0016으로 **모든 층이 1% 미만**이다(dyn1은 11 sweep 뒤 0.0115, 12 sweep 뒤 0.0074). 이때 전파 오차의 MSE도 크게 준다(MSE/Δ²: dyn0 0.107 → 0.021, dyn1 1.749 → 0.235, rew0 0.024 → 0.007, rew1 2.487 → 0.026).
+  - 국소 보정(층 자신의 반올림 편향만, 6 sweep): 자기 기준 잔차는 0.0004~0.0009로 수렴하지만, 설계 기준(전파 편차) 잔차는 dyn0 0.008, dyn1 0.037, rew0 0.006, rew1 0.011로 남는다.
+  - 감쇠 α = ¼(16 sweep): dyn1 0.026, rew1 0.024(느림).
+  - door-open **k=4**(`diag_bias_door_k4.json`): 설계 규칙 3 sweep 뒤 dyn0 0.414, dyn1 1.993(k=3보다 나쁨). 감쇠 ½ 8 sweep 뒤 0.009 / 0.045 / 0.003 / 0.017(수렴 중).
+- 18:38Z **조정자에게 보고(SendMessage)**: 점검 2 실패와 근거, 선택지 A(감쇠 ½, 모든 층 < 1%까지 최대 20 sweep; 추천, 묶음 공통 규칙 권고) / B(설계대로, [편차]) / C(E14에서 det+BC 제외) / D(국소 보정), 예산 추정. 결정을 기다리는 동안 det+BC eval만 관문이 막고 나머지는 진행한다.
+- 18:39Z 결정이 오면 쓸 준비: `bclib.bias_sweeps`에 `alpha`, `stop_tol` 인자를 더하고 `mt14_jobs.bias_rule()`이 `code/inputs/bias_rule.json`(없으면 설계 기본값 α = 1, 3 sweep)을 읽게 했다. 기본값에서는 계산이 이전과 같다(갱신식 `b + m` 그대로). pod에 올리고(md5 bclib `3cfeb1e2…`, mt14_jobs `bfd0c3f6…`) `restart.sh --force`로 driver를 다시 띄웠다(18:39:44Z, pid 3540; 옛 group의 프로세스 3개를 끔, 진행 중이던 held_mw-pick-place_c0은 다시 돈다). door-open의 bias job은 이전 판으로 계산됐지만 같은 기본 규칙이다.
+- 18:40Z mt.2 생성 시작(새 pod_up.sh, RTX 4090).
+  - door-open **k=5**(`diag_bias_door_k5.json`): 설계 규칙 3 sweep 뒤 dyn0 0.246, dyn1 1.447, rew0 0.085, rew1 0.127. k = 3·4·5 모두 발산한다. 진단 끝(18:40Z).
+- 18:41Z 조정자 답(메시지): det+BC b 문제는 묶음 공통 설계 변경이라 판단 에이전트(Fable 5.2 max)에게 맡김, 결정이 나면 알림. 그동안 det+BC eval만 관문으로 막고 나머지 5변형은 진행. 규칙 파일 준비(했음). **mt 묶음 상한 $12 → $15**(caps.json). 4090 두 대로 끝까지 가도 됨. 끝난 pod는 결과를 당긴 뒤 바로 지울 것.
+- 18:39:51Z mt.2 생성(새 pod_up.sh): RTX 4090 pod `pezdb6hg8fehbc`, REST 확인 실패 → GraphQL로 복구, ledger 18:40:10Z(실제 생성은 18:39:52Z 무렵, 18초 차이), ssh 47.47.180.123:10659, 종료 시각 2026-11-22T03:39:51Z. 드라이버 595.112.07, vCPU 96.
+  - 첫 tar 전송이 "not a tar archive"로 실패(원인 불명, 전송 중 첫 바이트 손상으로 보임). 파일로 만들어 다시 보냄(18:40:45Z). **코드 md5 묶음(파일 47개)이 맥북·mt.1·mt.2에서 같다**(`226739a9…`). TASKS = button-press-topdown, peg-insert-side, window-open, sweep-into. 18:40:58Z 설치 시작.
+- 18:40:32Z mt.1 driver(재시작 뒤): held_mw-pick-place_c0 7.4초/episode, 결정당 71.6 ms(진단이 끝나 GPU 단독). status ETA 23:16Z.
+- 18:41:09~18:41:37Z mt.1 held 끝(4과제, held none 성공: door-open 9/10, drawer-open 6/10, push 10/10, pick-place 10/10). 설계 규칙 bias job 3개도 모두 수렴 실패(세 번째 sweep 뒤 잔차 ÷ Δ):
+  - drawer-open k4: dyn0 0.433, dyn1 2.42, rew0 0.104, rew1 0.255
+  - push k5: 0.248, 1.45, 0.079, 0.204
+  - pick-place k3: 0.209, 1.33, 0.044, 0.208
+  - → 관문이 4과제의 det+BC를 모두 막음(`HOLD detbc:<task>:bias_residual`). 18:41:37Z부터 eval none 시작.
+- 18:43:37Z mt.2 설치 끝(체크포인트 sha256 일치, 패키지 고정판 같음). 18:44:13Z `restart.sh`로 본 실행 driver 시작(pid 1728; dims JSON이 E10 사본과 같음). 첫 job held_mw-button-press-topdown_c0.
+- 18:44:30Z `restart.sh`(살아 있으면 아무것도 안 함)와 `status.sh`(0.03초)를 두 pod에서 확인했다. 조정자의 `check_all.sh`도 두 pod의 한 줄을 읽는다(mt 지출 $0.42 / $15). `pull_all.sh mt.1`은 49개 파일 2.9MB를 `results/raw/mt.1/`로 당겼다.
+- 18:45:06Z mt.2 첫 job held_mw-button-press-topdown_c0 OK(결정당 74.5 ms, episode 7.8초; mt.1의 4090보다 약 4% 느림). mt.1 eval none job은 episode 7.3초(결정당 70.4 ms)다.
+- 18:46:26Z~18:53Z mt.2: held 4과제 끝(none 성공 button-press 10/10, peg-insert ·window-open·sweep-into는 job 기록 참고), 설계 규칙 bias 4개 모두 잔차 실패 → det+BC 4과제 HOLD. eval none 시작.
+- 18:52:41Z **점검 3 첫 판정(door-open, mt.1)**: 새 seed none 77/90 = 0.856, E10 none 0.833, 차 +0.022 → 통과(`out/gate/check3_mw-door-open.json`). door-open의 변형 job이 관문을 통과했다(순서상 4과제 none이 다 끝난 뒤 시작).
+- 18:53Z **운영 수정(정밀도)**: 관문이 E10 none을 `e10_eval.csv`(유효숫자 4자리, 예: 0.7889)에서 읽고 있었다. 경계 사례가 뒤집힐 수 있다. 예: drawer-open 새 none이 62/90이면 정확한 차는 −0.1000(통과)인데 csv 값으로는 −0.10001(실패)이다.
+  - E10 `e10_summary.json`의 정확한 값을 `code/inputs/e10_eval_none_exact.json`(md5 `79e14740…`)으로 복사했다. `mt14_jobs.e10_none()`과 `analyze_e14.e10_none()`이 그것을 먼저 읽는다.
+  - 두 pod에 올리고 `restart.sh --force`로 driver를 다시 띄웠다: mt.1 pid 4125(18:53:33Z), mt.2 pid 1965(18:53:40Z). 진행 중이던 job 1개씩은 다시 돈다.
+  - door-open 관문 파일은 정확한 값(0.8333…, 차 +0.0222, 통과)으로 다시 쓰였다.
+  - 분석 코드도 바뀌었으므로 가짜 자료로 다시 끝까지 돌렸다(`out/smoke/fake_analysis2.txt`, OK). analyze_e14.py md5 `9fd6eb7f…` → `ace90746df3e7c06d807adbd01cee164`, mt14_jobs.py → `b6f6d1f5fea0da366f4c20190e8269b4`.
+  - 코드 묶음 md5가 맥북·mt.1·mt.2에서 같다(`9ae00c42…`).
+- 18:49:55~18:50:22Z mt.2 설계 규칙 bias 4개도 실패(세 번째 sweep 뒤 잔차 ÷ Δ): button-press dyn1 1.31, peg-insert 1.28, window-open 1.39, sweep-into 0.99(dyn0 0.20~0.23, rew0 0.04, rew1 0.05~0.25). **8과제 모두 설계 절차가 수렴하지 않는다.**
+- 18:54:33Z `check_all.sh`: mt.1 done 21/228, mt.2 done 14/228, 실패 0, driver 둘 다 alive, GPU 93~94%. mt 지출 $0.73 / $15. 감시 스크립트 alive.
+- 18:55Z **단계 A 끝**, 조정자에게 보고. 남은 것은 두 가지다. det+BC b 규칙의 결정(판단 에이전트), 그리고 나머지 7과제의 점검 3 관문(자동).
+- 19:01:09Z **[편차 D2] 결정**(판단 에이전트 Fable 5.2 max, 조정자 메시지; tmlr_ext/LOG.md, DESIGN_tmlr.md §11). α = 1 → ½ → ¼ 순서로 단계마다 b = 0에서 시작한다. pass마다 m과 층별 r = mean_j|m_j|/Δ_j를 재고, 모든 층 r < 0.01인 첫 pass의 b로 확정한다. 아니면 b ← b + α·m, 갱신 최대 60번이고, 못 미치면 다음 단계로 간다. 세 단계 모두 못 미치면 각 단계 마지막 b 가운데 최악 층 r이 가장 작은 b를 쓰고 `bc_unconverged`로 표시한다. 그래도 det+BC는 돌리고 조정자에게 알린다. det+BC 기술 항목은 (가) 모든 과제, (나) 표시 과제 제외의 두 가지로 낸다. 점검 2는 최종 b에서 판정한다. 구 규칙 b는 이름을 바꿔 기록으로만 둔다.
+- 19:02~19:05Z D2 구현
+  - `code/inputs/bias_rule.json` = `runpod_tmlr/bias_rule_D2.json`(바이트 동일, md5 `2a9e8529…`)
+  - `bclib.bias_staged`·`_measure`: pass마다 층별 r 평균·최대, MSE/Δ², 전파 잠재 오차(step 1~3, E1 err 정의)를 기록한다. 최종 b·m₀·최종 m은 npz에 둔다. 구 `bias_sweeps`는 기록용으로 남겼다.
+  - `mt14_jobs`: 규칙 파일에 stages가 있으면 D2를 쓴다.
+  - `mt14_driver`: D2 bias 결과면 수렴 여부와 무관하게 det+BC 관문을 연다. 미수렴이면 status note에 `FLAG bc_unconverged:<task>`를 띄우고, 구 규칙 결과는 계속 막는다.
+  - `analyze_e14`: D2 bias 표(`e14_bias.csv`, pass별 `e14_bias_passes.csv`), det+BC 기술 항목 두 가지(`descriptive.detbc_two_ways`), eval 표에 `bc_unconverged` 열
+  - `make_fake_e14`: D2 형식, 표시 과제 하나
+  - `restart.sh --stop`, `apply_d2.sh`, 권장 진단 `diag_bias_split.py`(held 5 episode로 구한 b를 나머지 5 episode에서 잰 잔차, 실행에 쓰지 않음)
+  - mt.1에서 가짜 자료로 분석을 끝까지 다시 돌렸다(`out/smoke/fake_analysis3.txt`, OK). 표시 과제가 (나)에서 빠진다.
+  - 코드 묶음 md5가 맥북·mt.1·mt.2에서 같다(`f149fb1e…`). analyze_e14.py md5 `5ac8af6599d3ccc4b522d30d17a17e0e`, bclib `f09165fa…`, mt14_jobs `9aa6bee8…`, mt14_driver `615b8aae…`, restart.sh `ee934340…`
+- 19:06:14Z(mt.1)·19:06:20Z(mt.2) **D2 적용**(`apply_d2.sh`): driver를 멈췄다. 구 규칙 bias 결과(job JSON 4 + npz 4, pod마다)는 `out/bias_frozen_rule/{jobs,npz}/`로 옮겨 이름 그대로 남겼다. driver를 다시 띄웠다(mt.1 pid 4397, mt.2 pid 2207). bias job(순위 1)부터 다시 계산한다.
+  - 구 규칙 b로 돈 episode는 스모크 하나뿐이다(점검 2 (d), seed 108001 det+BC 1 episode). 판정·보고에 쓰지 않는다. 본 실행 det+BC eval은 하나도 돌지 않았다(관문).
+- 19:09~19:20:32Z **D2 bias 8과제 모두 수렴**(`bc_unconverged` 없음). 점검 2를 최종 b에서 판정하면 **모든 층 < 1%로 통과**한다. 모든 과제에서 α = 1은 60번 갱신 안에 못 미쳤다. 근거: `results/raw/mt.{1,2}/jobs/bias/`
+  - door-open k3: α = ½, 12번, 최악 층 r 0.0074
+  - drawer-open k4: α = ½도 60번 실패 → α = ¼, 21번, 0.0085
+  - push k5: α = ½, 11번, 0.0063
+  - pick-place k3: α = ½, 11번, 0.0091
+  - button-press-topdown k3: α = ½, 13번, 0.0071
+  - peg-insert-side k3: α = ½, 13번, 0.0090
+  - window-open k3: α = ½ 60번 실패 → α = ¼, 21번, 0.0099
+  - sweep-into k3: α = ½, 10번, 0.0092
+  - 과제당 165~330초 걸렸다. 그동안 eval job은 기다렸다(bias가 우선순위 1).
+  - 기술(판정과 무관): k3 과제에서는 최종 b가 전파 오차 MSE와 3-step 잠재 오차를 크게 줄인다(예: door-open dyn1 MSE/Δ² 1.75 → 0.24, 잠재 오차 7.8 → 2.9). 그러나 drawer-open k4에서는 dyn1 MSE가 1.25 → 2.15, 잠재 오차가 7.3 → 8.2로 오히려 커진다(rew1은 11.8 → 0.36). push k5는 거의 그대로다(dyn1 1.42 → 1.12, 잠재 오차 1.05 → 0.94). 평균 0이라는 목표가 MSE 감소를 보장하지는 않는다.
+- 19:20Z 관문: 8과제 모두 det+BC가 열렸다(status에 HOLD 없음). det+BC eval은 순위 7이라 마지막에 돈다.
+  - 점검 3 추가 통과: drawer-open 0.811(73/90) 대 E10 0.789(+0.022), button-press-topdown 1.000 대 1.000. 나머지 5과제는 none이 끝나는 대로 판정한다.
+- 19:20~19:21Z 권장 진단 `diag_bias_split.py`를 두 pod에서 4과제씩 차례로 띄움(`out/diag/bias_split_<task>.json`, 실행에 쓰지 않음, 본 실행과 GPU를 나눠 씀). `pull_all.sh mt.1 mt.2` OK(93·46 파일).
+- 19:55Z 조정자 메시지: 19:35Z에 episode가 7.5초 → 14초로 느려졌다(diag_bias_split.py가 GPU를 나눠 씀), 남았으면 멈추거나 미루라는 지시. 확인해 보니 **진단은 이미 끝나 있었다**(mt.1 19:38:17Z, mt.2 19:37:55Z에 마지막 과제 끝, 남은 프로세스 없음). 19:50Z 이후 episode는 mt.1 7.6초, mt.2 7.8~7.9초로 돌아왔다. 19:21~19:38Z 동안 본 실행이 약 반 속도였다(pod당 GPU 약 8분 손실).
+  - status의 ETA(mt.1 00:42Z, mt.2 01:12Z)는 느렸던 job이 최근 30 job 평균에 들어 있어 부풀려져 있다. 남은 job으로 다시 계산하면 mt.1 약 23:40Z, mt.2 약 00:00Z에 끝난다. 자동 종료(03:21Z, 03:39Z)보다 3시간 넘게 앞선다.
+  - 분할 진단(`out/diag/bias_split_<task>.json`, 기술 항목, 실행에 쓰지 않음): held 5 episode로 구한 b를 나머지 5 episode에서 재면 dyn1 r = 0.020(sweep-into)~0.25(push)로 1%를 넘는다. 10 episode b를 그 5 episode에서 재면(반은 표본 안) dyn1 0.013~0.125다. b = 0이면 dyn1은 0.37~0.75다. 곧 b는 표본 밖에서 평균 편향을 대부분 줄이지만 완전히 0으로 만들지는 못한다.
+  - 투명성 메모: 진행 확인 중 driver 로그에서 door-open det c0~c3, sweep-into none c0~c3의 성공 수를 보았다. 이것으로 정한 것은 없다.
+- 단계 B에 필요한 것: out/만 있으면 된다(jobs, gate, bias, status/state). 코드는 맥북 `code/`와 같다. big/(held 기록, 체크포인트)은 필요 없다.
+- 23:40:12Z mt.1 driver 끝(228/228, 실패 0). 23:58Z 조정자가 out/을 맥북 `results/raw/mt.1/`로 모두 당기고(297 파일, rsync dry-run 남은 전송 0) 삭제했다(gone, $5.17). mt.1의 logs/는 당기지 않았다.
+- 00:07:34Z mt.2 driver 끝(228/228, 실패 0). 00:12Z 조정자가 단계 B 지시.
+- 00:12~00:14Z **단계 B**(mt.2)
+  - `pull_all.sh mt.2`(259 파일, pod와 같음) 뒤 맥북의 mt.1 사본을 `sync.sh push`로 mt.2의 `/workspace/atm/merged/mt.1/`에 올렸다(297 파일, eval 216).
+  - `analyze_e14.py --res /workspace/atm/merged/mt.1,/workspace/atm/out --outdir /workspace/atm/out/analysis`(md5 `5ac8af65…`, 1.7초, stderr 없음).
+  - 결과를 당겨(268 파일, dry-run 남은 전송 0) `results/analysis/`에 복사했다.
+  - **판정: P1 성립(8/8 손상, red(sh-iter) ≥ 0.5 8/8), P2 성립(손상 8과제 중 7과제에서 D(sh-ep) − D(sh-iter) CI 하한 > 0).** bc_unconverged 없음, 점검 3은 8과제 모두 통과(최대 |차| 0.022).
+- 00:14Z 원자료 대조(맥북, 순수 파이썬으로 job 파일의 성공 수를 셈)
+  - 8과제 × 6변형 × 90 seed, 중복과 누락 없음
+  - D_det와 D(sh-ep) − D(sh-iter)의 점 추정이 분석 결과와 8과제 모두 같다(예: pick-place 88 대 0 → 0.9778, sh-ep 5 대 sh-iter 61 → 0.6222).
+  - nq(7,600 / 0)·100 step·sh-ep n_refresh 1·과제마다 GPU 한 종류, 그리고 episode 끝 전역 난수 상태가 6변형 사이에서 모든 seed가 같다.
+- 00:15:23Z mt.2의 logs/를 `results/logs_mt.2/`로 당긴 뒤 `pod_down.sh mt.2`(REST 실패 → GraphQL로 삭제). budget.py: mt.1·mt.2 모두 **gone**, mt 합계 $10.29(mt.1 $5.17 + mt.2 $5.12).
+- 00:20Z REPORT.md 작성(판정 표, 과제별 표, 점검, 무결성과 원자료 대조, D2 b 수렴 표와 MSE 관찰, 편차, 비용). 분석 결과는 `results/analysis/`(mt.2의 `out/analysis` 사본)에 있다.

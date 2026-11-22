@@ -1,0 +1,158 @@
+{
+ "offsets": {
+  "n": 1024000,
+  "mean": -0.00036791624734178185,
+  "var": 0.08316206187009811,
+  "var_rel_diff": -0.0020552873611450195,
+  "min": -0.4999992549419403,
+  "max": 0.4999987483024597,
+  "chi2_20bins": 26.181640625,
+  "chi2_df": 19,
+  "mean_abs_corr_between_calls": 0.035132620483636856,
+  "corr_ref_1_over_sqrt_units": 0.044194173824159216,
+  "pass": true
+ },
+ "mw-push": {
+  "dyn": {
+   "mismatch0": 0.0,
+   "maxdiff0": 0.0,
+   "mismatch1": 0.0,
+   "maxdiff1": 0.0,
+   "head_maxabs": 7.450580596923828e-07,
+   "head_scale": 1.0,
+   "c1eff_relmax": 4.059500227703438e-08,
+   "c2eff_relmax": 5.245688568592763e-08,
+   "global_rng_unchanged": true,
+   "new_offsets_differ": true,
+   "codes_changed_share0": 0.2942466735839844,
+   "identical_rows_equal": true,
+   "det_vs_detshift_share_diff0": 0.2239227294921875,
+   "err_mean_over_delta": 6.000131179462187e-05,
+   "err_var_over_delta2": 0.08265477418899536,
+   "err_var_rel_diff_vs_1_12": -0.008142709732055664,
+   "err_n": 510080,
+   "pass": true
+  },
+  "rew": {
+   "mismatch0": 0.0,
+   "maxdiff0": 0.0,
+   "mismatch1": 0.0,
+   "maxdiff1": 0.0,
+   "head_maxabs": 1.1444091796875e-05,
+   "head_scale": 66.68721771240234,
+   "c1eff_relmax": 3.001804185234897e-08,
+   "c2eff_relmax": 2.584538393770486e-08,
+   "global_rng_unchanged": true,
+   "new_offsets_differ": true,
+   "codes_changed_share0": 0.2629280090332031,
+   "identical_rows_equal": true,
+   "det_vs_detshift_share_diff0": 0.1775970458984375,
+   "err_mean_over_delta": -0.0005225907079875469,
+   "err_var_over_delta2": 0.08354656398296356,
+   "err_var_rel_diff_vs_1_12": 0.0025587081909179688,
+   "err_n": 537400,
+   "pass": true
+  },
+  "closed_loop": {
+   "fp32_before": {
+    "ret": 1800.3592610359192,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 48.04966449737549
+   },
+   "detshift": {
+    "ret": 1769.6617341712117,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 56.04488134384155
+   },
+   "detshift_repeat": {
+    "ret": 1769.6617341712117,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 38.4639835357666
+   },
+   "fp32_after": {
+    "ret": 1800.3592610359192,
+    "success": 1.0,
+    "steps": 100,
+    "ms_per_step": 46.66134595870972
+   },
+   "detshift_repeat_identical": true,
+   "restore_identical": true
+  },
+  "pass": true
+ },
+ "cheetah-run": {
+  "dyn": {
+   "mismatch0": 0.0,
+   "maxdiff0": 0.0,
+   "mismatch1": 0.0,
+   "maxdiff1": 0.0,
+   "head_maxabs": 9.5367431640625e-07,
+   "head_scale": 1.0,
+   "c1eff_relmax": 2.818488056485481e-08,
+   "c2eff_relmax": 6.505006006196992e-08,
+   "global_rng_unchanged": true,
+   "new_offsets_differ": true,
+   "codes_changed_share0": 0.3008270263671875,
+   "identical_rows_equal": true,
+   "det_vs_detshift_share_diff0": 0.202301025390625,
+   "err_mean_over_delta": -6.492522516055033e-05,
+   "err_var_over_delta2": 0.08323737978935242,
+   "err_var_rel_diff_vs_1_12": -0.001151442527770996,
+   "err_n": 2564160,
+   "pass": true
+  },
+  "rew": {
+   "mismatch0": 0.0,
+   "maxdiff0": 0.0,
+   "mismatch1": 0.0,
+   "maxdiff1": 0.0,
+   "head_maxabs": 1.9073486328125e-05,
+   "head_scale": 67.57328796386719,
+   "c1eff_relmax": 2.3803610045479268e-08,
+   "c2eff_relmax": 3.478348553979155e-08,
+   "global_rng_unchanged": true,
+   "new_offsets_differ": true,
+   "codes_changed_share0": 0.3074989318847656,
+   "identical_rows_equal": true,
+   "det_vs_detshift_share_diff0": 0.21797943115234375,
+   "err_mean_over_delta": -0.0006239679059945047,
+   "err_var_over_delta2": 0.08310189098119736,
+   "err_var_rel_diff_vs_1_12": -0.0027773380279541016,
+   "err_n": 4181000,
+   "pass": true
+  },
+  "closed_loop": {
+   "fp32_before": {
+    "ret": 870.8589524105191,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 30.46768045425415
+   },
+   "detshift": {
+    "ret": 760.2284953724593,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 42.281235694885254
+   },
+   "detshift_repeat": {
+    "ret": 760.2284953724593,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 42.45461845397949
+   },
+   "fp32_after": {
+    "ret": 870.8589524105191,
+    "success": 0.0,
+    "steps": 500,
+    "ms_per_step": 30.141942977905273
+   },
+   "detshift_repeat_identical": true,
+   "restore_identical": true
+  },
+  "pass": true
+ },
+ "PASS": true
+}

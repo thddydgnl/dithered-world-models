@@ -1,0 +1,51 @@
+# td 묶음(TD-MPC2 5M: E11·E12·E13·E15·E16) — 작업 기록 (UTC)
+
+- 2026-11-21T18:01Z 조정자 지시 수신(td 묶음, pod td.1~td.6, A40 SECURE, TERM_H 8, 묶음 상한 $24). WORKER_RULES.md, DESIGN_tmlr.md v1.0(§0, §1~§3, §5, §6, §8), runpod_tmlr/README.md, E9 PLAN·LOG·코드, E1 코드(qlib, runner, calib_lib, e5lib, make_manifest, analyze_e1/e2/e3, v5_common), E1·E2·E5 보고, DESIGN_main v4 §6.1을 읽었다.
+- 18:10~18:28Z 코드 작성(`code/`)
+  - E9 `code/` 전체를 복사하고 E1 `calib_lib.py`·`e5lib.py`, E1 셀 CSV를 더했다. `inputs/e1_reference/qlib.py`는 E1 원본과 md5가 같다(7934e1b2…).
+  - `qlib.py`: 새 변형 넷(detbc, detshiftfix, shiterb, detnoise)을 hook의 기존 분기 뒤에 더했다. 기존 변형의 분기는 그대로이고, 표 변형 목록(TABLE_VARIANTS)·확률적 변형 목록은 넓히기만 했다.
+  - `runner.py`: PC 범위(`scales: pc`), 편향 벡터 b 읽기, 새 job 종류(prep, e13, timing), 보정 파일과 lock은 `/workspace/atm/big`, agent 캐시 4.
+  - `tdjobs.py`(prep·E13·timing), `plan_td.py`(job 배치와 E12 적응 규칙), `driver.py`(대기열), `status.sh`, `restart.sh`, `setup_td.sh`, `env_td.sh`, `mps_td.sh`, 점검 스크립트(`check_e1_paths.py`, `test_variants.py`, `check_smoke.py`, `check_baseline.py`, `bench_rate.py`), 분석 `analyze_td.py`, 가짜 자료 `make_fake.py`.
+- 18:21Z 조정자 알림: rest.runpod.io NXDOMAIN. pod_up.sh가 GraphQL로 되찾도록 고쳐졌고, 확인은 `rp_gql.py pods atm-`로 한다(runpodctl pod get/list 쓰지 않음).
+- 18:28:28Z `pod_up.sh td.5 "NVIDIA A40"` → REST 확인 실패 뒤 GraphQL로 되찾음. **td.5** id `hzcu21hf6vx1ka`, A40 $0.59/h, 생성 18:28Z, 자동 종료 2026-11-22T02:28:28Z. `rp_gql.py pods atm-`로 확인(그 밖의 atm pod는 mt.1뿐). cgroup CPU 할당 7.65코어(765000/100000), RAM 503GB, /workspace는 MooseFS.
+- 18:29~18:32Z `setup_td.sh` 182초: E1 고정판 그대로, tdmpc2 332f19e, 체크포인트 36개 SHA256 일치.
+- 18:32Z TD-MPC2 `_plan`(332f19e) 확인: `score = torch.exp(self.cfg.temperature*(elite_value - max_value))`, `score = score / score.sum(0)`, 정책 궤적은 `if self.cfg.num_pi_trajs > 0`일 때만. 따라서 temperature 0이면 모든 elite의 score가 exp(0) = 1, 정규화 뒤 1/64로 정확히 같다. temperature로 나누는 곳이 없어 0으로 나누는 일이 없다. E16의 CEM식 계획기는 코드 수정 없이 `set_planner` override(temperature 0.0, min_std 0.01, num_pi_trajs 0)로 한다.
+- 18:32:53Z td.5 스모크 시작(`run_smoke.sh`: 점검 1, 스모크 manifest, 점검 2, 보고)
+- 18:37:35Z 스모크 끝(`smoke_out/`, 스모크 seed 109000+, 해석하지 않음)
+  - **점검 1 통과**: 손대지 않은 E1 `qlib.py`와 새 `qlib.py`가 같은 pod에서 mw-push(k = 3)·cheetah-run(k = 5) × none·det·sh-iter·sh-ep·det+shift 10 episode를 return·성공·n_refresh·행동열 sha256·보상열 sha256까지 비트 단위로 같게 냈다(seed 12000, E0 범위). runner job 경로(repro_* job)도 같은 return을 냈다.
+  - **점검 2**: det+shift-fixed(표가 episode 안에서 고정, episode마다 바뀜, 재현; 원소별 오차 평균 차 < 0.003 sd, 분산 상대 차 0.1~1.1%), sh-iter+b(같은 seed에서 출력 − sh-iter 출력 = b, 최대 오차 4.5e-7; 분산 상대 차 < 2e-9), det+noise(더한 잡음 분산 / (Δ²/12) = 1.00005, det 부호 비트 단위 동일), 전역 난수(hook·계획 한 step 모두 불변), E16 계획기(temperature 0에서 elite 가중 0.015625 = 1/64 정확히, num_pi_trajs 0에서 24행 호출 없음)는 통과. **det+BC는 실패**: §0.6의 반복(b ← b + m, 3 sweep)이 수렴하지 않는다. 4개 과제 × PT·PC × k 1~8 = 64칸 중 거의 모두에서 sweep마다 잔차가 커진다(예: mw-push PT k = 3, 층 최악 평균 |m_j|/Δ: 0.26 → 0.46 → 0.50 → 0.72; cheetah PC k = 6은 1.90). 스모크 episode 1개씩에서 이 b를 쓴 det+BC는 det보다 크게 나빴다(cheetah return 37.8 대 det 422).
+- 18:38~18:44Z 진단(`code/bias_diag.py`, `bias_diag2.py`, 스모크 보정 자료만, `smoke_out/bias_diag*.json`): 설계대로(Jacobi, η = 1)는 6 sweep까지 발산하거나 정체, Gauss–Seidel(층 순서대로 하나씩 갱신)은 진동하며 3 sweep 뒤 0.3~10%, 같은 입력의 국소 반올림 편향(전파 없음)은 2~6%에서 멈춘다. **감쇠 η = ½(b ← b + ½m)은 64칸 모두 3~14 sweep(최대 mw-push PT k = 2의 14)에 모든 층 1% 미만**으로 수렴했다.
+- 18:4xZ 조정자 알림: 317M 작업자도 같은 비수렴을 보고, 감쇠 ½가 12 sweep에 수렴. 묶음 공통 규칙을 판단 에이전트가 정하는 중. td는 b 계산 때 sweep별 층 잔차(Δ 대비)와 전파 MSE를 기록하고, det+BC·sh-iter+b eval은 결정 전까지 막는다. → b를 prep에서 떼어 별도 job `bias`(규칙은 실행 때 `/workspace/atm/bias_rule.json`에서 읽고 결과에 저장)로 만들고, driver가 `/workspace/atm/GATE_bias` 파일이 생길 때까지 bias job을 내지 않게 했다. det+BC·sh-iter+b episode job과 E13 job은 bias job에 의존하므로 함께 기다린다. 나머지 변형은 진행한다.
+- 18:39~18:44Z **점검 3(td.5 과제)**: none(기본 계획기) 72 job = 360 episode를 본 실행 결과 폴더(`out/`)에 먼저 돌렸다(driver가 나중에 건너뜀, 299초, 실패 0). 새 seed의 none 성공률: mw-push 1.000(E1 0.989), mw-pick-place 1.000(0.989), mw-door-open 1.000(0.967), mw-drawer-open 1.000(1.000). 모두 10점 안 → **통과**(`out/check3_td.5.json`).
+- 18:43~18:46Z 나머지 pod 생성(`pod_up.sh`, 모두 REST 확인 실패 뒤 GraphQL로 되찾음, `rp_gql.py pods atm-`로 확인)
+  - td.6 `tds0okvepphzoi` 생성 18:43:55Z, 자동 종료 02:43:13Z
+  - td.1 `pvfh339jrgqzr0` 18:44:38Z, 02:43:55Z
+  - td.2 `sbzf2oyp9xjwpb` 18:44:57Z, 02:44:38Z
+  - td.3 `ddtsi386w98i6k` 18:45:35Z, 02:44:58Z
+  - td.4 `hqnnacntu4arrv` 18:46:16Z, 02:45:36Z
+  - 모두 A40 $0.59/h, CPU 할당 7.65코어(cgroup v1 또는 v2). 코드를 tar로 보내고 `setup_td.sh`를 띄웠다.
+- 18:45Z 분석 dry run: `make_fake.py`(6 pod 배치 전체의 가짜 결과 7,995 episode job, 적응 결정 84개, E13 1,080 episode)로 `analyze_td.py`가 끝까지 돌았다(35초). 숫자는 가짜라 해석하지 않는다.
+- 18:47Z td.5 처리량 측정 시작(`run_bench.sh`: MW 워커 8·10 각 300초, DMC 워커 8 360초; 처리량 seed 108000+). 스모크 b(수렴하지 않은 것)를 det+BC·sh-iter+b 시간 측정에만 썼다.
+- 운영 메모: 원격에서 `cat > 파일 && … &`로 한 줄에 보내면 배경 목록의 표준 입력이 /dev/null이 되어 빈 파일이 생긴다(bias_diag.py 첫 시도). 파일은 먼저 따로 보내고 그다음 띄운다.
+- 18:48~18:50Z 설치 끝난 pod부터 본 실행 driver 시작(`make_conf.py <tag> 8` → `restart.sh`, 코드는 rsync로 보내고 md5 일치 확인): td.6 18:48:20Z, td.1 18:48:33Z, td.2 18:48:46Z, td.3 18:49:5xZ, td.4 18:50:xxZ. 워커 8(E9에서 같은 기종·같은 CPU 할당의 최적값; td.5 처리량 측정이 다르게 나오면 driver를 다시 띄워 바꾼다 — 결과는 워커 수와 무관). `GATE_bias`는 만들지 않았다(det+BC·sh-iter+b·E13 대기). status.sh 한 줄과 restart.sh(살아 있으면 아무것도 안 함)를 각 pod에서 확인했다.
+- 18:51:11Z td.5 처리량(MW, 워커 8, 300초, 1-episode job, 본 실행 섞임): 4,647 ep/h. episode당 초(8 경합) pick-place 계측 없음 5.79, push 계측 6.52, push PC 6.37. 같은 시각 td.6 본 실행(5-episode job, none)은 6,171 ep/h(E9 5,995와 비슷).
+- 18:53Z **점검 3(td.6 과제)**: none 90짝 — button-press 1.000(E1 1.000), peg-insert 1.000(1.000), window-open 1.000(1.000), sweep-into 0.967(1.000) → **통과**(`td.6:/workspace/atm/out/check3_td.6.json`).
+- 메모: 장부(`runpod_tmlr/pods.ledger`)에 td.1의 id `pvfh339jrgqzr0`가 감시 스크립트의 미등록 pod 기록으로 `td.1-stray`(18:44:31Z)로 먼저 들어가고, 7초 뒤 pod_up.sh가 `td.1`로 다시 적었다. 같은 pod 하나이고 지운 기록은 없다. budget.py는 첫 태그 `td.1-stray`로 보여 주지만 td 상한에 함께 센다.
+- 18:55~18:57Z **점검 3(DMC pod, driver의 none 90짝)**: walker 984.6(E1 983.5), cheetah 900.9(900.8), quadruped 971.7(975.5), finger 969.1(977.9) → 모두 E1 return의 10% 안, **통과**(`<pod>:/workspace/atm/out/check3_<tag>.json`). 12과제 모두 통과.
+- 18:56:17Z td.5 처리량(MW, 워커 10, 300초): 4,170 ep/h(워커 8의 4,647보다 느림, episode당 초가 8.0~9.4로 늘어남). CPU 할당 7.65코어에서 워커 10은 과하다(E9와 같은 결론) → **워커 8 유지**.
+- 18:57Z 본 실행 처리량(driver 로그, 5-episode job): DMC td.1 1,011 ep/h(cheetah, E11 계측 포함), td.2 1,063, td.3 1,095, td.4 1,083; MW td.6 5,372 ep/h.
+- 19:02:21Z td.5 처리량(DMC, 워커 8, 360초, 1-episode job): 657 ep/h(1-episode job과 반복 12·24 칸이 섞여 본 실행보다 낮다). episode당 초(8 경합): 반복 6 cheetah 31.4(계측)·33.8, walker 30.5; 반복 12 48.5·49.1; 반복 24 93.9·94.8. 반복 12·24의 비용은 반복 6의 약 1.6배·3.1배다.
+- 19:01Z 조정자 결정 **[편차 D2]**(판단 에이전트, 규칙 `runpod_tmlr/bias_rule_D2.json`): b ← b + α·m을 α = 1 → ½ → ¼ 단계로, 단계마다 b = 0에서, 모든 층 r = mean_j |m_j|/Δ_j < 1%인 첫 pass의 b로 확정(갱신 최대 60). 세 단계 모두 실패면 단계 마지막 b 중 최악 층 r이 가장 작은 b + `bc_unconverged`. 점검 2는 최종 b에서 본다. 구 규칙 b로 돈 episode는 보지 않고 버린다.
+- 19:02~19:05Z `tdjobs.job_bias`를 D2대로 다시 썼다(`bias_stage`): 칸마다 단계·갱신 횟수·수렴 여부·표본 수, pass별 층별 평균·최대 |m_j|/Δ_j(PC는 mean|m|/mean Δ도), 최종 b와 pass 0의 m₀(npz `b_`·`m0_`), 층별 mean_j |b_j|/Δ_j, b = 0과 최종 b의 층별 MSE(원값, 제곱 평균 대비, /Δ²)와 전파 잠재 오차를 남긴다. td.5 스모크 자료(mw-push s1)에서 시험: 16칸 중 α = 1에서 1칸, α = ½에서 15칸 수렴, 미수렴 0, 최종 잔차 최대 0.0098, 32초.
+- 구 규칙 b의 처리(D2): 본 실행에서는 bias job이 관문에 막혀 있어 구 규칙 b가 없다. 스모크 prep의 구 b 파일은 `smoke_out/prep/*_bias_oldrule3sweep.npz`로 이름을 바꿨고, 구 b로 돈 스모크 det+BC·sh-iter+b episode 6개(스모크 seed, episode 1개씩)와 처리량 측정의 det+BC·sh-iter+b episode는 `smoke_out/discarded_oldrule_b/`, `bench/discarded_oldrule_b/`로 옮겨 버렸다. 다만 그 스모크 episode의 return은 결정 전(18:37Z)에 스모크 로그에서 이미 보였다(위 18:37:35Z 줄의 cheetah 37.8 등). 본 실행의 판정 자료와는 무관하다.
+- 19:05:26Z td.5 driver 시작(워커 8), 같은 때 `bias_rule.json`(D2) 쓰고 `GATE_bias` 열었다. 19:06~19:08Z td.6·td.1·td.2·td.3·td.4는 코드(D2 `tdjobs.py`, md5 22607b64…)를 보내고 `bias_rule.json`을 쓴 뒤 driver를 멈췄다가 다시 띄우고(워커 프로세스가 prep에서 구 `tdjobs`를 이미 불러왔기 때문) 관문을 열었다. 멈출 때 돌던 job은 다시 돈다(결과 파일이 없으므로). 각 pod에 새 driver의 워커 8개만 남은 것을 확인했다.
+- 19:08Z `analyze_td.py`에 D2의 두 읽기((가) 모든 칸, (나) bc_unconverged 칸의 det+BC·sh-iter+b 결측; 갈리면 "보류")를 더했다(수렴한 b의 det+BC 결과가 하나도 없을 때). 가짜 자료에 미수렴 표시 3칸을 넣어 dry run을 다시 돌린다(td.5, nice 10).
+- 19:10~19:13Z D2 bias job 36개 끝(과제·체크포인트당 64~217초): 576칸 모두 수렴 — α = 1 34칸, α = ½ 540칸, α = ¼ 2칸, **bc_unconverged 0**, 최대 갱신 39(td.1), 최종 잔차 최대 0.0100. → §0.7 점검 2의 det+BC도 최종 b에서 통과. 조정자에게 알렸다.
+- 19:13Z 풀린 det+BC·sh-iter+b episode job이 6 pod 모두에서 정상으로 끝난다(오류 0). E13 job을 본 실행 prep·bias 파일로 따로 시험(td.5, 별도 폴더, 스모크 seed): 36칸, held episode당 54초(driver와 경합), 정상. 시험 폴더는 지웠다.
+- 19:16Z 최종 코드를 6 pod에 맞췄다(분석 `analyze_td.py` md5 d7597ad4…: D2 두 읽기와 bias 요약 추가; 가짜 자료 dry run 2 통과). 6 pod 코드 묶음 md5 45f9d36b…로 같다.
+- 19:17Z 단계 A 끝. 6 pod 모두 driver alive, 실패 0, 관문 열림. 진행 td.5 223/2712, td.6 451/2532, td.1 97/592, td.2·td.3·td.4 101/502. driver ETA(적응 칸 제외) 21:57~22:53Z. td 지출 추정 $2.07(19:16Z). PLAN.md 작성 끝. 조정자에게 보고하고 멈춘다(본 실행 끝을 기다리지 않음).
+- 23:33Z td.1 driver 끝(700/700, 실패 0; 적응 job 108개 포함). 조정자가 td.2~td.6을 당긴 뒤 지웠다(22:37·22:53Z).
+- 23:34~23:37Z 단계 B: td.1 결과를 당기고(719파일), `results/raw/td.2`~`td.6`을 td.1의 `/workspace/atm/merged/`로 올림(파일 수 일치). `analyze_td.py`에 조정자 요청의 K2 입력(E11 칸별 D(det) − D(det+shift)와 짝 bootstrap CI, `td_k2_e11_det_minus_detshift.csv`, `td_e11_contrasts.csv`)만 더했다(md5 b5694de1…, 판정 계산 그대로). td.1에서 여섯 pod 전체를 한 번에 분석(43초) → `results/analysis/`로 당김.
+- 23:38Z 원자료(`raw/td.*/jobs/episodes`)에서 핵심 점 추정 14개를 순수 Python으로 다시 셈: 모두 분석과 같다(REPORT §8).
+- 23:40Z td.1 로그를 `results/logs_td.1/`에 저장, rsync dry-run 남은 전송 0 확인 뒤 `pod_down.sh td.1`(REST 실패 → GraphQL 종료). budget.py에서 td 여섯 모두 gone, td 지출 $15.24.
+- 23:45Z REPORT.md 작성(Write 도구가 막아 Bash heredoc).

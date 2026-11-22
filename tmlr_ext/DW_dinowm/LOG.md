@@ -1,0 +1,127 @@
+# DW_dinowm 작업 기록 (dw 묶음: DINO-WM의 E11·E12·E13·E16, UTC)
+
+- 기준: [../DESIGN_tmlr.md](../DESIGN_tmlr.md) v1.0(sha256 `36d69ea8…0cc4`를 작업 시작 때 대조해 일치), [../WORKER_RULES.md](../WORKER_RULES.md)
+
+## 2026-11-21
+
+- 18:00Z 무렵 작업 시작. WORKER_RULES·DESIGN_tmlr v1.0·runpod_tmlr README를 읽었다. 기준 코드(`main/code/dinowm/`), 파일럿 `setup13.sh`, B의 `setup_pod_e7.sh`, E0·E1·E5 보고도 읽었다
+- **[편차 후보, 조정자에게 보냄] PushT eval8을 설계 문구대로 만들 수 없다**
+  - 설계(§0.4): PushT eval8 100쌍이 held·smoke·repro·eval6의 프레임과 겹치지 않아야 한다
+  - E0 기록(`main/results/E0_dinowm/splits_pusht_v3.json`)의 구간으로 셌다. val 21궤적(대략 2,430프레임 이상, 길이는 기록된 offset으로 잡은 하한)을 네 분할이 약 2,007프레임 덮는다. 남은 26프레임 빈 구간은 offset 4개(궤적 12)뿐이다
+  - 선택지 4개를 조정자에게 보냈다(SendMessage). 조정자 답: 판단 에이전트에 맡겼다. 그때까지 PushT pod에서는 eval8 PushT 쌍을 만들지 말고 계획도 시작하지 말 것. PushT pod에서 실제 seq_length로 다시 셀 것
+  - 코드: `qlib.EVAL8_PUSHT = None`이면 `get_pairs`가 PushT eval8을 거부한다. 결정은 `code/decisions.json`으로 넣는다
+- 18:2xZ 조정자 알림: rest.runpod.io NXDOMAIN. `runpodctl pod get/list`를 쓰지 않는다. pod_up 실패 뒤에는 `rp_gql.py pods atm-`로 남은 pod를 확인한다
+- 구현(맥북, 문법 검사만): `code/`에 기준 코드를 복사했다. 손대지 않은 E1 `qlib.py`·`wmlib.py`는 `code/e1ref/`에 둔다(md5 `f667047f…`)
+  - `qlib.py`: 새 변형 4개(`detbc`, `detshiftfix`, `shiterb`, `detnoise`)를 `QuantizerT` 하위 클래스와 새 kernel로 넣었다. E1 변형은 손대지 않은 E1 hook을 그대로 지난다. E16용 `run_cem(mppi_c=...)` 분기, eval8 분할, `split_segments`도 넣었다
+  - `runner.py`: QuantizerT, 편향 벡터 적재, MPPI 인자, 범위·편향 경로(`DW_RANGES`), 원자적 npz 쓰기
+  - 새 파일: `calib_tmlr.py`(PC 범위, PT 재측정, 편향 벡터, RC), `e13_diag.py`, `podplan.py`, `driver.py`, `make_eval8.py`, `check_codepath.py`, `check_variants.py`, `analyze_tmlr.py`, pod 스크립트(`setup_pod.sh`, `env.sh`, `driver_loop.sh`, `restart.sh`, `status.sh`/`status.py`)
+- 18:3xZ 조정자 알림(317M 작업자 보고): §0.6의 b 반복(b ← b + m, 3 sweep)이 수렴하지 않을 수 있다(층 잔차 Δ의 1~126%, 진동). 감쇠 ½는 12 sweep에 1% 미만. 묶음 공통 규칙은 판단 중
+  - 조치: `calib_tmlr.compute_bias`가 규칙(damping, sweeps, stop_tol)을 받는다. 결정 전에는 설계 규칙으로 계산한다. sweep마다 다음을 기록한다: 층별 단위 평균 잔차(Δ 대비), 짝지은 원소별 MSE(Δ² 대비, 보정 시작점 16개), 잠재 1·3·5-step 상대 오차(전파 오차)
+  - driver: `decisions.json`에 `bias_rule`이 없으면 det+BC·sh-iter+b job을 막는다. 규칙이 정해지면 그 규칙의 b 파일이 있어야 돈다. 규칙이 바뀐 b 파일은 다시 계산한다(옛 파일은 `.design.json`으로 남김)
+- 18:39Z dw.4 생성 실패: SECURE A5000 재고 없음, 4090 "machine does not have the resources". `rp_gql.py pods atm-`로 남은 dw pod가 없음을 확인
+- 18:42:56Z **dw.4 생성**: RTX 4090(A5000 재고 없음; 순서 A5000 → 4090 → 3090으로 다시 시도), $0.89/h, pod `m4b8mm1ndy9by4`, 자동 종료 2026-11-22T04:41:26Z. REST 확인이 실패해 GraphQL로 복구했다(조정자 도구). 96 vCPU, RAM 251GB, 드라이버 595.112.07
+- 18:43:49Z dw.4 설치 시작(`setup_pod.sh wall,pointmaze`). 코드는 tar로 보냈다(rsync는 설치 뒤에 쓴다)
+- **18:41:18Z 조정자 결정 D1**(판단 에이전트 Fable 5.2 max, DESIGN_tmlr.md §11): PushT eval8은 선택지 1. hard = held·smoke·eval6(저장된 100구간), soft = repro. 반영한 것은 다음과 같다
+  - `code/decisions.json`
+  - 표집 전 점검(`make_eval8.precheck`): 실제 길이로 센 빈 시작점이 held+smoke 1,294, +repro 485와 같아야 한다. held·smoke·repro 복제본과 eval6 구간이 `splits_pusht_v3.json`과 같아야 한다
+  - 분할 기록(`out/splits/eval8_pusht.json`): held·smoke·eval6 공유가 0, repro 겹침(쌍 수, 평균·최대, 가장 가까운 시작점, 같은 구간), eval8 안의 몰림(궤적 수, 궤적별 쌍 수, 겹침 연결 덩어리), 추첨 통계, 위반 목록. 위반이 있으면 PushT eval8 계획을 막는다
+  - 점검 3 예외(driver): PushT eval8 none이 창 밖이면 eval6 쌍 0~49의 none을 돌린다. E1 기록 41/50은 E1 job JSON에서 다시 세어 확인했다. 36~46이면 진행한다
+  - 분석: PushT eval8 칸의 D, Δ_bias, Δ_pers에 덩어리 단위 bootstrap CI를 더했다. 덩어리로 읽기가 바뀌면 표시한다
+- 18:46:31Z **dw.1 생성**: RTX 4090 $0.89/h, pod `3kdj1w96b7zj1l`, 자동 종료 2026-11-22T04:46:06Z. 18:47Z 설치 시작(pusht)
+- 18:50Z **점검 1(코드 경로) 통과**, dw.4 RTX 4090
+  - Wall smoke 0~1(E=2)과 PointMaze smoke 0~1(E=1)에서 손대지 않은 E1 qlib과 새 qlib을 비교했다
+  - 비교한 변형: none, det, sh-iter, sh-plan, det+shift, ind, sh-ep. 계획 평균, 반복별 최저 비용, 첫·마지막 모집단, 오차 draw, J_v/J_none이 모두 비트 단위로 같다. 새 코드를 다시 돌려도 같다(`out/checks/check1_codepath_{wall,pointmaze}.json`)
+- 18:52~19:03Z dw.4 보정(`driver.py --only calib`)
+  - PT 재측정(앞 64창 vs E0 main): PointMaze는 정확히 같다. Wall은 hi가 최대 0.031 다르다(값 4 근처의 bf16 한 칸, 4090 vs E0의 A5000)(`ptcheck_*.json`)
+  - 설계 규칙의 b는 수렴하지 않았다(Wall k=3 최종 층 잔차가 Δ의 0.7~20.6%). 수치는 조정자에게 보냈다
+- 18:56Z dw.1의 OSF 받기가 연결당 약 175 KB/s였다(PushT zip 2.79 GB면 4시간 넘음). [운영 수정] `setup_pod.sh`의 다운로드를 aria2c 16연결로 바꿨다(OSF가 range 요청에 206으로 응답). dw.1 설치를 다시 시작했고 파일당 약 2.4 MB/s로 빨라졌다
+- 19:01:05Z **dw.3 생성**: RTX 4090(A5000 재고 없음), pod `cxr9zal5m5g484`, 자동 종료 04:59:38Z. 19:01:38Z **dw.2 생성**: RTX 4090, pod `e1xx0lotbpg3xv`, 자동 종료 05:01:06Z. 둘 다 설치 시작(pointmaze, pusht). 네 pod 모두 RTX 4090이다(합 $3.56/h)
+- **19:0xZ 조정자 결정 D2**(b 규칙, `runpod_tmlr/bias_rule_D2.json`, 세 묶음 공통)
+  - 단계는 α = 1, ½, ¼이다. 단계마다 b = 0에서 시작하고 갱신은 최대 60번이다. 모든 층 r = mean_j |m_j|/Δ_j < 0.01인 첫 pass의 b를 쓴다
+  - 셋 다 못 미치면 최악 층 r이 가장 작은 단계의 마지막 b를 쓰고 `bc_unconverged`로 표시한다
+  - 점검 2는 "최종 b에서"로 읽는다
+  - 반영: `compute_bias` 단계 구현, `decisions.json`의 `bias_rule` = D2, 관문을 열었다. 설계 규칙의 b 파일은 `.design.json`으로 남긴다(그 b로 돈 episode는 없다). 분석은 (가) 모든 칸, (나) 미수렴 칸의 det+BC·sh-iter+b를 결측으로 둔 두 판으로 낸다
+  - 19:04Z dw.4의 단계 실행을 멈추고 새 코드로 다시 시작했다. Wall PT k=2는 α = 1에서 갱신 6번 만에 수렴했다(최악 r 0.0067, 55초)
+- 19:05~19:20Z dw.4 보정(D2)
+  - Wall b 4개는 모두 α = 1에서 갱신 6~12번 만에 수렴했다(최악 r 0.0016~0.0067). PointMaze b 4개도 α = 1에서 갱신 6~8번 만에 수렴했다(0.0061~0.0099)
+  - eval8 쌍 기록: Wall, PointMaze(`out/splits/`)
+- 19:10Z dw.3: mujoco-py import가 실패했다(`longintrepr.h` 없음). 휠에 든 cymj.c가 Cython 0.29.24로 만들어져 Python 3.11 헤더와 맞지 않았다. [운영 수정] cymj.pyx를 touch해 고정한 Cython 0.29.37로 다시 만들게 했고 해결됐다. `setup_pod.sh`에도 같은 단계를 넣었다
+- 19:12Z dw.3 driver 시작. PointMaze 보정 파일(PC·백분위·PT 점검, 뒤에 D2 b 4개)은 dw.4에서 복사했다(맥북 경유)
+- 19:12~19:16Z dw.1 다운로드: aria2c가 조각 일부를 못 받고 끝났다(.aria2 파일이 남음). `aria2c -c`로 이어 받아 끝냈다. [운영 수정] `setup_pod.sh`는 이제 이어 받기와 재시도 3회를 한다. 19:16Z dw.1 driver 시작(보정부터)
+- 19:20Z **점검 2(새 변형 단위 점검) 통과**: Wall, PointMaze 모두(`out/checks/check2_variants_*.json`)
+  - det+BC − (det − b): 최대 1.2e-7(fp32 반올림만)
+  - det+shift-fixed: 표가 계획 안에서 고정되고, step·계획·episode마다 바뀌며, 후보가 공유한다. 오차 분산은 det+shift와 상대 차 0.02%, 평균 차는 std의 1e-5다
+  - sh-iter+b: 단위별 평균 − b의 최대 z가 2.7(< 5), 분산 상대 차 0.1%다
+  - det+noise: det 부호가 비트 단위로 같고, 잡음 분산은 1/12와 상대 차 0.05%, 평균은 0.0005다
+  - 전역 난수와 계획기 난수를 건드리지 않는다(첫 반복 모집단과 generator 끝 상태가 none과 같다)
+  - 최종 b 잔차 < 1%: 모두 통과(D2로 "최종 b에서")
+- 19:20Z **점검 3 PointMaze 통과**: eval8 none 0.79, E1 0.85(차 −0.06, dw.3). eval8 PointMaze 쌍의 sha256이 dw.3과 dw.4에서 같다(`e557614b…`)
+- 19:22Z **점검 1 PushT 통과**(dw.2, smoke 0~1, 7변형 비트 단위 동일). dw.2 driver 시작
+  - D1 표집 전 점검 통과: 빈 시작점 held+smoke 1,294, +repro 485(D1과 일치). D1 hard 집합 601, 설계 문구 집합 5. 복제본 4개 모두 `splits_pusht_v3.json`과 같다
+  - eval8 PushT 분할(dw.2): 위반 없음. held·smoke·eval6 공유 0, repro는 95쌍과 겹쳐 평균 8.2·최대 13프레임이고 같은 구간은 0이다. 10궤적에 겹침 덩어리 10개(크기 17, 14, 12, 12, 11, 10, 9, 7, 5, 3). 추첨 평균 4,873회. sha256 `14f2be60…`
+- 19:22Z dw.1 PushT PT 재측정이 E0와 정확히 같다. D2 b: main k2·k3·k4가 α = 1에서 갱신 9·5·4번, pc k2는 9번
+- 19:23Z dw.4 main driver 시작(`restart.sh`). 모든 pod의 code/가 맥북과 같다(전체 md5 `f34ee039…`)
+- **19:28Z 점검 3 Wall 실패**: eval8 none 49/100, E1 61/100(차 −12점, 창 ±10). driver 관문이 Wall 계획을 막는다
+  - 진단(설계 칸 아님, `out/diag/wall/`): 같은 pod에서 E1 eval 쌍의 Wall none을 다시 돌리니 62/100이었다(E1 61/100, episode 일치 85%). 파이프라인과 GPU가 아니라 쌍 모집단의 차이로 보인다
+  - 조정자에게 선택지와 함께 보고했다(추천: D1과 같은 처리로 진행). 결정 대기 중이다. dw.4는 그동안 PointMaze 2-bit 일을 돈다
+- 19:3xZ 조정자 확인: PushT eval8이 D1 조건을 모두 지켰다(위 19:22Z 기록. held·smoke·eval6 공유 0, repro 같은 구간 0, 쌍별 repro 공유 최대 13 ≤ 20, 빈 시작점 1,294·485 일치)
+- 19:3xZ dw.1 PushT 보정
+  - D2 b 6개는 모두 α = 1에서 수렴했다(갱신 4~9번)
+  - RC k=3(19:40Z): 층별 [p99.999, p99.9, p99.99, p99.99, p99, p99.99]를 골랐다. held 5-step 상대 오차가 0.687(모두 p99.99)에서 0.300으로 줄었다(평가 48번)
+  - 맥북을 거쳐 dw.2에 PC 범위·b 6개·RC k3을 복사했다. RC k4는 계산 중이다
+- **19:4xZ 조정자 결정 D3**([사후], 판단 에이전트 Fable 5.2 max): Wall eval8을 §0.4 그대로 두고 관문을 연다. 판정 규칙은 바꾸지 않는다. 근거는 E1 쌍 재실행 62/100(E1 61)과 1.7 SE다
+  - `check3_wall.json`: 실패 기록(within_window false, 19:27:51Z)은 history에 그대로 두고 D3 예외를 덧붙였다. passed true
+  - REPORT 메모: Wall 기준선 셋(eval8 49%, E1 61%, 같은 쌍 재실행 62%)을 함께 적는다. E1 Wall 3-bit(det 11%, D 0.50)와 견줄 때는 성공률과 red를 함께 싣는다
+  - 앞으로의 규칙(driver에 넣음): 다른 pod나 과제에서 점검 3이 창 밖이면 그 pod에서 E1 분할 none을 다시 돈다. E1 기록 ±10점 안이면 진행하고 LOG에 적는다. 아니면 멈춘다. PushT는 D1(eval6 0~49, 36~46/50), Wall은 eval 0~99 51~71, PointMaze는 75~95로 넣었다(`decisions.json`의 `check3_rule_D3`)
+  - [운영] driver에 정상 재시작 플래그(`out/state/RESTART`)를 넣었다. 이번에는 새 코드를 읽히려고 dw.4·dw.3·dw.2의 driver 프로세스만 종료했고, supervisor가 15초 뒤 다시 띄웠다. 하던 job 하나씩은 다시 돈다(결과 파일은 job 끝에만 쓰므로 섞이지 않는다). dw.1은 RC 계산 중이라 그대로 두었다(PushT 쪽 동작은 같다)
+  - 19:43Z dw.4가 Wall E11을 시작했다
+- 19:48~19:50Z dw.1: RC k=4 [p99.9, p99.999, p99.9, p99.99, p99.9, p99.9], held 5-step 오차 0.199 → 0.022. D1 표집 전 점검이 dw.2와 같은 수로 통과했다. eval8 PushT 쌍 sha256이 dw.2와 같다(`14f2be60…`). RC k3·k4를 dw.2에 복사했다. 19:49Z dw.1 eval8 none 시작
+- 19:49Z **점검 3 PushT 통과**(dw.2): eval8 none 0.73, E1 0.83(차 −0.10, 창 경계 안). PointMaze none은 dw.4에서도 0.79다(dw.3과 같음)
+- 19:51Z 네 pod 모두 driver alive. pull_all 정상(dw.1 24, dw.2 36, dw.3 52, dw.4 74 파일). dw 지출 $3.55. 자료 점검: det+BC job에 b id가 기록됐고, E·salt·pair seed·planner seed가 맞고, det hook 호출이 330(E1과 같음)이다
+- **19:5xZ~20:00Z [운영 변경] dw.1 일을 dw.5로 나눴다**(조정자 요청: 모든 pod가 약 01:00Z 안팎에 끝나게). 자세한 내용은 PLAN §6
+  - 19:56:41Z **dw.5 생성**: RTX 4090 $0.89/h, pod `r1mikehh6t9o13`, 자동 종료 05:55:55Z
+  - 옮긴 일: E12 PushT k=4의 PC(det, det+BC, sh-iter)·RC(det, sh-iter) 칸, 그 위쪽 확장, E13 PushT의 'rest' 구성. dw.1에서 아직 돈 적 없는 칸이다
+  - dw.1에 남김: E11 PushT k=4, PT 위쪽 확장(경계가 E11 칸), E13 PT k > 4 구성
+  - dw.5는 자기 eval8 none·held none으로 짝을 맺고 점검 3을 따로 한다
+  - PushT 보정 파일 11개를 dw.1 → 맥북 → dw.5로 복사했다(tar, md5 대조)
+  - 19:57Z 모든 pod에 새 코드(podplan md5 `ffe60d6e…`)를 보내고 정상 재시작 플래그를 걸었다. dw.2·dw.3·dw.4는 19:57Z에 exit 4로 다시 떴고, dw.1은 지금 하는 none job이 끝나면 다시 뜬다
+- 조정자 질문(pod 정리)에 대한 답: 단계 B 분석은 `out/`만 읽는다(jobs, e13, calib, splits, checks, state). E13은 driver가 done이 되기 전에 pod에서 끝나므로 `big/`(모집단 배열, 쌍 캐시, 자료)은 done 뒤에 필요 없다. 그래서 done인 pod는 `out/`을 당긴 뒤 지워도 된다
+  - 예외: dw.5가 쓸 PushT 보정 파일의 원본은 dw.1에 있지만 이미 dw.5로 복사했다. 확장 k의 보정은 각 pod가 계산한다
+- 19:58Z dw.1이 새 계획으로 다시 떴다(알려진 episode 920 = none 100 + E11 800 + held none 20)
+- 19:58~20:15Z dw.5 설치. PushT zip의 첫 aria2c가 조각 일부를 못 받았고, 재시도 루프의 둘째 시도가 `-c`로 이어 받아 끝냈다. 체크포인트 sha256이 dw.1과 같다(`e909f0ce…`)
+- 20:15Z dw.5 driver 시작
+  - D1 표집 전 점검: 1,294·485, 복제본 일치
+  - eval8 PushT 쌍 sha256 `14f2be60…`(dw.1·dw.2와 같음), 위반 없음
+  - 알려진 episode 370 = none 100 + PC·RC k4 1단계 250 + held none 20
+- 20:21Z **dw.1과 dw.5의 eval8 none 첫 job(0~9)이 비트 단위로 같다**: mu_final, 반복별 최저 비용, 성공 10/10. 그래서 dw.5의 E13 상태는 dw.1의 것과 같다
+- 21:13Z 조정자 점검: dw.4 status note가 20:40Z부터 `missing bias_main_k4_wall.json`이었다
+  - 21:14Z 확인: dw.4의 작업 목록을 따로 만들어 봤다(실행 없음). 그 b를 만드는 보정 항목 `calib:wall:bias:main_k4`가 대기열에 있고, 막힌 것도 아니다. Wall PT 위쪽 확장 det+BC k=4 job 바로 앞에 있다. 아래쪽 확장의 `calib:wall:bias:main_k1`도 같은 식으로 들어 있다
+  - 대기열이 거기 닿으면(PointMaze k2 칸과 Wall det k4 칸 다음) b를 만들고 그 칸을 돈다. 멈춘 것이 아니라 note가 막힌 job 하나의 이유를 보여 준 것이다
+  - [운영 수정] driver 두 가지
+    - note: 대기열의 보정 항목이 만들 파일을 기다리는 job은 막힘으로 치지 않고 "N jobs wait for queued calib"로 센다
+    - 그 보정 항목이 3번 실패하면 기다리던 job을 실패로 표시한다. 그래서 E13과 대기열 끝이 무한히 기다리지 않는다
+  - 다섯 pod에 보내고 정상 재시작 플래그를 걸었다(driver md5 `40759707…`). dw.4 note는 "20 jobs wait for queued calib"로 바뀌었다
+
+## 2026-11-22 (단계 B)
+
+- 이 사이(11-21 21:16Z~11-22 01:07Z) 조정자 기록
+  - dw.3 23:12:26Z 끝남(1,800 episode), 23:20Z에 지움
+  - dw.5 23:28:42Z 끝남(520), 23:33Z에 지움
+  - dw.4 23:49:31Z 끝남(4,500), 23:59Z에 지움
+  - dw.1 00:46:22Z 끝남(1,020), 01:06Z에 지움
+  - 모든 pod failed 0, 실패 파일 없음
+- 01:07Z 조정자 지시로 단계 B 시작. 분석은 dw.2에서 했다
+- 01:08Z 맥북의 `results/raw/dw.1·dw.3·dw.4·dw.5`(조정자가 회수한 out/ 사본)를 dw.2 `/workspace/atm/big/phaseB/raw/`로 올렸다. 파일 수가 251·322·466·198로 맥북과 같다
+- 01:16:18Z dw.2 driver 끝남(1,300/1,300, failed 0). 마지막 칸은 RC k1 sh-iter 2단계였다. dw.2의 out/을 `phaseB/raw/dw.2/`에 합쳤다(159파일, analysis 폴더 제외)
+- **분석 코드**
+  - 쓴 판: `analyze_tmlr.py` md5 `7d1b73901b68c3b5e8d92204184fc068`
+  - 본 실행 전 판(PLAN §5, md5 `d27d66d6…`)과는 `e13_summary` 한 함수만 다르다. 11-21 19:56Z, dw.5 나눔 때(실제 자료로 분석을 돌리기 전) 고쳤다. E13 상태 파일을 그 과제의 모든 pod에서 (분할, episode)로 합친다. PushT E13 구성이 dw.1(PT k > 4)과 dw.5(나머지)에 나뉘었기 때문이다
+  - 확인: 그 함수만 옛 본문으로 되돌린 사본의 md5가 `d27d66d6…`와 정확히 같다
+- 01:17Z 분석(dw.2 CPU, 15.6초)
+  - `summary_calib.py`(새로 씀, 보정 요약): b 21칸 모두 α = 1에서 수렴, 최대 갱신 12번, 최악 최종 잔차 0.0099
+  - `analyze_tmlr.py`: 결과는 `out/analysis/`
+- 01:18Z 재계산(`recount_dw.py`, 새로 씀, 분석 코드와 독립): job JSON에서 233항목을 다시 셌다. E11의 none·변형 성공, D, D_v − D_det, D_det CI, E12 칸의 n과 D, E16의 c\*와 none MPPI 성공. **불일치 0**(`results/analysis/recount_dw.json`)
+- 01:2xZ dw.2 out/ 최종 회수: 원격 165 = 맥북 165 파일, rsync dry-run 남은 전송 0. `results/analysis/`에 분석 출력을 복사했다
+- 01:23:58Z **dw.2 삭제**: 삭제 직전에 rsync dry-run으로 남은 전송 0을 다시 확인했다. runpodctl delete는 REST NXDOMAIN으로 실패했고, GraphQL로 지웠다. budget.py status에서 dw.1~dw.5 모두 gone이고, rp_gql로도 살아 있는 atm-dw pod가 없다. **dw 지출 합 $23.75**(dw.1 $5.81, dw.2 $5.84, dw.3 $3.96, dw.4 $4.83, dw.5 $3.31)
+- 01:24Z 조정자의 dw.2 삭제 보류 요청(PushT 3-bit E11을 [사후]로 보강할지 사용자에게 묻는 중)은 삭제 뒤에 왔다. "이미 지웠으면 그대로" 지시대로 두고 알렸다. 보강을 하면 새 4090 pod에서 자기 eval8 none부터 다시 돈다(어림 약 4.5 h, 약 $4.2)
+- REPORT.md: Write 도구가 subagent의 보고서 파일 쓰기를 거부했다. 전문은 최종 보고에 넣어 조정자에게 넘겼다
