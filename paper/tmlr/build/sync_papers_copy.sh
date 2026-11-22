@@ -14,7 +14,7 @@ CREATE=0
 if [ "${1:-}" = "--create" ]; then CREATE=1; shift; fi
 NOTE="${1:-}"
 # files that determine the PDF; the dirty flag looks only at these
-PDF_SOURCES=(main.tex numbers.tex refs.bib math_commands.tex tmlr.sty tmlr.bst fancyhdr.sty figures tables
+PDF_SOURCES=(main.tex appendix numbers.tex refs.bib math_commands.tex tmlr.sty tmlr.bst fancyhdr.sty figures tables
              build/make_numbers.py build/make_figs.py build/make_tables.py)
 
 [ -f "$SRC" ] || { echo "missing $SRC -- build first: bash build/build.sh"; exit 1; }

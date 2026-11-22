@@ -23,6 +23,8 @@ __pycache__/
 /paper/**/*.log
 # Korean review copy of the manuscript (local only; built by paper/rss2027/ko/build.sh)
 /paper/rss2027/ko/
+# Korean review copy of the TMLR manuscript (local only; built by paper/tmlr/ko/build.sh)
+/paper/tmlr/ko/
 # anonymized TMLR supplementary material (built by paper/tmlr/build/make_supplement.sh)
 /paper/tmlr/supplement/
 # local extra patterns for the anonymity checks (kept out of the public repo)
