@@ -1,7 +1,7 @@
 # DW_dinowm 결과 보고 (DINO-WM: E11·E12·E13·E16의 DINO-WM 몫)
 
 - 작성: 2026-11-22(UTC), dw 작업자. 단계 B 분석은 dw.2(RTX 4090) CPU에서 돌렸다(맥북에서 계산하지 않음)
-- 저장: 작업자의 보고서 파일 쓰기가 막혀서, 조정자가 작업자의 최종 보고(2026-11-22T01:30Z 무렵)에 붙은 전문을 그대로 옮겼다(사용자 승인 2026-11-22). 이 줄만 조정자가 더했다
+- 저장: 작업자의 보고서 파일 쓰기가 막혀서, 조정자가 작업자의 최종 보고 전문을 그대로 옮겼다(사용자 승인 2026-11-22). §0~§8은 01:30Z 무렵 보고, §9·§10은 07:16Z 무렵 보고다. 조정자가 더한 것은 이 줄과 §0의 [사후] 두 줄, §8의 dw.6 줄과 합계 줄이다
 - 기준: [../DESIGN_tmlr.md](../DESIGN_tmlr.md) v1.0(sha256 `36d69ea8…0cc4`)과 §11의 변경 D1·D2·D3. 운영 계획은 [PLAN.md](PLAN.md), 시간순 기록은 [LOG.md](LOG.md)
 - 출처 약어(모두 `A/tmlr_ext/DW_dinowm/` 아래)
   - **[A]** `results/analysis/analysis_dw.json`: 분석 출력(표 판 `results/analysis/tables_dw.md`)
@@ -29,6 +29,8 @@
 | E16 DINO-WM 절반(기술) | 두 과제 모두 자격 | none MPPI/CEM: PointMaze 81%/79%(1.03), Wall 63%/49%(1.29). D(sh-plan) − D(sh-iter): CEM PointMaze +0 [−7, 7], Wall −4 [−12, 4]. MPPI PointMaze +4 [−1, 10], Wall −7 [−18, 4] | [A] `E16` |
 | D2 두 읽기 | 같다(미수렴 0, 보류 없음) | b 21칸 모두 α = 1에서 수렴, 최대 갱신 12, 최악 최종 잔차 0.0099 | [CAL], [A] `bc_unconverged` = [] |
 | D1 덩어리 bootstrap(10덩어리) | 읽기 변화 없음 | PushT det D 덩어리 [−19, 29](짝 [−7, 15]), 덩어리로도 손상 아님. Δ_bias [−21, −2](짝 [−20, −5]), Δ_pers [−6, 6](짝 [−6, 6]), `reading_differs = false` | [A] `E11.cells[pusht].cluster` |
+| [사후] PushT 3-bit E11 칸(D4, §9) | 손상 실재, **resolution** | D_det +35 [24, 45](E1 +36 [27, 45]). det+BC red −0.23, det+shift-fixed 0.94, Δ_pers +4 [−3, 11]. 합친 DINO-WM 읽기 mixed(사전 지정 판정 불변) | [PH] |
+| [사후] PushT 4-bit E1 분할 재실행(X17·D5, §10) | 판정 (i): 미재현은 분할 차이 | E1 쌍·4090에서 D_det +21 [12, 30](E1 +24 [14, 34]), sh-iter red 1.00, none의 E1 episode 일치 98% | [X] |
 
 - 판정은 손상 칸 Wall 3-bit 하나에 기댄다. E1에서 손상 칸이던 PushT 4-bit와 PointMaze 3-bit가 eval8에서는 손상 칸이 아니다
 - 재계산: [RC]가 job JSON에서 233항목을 따로 셌다(E11 성공·D·D_v − D_det·D_det CI, E12 n·D, E16 c\*·none 성공). 분석 출력과 **불일치 0**이다
@@ -244,8 +246,160 @@
 | dw.3 | 19:01:05Z | 11-21 23:12:26Z | 23:20:08Z | 1,800 | $3.96 |
 | dw.2 | 19:01:38Z | 11-22 01:16:18Z | 01:23:58Z | 1,300 | $5.84 |
 | dw.5 | 19:56:41Z | 11-21 23:28:42Z | 23:33:13Z | 520 | $3.31 |
+| dw.6([사후] D4·X17, §10.4) | 11-22 01:35:49Z | 07:13:22Z | 07:15:10Z | 1,200 | $5.18 |
 
 - 모두 RTX 4090 SECURE $0.89/h다
 - 합: episode-run 9,140, **$23.75**(dw 상한 $35, 설계 추정 약 $17. 추정보다 높은 것은 PointMaze·Wall도 4090이어서다)
+  - dw.6을 더한 합: episode-run 10,340, **$28.93**(dw 상한은 11-22 01:35Z에 $40으로 올림)
   - 출처: `runpod_tmlr/budget.py status`(11-22 01:23:58Z), [RAW tag] `state/status.json`·`state/FINISHED`
 - 실패 job 0. 단계 A 시작(11-21 18:00Z 무렵)부터 단계 B 끝(11-22 01:24Z)까지 약 7.4시간
+
+## 9. [사후] PushT 3-bit E11 칸(D4)
+
+- 결정: D4(§11, 2026-11-22T01:36Z). eval8 결과를 본 뒤 조정자가 추천했고 사용자가 정했다. 사전 지정 판정 B2·B3·Dg1은 바꾸지 않는다. 이 절의 읽기는 모두 [사후] 기술이다
+- 설정
+  - pod dw.6: RTX 4090 SECURE, 01:35:49Z 생성
+  - PT 범위, eval8 100 episode, none + 8변형, E11 진단을 켰다
+  - 계획기·쌍·seed·salt·E는 E11 PushT 4-bit과 같고 k만 3이다. E13은 돌리지 않았다
+  - none은 dw.6에서 새로 돌았다(짝 규칙)
+- 점검
+  - 체크포인트 sha256 `e909f0ce…`로 dw.1과 같다
+  - 보정 파일 11개의 md5가 맥북의 dw.1·dw.2·dw.5 사본과 같다. b main_k3는 `b4ac98c1…`이다(D2, α = 1, 갱신 5번)
+  - D1 표집 전 점검 1,294·485를 통과했다. eval8 쌍 sha256 `14f2be60…`, 위반 0, 덩어리 10개다
+  - 점검 3: none 0.73. dw.1·dw.2·dw.5와 같다
+  - none 100 episode의 계획 출력(mu_final, 반복별 최저 비용, 성공, margin, J)이 dw.1과 비트 단위로 같다. CPU 쪽 값만 마지막 자리(상대 1e-16)에서 다르다: state_dist 1 episode, 참 비용 재생 보조 키 5 episode
+- 출처 약어(`A/tmlr_ext/DW_dinowm/` 아래)
+  - **[PH]** `results/analysis_posthoc/posthoc_pusht3.json`(표 판 `tables_posthoc.md`, csv `posthoc_pusht3.csv`)
+  - **[PHR]** `results/analysis_posthoc/recount_posthoc_pusht3.json`
+  - **[RAW dw.6]** `results/raw/dw.6/`
+
+### 9.1 칸 요약과 E1 같은 칸
+
+| 칸 | eval8 none | det 성공 | D_det %p [CI] | 한쪽 p | 손상(이 칸 하나, p < 0.05) | 분류 | E1 D_det [CI] | E1 none |
+|---|---|---|---|---|---|---|---|---|
+| PushT 3-bit(dw.6, 4090) | 73% | 38% | +35 [24, 45] | 0.0001 | **예** | **resolution** | +36 [27, 45] | 83%(eval6, A5000) |
+
+- E1 같은 칸([E1] (pusht, 3, \*) 행)은 다음과 같다
+  - det 47%
+  - red: ind 0.97, sh-iter 0.92(80%), sh-plan 0.89(79%), det+shift 0.92(80%)
+- eval8에서 E1의 손상을 거의 그대로 재현했다(+35 대 +36). PushT 4-bit(+4 대 +24, §1.1)와 다르다
+
+### 9.2 변형 (D는 none 대비, red와 D_v − D_det는 det 대비)
+
+| 변형 | 성공 | D %p [CI] | red [CI] | D_v − D_det %p [CI] | 1-step / 5-step(계획 시점) | drift 비 | 덩어리 D CI |
+|---|---|---|---|---|---|---|---|
+| det | 38% | +35 [24, 45] | — | — | 0.307 / 0.739 | — | [16, 58] |
+| det+BC | 30% | +43 [33, 53] | −0.23 [−0.62, 0.03] | +8 [−1, 17] | 0.424 / 0.916 | 1.13 | [28, 60] |
+| sh-plan | 70% | +3 [−4, 10] | 0.91 [0.71, 1.12] | −32 [−43, −21] | 0.332 / 0.208 | −0.04 | [−6, 13] |
+| det+shift-fixed | 71% | +2 [−6, 10] | **0.94** [0.74, 1.20] | −33 [−43, −23] | 0.148 / 0.094 | −0.06 | [−5, 9] |
+| sh-iter+b | 28% | +45 [34, 56] | −0.29 [−0.79, 0.05] | +10 [−2, 22] | 0.744 / 1.257 | −2.27 | [29, 60] |
+| sh-iter | 75% | −2 [−9, 5] | 1.06 [0.85, 1.31] | −37 [−48, −26] | 0.331 / 0.211 | −0.00 | [−15, 10] |
+| det+shift | 75% | −2 [−8, 4] | 1.06 [0.89, 1.27] | −37 [−48, −26] | 0.148 / 0.094 | −0.02 | [−10, 6] |
+| det+noise | 32% | +41 [31, 51] | −0.17 [−0.37, −0.05] | +6 [2, 11] | 0.401 / 0.769 | 1.10 | [23, 64] |
+
+- 출처: [PH] `cell.variants`, `cell.cluster`. job은 [RAW dw.6] `jobs/pusht/eval8_*_cem_*.json`. drift는 §1.2와 같은 정의다
+- 분류(PLAN §2.8 규칙)
+  - det+BC가 못 고친다(red −0.23 < 0.5)
+  - det+shift-fixed가 고친다(0.94 ≥ 0.5)
+  - Δ_pers = D(det+shift-fixed) − D(det+shift) +4 [−3, 11]이 0을 포함한다
+  - 그래서 **resolution**이다. Δ_bias = D(det) − D(det+BC)는 −8 [−17, 1]이다
+- §1.3 예측표와 견주면 한 줄에 다 맞지는 않는다
+  - det+BC가 못 고친다: (b)·(c)와 맞는다
+  - 고정 무편향(sh-plan, det+shift-fixed)이 고친다: (a)·(b)와 맞는다
+  - sh-iter+b가 sh-iter보다 나쁘다(+47 [35, 59]): (a)와만 맞는다. (b)의 예측("고친다")과는 어긋난다
+  - sh-iter·det+shift가 고친다: 모든 줄과 맞는다
+- b를 빼도(det+BC) 더해도(sh-iter+b) det만큼 나쁘다
+  - 계획 시점 오차도 b를 넣으면 커진다: det 0.307/0.739 → det+BC 0.424/0.916, sh-iter 0.331/0.211 → sh-iter+b 0.744/1.257
+  - D2 기록에서도 PushT PT k3의 전파 5-step 오차는 b로 줄지 않았다(0.93 → 0.95, §5). Wall에서는 b가 오차를 크게 줄였다
+- §1.4 기술 항목(%p)
+  - D(sh-plan) − D(sh-iter) +5 [−3, 13]
+  - D(sh-iter+b) − D(sh-iter) +47 [35, 59]
+  - D(det+noise) − D(det) +6 [2, 11]
+  - D(det+shift) − D(sh-iter) +0 [−7, 7]
+- D1 덩어리 bootstrap(10덩어리)
+  - det D [16, 58], p 0.0001
+  - Δ_bias [−21, 5], Δ_pers [−1, 9]
+  - 손상과 분류가 같아 `reading_differs = false`다
+
+### 9.3 [사후 기술] 합친 DINO-WM 읽기
+
+| 손상 칸 | 분류 | det+noise가 고침 |
+|---|---|---|
+| Wall 3-bit(본 분석, dw.4) | bias | 아니오(red 0.07) |
+| PushT 3-bit(이 절, dw.6) | resolution | 아니오(red −0.17) |
+
+- 합친 단위 읽기는 **mixed**다. 편향 1칸, 해상도 1칸으로 과반 분류가 없다
+- det+noise가 고친 칸은 0/2다
+- B2 규칙(단위 읽기가 bias 또는 resolution이면 성립)을 두 칸에 그대로 대면 mixed라 성립하지 않는다. 다만 두 칸 모두 지속(persistence)으로 분류되지는 않았다
+- B3 규칙(det+noise가 손상 칸의 절반 이하를 고침)은 0/2라 성립 쪽이다
+- 사전 지정 판정은 그대로다: B2 성립, B3 성립, Dg1 불성립(Wall 한 칸, §0). 이 칸은 E13이 없어 Dg1 값이 없다
+- 출처: [PH] `combined_dinowm`, 본 분석은 [A] `E11.cells[wall]`
+
+### 9.4 재계산과 기록
+
+- [PHR]이 job JSON에서 44항목을 따로 셌다(none·8변형 성공, D, D CI, D_v − D_det, Δ_bias·Δ_pers와 CI). **불일치 0**이다
+- 보조 OEI 참 비용 키는 dw.6 진단 기록 1,200개 중 빠진 것이 0이다
+- 분석 코드
+  - `code/analyze_posthoc.py`: `analyze_tmlr.py`(md5 `7d1b7390…`)의 함수를 그대로 쓴다. 실제 자료 전에 dw.1 PushT 4-bit 칸으로 돌려 본 분석의 값을 모두 재현했다(불일치 0)
+  - `code/recount_posthoc.py`
+- 최종 출력은 07:13Z에 최종 raw로 다시 돌린 판이다. 05:54Z 중간 판과는 `n_jobs`(90 → 120, X17 job을 포함한 dw.6의 모든 job 파일 수)만 다르다
+
+## 10. [사후] PushT 4-bit E1 분할 재실행(X17, D5)
+
+- 결정: D5(§11, 2026-11-22T02:06Z). 세부는 자료 전에 §11.1에 고정했다. 판단 에이전트가 제안했고 사용자가 승인했다("너의 추천대로 해줘")
+- 목적: eval8에서 PushT 4-bit det 손상이 재현되지 않은 이유를 가린다(eval8 +4 [−7, 15], E1 +24 [14, 34]). 후보는 분할 차이와 GPU·수치 차이다
+- 설정
+  - dw.6(RTX 4090)에서 D4 다음 같은 대기열에 붙였다. 02:17:55Z 정상 재시작으로 붙였고, 돌던 D4 job은 그대로 두었다. X17 job 30개는 05:53Z~07:13Z에 돌았다
+  - E1 분할 eval6: pair seed 6, 쌍 0~99, env seed 6001~6100, planner seed 4000~4099, salt `eval6`
+  - E1과 같은 계획기(CEM 300/30, horizon 5, opt_steps 30)와 진단을 썼다
+  - PT 범위, k = 4, none·det·sh-iter × 100이다. none은 dw.6에서 새로 돌았다
+  - eval6 쌍을 dw.6에서 다시 만들었다. 쌍 목록 sha256 `fbedc83d…`와 파일 sha256 `f60c023f…`가 E1 쌍 파일(`A/main/results/E0_dinowm/pairs_pusht_eval6.json`)과 같다([RAW dw.6] `checks/eval6_regen_pusht.json`)
+  - 실행 환경: torch 2.4.1+cu124, TF32, SDPA, bf16 autocast는 E1과 같다. GPU만 다르다(E1 RTX A5000, 이번 RTX 4090)
+- 출처 약어
+  - **[X]** `results/analysis_posthoc/x17_pusht4_eval6.json`(csv, `tables_x17.md`)
+  - **[XR]** `results/analysis_posthoc/recount_x17.json`
+  - **[E1ref]** `code/inputs/e1_pusht_eval6_k4.json`: E1 episode별 성공. `A/main/results/E1/E1_dinowm_pusht/pusht/eval6_{none,det_k4,shiter_k4}_e*.json`에서 읽었다
+
+### 10.1 결과
+
+| 변형 | 성공 | D %p [CI] | 한쪽 p | red [CI] | E1 성공(A5000) | E1 D [CI] | E1과 episode 일치 | McNemar(이번만/E1만, p) |
+|---|---|---|---|---|---|---|---|---|
+| none | 83% | — | — | — | 83% | — | 98% | 1/1, 1.0 |
+| det | 62% | +21 [12, 30] | 0.0001 | — | 59% | +24 [14, 34] | 95% | 4/1, 0.375 |
+| sh-iter | 83% | +0 [−4, 4] | 0.61 | 1.00 [0.80, 1.23] | 83% | +0 [−4, 4] | 96% | 2/2, 1.0 |
+
+- D(sh-iter) − D(det)는 −21 [−31, −11]이다. E1 red(sh-iter)는 1.00 [0.85, 1.22]다
+- none의 E1 일치율 98%는 D3의 Wall 재실행(85%)과 같은 방식으로 쟀다
+- 같은 GPU 종류(4090)의 eval8(dw.1): none 73%, det 69%, D_det +4 [−7, 15], sh-iter −2 [−8, 4](§1.1·§1.2)
+- 출처: [X] `det`, `shiter`, `agreement_with_E1`. job은 [RAW dw.6] `jobs/pusht/eval6_*_cem_*.json`
+
+### 10.2 판정 (D5, 미리 적은 기술)
+
+- **(i)**: D_det CI [12, 30]의 하한이 0보다 크고, E1의 CI [14, 34]와 겹친다. 그래서 eval8에서 재현되지 않은 것은 **분할 차이(eval8)**로 본다
+- (ii)(CI가 0을 포함하고 상한 < 14)에는 해당하지 않는다
+- 같은 쌍과 seed에서 GPU만 바꾸면 결과는 이렇다
+  - 계획 출력은 달라진다. 세 변형 모두 100 episode 전부 mu_final이 E1과 다르다(최대 차의 중앙값: none 1.21, det 1.33, sh-iter 1.44)
+  - 그래도 성공은 none 98%, det 95%, sh-iter 96% episode에서 같다. 집계 값(none 83, det 62 대 59, sh-iter 83)도 E1 안에 든다
+- 같은 4090에서 none은 eval6 83%, eval8 73%다. 점검 3의 none 차(−10점)도 쌍 모집단 차이와 같은 방향이다
+- 사전 지정 판정(E11 Holm, B2·B3·Dg1)은 바꾸지 않는다. PushT 4-bit는 eval8 판정에서 손상 칸이 아닌 채로 둔다
+
+### 10.3 재계산과 기록
+
+- [XR]이 job JSON에서 19항목을 따로 셌다(n과 성공, D, D CI, red, D(sh-iter) − D(det), E1 일치율과 E1 성공 수, 판정 규칙). **불일치 0**이다
+- 맥북에서 받은 job 파일로 성공 수(83·62·83)를 다시 셌고 같다
+- 분석 코드
+  - `code/analyze_x17.py`: D5 판정을 자료 전에 코드로 적었다. 02:13Z에 가짜 자료(E1 성공값)를 넣어, E1의 D_det +24 [14, 34]와 red 1.00 [0.85, 1.22]를 그대로 재현했다
+  - `code/recount_x17.py`
+- 코드 변경
+  - `podplan.py`(md5 `71fc9b00…`): dw.6 계획에 `x17` 항목
+  - `driver.py`(md5 `2445e331…`): 대기열 3b와 eval6 쌍 재생성 대조
+  - 다른 pod와 D4 항목의 동작은 같다
+
+### 10.4 dw.6 비용과 시간 (§8 표에 더할 줄)
+
+| pod | 생성 | driver 끝 | 지움 | episode-run | 지출 |
+|---|---|---|---|---|---|
+| dw.6 | 11-22 01:35:49Z | 07:13:22Z | 07:15:10Z | 1,200(D4 900 + X17 300) | $5.18 |
+
+- dw 합: episode-run 10,340, **$28.93**(상한 $40, 80% 선 $32). 실패 job 0
+- 출처: `runpod_tmlr/budget.py status`(07:15Z), [RAW dw.6] `state/status.json`·`state/FINISHED`, `driver.log`

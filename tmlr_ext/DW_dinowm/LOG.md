@@ -125,3 +125,51 @@
 - 01:23:58Z **dw.2 삭제**: 삭제 직전에 rsync dry-run으로 남은 전송 0을 다시 확인했다. runpodctl delete는 REST NXDOMAIN으로 실패했고, GraphQL로 지웠다. budget.py status에서 dw.1~dw.5 모두 gone이고, rp_gql로도 살아 있는 atm-dw pod가 없다. **dw 지출 합 $23.75**(dw.1 $5.81, dw.2 $5.84, dw.3 $3.96, dw.4 $4.83, dw.5 $3.31)
 - 01:24Z 조정자의 dw.2 삭제 보류 요청(PushT 3-bit E11을 [사후]로 보강할지 사용자에게 묻는 중)은 삭제 뒤에 왔다. "이미 지웠으면 그대로" 지시대로 두고 알렸다. 보강을 하면 새 4090 pod에서 자기 eval8 none부터 다시 돈다(어림 약 4.5 h, 약 $4.2)
 - REPORT.md: Write 도구가 subagent의 보고서 파일 쓰기를 거부했다. 전문은 최종 보고에 넣어 조정자에게 넘겼다
+- **01:36Z 조정자 지시([사후] 보강, 사용자 승인 "너의 추천대로 해주고")**: E11 PushT 3-bit 칸(PT, eval8 100, none + 8변형, E11 진단)을 새 pod dw.6에서 돈다
+  - E13은 돌리지 않는다. 사전 지정 판정 B2·B3·Dg1은 바꾸지 않는다. 합친 DINO-WM 읽기는 [사후] 기술로만 낸다
+  - dw 상한은 $40(80% 선 $32)으로 올랐다
+- 01:35:49Z **dw.6 생성**: RTX 4090 SECURE $0.89/h, pod `nzhi5kydljekxu`, 자동 종료 11:35:30Z
+  - 코드: `podplan.py`에 dw.6 계획을 넣었다(E11만, `e11_k = {'pusht': 3}`, E12·확장·E16·E13 없음). `driver.py`는 E11 k를 pod 계획에서 읽는다(다른 pod의 동작은 같다)
+  - 보정 파일 11개(PC·백분위·PT 점검·b main/pc k2~4·RC k3·k4)는 맥북의 dw.1·dw.2·dw.5 사본끼리 md5가 모두 같다. b main_k3 `b4ac98c1…`(D2, α = 1, 갱신 5번)이고, dw.6에 tar로 보내 md5를 대조했다
+  - 01:38Z 설치 시작(`setup_pod.sh pusht`)
+  - 분석 스크립트 `code/analyze_posthoc.py`를 새로 썼다. 이 칸 하나에 PLAN §2.8의 E11 규칙(한쪽 p < 0.05, 분류, D1 덩어리 bootstrap, E1 PushT 3-bit 비교)을 적용하고, 합친 읽기는 [사후] 기술로 낸다
+- 01:38:59Z dw.6 driver 시작
+  - 체크포인트 sha256 `e909f0ce…`(dw.1과 같음), D1 표집 전 점검 1,294·485 통과
+  - eval8 PushT 쌍 sha256 `14f2be60…`, 위반 없음, 덩어리 10개
+  - 알려진 episode 900
+- 01:46Z 첫 none job 2개(episode 0~19)가 dw.1의 같은 job과 비트 단위로 같다(mu_final, 반복별 최저 비용, 성공 각 10/10, 겹치는 OEI 키도 모두 같다)
+  - [알려진 빈칸] dw.1 기록의 그 episode들에는 첫 반복 참 비용 재생으로 얻는 보조 OEI 키(oei_true_*, calib_a/b, it0_rand_etrue/margin/sd, rho_it0)가 없다. 19:52Z driver 재시작 때 it0 파일이 참 비용 없이 남아 있어 재생을 다시 넣지 않았기 때문이다. 어느 판정에도 쓰지 않는다. pod별 개수는 `recount_posthoc.py`가 센다
+  - 조정자에게 시작을 보고했다
+- 01:50Z `analyze_posthoc.py` 사전 점검: dw.1의 PushT 4-bit 칸에 돌려 본 분석(`analysis_dw.json`)의 모든 변형 통계·대비·덩어리 CI를 재현했다(불일치 0). `recount_posthoc.py`(독립 재계산)도 새로 썼다
+- 02:03:16Z **dw.6 점검 3 통과**: eval8 none 0.73(dw.1·dw.2·dw.5와 같음, E1 0.83과 차 −0.10). 회수한 none 90 episode가 dw.1과 비트 단위로 모두 같다(mu_final, 최저 비용, 성공). 이어서 E11 PushT 3-bit 8변형 시작
+- **02:08Z 조정자 지시 X17(D5, DESIGN_tmlr §11.1, 사용자 승인 "너의 추천대로 해줘")**: dw.6에서 D4 다음으로 PushT 4-bit을 E1의 평가 분할 eval6(pair seed 6, 쌍 0~99, env seed 6001~6100, planner seed 4000~4099, salt `eval6`)로 다시 돈다. none·det·sh-iter × 100, E1과 같은 계획기와 진단. 판정은 미리 적은 기술 (i)/(ii)/(iii)
+  - 코드
+    - `podplan.py`(md5 `71fc9b00…`): dw.6 계획에 `x17` 항목(PushT, eval6, k 4, PT 범위, det·sh-iter, episode 0~99)
+    - `driver.py`(md5 `2445e331…`): 대기열 3b(E11 다음)에 X17. 먼저 eval6 쌍을 다시 만들어 E1 쌍 파일(`A/main/results/E0_dinowm/pairs_pusht_eval6.json`, sha256 `f60c023f…`, `code/inputs` 사본과 같음)과 견준다. 쌍 목록(구간·env seed·env 설정) sha256과 파일 sha256을 `out/checks/eval6_regen_pusht.json`에 적고, 같지 않으면 eval6 job은 막힌다(기존 문). 다른 pod와 D4 항목의 동작은 같다
+    - `inputs/e1_pusht_eval6_k4.json`(md5 `742349ad…`, 새로 씀): E1 eval6 none·det k4·sh-iter k4의 episode별 성공(`A/main/results/E1/E1_dinowm_pusht/pusht/`에서 읽음; 83·59·83/100)
+    - `analyze_x17.py`(md5 `1c126c46…`, 새로 씀): D_det·D_sh-iter·red(sh-iter)(짝 bootstrap 10,000, RandomState(0)), D5 판정 (i)/(ii)/(iii)을 자료 전에 코드로 적었다. none 성공, E1과 episode 일치율(D3 Wall 재실행과 같은 방식, McNemar 함께). 출력 `x17_pusht4_eval6.{json,csv}`, `tables_x17.md`
+    - `recount_x17.py`(md5 `11ad4cda…`, 새로 씀): job JSON에서 독립 재계산
+  - 02:12Z dw.6 코드 동기화(rsync -c: 위 5파일만 달랐다, 원격 md5 같음)
+  - dw.6 읽기 전용 시험 build(새 코드): 항목 133개, X17 31개(쌍 재생성 1 + job 30)가 eval8 job 90개 모두의 뒤에 온다. 알려진 episode 1,200
+  - analyze_x17 시험(dw.6 CPU, 가짜 자료): E1 성공값을 넣으면 E1의 D_det +24 [14, 34], red 1.00 [0.85, 1.22]를 그대로 재현하고 판정 (i). det = none으로 두면 (ii). recount 19항목 불일치 0. 시험 파일은 지웠다
+  - 02:14:54Z 정상 재시작 플래그(`out/state/RESTART`)를 놓았다. 돌던 job(eval8_main_shiterb_k3_cem_e000-010)은 끝까지 돌고, driver가 마무리 뒤 exit 4, supervisor가 새 코드로 다시 띄운다
+- 02:17:38Z 그 job(10/10)이 끝난 뒤 driver가 DRIVER_RESTART로 exit 4, 02:17:55Z supervisor가 새 코드로 다시 띄웠다. 다음 D4 job(eval8_main_shiter_k3_cem_e000-010)부터 이어서 돈다. 상태 150/1,200, failed 0, 예상 끝 06:47Z. X17 항목은 "eval6 pairs regeneration not verified"로 D4 뒤를 기다린다
+- 05:43Z 조정자 알림: 맥북 Claude 세션이 다시 시작되며 맥북의 백그라운드 대기가 멈췄다(pod는 영향 없음, 860/1,200). 대기를 다시 걸었다. scratchpad도 비어 있어 대기 스크립트를 명령 안에 넣었다
+- 05:53:16Z **D4 끝**(900/900 episode, failed 0). 곧바로 X17 eval6 쌍을 다시 만들었다
+  - `out/checks/eval6_regen_pusht.json`: match True. 쌍 목록 sha256 `fbedc83d…`가 E1과 같다. 파일 sha256 `f60c023f…`도 E1 파일과 같다(file_identical True). 이어서 eval6 none부터 돈다
+- 05:54Z D4 분석(dw.6 CPU; raw = `big/posthoc/raw/dw.6` → `out/` 심볼릭 링크, 본 분석 `analysis_dw.json` md5 `2b069768…` 대조)
+  - `analyze_posthoc.py … --pod dw.6 --k 3` → `out/analysis_posthoc/`
+  - none 0.73. det 0.38, D_det +0.35 [0.24, 0.45], 한쪽 p 1e-4 → 손상 실재
+  - 분류 resolution(det+BC red −0.23, det+shift-fixed red 0.94, Δ_pers +0.04 [−0.03, 0.11]). D1 덩어리 CI [0.16, 0.58]로 읽기 차이 없음
+  - [사후] Wall과 합친 읽기는 mixed이고, det+noise가 고친 칸은 0/2다
+  - `recount_posthoc.py`: 44항목 불일치 0. OEI 참 비용 키 빈칸은 dw.6 900기록 중 0이다
+- 05:55Z 중간 회수(`results/raw/dw.6/`, `results/analysis_posthoc/`). 조정자에게 D4 결과를 짧게 보고했다. dw.6 지금까지 $3.97, dw 합 $27.72
+- 07:13:22Z **dw.6 driver 끝**(1,200/1,200 episode, failed 0, supervisor exit 0). X17 job 30개는 05:53Z~07:13Z에 돌았다
+- 07:13Z 최종 분석(dw.6 CPU, 최종 raw)
+  - `analyze_posthoc.py`(D4): 05:54Z 중간 판과 비교하면 `n_jobs`(90 → 120, dw.6의 모든 job 파일 수, X17 30 포함)만 다르다. 모든 통계가 같다. `recount_posthoc.py`는 44항목 불일치 0이고, OEI 참 비용 키 빈칸은 1,200기록 중 0이다
+  - `analyze_x17.py`: 판정 **(i)**. none 0.83(E1 0.83, episode 일치 98%), det 0.62, D_det +0.21 [0.12, 0.30](한쪽 p 1e-4, E1 [0.14, 0.34]와 겹침). sh-iter 0.83, D +0.00 [−0.04, 0.04], red 1.00 [0.80, 1.23]. `recount_x17.py`는 19항목 불일치 0
+- 07:14Z 최종 회수: `out/` 원격 158 = 맥북 158 파일, rsync dry-run 남은 전송 0(최상위 폴더 시각만). `logs/driver.log`도 `results/raw/dw.6/driver.log`로 받았다. 분석 출력은 `results/analysis_posthoc/`에 복사했다
+- 맥북 점검(수 초, 순수 Python)
+  - 받은 job 파일에서 성공 수를 다시 셌고 분석과 같다
+  - X17과 E1의 eval6 기록을 비교했다. torch 2.4.1+cu124, TF32, SDPA, bf16, opt_steps 30과 planner seed가 같은데도 mu_final은 세 변형 모두 100 episode 전부 다르다(최대 차의 중앙값 none 1.21). GPU 종류가 다르다(E1 A5000, dw.6 4090). 성공 일치는 none 98%, det 95%, sh-iter 96%다
+- 07:15:10Z **dw.6 삭제**(REST NXDOMAIN → GraphQL). budget.py에서 dw.1~dw.6 모두 gone이고, `rp_gql.py pods atm-`에 살아 있는 pod가 없다. dw.6 $5.18, **dw 합 $28.93**(상한 $40)

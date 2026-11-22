@@ -1,0 +1,4 @@
+variant,n,success,D,D_ci_lo,D_ci_hi,p_boot_le0,red,red_ci_lo,red_ci_hi,agreement_with_E1,E1_success
+none,100,0.83,,,,,,,,0.98,0.83
+det,100,0.62,0.21,0.12,0.3,9.999e-05,,,,0.95,0.59
+shiter,100,0.83,0,-0.04,0.04,0.6058,1.0,0.7999999999999999,1.2307692307692308,0.96,0.83

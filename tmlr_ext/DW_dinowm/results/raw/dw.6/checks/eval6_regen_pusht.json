@@ -1,0 +1,13 @@
+{
+ "task": "pusht",
+ "match": true,
+ "traj_match": true,
+ "pairlist_sha256_regen": "fbedc83dc45adc31e29ecc80d09997022eebe46bf209722e9ca7517962f09f18",
+ "pairlist_sha256_e1": "fbedc83dc45adc31e29ecc80d09997022eebe46bf209722e9ca7517962f09f18",
+ "file_sha256_regen": "f60c023ffd8e42e59b62b3c64b7e0b03d33690609fc9f1a545a06a8b3d40a3df",
+ "file_sha256_e1": "f60c023ffd8e42e59b62b3c64b7e0b03d33690609fc9f1a545a06a8b3d40a3df",
+ "e1_source": "A/main/results/E0_dinowm/pairs_pusht_eval6.json (E1 eval6 cache json)",
+ "n": 100,
+ "time": "2026-11-22T05:53:16Z",
+ "file_identical": true
+}

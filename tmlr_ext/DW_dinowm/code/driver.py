@@ -392,11 +392,22 @@ class Driver:
         ok = lambda t: gate.get(t) is True
         # 3 E11 (chunk-major: every variant of a chunk before the next chunk)
         for task in P['e11']:
-            k = PP.K1[task]
+            k = P.get('e11_k', {}).get(task, PP.K1[task])     # dw.6: PushT 3-bit [post hoc]
             for a, b in PP.chunks(task, 0, PP.N_EVAL):
                 jobs = [PP.job(task, 'eval8', v, k, a, b, ranges='main', diag=True, exp=('E11', 'E12') if v in
                                PP.E12_ROUND['main'] else ('E11',)) for v in PP.E11_VARS]
                 items += [self._gated(x, ok) for x in self.job_items(jobs, note='E11')]
+        # 3b X17 (D5): PushT 4-bit on E1's eval6 split (regenerated pairs checked against E1), none + det + sh-iter
+        x = P.get('x17')
+        if x:
+            it = Item('calib', f"pairs:{x['task']}:eval6", x['task'], run=lambda t=x['task']: self.do_pairs(t, 'eval6'))
+            it.produces = [f"{CHECKS}/eval6_regen_{x['task']}.json"]
+            items.append(it)
+            for a, b in PP.chunks(x['task'], *x['eps']):
+                jobs = [PP.job(x['task'], x['split'], 'none', 0, a, b, diag=True, exp=('X17',))]
+                jobs += [PP.job(x['task'], x['split'], v, x['k'], a, b, ranges=x['ranges'], diag=True, exp=('X17',))
+                         for v in x['vars']]
+                items += self.job_items(jobs, note='X17')
         # 4 E12 grid (stage 1 chunk-major across cells, then stage 2), then extensions
         for task in P['e12']:
             cells = PP.grid_cells(self.tag, task)
@@ -542,10 +553,24 @@ class Driver:
     def do_pairs(self, task, split):
         ctx = self.get_ctx(task)
         if split == 'eval6':                  # D1 exception: regenerate E1's eval6 pairs; must match the E1 cache json
+            import hashlib
             e1 = jload(f'{CODE}/inputs/pairs_pusht_eval6.json')
             pairs = ctx.get_pairs('eval6')            # no npz cache yet -> regenerated (json rewritten at the end)
+            new = jload(f'{BIG}/pairs/pairs_{task}_eval6.json')
+
+            def canon(d):                             # pair list: segments, env seeds, env settings
+                return hashlib.sha256(json.dumps(dict(traj=[list(map(int, t)) for t in d['traj']], eval_seed=d['eval_seed'],
+                                                      env_info=d['env_info']), sort_keys=True).encode()).hexdigest()
+            fsha = lambda p: hashlib.sha256(open(p, 'rb').read()).hexdigest()
             match = [list(x) for x in pairs['traj']] == [list(x) for x in e1['traj']]
-            L.jdump(dict(task=task, match=bool(match), n=len(pairs['traj']), time=now()), f'{CHECKS}/eval6_regen_{task}.json')
+            res = dict(task=task, match=bool(match and canon(new) == canon(e1)), traj_match=bool(match),
+                       pairlist_sha256_regen=canon(new), pairlist_sha256_e1=canon(e1),
+                       file_sha256_regen=fsha(f'{BIG}/pairs/pairs_{task}_eval6.json'),
+                       file_sha256_e1=fsha(f'{CODE}/inputs/pairs_pusht_eval6.json'),
+                       e1_source='A/main/results/E0_dinowm/pairs_pusht_eval6.json (E1 eval6 cache json)', n=len(pairs['traj']),
+                       time=now())
+            res['file_identical'] = res['file_sha256_regen'] == res['file_sha256_e1']
+            L.jdump(res, f'{CHECKS}/eval6_regen_{task}.json')
             return
         pairs = ctx.get_pairs(split)
         if split == 'eval8':

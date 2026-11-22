@@ -171,3 +171,14 @@
   - dw.1: none + E11 약 4.3 h, PT 확장 0.3~0.8 h, held none 0.1 h, E13 PT k5 약 0.1 h. 19:52Z부터 **약 00:30~01:00Z**
   - dw.5: 설치 약 0.3 h, none 0.4, PC·RC k4 1단계 1.0, 2단계 약 0.5, 확장 0~0.4, held none 0.1, E13 약 1.2 h. 19:57Z부터 **약 00:00~00:30Z**
   - 비용은 거의 같다: dw.1이 약 2.5 h 줄고 dw.5가 약 4.0 h 는다. 합 약 $22
+
+## 7. [사후] 보강: dw.6 (D4, D5; eval8 결과를 본 뒤 정함)
+
+- **dw.6**: RTX 4090 SECURE $0.89/h, pod `nzhi5kydljekxu`, 2026-11-22T01:35:49Z 생성, 자동 종료 11:35:30Z. dw 상한 $40(80% 선 $32)
+- D4(조정자 01:36Z): E11 PushT 3-bit 칸. PT 범위, eval8 100 episode, none + 8변형, E11 진단. E13은 없다. 계획기·쌍·seed·salt·E는 E11 PushT 4-bit과 같고 k만 3이다. none은 dw.6에서 새로 돈다(짝 규칙)
+  - 보정 파일은 맥북 사본(b main_k3 포함, D2)을 md5 대조해 썼다. eval8 쌍은 다시 만들어 sha256 `14f2be60…`과 견준다. 점검 3과 첫 none job의 dw.1 비트 대조를 거친다
+  - 분석: `analyze_posthoc.py`(이 칸에 PLAN §2.8의 E11 규칙, 한쪽 p < 0.05를 이 칸 하나로, D1 덩어리 bootstrap, E1 PushT 3-bit 비교), 재계산 `recount_posthoc.py`. B2·B3·Dg1 판정은 바꾸지 않고, Wall과 합친 읽기는 [사후] 기술로만 낸다
+- X17(D5, 조정자 02:08Z, DESIGN_tmlr §11.1): D4 다음 같은 대기열에 PushT 4-bit을 E1 분할 eval6(쌍 0~99, env seed 6001~6100, planner seed 4000~4099, salt `eval6`)로 다시 돈다. none·det·sh-iter × 100, E1과 같은 계획기와 진단
+  - eval6 쌍은 dw.6에서 다시 만들고 E1 쌍 파일과 sha256으로 견준다. 다르면 eval6 job은 돌지 않는다
+  - 분석: `analyze_x17.py`(D5 판정 (i)/(ii)/(iii)을 자료 전에 코드로 적음), 재계산 `recount_x17.py`
+- 예상: D4 약 05:20~05:50Z, X17 약 1.4 h 더(약 07:00Z 전후). dw.6 전체 약 5.5 h, 약 $5

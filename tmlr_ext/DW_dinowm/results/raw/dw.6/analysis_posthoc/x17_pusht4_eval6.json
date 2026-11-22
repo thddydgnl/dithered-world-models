@@ -1,0 +1,123 @@
+{
+ "posthoc": true,
+ "decision": "D5 (DESIGN_tmlr.md 11.1), coordinator 2026-11-22T02:08Z, user approved",
+ "cell": {
+  "task": "pusht",
+  "k": 4,
+  "split": "eval6",
+  "ranges": "main",
+  "pod": "dw.6",
+  "none": {
+   "n": 100,
+   "success": 0.83
+  }
+ },
+ "det": {
+  "n": 100,
+  "success": 0.62,
+  "none_success": 0.83,
+  "D": 0.21,
+  "D_ci": [
+   0.12,
+   0.3
+  ],
+  "p_boot_le0": 9.999000099990002e-05,
+  "mcnemar": {
+   "none_only": 24,
+   "var_only": 3,
+   "p": 4.9233436584472656e-05
+  }
+ },
+ "shiter": {
+  "n": 100,
+  "success": 0.83,
+  "none_success": 0.83,
+  "D": 0.0,
+  "D_ci": [
+   -0.04,
+   0.04
+  ],
+  "p_boot_le0": 0.6058394160583942,
+  "mcnemar": {
+   "none_only": 2,
+   "var_only": 2,
+   "p": 1.0
+  },
+  "red": 1.0,
+  "red_ci": [
+   0.7999999999999999,
+   1.2307692307692308
+  ],
+  "Dv_minus_Ddet": {
+   "n": 100,
+   "diff": -0.21,
+   "ci": [
+    -0.31,
+    -0.11
+   ],
+   "mcnemar_p": 0.00010371580719947815
+  }
+ },
+ "reading": "(i)",
+ "reading_label": "split difference (eval8) explains the non-replication",
+ "rule": "(i) CI lower > 0 and overlaps E1 [0.14, 0.34]; (ii) CI holds 0 and upper < 0.14; (iii) otherwise",
+ "agreement_with_E1": {
+  "none": {
+   "n": 100,
+   "agreement": 0.98,
+   "successes": 83,
+   "e1_successes": 83,
+   "mcnemar": {
+    "this_only": 1,
+    "e1_only": 1,
+    "p": 1.0
+   }
+  },
+  "det": {
+   "n": 100,
+   "agreement": 0.95,
+   "successes": 62,
+   "e1_successes": 59,
+   "mcnemar": {
+    "this_only": 4,
+    "e1_only": 1,
+    "p": 0.375
+   }
+  },
+  "shiter": {
+   "n": 100,
+   "agreement": 0.96,
+   "successes": 83,
+   "e1_successes": 83,
+   "mcnemar": {
+    "this_only": 2,
+    "e1_only": 2,
+    "p": 1.0
+   }
+  }
+ },
+ "E1": {
+  "source": "A/main/results/E1/e1_dinowm_cells.csv (pusht, confirmatory, k=4; eval6, RTX A5000)",
+  "none": 0.83,
+  "det": 0.59,
+  "D_det": 0.24,
+  "D_det_ci": [
+   0.14,
+   0.34
+  ],
+  "shiter": 0.83,
+  "D_shiter": 0.0,
+  "D_shiter_ci": [
+   -0.04,
+   0.04
+  ],
+  "red_shiter": 1.0,
+  "red_shiter_ci": [
+   0.84615,
+   1.2222
+  ]
+ },
+ "gpus": [
+  "NVIDIA GeForce RTX 4090"
+ ]
+}

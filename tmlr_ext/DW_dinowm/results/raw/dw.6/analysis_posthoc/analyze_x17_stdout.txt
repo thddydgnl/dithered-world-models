@@ -1,0 +1,1 @@
+{"reading": "(i)", "D_det": 0.21, "D_det_ci": [0.12, 0.3], "none": 0.83, "agree_none": 0.98, "D_shiter": 0.0, "red_shiter": 1.0}

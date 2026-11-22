@@ -1,0 +1,132 @@
+{
+ "n_items": 19,
+ "mismatches": 0,
+ "rows": [
+  {
+   "item": "none n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "none success",
+   "recount": 0.83,
+   "analysis": 0.83,
+   "match": true
+  },
+  {
+   "item": "det n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "det successes",
+   "recount": 62.0,
+   "analysis": 62,
+   "match": true
+  },
+  {
+   "item": "det D",
+   "recount": 0.21,
+   "analysis": 0.21,
+   "match": true
+  },
+  {
+   "item": "det D CI",
+   "recount": [
+    0.12,
+    0.3
+   ],
+   "analysis": [
+    0.12,
+    0.3
+   ],
+   "match": true
+  },
+  {
+   "item": "shiter n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "shiter successes",
+   "recount": 83.0,
+   "analysis": 83,
+   "match": true
+  },
+  {
+   "item": "shiter D",
+   "recount": 0.0,
+   "analysis": 0.0,
+   "match": true
+  },
+  {
+   "item": "shiter D CI",
+   "recount": [
+    -0.04,
+    0.04
+   ],
+   "analysis": [
+    -0.04,
+    0.04
+   ],
+   "match": true
+  },
+  {
+   "item": "shiter red",
+   "recount": 1.0,
+   "analysis": 1.0,
+   "match": true
+  },
+  {
+   "item": "D_shiter - D_det",
+   "recount": -0.21,
+   "analysis": -0.21,
+   "match": true
+  },
+  {
+   "item": "none agreement with E1",
+   "recount": 0.98,
+   "analysis": 0.98,
+   "match": true
+  },
+  {
+   "item": "none E1 successes",
+   "recount": 83,
+   "analysis": 83,
+   "match": true
+  },
+  {
+   "item": "det agreement with E1",
+   "recount": 0.95,
+   "analysis": 0.95,
+   "match": true
+  },
+  {
+   "item": "det E1 successes",
+   "recount": 59,
+   "analysis": 59,
+   "match": true
+  },
+  {
+   "item": "shiter agreement with E1",
+   "recount": 0.96,
+   "analysis": 0.96,
+   "match": true
+  },
+  {
+   "item": "shiter E1 successes",
+   "recount": 83,
+   "analysis": 83,
+   "match": true
+  },
+  {
+   "item": "reading",
+   "recount": "(i)",
+   "analysis": "(i)",
+   "match": true
+  }
+ ]
+}

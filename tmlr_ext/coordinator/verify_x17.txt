@@ -1,0 +1,3 @@
+N=100 none=0.83 (E1 0.83) det=0.62 (E1 0.59) shiter=0.83 (E1 0.83)
+D_det=+0.210 [+0.120,+0.300] (E1 +0.24 [0.14,0.34]); D_shiter=+0.000 (-0.04, 0.04); red(sh-iter)=1.00
+D5 verdict: (i) split difference (eval8) explains the non-replication

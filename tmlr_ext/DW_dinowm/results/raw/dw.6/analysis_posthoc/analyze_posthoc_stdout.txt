@@ -1,0 +1,2 @@
+{"damaged": true, "p": 9.999000099990002e-05, "D_det": 0.35, "cls": "resolution", "cluster_differs": false, "combined": "mixed"}
+wrote /workspace/atm/out/analysis_posthoc

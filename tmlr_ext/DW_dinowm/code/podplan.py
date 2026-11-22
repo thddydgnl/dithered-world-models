@@ -43,6 +43,12 @@ PODS = {
     'dw.5': dict(tasks=('pusht',), owner=(), e11=(),
                  e12={'pusht': {'pc': (4,), 'rc': (4,)}}, ext={'pusht': ('up',)},
                  e16=(), e13=('pusht',), e13_part='rest'),
+    # [post hoc] (coordinator, 2026-11-22T01:36Z, user approved): the E11 cell PushT 3-bit (PT, eval8, none + 8 variants,
+    # E11 diagnostics), its own none; no E12, extension, E16 or E13 cells. e11_k overrides K1 for this pod only.
+    'dw.6': dict(tasks=('pusht',), owner=(), e11=('pusht',), e11_k={'pusht': 3},
+                 e12={}, ext={}, e16=(), e13=(),
+                 # X17 (D5, DESIGN_tmlr 11.1, coordinator 2026-11-22T02:08Z): PushT 4-bit on E1's eval6 split, after D4
+                 x17=dict(task='pusht', split='eval6', k=4, ranges='main', vars=('det', 'shiter'), eps=(0, 100))),
     'dw.2': dict(tasks=('pusht',), owner=(), e11=(),
                  e12={'pusht': {'main': (2, 3), 'pc': (2, 3), 'rc': (3,)}}, ext={'pusht': ('down',)},
                  e16=(), e13=()),

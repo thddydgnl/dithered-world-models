@@ -167,5 +167,12 @@
     - 못 고친 변형: sh-iter+b −0.29(28%; sh-iter보다 +47점 [35, 59] 나쁨), det+noise −0.17(32%; det보다 +6점 [2, 11] 나쁨)
   - D(sh-plan) − D(sh-iter) +5 [−3, 13].
   - [사후] Wall(편향)과 합친 DINO-WM 읽기는 혼합이다. det+noise가 고친 칸은 0/2이고, 고정 무편향 변형이 고친 칸은 2/2다. B2·B3·Dg1 판정은 그대로다.
-  - 출처: `DW_dinowm/results/analysis_posthoc/`(작업자, 독립 재계산 44항목 불일치 0), `coordinator/verify_d4.txt`(조정자, 일치).
-- **X17(D5)**: dw.6에서 진행 중이다. eval6 쌍을 다시 만들었고 E1 파일과 sha256이 같다. 07:19Z 끝 예상이다.
+  - [사후] PushT에서는 D2의 b가 해롭다(b를 빼도 더해도 det만큼 나쁨, 계획 시점 오차 증가). 그래서 det+BC가 못 고친 것을 편향이 없다는 증거로 읽지 않는다(REPORT §9.2).
+  - 출처: [DW_dinowm/REPORT.md](DW_dinowm/REPORT.md) §9, `DW_dinowm/results/analysis_posthoc/`(작업자, 독립 재계산 44항목 불일치 0), `coordinator/verify_d4.txt`(조정자, 일치).
+- **X17(D5, 끝)**: PushT 4-bit를 E1 평가 분할(eval6)로 RTX 4090(dw.6)에서 다시 돌렸다. 다시 만든 eval6 쌍의 sha256이 E1 파일과 같다. 07:13Z 끝, 실패 0.
+  - none 83%(E1 83%), det 62%(E1 59%), sh-iter 83%(E1 83%)
+  - D_det +21점 [12, 30](E1 +24점 [14, 34]), D_sh-iter 0 [−4, 4], red 1.00
+  - D5 판정 (i): CI 하한이 0보다 크고 E1 CI와 겹친다. 그래서 eval8에서 PushT 4-bit 손상이 재현되지 않은 것은 평가 분할의 차이로 본다. GPU·수치 차이로는 설명되지 않는다.
+  - E1과 episode 일치: none 98%, det 95%, sh-iter 96%. 계획 출력(mu_final)은 GPU가 달라 모든 episode에서 다르지만, 성공 여부는 거의 같다.
+  - 출처: [DW_dinowm/REPORT.md](DW_dinowm/REPORT.md) §10, `DW_dinowm/results/analysis_posthoc/x17_pusht4_eval6.json`(작업자 독립 재계산 19항목 불일치 0), 조정자 재계산 `coordinator/verify_x17.txt`(일치).
+- dw.6은 07:15:10Z에 지웠다($5.18). **atm pod 0개.** 전체 지출 $57.01(감시선 $77, 사용자 상한 $80).

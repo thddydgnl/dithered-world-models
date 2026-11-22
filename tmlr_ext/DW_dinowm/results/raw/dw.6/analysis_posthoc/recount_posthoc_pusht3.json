@@ -1,0 +1,336 @@
+{
+ "n_items": 44,
+ "mismatches": 0,
+ "rows": [
+  {
+   "item": "none success",
+   "recount": 0.73,
+   "analysis": 0.73,
+   "match": true
+  },
+  {
+   "item": "det n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "det successes",
+   "recount": 38.0,
+   "analysis": 38,
+   "match": true
+  },
+  {
+   "item": "det D",
+   "recount": 0.35,
+   "analysis": 0.35,
+   "match": true
+  },
+  {
+   "item": "det D CI",
+   "recount": [
+    0.24,
+    0.45
+   ],
+   "analysis": [
+    0.24,
+    0.45
+   ],
+   "match": true
+  },
+  {
+   "item": "detbc n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "detbc successes",
+   "recount": 30.0,
+   "analysis": 30,
+   "match": true
+  },
+  {
+   "item": "detbc D",
+   "recount": 0.43,
+   "analysis": 0.43,
+   "match": true
+  },
+  {
+   "item": "detbc D CI",
+   "recount": [
+    0.33,
+    0.53
+   ],
+   "analysis": [
+    0.33,
+    0.53
+   ],
+   "match": true
+  },
+  {
+   "item": "detbc D_v - D_det",
+   "recount": 0.08,
+   "analysis": 0.08,
+   "match": true
+  },
+  {
+   "item": "shstep n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "shstep successes",
+   "recount": 70.0,
+   "analysis": 70,
+   "match": true
+  },
+  {
+   "item": "shstep D",
+   "recount": 0.03,
+   "analysis": 0.03,
+   "match": true
+  },
+  {
+   "item": "shstep D CI",
+   "recount": [
+    -0.04,
+    0.1
+   ],
+   "analysis": [
+    -0.04,
+    0.1
+   ],
+   "match": true
+  },
+  {
+   "item": "shstep D_v - D_det",
+   "recount": -0.32,
+   "analysis": -0.32,
+   "match": true
+  },
+  {
+   "item": "detshiftfix n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "detshiftfix successes",
+   "recount": 71.0,
+   "analysis": 71,
+   "match": true
+  },
+  {
+   "item": "detshiftfix D",
+   "recount": 0.02,
+   "analysis": 0.02,
+   "match": true
+  },
+  {
+   "item": "detshiftfix D CI",
+   "recount": [
+    -0.06,
+    0.1
+   ],
+   "analysis": [
+    -0.06,
+    0.1
+   ],
+   "match": true
+  },
+  {
+   "item": "detshiftfix D_v - D_det",
+   "recount": -0.33,
+   "analysis": -0.33,
+   "match": true
+  },
+  {
+   "item": "shiterb n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "shiterb successes",
+   "recount": 28.0,
+   "analysis": 28,
+   "match": true
+  },
+  {
+   "item": "shiterb D",
+   "recount": 0.45,
+   "analysis": 0.45,
+   "match": true
+  },
+  {
+   "item": "shiterb D CI",
+   "recount": [
+    0.34,
+    0.56
+   ],
+   "analysis": [
+    0.34,
+    0.56
+   ],
+   "match": true
+  },
+  {
+   "item": "shiterb D_v - D_det",
+   "recount": 0.1,
+   "analysis": 0.1,
+   "match": true
+  },
+  {
+   "item": "shiter n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "shiter successes",
+   "recount": 75.0,
+   "analysis": 75,
+   "match": true
+  },
+  {
+   "item": "shiter D",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "shiter D CI",
+   "recount": [
+    -0.09,
+    0.05
+   ],
+   "analysis": [
+    -0.09,
+    0.05
+   ],
+   "match": true
+  },
+  {
+   "item": "shiter D_v - D_det",
+   "recount": -0.37,
+   "analysis": -0.37,
+   "match": true
+  },
+  {
+   "item": "detshift n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "detshift successes",
+   "recount": 75.0,
+   "analysis": 75,
+   "match": true
+  },
+  {
+   "item": "detshift D",
+   "recount": -0.02,
+   "analysis": -0.02,
+   "match": true
+  },
+  {
+   "item": "detshift D CI",
+   "recount": [
+    -0.08,
+    0.04
+   ],
+   "analysis": [
+    -0.08,
+    0.04
+   ],
+   "match": true
+  },
+  {
+   "item": "detshift D_v - D_det",
+   "recount": -0.37,
+   "analysis": -0.37,
+   "match": true
+  },
+  {
+   "item": "detnoise n",
+   "recount": 100,
+   "analysis": 100,
+   "match": true
+  },
+  {
+   "item": "detnoise successes",
+   "recount": 32.0,
+   "analysis": 32,
+   "match": true
+  },
+  {
+   "item": "detnoise D",
+   "recount": 0.41,
+   "analysis": 0.41,
+   "match": true
+  },
+  {
+   "item": "detnoise D CI",
+   "recount": [
+    0.31,
+    0.51
+   ],
+   "analysis": [
+    0.31,
+    0.51
+   ],
+   "match": true
+  },
+  {
+   "item": "detnoise D_v - D_det",
+   "recount": 0.06,
+   "analysis": 0.06,
+   "match": true
+  },
+  {
+   "item": "d_bias",
+   "recount": -0.08,
+   "analysis": -0.08,
+   "match": true
+  },
+  {
+   "item": "d_bias CI",
+   "recount": [
+    -0.17,
+    0.01
+   ],
+   "analysis": [
+    -0.17,
+    0.01
+   ],
+   "match": true
+  },
+  {
+   "item": "d_pers",
+   "recount": 0.04,
+   "analysis": 0.04,
+   "match": true
+  },
+  {
+   "item": "d_pers CI",
+   "recount": [
+    -0.03,
+    0.11
+   ],
+   "analysis": [
+    -0.03,
+    0.11
+   ],
+   "match": true
+  }
+ ],
+ "oei_truth_gap": {
+  "dw.6": {
+   "records_missing": 0,
+   "diag_records": 1200
+  }
+ }
+}
