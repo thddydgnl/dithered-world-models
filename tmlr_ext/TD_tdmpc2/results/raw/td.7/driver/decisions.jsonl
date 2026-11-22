@@ -1,0 +1,2 @@
+{"rule": "extend_up", "task": "mw-window-open", "rk": "PC", "variant": "detnoise", "from_k": 3, "D": 0.1777777777777778, "ci": [0.09999999999999998, 0.25555555555555554], "n_pairs": 90, "add_k": 4, "jobs": 18, "time": "2026-11-22T02:38:20Z"}
+{"rule": "extend_up", "task": "mw-window-open", "rk": "PC", "variant": "detnoise", "from_k": 4, "D": 0.1444444444444445, "ci": [0.07777777777777772, 0.2222222222222222], "n_pairs": 90, "add_k": 5, "jobs": 18, "time": "2026-11-22T02:40:00Z"}

@@ -152,3 +152,79 @@
 - K2 결합용: `results/analysis/td_k2_e11_det_minus_detshift.csv`; episode 원자료 `results/analysis/td_episodes.csv`
 - 원자료: `results/raw/td.1/`~`td.6/`(`jobs/{episodes,e13,prep,bias,timing,calib}`, `driver/decisions.jsonl`, `check3_<tag>.json`; 단계 A 자료 `raw/td.5/phaseA/`), td.1 driver 로그 `results/logs_td.1/`
 - 코드: `code/`(실제로 돈 코드 전부)
+
+## 11. [사후] X5: MW det+noise 비트 곡선(D6)
+
+- 설계: DESIGN_tmlr.md §11.1 D6(자료 전 고정, commit 1d73e10; 사용자 승인 "너의 추천대로 해줘"). 기술 보고이며 판정 문턱이 없다.
+- 실행: pod td.7(A40 SECURE, `l9usfc4n7b7evv`). MW 8과제 × det+noise × {PT k1~5, PC k1~3} × 90짝과 none 90짝, E12의 위쪽 확장 규칙(가장 높은 k에서 D > τ = 0.10이면 k = 8까지). episode 6,660개, job 결과 1332개, 모두 NVIDIA A40, (과제, 체크포인트)마다 host 하나(True), seed 불일치 0. 적응 결정 2개(`raw/td.7/driver/decisions.jsonl`).
+- 범위: PT는 E0 파일, PC는 td.5·td.6에서 다시 잰 파일 24개를 그대로 복사(md5 24/24 일치). 코드는 td 본 실행 판(qlib.py md5 `fd1ceb9c…`, det+noise 구현 포함), 대기열만 `plan_x5.py`.
+- 점검: 처음 끝난 none 8 job이 E11(td.5)의 같은 job과 비트 단위로 같았다(아래 재현 표에 전체).
+- 출처: `results/analysis_x5/x5_summary.json`, `x5_kstar.csv`, `x5_curve.csv`, `x5_tables.md`. E12의 k\*는 `results/analysis/td_e12_cells.csv`다. E12 값은 다른 pod(같은 A40)의 결과라 짝이 아니므로 k\* 비교는 기술이다.
+
+### 11.1 k\*(det+noise)와 E12 k\*
+
+| 과제 | 범위 | k\*(det+noise) | E12 k\*: det / det+BC / sh-iter / det+shift | G_noise | noise ≤ sh-iter | noise ≤ min(sh-iter, det+shift) |
+|---|---|---|---|---|---|---|
+| mw-push | PT | 5 | 5 / 5 / 3 / 3 | 0 | 아니오 | 아니오 |
+| mw-pick-place | PT | 4 | 5 / 4 / 4 / 4 | 0 | 예 | 예 |
+| mw-door-open | PT | 5 | 5 / 5 / 2 / 3 | 0 | 아니오 | 아니오 |
+| mw-drawer-open | PT | 1 | 4 / 3 / 1 / 1 | 2 | 예 | 예 |
+| mw-button-press | PT | 3 | 4 / 3 / 1 / 1 | 0 | 아니오 | 아니오 |
+| mw-peg-insert | PT | 4 | 5 / 6 / 3 / 3 | 1 | 아니오 | 아니오 |
+| mw-window-open | PT | 4 | 5 / 5 / 5 / 3 | 1 | 예 | 아니오 |
+| mw-sweep-into | PT | 3 | 4 / 4 / 2 / 2 | 1 | 아니오 | 아니오 |
+| mw-push | PC | 2 | 2 / 2 / 2 / 2 | 0 | 예 | 예 |
+| mw-pick-place | PC | 3 | 4 / 3 / 3 / 2 | 0 | 예 | 아니오 |
+| mw-door-open | PC | 2 | 2 / 4 / 1 / 1 | 0 | 아니오 | 아니오 |
+| mw-drawer-open | PC | 2 | 2 / 2 / 1 / 1 | 0 | 아니오 | 아니오 |
+| mw-button-press | PC | 2 | 2 / 2 / 1 / 1 | 0 | 아니오 | 아니오 |
+| mw-peg-insert | PC | 2 | 3 / 4 / 1 / 1 | 1 | 아니오 | 아니오 |
+| mw-window-open | PC | 5 | 4 / 3 / 3 / 1 | -2 | 아니오 | 아니오 |
+| mw-sweep-into | PC | 2 | 2 / 2 / 1 / 1 | 0 | 아니오 | 아니오 |
+
+| 범위 | 과제 | k\*(noise) ≤ k\*(sh-iter) | k\*(noise) ≤ min(k\*(sh-iter), k\*(det+shift)) | G_noise ≥ 1 |
+|---|---|---|---|---|
+| PT | 8 | 3 | 2 | 4 |
+| PC | 8 | 2 | 1 | 1 |
+
+- k\* = 9는 k = 8까지도 D > τ라는 뜻이다(E12와 같은 정의).
+
+### 11.2 det+noise 비트–하락 곡선 (D [95% CI], 90짝)
+
+| 과제 | PT k: D [CI] | PC k: D [CI] |
+|---|---|---|
+| mw-push | 1: +32.2 [23.3, 42.2]; 2: +24.4 [15.6, 33.3]; 3: +8.9 [3.3, 15.6]; 4: +11.1 [5.6, 17.8]; 5: +0.0 [0.0, 0.0] | 1: +28.9 [20.0, 38.9]; 2: +3.3 [0.0, 7.8]; 3: +0.0 [0.0, 0.0] |
+| mw-pick-place | 1: +68.9 [58.9, 78.9]; 2: +44.4 [34.4, 54.4]; 3: +15.6 [8.9, 23.3]; 4: +10.0 [4.4, 16.7]; 5: +2.2 [0.0, 5.6] | 1: +56.7 [46.7, 66.7]; 2: +17.8 [10.0, 25.6]; 3: +7.8 [2.2, 13.3] |
+| mw-door-open | 1: +12.2 [5.6, 18.9]; 2: +14.4 [7.8, 22.2]; 3: +22.2 [14.4, 31.1]; 4: +13.3 [6.7, 21.1]; 5: +7.8 [3.3, 13.3] | 1: +36.7 [26.7, 46.7]; 2: +7.8 [3.3, 13.3]; 3: +8.9 [3.3, 15.6] |
+| mw-drawer-open | 1: +8.9 [3.3, 15.6]; 2: +10.0 [4.4, 16.7]; 3: +1.1 [0.0, 3.3]; 4: +0.0 [0.0, 0.0]; 5: +0.0 [0.0, 0.0] | 1: +13.3 [6.7, 21.1]; 2: +0.0 [0.0, 0.0]; 3: +0.0 [0.0, 0.0] |
+| mw-button-press | 1: +31.1 [22.2, 41.1]; 2: +41.1 [31.1, 51.1]; 3: +5.6 [1.1, 11.1]; 4: +0.0 [0.0, 0.0]; 5: +0.0 [0.0, 0.0] | 1: +30.0 [21.1, 40.0]; 2: +0.0 [0.0, 0.0]; 3: +0.0 [0.0, 0.0] |
+| mw-peg-insert | 1: +68.9 [58.9, 78.9]; 2: +46.7 [36.7, 56.7]; 3: +32.2 [22.2, 42.2]; 4: +8.9 [3.3, 15.6]; 5: +2.2 [0.0, 5.6] | 1: +28.9 [20.0, 37.8]; 2: +3.3 [0.0, 7.8]; 3: +1.1 [0.0, 3.3] |
+| mw-window-open | 1: +28.9 [20.0, 38.9]; 2: +17.8 [10.0, 25.6]; 3: +20.0 [12.2, 28.9]; 4: +8.9 [3.3, 15.6]; 5: +4.4 [1.1, 8.9] | 1: +13.3 [6.7, 21.1]; 2: +13.3 [6.7, 21.1]; 3: +17.8 [10.0, 25.6]; 4: +14.4 [7.8, 22.2]; 5: +0.0 [0.0, 0.0] |
+| mw-sweep-into | 1: +13.3 [4.4, 22.2]; 2: +42.2 [32.2, 53.3]; 3: +4.4 [-1.1, 11.1]; 4: -3.3 [-7.8, 0.0]; 5: -3.3 [-7.8, 0.0] | 1: +13.3 [4.4, 22.2]; 2: -3.3 [-7.8, 0.0]; 3: -1.1 [-4.4, 2.2] |
+
+### 11.3 E11 재현 점검 (PT 1차 k의 det+noise와 none, 같은 seed, 같은 기종의 다른 pod)
+
+| 과제 | k | D_det+noise X5 [CI] | E11 [CI] | 같은 episode: none | det+noise |
+|---|---|---|---|---|---|
+| mw-push | 3 | +8.9 [3.3, 15.6] | +8.9 [3.3, 15.6] | 90/90 | 90/90 |
+| mw-pick-place | 3 | +15.6 [8.9, 23.3] | +15.6 [8.9, 23.3] | 90/90 | 90/90 |
+| mw-door-open | 4 | +13.3 [6.7, 21.1] | +13.3 [6.7, 21.1] | 90/90 | 90/90 |
+| mw-drawer-open | 3 | +1.1 [0.0, 3.3] | +1.1 [0.0, 3.3] | 90/90 | 90/90 |
+| mw-button-press | 3 | +5.6 [1.1, 11.1] | +5.6 [1.1, 11.1] | 90/90 | 90/90 |
+| mw-peg-insert | 4 | +8.9 [3.3, 15.6] | +8.9 [3.3, 15.6] | 90/90 | 90/90 |
+| mw-window-open | 4 | +8.9 [3.3, 15.6] | +8.9 [3.3, 15.6] | 90/90 | 90/90 |
+| mw-sweep-into | 3 | +4.4 [-1.1, 11.1] | +4.4 [-1.1, 11.1] | 90/90 | 90/90 |
+
+### 11.4 읽기 (기술)
+
+- det+noise는 E11 1차 k에서 MW 8칸을 모두 고쳤지만(같은 칸이 여기서 비트 단위로 재현됨), 비트를 내리면 dither만큼 버티지 못한다. PT에서 k\*(det+noise)가 k\*(sh-iter) 이하인 과제는 3/8(pick-place, drawer-open, window-open), sh-iter와 det+shift 둘 다 이하인 과제는 2/8(pick-place, drawer-open)이다. PC에서는 각각 2/8(push, pick-place), 1/8(push)이다.
+- det 계열 대비 번 비트 G_noise ≥ 1은 PT 4/8(drawer-open 2, peg-insert·window-open·sweep-into 1), PC 1/8(peg-insert)이다. E12의 dither G(PT 7/8, PC 7/8)보다 적다.
+- 곡선이 단조가 아닌 곳이 많다: PT에서 door-open(k = 3에서 +22.2), button-press(k = 2에서 +41.1), sweep-into(k = 2에서 +42.2)는 한 비트 아래보다 나쁘다. window-open PC는 k = 1~4에서 +13.3~+17.8로 τ 위에 머물다 k = 5에서 0이 되어 확장 규칙으로 k = 4·5가 더해졌다(결정 2개, `raw/td.7/driver/decisions.jsonl`).
+- E12의 k\*는 다른 pod(td.5·td.6)의 값이라 짝이 아니다. 다만 같은 기종에서 none 720 episode와 1차 k det+noise 720 episode가 모두 E11과 비트 단위로 같았으므로(11.3), 다른 칸도 같은 코드·seed·기종이면 같은 결과가 나왔을 것으로 본다(확인한 것은 이 칸들뿐).
+
+### 11.5 수치 대조, 비용, 파일
+
+- 원자료(`results/raw/td.7/jobs/episodes/`)에서 점 추정 8개를 순수 Python으로 다시 셌다. 모두 분석과 같다: push PT k3 0.0889, sweep-into PT k2 0.4222, window-open PC k4 0.1444·k5 0.0000, pick-place PC k1 0.5667, door-open PT k3 0.2222, drawer-open PT k1 0.0889, peg-insert PT k4 0.0889(모두 90짝, seed = 100000 + episode).
+- 실행: driver 2026-11-22T02:14:54Z ~ 03:36:50Z(4,916초, job 1,332개 = static 1,296 + 확장 36, 실패 0). 분석 03:37Z(pod 위). 회수: 원격 1,365파일 = 로컬 1,365파일, rsync dry-run 남은 전송 0. `pod_down.sh td.7` 03:38Z, budget.py에서 gone.
+- 비용: td.7 $0.88(budget.py 03:38Z). td 묶음 합 $16.12(상한 $24).
+- 파일: `results/analysis_x5/x5_summary.json`(곡선·k\*·과제 수·재현), `x5_kstar.csv`, `x5_curve.csv`, `x5_tables.md`, `input_td_e12_cells.csv`(E12 입력 사본), `code_md5.txt`; 원자료 `results/raw/td.7/`; driver 로그 `results/logs_td.7/`; 코드 `code/plan_x5.py`(6217b554…), `code/analyze_x5.py`(203b9813…), `code/x5_section.py`(이 절의 표 생성).

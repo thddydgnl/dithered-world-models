@@ -49,3 +49,16 @@
 - 23:38Z 원자료(`raw/td.*/jobs/episodes`)에서 핵심 점 추정 14개를 순수 Python으로 다시 셈: 모두 분석과 같다(REPORT §8).
 - 23:40Z td.1 로그를 `results/logs_td.1/`에 저장, rsync dry-run 남은 전송 0 확인 뒤 `pod_down.sh td.1`(REST 실패 → GraphQL 종료). budget.py에서 td 여섯 모두 gone, td 지출 $15.24.
 - 23:45Z REPORT.md 작성(Write 도구가 막아 Bash heredoc).
+
+## X5 (D6, [사후]): MW det+noise 비트 곡선 — td.7
+
+- 2026-11-22T02:10Z 조정자 X5 지시 수신(DESIGN_tmlr.md §11.1 D6, commit 1d73e10; 사용자 승인 "너의 추천대로 해줘"). §11.1과 WORKER_RULES.md를 다시 읽었다(WORKER_RULES는 고정 판과 같음).
+- 02:05~02:10Z 코드: `plan_x5.py`(md5 6217b554…: none 144 job + det+noise PT k1~5·PC k1~3 1,152 job, E12의 위쪽 확장 규칙), `driver.py`에 설정의 `plan_module` 선택만 더함(05ff35f3…), `make_conf.py`에 td.7 설정(ec891b0d…), 분석 `analyze_x5.py`(203b9813…). episode 경로 코드(qlib fd1ceb9c…, runner 50025f47…, plan_td 0d5a8a70…, tdjobs 22607b64…)는 td 본 실행 판 그대로다. det+noise 구현은 qlib.py의 같은 줄이다.
+- 02:10:20Z `pod_up.sh td.7 "NVIDIA A40"`(TERM_H 8) → REST 확인 실패 뒤 GraphQL로 되찾음. **td.7** id `l9usfc4n7b7evv`, $0.59/h, 생성 02:11:06Z, 자동 종료 10:10:20Z. CPU 할당 7.65코어, GPU 드라이버 595.112.07(td.5와 같음). `rp_gql.py pods atm-` 확인.
+- 02:11~02:14Z setup 165초(체크포인트 SHA256 36개 OK). PC 범위 파일 24개(`results/raw/td.5/prep/`, `raw/td.6/prep/`의 `<task>_s<c>.npz`)를 `out/prep/`로 그대로 복사, md5 24/24 일치. E11 참조(td.5·td.6의 MW none·det+noise job 288개)는 `/workspace/atm/e11ref/`(out 밖), E12 표는 `/workspace/atm/e12/td_e12_cells.csv`.
+- 02:14Z `analyze_x5.py` code-path dry run(E11 참조 자료를 X5 자료 자리에 넣음; 숫자는 E11 1차 k 칸뿐이고 해석하지 않음).
+- 02:14:54Z driver 시작(워커 8, plan_x5). **점검(지시)**: 처음 끝난 none 8 job(mw-push·pick-place s1~s3, door-open s1·s2, chunk 0)이 E11(td.5)의 같은 job과 return·성공·step 수·계측 평균(oei_mean)까지 비트 단위로 같다 → 진행.
+- 03:36:50Z td.7 driver 끝(1,332/1,332, 실패 0; 확장 결정 2개: window-open PC k3 → 4(D 0.178), 4 → 5(D 0.144)). 03:37Z pod 위에서 `analyze_x5.py` → `out/analysis_x5/`.
+- 결과(기술): PT에서 k*(det+noise) ≤ k*(sh-iter) 3/8, ≤ min(sh-iter, det+shift) 2/8, G_noise ≥ 1 4/8; PC 2/8, 1/8, 1/8. E11 재현: 8과제 모두 none 90/90, 1차 k det+noise 90/90 episode가 E11과 비트 단위로 같다.
+- 03:38Z 원자료에서 점 추정 8개를 다시 셈(모두 일치). td.7 로그 저장, 최종 회수(원격 1,365 = 로컬 1,365, dry-run 0) 뒤 `pod_down.sh td.7` → gone. td.7 $0.88, td 합 $16.12.
+- 03:39Z REPORT.md에 "11. [사후] X5" 절을 덧붙였다(Bash).

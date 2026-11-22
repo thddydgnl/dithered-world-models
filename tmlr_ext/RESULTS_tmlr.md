@@ -120,7 +120,7 @@
 | E17 접은 per-channel 대 E12 | 두 pod 독립 bootstrap의 차 | 13/16칸 CI에 0 포함 | `coordinator/e17_pc_vs_e12.py`, `.txt` |
 | DINO-WM(B2, B3 DW 몫, E12 k\*·G, E16) | 다섯 pod의 job JSON에서 직접 계산(작업자의 독립 재계산 recount_dw.py도 233항목 불일치 0) | 일치 | `coordinator/verify_dw.py`, `.txt` |
 
-## 6. 진행 중: [사후] 보강 (편차 D4)
+## 6. [사후] 보강 (편차 D4·D5·D6)
 
 - 사용자 결정(2026-11-22T01:35Z)으로 DINO-WM PushT 3-bit E11 칸을 새 pod dw.6(RTX 4090)에서 더 돈다. none + 8변형 × eval8 100 episode이고 E13은 없다. 예상 약 4.5 h, 약 $4.2다.
 - eval8에서 손상 칸이 Wall 하나뿐이었기 때문이다. 사전 지정 판정은 바꾸지 않고, 결과는 이 절에 [사후] 기술로 덧붙인다.
@@ -150,3 +150,10 @@
   - DINO-WM D(sh-plan) − D(sh-iter)의 CI 상한: PushT +13(판정 밖 칸, 덩어리 CI는 [+1.7, +10.4]), PointMaze +7/+10, Wall +4/+4.
   - 두 계열의 칸별 크기는 겹친다.
 - 이 결과로 CLAIMS v2.1에서 수치 문구를 정밀화했다(CLAIMS §5.2). 판정은 바뀌지 않았다.
+- **X5(D6, 끝)**: MW det+noise 비트 곡선. td.7(A40)에서 02:14~03:37Z에 돌았다. 1,332 job(확장 36 포함), 실패 0, $0.88.
+  - det 계열 대비 번 비트 G_noise ≥ 1: PT 4/8, PC 1/8(dither는 7/8·7/8)
+  - k\*(det+noise) ≤ k\*(sh-iter): PT 3/8, PC 2/8
+  - k\*(det+noise) ≤ 두 dither 모두: PT 2/8, PC 1/8
+  - E11 1차 k 칸이 같은 기종의 다른 pod에서 비트 단위로 재현됐다.
+  - 출처: [TD_tdmpc2/REPORT.md](TD_tdmpc2/REPORT.md) §11, `TD_tdmpc2/results/analysis_x5/`, 조정자 재계산 `coordinator/verify_x5.txt`(일치).
+- **D4(PushT 3-bit)·X17(D5)**: dw.6에서 진행 중이다.

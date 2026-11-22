@@ -111,7 +111,12 @@
     - det+noise가 고친 칸은 MW 8/8(red 0.52~0.92), DMC 1/4(편향으로 분류된 finger만), Wall 0/1(0.07)이다.
     - det+noise의 지속 몫 ρ_p(마지막 반복 집합, E11 12칸)는 0.05~0.23이다. 고정 변형(1.00)보다 훨씬 낮지만, 같은 칸의 새로 뽑는 dither(sh-iter 0.00~0.12, det+shift 0.00~0.11)보다는 높다. 그 차이가 고치는 칸 수의 차이와 관련 있는지는 가르지 않았다.
     - 같은 칸에서 dither는 더 많이 고친다(DMC det+shift 3/4, sh-iter 2/4; Wall 1.00, 1.36). 왜 그런지는 가르지 않았다.
-    - X5(D6)가 같은 비교를 비트 축에서 잰다(MW det+noise의 k\*).
+    - 비트 축(X5, D6, [사후] 기술): 비트를 내리면 det+noise는 dither만큼 버티지 못한다.
+      - det 계열 대비 번 비트 G_noise ≥ 1은 PT 4/8, PC 1/8이다. dither는 7/8·7/8이다.
+      - k\*(det+noise) ≤ k\*(sh-iter)인 과제는 PT 3/8, PC 2/8이다.
+      - det+noise의 곡선은 단조가 아닌 곳이 많다(PT door-open k3 +22.2, button-press k2 +41.1, sweep-into k2 +42.2).
+      - E11 1차 k 칸은 같은 기종의 다른 pod에서 비트 단위로 재현됐다(none·det+noise 각 720 episode).
+      - 출처: `TD_tdmpc2/results/analysis_x5/`, 조정자 재계산 `coordinator/verify_x5.txt`.
 - 한정
   - DMC는 반복 수의 경계다. 기본 반복 6에서 sh-iter가 고친 칸은 2/4다.
     - 반복 12에서는 3/4과제 red ≥ 0.5다(It1).
@@ -219,3 +224,7 @@
   5. [정정, 02:55Z] C4의 ρ_p 비교를 같은 칸 기준으로 바로잡았다. v2는 det+noise(E11 12칸)를 dither 전체 72행의 범위와 견주어 "비슷하다"고 썼다. 같은 E11 칸에서는 dither가 0.00~0.12로 더 낮다. 원고 작업자가 찾았고, 조정자가 원자료로 확인했다
   6. [정정, 02:55Z] PointMaze 합산 구간을 [4, 17]에서 [4, 16]으로, Fr 성립 확률을 "0.995 이상"에서 "0.994 이상"으로 고쳤다. 반올림을 두 번 해서 생긴 차이다
 - Wall "0~2 bit", PointMaze 0, DMC "대부분 0"은 R1·R2와 맞아 그대로 둔다.
+
+### 5.3 [사후] 결과 반영 기록
+
+- 2026-11-22T03:50Z X5(D6): C4의 "새 잡음과 dither의 비교"에 비트 축 결과를 넣었다. det+noise는 G_noise ≥ 1이 PT 4/8·PC 1/8이고, dither는 7/8·7/8이다. 주장의 범위는 그대로다(X5는 C4를 받치려고 돌렸다).

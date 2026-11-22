@@ -1,0 +1,18 @@
+mw-button-press-topdown  PT k*(noise)=3 E12 det/bc/shiter/shift=4/3/1/1 G_noise=0 k1:+0.311 k2:+0.411 k3:+0.056 k4:+0.000 k5:+0.000
+mw-door-open             PT k*(noise)=5 E12 det/bc/shiter/shift=5/5/2/3 G_noise=0 k1:+0.122 k2:+0.144 k3:+0.222 k4:+0.133 k5:+0.078
+mw-drawer-open           PT k*(noise)=1 E12 det/bc/shiter/shift=4/3/1/1 G_noise=2 k1:+0.089 k2:+0.100 k3:+0.011 k4:+0.000 k5:+0.000
+mw-peg-insert-side       PT k*(noise)=4 E12 det/bc/shiter/shift=5/6/3/3 G_noise=1 k1:+0.689 k2:+0.467 k3:+0.322 k4:+0.089 k5:+0.022
+mw-pick-place            PT k*(noise)=4 E12 det/bc/shiter/shift=5/4/4/4 G_noise=0 k1:+0.689 k2:+0.444 k3:+0.156 k4:+0.100 k5:+0.022
+mw-push                  PT k*(noise)=5 E12 det/bc/shiter/shift=5/5/3/3 G_noise=0 k1:+0.322 k2:+0.244 k3:+0.089 k4:+0.111 k5:+0.000
+mw-sweep-into            PT k*(noise)=3 E12 det/bc/shiter/shift=4/4/2/2 G_noise=1 k1:+0.133 k2:+0.422 k3:+0.044 k4:-0.033 k5:-0.033
+mw-window-open           PT k*(noise)=4 E12 det/bc/shiter/shift=5/5/5/3 G_noise=1 k1:+0.289 k2:+0.178 k3:+0.200 k4:+0.089 k5:+0.044
+mw-button-press-topdown  PC k*(noise)=2 E12 det/bc/shiter/shift=2/2/1/1 G_noise=0 k1:+0.300 k2:+0.000 k3:+0.000
+mw-door-open             PC k*(noise)=2 E12 det/bc/shiter/shift=2/4/1/1 G_noise=0 k1:+0.367 k2:+0.078 k3:+0.089
+mw-drawer-open           PC k*(noise)=2 E12 det/bc/shiter/shift=2/2/1/1 G_noise=0 k1:+0.133 k2:+0.000 k3:+0.000
+mw-peg-insert-side       PC k*(noise)=2 E12 det/bc/shiter/shift=3/4/1/1 G_noise=1 k1:+0.289 k2:+0.033 k3:+0.011
+mw-pick-place            PC k*(noise)=3 E12 det/bc/shiter/shift=4/3/3/2 G_noise=0 k1:+0.567 k2:+0.178 k3:+0.078
+mw-push                  PC k*(noise)=2 E12 det/bc/shiter/shift=2/2/2/2 G_noise=0 k1:+0.289 k2:+0.033 k3:+0.000
+mw-sweep-into            PC k*(noise)=2 E12 det/bc/shiter/shift=2/2/1/1 G_noise=0 k1:+0.133 k2:-0.033 k3:-0.011
+mw-window-open           PC k*(noise)=5 E12 det/bc/shiter/shift=4/3/3/1 G_noise=-2 k1:+0.133 k2:+0.133 k3:+0.178 k4:+0.144 k5:+0.000
+PT noise<=sh-iter 3 noise<=min 2 G_noise>=1 4
+PC noise<=sh-iter 2 noise<=min 1 G_noise>=1 1

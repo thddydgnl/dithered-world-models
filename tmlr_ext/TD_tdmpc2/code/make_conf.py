@@ -7,8 +7,12 @@ import plan_td as P
 tag = sys.argv[1]
 w = int(sys.argv[2]) if len(sys.argv) > 2 else 8
 A = "/workspace/atm"
-conf = {"tag": tag, "tasks": P.POD_TASKS[tag.rstrip("bcdefgh")], "workers": w, "out": f"{A}/out", "big": f"{A}/big",
-        "logs": f"{A}/logs", "atm": A}
+if tag.startswith("td.7"):          # X5 (D6): Meta-World det+noise bit curve, plan_x5
+    conf = {"tag": tag, "tasks": P.MW8, "workers": w, "out": f"{A}/out", "big": f"{A}/big", "logs": f"{A}/logs",
+            "atm": A, "plan_module": "plan_x5"}
+else:
+    conf = {"tag": tag, "tasks": P.POD_TASKS[tag.rstrip("bcdefgh")], "workers": w, "out": f"{A}/out",
+            "big": f"{A}/big", "logs": f"{A}/logs", "atm": A}
 json.dump(conf, open(f"{A}/driver_conf.json", "w"), indent=1)
 open(f"{A}/TAG", "w").write(tag + "\n")
 print(json.dumps(conf))

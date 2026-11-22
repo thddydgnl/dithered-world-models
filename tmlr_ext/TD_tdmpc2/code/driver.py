@@ -301,6 +301,10 @@ def main():
     ap.add_argument("--conf", required=True)
     a = ap.parse_args()
     conf = json.load(open(a.conf))
+    global P
+    if conf.get("plan_module"):      # X5 (D6): another job plan with the same job types (default: plan_td)
+        import importlib
+        P = importlib.import_module(conf["plan_module"])
     os.makedirs(conf["logs"], exist_ok=True)
     lockf = open(f"{conf['logs']}/driver.lock", "w")
     try:
