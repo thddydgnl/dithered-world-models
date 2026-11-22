@@ -1,0 +1,5 @@
+N=100 none=0.73 D_det=+0.350 (0.24, 0.45) p=0.0000 reading=resolution
+succ: det=0.38 detbc=0.30 shstep=0.70 detshiftfix=0.71 shiterb=0.28 shiter=0.75 detshift=0.75 detnoise=0.32
+red:  det=0.00 detbc=-0.23 shstep=0.91 detshiftfix=0.94 shiterb=-0.29 shiter=1.06 detshift=1.06 detnoise=-0.17
+d_pers=+0.040 (-0.03, 0.11000000000000001)  d_bias=-0.080 (-0.17000000000000004, 0.010000000000000009)
+shiterb-shiter=+0.470 (0.35, 0.59)  detnoise-det=+0.060 (0.019999999999999962, 0.10999999999999999)  shplan-shiter=+0.050 (-0.03, 0.13)

@@ -156,4 +156,16 @@
   - k\*(det+noise) ≤ 두 dither 모두: PT 2/8, PC 1/8
   - E11 1차 k 칸이 같은 기종의 다른 pod에서 비트 단위로 재현됐다.
   - 출처: [TD_tdmpc2/REPORT.md](TD_tdmpc2/REPORT.md) §11, `TD_tdmpc2/results/analysis_x5/`, 조정자 재계산 `coordinator/verify_x5.txt`(일치).
-- **D4(PushT 3-bit)·X17(D5)**: dw.6에서 진행 중이다.
+- **D4(끝, [사후] PushT 3-bit E11 칸)**: dw.6 eval8 100 episode, 05:53Z 끝, 실패 0.
+  - none 73%, det 38%, D_det +35점 [24, 45](한쪽 p 0.0001; 덩어리 CI [16, 58]). E1 같은 칸 +36점 [27, 45]의 복제다.
+  - 분류는 **해상도**다.
+    - det+BC는 못 고친다(30%, red −0.23).
+    - det+shift-fixed는 고친다(71%, red 0.94).
+    - Δ_pers +4 [−3, 11], Δ_bias −8 [−17, 1].
+  - 변형별 red
+    - 고친 변형: sh-iter 1.06(75%), det+shift 1.06(75%), sh-plan 0.91(70%)
+    - 못 고친 변형: sh-iter+b −0.29(28%; sh-iter보다 +47점 [35, 59] 나쁨), det+noise −0.17(32%; det보다 +6점 [2, 11] 나쁨)
+  - D(sh-plan) − D(sh-iter) +5 [−3, 13].
+  - [사후] Wall(편향)과 합친 DINO-WM 읽기는 혼합이다. det+noise가 고친 칸은 0/2이고, 고정 무편향 변형이 고친 칸은 2/2다. B2·B3·Dg1 판정은 그대로다.
+  - 출처: `DW_dinowm/results/analysis_posthoc/`(작업자, 독립 재계산 44항목 불일치 0), `coordinator/verify_d4.txt`(조정자, 일치).
+- **X17(D5)**: dw.6에서 진행 중이다. eval6 쌍을 다시 만들었고 E1 파일과 sha256이 같다. 07:19Z 끝 예상이다.
