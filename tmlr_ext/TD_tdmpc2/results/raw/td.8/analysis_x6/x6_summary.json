@@ -1,0 +1,635 @@
+{
+ "source": "analyze_x6.py (D7, descriptive)",
+ "meta": {
+  "files": 432,
+  "gpus": {
+   "NVIDIA A40": 432
+  },
+  "seed_mismatch": 0,
+  "pairing_one_host_per_task_ckpt": true
+ },
+ "n_episodes": 2160,
+ "tasks": {
+  "mw-push": {
+   "unit": "mw",
+   "n": 90,
+   "none_mean": 1.0,
+   "policy_mean": 0.9222222222222223,
+   "D_policy": 0.07777777777777772,
+   "D_policy_ci": [
+    0.022222222222222254,
+    0.1333333333333333
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "shiter",
+    "k": 2,
+    "D": 0.0,
+    "D_ci": [
+     0.0,
+     0.0
+    ],
+    "n": 90,
+    "kstar": 2,
+    "mean": 1.0,
+    "ties": [
+     "PC|shiter",
+     "PC|detshift"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "shiter",
+    "k": 2,
+    "D": 0.0,
+    "D_ci": [
+     0.0,
+     0.0
+    ],
+    "n": 90,
+    "kstar": 2,
+    "mean": 1.0,
+    "ties": [
+     "PC|shiter",
+     "PC|detbc",
+     "PC|detshift",
+     "PC|det"
+    ]
+   },
+   "dither_vs_policy": "better"
+  },
+  "mw-pick-place": {
+   "unit": "mw",
+   "n": 90,
+   "none_mean": 1.0,
+   "policy_mean": 0.7666666666666667,
+   "D_policy": 0.23333333333333328,
+   "D_policy_ci": [
+    0.1444444444444445,
+    0.3222222222222222
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 2,
+    "D": 0.1,
+    "D_ci": [
+     0.0444444,
+     0.166667
+    ],
+    "n": 90,
+    "kstar": 2,
+    "mean": 0.9,
+    "ties": [
+     "PC|detshift"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 2,
+    "D": 0.1,
+    "D_ci": [
+     0.0444444,
+     0.166667
+    ],
+    "n": 90,
+    "kstar": 2,
+    "mean": 0.9,
+    "ties": [
+     "PC|detshift"
+    ]
+   },
+   "dither_vs_policy": "same"
+  },
+  "mw-door-open": {
+   "unit": "mw",
+   "n": 90,
+   "none_mean": 1.0,
+   "policy_mean": 0.9888888888888889,
+   "D_policy": 0.011111111111111072,
+   "D_policy_ci": [
+    0.0,
+    0.033333333333333326
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 1,
+    "D": 0.0444444,
+    "D_ci": [
+     0.0111111,
+     0.0888889
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 0.955556,
+    "ties": [
+     "PC|detshift",
+     "PC|shiter"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 1,
+    "D": 0.0444444,
+    "D_ci": [
+     0.0111111,
+     0.0888889
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 0.955556,
+    "ties": [
+     "PC|detshift",
+     "PC|shiter"
+    ]
+   },
+   "dither_vs_policy": "same"
+  },
+  "mw-drawer-open": {
+   "unit": "mw",
+   "n": 90,
+   "none_mean": 1.0,
+   "policy_mean": 1.0,
+   "D_policy": 0.0,
+   "D_policy_ci": [
+    0.0,
+    0.0
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "shiter",
+    "k": 1,
+    "D": 0.0111111,
+    "D_ci": [
+     0.0,
+     0.0333333
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 0.988889,
+    "ties": [
+     "PC|shiter",
+     "PC|detshift",
+     "PT|detshift",
+     "PT|shiter"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "shiter",
+    "k": 1,
+    "D": 0.0111111,
+    "D_ci": [
+     0.0,
+     0.0333333
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 0.988889,
+    "ties": [
+     "PC|shiter",
+     "PC|detshift",
+     "PT|detshift",
+     "PT|shiter"
+    ]
+   },
+   "dither_vs_policy": "same"
+  },
+  "mw-button-press-topdown": {
+   "unit": "mw",
+   "n": 90,
+   "none_mean": 1.0,
+   "policy_mean": 1.0,
+   "D_policy": 0.0,
+   "D_policy_ci": [
+    0.0,
+    0.0
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "shiter",
+    "k": 1,
+    "D": 0.0,
+    "D_ci": [
+     0.0,
+     0.0
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 1.0,
+    "ties": [
+     "PC|shiter",
+     "PC|detshift",
+     "PT|shiter",
+     "PT|detshift"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "shiter",
+    "k": 1,
+    "D": 0.0,
+    "D_ci": [
+     0.0,
+     0.0
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 1.0,
+    "ties": [
+     "PC|shiter",
+     "PC|detshift",
+     "PT|shiter",
+     "PT|detshift"
+    ]
+   },
+   "dither_vs_policy": "same"
+  },
+  "mw-peg-insert-side": {
+   "unit": "mw",
+   "n": 90,
+   "none_mean": 1.0,
+   "policy_mean": 0.9888888888888889,
+   "D_policy": 0.011111111111111072,
+   "D_policy_ci": [
+    0.0,
+    0.033333333333333326
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "shiter",
+    "k": 1,
+    "D": 0.0333333,
+    "D_ci": [
+     0.0,
+     0.0777778
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 0.966667,
+    "ties": [
+     "PC|shiter",
+     "PC|detshift"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "shiter",
+    "k": 1,
+    "D": 0.0333333,
+    "D_ci": [
+     0.0,
+     0.0777778
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 0.966667,
+    "ties": [
+     "PC|shiter",
+     "PC|detshift"
+    ]
+   },
+   "dither_vs_policy": "same"
+  },
+  "mw-window-open": {
+   "unit": "mw",
+   "n": 90,
+   "none_mean": 1.0,
+   "policy_mean": 0.9333333333333333,
+   "D_policy": 0.06666666666666665,
+   "D_policy_ci": [
+    0.022222222222222254,
+    0.12222222222222223
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 1,
+    "D": 0.0777778,
+    "D_ci": [
+     0.0222222,
+     0.133333
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 0.922222,
+    "ties": [
+     "PC|detshift"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 1,
+    "D": 0.0777778,
+    "D_ci": [
+     0.0222222,
+     0.133333
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 0.922222,
+    "ties": [
+     "PC|detshift"
+    ]
+   },
+   "dither_vs_policy": "same"
+  },
+  "mw-sweep-into": {
+   "unit": "mw",
+   "n": 90,
+   "none_mean": 0.9666666666666667,
+   "policy_mean": 0.9777777777777777,
+   "D_policy": -0.011111111111111072,
+   "D_policy_ci": [
+    -0.05555555555555558,
+    0.033333333333333326
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 1,
+    "D": 0.0444444,
+    "D_ci": [
+     -0.0222222,
+     0.111111
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 0.922222,
+    "ties": [
+     "PC|detshift",
+     "PC|shiter"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 1,
+    "D": 0.0444444,
+    "D_ci": [
+     -0.0222222,
+     0.111111
+    ],
+    "n": 90,
+    "kstar": 1,
+    "mean": 0.922222,
+    "ties": [
+     "PC|detshift",
+     "PC|shiter"
+    ]
+   },
+   "dither_vs_policy": "same"
+  },
+  "cheetah-run": {
+   "unit": "dmc",
+   "n": 90,
+   "none_mean": 900.9416718999571,
+   "policy_mean": 418.968224167275,
+   "D_policy": 0.5349663166498548,
+   "D_policy_ci": [
+    0.4942522454780147,
+    0.5754271872570786
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 4,
+    "D": 0.0570991,
+    "D_ci": [
+     0.0451041,
+     0.0697751
+    ],
+    "n": 45,
+    "kstar": 4,
+    "mean": 852.447,
+    "ties": [
+     "PC|detshift"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 4,
+    "D": 0.0570991,
+    "D_ci": [
+     0.0451041,
+     0.0697751
+    ],
+    "n": 45,
+    "kstar": 4,
+    "mean": 852.447,
+    "ties": [
+     "PC|detshift"
+    ]
+   },
+   "dither_vs_policy": "better"
+  },
+  "walker-walk": {
+   "unit": "dmc",
+   "n": 90,
+   "none_mean": 984.6116413903836,
+   "policy_mean": 430.0544522544369,
+   "D_policy": 0.5632242864332265,
+   "D_policy_ci": [
+    0.5233637865463956,
+    0.6033145408899245
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 3,
+    "D": 0.0419177,
+    "D_ci": [
+     0.0297496,
+     0.0552808
+    ],
+    "n": 45,
+    "kstar": 3,
+    "mean": 941.644,
+    "ties": [
+     "PC|detshift",
+     "PC|shiter"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 3,
+    "D": 0.0419177,
+    "D_ci": [
+     0.0297496,
+     0.0552808
+    ],
+    "n": 45,
+    "kstar": 3,
+    "mean": 941.644,
+    "ties": [
+     "PC|detshift",
+     "PC|shiter",
+     "PC|detbc",
+     "PC|det"
+    ]
+   },
+   "dither_vs_policy": "better"
+  },
+  "quadruped-walk": {
+   "unit": "dmc",
+   "n": 90,
+   "none_mean": 971.6614613140516,
+   "policy_mean": 838.84702349792,
+   "D_policy": 0.1366879752918435,
+   "D_policy_ci": [
+    0.11794383270241345,
+    0.15517190493223004
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 3,
+    "D": 0.0185209,
+    "D_ci": [
+     0.0102986,
+     0.0277246
+    ],
+    "n": 45,
+    "kstar": 3,
+    "mean": 953.291,
+    "ties": [
+     "PC|detshift",
+     "PC|shiter"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "det",
+    "k": 3,
+    "D": 0.0162512,
+    "D_ci": [
+     0.00752616,
+     0.0256289
+    ],
+    "n": 45,
+    "kstar": 3,
+    "mean": 955.495,
+    "ties": [
+     "PC|det",
+     "PC|detshift",
+     "PC|shiter",
+     "PC|detbc"
+    ]
+   },
+   "dither_vs_policy": "better"
+  },
+  "finger-turn-hard": {
+   "unit": "dmc",
+   "n": 90,
+   "none_mean": 969.1444444444444,
+   "policy_mean": 908.0555555555555,
+   "D_policy": 0.06303383281932513,
+   "D_policy_ci": [
+    0.008874150998400469,
+    0.12123729416423216
+   ],
+   "none_vs_e11": {
+    "n": 90,
+    "identical": 90
+   },
+   "e12_lowest_dither": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 3,
+    "D": 0.00997187,
+    "D_ci": [
+     -0.0598621,
+     0.0751836
+    ],
+    "n": 45,
+    "kstar": 3,
+    "mean": 946.489,
+    "ties": [
+     "PC|detshift",
+     "PC|shiter"
+    ]
+   },
+   "e12_lowest_any": {
+    "range": "PC",
+    "rounding": "detshift",
+    "k": 3,
+    "D": 0.00997187,
+    "D_ci": [
+     -0.0598621,
+     0.0751836
+    ],
+    "n": 45,
+    "kstar": 3,
+    "mean": 946.489,
+    "ties": [
+     "PC|detshift",
+     "PC|shiter"
+    ]
+   },
+   "dither_vs_policy": "same"
+  }
+ },
+ "counts_dither_vs_policy": {
+  "mw": {
+   "better": 1,
+   "same": 7,
+   "worse": 0
+  },
+  "dmc": {
+   "better": 3,
+   "same": 1,
+   "worse": 0
+  }
+ },
+ "rules": "dither config = smallest E12 k* over (PT, PC) x (sh-iter, det+shift), ties by smaller D at k*, then PT, PC, sh-iter, det+shift; better / worse = disjoint 95% CIs, same = overlapping CIs; E12 values come from other pods (same A40, same seeds): not paired"
+}

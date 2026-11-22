@@ -7,7 +7,10 @@ import plan_td as P
 tag = sys.argv[1]
 w = int(sys.argv[2]) if len(sys.argv) > 2 else 8
 A = "/workspace/atm"
-if tag.startswith("td.7"):          # X5 (D6): Meta-World det+noise bit curve, plan_x5
+if tag.startswith("td.8"):          # X6 (D7): policy-only baseline, 12 tasks, plan_x6
+    conf = {"tag": tag, "tasks": P.MW8 + P.DMC4, "workers": w, "out": f"{A}/out", "big": f"{A}/big",
+            "logs": f"{A}/logs", "atm": A, "plan_module": "plan_x6"}
+elif tag.startswith("td.7"):        # X5 (D6): Meta-World det+noise bit curve, plan_x5
     conf = {"tag": tag, "tasks": P.MW8, "workers": w, "out": f"{A}/out", "big": f"{A}/big", "logs": f"{A}/logs",
             "atm": A, "plan_module": "plan_x5"}
 else:

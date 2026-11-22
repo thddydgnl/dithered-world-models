@@ -105,7 +105,7 @@
     - sh-iter 단독은 PT 6/8, PC 5/8이다(조정자 재계산, `TD_tdmpc2/results/analysis/td_e12_cells.csv`). det+shift 단독은 7/8·7/8이다(R3).
     - 짝 bootstrap에서 Fr1·Fr2가 성립할 확률은 세 기준(나은 쪽, sh-iter 단독, det+shift 단독) 모두 0.994 이상이다(R1, 최솟값은 sh-iter 단독 Fr2의 0.9947). 문턱 τ를 0.05~0.20으로 바꿔도 나은 쪽 기준으로 Fr1 6~8/8, Fr2 5~7/8로 성립한다(R2).
     - 흔들리는 칸: pick-place(P(G≥1) PT 0.41, PC 0.66), window-open(PT 0.74, PC 0.87). Fr2의 pick-place는 D가 정확히 0.100인 경계 칸 하나에 걸려 있다. τ를 "D < 0.10"으로 바꾸면 Fr2가 6/8이 되지만 여전히 성립한다(R2).
-    - MW 6과제에는 1 bit에서 손상 10점 이하인 구성이 있다(모두 dither 구성).
+    - MW 6과제에는 1 bit에서 손상 10점 이하인 구성이 있다. E12의 네 반올림(det, det+BC, sh-iter, det+shift) 가운데서는 모두 dither 구성이다. [사후] X5의 det+noise도 drawer-open per-tensor에서 k\* = 1이다(2 bit의 D가 정확히 10.0점인 경계값에 기댐; `TD_tdmpc2/results/analysis_x5/x5_summary.json`).
   - DINO-WM의 G
     - PushT: 1 bit 이상은 세 범위 모두 튼튼하다(P(G≥1) PT 0.999, PC 0.999, RC 0.977). 2 bit는 PT만 튼튼하다(P(G≥2) PT 0.985, PC 0.593, RC 0.805; R1). 그래서 "PT 2 bit, PC·RC 1~2 bit"로 쓴다
     - Wall 0~2. 경계값이다: det+BC k3 +12점 [1, 23]이 문턱 10점을 2점 넘어 k\*(det+BC) = 4가 됐다.
@@ -129,6 +129,10 @@
   - DMC의 G는 대부분 0이다(PT 0·0·0·1, PC 1·0·0·1).
   - 반복을 늘리면 결정당 계획 시간이 늘어난다(cheetah 반복 6 → 24에 30 → 124 ms).
   - "지연 2%"(C7)는 sh-iter의 값이다. "7/8"과 한 방법의 수치처럼 묶어 쓰지 않는다.
+  - [사후] 정책 기준선(X6, D7): 계획 없이 FP32 정책 π만 쓰면 MW는 none에 가깝다. 하락은 drawer-open·button-press 0, door-open·peg-insert +1.1점, sweep-into −1.1점, window-open +6.7점, push +7.8점, pick-place +23.3점이다.
+    - 그래서 MW의 낮은 비트 결과("1 bit에서도 쓸 수 있다")는 계획기가 정책 수준을 망치지 않는다는 뜻에 가깝다. 가장 낮은 dither 구성 대 정책은 낫다 1·같다 7·못하다 0이다. 다만 이 개수는 같은 k*에 묶인 구성을 고르는 규칙에 따라 달라진다.
+    - DMC에서는 정책만 쓰면 return이 크게 준다(cheetah +53.5%, walker +56.3%, quadruped +13.7%, finger +6.3%). 낮은 비트 dither 계획기(PC k = 3~4)는 3/4과제에서 정책보다 낫고 finger에서는 같다.
+    - 출처: `TD_tdmpc2/REPORT.md` §12, `TD_tdmpc2/results/analysis_x6/`.
 
 **C5 진단 (E13): 기전과 맞는 요약 통계**
 - 주장: TD-MPC2에서는 같은 비트 안의 반올림 방식 사이 손상 차이가 잠재 1-step 예측 오차로 보이지 않는다. 계획기가 보는 후보 return 오차의 지속 몫과 상대 크기(ρ_p × σ_e/σ_J)와는 맞는다.
@@ -246,3 +250,5 @@
 - 2026-11-22T07:25Z dw 작업자 최종 보고(D4·X17, dw.6 07:15:10Z 삭제)를 반영했다.
   - C2 한정에 PushT의 b 문제를 덧붙였다. D2 규칙의 b는 PushT에서 해롭다.
   - 합친 DINO-WM 읽기([사후] mixed)는 사전 지정 B2(Wall 한 칸, 성립)와 따로 적는다. 주장 문구는 v2.1대로 "지속 지배가 아니다"다.
+- 2026-11-22T08:45Z 그림 작업자가 찾은 충돌을 반영했다. C4의 "1 bit 구성은 모두 dither"를 "E12의 네 반올림 가운데서는"으로 한정했고, X5의 det+noise 예외(drawer-open PT, 경계값)를 밝혔다.
+- 2026-11-22T10:02Z X6(D7, 정책 기준선): C4 한정에 결과를 넣었다. MW에서는 정책만으로도 none에 가까워 낮은 비트 결과의 의미를 좁혀 쓴다. DMC에서는 낮은 비트 dither 계획기가 정책보다 낫다(3/4). 조정자 재계산(td.8 원자료의 D_policy 12개)이 작업자 값과 같다.

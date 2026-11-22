@@ -21,6 +21,9 @@ Job types
   qat_train per (task, ckpt, k): E5 QAT of the dynamics and reward MLPs (e5lib.qat_train)
 Usage: python runner.py --manifest m.jsonl --out <dir> --workers 16 [--types episodes] [--limit 0] [--dry]
 
+X6 addition (2026-11-22, DESIGN_tmlr 11.1 D7): an episode job with "mpc": false runs TD-MPC2's mpc=False path
+(agent.act -> pi(z) mean in eval_mode; restored to mpc=True after the job); nothing else changed.
+
 TMLR copy (tmlr_ext/TD_tdmpc2, 2026-11-21; E1/E9 job code unchanged, DESIGN_tmlr 0.5-0.6):
   - scales "pc": per-channel ranges [min_j, 99.99th pct_j] re-derived on the pod (prep job, <out>/prep/<task>_s<ckpt>.npz)
   - episode jobs of detbc / shiterb load the bias vector b of (task, ckpt, range kind, k) from the same prep file
@@ -204,6 +207,10 @@ def job_episodes(spec, out):
             e7 = E7.install(agent, quant, out, spec)
             restore.append(e7.restore)
             extra["e7"] = e7.info()
+        if spec.get("mpc") is False:      # X6 (D7): TD-MPC2's own mpc=False path, pi's mean action, no planning
+            agent.cfg.mpc = False
+            restore.append(lambda: setattr(agent.cfg, "mpc", True))
+            extra["mpc"] = False
         res = _job_episodes(spec, out, A, spec_q)
         res.update(extra)
         return res

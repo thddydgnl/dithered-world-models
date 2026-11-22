@@ -1,0 +1,235 @@
+{
+ "act_source": [
+  "\t@torch.no_grad()",
+  "\tdef act(self, obs, t0=False, eval_mode=False, task=None):",
+  "\t\t\"\"\"",
+  "\t\tSelect an action by planning in the latent space of the world model.",
+  "",
+  "\t\tArgs:",
+  "\t\t\tobs (torch.Tensor): Observation from the environment.",
+  "\t\t\tt0 (bool): Whether this is the first observation in the episode.",
+  "\t\t\teval_mode (bool): Whether to use the mean of the action distribution.",
+  "\t\t\ttask (int): Task index (only used for multi-task experiments).",
+  "",
+  "\t\tReturns:",
+  "\t\t\ttorch.Tensor: Action to take in the environment.",
+  "\t\t\"\"\"",
+  "\t\tobs = obs.to(self.device, non_blocking=True).unsqueeze(0)",
+  "\t\tif task is not None:",
+  "\t\t\ttask = torch.tensor([task], device=self.device)",
+  "\t\tif self.cfg.mpc:",
+  "\t\t\treturn self.plan(obs, t0=t0, eval_mode=eval_mode, task=task).cpu()",
+  "\t\tz = self.model.encode(obs, task)",
+  "\t\taction, info = self.model.pi(z, task)",
+  "\t\tif eval_mode:",
+  "\t\t\taction = info[\"mean\"]",
+  "\t\treturn action[0].cpu()"
+ ],
+ "tasks": {
+  "mw-push": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 100,
+   "policy_return": 1811.0337366387248,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "mw-pick-place": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 100,
+   "policy_return": 21.930777411109375,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "mw-door-open": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 100,
+   "policy_return": 1622.6167560815811,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "mw-drawer-open": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 100,
+   "policy_return": 1820.7371640205383,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "mw-button-press-topdown": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 100,
+   "policy_return": 1348.666172258556,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "mw-peg-insert-side": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 100,
+   "policy_return": 1717.5318729858845,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "mw-window-open": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 100,
+   "policy_return": 1249.6768836379051,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "mw-sweep-into": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 100,
+   "policy_return": 1825.0532710552216,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "cheetah-run": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 500,
+   "policy_return": 506.3179840743542,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "walker-walk": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 500,
+   "policy_return": 655.47473345045,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "quadruped-walk": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 500,
+   "policy_return": 828.2756352863798,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  },
+  "finger-turn-hard": {
+   "policy_episode_calls": {
+    "dyn0": 0,
+    "dyn1": 0,
+    "rew0": 0,
+    "rew1": 0
+   },
+   "policy_steps": 500,
+   "policy_return": 765.0,
+   "mpc_3_steps_calls": {
+    "dyn0": 60,
+    "dyn1": 60,
+    "rew0": 54,
+    "rew1": 54
+   },
+   "zero_calls": true
+  }
+ },
+ "all_zero": true
+}

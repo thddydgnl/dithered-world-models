@@ -176,3 +176,8 @@
   - E1과 episode 일치: none 98%, det 95%, sh-iter 96%. 계획 출력(mu_final)은 GPU가 달라 모든 episode에서 다르지만, 성공 여부는 거의 같다.
   - 출처: [DW_dinowm/REPORT.md](DW_dinowm/REPORT.md) §10, `DW_dinowm/results/analysis_posthoc/x17_pusht4_eval6.json`(작업자 독립 재계산 19항목 불일치 0), 조정자 재계산 `coordinator/verify_x17.txt`(일치).
 - dw.6은 07:15:10Z에 지웠다($5.18). **atm pod 0개.** 전체 지출 $57.01(감시선 $77, 사용자 상한 $80).
+- **X6(D7, 끝)**: TD-MPC2 정책 기준선(계획 없이 FP32 π, 세계 모델 호출 0). td.8(A40) 09:30~09:56Z, 432 job, 실패 0, $0.33. none은 E11과 1,080/1,080 episode에서 비트 단위로 같다.
+  - MW 정책 성공률: drawer-open·button-press 1.000, door-open·peg-insert 0.989, sweep-into 0.978(none 0.967), window-open 0.933, push 0.922, pick-place 0.767.
+  - DMC 정책 return 하락: cheetah +53.5%, walker +56.3%, quadruped +13.7%, finger +6.3%.
+  - 가장 낮은 dither 구성 대 정책: MW 낫다 1·같다 7·못하다 0(같은 k*에 묶인 구성을 고르는 규칙에 따라 달라짐), DMC 낫다 3·같다 1.
+  - 출처: [TD_tdmpc2/REPORT.md](TD_tdmpc2/REPORT.md) §12, `TD_tdmpc2/results/analysis_x6/`(작업자 재계산 일치), 조정자 재계산(D_policy 12개 일치).

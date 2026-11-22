@@ -228,3 +228,49 @@
 - 실행: driver 2026-11-22T02:14:54Z ~ 03:36:50Z(4,916초, job 1,332개 = static 1,296 + 확장 36, 실패 0). 분석 03:37Z(pod 위). 회수: 원격 1,365파일 = 로컬 1,365파일, rsync dry-run 남은 전송 0. `pod_down.sh td.7` 03:38Z, budget.py에서 gone.
 - 비용: td.7 $0.88(budget.py 03:38Z). td 묶음 합 $16.12(상한 $24).
 - 파일: `results/analysis_x5/x5_summary.json`(곡선·k\*·과제 수·재현), `x5_kstar.csv`, `x5_curve.csv`, `x5_tables.md`, `input_td_e12_cells.csv`(E12 입력 사본), `code_md5.txt`; 원자료 `results/raw/td.7/`; driver 로그 `results/logs_td.7/`; 코드 `code/plan_x5.py`(6217b554…), `code/analyze_x5.py`(203b9813…), `code/x5_section.py`(이 절의 표 생성).
+
+## 12. [사후] X6: 정책 기준선(D7)
+
+- 설계: DESIGN_tmlr.md §11 D7·§11.1 "D7 — X6"(자료 전 고정, commit 24a59a00; 사용자 승인 "돌려줘"). 기술 보고이며 판정 문턱이 없다.
+- 실행: pod td.8(A40 SECURE, `rqvrq4u986pqia`). E11의 12과제 × 90짝(체크포인트 1~3 × seed 100000~100029) × {none(기본 MPPI, FP32), policy(TD-MPC2의 `mpc=False` 경로: 정책 π의 평균 행동 `info["mean"]`, eval_mode, 계획 없음)}. episode 2,160개, job 결과 432개(none 216 + policy 216, 실패 0), 모두 NVIDIA A40, (과제, 체크포인트)마다 host 하나(True), seed 불일치 0.
+- 코드: td 본 실행 판(qlib.py `fd1ceb9c…`, plan_td.py `0d5a8a70…`, driver.py `05ff35f3…`, tdjobs.py `22607b64…`)에 `runner.py`의 `mpc=False` 선택만 더했다(`3782a3c5…`). 대기열은 `plan_x6.py`(`962cd9c8…`)다.
+- 점검 (1): td.8의 none이 E11(td.1~td.6)의 none과 12과제 1,080/1,080 episode에서 비트 단위로 같다(return·성공). 시작 때 처음 끝난 none 8 job으로 먼저 확인했고, 끝난 뒤 전체를 다시 맞췄다.
+- 점검 (2): policy 경로에서 dynamics·reward 층(dyn0·dyn1·rew0·rew1)의 forward 호출이 12과제 모두 0이다(과제마다 체크포인트 1, seed 100000의 한 episode, MW 100 step·DMC 500 step). 같은 훅으로 센 MPPI 3 step은 dyn0 60·dyn1 60·rew0 54·rew1 54회다. `TDMPC2.act` 원문도 남겼다(`if self.cfg.mpc:`이면 `plan`, 아니면 `self.model.pi(z, task)`, eval_mode에서 `info["mean"]`).
+- 비교 규칙(자료 전에 정함): E12에서 dither 구성(PT·PC × sh-iter·det+shift) 가운데 k\*가 가장 낮은 것(같으면 k\*에서의 D가 작은 것, 그다음 PT·PC, sh-iter·det+shift 순)의 D와 CI를 쓴다. 두 CI가 겹치지 않으면 "낫다"(dither CI 상한 < policy CI 하한) 또는 "못하다"(dither CI 하한 > policy CI 상한), 겹치면 "같다"로 센다. E12 값은 다른 pod(td.1~td.6, 같은 A40·코드·seed)의 결과라 td.8과 짝이 아니다.
+- 출처: `results/analysis_x6/x6_summary.json`, `x6_cells.csv`, `x6_tables.md`, `check_policy_calls.json`. E12 입력은 `results/analysis/td_e12_cells.csv`(사본 `results/analysis_x6/input_td_e12_cells.csv`, md5 `3fd6f967…` 같음).
+
+### 12.1 과제별 policy와 E12의 가장 낮은 dither 구성 (D [95% CI], none 대비)
+
+| 과제 | none | policy | D_policy [CI] | E12 가장 낮은 dither 구성(k\*) | D [CI] (짝) | dither 대 policy | 참고: 모든 반올림 중 가장 낮은 구성 |
+|---|---|---|---|---|---|---|---|
+| mw-push | 1.000 | 0.922 | +7.8 [2.2, 13.3] | PC sh-iter k = 2 | +0.0 [0.0, 0.0] (90) | 낫다 | PC sh-iter k = 2: +0.0 |
+| mw-pick-place | 1.000 | 0.767 | +23.3 [14.4, 32.2] | PC det+shift k = 2 | +10.0 [4.4, 16.7] (90) | 같다 | PC det+shift k = 2: +10.0 |
+| mw-door-open | 1.000 | 0.989 | +1.1 [0.0, 3.3] | PC det+shift k = 1 | +4.4 [1.1, 8.9] (90) | 같다 | PC det+shift k = 1: +4.4 |
+| mw-drawer-open | 1.000 | 1.000 | +0.0 [0.0, 0.0] | PC sh-iter k = 1 | +1.1 [0.0, 3.3] (90) | 같다 | PC sh-iter k = 1: +1.1 |
+| mw-button-press | 1.000 | 1.000 | +0.0 [0.0, 0.0] | PC sh-iter k = 1 | +0.0 [0.0, 0.0] (90) | 같다 | PC sh-iter k = 1: +0.0 |
+| mw-peg-insert | 1.000 | 0.989 | +1.1 [0.0, 3.3] | PC sh-iter k = 1 | +3.3 [0.0, 7.8] (90) | 같다 | PC sh-iter k = 1: +3.3 |
+| mw-window-open | 1.000 | 0.933 | +6.7 [2.2, 12.2] | PC det+shift k = 1 | +7.8 [2.2, 13.3] (90) | 같다 | PC det+shift k = 1: +7.8 |
+| mw-sweep-into | 0.967 | 0.978 | -1.1 [-5.6, 3.3] | PC det+shift k = 1 | +4.4 [-2.2, 11.1] (90) | 같다 | PC det+shift k = 1: +4.4 |
+| cheetah-run | 900.9 | 419.0 | +53.5 [49.4, 57.5] | PC det+shift k = 4 | +5.7 [4.5, 7.0] (45) | 낫다 | PC det+shift k = 4: +5.7 |
+| walker-walk | 984.6 | 430.1 | +56.3 [52.3, 60.3] | PC det+shift k = 3 | +4.2 [3.0, 5.5] (45) | 낫다 | PC det+shift k = 3: +4.2 |
+| quadruped-walk | 971.7 | 838.8 | +13.7 [11.8, 15.5] | PC det+shift k = 3 | +1.9 [1.0, 2.8] (45) | 낫다 | PC det k = 3: +1.6 |
+| finger-turn-hard | 969.1 | 908.1 | +6.3 [0.9, 12.1] | PC det+shift k = 3 | +1.0 [-6.0, 7.5] (45) | 같다 | PC det+shift k = 3: +1.0 |
+
+- 과제 수(dither 대 policy): MW 낫다 1 · 같다 7 · 못하다 0, DMC 낫다 3 · 같다 1 · 못하다 0.
+- D는 MW 성공률 %p, DMC 상대 return %다(none 대비). none은 td.8의 none(E11과 같음)이다.
+- 이 표에 놓은 E12 DMC 칸은 모두 n = 45다(두 단계 칸; CI는 중간 확인을 보정하지 않은 값, §3). policy와 none은 모든 과제에서 90짝이다.
+
+### 12.2 읽기 (기술)
+
+- 계획 없는 정책(FP32 π)은 MW에서 none에 가깝다: drawer-open·button-press 1.000(D 0), door-open·peg-insert 0.989(+1.1%p), sweep-into 0.978(none 0.967보다 1.1%p 높음), window-open 0.933(+6.7), push 0.922(+7.8), pick-place 0.767(+23.3). D_policy의 CI 하한이 0보다 큰 MW 과제는 push·pick-place·window-open 3개다.
+- DMC에서는 정책만으로 return이 크게 준다: cheetah-run 900.9 → 419.0(+53.5%), walker-walk 984.6 → 430.1(+56.3%), quadruped-walk 971.7 → 838.8(+13.7%), finger-turn-hard 969.1 → 908.1(+6.3%). 네 과제 모두 CI 하한이 0보다 크다.
+- E12의 가장 낮은 dither 구성(모두 PC; MW k = 1~2, DMC k = 3~4)과 견주면: DMC는 cheetah·walker·quadruped 3과제에서 dither 구성이 낫고(예: cheetah +5.7 [4.5, 7.0] 대 +53.5 [49.4, 57.5]), finger는 같다(+1.0 [−6.0, 7.5] 대 +6.3 [0.9, 12.1]). MW는 push 하나만 낫고(PC sh-iter k = 2 +0.0 [0.0, 0.0] 대 +7.8 [2.2, 13.3]), 나머지 7과제는 CI가 겹친다. 그 7과제 가운데 pick-place는 dither 쪽 점 추정이 작고(+10.0 대 +23.3; dither 상한 16.7 > policy 하한 14.4라 겹침), door-open·drawer-open·peg-insert·window-open·sweep-into 5과제는 policy 쪽 점 추정이 작으며, button-press는 둘 다 0이다. "못하다"는 0과제다.
+- 비교의 범위: dither 구성은 dynamics·reward 은닉층(dyn0·dyn1·rew0·rew1)만 k비트로 둔 MPPI이고 encoder·π·Q는 FP32다. policy는 같은 FP32 encoder·π를 계획 없이 쓴다. 따라서 이 표는 "저비트 world model로 계획하기"와 "world model 없이 정책만 쓰기"의 비교이며, 정책 자체의 양자화는 재지 않았다.
+- 추가 확인(자료 전 규칙 밖, 기술): 같은 k\*에 묶인 다른 dither 구성으로 바꿔 보면 DMC 네 과제의 판정은 그대로다(walker PC sh-iter +5.3 [3.8, 6.9]·quadruped PC sh-iter +2.2 [1.5, 3.1]도 낫다; finger PC sh-iter k = 3(90짝) +2.1 [−1.5, 6.1]도 같다). MW는 push에서 PC det+shift k = 2(+3.3 [0.0, 7.8])를 쓰면 "같다"가 되고, drawer-open에서 PT sh-iter k = 1(+4.4 [1.1, 8.9])을 쓰면 "못하다"가 된다(policy +0.0 [0.0, 0.0]). 나머지 MW 묶음은 모두 "같다"다. 그러므로 MW의 "낫다 1"과 "못하다 0"은 묶음 규칙에 기대는 값이다(묶음은 `x6_summary.json`의 `ties`, 값은 `td_e12_cells.csv`).
+
+### 12.3 수치 대조, 비용, 파일
+
+- 원자료(`results/raw/td.8/jobs/episodes/`)에서 점 추정 8개를 numpy 없이 순수 Python으로 다시 셌다. 모두 분석과 같다(D_policy; none·policy 평균도 같음, 90짝, seed = 100000 + episode): push 0.0778, pick-place 0.2333, peg-insert 0.0111, sweep-into −0.0111, cheetah 0.5350, walker 0.5632, quadruped 0.1367, finger 0.0630. none의 E11 비트 동일성도 원래 td.1~td.6 원자료에서 door-open·walker-walk 두 과제를 다시 셌다(90/90, 90/90).
+- 실행: driver 2026-11-22T09:30:00Z ~ 09:56:07Z(1,567초, job 432개, 실패 0). 분석 09:56Z(pod 위). 회수: 원격 out 441파일 = 로컬 441파일, logs 8 = 8, rsync dry-run 남은 전송 0. `pod_down.sh td.8` 09:58:53Z(REST 실패 → GraphQL로 삭제), budget.py에서 gone, `rp_gql.py pods atm-` 빈 목록.
+- 비용: td.8 $0.33(budget.py 09:59Z). td 묶음 합 $16.45(상한 $24).
+- 파일: `results/analysis_x6/x6_summary.json`(과제별 none·policy·D_policy·CI, E12 구성과 묶음, 판정, E11 동일성), `x6_cells.csv`, `x6_tables.md`(`x6_section.py` 출력), `check_policy_calls.json`, `input_td_e12_cells.csv`(E12 입력 사본), `code_md5.txt`; 원자료 `results/raw/td.8/`; driver 로그 `results/logs_td.8/`; 코드 `code/plan_x6.py`(962cd9c8…), `code/analyze_x6.py`(2eed6d41…), `code/check_policy_calls.py`(d41edace…), `code/x6_section.py`(37bc3cdf…, 12.1 표 생성), `code/runner.py`(3782a3c5…, `mpc=False` 선택).

@@ -1,0 +1,20 @@
+{
+ "tag": "td.8",
+ "phase": "done",
+ "done": 432,
+ "total": 432,
+ "gated": 0,
+ "failed": 0,
+ "inflight": 0,
+ "driver": "finished",
+ "eta": "done",
+ "updated": "2026-11-22T09:56:07Z",
+ "pid": 1598,
+ "errors": 0,
+ "ok_session": 432,
+ "cost_remaining_ws": 0,
+ "rate_ws_per_s": 8.807485278794314,
+ "note": "all jobs done",
+ "blocked": 0,
+ "workers": 8
+}

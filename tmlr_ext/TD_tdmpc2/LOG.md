@@ -62,3 +62,15 @@
 - 결과(기술): PT에서 k*(det+noise) ≤ k*(sh-iter) 3/8, ≤ min(sh-iter, det+shift) 2/8, G_noise ≥ 1 4/8; PC 2/8, 1/8, 1/8. E11 재현: 8과제 모두 none 90/90, 1차 k det+noise 90/90 episode가 E11과 비트 단위로 같다.
 - 03:38Z 원자료에서 점 추정 8개를 다시 셈(모두 일치). td.7 로그 저장, 최종 회수(원격 1,365 = 로컬 1,365, dry-run 0) 뒤 `pod_down.sh td.7` → gone. td.7 $0.88, td 합 $16.12.
 - 03:39Z REPORT.md에 "11. [사후] X5" 절을 덧붙였다(Bash).
+
+## X6 (D7, [사후]): TD-MPC2 정책 기준선 — td.8
+
+- 2026-11-22T09:22Z 조정자 X6 지시 수신(DESIGN_tmlr.md §11 D7·§11.1 "D7 — X6", commit 24a59a00; 사용자 승인 "돌려줘"). 그 절을 다시 읽었다.
+- 09:2xZ 코드: `runner.py`에 episode job의 `"mpc": false` 선택(TD-MPC2 자체 mpc=False 경로, job 동안만; md5 3782a3c5…), `plan_x6.py`(962cd9c8…: none은 E11과 같은 spec, policy는 같은 짝), `make_conf.py`에 td.8, 점검 `check_policy_calls.py`, 분석 `analyze_x6.py`(2eed6d41…), 절 생성 `x6_section.py`(37bc3cdf…). qlib.py는 그대로(fd1ceb9c…).
+- 09:25:46Z `pod_up.sh td.8 "NVIDIA A40"`(TERM_H 8) → GraphQL로 되찾음. **td.8** id `rqvrq4u986pqia`, $0.59/h, 생성 09:26:05Z, 자동 종료 17:25:46Z. CPU 할당 7.65코어, 드라이버 595.112.07. setup 151초(체크포인트 SHA256 36개 OK). E11 none 참조 216 job(`raw/td.1`~`td.6`)을 `/workspace/atm/e11ref/`(out 밖), E12 표를 `/workspace/atm/e12/`에 올렸다.
+- 09:29Z **점검(policy 경로)**: `check_policy_calls.py` — 12과제 모두 policy 한 episode(체크포인트 1, seed 100000) 동안 dyn0·dyn1·rew0·rew1 호출 0, 대조로 mpc=True 3 step은 60·60·54·54. TDMPC2.act(332f19e)는 `if self.cfg.mpc: plan(...)`, 아니면 `pi(z)`의 `info["mean"]`(eval_mode)이다(`out/checks/check_policy_calls.json`).
+- 09:30Z driver 시작(워커 8, plan_x6, 432 job). **점검(none)**: 처음 끝난 none 8 job이 E11의 같은 job과 return·성공·step 수까지 비트 단위로 같다 → 진행.
+- 09:56:07Z driver 끝(432/432, 실패 0, 1,567초). 09:56Z pod 위에서 `analyze_x6.py` → `out/analysis_x6/`(x6_summary.json·x6_cells.csv), `x6_section.py` → `x6_tables.md`, `check_policy_calls.json`·E12 입력 사본·code_md5.txt를 같은 곳에 두었다. none 대 E11 none 1,080/1,080 같음. 과제 수(dither 대 policy): MW 낫다 1·같다 7·못하다 0, DMC 낫다 3·같다 1·못하다 0.
+- 09:57Z `pull_all.sh td.8` → `results/raw/td.8/`(441파일), 분석 결과를 `results/analysis_x6/`에 복사, 로그 `results/logs_td.8/`(8파일). 원자료에서 점 추정 8개(D_policy·none·policy 평균)와 none 비트 동일성 2과제(원래 td.1~td.6 원자료 기준)를 순수 Python으로 다시 셈: 모두 일치. 묶인 dither 구성으로 바꾼 추가 확인(규칙 밖, 기술): DMC는 그대로, MW push는 "같다"·drawer-open PT sh-iter는 "못하다"로 바뀔 수 있음(REPORT §12.2).
+- 09:58Z 최종 회수 대조: 원격 out 441 = 로컬 441, logs 8 = 8, rsync dry-run 남은 전송 0. 09:58:53Z `pod_down.sh td.8`(REST NXDOMAIN → GraphQL로 terminate) → budget.py gone, `rp_gql.py pods atm-` 빈 목록. td.8 $0.33, td 합 $16.45(상한 $24).
+- 09:59Z REPORT.md에 "12. [사후] X6: 정책 기준선(D7)" 절을 덧붙였다(Bash).

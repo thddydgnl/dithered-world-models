@@ -1,0 +1,13 @@
+task,unit,n,none_mean,policy_mean,D_policy,ci_lo,ci_hi,dither_range,dither_rounding,dither_k,D_dither,dither_ci_lo,dither_ci_hi,dither_n,dither_vs_policy,any_range,any_rounding,any_k,D_any,none_identical_e11
+mw-push,mw,90,1,0.922222,0.0777778,0.0222222,0.133333,PC,shiter,2,0.0,0.0,0.0,90,better,PC,shiter,2,0.0,90/90
+mw-pick-place,mw,90,1,0.766667,0.233333,0.144444,0.322222,PC,detshift,2,0.1,0.0444444,0.166667,90,same,PC,detshift,2,0.1,90/90
+mw-door-open,mw,90,1,0.988889,0.0111111,0,0.0333333,PC,detshift,1,0.0444444,0.0111111,0.0888889,90,same,PC,detshift,1,0.0444444,90/90
+mw-drawer-open,mw,90,1,1,0,0,0,PC,shiter,1,0.0111111,0.0,0.0333333,90,same,PC,shiter,1,0.0111111,90/90
+mw-button-press-topdown,mw,90,1,1,0,0,0,PC,shiter,1,0.0,0.0,0.0,90,same,PC,shiter,1,0.0,90/90
+mw-peg-insert-side,mw,90,1,0.988889,0.0111111,0,0.0333333,PC,shiter,1,0.0333333,0.0,0.0777778,90,same,PC,shiter,1,0.0333333,90/90
+mw-window-open,mw,90,1,0.933333,0.0666667,0.0222222,0.122222,PC,detshift,1,0.0777778,0.0222222,0.133333,90,same,PC,detshift,1,0.0777778,90/90
+mw-sweep-into,mw,90,0.966667,0.977778,-0.0111111,-0.0555556,0.0333333,PC,detshift,1,0.0444444,-0.0222222,0.111111,90,same,PC,detshift,1,0.0444444,90/90
+cheetah-run,dmc,90,900.942,418.968,0.534966,0.494252,0.575427,PC,detshift,4,0.0570991,0.0451041,0.0697751,45,better,PC,detshift,4,0.0570991,90/90
+walker-walk,dmc,90,984.612,430.054,0.563224,0.523364,0.603315,PC,detshift,3,0.0419177,0.0297496,0.0552808,45,better,PC,detshift,3,0.0419177,90/90
+quadruped-walk,dmc,90,971.661,838.847,0.136688,0.117944,0.155172,PC,detshift,3,0.0185209,0.0102986,0.0277246,45,better,PC,det,3,0.0162512,90/90
+finger-turn-hard,dmc,90,969.144,908.056,0.0630338,0.00887415,0.121237,PC,detshift,3,0.00997187,-0.0598621,0.0751836,45,same,PC,detshift,3,0.00997187,90/90
