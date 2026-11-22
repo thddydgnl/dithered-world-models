@@ -383,14 +383,14 @@ def fig_damage(cells, rep):
     box = lambda left, width: fig.add_axes([left / TEXT_W, bot / H, width / TEXT_W, (top - bot) / H])
     # (a) main stages
     ax = box(0.5, 1.62)
-    damage_scatter(ax, [(c[0], c[3], c[4], False) for c in cells], "(a) main stages (E1, E10)")
+    damage_scatter(ax, [(c[0], c[3], c[4], False) for c in cells], "(a) main benchmark and 317M")
     ax.set_ylabel("damage under sh-iter\n(points or %)")
     wk = [(c[3], c[4]) for c in cells if c[1] == "walker-walk" and c[2] == 3][0]
     ax.annotate("walker k=3", xy=wk, xytext=(3, 88), fontsize=MIN_PT, color=INK2,
                 arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.5, shrinkB=3))
     # (b) replications on new seeds and splits
     bx = box(2.38, 1.62)
-    damage_scatter(bx, [(r[0], r[3], r[4], r[5]) for r in rep], "(b) replications (E11, E14, new split)")
+    damage_scatter(bx, [(r[0], r[3], r[4], r[5]) for r in rep], "(b) replications on new seeds and split")
     wk = [(r[3], r[4]) for r in rep if r[1] == "walker-walk"][0]
     bx.annotate("walker", xy=wk, xytext=(3, 88), fontsize=MIN_PT, color=INK2,
                 arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.5, shrinkB=3))
@@ -415,14 +415,14 @@ def fig_damage(cells, rep):
     cx.text(0.27, -34, "det error ≤ sh-iter", fontsize=MIN_PT, color=INK2, va="bottom")
     # direct labels of the two kinds of error measurement, in empty corners (upper left, lower right)
     assert not [c for c in cells if c[5] / c[6] < 0.55 and c[3] - c[4] > 75]
-    cx.text(0.265, 104, "E10 (317M):\nheld-out states", fontsize=MIN_PT, color=C_E10, ha="left", va="top",
+    cx.text(0.265, 104, "317M:\nheld-out states", fontsize=MIN_PT, color=C_E10, ha="left", va="top",
             linespacing=1.05)
     assert not [c for c in cells if c[5] / c[6] > 1.1 and c[3] - c[4] < 0]
-    cx.text(3.1, -34, "E1: each variant's\nown planning states", fontsize=MIN_PT, color=C_SHITER, ha="right",
+    cx.text(3.1, -34, "5M and DINO-WM:\nown planning states", fontsize=MIN_PT, color=C_SHITER, ha="right",
             va="bottom", linespacing=1.05)
     cx.set_xlabel("latent 1-step error, det / sh-iter")
     cx.set_ylabel("extra damage of det\n(points or %)")
-    cx.set_title("(c) extra damage against error ratio (E1, E10)", loc="left", pad=3)
+    cx.set_title("(c) extra damage against error ratio", loc="left", pad=3)
     tidy(cx)
     handles = [Line2D([], [], ls="none", marker=m, ms=math.sqrt(s) * 1.05, mfc=C_SHITER, mec="white", mew=0.5,
                       label=fam) for fam, (m, s) in FAMILIES.items()]
@@ -524,7 +524,7 @@ def fig_mechanism(ratios, curves, bits):
     ax.set_ylim(-0.12, 1.5)
     ax.set_yticks([0, 0.5, 1.0, 1.5])
     ax.set_ylabel("drift / drift of det")
-    ax.set_title("(a) drift kept by each variant (E2)", loc="left", pad=3)
+    ax.set_title("(a) drift kept by each variant", loc="left", pad=3)
     tidy(ax)
     ax.grid(axis="x", visible=False)
     # (b) damage vs MPPI iterations, at the primary bit width of each task
@@ -545,7 +545,7 @@ def fig_mechanism(ratios, curves, bits):
         ax.set_xlabel("MPPI iterations")
         if j == 0:
             ax.set_ylabel("damage\n(points or %)")  # success points (Meta-World), % of return (cheetah)
-        ax.set_title(("(b) " if j == 0 else "") + f"{NAME[task]}, {bits[task]} bits" + (" (E2)" if j == 0 else ""),
+        ax.set_title(("(b) " if j == 0 else "") + f"{NAME[task]}, {bits[task]} bits",
                      loc="left", pad=3)
         tidy(ax)
     proxies = [handle("det", label="det (round to nearest)", lw=1.3),
@@ -569,15 +569,15 @@ COMP_GROUPS = [("fixed unbiased error", 0, 1, "repairs if: bias or resolution"),
                ("bias removed", 3, 3, "repairs if: bias"),
                ("redrawn dither", 4, 5, "repairs if: bias, resolution or persistence")]
 RED_LO, RED_HI = -1.0, 1.5
-UNIT_KEY = {"TD-MPC2 5M\nMeta-World (E11)": "mw", "TD-MPC2 5M\nDMC (E11)": "dmc",
-            "TD-MPC2 317M\nMeta-World (E14)": "317m", "DINO-WM\n(new split)": "dw"}
+UNIT_KEY = {"TD-MPC2 5M\nMeta-World": "mw", "TD-MPC2 5M\nDMC": "dmc",
+            "TD-MPC2 317M\nMeta-World": "317m", "DINO-WM\n(new split)": "dw"}
 
 
 def component_units(td, dw, pu3, e14):
     """[(unit label, [(row label, post hoc, {variant: (red, lo, hi)})])] for the damaged cells of each family unit."""
     c = td["E11"]["cells"]
     units = []
-    for unit, tasks, lab in (("mw", MW, "TD-MPC2 5M\nMeta-World (E11)"), ("dmc", DMC, "TD-MPC2 5M\nDMC (E11)")):
+    for unit, tasks, lab in (("mw", MW, "TD-MPC2 5M\nMeta-World"), ("dmc", DMC, "TD-MPC2 5M\nDMC")):
         rws = []
         for t in tasks:
             x = c[t]
@@ -592,7 +592,7 @@ def component_units(td, dw, pu3, e14):
         for v in ("shep", "detbc", "shiter", "detshift"):
             vals[v] = (float(r[f"red_{v}"]), *ci(r[f"red_{v}_ci"]))
         rws.append((NAME[r["task"]], False, vals))
-    units.append(("TD-MPC2 317M\nMeta-World (E14)", rws))
+    units.append(("TD-MPC2 317M\nMeta-World", rws))
     wall = [x for x in dw["E11"]["cells"] if x["damaged"]]
     assert [(x["task"], x["k"]) for x in wall] == [("wall", 3)]
     rws = []
@@ -987,7 +987,7 @@ def fig_iterations(td):
     ax.set_yticks([0, 0.5, 1.0])
     ax.set_xlabel("drift share S = drift / OEI of det")
     ax.set_ylabel("fraction of damage\nremoved by sh-iter")
-    ax.set_title("(a) sh-iter, 12 tasks (E3)", loc="left", pad=3)
+    ax.set_title("(a) sh-iter, 12 tasks", loc="left", pad=3)
     ax.text(0.77, -0.5, f"Spearman {e3['spearman_S_red']:.2f}", fontsize=MIN_PT, color=INK2, ha="right",
             va="bottom")
     tidy(ax)

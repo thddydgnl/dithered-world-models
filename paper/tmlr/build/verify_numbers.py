@@ -153,6 +153,9 @@ wall = [x for x in dwj["E11"]["cells"] if x["task"] == "wall"][0]
 push4 = [x for x in dwj["E11"]["cells"] if x["task"] == "pusht"][0]
 
 wording("E1: sh-iter repairs ALL affected Meta-World cells", v("e1.mw.nfix") == v("e1.mw.naff"))
+_dith = {x: float(v(f"e1.mw.mean.{x}")) for x in ("shiter", "shstep", "ind", "shep")}
+wording("E1: among the dither variants the mean Meta-World drop is lowest under sh-iter and highest under sh-ep",
+        min(_dith, key=_dith.get) == "shiter" and max(_dith, key=_dith.get) == "shep")
 by = {}
 for r in csv.DictReader(open(os.path.join(A, "main/results/E1_tdmpc2/e1_tdmpc2_cells.csv"))):
     by.setdefault((r["task"], int(r["k"]), r["family"]), {})[r["variant"]] = r
@@ -270,7 +273,7 @@ REG = [
     ("three seeds) on 8 Meta-World tasks", "setting", "E1 design (3 checkpoints, 8 MW tasks)"),
     ("and 4 DMC tasks", "setting", "E1 design"),
     ("on the same 8 Meta-World tasks", "setting", "E10 design"),
-    ("tests $k-1$, $k$ and $k+1$: 36 cells for TD-MPC2 at 5M and 9 for DINO-WM", "checked", "E1 cells (computed below)"),
+    ("tests $k-1$, $k$ and $k+1$: 36 cells (one task at one bit width) for TD-MPC2 at 5M and 9 for DINO-WM", "checked", "E1 cells (computed below)"),
     ("(90 pairs per cell for TD-MPC2: three checkpoints $\\times$ 30 seeds, or one 317M checkpoint $\\times$ 90 seeds; 100 for DINO-WM)", "setting", "DESIGN_main 6.1, DESIGN_tmlr 0.3"),
     ("($10^4$ resamples)", "definition", "DESIGN_main 6.1"),
     ("$\\red\\ge0.5$", "definition", "repair rule"),
@@ -370,11 +373,11 @@ REG = [
     ("(int8 weights, 4- or 8-bit activation codes", "setting", "E7 kernel"),
     ("than 16-bit floating point", "label", ""),
     ("on an RTX 5090", "label", "GPU model (E8b)"),
-    ("(E17; medians and 95\\% intervals over paired blocks)", "definition", "interval convention (E17 latency)"),
+    ("(medians and 95\\% intervals over paired blocks)", "definition", "interval convention (E17 latency)"),
     ("within 10 points of the unquantized planner", "definition", "k* threshold"),
     ("$\\tau=10$ points", "definition", "k* threshold"),
     ("The dashed line is $\\red=0.5$", "definition", "repair rule"),
-    ("(E15; 90 paired episodes at 6 and 12 iterations, 60 at 24", "setting", "E15 design"),
+    ("(90 paired episodes at 6 and 12 iterations, 60 at 24", "setting", "E15 design"),
     ("over the 12 TD-MPC2 tasks", "setting", "E3 design"),
     ("of a 317M multi-task TD-MPC2", "label", "model name"),
     ("a borderline case whose damage at 2 bits equals the threshold", "label", "X5 cell (drawer-open, 2 bits)"),

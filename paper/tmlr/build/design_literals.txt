@@ -240,11 +240,11 @@ damages only \nv{e9.nvfp4.ndam} of 12 TD-MPC2 tasks
 ; 90 paired episodes per point)
 to 4-bit weights, activations and key-value cache (W4A4KV4)
 with 8-bit weights and activations (W8A8)
-($10^4$ resamples; $\alpha=0.025$ in the main study, E1--E7, and $0.05$ later)
+($10^4$ resamples; $\alpha=0.025$ in the main benchmark and the experiments planned with it, and $0.05$ later)
 exceeds 5 points
 ($\tau=10$ points; 10\% on DMC)
 above the planned threshold of 0.3
-and also at 3 bits in E12 and at 4 bits in E11
+and also at 3 bits in the bit sweep and at 4 bits on the new split
 points on 7 of the 8 tasks
 because \detbc's damage at 3 bits
 with 8-bit weights and 4-bit activations (W8A4)

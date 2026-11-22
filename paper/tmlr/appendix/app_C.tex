@@ -1,9 +1,9 @@
 % Appendix C -- Experimental Details (body). Sources: main/DESIGN_main.md (0, 4, 7), rss_ext/DESIGN_ext.md (0-3),
 %   tmlr_ext/DESIGN_tmlr.md (0.2-0.6, 1-7, 11); bias-vector counts: td_summary.json, e14_bias.csv, calib_summary_dw.json.
-Table~\ref{tab:setup} lists the stages of the study and their cells.
+Table~\ref{tab:setup} lists the stages of the study, which the main text calls experiments, and their cells.
 
 \begin{table}[h]
-\caption{Stages, models and cells. Seeds of each stage are disjoint from all earlier ones; the seeds, planners and GPUs of each stage are given below.}
+\caption{Stages, models and cells. Seeds of each stage are disjoint from all earlier ones; the seeds, planners and GPUs of each stage are given below. The optional E6 was not run (Appendix~\ref{app:plan}).}
 \label{tab:setup}
 \centering\small
 \setlength{\tabcolsep}{4pt}
@@ -13,6 +13,7 @@ Stage & Question & Models and cells \\
 \midrule
 E1 & damage, repair, offline errors & TD-MPC2 5M: 12 tasks $\times$ 3 bit widths, 7 variants, 90 pairs; DINO-WM: 9 cells (+1 exploratory), 6 variants, 100 pairs \\
 E2, E3 & iterations, candidates, table size, sharing vs.\ persistence & TD-MPC2 mechanism tasks (push, pick-place, cheetah-run) and 12 tasks; DINO-WM PushT \\
+E4 & derivation against simulation & simulated MPPI and CEM planners on a locally quadratic cost, \nv{e4.nruns} runs on CPUs (Appendix~\ref{app:theory}) \\
 E5, E7--E10 & strong post-training baselines, integer kernels, latency, FP4, 317M & TD-MPC2 5M and 317M; DINO-WM \\
 E11 & bias vs.\ resolution vs.\ persistence & TD-MPC2 5M: 12 tasks at the primary $k$, 8 variants, 90 pairs; DINO-WM: PushT 4-bit, PointMaze 3-bit, Wall 3-bit, new split, 100 pairs \\
 E12 & smallest usable bit width & TD-MPC2 5M 12 tasks and DINO-WM 3 tasks; per-tensor, per-channel and (PushT) rollout-chosen ranges \\
