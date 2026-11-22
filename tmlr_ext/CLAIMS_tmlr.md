@@ -4,6 +4,8 @@
   - v1: 2026-11-22T01:30Z 작성, 01:35Z 사용자 승인(§5)
   - v2: 02:15Z. 독립 판단([JUDGE_write_vs_more_2026-11-22.md](JUDGE_write_vs_more_2026-11-22.md) §3)이 지적한 문구 7건을 고쳤다. 사용자 승인은 02:07Z다(§5.1)
   - v2.1: 02:40Z. 재분석 R1~R5(`coordinator/reanalysis/`)의 결과로 수치 문구를 정밀화했다(§5.2). 판정과 주장은 바뀌지 않았다
+  - v2.3: 11:23Z. 문장·문체 검토(Opus 5.5 max)가 제안한 한 줄 주장의 문구 다듬기 4건을 넣었다. 뜻은 그대로이고 사용자 승인이 있었다(§5.5)
+  - v2.2: 10:40Z. 정책 기준선 X6 결과에 맞춰 한 줄 주장의 비트 문장에 단서를 달았다. 사용자 승인이 있었다(§5.4)
 - 판정 전체는 [RESULTS_tmlr.md](RESULTS_tmlr.md)에 있다.
 - 주장 변경은 사용자 승인으로만 한다(DESIGN_tmlr §8.6). 이 문구로 TMLR 원고를 쓰고, 원고를 고친 뒤 arXiv v2를 올린다.
 - 바탕
@@ -30,7 +32,7 @@
   - 설계 §1.5의 쓰임 표에서 B1·B2가 모두 성립한 경우의 처리다("기전을 두 성분으로 쓴다. 제목은 유지한다").
   - 새로움은 PLAN_tmlr §4.9의 ③·④(결정적 반올림 오차의 이용, 반복 사이 지속)의 범위로 쓴다. 일반 명제 ①로 읽히지 않게 한다.
 - 한 줄 주장(영문 초안, v2):
-  > At a fixed bit width, deterministic rounding error damages sampling-based planning in two ways that controlled variants separate: a systematic error that any unbiased randomized rounding removes, whether fixed or redrawn, and an input-determined error field that persists across planner iterations and that the planner exploits. The persistent part dominates in TD-MPC2 at 5M and 317M parameters but not in DINO-WM, and this pattern followed the model family when we swapped the planners' update rules. Dither shared by all candidates and redrawn at every planner iteration repairs most damaged settings and lowers the usable bit width by at least one bit in most Meta-World tasks, even on per-channel grids; its simplest form adds at most about 2% rollout latency in an integer kernel.
+  > At a fixed bit width, deterministic rounding error damages sampling-based planning through two error components that controlled variants separate: a systematic error that any unbiased randomized rounding removes, whether fixed or redrawn, and an input-determined error field that persists across planner iterations and that the planner exploits. The persistent part dominates in TD-MPC2 at 5M and 317M parameters but not in DINO-WM, and this pattern followed the model family when we swapped the planners' update rules. Dither shared by all candidates and redrawn at every planner iteration repairs most damaged settings and lowers the smallest usable bit width by at least one bit in most Meta-World tasks, even on per-channel grids. On Meta-World the policy alone, without planning, nearly matches the unquantized planner, so there the gain means that the low-bit planner does not fall below the policy; on DMC the low-bit dithered planners still beat the policy. Its simplest form adds at most about 2% rollout latency in an integer kernel.
 
 ## 2. 주장 목록
 
@@ -252,3 +254,22 @@
   - 합친 DINO-WM 읽기([사후] mixed)는 사전 지정 B2(Wall 한 칸, 성립)와 따로 적는다. 주장 문구는 v2.1대로 "지속 지배가 아니다"다.
 - 2026-11-22T08:45Z 그림 작업자가 찾은 충돌을 반영했다. C4의 "1 bit 구성은 모두 dither"를 "E12의 네 반올림 가운데서는"으로 한정했고, X5의 det+noise 예외(drawer-open PT, 경계값)를 밝혔다.
 - 2026-11-22T10:02Z X6(D7, 정책 기준선): C4 한정에 결과를 넣었다. MW에서는 정책만으로도 none에 가까워 낮은 비트 결과의 의미를 좁혀 쓴다. DMC에서는 낮은 비트 dither 계획기가 정책보다 낫다(3/4). 조정자 재계산(td.8 원자료의 D_policy 12개)이 작업자 값과 같다.
+
+### 5.4 v2.2 초록 단서 승인 기록 (2026-11-22T10:40Z)
+
+- 배경: 정책 기준선(X6)을 보니 MW에서는 계획 없는 FP32 정책만으로도 계획기와 거의 같다. 그래서 "MW 대부분 과제에서 1 bit 이상 번다"는 초록 문장이 계획의 이득처럼 읽힐 수 있다(원고 작업자 제기).
+- 사용자 답: "단서 추가 (Recommended)". 조정자가 예로 든 문구를 바탕으로 한다.
+- 고친 것: 한 줄 주장(§1)과 원고 초록·결론의 비트 문장 뒤에 넣었다. "On Meta-World the unquantized policy alone nearly matches the planner, so there the gain means that low-bit planning stops hurting; on DMC the low-bit dithered planners still beat the policy."
+- 같은 결정에서 B 원고의 LLM 각주는 그대로 두기로 했다(사용자 답 "B는 그대로").
+
+### 5.5 v2.3 문구 다듬기 승인 기록 (2026-11-22T11:23Z)
+
+- 배경: 문장·문체 독립 검토(`REVIEW_opus_prose_2026-11-22.md` §4)가 승인된 초록 문구에서 문법·정확성 문제 넷을 짚었다. 뜻은 바뀌지 않는다.
+- 사용자 답: "4건 모두 반영 (Recommended)".
+- 고친 것(한 줄 주장 §1과 원고 초록·결론)
+  1. "in two ways that controlled variants separate: a systematic error … and an … error field" → "through two error components that controlled variants separate". ways와 오차 명사가 맞지 않았다.
+  2. "usable bit width" → "smallest usable bit width". 본문 3.4의 정의 용어다.
+  3. "nearly matches the planner" → "nearly matches the unquantized planner".
+  4. "low-bit planning stops hurting" → "the low-bit planner does not fall below the policy". 구어를 피하고 비교 대상을 밝혔다.
+- 같은 결정에서 부록 K의 "Design documents, logs and stage reports are in Korean" 문장은 PDF에서 빼고 보충자료 README에만 두기로 했다(사용자 답 "PDF에서 빼고 README에만"). 이중맹검 단서를 줄이기 위해서다.
+- 원고 작업자가 같은 뜻에서 "unquantized"가 두 번 겹치지 않게 "the policy alone, without planning"으로 썼다. 한 줄 주장도 원고와 같게 맞췄다(정책은 처음부터 FP32다).
