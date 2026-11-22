@@ -2,8 +2,8 @@
 
 - 작성: 2026-11-22T01:27Z(UTC, 한국 시간 10:27), 조정자. 네 묶음(td, mt, k, dw)의 단계 B 보고와 조정자 재계산을 모아 판정을 한곳에 적는다.
 - 기준: [DESIGN_tmlr.md](DESIGN_tmlr.md) v1.0(sha256 `36d69ea8…0cc4`, 2026-11-21T17:59Z 고정)과 고정 뒤 변경 D1~D3(같은 문서 §11). 운영 기록은 [LOG.md](LOG.md), 진행판은 [STATUS.md](STATUS.md).
-- 출처: [TD_tdmpc2/REPORT.md](TD_tdmpc2/REPORT.md), [MT_317m/REPORT.md](MT_317m/REPORT.md), [K_kernel/REPORT.md](K_kernel/REPORT.md), DINO-WM은 분석 출력 [DW_dinowm/results/analysis/tables_dw.md](DW_dinowm/results/analysis/tables_dw.md)·`analysis_dw.json`과 작업자의 독립 재계산 `recount_dw.json`. 조정자 재계산 스크립트와 출력은 [coordinator/](coordinator/).
-- 이 문서는 **판정 기록**이다. 원고의 주장은 조정자의 주장 제안서(CLAIMS_tmlr.md, 승인 전이라 아직 저장소에 올리지 않음)를 사용자가 승인해야 정해진다(DESIGN_tmlr §8.6).
+- 출처: [TD_tdmpc2/REPORT.md](TD_tdmpc2/REPORT.md), [MT_317m/REPORT.md](MT_317m/REPORT.md), [K_kernel/REPORT.md](K_kernel/REPORT.md), [DW_dinowm/REPORT.md](DW_dinowm/REPORT.md)(분석 출력 `results/analysis/tables_dw.md`·`analysis_dw.json`, 작업자의 독립 재계산 `recount_dw.json`). 조정자 재계산 스크립트와 출력은 [coordinator/](coordinator/).
+- 이 문서는 **판정 기록**이다. 원고의 주장은 [CLAIMS_tmlr.md](CLAIMS_tmlr.md)에 있다(2026-11-22T01:35Z 사용자 승인).
 - 표기: D는 같은 짝의 none 대비 하락(MW·DINO-WM 성공률 차, DMC 상대 return 하락). red = (D_det − D_v)/D_det, "고친다"는 red ≥ 0.5. CI는 짝 bootstrap 10,000회 95% 백분위(RandomState(0)).
 
 ## 0. 판정 표
@@ -88,7 +88,7 @@
 | td | E11·E12·E13·E15·E16(TD) | td.1~td.6(A40) | 36,375 + E13 held 1,080 | 0 | $15.24 | [TD_tdmpc2/REPORT.md](TD_tdmpc2/REPORT.md) |
 | mt | E14 | mt.1·mt.2(RTX 4090; A5000 품절) | 4,320 | 0 | $10.29 | [MT_317m/REPORT.md](MT_317m/REPORT.md) |
 | k | E17 | k.1(A40) | 4,680 + 지연 block 240 | 0 | $1.67 | [K_kernel/REPORT.md](K_kernel/REPORT.md) |
-| dw | E11·E12·E13·E16(DW) | dw.1~dw.5(RTX 4090; A5000 품절) | episode-run 9,140 | 0 | $23.75 | [DW_dinowm/results/analysis/tables_dw.md](DW_dinowm/results/analysis/tables_dw.md) |
+| dw | E11·E12·E13·E16(DW) | dw.1~dw.5(RTX 4090; A5000 품절) | episode-run 9,140 | 0 | $23.75 | [DW_dinowm/REPORT.md](DW_dinowm/REPORT.md) |
 
 ## 3. 편차와 운영 사건
 
@@ -115,3 +115,8 @@
 | K2 | td E11 칸과 k 정수 칸의 Δ와 CI를 결합 | 성립(4/4) | LOG 00:14Z |
 | E17 접은 per-channel 대 E12 | 두 pod 독립 bootstrap의 차 | 13/16칸 CI에 0 포함 | `coordinator/e17_pc_vs_e12.py`, `.txt` |
 | DINO-WM(B2, B3 DW 몫, E12 k\*·G, E16) | 다섯 pod의 job JSON에서 직접 계산(작업자의 독립 재계산 recount_dw.py도 233항목 불일치 0) | 일치 | `coordinator/verify_dw.py`, `.txt` |
+
+## 6. 진행 중: [사후] 보강 (편차 D4)
+
+- 사용자 결정(2026-11-22T01:35Z)으로 DINO-WM PushT 3-bit E11 칸을 새 pod dw.6(RTX 4090)에서 더 돈다. none + 8변형 × eval8 100 episode이고 E13은 없다. 예상 약 4.5 h, 약 $4.2다.
+- eval8에서 손상 칸이 Wall 하나뿐이었기 때문이다. 사전 지정 판정은 바꾸지 않고, 결과는 이 절에 [사후] 기술로 덧붙인다.

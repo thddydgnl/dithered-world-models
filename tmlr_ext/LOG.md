@@ -58,3 +58,9 @@
 - 2026-11-22T01:30Z dw 단계 B 보고 받음. 손상 칸은 Wall 3-bit 하나다. B2 성립(편향 지배), B3 DW 몫 성립(0/1), Dg1 DW 불성립(0.262), E12 G는 PushT 2·Wall 2·PointMaze 0, E16 DINO-WM 지속 비용 없음(두 계획기 모두 CI에 0 포함), D2 21칸 모두 α = 1 수렴, D1 덩어리 bootstrap으로도 읽기 같음. 조정자 재계산(coordinator/verify_dw.py)이 E11·Holm·읽기·E12 k*·G·E16에서 일치. 작업자 독립 재계산 233항목 불일치 0.
 - 2026-11-22T01:32Z 종합 결과 RESULTS_tmlr.md를 완성하고, 주장 제안서 CLAIMS_tmlr.md(승인 전, 로컬)를 사용자에게 보냄.
 - 2026-11-22T01:33Z commit 3dad73e push(origin/main). 이 push에 이전 세션들이 올리지 않은 commit 6개(11-01~11-08)와 설계 고정 commit 0e0a61d가 함께 올라감. PLAN_tmlr.md와 CLAIMS_tmlr.md는 올리지 않음.
+- 2026-11-22T01:35Z 사용자 답(원문): "너의 추천대로 해주고". 조정자 추천대로 처리했다.
+  - PushT 3-bit [사후] 칸을 돌린다(편차 D4, DESIGN_tmlr §11).
+  - DINO-WM 작업자 보고서를 저장했다(DW_dinowm/REPORT.md, 작업자 최종 보고의 전문을 그대로 옮기고 저장 경위 한 줄만 더함).
+  - 주장 제안 T1~T6을 추천대로 승인했다(CLAIMS_tmlr.md §5).
+- 2026-11-22T01:35Z caps.json의 dw 상한을 $35에서 $40으로 올림. dw.6 추가 뒤 dw 예상 $28가 80% 선($28)에 닿기 때문이다. 전체 감시 $77은 그대로이고, 감시 스크립트는 caps.json을 주기마다 다시 읽는다.
+- 2026-11-22T01:36Z dw 작업자에게 dw.6(RTX 4090) 지시. 내용은 PushT 3-bit E11 칸(none + 8변형 × 100 episode, 진단 켬, E13 없음), 같은 보정 b(md5 대조), eval8 쌍 sha256 대조, 첫 none job의 dw.1과 비트 일치 확인. 예상 약 4.5 h, 약 $4.2.
