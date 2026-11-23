@@ -232,14 +232,11 @@ v5.3 & 2026-10-24 02:38 &
 Extension design & 2026-10-31 08:46 &
 E8c design & 2026-10-31 15:51 &
 E11--E17 design v1.0 & 2026-11-21 17:59 &
-An 8-bit planner--hardware co-design
 is better in \nv{x6.dmc.better} of the 4 tasks
 (about 210 MB)
 # --- prose review 2026-11-22 (design constants, labels, definitions, notation; no result numbers)
 damages only \nv{e9.nvfp4.ndam} of 12 TD-MPC2 tasks
 ; 90 paired episodes per point)
-to 4-bit weights, activations and key-value cache (W4A4KV4)
-with 8-bit weights and activations (W8A8)
 ($10^4$ resamples; $\alpha=0.025$ in the main benchmark and the experiments planned with it, and $0.05$ later)
 exceeds 5 points
 ($\tau=10$ points; 10\% on DMC)

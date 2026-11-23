@@ -221,5 +221,28 @@
 - 12-16 뒤
   - 익명 7편의 상태를 본다. 채택이면 실명으로 바꾸고, 철회 여부도 본다.
   - `anon2026loopquant` 문장을 OpenReview에서 확인한다. 사람이 확인 화면을 한 번 통과해야 한다.
-- 12월 NeurIPS 2026 논문집이 나오면 `maes2026lewm`, `fastwam2026`, `bhamidipaty2026exploitable`를 대조한다. papers.nips.cc의 2026 쪽은 11-23 기준 404다.
+- 12월 NeurIPS 2026 논문집이 나오면 `bhamidipaty2026exploitable`를 대조한다. papers.nips.cc의 2026 쪽은 11-23 기준 404다. `maes2026lewm`·`fastwam2026`은 6절에서 본문 인용이 빠졌다.
 - DINOv2 TMLR판 PDF의 저자 표기는 더 볼 필요가 없다. DBLP TMLR 기록으로 앞 3명을 확인했고 bib에는 그 3명만 있다.
+
+## 6. 인용 관행 검토 반영 (2026-11-23)
+
+- 근거: Fable 5.2 max 독립 검토(`tmlr_ext/REVIEW_fable_citations_2026-11-23.md`). 판정은 "부분적으로 과함, minor comment 수준"이었다. 사용자가 권장 수정을 모두 반영하라고 했다.
+- **본문 인용에서 빠진 것**: 키는 `refs.bib`에 남아 있지만 인쇄되지 않는다.
+  - `maes2026lewm`, `fastwam2026`: 동시 연구 문단의 2차 인용
+  - `nvidia2026nemotron`: 서론의 곁가지 사실
+  - `anon2026magnitude`
+  - `codesign2026`: 8-bit 공동 설계 문장. ¶1로 옮기지 않았다. 동시 연구이고, ¶1의 주어(VLA·WAM)와 맞지 않는다.
+- **더한 것**: `lambert2020mismatch`. L4DC 2020, PMLR 120:761–770이고, DBLP와 PMLR 페이지로 확인했다. 2절 3문단의 "prediction error averaged over data need not track control performance" 근거다.
+- **익명 인용**: 7편에서 6편이 되었다. 본문의 "Anonymous" 인용은 12회에서 6회가 되었고, 서론에는 하나도 없다.
+- **원문 대조로 고친 사실 표현**
+  - WM-Quant: "close to full precision on LeWM"을 "close to full precision on some tasks"로 바꿨다(초록 "approaching full-precision performance at W4A4").
+  - 부록 C: "re-implements"를 "a simplified form"으로 바꿨다(본문과 같게).
+  - 한계 절: "outlier-aware scaling을 시험하지 않았다"를 "단순화한 형태로만 시험했다(부록 G)"로 바꿨다.
+  - 부록 G: smoothing과 AWQ 비슷한 방식에 인용을 붙였다.
+  - 서론: "scenario-fixed"를 "scenario-based"로 바꿨다(Strens & Moore는 scenario를 바꾼다).
+  - "none changes the rounding rule"을 "none randomizes rounding at inference"로 바꿨다.
+  - 언어 모델 세 편: "in line with our fixed-dither controls"를 지우고 한 문장("give mixed results")으로 줄였다.
+  - Aysal: "converge"로 줄였다.
+  - Orin 문장: 후보 수를 빼고 기준선(PyTorch FP16)을 밝혔다.
+  - 부록 J: "That we are the first…" 항목을 지웠다(서론의 "To our knowledge"와 겹침).
+- **결과**: 본문은 12쪽의 74%(11.74쪽)에서 끝난다. 전에는 99%였다. `build.sh --strict`가 통과했다(등록 문구 376/376, 문구 검사 54/54).
