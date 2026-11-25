@@ -43,6 +43,7 @@
 \defnv{e1.wall3.det.success}{11}% recomputed: main/results/E1/e1_dinowm_cells.csv
 \defnv{e1.wall4.det.above}{14~[4, 24]}% recomputed: main/results/E1/e1_dinowm_cells.csv (det at 4 bits above none)
 \defnv{e1.pusht.none}{83}% recomputed: main/results/E1/e1_dinowm_cells.csv
+\defnv{e1.pm.none}{85}% recomputed: main/results/E1/e1_dinowm_cells.csv
 \defnv{e1.wall3.red.range}{0.92--1.08}% recomputed: main/results/E1/e1_dinowm_cells.csv (four dither variants)
 \defnv{e10.naff}{8}% recomputed: rss_ext/E10_mt317m/results/analysis/e10_eval.csv
 \defnv{e10.nfix}{8}% recomputed: rss_ext/E10_mt317m/results/analysis/e10_eval.csv
@@ -402,6 +403,16 @@
 \defnv{x6.dmc.k}{3--4}% recomputed: tmlr_ext/TD_tdmpc2/results/analysis_x6/x6_summary.json (per-channel ranges)
 \defnv{x6.mw.better}{1}% recomputed: tmlr_ext/TD_tdmpc2/results/analysis_x6/x6_summary.json
 \defnv{x6.mw.same}{7}% recomputed: tmlr_ext/TD_tdmpc2/results/analysis_x6/x6_summary.json
+\defnv{x6.dmc.det.better}{3}% recomputed: tmlr_ext/TD_tdmpc2/results/analysis/td_e12_cells.csv + x6_summary.json (det at its smallest k* over PT and PC; disjoint 95% CIs, the X6 rule)
+\defnv{x6.dmc.det.k}{3--5}% recomputed: tmlr_ext/TD_tdmpc2/results/analysis/td_e12_cells.csv (det k* on DMC)
+\defnv{x6.dmc.dpol.max}{56}% recomputed: tmlr_ext/TD_tdmpc2/results/analysis_x6/x6_summary.json
+\defnv{e13.rho.fresh.dw}{0.16--0.46}% recomputed: tmlr_ext/DW_dinowm/results/analysis/analysis_dw.json E11 cells, E13 last set, sh-iter and det+shift
+\defnv{dw.rho.detnoise}{0.89--0.95}% recomputed: tmlr_ext/DW_dinowm/results/analysis/analysis_dw.json E11 cells, E13 last set, det+noise
+\defnv{e1.mw.nfix.ci}{18}% recomputed: main/results/E1_tdmpc2/e1_tdmpc2_cells.csv (lower end of the 95% interval of red >= 0.5)
+\defnv{e11.b4.n.ci}{6}% recomputed: tmlr_ext/TD_tdmpc2/results/analysis/td_summary.json E11 (lower end of the 95% interval of red >= 0.5)
+\defnv{e11.pers.allckpt}{11}% recomputed: tmlr_ext/TD_tdmpc2/results/analysis/td_episodes.csv (E11 cells; mean det+shift minus det+shift-fixed per checkpoint > 0)
+\defnv{e15.walker.D.det6}{59.3}% recomputed: tmlr_ext/TD_tdmpc2/results/analysis/td_summary.json E15 walker-walk, 6 iterations
+\defnv{e15.walker.D.shiter6}{77.2}% recomputed: tmlr_ext/TD_tdmpc2/results/analysis/td_summary.json E15 walker-walk, 6 iterations
 \defnv{plan.v51.sha}{0cd7633ca932}% recomputed: main/DESIGN_main.md cut before sec. 9 (append-only; prefix in main/worklogs/E1_tdmpc2.md)
 \defnv{plan.tmlr.sha}{1871dafb8298}% recomputed: tmlr_ext/LOG.md (hash logged at the D5/D6 freeze)
 \defnv{plan.tmlr.time}{2026-11-22 02:07}% recomputed: tmlr_ext/LOG.md
@@ -531,6 +542,7 @@
 \defnv{f.c3.pers.cem}{83}% recomputed: e4_comparisons.json C3.cem|persistent
 \defnv{f.c3.pers.mppi}{64}% recomputed: e4_comparisons.json C3.mppi|persistent
 \defnv{f.c4.slope}{0.92--1.02}% recomputed: e4_comparisons.json C4.*.drift_vs_pred (CEM, MPPI)
+\defnv{f.slope.all}{0.92--1.05}% recomputed: e4_comparisons.json C2 (three selection rules) and C4 (CEM, MPPI)
 \defnv{f.c4.r2}{0.986--0.989}% recomputed: e4_comparisons.json C4.*.drift_vs_pred
 \defnv{f.c9.ratio}{1.03}% recomputed: e4_comparisons.json C9.exact_vs_measured
 \defnv{f.c9.r2}{0.985}% recomputed: e4_comparisons.json C9.exact_vs_measured

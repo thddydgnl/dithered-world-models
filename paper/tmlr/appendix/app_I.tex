@@ -118,7 +118,7 @@ Model & Task & Default planner & Swapped planner & $D_{\dtm}$ & $D_{\shiter}$ & 
 \end{tabular}
 \end{table}
 
-\textbf{Offline errors on common states (E13).} Table~\ref{tab:e13} gives, for each damaged E11 cell, the two sides of the planned comparison Dg1 and the offline errors discussed in Section~\ref{sec:offline} and Appendix~\ref{app:mech}. The persistent share $\rho_p$ is 1 for every fixed variant by construction, which is why the summary statistic nearly restates the manipulated variable.
+\textbf{Offline errors on common states (E13).} Table~\ref{tab:e13} gives, for each damaged E11 cell, the two sides of the planned comparison Dg1 and the offline errors discussed in Section~\ref{sec:offline} and Appendix~\ref{app:mech}. The mean within-cell difference of the two Spearman correlations is \nv{dg1.mw} on Meta-World (positive in all cells) and \nv{dg1.dmc} on DMC, above the planned threshold of 0.3, and \nv{dg1.dw} in DINO-WM. The persistent share $\rho_p$ is 1 for every fixed variant by construction, which is why the summary statistic nearly restates the manipulated variable.
 
 \begin{table}[h]
 \caption{E13 on held-out states common to all variants (TD-MPC2: 90 held-out episodes per task; DINO-WM Wall: 120 states). Dg1: within-cell Spearman correlation of the eight variants' damage with $P_1=\rho_p\cdot\sigma_e/\sigma_J$ (last-iteration candidates) and with $P_2$, the latent one-step error (first-iteration candidates), and their difference (threshold 0.3). Errors of \dtm / \shiter on first-iteration candidates; the reward error is the median absolute error over the candidates' reward standard deviation (DINO-WM: the planning cost). $\rho_p$ on last-iteration candidates.}
@@ -238,6 +238,8 @@ Cell & $k$ & none & $D_{\dtm}$ & none & $D_{\dtm}$ & trajectories & none & $D_{\
 \end{tabular}
 \end{table}
 
+\textbf{The Wall baseline.} The unquantized model succeeds in \nv{dw.wall3.none}\% of the new Wall pairs against \nv{e1.wall.none}\% of the original ones (\nv{dw.wall.rerun.none}\% when those are re-run on the same machine). Wall's $\dpers=\nv{dw.wall3.dpers}$ points arises because \detshift succeeds \nv{dw.wall3.detshift.better} points more often than the unquantized model, and round-to-nearest at 4 bits also beats the unquantized planner (by \nv{dw.wall4.det.above} points on the new split and \nv{e1.wall4.det.above} on the original pairs), so the unquantized planner is not an upper bound on Wall and $\red$ can exceed 1.
+
 \textbf{Costs of persistence side by side (R5).} Table~\ref{tab:r5} lists, for every DINO-WM contrast of a fixed against a redrawn dither, its estimate and upper bound, and how many TD-MPC2 cells have a lower bound above that upper bound. The families differ in whether the interval excludes zero, not in the size of every cell: several TD-MPC2 cells have lower bounds below some DINO-WM upper bounds.
 
 \begin{table}[h]
@@ -263,7 +265,7 @@ Figure~\ref{fig:bitspc} shows the Meta-World bit curves with per-channel ranges,
 \label{fig:bitspc}
 \end{figure}
 
-\textbf{Fresh noise on the bit axis (X5).} Table~\ref{tab:x5} sets $k^*$ of \detnoise next to the $k^*$ of E12. The E12 values come from another machine of the same type and are not paired with X5, so the comparison is descriptive.
+\textbf{Fresh noise on the bit axis (X5).} Table~\ref{tab:x5} sets $k^*$ of \detnoise next to the $k^*$ of E12. The E12 values come from another machine of the same type and are not paired with X5, so the comparison is descriptive. The damage of \detnoise is often not monotone in the bit width (per tensor, door-open loses \nv{x5.pt.dooropen3} points at 3 bits but \nv{x5.pt.dooropen2} at 2).
 
 \begin{table}[h]
 \caption{X5 (post hoc): smallest usable bit width of \detnoise on Meta-World next to E12's $k^*$ of \dtm / \detbc / \shiter / \detshift, and the bits that \detnoise gains over the better of \dtm and \detbc ($G_{\mathrm{noise}}$).}

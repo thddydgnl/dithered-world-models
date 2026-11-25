@@ -264,3 +264,6 @@ invariant, $W(\hat J+c\mathbf 1)=W(\hat J)$, as are
 $M$ grew from 1 to 4
 seconds or more (at least 10 calls) and
 {\lambda^2}\Big(1+\frac{2\sigma_I^2}{\lambda^2}\Big)^{-d/2-1}=-2\,\mathbb E[\mathrm{regret}]
+# --- simulated TMLR review 2026-11-25 (definitions: repair threshold of red, red above 1 on Wall)
+interval of $\red$ lies above 0.5 in
+so $\red$ can exceed 1 on Wall

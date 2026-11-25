@@ -179,6 +179,7 @@ def earlier_results():
     assert float(w4["D"]) < 0 and hi4 < 0, w4["D_ci"]
     put("e1.wall4.det.above", pci(-float(w4["D"]), -hi4, -lo4, 0, 100, sign=False), src + " (det at 4 bits above none)")
     put("e1.pusht.none", num(base["pusht"]["success"], 0, scale=100), src)
+    put("e1.pm.none", num(base["pointmaze"]["success"], 0, scale=100), src)
     reds = [float(w3[v]["red"]) for v in ("ind", "shiter", "shstep", "detshift")]
     put("e1.wall3.red.range", rng(min(reds), max(reds), 2), src + " (four dither variants)")
 
@@ -403,6 +404,9 @@ def tmlr_results():
         xs = [e13[t][f"PTk{c[t]['k']}_{var}"]["last"]["rho_p"] for t in c]
         put(f"e13.rho.e11.{var}", rng(min(xs), max(xs), 2), src_td + f" E13 (E11 cells, {var}, last set)")
     dn = [e13[t][f"PTk{c[t]['k']}_detnoise"]["last"]["rho_p"] for t in c]
+    # every E11 cell: det+noise keeps more of the pattern than either redrawn dither (Section 6, "above ... in every cell")
+    assert all(e13[t][f"PTk{c[t]['k']}_detnoise"]["last"]["rho_p"] > max(e13[t][f"PTk{c[t]['k']}_{v}"]["last"]["rho_p"]
+               for v in ("shiter", "detshift")) for t in c)
     assert rng(min(dn), max(dn), 2) == rng(min(rho["detnoise"]), max(rho["detnoise"]), 2)  # det+noise exists only on E11 cells
     h1c = td["E13"]["e1_h1_common_states"]
     put("e13.h1common.n", sum(bool(v["det_le_shiter"]) for v in h1c.values()), src_td + " E13.e1_h1_common_states")
@@ -720,6 +724,75 @@ def x6_values():
     put("x6.dmc.k", rng(min(ks), max(ks), 0), src + " (per-channel ranges)")
     put("x6.mw.better", sum(x["dither_vs_policy"] == "better" for x in mw.values()), src)
     put("x6.mw.same", sum(x["dither_vs_policy"] == "same" for x in mw.values()), src)
+
+
+def review_values():
+    """Values added after the simulated TMLR review of 2026-11-25 (tmlr_ext/REVIEW_fable_panel_2026-11-25.md)."""
+    # DMC: round-to-nearest at its own smallest usable bit width against the policy, with the X6 rule
+    src_x6 = "tmlr_ext/TD_tdmpc2/results/analysis_x6/x6_summary.json"
+    src_e12 = "tmlr_ext/TD_tdmpc2/results/analysis/td_e12_cells.csv"
+    x6 = load(os.path.join(A, src_x6))["tasks"]
+    dmc = {t: x for t, x in x6.items() if x["unit"] != "mw"}
+    rows = list(csv.DictReader(open(os.path.join(A, src_e12))))
+    order = {"PT": 0, "PC": 1}
+    better, ks = 0, []
+    for t, x in dmc.items():
+        cand = [r for r in rows if r["task"] == t and r["rounding"] == "det" and r["k"] == r["kstar"]]
+        assert cand, t
+        r = min(cand, key=lambda r: (int(r["k"]), float(r["D"]), order[r["range"]]))
+        lo, hi = ci_str(r["D_ci"])
+        plo, phi = x["D_policy_ci"]
+        assert not lo > phi, f"det worse than the policy on {t}"
+        better += hi < plo
+        ks.append(int(r["k"]))
+    put("x6.dmc.det.better", better, src_e12 + " + x6_summary.json (det at its smallest k* over PT and PC; disjoint 95% CIs, the X6 rule)")
+    put("x6.dmc.det.k", rng(min(ks), max(ks), 0), src_e12 + " (det k* on DMC)")
+    put("x6.dmc.dpol.max", num(max(x["D_policy"] for x in dmc.values()), 0, scale=100), src_x6)
+    # persistent share on DINO-WM's new split (E13 on E11 cells, last iteration)
+    src_dw = "tmlr_ext/DW_dinowm/results/analysis/analysis_dw.json"
+    cells = [c for c in load(os.path.join(A, src_dw))["E11"]["cells"] if "e13" in c]
+    assert len(cells) == 3
+    fresh = [c["e13"][v]["last"]["rho_p"] for c in cells for v in ("shiter", "detshift")]
+    noise = [c["e13"]["detnoise"]["last"]["rho_p"] for c in cells]
+    put("e13.rho.fresh.dw", rng(min(fresh), max(fresh), 2), src_dw + " E11 cells, E13 last set, sh-iter and det+shift")
+    put("dw.rho.detnoise", rng(min(noise), max(noise), 2), src_dw + " E11 cells, E13 last set, det+noise")
+    # repairs counted by interval, not by point estimate
+    src1 = "main/results/E1_tdmpc2/e1_tdmpc2_cells.csv"
+    by = {}
+    for r in csv.DictReader(open(os.path.join(A, src1))):
+        by.setdefault((r["task"], int(r["k"]), r["family"]), {})[r["variant"]] = r
+    mw1 = [v for k, v in by.items() if k[2] == "mw" and v["det"]["confirmatory"] == "True" and v["det"]["holm_real"] == "True"]
+    put("e1.mw.nfix.ci", sum(ci_str(v["shiter"]["red_ci"])[0] >= 0.5 - TOL for v in mw1), src1 + " (lower end of the 95% interval of red >= 0.5)")
+    src_td = "tmlr_ext/TD_tdmpc2/results/analysis/td_summary.json"
+    td = load(os.path.join(A, src_td))
+    mw11 = [c for c in td["E11"]["cells"].values() if c["unit"] == "mw"]
+    assert len(mw11) == 8
+    put("e11.b4.n.ci", sum(c["variants"]["shiter"]["red_ci"][0] >= 0.5 - TOL for c in mw11), src_td + " E11 (lower end of the 95% interval of red >= 0.5)")
+    # cost of persistence in every checkpoint (det+shift better than det+shift-fixed on the same episodes)
+    src_ep = "tmlr_ext/TD_tdmpc2/results/analysis/td_episodes.csv"
+    want = {}
+    for c in td["E11"]["cells"].values():
+        want[(c["task"], f"PTk{c['k']}_detshift")] = c["task"]
+        want[(c["task"], f"PTk{c['k']}_detshiftfix")] = c["task"]
+    eps = {}
+    for r in csv.DictReader(open(os.path.join(A, src_ep))):
+        if r["ptag"] == "base" and (r["task"], r["cell"]) in want:
+            y = float(r["success"]) if r["task"].startswith("mw") else float(r["ret"])
+            eps.setdefault((r["task"], r["cell"].split("_")[-1]), {})[(r["ckpt"], r["seed"])] = y
+    allpos = 0
+    for c in td["E11"]["cells"].values():
+        ds, dsf = eps[(c["task"], "detshift")], eps[(c["task"], "detshiftfix")]
+        common = sorted(set(ds) & set(dsf))
+        ckpts = sorted({k[0] for k in common})
+        assert len(common) == 90 and len(ckpts) == 3, (c["task"], len(common), ckpts)
+        diffs = [statistics.mean(ds[k] - dsf[k] for k in common if k[0] == ck) for ck in ckpts]
+        allpos += all(d > 0 for d in diffs)
+    put("e11.pers.allckpt", allpos, src_ep + " (E11 cells; mean det+shift minus det+shift-fixed per checkpoint > 0)")
+    # walker on new seeds at the default six iterations (E15)
+    w6 = td["E15"]["tasks"]["walker-walk"]["iterations"]["6"]
+    assert w6["variants"]["shiter"]["harmful"]
+    put("e15.walker.D.det6", num(100 * w6["D_det"], 1), src_td + " E15 walker-walk, 6 iterations")
+    put("e15.walker.D.shiter6", num(100 * w6["variants"]["shiter"]["D"], 1), src_td + " E15 walker-walk, 6 iterations")
 
 
 # ---------------------------------------------------------------------------------------------- post hoc D4, D5 (X17), D6 (X5)
@@ -1112,6 +1185,8 @@ def appendix_values():
     sl = [c4["C4"][p]["drift_vs_pred"]["slope_through_origin"] for p in ("cem|all", "mppi|all")]
     r2 = [c4["C4"][p]["drift_vs_pred"]["R2"] for p in ("cem|all", "mppi|all")]
     put("f.c4.slope", rng(min(sl), max(sl), 2), "e4_comparisons.json C4.*.drift_vs_pred (CEM, MPPI)")
+    sl_all = sl + [c4["C2"][k]["slope_through_origin"] for k in ("cem_elite|all", "cem_argmin_ntc|all", "mppi_same_draw|all")]
+    put("f.slope.all", rng(min(sl_all), max(sl_all), 2), "e4_comparisons.json C2 (three selection rules) and C4 (CEM, MPPI)")
     put("f.c4.r2", rng(min(r2), max(r2), 3), "e4_comparisons.json C4.*.drift_vs_pred")
     c9 = c4["C9"]["exact_vs_measured"]
     put("f.c9.ratio", num(c9["median_ratio_meas_over_exact"], 2), "e4_comparisons.json C9.exact_vs_measured")
@@ -1232,6 +1307,7 @@ def compute():
     reanalysis()
     posthoc()
     x6_values()
+    review_values()
     appendix_values()
     return list(ENTRIES)
 

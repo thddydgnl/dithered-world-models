@@ -256,7 +256,7 @@ def appendix_tables(td, dw, pu3):
         rf"H2a$'^\dagger$ & \dtm's drift $<0$ and drift(\shiter)/drift(\dtm) $<0.5$, in $\ge$3 of 4 tasks & holds: {v('b.h2aprime.n')}/4 (ratio $\le${v('b.h2aprime.rmax')}) \\",
         rf"H2b & OEI ranks the damage better than the one- and three-step errors (mean within-task Spearman difference $\ge$0.15) & fails: TD-MPC2 {v('b.h2b.td')}, DINO-WM {v('b.h2b.dw')} \\",
         rf"H2c & Spearman($N$, $|\mathrm{{OEI}}_{{\dtm}}|$) and Spearman($N$, $D_{{\dtm}}$) $\ge$0.8 with the elite count fixed, in $\ge$3 of 4 tasks & holds: {v('b.h2c.n')}/4 (PushT fails: {v('b.h2c.pusht.oei')} and {v('b.h2c.pusht.d')}) \\",
-        rf"H4a & Spearman(table size of a fixed dither, its damage) $\le-0.8$ in a majority of the qualifying tasks of each family & holds (borderline): TD-MPC2 {v('b.h4a.td')}, DINO-WM {v('b.h4a.dw')}; {v('b.h4a.exact')} tasks exactly at $-0.8$ \\",
+        rf"H4a & Spearman(table size of a fixed dither, its damage) $\le-0.8$ in a majority of the qualifying tasks of each family & holds (borderline; tolerance fix, Appendix~\ref{{app:plan}}): TD-MPC2 {v('b.h4a.td')}, DINO-WM {v('b.h4a.dw')}; {v('b.h4a.exact')} tasks exactly at $-0.8$ \\",
         rf"H4b & Spearman(near-tie density, benefit of sharing) $\ge$0.5 over the 12 TD-MPC2 tasks & fails: {v('b.h4b.rho')} \\",
         rf"DMC rule$^\dagger$ & Spearman(drift share $S$ of \dtm, $\red$ of \shiter) $\ge$0.5 over 12 tasks & holds (``explained''): {v('b.dmc.rho')} \\",
         rf"H3b & on the best post-training quantizer, $D_{{\dtm}}-D_{{\shiter}}$ has a lower bound $>0$ in $\ge$10 of 19 TD-MPC2 cells and in a majority of the DINO-WM cells & TD-MPC2 holds (borderline: {v('b.h3b.td')}); DINO-WM fails ({v('b.h3b.dw')}) \\",

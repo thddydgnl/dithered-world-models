@@ -153,6 +153,10 @@ wall = [x for x in dwj["E11"]["cells"] if x["task"] == "wall"][0]
 push4 = [x for x in dwj["E11"]["cells"] if x["task"] == "pusht"][0]
 
 wording("E1: sh-iter repairs ALL affected Meta-World cells", v("e1.mw.nfix") == v("e1.mw.naff"))
+wording("X6: round-to-nearest at its own k* beats the policy on as many DMC tasks as dither (abstract: with or without dither)",
+        v("x6.dmc.det.better") == v("x6.dmc.better"))
+wording("E12: dither gains at most one bit on DMC (abstract)",
+        max(int(g) for g in (v("e12.dmc.G.pt") + ", " + v("e12.dmc.G.pc")).replace(" and ", ", ").split(", ")) <= 1)
 _dith = {x: float(v(f"e1.mw.mean.{x}")) for x in ("shiter", "shstep", "ind", "shep")}
 wording("E1: among the dither variants the mean Meta-World drop is lowest under sh-iter and highest under sh-ep",
         min(_dith, key=_dith.get) == "shiter" and max(_dith, key=_dith.get) == "shep")
@@ -361,6 +365,7 @@ REG = [
     ("in \\nv{e17.k2.n} of 4 tasks", "setting", "K2 (4 tasks)"),
     ("with 4-bit weights", "label", "cited work (Module-MSE submission)"),
     ("1.36--2.13$\\times$ faster than PyTorch FP16", "label", "cited work (WM-Quant Table 6, Sec. 4.2)"),
+    ("report 86\\%, 74\\% and 80\\% success on PushT, Wall and PointMaze (90--98\\% with replanning)", "label", "cited work (DINO-WM arXiv 2411.04983 Table 8: open-loop CEM and MPC rows; checked 2026-11-25)"),
     ("and 12 tasks; DINO-WM PushT", "setting", "E3 design (12 TD-MPC2 tasks)"),
     ("the 95\\% interval of", "definition", "harmful rule"),
     ("95\\% bootstrap intervals", "definition", ""),
@@ -370,7 +375,6 @@ REG = [
     ("(paired blocks, 10 rounds per condition", "setting", "E17 latency protocol (E8 protocol)"),
     ("repaired PushT at 3 and 4 bits", "label", "E1 cells"),
     ("(int8 weights, 4- or 8-bit activation codes", "setting", "E7 kernel"),
-    ("than 16-bit floating point", "label", ""),
     ("on an RTX 5090", "label", "GPU model (E8b)"),
     ("(medians and 95\\% intervals over paired blocks)", "definition", "interval convention (E17 latency)"),
     ("within 10 points of the unquantized planner", "definition", "k* threshold"),

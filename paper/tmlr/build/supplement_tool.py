@@ -106,6 +106,22 @@ def name_regex(name):
     return r"[\s_-]*".join(parts)
 
 
+def repo_commits():
+    """Full commit IDs of the authors' two public repositories (this one and its sister project). A commit ID in a
+    log or report would lead to the repository, so any hexadecimal token of 7 or more characters that starts one of
+    these IDs is replaced; other hashes (design-document SHA-256 values, file digests, upstream commits) are kept."""
+    import subprocess
+    a_root = os.path.normpath(os.path.join(HERE, "..", "..", ".."))
+    ids = set()
+    for repo in (a_root, os.path.join(os.path.dirname(a_root), "B_near_miss_blindness")):
+        try:
+            out = subprocess.run(["git", "-C", repo, "rev-list", "--all"], capture_output=True, text=True, check=True)
+            ids.update(out.stdout.split())
+        except Exception:
+            pass
+    return ids
+
+
 def build_rules(snapshot):
     """Ordered (label, compiled regex, replacement). Longer and more specific forms first."""
     names, emails, affs = author_terms(snapshot)
@@ -154,6 +170,20 @@ def build_rules(snapshot):
     for rx in private_patterns("venue"):     # further venues, kept in a local git-ignored file
         add("venue", rx, "[venue]")
     add("preprint", r"(arXiv[: ]?)?2611\.11780(v\d+)?|submit/8348128", "[preprint]")
+    add("preprint", r"우리\s*v1\s*\(\s*(?:2026-)?11-09[^)]*\)|(?<![\w-])v1\s*\(\s*(?:2026-)?11-09\s*\)|2026-11-09 02:37 UTC",
+        "[preprint]")
+    # earlier venue plans of this work (the submission venue, TMLR, stays; cited venues such as ICML 2013 or
+    # NeurIPS 2026 papers are not matched because a year of this work's plans is required where the name is common)
+    add("venue", r"(?<![A-Za-z0-9_.])RSS(?![A-Za-z0-9_])", "[venue]", 0)     # upper case only: not the key k.cost.rss
+    # with a year only: CoRL 2019 and the like are cited works (a line naming CoRL next to a planned venue is
+    # emptied anyway by drop_venue_lines)
+    add("venue", r"ICML\s*2027|IROS\s*2027|ICRA\s*2027|NeurIPS\s*2027|CoRL\s*2027|ICLR\s*2027\s*(?:워크숍|workshop)|"
+        r"ICLR\s*WS", "[venue]")
+    ids = repo_commits()
+    if ids:
+        def _commit(m):
+            return "[commit]" if any(i.startswith(m.group(0)) for i in ids) else m.group(0)
+        R.append(("commit ID", re.compile(r"(?<![0-9a-f])[0-9a-f]{7,40}(?![0-9a-f])"), _commit))
     add("other project", r"drivewam|imle[-_ ]?wm", "[other project]")
     return R
 
@@ -190,7 +220,11 @@ def scan_patterns(snapshot):
          ("repository", re.compile(r"thddydgnl|dithered[-_ ]world[-_ ]models|near[-_ ]miss|github\.com/(?!"
                                    + UPSTREAM_GITHUB + r"/)", re.I)),
          ("venue", re.compile("|".join([r"jkaia", r"\bkaia\b", r"인공지능학회"] + private_patterns("scan")), re.I)),
-         ("preprint", re.compile(r"2611\.11780|8348128")),
+         ("preprint", re.compile(r"2611\.11780|8348128|우리\s*v1\s*\(|11-09 02:37")),
+         ("venue plan", re.compile(r"(?<![A-Za-z0-9_.])RSS(?![A-Za-z0-9_])|ICML\s*2027|IROS\s*2027|ICRA\s*2027|"
+                                   r"NeurIPS\s*2027|ICLR\s*2027\s*(?:워크숍|workshop)")),
+         ("commit ID", re.compile(r"(?<![0-9a-f])(?:" + "|".join(sorted({i[:7] for i in repo_commits()}) or ["(?!)"])
+                                  + r")[0-9a-f]{0,33}(?![0-9a-f])")),
          ("other project", re.compile(r"drivewam|imle[-_ ]?wm|physical ai - neural", re.I)),
          ("personal plan", re.compile(r"대학원 지원|인턴 지원|지원서 서사")),
          # a network address: with a port, after ssh/@/://, after the word IP, or in the Tailscale range 100.64/10
@@ -207,7 +241,7 @@ def scan_patterns(snapshot):
 
 # in binary files (compressed streams) short generic patterns match random bytes: there only the specific strings
 # are searched, and e-mail addresses in a strict lower-case form
-BINARY_SKIP = {"IP address", "host name"}
+BINARY_SKIP = {"IP address", "host name", "venue plan"}     # "RSS" occurs in compressed image bytes
 STRICT_EMAIL = re.compile(r"[a-z0-9._%+-]{2,}@[a-z0-9-]{2,}(?:\.[a-z0-9-]{2,})*\.(?:com|org|net|edu|kr|ac\.kr|io|de)\b")
 
 
@@ -583,7 +617,10 @@ TEX_HEADER = "% Anonymized copy of the submission source for the supplementary m
 
 def redact(text, rules, counts):
     for label, rx, rep in rules:
-        text, n = rx.subn(rep, text)
+        new, n = rx.subn(rep, text)
+        if n and callable(rep):
+            n = sum(1 for a, b in zip(rx.findall(text), rx.findall(new)) if a != b) if new != text else 0
+        text = new
         if n:
             counts[label] = counts.get(label, 0) + n
     return text
@@ -605,6 +642,36 @@ def drop_venue_lines(text, counts):
         out.append(line)
     if n:
         counts["lines about other venues emptied"] = n
+    return "\n".join(out)
+
+
+# entries of tmlr_ext/LOG.md about preparing the manuscript (drafting, reviews of the text, translations, the archive
+# copy, pushes, claims wording, references) are not part of the experimental record and are removed from the copy;
+# entries about runs, designs, deviations, recomputations and the authors' decisions on post hoc runs stay
+LOG_CUTOFF = "2026-11-22T10:02Z"      # the last run (X6) ended then; every later entry is about the manuscript
+LOG_DROP_ENTRIES = [r"2026-11-22T01:32Z 종합 결과", r"2026-11-22T01:33Z commit", r"2026-11-22T02:15Z CLAIMS_tmlr",
+                    r"2026-11-22T02:55Z 원고 골격", r"2026-11-22T05:45Z 원고 1쪽", r"2026-11-22T07:45Z 원고 작업자",
+                    r"2026-11-22T07:55Z 사용자 요청", r"2026-11-22T08:00Z 사용자 요청", r"2026-11-22T07:53Z 무렵 참고문헌",
+                    r"2026-11-22T08:0xZ 무렵 그림", r"2026-11-22T08:10Z 무렵 부록", r"2026-11-22T08:43Z 원고 통합",
+                    r"2026-11-22T08:47Z 무렵 Fable", r"2026-11-22T09:12Z Fable", r"2026-11-22T09:24Z \[정정\] 07:55Z",
+                    r"2026-11-22T09:29Z 무렵 검증", r"2026-11-22T09:38Z 참고문헌"]
+LOG_DROP_LINES = [r"^\s+- TMLR 원고 골격:"]
+
+
+def drop_manuscript_log_entries(text, counts):
+    out, drop, n = [], False, 0
+    for line in text.split("\n"):
+        m = re.match(r"^- (2026-\d\d-\d\dT[0-9:x]+Z)", line)
+        if m:
+            drop = m.group(1) > LOG_CUTOFF or any(re.match(r"^- " + p, line) for p in LOG_DROP_ENTRIES)
+            n += drop
+        elif not line.startswith((" ", "\t")) and line.strip():
+            drop = False
+        if drop or any(re.match(p, line) for p in LOG_DROP_LINES):
+            continue
+        out.append(line)
+    if n:
+        counts["log entries about preparing the manuscript removed"] = n
     return "\n".join(out)
 
 
@@ -909,6 +976,8 @@ def cmd_assemble(argv):
             t2 = redact(t1, rules, counts)
             if rel.endswith(".md"):
                 t2 = drop_personal_notes(drop_venue_lines(t2, counts), counts)
+            if rel == "tmlr_ext/LOG.md":
+                t2 = drop_manuscript_log_entries(t2, counts)
             if any(re.search(x, rel) for x in GENERATED_KEEP) and t2 != t:
                 raise SystemExit(f"redaction would change the generated file {rel}: fix the rules or the source")
             new = t2.encode("utf-8")
@@ -1112,9 +1181,11 @@ def write_readme(snapshot, work, pkg, record, traces, hashed_docs, git_src=None)
     L += ["", "## Anonymization", "",
           "Author names, e-mail addresses, institutions, the name of the university server and of the VPN used to "
           "reach it, home-directory paths, host names, repository and account names, other venues of this work and "
-          "the preprint identifier were replaced by bracketed tokens (`[author]`, `[server]`, `[VPN]`, `~`, "
-          "`[workspace]`, `[repository]`, `[venue]`, `[preprint]`, ...), and lines of the logs and reports that "
-          "discuss another venue of this work were emptied. The manuscript copy has no comments and only the "
+          "the preprint identifier and date, and commit IDs of the authors' repositories were replaced by bracketed tokens "
+          "(`[author]`, `[server]`, `[VPN]`, `~`, `[workspace]`, `[repository]`, `[venue]`, `[preprint]`, `[commit]`, "
+          "...), and lines of the logs and reports that discuss another venue of this work were emptied. Entries of "
+          "`tmlr_ext/LOG.md` about preparing the manuscript (drafting, text reviews, translations, pushes) were "
+          "removed; the entries about runs, designs, deviations and recomputations are complete. The manuscript copy has no comments and only the "
           "anonymous branch of its arXiv switch. No number was changed.", ""]
     L += ["**Design-document hashes.** Redacting a document changes its SHA-256 hash, so a redacted copy no longer "
           "has the hash logged when the original was frozen; see the section on design versions below for which "

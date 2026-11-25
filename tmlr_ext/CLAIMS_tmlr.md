@@ -6,6 +6,7 @@
   - v2.1: 02:40Z. 재분석 R1~R5(`coordinator/reanalysis/`)의 결과로 수치 문구를 정밀화했다(§5.2). 판정과 주장은 바뀌지 않았다
   - v2.3: 11:23Z. 문장·문체 검토(Opus 5.5 max)가 제안한 한 줄 주장의 문구 다듬기 4건을 넣었다. 뜻은 그대로이고 사용자 승인이 있었다(§5.5)
   - v2.2: 10:40Z. 정책 기준선 X6 결과에 맞춰 한 줄 주장의 비트 문장에 단서를 달았다. 사용자 승인이 있었다(§5.4)
+  - v2.4: 2026-11-25 (2026-11-25T14:23Z). 모의 TMLR 심사(Fable 5.2 max)에 따라 한 줄 주장의 두 문장을 좁혔다: 계획기 교체의 범위, DMC 정책 비교. 사용자 승인이 있었다(§5.6)
 - 판정 전체는 [RESULTS_tmlr.md](RESULTS_tmlr.md)에 있다.
 - 주장 변경은 사용자 승인으로만 한다(DESIGN_tmlr §8.6). 이 문구로 TMLR 원고를 쓰고, 원고를 고친 뒤 arXiv v2를 올린다.
 - 바탕
@@ -32,7 +33,7 @@
   - 설계 §1.5의 쓰임 표에서 B1·B2가 모두 성립한 경우의 처리다("기전을 두 성분으로 쓴다. 제목은 유지한다").
   - 새로움은 PLAN_tmlr §4.9의 ③·④(결정적 반올림 오차의 이용, 반복 사이 지속)의 범위로 쓴다. 일반 명제 ①로 읽히지 않게 한다.
 - 한 줄 주장(영문 초안, v2):
-  > At a fixed bit width, deterministic rounding error damages sampling-based planning through two error components that controlled variants separate: a systematic error that any unbiased randomized rounding removes, whether fixed or redrawn, and an input-determined error field that persists across planner iterations and that the planner exploits. The persistent part dominates in TD-MPC2 at 5M and 317M parameters but not in DINO-WM, and this pattern followed the model family when we swapped the planners' update rules. Dither shared by all candidates and redrawn at every planner iteration repairs most damaged settings and lowers the smallest usable bit width by at least one bit in most Meta-World tasks, even on per-channel grids. On Meta-World the policy alone, without planning, nearly matches the unquantized planner, so there the gain means that the low-bit planner does not fall below the policy; on DMC the low-bit dithered planners still beat the policy. Its simplest form adds at most about 2% rollout latency in an integer kernel.
+  > At a fixed bit width, deterministic rounding error damages sampling-based planning through two error components that controlled variants separate: a systematic error that any unbiased randomized rounding removes, whether fixed or redrawn, and an input-determined error field that persists across planner iterations and that the planner exploits. The persistent part dominates in TD-MPC2 at 5M and 317M parameters but not in DINO-WM, and this did not change when we swapped the planners' update rules in three TD-MPC2 and two DINO-WM tasks. Dither shared by all candidates and redrawn at every planner iteration repairs most damaged settings and lowers the smallest usable bit width by at least one bit in most Meta-World tasks, even on per-channel grids. On Meta-World the policy alone, without planning, nearly matches the unquantized planner, so there the gain means that the low-bit planner does not fall below the policy; on DMC, where the policy alone loses up to 56% of return, low-bit planners beat it in 3 of 4 tasks with or without dither, and dither gains at most one bit. Its simplest form adds at most about 2% rollout latency in an integer kernel.
 
 ## 2. 주장 목록
 
@@ -273,3 +274,16 @@
   4. "low-bit planning stops hurting" → "the low-bit planner does not fall below the policy". 구어를 피하고 비교 대상을 밝혔다.
 - 같은 결정에서 부록 K의 "Design documents, logs and stage reports are in Korean" 문장은 PDF에서 빼고 보충자료 README에만 두기로 했다(사용자 답 "PDF에서 빼고 README에만"). 이중맹검 단서를 줄이기 위해서다.
 - 원고 작업자가 같은 뜻에서 "unquantized"가 두 번 겹치지 않게 "the policy alone, without planning"으로 썼다. 한 줄 주장도 원고와 같게 맞췄다(정책은 처음부터 FP32다).
+
+### 5.6 v2.4 범위 좁히기 승인 기록 (2026-11-25T14:23Z)
+
+- 배경: 모의 TMLR 심사(Fable 5.2 max, 리뷰어 3명 + AE; `REVIEW_fable_panel_2026-11-25.md`)에서 R2(계획·MBRL)가 승인된 초록 두 문장 때문에 "Claims and evidence"에 No를 줬다.
+  - 계획기 교체 문장이 시험한 범위보다 넓었다. 교체는 TD-MPC2 3과제, DINO-WM 2과제(Wall, PointMaze)에서만 했다.
+  - DMC 문장은 dither 덕분처럼 읽혔다. 실제로는 정책 단독이 return을 최대 56% 잃으므로 det도 자기 k*(3~5비트)에서 4과제 중 3과제에서 정책을 이긴다. X6과 같은 규칙(95% 구간이 겹치지 않음)으로 쟀다.
+- 사용자 답(2026-11-25): "실험 없는 수정 모두". 질문할 때 초록 두 문장이 바뀐다는 점을 밝혔다.
+- 고친 것(한 줄 주장 §1과 원고 초록)
+  1. "and this pattern followed the model family when we swapped the planners' update rules" → "and this did not change when we swapped the planners' update rules in three TD-MPC2 and two DINO-WM tasks". 서론의 기여 2도 과제를 밝혔다.
+  2. "on DMC the low-bit dithered planners still beat the policy" → "on DMC, where the policy alone loses up to 56% of return, low-bit planners beat it in 3 of 4 tasks with or without dither, and dither gains at most one bit".
+     - 수치는 `\nv{x6.dmc.dpol.max}`, `\nv{x6.dmc.better}`(det 쪽 `x6.dmc.det.better`도 3)로 넣는다.
+     - "at most one bit"는 verify_numbers의 문구 점검(DMC의 G ≤ 1)이 지킨다. "with or without dither"도 같은 점검(det 개수 = dither 개수)이 지킨다.
+- 사전 지정 판정(B1~B4, Fr1·Fr2, Dg1, P1·P2, It1·It2, K1~K3, E16)은 바뀌지 않았다. 같은 심사 반영에서 고친 나머지(DINO-WM 프로토콜, ρp 범위, det+noise 해석, 구간 기준 개수, 부록 A D1 등)는 주장 문구가 아니라 본문 서술이다.
