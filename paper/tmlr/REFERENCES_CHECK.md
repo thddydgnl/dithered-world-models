@@ -246,3 +246,23 @@
   - Orin 문장: 후보 수를 빼고 기준선(PyTorch FP16)을 밝혔다.
   - 부록 J: "That we are the first…" 항목을 지웠다(서론의 "To our knowledge"와 겹침).
 - **결과**: 본문은 12쪽의 74%(11.74쪽)에서 끝난다. 전에는 99%였다. `build.sh --strict`가 통과했다(등록 문구 376/376, 문구 검사 54/54).
+
+## 7. 투고 직전 OpenReview 확인 (2026-11-26)
+
+- 사용자가 앱 안 브라우저에서 OpenReview에 직접 로그인했다. 그 뒤 익명 투고 7편의 공개 기록을 API(api2.openreview.net/notes)로 읽었다.
+- `anon2026loopquant`: 초록에 "static four-bit weights cause reconstruction errors to recur at every denoising step and compound across consecutive requests"가 있다. 본문 "quantization error has been reported to recur across their denoising loops"와 맞는다. 3.4·5.6절의 남은 일이 이것으로 끝났다.
+- `anon2026evaluations`: 초록은 "approximating early rounds … harms the search more than score noise that moves it nearly as far"다. 본문의 "score noise of the same size does not"는 원문보다 강해서 "hurts more than score noise that moves the search about as far"로 고쳤다.
+- `anon2026wamptq`: ICLR 2027 Withdrawn Submission으로 바뀌었다. 본문 인용에서 뺐다. "fused low-bit kernels"는 Wang et al. 2026b와 LoopQuant가 뒷받침한다.
+- `anon2026elitecert`: 제목이 "World-Model Errors at the Elite Cut-off: Selective Re-scoring for Sampling-Based Planning"으로 바뀌었다. bib를 고쳤다. 내용(후보가 수렴할수록 예측 비용의 순위 상관이 떨어짐)은 본문 인용과 맞는다.
+- `anon2026resolution`, `anon2026modulemse`: 초록이 본문 인용과 맞는다. `anon2026magnitude`는 6절에서 본문 인용이 빠졌다.
+- 남은 익명 인용은 5편이다. 12-16 ICLR 2027 결정 뒤 상태를 다시 본다.
+
+## 8. 투고 당일 arXiv 확인 (2026-11-26)
+
+- 범위: v1이 2026-11-19 19:00 ~ 11-24 18:59 UTC인 전 분야 6,269편(arXiv API)을 키워드로 거르고 직접 읽었다. 목록 페이지 공지 11-23~25분도 봤다. 11-24 19:00 UTC 이후 제출분은 아직 공지 전이다.
+- 핵심 주장과 직접 겹치는 논문은 없다. 이 기간의 양자화 논문(2611.30195, 2611.30178)도 추론 때 반올림을 무작위화하지 않는다. 본문의 "none randomizes rounding at inference …"는 그대로 유효하다.
+- 동시 연구 가운데 인용할 만한 것(필수 아님; 본문이 12쪽을 꽉 채워서 투고본에는 넣지 않았다. 심사 중 수정 때 검토한다)
+  - 2611.27124 "A Plan or an Adversarial Example? A Round-Trip Check for Latent World Models" (11-20): 양자화하지 않은 DINO-WM·LeWM·JEPA-WM에서 CEM/MPPI 반복을 늘리면 예측 비용은 내려가지만 이미 푼 문제를 다시 잃는다. 역동역학 일관성 검사로 고친다.
+  - 2611.30195 PTQ4WAM (11-23): 층별 비트와 실행 경로를 과제 점수로 고른다. 결정적 반올림이다. 철회된 WAMPTQ의 arXiv판일 수 있다(확인 못 함).
+  - 2611.28919 (11-21): 후보 순서를 바꾸는 비용 오차가 선택 개선을 예측하고, 독립 체크포인트 합의로 이를 평균한다.
+- 우리 v1(11-09)보다 앞선 연구로 새로 나온 것: Agrawal et al. 2512.09929, 2610.37891 "When More Planning Hurts", ACID 2607.02403, "Mind the Gap" 2607.12547. 초록으로 확인했다. 모두 계획과 모델 오차의 일반 문제이고, 양자화나 반올림 규칙은 다루지 않는다. 본문의 주장과 겹치지 않아 투고본에 넣지 않았다. 심사에서 물으면 objective mismatch 문단에 묶어 인용할 수 있다.
